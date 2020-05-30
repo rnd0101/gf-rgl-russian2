@@ -15,7 +15,7 @@ param
   AfterPrep  = Yes | No ;  -- to variate pronouns starting with vowels.
   Possessive = NonPoss | Poss GenNum ;
   ClForm =  ClIndic RusTense Anteriority | ClCond  | ClIndf | ClImperf ;
-  Agr = Ag Gender Number Person ; -- The plural almost never makes a gender distinction. Exception: "они обе"/ "они оба"
+  Agr = Ag Gender Number Person ; -- The plural never makes a gender distinction
 
 -- TODO: dual gender nouns. See [KING1]
 
@@ -101,6 +101,24 @@ param
 
   DeclensionType : Type = Str -> NounForms ;
 
+
+---------------------------
+-- Adjectives
+
+---------------------
+-- Verbs
+
+
+---------------------------
+-- Pronouns
+
+  PronForms : Type = {
+    snom, sgen, sdat, sacc, sins, sprep, sloc, sptv, svoc : Str ;
+    a : Agr
+  } ;
+
+
+-- Possessive pronouns are more like adjectives
 
 
 ---------------
