@@ -11,10 +11,9 @@ param
   Animacy    = Animate | Inanimate ;
   Voice      = Act | Pass | Refl ;
   Aspect     = Imperfective | Perfective ;
-  RusTense      = Pres | Pst | Fut ;
   AfterPrep  = Yes | No ;  -- to variate pronouns starting with vowels.
-  Possessive = NonPoss | Poss GenNum ;
-  ClForm =  ClIndic RusTense Anteriority | ClCond  | ClIndf | ClImperf ;
+  Possessive = NonPoss | Poss Agr ;
+  ClForm =  ClIndic Tense Anteriority | ClCond  | ClIndf | ClImperf ;
   Agr = Ag Gender Number Person ; -- The plural never makes a gender distinction
 
 -- TODO: dual gender nouns. See [KING1]
@@ -52,6 +51,7 @@ param
 
 -- so this is the lincat of N
 
+oper
   NounForms : Type = {
     snom, sgen, sdat, sacc, sins, sprep, sloc, sptv, svoc,
     pnom, pgen, pdat, pacc, pins, pprep, ploc, pptv, pvoc : Str ;
@@ -131,14 +131,14 @@ param
           ins = variants {"тобой" ; "тобою"}
           } ;
         Ag Masc Sg P3 => {
-          nom, voc = "он",
+          nom, voc = "он" ;
           gen, acc, ptv = "его" ;   -- TODO: n
           dat = "ему" ;   -- TODO: n
           ins = "им" ;   -- TODO: n
           prep, loc = "нём"
           } ;
         Ag Fem Sg P3 => {
-          nom, voc = "она",
+          nom, voc = "она" ;
           gen, ptv = variants { "её"; "ей" } ;           -- TODO: n
           dat = "ей" ;                     -- TODO: n
           acc = "её" ;           -- TODO: n
@@ -146,21 +146,21 @@ param
           prep, loc = "ней"
           } ;
         Ag Neutr Sg P3 => {  -- TODO: same as Masc, how to combine?
-          nom, voc = "оно",
+          nom, voc = "оно" ;
           gen, acc, ptv = "его" ;   -- TODO: n
           dat = "ему" ;   -- TODO: n
           ins = "им" ;   -- TODO: n
           prep, loc = "нём"
           } ;
         Ag _ Pl P1 => {
-          nom, voc = "мы",
+          nom, voc = "мы" ;
           gen, acc, ptv = "нас" ;
           dat = "нам" ;
           ins = "нами" ;
           prep, loc = "нас"
           } ;
         Ag _ Pl P2 => {
-          nom, voc = "вы",
+          nom, voc = "вы" ;
           gen, acc, ptv = "вас" ;
           dat = "вам" ;
           ins = "вами" ;
@@ -193,10 +193,9 @@ param
 -- TODO From po-file Forms:
 -- (n%10==1 && n%100!=11 ? Num1 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? Num2_4 : Num5 );
 
-oper
-  numSizeForm : (Number => Case => Str) -> NumSize -> Case -> Str ;  -- TODO:
-  numSizeAgr : Gender -> NumSize -> Person -> Agr ; -- TODO
-  numSizeNumber : NumSize -> Number ; -- TODO
-}
+-- oper
+--   numSizeForm : (Number => Case => Str) -> NumSize -> Case -> Str ;  -- TODO:
+--   numSizeAgr : Gender -> NumSize -> Person -> Agr ; -- TODO
+--   numSizeNumber : NumSize -> Number ; -- TODO
 
 }
