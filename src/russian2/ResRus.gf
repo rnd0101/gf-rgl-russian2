@@ -37,8 +37,6 @@ param
 -- and on Number: "большой дом - "большие дома"
 -- (a big house - big houses).
 
-}
-
 -- phonology
 -- TBD
 
@@ -113,8 +111,68 @@ param
 -- Pronouns
 
   PronForms : Type = {
-    snom, sgen, sdat, sacc, sins, sprep, sloc, sptv, svoc : Str ;
+    nom, gen, dat, acc, ins, prep, loc, ptv, voc : Str ;
     a : Agr
+  } ;
+
+  personalPron : Agr -> PronForms =
+    \a -> {a = a} **
+      case a of {
+        Ag _ Sg P1 => {
+          nom, voc = "я" ;
+          gen, acc, ptv = "меня" ;
+          dat, prep, loc = "мне" ;
+          ins = variants {"мной" ; "мною"}
+          } ;
+        Ag _ Sg P2 => {
+          nom, voc = "ты" ;
+          gen, acc, ptv = "тебя" ;
+          dat, prep, loc = "тебе" ;
+          ins = variants {"тобой" ; "тобою"}
+          } ;
+        Ag Masc Sg P3 => {
+          nom, voc = "он",
+          gen, acc, ptv = "его" ;   -- TODO: n
+          dat = "ему" ;   -- TODO: n
+          ins = "им" ;   -- TODO: n
+          prep, loc = "нём"
+          } ;
+        Ag Fem Sg P3 => {
+          nom, voc = "она",
+          gen, ptv = variants { "её"; "ей" } ;           -- TODO: n
+          dat = "ей" ;                     -- TODO: n
+          acc = "её" ;           -- TODO: n
+          ins = variants { "ей"; "ею" } ;   -- TODO: n
+          prep, loc = "ней"
+          } ;
+        Ag Neutr Sg P3 => {  -- TODO: same as Masc, how to combine?
+          nom, voc = "оно",
+          gen, acc, ptv = "его" ;   -- TODO: n
+          dat = "ему" ;   -- TODO: n
+          ins = "им" ;   -- TODO: n
+          prep, loc = "нём"
+          } ;
+        Ag _ Pl P1 => {
+          nom, voc = "мы",
+          gen, acc, ptv = "нас" ;
+          dat = "нам" ;
+          ins = "нами" ;
+          prep, loc = "нас"
+          } ;
+        Ag _ Pl P2 => {
+          nom, voc = "вы",
+          gen, acc, ptv = "вас" ;
+          dat = "вам" ;
+          ins = "вами" ;
+          prep, loc = "вас"
+          } ;
+        Ag _ Pl P3 => {
+          nom, voc = "они" ;
+          gen, acc, ptv = "их" ;   -- TODO: n
+          dat = "им" ;   -- TODO: n
+          ins = "ими" ;   -- TODO: n
+          prep, loc = "них"
+      }
   } ;
 
 
@@ -139,4 +197,6 @@ oper
   numSizeForm : (Number => Case => Str) -> NumSize -> Case -> Str ;  -- TODO:
   numSizeAgr : Gender -> NumSize -> Person -> Agr ; -- TODO
   numSizeNumber : NumSize -> Number ; -- TODO
+}
+
 }
