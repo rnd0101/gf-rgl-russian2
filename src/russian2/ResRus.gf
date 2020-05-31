@@ -107,6 +107,16 @@ oper
 ---------------------------
 -- Adjectives -- Прилагательные
 
+  AdjForms : Type = {
+    msnom, fsnom, nsnom, pnom,  -- pvoc = pnom
+    msgen, fsgen, pgen,         -- nsgen = msgen ; ploc = pprep = pgen = pptv (?)
+    msdat, fsdat,               -- nsdat = msdat
+    fsacc,                      -- amsacc = msgen, imsacc = msnom, nsacc = nsnom
+    msins, fsins, pins,         -- nsins = msins, pdat = msins ; there is also variant fsins == fsgen
+    msprep,                     -- nsprep = msprep, fsprep = fsgen, msloc = msprep
+    sm, sf, sn, sp : Str ;      -- short forms
+  } ;
+
 ---------------------
 -- Verbs -- Глаголы
 
@@ -118,6 +128,18 @@ oper
     nom, gen, dat, acc, ins, prep, loc, ptv, voc : Str ;
     a : Agr
   } ;
+
+  -- From [RUSGRAM]:
+  -- personal      -- личные
+  -- possessive    -- притяжательные
+  -- reflexive     -- возвратные
+  -- indefinite    -- неопределённые
+  -- demonstrative -- указательные
+  -- interrogative -- вопросительные
+  -- relative      -- относительные
+  -- reciprocal    -- взаимные
+  -- determinative -- определительные
+  -- negative      -- отрицательные
 
   personalPron : Agr -> PronForms =
     \a -> {a = a} **
@@ -182,6 +204,15 @@ oper
 
 -- Possessive pronouns are more like adjectives
 
+  AdjlikePronForms : Type = {
+    msnom, fsnom, nsnom, pnom,  -- pvoc = pnom
+    msgen, fsgen, pgen,         -- nsgen = msgen ; ploc = pprep = pgen = pptv (?)
+    msdat, fsdat,               -- nsdat = msdat
+    fsacc,                      -- amsacc = msgen, imsacc = msnom, nsacc = nsnom
+    msins, fsins, pins,         -- nsins = msins, pdat = msins ; there is also variant fsins == fsgen
+    msprep,                     -- nsprep = msprep, fsprep = fsgen, msloc = msprep
+    : Str ;                     -- unlike adjective forms, short forms are not here
+  } ;
 
 ---------------
 -- Numerals -- Числительные
