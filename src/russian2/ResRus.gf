@@ -114,7 +114,8 @@ oper
     fsacc,                      -- amsacc = msgen, imsacc = msnom, nsacc = nsnom
     msins, fsins, pins,         -- nsins = msins, pdat = msins ; there is also variant fsins == fsgen
     msprep,                     -- nsprep = msprep, fsprep = fsgen, msloc = msprep
-    sm, sf, sn, sp : Str ;      -- short forms
+    sm, sf, sn, sp              -- short forms
+    : Str ;
   } ;
 
 ---------------------
@@ -210,8 +211,9 @@ oper
     msdat, fsdat,               -- nsdat = msdat
     fsacc,                      -- amsacc = msgen, imsacc = msnom, nsacc = nsnom
     msins, fsins, pins,         -- nsins = msins, pdat = msins ; there is also variant fsins == fsgen
-    msprep,                     -- nsprep = msprep, fsprep = fsgen, msloc = msprep
-    : Str ;                     -- unlike adjective forms, short forms are not here
+    msprep                      -- nsprep = msprep, fsprep = fsgen, msloc = msprep
+                                -- unlike adjective forms, short forms are not here
+    : Str ;
   } ;
 
 ---------------
