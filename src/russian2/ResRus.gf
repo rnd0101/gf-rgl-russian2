@@ -97,7 +97,7 @@ oper
       g = forms.g
     } ;
 
-  DeclensionType : Type = Str -> NounForms ;
+  DeclensionType : Type = Str -> NounForms ;  -- тип склонения
 
   Determiner : Type = {  -- определяемое слово
     s : Gender => Animacy => Case => Str ;
@@ -174,7 +174,7 @@ oper
           ins = variants { "ей"; "ею" } ;   -- TODO: n
           prep, loc = "ней"
         } ;
-        Ag Neutr Sg P3 => {  -- TODO: same as Masc, how to combine?
+        Ag Neut Sg P3 => {  -- TODO: same as Masc, how to combine?
           nom, voc = "оно" ;
           gen, acc, ptv = "его" ;   -- TODO: n
           dat = "ему" ;   -- TODO: n
@@ -204,19 +204,81 @@ oper
         }
       } ;
 
-
 -- Possessive pronouns are more like adjectives
 
   AdjlikePronForms : Type = {
     msnom, fsnom, nsnom, pnom,  -- pvoc = pnom
-    msgen, fsgen, pgen,         -- nsgen = msgen ; ploc = pprep = pgen = pptv (?)
-    msdat, fsdat,               -- nsdat = msdat
-    fsacc,                      -- amsacc = msgen, imsacc = msnom, nsacc = nsnom
+    msgen, fsgen, pgen,         -- nsgen = msgen = msptv = nsptv; fsgen = fsptv; ploc = pprep = pgen = pptv
+    msdat,                      -- nsdat = msdat, fsdat = fsgen
+    fsacc,                      -- amsacc = msgen, imsacc = msnom, nsacc = nsnom, pacc = pgen
     msins, fsins, pins,         -- nsins = msins, pdat = msins ; there is also variant fsins == fsgen
     msprep                      -- nsprep = msprep, fsprep = fsgen, msloc = msprep
                                 -- unlike adjective forms, short forms are not here
     : Str ;
   } ;
+
+  doPossessivePronSgP1P2 : Str -> AdjlikePronForms
+    = \mo -> {
+      msnom = mo + "й" ;
+      fsnom = mo + "я" ;
+      nsnom = mo + "ё" ;
+      pnom = mo + "и" ;
+      msgen = mo + "его" ;
+      fsgen = mo + "ей" ;
+      pgen  = mo + "их" ;
+      msdat = mo + "ему" ;
+      fsacc = mo + "ю" ;
+      msins = mo + "им" ;
+      fsins = mo + "ей" ;
+      pins  = mo + "ими" ;
+      msprep = mo + "ём"
+    } ;
+
+  doPossessivePronPlP1P2 : Str -> AdjlikePronForms
+    = \nash -> {
+      msnom = nash ;
+      fsnom = nash + "а" ;
+      nsnom = nash + "е" ;
+      pnom = nash + "и" ;
+      msgen = nash + "его" ;
+      fsgen = nash + "ей" ;
+      pgen  = nash + "их" ;
+      msdat = nash + "ему" ;
+      fsacc = nash + "у" ;
+      msins = nash + "им" ;
+      fsins = nash + "ей" ;
+      pins  = nash + "ими" ;
+      msprep = nash + "ем"
+    } ;
+
+  doPossessivePronP3 : Str -> AdjlikePronForms
+    = \ego -> {
+      msnom,
+      fsnom,
+      nsnom,
+      pnom,
+      msgen,
+      fsgen,
+      pgen,
+      msdat,
+      fsacc,
+      msins,
+      fsins,
+      pins,
+      msprep = ego
+    } ;
+
+  possessivePron : Agr -> AdjlikePronForms
+    = \a -> {a = a} **
+      case a of {
+        Ag _ Sg P1 => doPossessivePronSgP1P2 "мо" ;
+        Ag _ Sg P2 => doPossessivePronSgP1P2 "тво" ;
+        Ag (Masc|Neut) Sg P3 => doPossessivePronP3 "его" ;
+        Ag Fem Sg P3 => doPossessivePronP3 "её" ;
+        Ag _ Pl P1 => doPossessivePronPlP1P2 "наш" ;
+        Ag _ Pl P2 => doPossessivePronPlP1P2 "ваш" ;
+        Ag _ Pl P3 => doPossessivePronP3 "их"    -- TODO: "ихний" variant
+      } ;
 
 ---------------
 -- Numerals -- Числительные
