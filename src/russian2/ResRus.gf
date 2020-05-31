@@ -141,6 +141,8 @@ oper
   -- reciprocal    -- взаимные
   -- determinative -- определительные
   -- negative      -- отрицательные
+  -- Also [RUWIKT]:
+  -- exclamative   -- восклицательные
 
   personalPron : Agr -> PronForms =
     \a -> {a = a} **
