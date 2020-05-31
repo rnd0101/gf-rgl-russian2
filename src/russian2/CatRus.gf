@@ -8,4 +8,9 @@ flags coding=utf8 ; optimize=all ;
   lincat
     Num, Numeral, Card, Digits = Determiner ;
     Ord =  {s : AdjForms => Str} ;
+
+    N = ResRus.NounForms ;
+    A = ResRus.AdjForms ;
+    CN = ResRus.Noun ;
+    Pron = ResRus.PronForms ;
 }
