@@ -7,5 +7,5 @@ flags coding=utf8 ; optimize=all ;
 
   lincat
     Num, Numeral, Card, Digits = Determiner ;
-    Ord =  {s : AdjForm => Str} ;
+    Ord =  {s : AdjForms => Str} ;
 }

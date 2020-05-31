@@ -138,6 +138,7 @@ oper
   -- demonstrative -- указательные
   -- interrogative -- вопросительные
   -- relative      -- относительные
+     -- TODO: animacy - see [KHOLODILOVA1]
   -- reciprocal    -- взаимные
   -- determinative -- определительные
   -- negative      -- отрицательные
@@ -279,6 +280,9 @@ oper
         Ag _ Pl P2 => doPossessivePronPlP1P2 "ваш" ;
         Ag _ Pl P3 => doPossessivePronP3 "их"    -- TODO: "ихний" variant
       } ;
+
+  Pronoun = { s : PronForms => Str ; a : Agr } ;
+
 
 ---------------
 -- Numerals -- Числительные

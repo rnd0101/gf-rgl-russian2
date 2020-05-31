@@ -9,3 +9,5 @@ https://digital.lib.washington.edu/researchworks/bitstream/handle/1773/35231/Kin
 [RUSGRAM] Проект корпусного описания русской грамматики (http://rusgram.ru);
 
 [RUWIKT] https://ru.wiktionary.org
+
+[KHOLODILOVA1] Холодилова М. А. Словоизменительная одушевленность местоимения который. Труды института русского языка им. В.В. Виноградова. 2016. Т. X. С. 342-355.
