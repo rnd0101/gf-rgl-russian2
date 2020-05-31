@@ -5,14 +5,14 @@ flags coding=utf8 ; optimize=all ;
 
 param
   -- Mostly follows https://en.wikipedia.org/wiki/List_of_glossing_abbreviations
-  Gender     = Masc | Fem | Neut ;
-  Case       = Nom | Gen | Dat | Acc | Ins | Prep
-              | Loc | Ptv | Voc ;  -- some words, frequent in speech. Defaults: Loc -> Prep, Ptv -> Gen, Voc -> Nom
-  Animacy    = Animate | Inanimate ;
-  Voice      = Act | Pass | Refl ;
-  Aspect     = Imperfective | Perfective ;
+  Gender     = Masc | Fem | Neut ;  -- род
+  Case       = Nom | Gen | Dat | Acc | Ins | Prep  -- падеж, "малые падежи":
+              | Loc | Ptv | Voc ;  -- "minor cases", usually Loc = Prep, Ptv = Gen, Voc = Nom
+  Animacy    = Animate | Inanimate ;  -- одушевлённый / неодушевлённый
+  Voice      = Act | Pass | Refl ;  -- залог
+  Aspect     = Imperfective | Perfective ;  -- вид / аспект
   AfterPrep  = Yes | No ;  -- to variate pronouns starting with vowels.
-  Possessive = NonPoss | Poss Agr ;   -- TODO: is this needed?
+  Possessive = NonPoss | Poss Agr ;   -- TODO: is this needed?  притяжательность
   ClForm =  ClIndic Tense Anteriority | ClCond  | ClIndf | ClImp | ClImm ;
   Agr = Ag Gender Number Person ; -- The plural never makes a gender distinction
 
@@ -40,7 +40,7 @@ param
 -- TBD
 
 ---------------
--- Nouns
+-- Nouns -- Существительные
 ---------------
 
 -- novel idea (for RGL): lexical items stored as records rather than tables. See [???]
@@ -99,16 +99,20 @@ oper
 
   DeclensionType : Type = Str -> NounForms ;
 
+  Determiner : Type = {  -- определяемое слово
+    s : Gender => Animacy => Case => Str ;
+    size : NumSize
+  } ;
 
 ---------------------------
--- Adjectives
+-- Adjectives -- Прилагательные
 
 ---------------------
--- Verbs
+-- Verbs -- Глаголы
 
 
 ---------------------------
--- Pronouns
+-- Pronouns -- Местоимения
 
   PronForms : Type = {
     nom, gen, dat, acc, ins, prep, loc, ptv, voc : Str ;
@@ -180,7 +184,7 @@ oper
 
 
 ---------------
--- Numerals
+-- Numerals -- Числительные
 ---------------
 
 
