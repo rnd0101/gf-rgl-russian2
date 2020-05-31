@@ -13,8 +13,8 @@ param
   Aspect     = Imperfective | Perfective ;  -- вид / аспект
   AfterPrep  = Yes | No ;  -- to variate pronouns starting with vowels.
   Possessive = NonPoss | Poss Agr ;   -- TODO: is this needed?  притяжательность
-  ClForm =  ClIndic Tense Anteriority | ClCond  | ClIndf | ClImp | ClImm ;
-  Agr = Ag Gender Number Person ; -- The plural never makes a gender distinction
+  ClForm     =  ClIndic Tense Anteriority | ClCond  | ClIndf | ClImp | ClImm ;
+  Agr        = Ag Gender Number Person ; -- The plural never makes a gender distinction
 
 -- TODO: dual gender nouns. See [KING1]
 
@@ -72,30 +72,30 @@ oper
     = \forms -> {
       s = table {
         Sg => table {
-        Nom => forms.snom ;
-        Gen => forms.sgen ;
-        Dat => forms.sdat ;
-        Acc => forms.sacc ;
-        Ins => forms.sins ;
-        Prep => forms.sprep ;
-        Loc => forms.sloc ;
-        Ptv => forms.sptv ;
-        Voc => forms.svoc
-      } ;
+          Nom => forms.snom ;
+          Gen => forms.sgen ;
+          Dat => forms.sdat ;
+          Acc => forms.sacc ;
+          Ins => forms.sins ;
+          Prep => forms.sprep ;
+          Loc => forms.sloc ;
+          Ptv => forms.sptv ;
+          Voc => forms.svoc
+        } ;
         Pl => table {
-        Nom => forms.pnom ;
-        Gen => forms.pgen ;
-        Dat => forms.pdat ;
-        Acc => forms.pacc ;
-        Ins => forms.pins ;
-        Prep => forms.pprep ;
-        Loc => forms.ploc ;
-        Ptv => forms.pptv ;
-        Voc => forms.pvoc
-      }
-    } ;
+          Nom => forms.pnom ;
+          Gen => forms.pgen ;
+          Dat => forms.pdat ;
+          Acc => forms.pacc ;
+          Ins => forms.pins ;
+          Prep => forms.pprep ;
+          Loc => forms.ploc ;
+          Ptv => forms.pptv ;
+          Voc => forms.pvoc
+        }
+      } ;
       g = forms.g
-  } ;
+    } ;
 
   DeclensionType : Type = Str -> NounForms ;
 
@@ -144,28 +144,28 @@ oper
   -- Also [RUWIKT]:
   -- exclamative   -- восклицательные
 
-  personalPron : Agr -> PronForms =
-    \a -> {a = a} **
+  personalPron : Agr -> PronForms
+    = \a -> {a = a} **
       case a of {
         Ag _ Sg P1 => {
           nom, voc = "я" ;
           gen, acc, ptv = "меня" ;
           dat, prep, loc = "мне" ;
           ins = variants {"мной" ; "мною"}
-          } ;
+        } ;
         Ag _ Sg P2 => {
           nom, voc = "ты" ;
           gen, acc, ptv = "тебя" ;
           dat, prep, loc = "тебе" ;
           ins = variants {"тобой" ; "тобою"}
-          } ;
+        } ;
         Ag Masc Sg P3 => {
           nom, voc = "он" ;
           gen, acc, ptv = "его" ;   -- TODO: n
           dat = "ему" ;   -- TODO: n
           ins = "им" ;   -- TODO: n
           prep, loc = "нём"
-          } ;
+        } ;
         Ag Fem Sg P3 => {
           nom, voc = "она" ;
           gen, ptv = variants { "её"; "ей" } ;           -- TODO: n
@@ -173,36 +173,36 @@ oper
           acc = "её" ;           -- TODO: n
           ins = variants { "ей"; "ею" } ;   -- TODO: n
           prep, loc = "ней"
-          } ;
+        } ;
         Ag Neutr Sg P3 => {  -- TODO: same as Masc, how to combine?
           nom, voc = "оно" ;
           gen, acc, ptv = "его" ;   -- TODO: n
           dat = "ему" ;   -- TODO: n
           ins = "им" ;   -- TODO: n
           prep, loc = "нём"
-          } ;
+        } ;
         Ag _ Pl P1 => {
           nom, voc = "мы" ;
           gen, acc, ptv = "нас" ;
           dat = "нам" ;
           ins = "нами" ;
           prep, loc = "нас"
-          } ;
+        } ;
         Ag _ Pl P2 => {
           nom, voc = "вы" ;
           gen, acc, ptv = "вас" ;
           dat = "вам" ;
           ins = "вами" ;
           prep, loc = "вас"
-          } ;
+        } ;
         Ag _ Pl P3 => {
           nom, voc = "они" ;
           gen, acc, ptv = "их" ;   -- TODO: n
           dat = "им" ;   -- TODO: n
           ins = "ими" ;   -- TODO: n
           prep, loc = "них"
-      }
-  } ;
+        }
+      } ;
 
 
 -- Possessive pronouns are more like adjectives
