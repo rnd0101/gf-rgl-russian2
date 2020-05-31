@@ -12,8 +12,8 @@ param
   Voice      = Act | Pass | Refl ;
   Aspect     = Imperfective | Perfective ;
   AfterPrep  = Yes | No ;  -- to variate pronouns starting with vowels.
-  Possessive = NonPoss | Poss Agr ;
-  ClForm =  ClIndic Tense Anteriority | ClCond  | ClIndf | ClImperf ;
+  Possessive = NonPoss | Poss Agr ;   -- TODO: is this needed?
+  ClForm =  ClIndic Tense Anteriority | ClCond  | ClIndf | ClImp | ClImm ;
   Agr = Ag Gender Number Person ; -- The plural never makes a gender distinction
 
 -- TODO: dual gender nouns. See [KING1]
@@ -72,28 +72,28 @@ oper
     = \forms -> {
       s = table {
         Sg => table {
-  	      Nom => forms.snom ;
-	      Gen => forms.sgen ;
-	      Dat => forms.sdat ;
-	      Acc => forms.sacc ;
-	      Ins => forms.sins ;
-	      Prep => forms.sprep ;
-	      Loc => forms.sloc ;
-	      Ptv => forms.sptv ;
-	      Voc => forms.svoc
-	    } ;
+        Nom => forms.snom ;
+        Gen => forms.sgen ;
+        Dat => forms.sdat ;
+        Acc => forms.sacc ;
+        Ins => forms.sins ;
+        Prep => forms.sprep ;
+        Loc => forms.sloc ;
+        Ptv => forms.sptv ;
+        Voc => forms.svoc
+      } ;
         Pl => table {
-	      Nom => forms.pnom ;
-	      Gen => forms.pgen ;
-	      Dat => forms.pdat ;
-	      Acc => forms.pacc ;
-	      Ins => forms.pins ;
-	      Prep => forms.pprep ;
-	      Loc => forms.ploc ;
-	      Ptv => forms.pptv ;
-	      Voc => forms.pvoc
-	    }
-	  } ;
+        Nom => forms.pnom ;
+        Gen => forms.pgen ;
+        Dat => forms.pdat ;
+        Acc => forms.pacc ;
+        Ins => forms.pins ;
+        Prep => forms.pprep ;
+        Loc => forms.ploc ;
+        Ptv => forms.pptv ;
+        Voc => forms.pvoc
+      }
+    } ;
       g = forms.g
   } ;
 
