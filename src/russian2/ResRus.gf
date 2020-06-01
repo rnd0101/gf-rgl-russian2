@@ -13,7 +13,7 @@ param
   Aspect     = Imperfective | Perfective ;  -- вид / аспект
   AfterPrep  = Yes | No ;  -- to variate pronouns starting with vowels.
   Possessive = NonPoss | Poss Agr ;   -- TODO: is this needed?  притяжательность
-  ClForm     =  ClIndic Tense Anteriority | ClCond  | ClIndf | ClImp | ClImm ;
+  ClForm     = ClIndic Tense Anteriority | ClCond  | ClIndf | ClImp | ClImm ;
   Agr        = Ag Gender Number Person ; -- The plural never makes a gender distinction
 
 -- TODO: dual gender nouns. See [KING1]
@@ -287,8 +287,20 @@ oper
         Ag _ Pl P3 => doPossessivePronP3 "их"    -- TODO: "ихний" variant
       } ;
 
-  Pronoun = { s : PronForms => Str ; a : Agr } ;
+  Pronoun = { s : Case => Str ; a : Agr } ;
 
+  pronFormsPronoun : PronForms -> Pronoun
+    = \forms -> {
+      s = table {
+        (Nom | VocRus) => forms.nom ;
+        (Gen | Ptv)    => forms.gen ;
+        Dat            => forms.dat ;
+        Acc            => forms.acc ;
+        Ins            => forms.ins ;
+        (Pre | Loc)    => forms.prep
+      } ;
+      a = forms.a
+    } ;
 
 ---------------
 -- Numerals -- Числительные
