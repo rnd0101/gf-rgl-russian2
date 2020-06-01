@@ -126,7 +126,7 @@ oper
 -- Pronouns -- Местоимения
 
   PronForms : Type = {
-    nom, gen, dat, acc, ins, prep, loc, ptv, voc : Str ;
+    nom, gen, dat, acc, ins, prep : Str ;
     a : Agr
   } ;
 
