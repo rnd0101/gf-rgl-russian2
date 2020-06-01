@@ -6,8 +6,8 @@ flags coding=utf8 ; optimize=all ;
 param
   -- Mostly follows https://en.wikipedia.org/wiki/List_of_glossing_abbreviations
   Gender     = Masc | Fem | Neut ;  -- род
-  Case       = Nom | Gen | Dat | Acc | Ins | Prep  -- падеж, "малые падежи":
-              | Loc | Ptv | Voc ;  -- "minor cases", usually Loc = Prep, Ptv = Gen, Voc = Nom
+  Case       = Nom | Gen | Dat | Acc | Ins | Pre  -- падеж, "малые падежи":
+              | Loc | Ptv | VocRus ;  -- "minor cases", usually Loc = Pre, Ptv = Gen, VocRus = Nom
   Animacy    = Animate | Inanimate ;  -- одушевлённый / неодушевлённый
   Voice      = Act | Pass | Refl ;  -- залог
   Aspect     = Imperfective | Perfective ;  -- вид / аспект
@@ -77,10 +77,10 @@ oper
           Dat => forms.sdat ;
           Acc => forms.sacc ;
           Ins => forms.sins ;
-          Prep => forms.sprep ;
+          Pre => forms.sprep ;
           Loc => forms.sloc ;
           Ptv => forms.sptv ;
-          Voc => forms.svoc
+          VocRus => forms.svoc
         } ;
         Pl => table {
           Nom => forms.pnom ;
@@ -88,10 +88,10 @@ oper
           Dat => forms.pdat ;
           Acc => forms.pacc ;
           Ins => forms.pins ;
-          Prep => forms.pprep ;
+          Pre => forms.pprep ;
           Loc => forms.ploc ;
           Ptv => forms.pptv ;
-          Voc => forms.pvoc
+          VocRus => forms.pvoc
         }
       } ;
       g = forms.g
@@ -107,6 +107,8 @@ oper
 ---------------------------
 -- Adjectives -- Прилагательные
 
+  Adjective : Type = {s : Gender => Number => Case => Str} ;
+
   AdjForms : Type = {
     msnom, fsnom, nsnom, pnom,  -- pvoc = pnom
     msgen, fsgen, pgen,         -- nsgen = msgen ; ploc = pprep = pgen = pptv (?)
@@ -121,6 +123,10 @@ oper
 ---------------------
 -- Verbs -- Глаголы
 
+  VerbForms : Type = {          ---- TODO more forms to add
+    inf
+    : Str
+  } ;
 
 ---------------------------
 -- Pronouns -- Местоимения
@@ -302,5 +308,9 @@ param
 --   numSizeForm : (Number => Case => Str) -> NumSize -> Case -> Str ;  -- TODO:
 --   numSizeAgr : Gender -> NumSize -> Person -> Agr ; -- TODO
 --   numSizeNumber : NumSize -> Number ; -- TODO
+
+oper -- TODO:
+  ComplementCase : Type = {s : Str ; c : Case ; hasPrep : Bool} ;
+
 
 }
