@@ -13,8 +13,6 @@ flags coding=utf8 ; optimize=all ;
 
   -- TODO: below copy-paste, sort out
 
-    Text = {s : Str} ;
-    Utt = {s : Str} ;
 
     S   = {s : Str} ;
     Cl  = {subj,clit,compl : Str ; verb : VerbForms ; a : Agr} ;
@@ -35,7 +33,7 @@ flags coding=utf8 ; optimize=all ;
     AP = ResRus.Adjective ** {isPost : Bool} ; -- {s : Gender => Number => Case => Str}
     A2 = ResRus.AdjForms ** {c : ComplementCase} ;
 
-    -- NP = {s,clit,prep : Case => Str ; a : Agr ; hasClit : Bool} ; -- clit,prep differ for pronouns
+    NP = {s : Case => Str ; a : Agr } ;
     PN = {s : Case => Str ; g : Gender} ;
     Det = Determiner ; -- {s : Gender => Case => Str ; size : NumSize} ; -- can contain a numeral, therefore NumSize
     Quant = {s : Gender => Number => Case => Str} ; -- same as AP
