@@ -122,9 +122,15 @@ oper
 
   DeclensionType : Type = Str -> NounForms ;  -- тип склонения
 
+  vowel : pattern Str = #("а"|"е"|"ё"|"о"|"у"|"ы"|"э"|"ю"|"я") ;
+
   guessNounForms : Str -> NounForms
     = \s -> case s of {
-      stem               => (declSPOR stem) ** {g = Masc}
+      stem + ("к" | "х" | "г")        => (declBAK s) ** {g = Masc} ;
+      stem + ("ж" | "ш" | "ч" | "щ")  => (declSTAZH s) ** {g = Masc} ;
+      stem + "ц"                      => (declKONEC s) ** {g = Masc} ;
+      stem + "ь"                      => (declVIHR6 stem) ** {g = Masc} ;
+      stem                            => (declSPOR stem) ** {g = Masc}
     } ;
 
   noMinorCases : NounFormsBase -> NounForms
@@ -153,6 +159,80 @@ oper
       pprep = spor + "ах" ;
       g = Masc
   } ;
+
+  declVIHR6 : DeclensionType  -- ВИХРЬ - сущ ru m ina 2a
+    = \vihr -> noMinorCases {
+      snom  = vihr + "ь" ;
+      pnom  = vihr + "и" ;
+      sgen  = vihr + "я" ;
+      pgen  = vihr + "ей" ;
+      sdat  = vihr + "ю" ;
+      pdat  = vihr + "ям" ;
+      sacc  = vihr + "ь" ;
+      pacc  = vihr + "и" ;
+      sins  = vihr + "ем" ;
+      pins  = vihr + "ями" ;
+      sprep = vihr + "е" ;
+      pprep = vihr + "ях" ;
+      g = Masc
+  } ;
+
+  declBAK : DeclensionType  -- БАК - сущ ru m ina 3a
+    = \bak -> noMinorCases {
+      snom  = bak ;
+      pnom  = bak + "и" ;
+      sgen  = bak + "а" ;
+      pgen  = bak + "ов" ;
+      sdat  = bak + "у" ;
+      pdat  = bak + "ам" ;
+      sacc  = bak ;
+      pacc  = bak + "и" ;
+      sins  = bak + "ом" ;
+      pins  = bak + "ами" ;
+      sprep = bak + "е" ;
+      pprep = bak + "ах" ;
+      g = Masc
+  } ;
+
+  declSTAZH : DeclensionType  -- СТАЖ - сущ ru m ina 4a
+    = \stazh -> noMinorCases {
+      snom  = stazh ;
+      pnom  = stazh + "и" ;
+      sgen  = stazh + "а" ;
+      pgen  = stazh + "ей" ;
+      sdat  = stazh + "у" ;
+      pdat  = stazh + "ам" ;
+      sacc  = stazh ;
+      pacc  = stazh + "и" ;
+      sins  = stazh + "ем" ;
+      pins  = stazh + "ами" ;
+      sprep = stazh + "е" ;
+      pprep = stazh + "ах" ;
+      g = Masc
+  } ;
+
+  removeMobileVowel : Str -> Str
+    = \s -> (Predef.tk 2 s) + (Predef.dp 1 s) ;
+
+  declKONEC : DeclensionType  -- КОНЕЦ - сущ ru m ina 5*b
+    = \konec ->
+      let konec1 = removeMobileVowel konec in
+      noMinorCases {
+        snom  = konec ;
+        pnom  = konec1 + "ы" ;
+        sgen  = konec1 + "а" ;
+        pgen  = konec1 + "ев" ;
+        sdat  = konec1 + "у" ;
+        pdat  = konec1 + "ам" ;
+        sacc  = konec ;
+        pacc  = konec1 + "ы" ;
+        sins  = konec1 + "ем" ;
+        pins  = konec1 + "ами" ;
+        sprep = konec1 + "е" ;
+        pprep = konec1 + "ах" ;
+      g = Masc
+  } ;
+
 
   Determiner : Type = {  -- определяемое слово
     s : Gender => Animacy => Case => Str ;
