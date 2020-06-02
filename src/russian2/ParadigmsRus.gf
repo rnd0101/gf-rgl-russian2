@@ -16,6 +16,11 @@ oper
   neuter : Gender
     = Neut ;
 
+  animate : Animacy
+    = Animate ;
+  inanimate : Animacy
+    = Inanimate ;
+
   nominative : Case
     = Nom ;
   genitive : Case
@@ -38,8 +43,20 @@ oper
   vocative : Case
     = VocRus ;
 
+  positive : Degree
+    = Posit ;
+  comparative : Degree
+    = Compar ;
+  superlative : Degree
+    = Superl ;
+
 ------------------------------
 -- Nouns
+
+  mkN = overload {
+    mkN : (nom : Str) -> N
+      = \nom -> lin N (guessNounForms nom) ;
+  } ;
 
 ---------------------
 -- Adjectives

@@ -43,7 +43,7 @@ param
 -- also: "над ним" - "надо мной"
 
 -- TODO: cleanup
--- Declination forms depend on Case, Animacy , Gender:
+-- Declension forms depend on Case, Animacy , Gender:
 -- "большие дома" - "больших домов" (big houses - big houses'),
 -- Animacy plays role only in the Accusative case (Masc Sg and Plural forms):
 -- Accusative Animate = Genetive, Accusaive Inanimate = Nominative
@@ -68,9 +68,16 @@ param
 -- so this is the lincat of N
 
 oper
+  NounFormsBase : Type = {
+    snom, sgen, sdat, sacc, sins, sprep,
+    pnom, pgen, pdat, pacc, pins, pprep : Str ;
+    g : Gender
+  } ;
+
+
   NounForms : Type = {
     snom, sgen, sdat, sacc, sins, sprep, sloc, sptv, svoc,
-    pnom, pgen, pdat, pacc, pins, pprep, ploc, pptv, pvoc : Str ;
+    pnom, pgen, pdat, pacc, pins, pprep : Str ;
     g : Gender
   } ;
 
@@ -105,15 +112,47 @@ oper
           Acc => forms.pacc ;
           Ins => forms.pins ;
           Pre => forms.pprep ;
-          Loc => forms.ploc ;
-          Ptv => forms.pptv ;
-          VocRus => forms.pvoc
+          Loc => forms.pprep ;
+          Ptv => forms.pgen ;
+          VocRus => forms.pnom
         }
       } ;
       g = forms.g
     } ;
 
   DeclensionType : Type = Str -> NounForms ;  -- тип склонения
+
+  guessNounForms : Str -> NounForms
+    = \s -> case s of {
+      stem               => (declSPOR stem) ** {g = Masc}
+    } ;
+
+  noMinorCases : NounFormsBase -> NounForms
+    = \base -> base ** {
+      sloc = base.sprep ;
+      sptv = base.sgen ;
+      svoc = base.snom ;
+      ploc = base.pprep ;
+      pptv = base.pgen ;
+      pvoc = base.pnom
+    } ;
+
+  declSPOR : DeclensionType  -- СПОР - сущ ru m ina 1a
+    = \spor -> noMinorCases {
+      snom  = spor ;
+      pnom  = spor + "ы" ;
+      sgen  = spor + "а" ;
+      pgen  = spor + "ов" ;
+      sdat  = spor + "у" ;
+      pdat  = spor + "ам" ;
+      sacc  = spor ;
+      pacc  = spor + "ы" ;
+      sins  = spor + "ом" ;
+      pins  = spor + "ами" ;
+      sprep = spor + "е" ;
+      pprep = spor + "ах" ;
+      g = Masc
+  } ;
 
   Determiner : Type = {  -- определяемое слово
     s : Gender => Animacy => Case => Str ;
