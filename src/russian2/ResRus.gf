@@ -5,10 +5,26 @@ flags coding=utf8 ; optimize=all ;
 
 param
   -- Mostly follows https://en.wikipedia.org/wiki/List_of_glossing_abbreviations
+  -- see theory.txt
+
+  -- For nouns:
+
   Gender     = Masc | Fem | Neut ;  -- род
+  -- Number  = Sg | Pl ;  -- число, from ParamX
   Case       = Nom | Gen | Dat | Acc | Ins | Pre  -- падеж, "малые падежи":
               | Loc | Ptv | VocRus ;  -- "minor cases", usually Loc = Pre, Ptv = Gen, VocRus = Nom
   Animacy    = Animate | Inanimate ;  -- одушевлённый / неодушевлённый
+  -- Person  = P1 | P2 | P3 ;  -- лицо, from ParamX
+
+  -- For adjectives (mostly)
+
+  {-
+  Kind -- разряд прилагательного. The only permanent feature of adjective. Can be dynamic though
+     Qualitative   -- качественные, какой? Only these can have short form, 3 comparison degrees
+     | Possessive  -- притяжательные, чей? No short form
+     | Relative    -- относительные, какой? No short form, can't be more or less of this attribute
+  -}
+
   Voice      = Act | Pass | Refl ;  -- залог
   Aspect     = Imperfective | Perfective ;  -- вид / аспект
   AfterPrep  = Yes | No ;  -- to variate pronouns starting with vowels.
@@ -311,7 +327,7 @@ oper
 -- combining nouns with numerals
 
 param
-  NumSize = Num1 | Num2_4 | Num5 ;
+  NumSize = Num1 | Num2_4 | Num5 ;   -- Num2_4 - "Dual"
 
 -- TODO From po-file Forms:
 -- (n%10==1 && n%100!=11 ? Num1 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? Num2_4 : Num5 );

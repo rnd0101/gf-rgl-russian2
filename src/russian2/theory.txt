@@ -1,0 +1,64 @@
+-*- coding: utf-8 -*-
+
+Theory
+------
+sources: [RUWIKI], partly automatically translated (not checked) -
+https://ru.wikipedia.org/wiki/Грамматическая_категория
+https://ru.wikipedia.org/wiki/Грамматические_признаки
+
+Grammatical category:
+
+a closed system of mutually exclusive and opposed to each other grammatical meanings (grammemes),
+which defines a partition of an extensive collection of word forms (or a small set of high-frequency word forms with
+an abstract type of meaning) into disjoint classes, the difference between which significantly affects the degree of
+grammatical correctness of the text.
+
+Grammatical categories by the nature of grammatical meanings:
+
+- content-related(?) (nominative, semantic, referential) grammatical categories directly involved in the reflection of extra-linguistic
+reality;
+
+- formal (asemantic, formal-structural) categories that reflect only purely compatible restrictions of word forms
+(for example, matching grammatical categories are involved in the design of matching relationships:
+for example, gender, number and case of the adjective, gender, number and face of the verb,
+as well as formal structural morphological lexeme characteristics - such as types of declension and conjugation).
+
+Content-related(?) Grammar Categories
+
+Among these grammatical categories are:
+
+- nominative (objective, nominative, dictal; for example, the number of a noun, the gender of animate nouns,
+the animacy of nouns, the degree of comparison of an adjective, partly a verb form,
+partly transitive / intransitive and personality / impersonality of a verb, specificity / universality of reference);
+- subjective-objective, reflecting the properties and relationships of objects from the point of view of participants
+in a speech act;
+- relational (syntactic) (case of a noun, adjective / predicative of an adjective, representation of a verb,
+communicative role).
+
+
+Subjective objective
+
+Subjective-objective grammatical categories are divided into:
+
+- actualization (deictic, shifter, index) (for example, verb tense, pronouns);
+- modal, for example, the mood of the verb; syntagma reference / non-reference);
+- communicative (for example, certainty / uncertainty and the communicative role of syntagma);
+- evaluative, that is, expressing an assessment (for example, the degree of intensity of a sign in predicate words,
+a subjective assessment in nouns);
+- interpretative, reflecting the subjective point of view of the observer (the pledge of the verb, partly the verb form,
+partly the number of the noun, partly the gender of the animated nouns, partly the animation of the nouns).
+
+Relational
+
+Relational grammatical categories are divided into:
+
+- active (expressing valency, that is, the ability to enter into syntactic relations with neighboring words,
+for example, transition / intransigence, personality / impersonality, partly pledge and diathesis);
+
+- passive (expressing the syntactic role of the word in the utterance, for example, the case of the noun,
+the predicativity / attributiveness of the adjective, the representation of the verb).
+
+...
+
+Grammatical features are different, such as: non-permanent "time, number and case" and constant "gender, declension."
+
