@@ -212,7 +212,12 @@ oper
   } ;
 
   removeMobileVowel : Str -> Str
-    = \s -> (Predef.tk 2 s) + (Predef.dp 1 s) ;
+    = \s ->
+      let stem1 = Predef.tk 2 s in
+      case Predef.dp 1 stem1 of {
+        "л" => stem1 + "ь" + Predef.dp 1 s ;
+        _ => stem1 + Predef.dp 1 s
+      } ;
 
   declKONEC : DeclensionType  -- КОНЕЦ - сущ ru m ina 5*b
     = \konec ->
