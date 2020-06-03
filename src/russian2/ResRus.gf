@@ -122,10 +122,11 @@ oper
 
   DeclensionType : Type = Str -> NounForms ;  -- тип склонения
 
-  vowel : pattern Str = #("а"|"е"|"ё"|"о"|"у"|"ы"|"э"|"ю"|"я") ;
+  vowel_but_i : pattern Str = #("а"|"е"|"ё"|"о"|"у"|"ы"|"э"|"ю"|"я") ;
 
   guessNounForms : Str -> NounForms
     = \s -> case s of {
+      stem + "й"                      => (declBOJ s) ** {g = Masc} ;
       stem + ("к" | "х" | "г")        => (declBAK s) ** {g = Masc} ;
       stem + ("ж" | "ш" | "ч" | "щ")  => (declSTAZH s) ** {g = Masc} ;
       stem + "ц"                      => (declKONEC s) ** {g = Masc} ;
@@ -138,9 +139,9 @@ oper
       sloc = base.sprep ;
       sptv = base.sgen ;
       svoc = base.snom ;
-      ploc = base.pprep ;
-      pptv = base.pgen ;
-      pvoc = base.pnom
+      --ploc = base.pprep ;
+      --pptv = base.pgen ;
+      --pvoc = base.pnom
     } ;
 
   declSPOR : DeclensionType  -- СПОР - сущ ru m ina 1a
@@ -238,6 +239,26 @@ oper
       g = Masc
   } ;
 
+  declBOJ : DeclensionType  -- БОЙ - сущ ru m ina 6c
+    = \boj ->
+      let bo, bo1 = Predef.tk 1 boj in {
+        snom  = bo + "й" ;
+        pnom  = bo1 + "и" ;
+        sgen  = bo + "я" ;
+        pgen  = bo1 + "ёв" ;
+        sdat  = bo + "ю" ;
+        pdat  = bo1 + "ям" ;
+        sacc  = bo + "й" ;
+        pacc  = bo1 + "и" ;
+        sins  = bo + "ем" ;
+        pins  = bo1 + "ями" ;
+        sprep = bo + "е" ;
+        pprep = bo1 + "ях" ;
+        sloc  = bo + "ю" ;
+        sptv  = bo + "ю" ;
+        svoc  = bo1 + "и́" ;
+        g = Masc
+    } ;
 
   Determiner : Type = {  -- определяемое слово
     s : Gender => Animacy => Case => Str ;
