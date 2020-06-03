@@ -137,6 +137,9 @@ oper
 
   guessNounForms : Str -> NounForms
     = \s -> case s of {
+      stem + "уть"                            => (declPUT6 s) ** {g = Masc} ;
+      stem + "ия"                             => (declLINIJA s) ** {g = Fem} ;
+      stem + "ий"                             => (declKRITERIJ s) ** {g = Masc} ;
       stem + "ие"                             => (declZNANIE s) ** {g = Neut} ;
       stem + "й"                              => (declBOJ s) ** {g = Masc} ;
       stem + ("к" | "х" | "г")                => (declBAK s) ** {g = Masc} ;
@@ -295,7 +298,7 @@ oper
         g = Masc
     } ;
 
-  declZNANIE : DeclensionType  -- ЗНАНИЕ - сущ ru m ina 7a
+  declZNANIE : DeclensionType  -- ЗНАНИЕ - сущ ru n ina 7a
     = \znanie ->
         let znan = Predef.tk 2 znanie in
         noMinorCases {
@@ -312,6 +315,63 @@ oper
           sprep  = znan + "ии" ;
           pprep  = znan + "иях" ;
           g = Neut
+  } ;
+
+  declKRITERIJ : DeclensionType  -- КРИТЕРИЙ - сущ ru m ina 7a
+    = \kriterij ->
+        let kriter = Predef.tk 2 kriterij in
+        noMinorCases {
+          snom  = kriter + "ий" ;
+          pnom  = kriter + "ии" ;
+          sgen  = kriter + "ия" ;
+          pgen  = kriter + "иев" ;
+          sdat  = kriter + "ию" ;
+          pdat  = kriter + "иям" ;
+          sacc  = kriter + "ий" ;
+          pacc  = kriter + "ии" ;
+          sins  = kriter + "ием" ;
+          pins  = kriter + "иями" ;
+          sprep  = kriter + "ии" ;
+          pprep  = kriter + "иях" ;
+          g = Masc
+  } ;
+
+  declLINIJA : DeclensionType  -- ЛИНИЯ - сущ ru f ina 7a
+    = \linija ->
+        let lini = Predef.tk 1 linija in
+        noMinorCases {
+          snom  = lini + "я" ;
+          pnom  = lini + "и" ;
+          sgen  = lini + "и" ;
+          pgen  = lini + "ий" ;
+          sdat  = lini + "и" ;
+          pdat  = lini + "ям" ;
+          sacc  = lini + "ю" ;
+          pacc  = lini + "и" ;
+          sins  = lini + variants {"ей"; "ею"} ;
+          pins  = lini + "ями" ;
+          sprep  = lini + "и" ;
+          pprep  = lini + "ях" ;
+          g = Fem
+  } ;
+
+  declPUT6 : DeclensionType  -- ПУТЬ - сущ ru m ina 8b
+    = \put6 ->
+        let put, put1 = Predef.tk 1 put6 in
+        noMinorCases {
+          snom  = put + "ь" ;
+          pnom  = put1 + "и" ;
+          sgen  = put1 + "и" ;
+          pgen  = put1 + "ей" ;
+          sdat  = put1 + "и" ;
+          pdat  = put1 + "ям";
+          sacc  = put + "ь" ;
+          pacc  = put1 + "и" ;
+          sins  = put1 + "ём" ;
+          pins  = put1 + "ями";
+          sprep  = put1 + "и" ;
+          pprep  = put1 + "ям" ;
+          g = Masc
   } ;
 
   Determiner : Type = {  -- определяемое слово
