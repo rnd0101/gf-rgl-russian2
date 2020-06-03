@@ -52,6 +52,7 @@ param
 -- and on Number: "большой дом - "большие дома"
 -- (a big house - big houses).
 
+
 -- phonology
 -- TBD
 
@@ -74,6 +75,16 @@ oper
     g : Gender
   } ;
 
+-- Mnemonics for cases: (add to lexican as well)
+-- Nom есть (кто? что?)
+-- Gen нет (кого? чего?)
+-- Dat дать (кому? чему?)
+-- Acc вижу (кого? что?)
+-- Ins горжусь (кем? чем?)
+-- Pre думать (о ком? о чём?)
+-- Loc нахожусь (где? на чём? в чём?)  -- add if different from Pre
+-- Ptv налей (чего?)                   -- add variant if different from Gen
+-- VocRus "здравствуй, {}!"            -- add variant if different from Nom
 
   NounForms : Type = {
     snom, sgen, sdat, sacc, sins, sprep, sloc, sptv, svoc,
@@ -225,7 +236,7 @@ oper
         sdat  = kash + "е" ;
         pdat  = kash + "ам" ;
         sacc  = kash + "у" ;
-        pacc  = kash + "и" ;
+        pacc  = kash + "и" ;   ----- diff from anim: kash
         sins  = kash + variants {"ей"; "ею"} ;
         pins  = kash + "ами" ;
         sprep = kash + "е" ;
