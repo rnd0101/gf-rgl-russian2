@@ -126,12 +126,14 @@ oper
 
   guessNounForms : Str -> NounForms
     = \s -> case s of {
-      stem + "й"                      => (declBOJ s) ** {g = Masc} ;
-      stem + ("к" | "х" | "г")        => (declBAK s) ** {g = Masc} ;
-      stem + ("ж" | "ш" | "ч" | "щ")  => (declSTAZH s) ** {g = Masc} ;
-      stem + "ц"                      => (declKONEC s) ** {g = Masc} ;
-      stem + "ь"                      => (declVIHR6 stem) ** {g = Masc} ;
-      stem                            => (declSPOR stem) ** {g = Masc}
+      stem + "ие"                             => (declZNANIE s) ** {g = Neut} ;
+      stem + "й"                              => (declBOJ s) ** {g = Masc} ;
+      stem + ("к" | "х" | "г")                => (declBAK s) ** {g = Masc} ;
+      stem + ("ж" | "ш" | "ч" | "щ")          => (declSTAZH s) ** {g = Masc} ;
+      stem + ("ж" | "ш" | "ч" | "щ")  + ("а") => (declKASHA s) ** {g = Fem} ;
+      stem + "ц"                              => (declKONEC s) ** {g = Masc} ;
+      stem + "ь"                              => (declVIHR6 stem) ** {g = Masc} ;
+      stem                                    => (declSPOR stem) ** {g = Masc}
     } ;
 
   noMinorCases : NounFormsBase -> NounForms
@@ -212,6 +214,28 @@ oper
       g = Masc
   } ;
 
+  declKASHA : DeclensionType  -- КАША - сущ ru f ina 4a
+    = \kasha -> 
+      let kash = Predef.tk 1 kasha in
+      {
+        snom  = kash + "а" ;
+        pnom  = kash + "и" ;
+        sgen  = kash + "и" ;
+        pgen  = kash ;
+        sdat  = kash + "е" ;
+        pdat  = kash + "ам" ;
+        sacc  = kash + "у" ;
+        pacc  = kash + "и" ;
+        sins  = kash + variants {"ей"; "ею"} ;
+        pins  = kash + "ами" ;
+        sprep = kash + "е" ;
+        pprep = kash + "ах" ;
+        sloc  = kash + "ах" ;
+        sptv  = kash + "и" ;
+        svoc  = variants {kash + "а"; kash} ;
+        g = Fem
+  } ;
+
   removeMobileVowel : Str -> Str
     = \s ->
       let stem1 = Predef.tk 2 s in
@@ -259,6 +283,25 @@ oper
         svoc  = bo1 + "и́" ;
         g = Masc
     } ;
+
+  declZNANIE : DeclensionType  -- ЗНАНИЕ - сущ ru m ina 7a
+    = \znanie ->
+        let znan = Predef.tk 2 znanie in
+        noMinorCases {
+          snom  = znan + "ие" ;
+          pnom  = znan + "ия" ;
+          sgen  = znan + "ия" ;
+          pgen  = znan + "ий" ;
+          sdat  = znan + "ию" ;
+          pdat  = znan + "иям" ;
+          sacc  = znan + "ие" ;
+          pacc  = znan + "ия" ;
+          sins  = znan + "ием" ;
+          pins  = znan + "иями" ;
+          sprep  = znan + "ии" ;
+          pprep  = znan + "иях" ;
+          g = Neut
+  } ;
 
   Determiner : Type = {  -- определяемое слово
     s : Gender => Animacy => Case => Str ;
