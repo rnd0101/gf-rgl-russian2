@@ -62,3 +62,55 @@ the predicativity / attributiveness of the adjective, the representation of the 
 
 Grammatical features are different, such as: non-permanent "time, number and case" and constant "gender, declension."
 
+....
+
+([MALKOVSKYETAL] - Формальная модель русского словоизменения - The formal model of the Russian inflection, FMRI)
+
+All words belong to classes:
+- "immutable words"
+- "mutable words"
+
+Grammatical variables (GV).
+
+- animacy одушевленность,
+- gender род,
+- number число,
+- case падеж,
+- aspect вид,
+- person лицо,
+- voice залог,
+- reflexivity возвратность,
+- tense время,
+- conjugation наклонение,
+- degree степень
+
+Grammatical features
+
+- syntactical class (S-class)
+- morphological class (M-class)
+- paradigmatical class (P-class), alterations, exceptions
+
+Paradigm is a set of grammatical variables.
+M-class consists of with common set of GV, free GV and common spectrum of GV values.
+(eg vector (7 8 2 1 0 0) - word of 7th M-class, 8th P-class, inanimate, masculine, without cases and number can be
+associated with a stem "лев-" of the word "лев".
+
+(M-class roughly corresponds with aprt of speech)
+3-classes of inflected words:
+ - pronouns местоименные, (gender, number, case)
+ - substantives субстантивные, (number, case)
+ - adjectives адъективные (gender, number, case)
+1 class of conjugated спрягаемые. (person, gender, number, tense)
+
+Subset of M-class with same flections - P-class. 24 of those in FMRI.
+
+Exceptions are not included in the P-classes, handled separately. (26 exceptions in FMRI)
+
+FMRI has 55 alternations.
+
+Rare exceptions - described with multiple stems.
+
+S-class is comprised of words and forms with common sets of GV and common syntactic functions.
+
+For many words S-class corresponds directly with M-class, but there are some exceptions. For example,
+some nouns can be like adkiectives.
