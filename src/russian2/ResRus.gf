@@ -145,9 +145,9 @@ oper
       stem + ("к" | "х" | "г")                => (declBAK s) ** {g = Masc} ;
       stem + ("ж" | "ш" | "ч" | "щ")          => (declSTAZH s) ** {g = Masc} ;
       stem + ("ж" | "ш" | "ч" | "щ")  + ("а") => (declKASHA s) ** {g = Fem} ;
-      stem + "ц"                              => (declKONEC s) ** {g = Masc} ;
-      stem + "ь"                              => (declVIHR6 stem) ** {g = Masc} ;
-      stem                                    => (declSPOR stem) ** {g = Masc}
+      stem + "ц"                              => (declPEREC s) ** {g = Masc} ;
+      stem + "ь"                              => (declVIHR6 s) ** {g = Masc} ;
+      stem                                    => (declSPOR s) ** {g = Masc}
     } ;
 
   noMinorCases : NounFormsBase -> NounForms
@@ -178,7 +178,9 @@ oper
   } ;
 
   declVIHR6 : DeclensionType  -- ВИХРЬ - сущ ru m ina 2a
-    = \vihr -> noMinorCases {
+    = \vihr6 ->
+      let vihr = Predef.tk 1 vihr6 in
+      noMinorCases {
       snom  = vihr + "ь" ;
       pnom  = vihr + "и" ;
       sgen  = vihr + "я" ;
@@ -258,22 +260,22 @@ oper
         _ => stem1 + Predef.dp 1 s
       } ;
 
-  declKONEC : DeclensionType  -- КОНЕЦ - сущ ru m ina 5*b
-    = \konec ->
-      let konec1 = removeMobileVowel konec in
+  declPEREC : DeclensionType  -- ПЕРЕЦ - сущ ru m ina 5*a   -- bad example. Has sptv = sdat
+    = \perec ->
+      let perec1 = removeMobileVowel perec in
       noMinorCases {
-        snom  = konec ;
-        pnom  = konec1 + "ы" ;
-        sgen  = konec1 + "а" ;
-        pgen  = konec1 + "ев" ;
-        sdat  = konec1 + "у" ;
-        pdat  = konec1 + "ам" ;
-        sacc  = konec ;
-        pacc  = konec1 + "ы" ;
-        sins  = konec1 + "ем" ;
-        pins  = konec1 + "ами" ;
-        sprep = konec1 + "е" ;
-        pprep = konec1 + "ах" ;
+        snom  = perec ;
+        pnom  = perec1 + "ы" ;
+        sgen  = perec1 + "а" ;
+        pgen  = perec1 + "ев" ;
+        sdat  = perec1 + "у" ;
+        pdat  = perec1 + "ам" ;
+        sacc  = perec ;
+        pacc  = perec1 + "ы" ;
+        sins  = perec1 + "ем" ;
+        pins  = perec1 + "ами" ;
+        sprep = perec1 + "е" ;
+        pprep = perec1 + "ах" ;
       g = Masc
   } ;
 
