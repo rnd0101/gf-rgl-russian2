@@ -1,4 +1,4 @@
-resource ResRus = ParamX ** open Prelude in {
+resource ResRus = ParamX ** open Prelude, ZaliznyakAlgo in {
 flags coding=utf8 ; optimize=all ;
 
 -- parameters
@@ -156,6 +156,11 @@ oper
       stem + "ь"                              => (declVIHR6 s) ** {g = Masc} ;
       stem                                    => (declSPOR s) ** {g = Masc}
     } ;
+
+
+  approxZaliznyakAlgoNounforms : Str -> Gender -> Animacy -> ZIndex -> NounForms
+    = \s, g, a, z -> (declPUT6 s) ** {g = Masc} ;  -- TODO
+
 
   noMinorCases : NounFormsBase -> NounForms
     = \base -> base ** {
