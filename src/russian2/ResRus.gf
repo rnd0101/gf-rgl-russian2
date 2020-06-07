@@ -44,6 +44,7 @@ param
 
 -- TODO: cleanup
 -- Declension forms depend on Case, Animacy , Gender:
+-- Also can be: "Adjective declension" - can be handled by adjective forms (?)
 -- "большие дома" - "больших домов" (big houses - big houses'),
 -- Animacy plays role only in the Accusative case (Masc Sg and Plural forms):
 -- Accusative Animate = Genetive, Accusaive Inanimate = Nominative
@@ -134,6 +135,12 @@ oper
   DeclensionType : Type = Str -> NounForms ;  -- тип склонения
 
   vowel_but_i : pattern Str = #("а"|"е"|"ё"|"о"|"у"|"ы"|"э"|"ю"|"я") ;
+
+  -- TODO:
+  --  - more cases can be identified with gender provided (right now automatic below is not good)
+  --  - and even more with Zaliznyak code (this gives eg where stress is put on stem or ending, etc)
+  --  - base step type (soft/hard) can help to describe in a more compact way
+  --  - animacy can influence acc sg/pl, those are gen sg/pl, and not nom-sg / pl
 
   guessNounForms : Str -> NounForms
     = \s -> case s of {
