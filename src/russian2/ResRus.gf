@@ -9,6 +9,8 @@ param
 
   -- For nouns:
 
+  -- Move to ParamRus
+
   Gender     = Masc | Fem | Neut ;  -- род
   -- Number  = Sg | Pl ;  -- число, from ParamX
   Case       = Nom | Gen | Dat | Acc | Ins | Pre  -- падеж, "малые падежи":
