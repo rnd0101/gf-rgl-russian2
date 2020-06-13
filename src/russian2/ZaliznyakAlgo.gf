@@ -20,7 +20,7 @@ oper
   -- example: ПЕРЕЦ: м 5*a  can be: Z 5 Ast A
   -- Later some interpretation function can be added for:  "5*a" -> Z 5 Ast A
 
-  EndingSpec : Type = Str | {p1, p2: Str} ;
+  EndingSpec : Type = {p1, p2: Str} ;
 
   NounEndForms : Type = {
     snom, sgen, sdat, sacc, sins, sprep,
@@ -72,7 +72,7 @@ oper
     } ;
 
   animacySelection : Gender -> Animacy -> DeclType -> NounEndForms -> NounEndForms
-    = \g, a, dt, nef ->  {
+    = \g, a, dt, nef -> nef ** {
        sacc = case <g, dt, a, nef.sacc> of {
          <Neut, (3 | 4 | 5 | 6 | 7 | 8), Animate, "?"> => nef.snom ;
          <_, _, Animate, "?"> => nef.sgen ;
@@ -93,7 +93,7 @@ oper
     = \g, a, dt, at, ss ->
     let gDtBased = gDtBasedSelection g dt in
     let gDtSsBased = gDtSsBasedSelection gDtBased ss in
-    gDtSsBased ** animacySelection gDtSsBased a
+    animacySelection gDtSsBased a
   ;
 
 
@@ -102,7 +102,7 @@ oper
     case <es, sness> of {
       <<v, v'>, Unstressed> => v ;
       <<v, v'>, Stressed> => v' ;
-      <s, _> => s
+      <<s>, _> => s
     } ;
 
   stressSelection : EndingSpec -> StressSchema -> NounEndForms
@@ -236,6 +236,4 @@ oper
         sprep=stressSelection nef1.sprep ss "sprep";
         pprep=stressSelection nef1.pprep ss "pprep"
     } ;
-
-
 }
