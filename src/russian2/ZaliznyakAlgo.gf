@@ -36,6 +36,10 @@ oper
     snom="";pnom="";sgen="";pgen="";sdat="";pdat="";sacc="";pacc="";sins="";pins="";sprep="";pprep=""
   } ;
 
+  immutableCasesS1 : NounEndFormsS1 = {
+    snom=<"","">;pnom=<"","">;sgen=<"","">;pgen=<"","">;sdat=<"","">;pdat=<"","">;sacc=<"","">;pacc=<"","">;sins=<"","">;pins=<"","">;sprep=<"","">;pprep=<"","">
+  } ;
+
   formsSelection : Str -> Gender -> Animacy -> ZIndex -> NounEndForms
     = \s, g, a, z ->
     case z of {
@@ -45,30 +49,31 @@ oper
 
   gDtBasedSelection : Gender -> DeclType -> NounEndFormsS1
     = \g, dt -> case <g, dt> of {
-      <Masc, 1> => {snom=<"">;pnom=<"ы">;sgen=<"а">;pgen=<"ов","ов">;sdat=<"у">;pdat=<"ам">;sacc=<"?">;pacc=<"?">;sins=<"ом","ом">;pins=<"ами">;sprep=<"е","е">;pprep=<"ах">} ;
-      <Masc, 2> => {snom=<"ь">;pnom=<"и">;sgen=<"я">;pgen=<"ей","ей">;sdat=<"ю">;pdat=<"ям">;sacc=<"?">;pacc=<"?">;sins=<"ем","ём">;pins=<"ями">;sprep=<"е","е">;pprep=<"ях">} ;
-      <Masc, 3> => {snom=<"">;pnom=<"и">;sgen=<"а">;pgen=<"ов","ов">;sdat=<"у">;pdat=<"ам">;sacc=<"?">;pacc=<"?">;sins=<"ом","ом">;pins=<"ами">;sprep=<"е","е">;pprep=<"ах">} ;
-      <Masc, 4> => {snom=<"">;pnom=<"и">;sgen=<"а">;pgen=<"ей","ей">;sdat=<"у">;pdat=<"ам">;sacc=<"?">;pacc=<"?">;sins=<"ем","ом">;pins=<"ами">;sprep=<"е","е">;pprep=<"ах">} ;
-      <Masc, 5> => {snom=<"">;pnom=<"ы">;sgen=<"а">;pgen=<"ев","ов">;sdat=<"у">;pdat=<"ам">;sacc=<"?">;pacc=<"?">;sins=<"ем","ом">;pins=<"ами">;sprep=<"е","е">;pprep=<"ах">} ;
-      <Masc, 6> => {snom=<"й">;pnom=<"и">;sgen=<"я">;pgen=<"ев","ёв">;sdat=<"ю">;pdat=<"ям">;sacc=<"?">;pacc=<"?">;sins=<"ем","ём">;pins=<"ями">;sprep=<"е","е">;pprep=<"ях">} ;
-      <Masc, 7> => {snom=<"й">;pnom=<"и">;sgen=<"я">;pgen=<"ев","ёв">;sdat=<"ю">;pdat=<"ям">;sacc=<"?">;pacc=<"?">;sins=<"ем","ём">;pins=<"ями">;sprep=<"и","е">;pprep=<"ях">} ;
-      <Masc, 8> => {snom=<"ь">;pnom=<"и">;sgen=<"и">;pgen=<"ей","ей">;sdat=<"и">;pdat=<"ям">;sacc=<"?">;pacc=<"?">;sins=<"ем","ём">;pins=<"ями">;sprep=<"и","и">;pprep=<"ях">} ;
-      <Fem, 1> => {snom=<"а">;pnom=<"ы">;sgen=<"ы">;pgen=<"","">;sdat=<"е">;pdat=<"ам">;sacc=<"у">;pacc=<"?">;sins=<"ой","ой">;pins=<"ами">;sprep=<"е","е">;pprep=<"ах">} ;
-      <Fem, 2> => {snom=<"я">;pnom=<"и">;sgen=<"и">;pgen=<"ь","ей">;sdat=<"е","е">;pdat=<"ям">;sacc=<"ю">;pacc=<"?">;sins=<"ей","ёй">;pins=<"ями">;sprep=<"е","е">;pprep=<"ях">} ;
-      <Fem, 3> => {snom=<"а">;pnom=<"и">;sgen=<"и">;pgen=<"","">;sdat=<"е">;pdat=<"ам">;sacc=<"у">;pacc=<"?">;sins=<"ой","ой">;pins=<"ами">;sprep=<"е","е">;pprep=<"ах">} ;
-      <Fem, 4> => {snom=<"а">;pnom=<"и">;sgen=<"и">;pgen=<"","ей">;sdat=<"е">;pdat=<"ам">;sacc=<"у">;pacc=<"?">;sins=<"ей","ой">;pins=<"ами">;sprep=<"е","е">;pprep=<"ах">} ;
-      <Fem, 5> => {snom=<"а">;pnom=<"ы">;sgen=<"ы">;pgen=<"","">;sdat=<"е">;pdat=<"ам">;sacc=<"у">;pacc=<"?">;sins=<"ей","ой">;pins=<"ами">;sprep=<"е","е">;pprep=<"ах">} ;
-      <Fem, 6> => {snom=<"я">;pnom=<"и">;sgen=<"и">;pgen=<"й","й">;sdat=<"е","е">;pdat=<"ям">;sacc=<"ю">;pacc=<"?">;sins=<"ей","ёй">;pins=<"ями">;sprep=<"е","е">;pprep=<"ях">} ;
-      <Fem, 7> => {snom=<"я">;pnom=<"и">;sgen=<"и">;pgen=<"й","й">;sdat=<"и","е">;pdat=<"ям">;sacc=<"ю">;pacc=<"?">;sins=<"ей","ёй">;pins=<"ями">;sprep=<"и","е">;pprep=<"ях">} ;
-      <Fem, 8> => {snom=<"ь">;pnom=<"и">;sgen=<"и">;pgen=<"ей","ей">;sdat=<"и","и">;pdat=<"ям">;sacc=<"ь">;pacc=<"?">;sins=<"ью","ью">;pins=<"ями">;sprep=<"и","и">;pprep=<"ях">} ;
-      <Neut, 1> => {snom=<"о","о">;pnom=<"а">;sgen=<"а">;pgen=<"","">;sdat=<"у">;pdat=<"ам">;sacc=<"?">;pacc=<"?">;sins=<"ом","ом">;pins=<"ами">;sprep=<"е","е">;pprep=<"ах">} ;
-      <Neut, 2> => {snom=<"е">;pnom=<"я">;sgen=<"я">;pgen=<"ь","ей">;sdat=<"ю">;pdat=<"ям">;sacc=<"?">;pacc=<"?">;sins=<"ем","ём">;pins=<"ями">;sprep=<"е","е">;pprep=<"ях">} ;
-      <Neut, 3> => {snom=<"о","о">;pnom=<"а">;sgen=<"а">;pgen=<"","">;sdat=<"у">;pdat=<"ам">;sacc=<"?">;pacc=<"?">;sins=<"ом","ом">;pins=<"ами">;sprep=<"е","е">;pprep=<"ах">} ;
-      <Neut, 4> => {snom=<"е","о">;pnom=<"а">;sgen=<"а">;pgen=<"","ей">;sdat=<"у">;pdat=<"ам">;sacc=<"?">;pacc=<"?">;sins=<"ем","ом">;pins=<"ами">;sprep=<"е","е">;pprep=<"ах">} ;
-      <Neut, 5> => {snom=<"е","о">;pnom=<"а">;sgen=<"а">;pgen=<"","">;sdat=<"у">;pdat=<"ам">;sacc=<"?">;pacc=<"?">;sins=<"ем","ом">;pins=<"ами">;sprep=<"е","е">;pprep=<"ах">} ;
-      <Neut, 6> => {snom=<"е">;pnom=<"я">;sgen=<"я">;pgen=<"й","й">;sdat=<"ю">;pdat=<"ям">;sacc=<"?">;pacc=<"?">;sins=<"ем","ём">;pins=<"ями">;sprep=<"е","е">;pprep=<"ях">} ;
-      <Neut, 7> => {snom=<"е">;pnom=<"я">;sgen=<"я">;pgen=<"й","й">;sdat=<"ю">;pdat=<"ям">;sacc=<"?">;pacc=<"?">;sins=<"ем","ём">;pins=<"ями">;sprep=<"и","е">;pprep=<"ях">} ;
-      <Neut, 8> => {snom=<"о","о">;pnom=<"а">;sgen=<"а">;pgen=<"","">;sdat=<"у">;pdat=<"ам">;sacc=<"?">;pacc=<"?">;sins=<"ом","ом">;pins=<"ами">;sprep=<"и","и">;pprep=<"ах">}
+      <_, 0> => immutableCasesS1 ;
+      <Masc, 1> => {snom=<"","">;pnom=<"ы","ы">;sgen=<"а","а">;pgen=<"ов","ов">;sdat=<"у","у">;pdat=<"ам","ам">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ом","ом">;pins=<"ами","ами">;sprep=<"е","е">;pprep=<"ах","ах">} ;
+      <Masc, 2> => {snom=<"ь","ь">;pnom=<"и","и">;sgen=<"я","я">;pgen=<"ей","ей">;sdat=<"ю","ю">;pdat=<"ям","ям">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ем","ём">;pins=<"ями","ями">;sprep=<"е","е">;pprep=<"ях","ях">} ;
+      <Masc, 3> => {snom=<"","">;pnom=<"и","и">;sgen=<"а","а">;pgen=<"ов","ов">;sdat=<"у","у">;pdat=<"ам","ам">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ом","ом">;pins=<"ами","ами">;sprep=<"е","е">;pprep=<"ах","ах">} ;
+      <Masc, 4> => {snom=<"","">;pnom=<"и","и">;sgen=<"а","а">;pgen=<"ей","ей">;sdat=<"у","у">;pdat=<"ам","ам">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ем","ом">;pins=<"ами","ами">;sprep=<"е","е">;pprep=<"ах","ах">} ;
+      <Masc, 5> => {snom=<"","">;pnom=<"ы","ы">;sgen=<"а","а">;pgen=<"ев","ов">;sdat=<"у","у">;pdat=<"ам","ам">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ем","ом">;pins=<"ами","ами">;sprep=<"е","е">;pprep=<"ах","ах">} ;
+      <Masc, 6> => {snom=<"й","й">;pnom=<"и","и">;sgen=<"я","я">;pgen=<"ев","ёв">;sdat=<"ю","ю">;pdat=<"ям","ям">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ем","ём">;pins=<"ями","ями">;sprep=<"е","е">;pprep=<"ях","ях">} ;
+      <Masc, 7> => {snom=<"й","й">;pnom=<"и","и">;sgen=<"я","я">;pgen=<"ев","ёв">;sdat=<"ю","ю">;pdat=<"ям","ям">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ем","ём">;pins=<"ями","ями">;sprep=<"и","е">;pprep=<"ях","ях">} ;
+      <Masc, 8> => {snom=<"ь","ь">;pnom=<"и","и">;sgen=<"и","и">;pgen=<"ей","ей">;sdat=<"и","и">;pdat=<"ям","ям">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ем","ём">;pins=<"ями","ями">;sprep=<"и","и">;pprep=<"ях","ях">} ;
+      <Fem, 1> => {snom=<"а","а">;pnom=<"ы","ы">;sgen=<"ы","ы">;pgen=<"","">;sdat=<"е","е">;pdat=<"ам","ам">;sacc=<"у","у">;pacc=<"?","?">;sins=<"ой","ой">;pins=<"ами","ами">;sprep=<"е","е">;pprep=<"ах","ах">} ;
+      <Fem, 2> => {snom=<"я","я">;pnom=<"и","и">;sgen=<"и","и">;pgen=<"ь","ей">;sdat=<"е","е">;pdat=<"ям","ям">;sacc=<"ю","ю">;pacc=<"?","?">;sins=<"ей","ёй">;pins=<"ями","ями">;sprep=<"е","е">;pprep=<"ях","ях">} ;
+      <Fem, 3> => {snom=<"а","а">;pnom=<"и","и">;sgen=<"и","и">;pgen=<"","">;sdat=<"е","е">;pdat=<"ам","ам">;sacc=<"у","у">;pacc=<"?","?">;sins=<"ой","ой">;pins=<"ами","ами">;sprep=<"е","е">;pprep=<"ах","ах">} ;
+      <Fem, 4> => {snom=<"а","а">;pnom=<"и","и">;sgen=<"и","и">;pgen=<"","ей">;sdat=<"е","е">;pdat=<"ам","ам">;sacc=<"у","у">;pacc=<"?","?">;sins=<"ей","ой">;pins=<"ами","ами">;sprep=<"е","е">;pprep=<"ах","ах">} ;
+      <Fem, 5> => {snom=<"а","а">;pnom=<"ы","ы">;sgen=<"ы","ы">;pgen=<"","">;sdat=<"е","е">;pdat=<"ам","ам">;sacc=<"у","у">;pacc=<"?","?">;sins=<"ей","ой">;pins=<"ами","ами">;sprep=<"е","е">;pprep=<"ах","ах">} ;
+      <Fem, 6> => {snom=<"я","я">;pnom=<"и","и">;sgen=<"и","и">;pgen=<"й","й">;sdat=<"е","е">;pdat=<"ям","ям">;sacc=<"ю","ю">;pacc=<"?","?">;sins=<"ей","ёй">;pins=<"ями","ями">;sprep=<"е","е">;pprep=<"ях","ях">} ;
+      <Fem, 7> => {snom=<"я","я">;pnom=<"и","и">;sgen=<"и","и">;pgen=<"й","й">;sdat=<"и","е">;pdat=<"ям","ям">;sacc=<"ю","ю">;pacc=<"?","?">;sins=<"ей","ёй">;pins=<"ями","ями">;sprep=<"и","е">;pprep=<"ях","ях">} ;
+      <Fem, 8> => {snom=<"ь","ь">;pnom=<"и","и">;sgen=<"и","и">;pgen=<"ей","ей">;sdat=<"и","и">;pdat=<"ям","ям">;sacc=<"ь","ь">;pacc=<"?","?">;sins=<"ью","ью">;pins=<"ями","ями">;sprep=<"и","и">;pprep=<"ях","ях">} ;
+      <Neut, 1> => {snom=<"о","о">;pnom=<"а","а">;sgen=<"а","а">;pgen=<"","">;sdat=<"у","у">;pdat=<"ам","ам">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ом","ом">;pins=<"ами","ами">;sprep=<"е","е">;pprep=<"ах","ах">} ;
+      <Neut, 2> => {snom=<"е","е">;pnom=<"я","я">;sgen=<"я","я">;pgen=<"ь","ей">;sdat=<"ю","ю">;pdat=<"ям","ям">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ем","ём">;pins=<"ями","ями">;sprep=<"е","е">;pprep=<"ях","ях">} ;
+      <Neut, 3> => {snom=<"о","о">;pnom=<"а","а">;sgen=<"а","а">;pgen=<"","">;sdat=<"у","у">;pdat=<"ам","ам">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ом","ом">;pins=<"ами","ами">;sprep=<"е","е">;pprep=<"ах","ах">} ;
+      <Neut, 4> => {snom=<"е","о">;pnom=<"а","а">;sgen=<"а","а">;pgen=<"","ей">;sdat=<"у","у">;pdat=<"ам","ам">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ем","ом">;pins=<"ами","ами">;sprep=<"е","е">;pprep=<"ах","ах">} ;
+      <Neut, 5> => {snom=<"е","о">;pnom=<"а","а">;sgen=<"а","а">;pgen=<"","">;sdat=<"у","у">;pdat=<"ам","ам">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ем","ом">;pins=<"ами","ами">;sprep=<"е","е">;pprep=<"ах","ах">} ;
+      <Neut, 6> => {snom=<"е","е">;pnom=<"я","я">;sgen=<"я","я">;pgen=<"й","й">;sdat=<"ю","ю">;pdat=<"ям","ям">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ем","ём">;pins=<"ями","ями">;sprep=<"е","е">;pprep=<"ях","ях">} ;
+      <Neut, 7> => {snom=<"е","е">;pnom=<"я","я">;sgen=<"я","я">;pgen=<"й","й">;sdat=<"ю","ю">;pdat=<"ям","ям">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ем","ём">;pins=<"ями","ями">;sprep=<"и","е">;pprep=<"ях","ях">} ;
+      <Neut, 8> => {snom=<"о","о">;pnom=<"а","а">;sgen=<"а","а">;pgen=<"","">;sdat=<"у","у">;pdat=<"ам","ам">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ом","ом">;pins=<"ами","ами">;sprep=<"и","и">;pprep=<"ах","ах">}
     } ;
 
   animacySelection : Gender -> Animacy -> DeclType -> NounEndForms -> NounEndForms
@@ -106,7 +111,7 @@ oper
       <<s>, _> => s
     } ;
 
-  stressSelection : EndingSpec -> StressSchema -> NounEndForms
+  stressSelection : EndingSpec -> StressSchema -> Str -> Str
     = \es, ss, c ->
     case <ss, c> of {
       <A, "snom"> => selStress es Unstressed ;
