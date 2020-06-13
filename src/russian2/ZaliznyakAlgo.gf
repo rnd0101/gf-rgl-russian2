@@ -22,6 +22,12 @@ oper
 
   EndingSpec : Type = {p1, p2: Str} ;
 
+  NounFormsBase : Type = {
+    snom, sgen, sdat, sacc, sins, sprep,
+    pnom, pgen, pdat, pacc, pins, pprep : Str ;
+    g : Gender
+  } ;
+
   NounEndForms : Type = {
     snom, sgen, sdat, sacc, sins, sprep,
     pnom, pgen, pdat, pacc, pins, pprep : Str ;
@@ -40,8 +46,25 @@ oper
     snom=<"","">;pnom=<"","">;sgen=<"","">;pgen=<"","">;sdat=<"","">;pdat=<"","">;sacc=<"","">;pacc=<"","">;sins=<"","">;pins=<"","">;sprep=<"","">;pprep=<"","">
   } ;
 
-  formsSelection : Str -> Gender -> Animacy -> ZIndex -> NounEndForms
+  makeNoun : Str -> Gender -> Animacy -> ZIndex -> NounEndForms
     = \s, g, a, z ->
+    let frm = formsSelection g a z in {
+      snom = s + frm.snom ;
+      pnom = s + frm.pnom ;
+      sgen = s + frm.sgen ;
+      pgen = s + frm.pgen ;
+      sdat = s + frm.sdat ;
+      pdat = s + frm.pdat ;
+      sacc = s + frm.sacc ;
+      pacc = s + frm.pacc ;
+      sins = s + frm.sins ;
+      pins = s + frm.pins ;
+      sprep= s + frm.sprep ;
+      pprep= s + frm.pprep
+    } ;
+
+  formsSelection : Gender -> Animacy -> ZIndex -> NounEndForms
+    = \g, a, z ->
     case z of {
       Z0 => immutableCases ;
       Z dt at ss => endingsSelection g a dt at ss
@@ -76,22 +99,27 @@ oper
       <Neut, 8> => {snom=<"о","о">;pnom=<"а","а">;sgen=<"а","а">;pgen=<"","">;sdat=<"у","у">;pdat=<"ам","ам">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ом","ом">;pins=<"ами","ами">;sprep=<"и","и">;pprep=<"ах","ах">}
     } ;
 
+  SgAcc : Gender -> Animacy -> DeclType -> NounEndForms -> Str
+    = \g, a, dt, nef -> case <g, dt, a, nef.sacc> of {
+      <Neut, (3 | 4 | 5 | 6 | 7 | 8), Animate, "?"> => nef.snom ;
+      <_, _, Animate, "?"> => nef.sgen ;
+      <_, _, Inanimate, "?"> => nef.snom ;
+      _ => nef.sacc
+    } ;
+
+  PlAcc : Gender -> Animacy -> DeclType -> NounEndForms -> Str
+    = \g, a, dt, nef -> case <g, dt, a> of {
+      <Neut, (5 | 7), Animate> => nef.pnom ;
+      <Neut, 6, Animate> => nef.pnom ;  -- does not exist
+      <_, _, Animate> => nef.pgen ;
+      <_, _, Inanimate> => nef.pnom ;
+      _ => nef.pacc
+    } ;
+
   animacySelection : Gender -> Animacy -> DeclType -> NounEndForms -> NounEndForms
-    = \g, a, dt, nef ->
-      nef ** {
-        sacc=case <g, dt, a, nef.sacc> of {
-          <Neut, (3 | 4 | 5 | 6 | 7 | 8), Animate, "?"> => nef.snom ;
-          <_, _, Animate, "?"> => nef.sgen ;
-          <_, _, Inanimate, "?"> => nef.snom ;
-          _ => nef.sacc
-        } ;
-        pacc=case <g, dt, a, nef.pacc> of {
-          <Neut, (5 | 7), Animate, "?"> => nef.pnom ;
-          <Neut, 6, Animate, "?"> => nef.pnom ;  -- does not exist
-          <_, _, Animate, "?"> => nef.pgen ;
-          <_, _, Inanimate, "?"> => nef.pnom ;
-          _ => nef.pacc
-        } ;
+    = \g, a, dt, nef -> nef ** {
+        sacc=SgAcc g a dt nef ;
+        pacc=PlAcc g a dt nef ;
         sins=nef.sins  -- TODO: there can be variants {}  ю in addition to й
     } ;
 
@@ -102,7 +130,6 @@ oper
     animacySelection g a dt gDtSsBased
   ;
 
-
   selStress : EndingSpec -> Stressedness -> Str
     = \es, sness ->
     case <es, sness> of {
@@ -110,6 +137,7 @@ oper
       <<v, v'>, Stressed> => v' ;
       <<s>, _> => s
     } ;
+
 
   stressSelection : EndingSpec -> StressSchema -> Str -> Str
     = \es, ss, c ->
