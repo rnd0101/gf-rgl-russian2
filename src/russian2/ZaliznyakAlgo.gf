@@ -72,21 +72,22 @@ oper
     } ;
 
   animacySelection : Gender -> Animacy -> DeclType -> NounEndForms -> NounEndForms
-    = \g, a, dt, nef -> nef ** {
-       sacc = case <g, dt, a, nef.sacc> of {
-         <Neut, (3 | 4 | 5 | 6 | 7 | 8), Animate, "?"> => nef.snom ;
-         <_, _, Animate, "?"> => nef.sgen ;
-         <_, _, Inanimate, "?"> => nef.snom ;
-         _ => {sacc=nef.sacc}
-       } ;
-       pacc = case <g, dt, a, nef.pacc> of {
-         <Neut, (5 | 7), Animate, "?"> => nef.pnom ;
-         <Neut, 6, Animate, "?"> => nef.pnom ;  -- does not exist
-         <_, _, Animate, "?"> => nef.pgen ;
-         <_, _, Inanimate, "?"> => nef.pnom ;
-         _ => {sacc=nef.pacc}
-       } ;
-       sins = nef.sins  -- TODO: there can be variants {}  ю in addition to й
+    = \g, a, dt, nef ->
+      nef ** {
+        sacc=case <g, dt, a, nef.sacc> of {
+          <Neut, (3 | 4 | 5 | 6 | 7 | 8), Animate, "?"> => nef.snom ;
+          <_, _, Animate, "?"> => nef.sgen ;
+          <_, _, Inanimate, "?"> => nef.snom ;
+          _ => nef.sacc
+        } ;
+        pacc=case <g, dt, a, nef.pacc> of {
+          <Neut, (5 | 7), Animate, "?"> => nef.pnom ;
+          <Neut, 6, Animate, "?"> => nef.pnom ;  -- does not exist
+          <_, _, Animate, "?"> => nef.pgen ;
+          <_, _, Inanimate, "?"> => nef.pnom ;
+          _ => nef.pacc
+        } ;
+        sins=nef.sins  -- TODO: there can be variants {}  ю in addition to й
     } ;
 
   endingsSelection : Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> NounEndForms
