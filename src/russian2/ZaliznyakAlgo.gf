@@ -99,7 +99,7 @@ oper
     = \g, a, dt, at, ss ->
     let gDtBased = gDtBasedSelection g dt in
     let gDtSsBased = gDtSsBasedSelection gDtBased ss in
-    animacySelection gDtSsBased a
+    animacySelection g a dt gDtSsBased
   ;
 
 
