@@ -25,10 +25,11 @@ oper
   NounFormsBase : Type = {
     snom, sgen, sdat, sacc, sins, sprep,
     pnom, pgen, pdat, pacc, pins, pprep : Str ;
-    g : Gender
+    g : Gender ;
+    a : Animacy
   } ;
 
-  NounEndForms : Type = {
+  NounEndForms, StemForms : Type = {
     snom, sgen, sdat, sacc, sins, sprep,
     pnom, pgen, pdat, pacc, pins, pprep : Str ;
   } ;
@@ -46,22 +47,72 @@ oper
     snom=<"","">;pnom=<"","">;sgen=<"","">;pgen=<"","">;sdat=<"","">;pdat=<"","">;sacc=<"","">;pacc=<"","">;sins=<"","">;pins=<"","">;sprep=<"","">;pprep=<"","">
   } ;
 
-  makeNoun : Str -> Gender -> Animacy -> ZIndex -> NounEndForms
-    = \s, g, a, z ->
-    let frm = formsSelection g a z in {
-      snom = s + frm.snom ;
-      pnom = s + frm.pnom ;
-      sgen = s + frm.sgen ;
-      pgen = s + frm.pgen ;
-      sdat = s + frm.sdat ;
-      pdat = s + frm.pdat ;
-      sacc = s + frm.sacc ;
-      pacc = s + frm.pacc ;
-      sins = s + frm.sins ;
-      pins = s + frm.pins ;
-      sprep= s + frm.sprep ;
-      pprep= s + frm.pprep
+  alterStems : Str -> Gender -> DeclType -> StressSchema -> StemForms
+    = \s, g, dt, ss -> {
+      snom = s;
+      pnom = s;
+      sgen = s;
+      pgen = (Predef.tk 1 s) + "и";
+      sdat = s;
+      pdat = s;
+      sacc = s;
+      pacc = s;
+      sins = s;
+      pins = s;
+      sprep= s ;
+      pprep= s ;
     } ;
+
+  stemsAndEndings : StemForms -> NounEndForms -> StemForms
+    = \sf, nef -> {
+      snom = sf.snom  + nef.snom ;
+      pnom = sf.pnom  + nef.pnom ;
+      sgen = sf.sgen  + nef.sgen ;
+      pgen = sf.pgen  + nef.pgen ;
+      sdat = sf.sdat  + nef.sdat ;
+      pdat = sf.pdat  + nef.pdat ;
+      sacc = sf.sacc  + nef.sacc ;
+      pacc = sf.pacc  + nef.pacc ;
+      sins = sf.sins  + nef.sins ;
+      pins = sf.pins  + nef.pins ;
+      sprep= sf.sprep + nef.sprep ;
+      pprep= sf.pprep + nef.pprep ;
+    } ;
+
+  doAlternations : Str -> NounEndForms -> Gender -> Animacy -> DeclType -> StressSchema -> NounFormsBase
+    = \s, nef, g, a, dt, ss ->
+       let stemforms = alterStems s g dt ss in
+       (stemsAndEndings stemforms nef) ** {g=g; a=a} ;
+
+  alterForms : Str -> NounEndForms -> Gender -> Animacy -> ZIndex -> NounFormsBase
+    = \s, nef, g, a, z ->
+      case z of {
+        Z0 => immutableCases ** {g=g; a=a} ;
+        Z dt at ss => case at of {
+          Ast => doAlternations s nef g a dt ss ;
+          _ => {
+            snom = s + nef.snom ;
+            pnom = s + nef.pnom ;
+            sgen = s + nef.sgen ;
+            pgen = s + nef.pgen ;
+            sdat = s + nef.sdat ;
+            pdat = s + nef.pdat ;
+            sacc = s + nef.sacc ;
+            pacc = s + nef.pacc ;
+            sins = s + nef.sins ;
+            pins = s + nef.pins ;
+            sprep= s + nef.sprep ;
+            pprep= s + nef.pprep ;
+            g=g ;
+            a=a
+          }
+      }
+    } ;
+
+  makeNoun : Str -> Gender -> Animacy -> ZIndex -> NounFormsBase
+    = \s, g, a, z ->
+    let frm = formsSelection g a z in
+    alterForms s frm g a z;
 
   formsSelection : Gender -> Animacy -> ZIndex -> NounEndForms
     = \g, a, z ->
