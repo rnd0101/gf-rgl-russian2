@@ -78,14 +78,18 @@ oper
       let stemEnd1 = Predef.dp 1 s in
       let pgenStressed = stressTable ss "pgen" in
       case <dt, pgenStressed, s> of {
-        <6, Stressed, _>  => (Predef.tk 1 s) + "е" ;
-        <6, _, _>                        => (Predef.tk 1 s) + "и" ;
+        <6, Stressed, _>  => stem1 + "е" ;
+        <6, _, _>         => stem1 + "и" ;
         <5, _, _ + ("ь"|"й") + #consonant> => stem2 + "е" ;
         <3, _, _ + ("й" |"ж"|"ц"|"ч"|"ш"|"щ") + #consonant> => stem2 + "е" + stemEnd1 ;
         <3, _, _ + #consonant> => stem1 + "о" + stemEnd1 ;  -- ^жшчщц
+        <1, Stressed, _ + ("ь"|"й") + #consonant> => stem2 + "ё" + stemEnd1 ;
+        <1, _, _ + ("ь"|"й") + #consonant> => stem2 + "е" + stemEnd1 ;
         <_, Unstressed, _ + ("ь"|"й") + #consonant> => stem2 + "е" ;
         <_, _, _ + ("ь"|"й") + #consonant> => stem2 + "ё" ;
         <_, _, _ + ("г"|"к"|"х") + #consonant> => stem1 + "о" + stemEnd1 ;
+        <2, Unstressed, _ + "н"> => stem1 + "е" + stemEnd1 ;
+        <1|2, Unstressed, _> => stem1 + "е" + stemEnd1 ;
         <5, _, _>                              => stem1 + "е" + stemEnd1 ;
         <_, Stressed, _ + ("ж"|"ч"|"ш"|"щ") + #consonant> => stem1 + "о" + stemEnd1 ; -- shorted stem?
         <_, Stressed, _> => stem1 + "ё" + stemEnd1 ; -- shorted stem?
