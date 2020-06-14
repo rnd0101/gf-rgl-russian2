@@ -71,29 +71,30 @@ oper
       pprep= s + nef.pprep ;
     } ;
 
-  PlGenAlter : Str -> DeclType -> StressSchema -> Str
-   = \s, dt, ss ->
+  PlGenAlter : Str -> Str -> DeclType -> StressSchema -> Str
+   = \s, end, dt, ss ->
       let stem1 = Predef.tk 1 s in
       let stem2 = Predef.tk 2 s in
       let stemEnd1 = Predef.dp 1 s in
       let pgenStressed = stressTable ss "pgen" in
       case <dt, pgenStressed, s> of {
-        <6, Stressed, _>  => stem1 + "е" ;
-        <6, _, _>         => stem1 + "и" ;
-        <5, _, _ + ("ь"|"й") + #consonant> => stem2 + "е" ;
-        <3, _, _ + ("й" |"ж"|"ц"|"ч"|"ш"|"щ") + #consonant> => stem2 + "е" + stemEnd1 ;
-        <3, _, _ + #consonant> => stem1 + "о" + stemEnd1 ;  -- ^жшчщц
-        <1, Stressed, _ + ("ь"|"й") + #consonant> => stem2 + "ё" + stemEnd1 ;
-        <1, _, _ + ("ь"|"й") + #consonant> => stem2 + "е" + stemEnd1 ;
-        <_, Unstressed, _ + ("ь"|"й") + #consonant> => stem2 + "е" ;
-        <_, _, _ + ("ь"|"й") + #consonant> => stem2 + "ё" ;
-        <_, _, _ + ("г"|"к"|"х") + #consonant> => stem1 + "о" + stemEnd1 ;
-        <2, Unstressed, _ + "н"> => stem1 + "е" + stemEnd1 ;
-        <1|2, Unstressed, _> => stem1 + "е" + stemEnd1 ;
-        <5, _, _>                              => stem1 + "е" + stemEnd1 ;
-        <_, Stressed, _ + ("ж"|"ч"|"ш"|"щ") + #consonant> => stem1 + "о" + stemEnd1 ; -- shorted stem?
-        <_, Stressed, _> => stem1 + "ё" + stemEnd1 ; -- shorted stem?
-        _ => s + "?!"
+        <6, Stressed, _>  => stem1 + "е" + end;
+        <6, _, _>         => stem1 + "и" + end;
+        <5, _, _ + ("ь"|"й") + #consonant> => stem2 + "е" + end;
+        <3, _, _ + ("й" |"ж"|"ц"|"ч"|"ш"|"щ") + #consonant> => stem2 + "е" + stemEnd1 + end;
+        <3, _, _ + #consonant> => stem1 + "о" + stemEnd1 + end ;  -- ^жшчщц
+        <1, Stressed, _ + ("ь"|"й") + #consonant> => stem2 + "ё" + stemEnd1 + end ;
+        <1, _, _ + ("ь"|"й") + #consonant> => stem2 + "е" + stemEnd1 + end ;
+        <_, Unstressed, _ + ("ь"|"й") + #consonant> => stem2 + "е" + end ;
+        <_, _, _ + ("ь"|"й") + #consonant> => stem2 + "ё!" + end ;
+        <_, _, _ + ("г"|"к"|"х") + #consonant> => stem1 + "о" + stemEnd1 + end ;
+        <2, Unstressed, _ + "н"> => stem1 + "е" + stemEnd1 + (case end of {"ь"=>"";_=>end}) ; -- ????? песня - песен//ь
+        <2, Stressed, _ + "н"> => s + "ё" + (Predef.dp 1 end) ;
+        <1|2, Unstressed, _> => stem1 + "е" + stemEnd1 + end;
+        <5, _, _>            => stem1 + "е" + stemEnd1 + end ;
+        <_, Stressed, _ + ("ж"|"ч"|"ш"|"щ") + #consonant> => stem1 + "о" + stemEnd1 + end ; -- shorted stem?
+        <_, Stressed, _> => stem1 + "ё" + stemEnd1 + end ; -- shorted stem?
+        _ => s + end + "?!"
    } ;
 
   mobileTwo : Str -> NounEndForms -> DeclType -> StressSchema -> StemForms
@@ -101,7 +102,7 @@ oper
       snom = s + nef.snom;
       pnom = s + nef.pnom;
       sgen = s + nef.sgen;
-      pgen = (PlGenAlter s dt ss) + nef.pgen ;
+      pgen = PlGenAlter s nef.pgen dt ss ;
       sdat = s + nef.sdat ;
       pdat = s + nef.pdat ;
       sacc = s + nef.sacc ;
