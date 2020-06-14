@@ -171,11 +171,11 @@ oper
     = \s, g, a, dt, at, ss ->
       let nef = endingsSelection g a dt at ss in
       let alternated = alterForms s nef g a dt at ss in
-      animacySelection dt alternated
+      animacySelection dt alternated nef
     ;
 
-  SgAcc : Gender -> Animacy -> DeclType -> NounFormsBase -> Str
-    = \g, a, dt, frm -> case <g, dt, a, frm.sacc> of {
+  SgAcc : Gender -> Animacy -> DeclType -> NounFormsBase -> Str -> Str
+    = \g, a, dt, frm, sacc -> case <g, dt, a, sacc> of {
       <Neut, (3 | 4 | 5 | 6 | 7 | 8), Animate, "?"> => frm.snom ;
       <_, _, Animate, "?"> => frm.sgen ;
       <_, _, Inanimate, "?"> => frm.snom ;
@@ -191,9 +191,9 @@ oper
       _ => frm.pacc
     } ;
 
-  animacySelection : DeclType -> NounFormsBase -> NounFormsBase
-    = \dt, frm -> frm ** {
-        sacc=SgAcc frm.g frm.a dt frm ;
+  animacySelection : DeclType -> NounFormsBase -> NounEndForms -> NounFormsBase
+    = \dt, frm, nef -> frm ** {
+        sacc=SgAcc frm.g frm.a dt frm nef.sacc;
         pacc=PlAcc frm.g frm.a dt frm ;
         sins=frm.sins  -- TODO: there can be variants {}  ю in addition to й
     } ;
