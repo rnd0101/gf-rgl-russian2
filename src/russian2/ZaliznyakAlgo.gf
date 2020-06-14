@@ -12,6 +12,8 @@ param
 
 oper
 
+  consonants : pattern Str = #("б"|"в"|"г"|"д"|"ж"|"з"|"й"|"к"|"л"|"м"|"н"|"п"|"р"|"с"|"т"|"ф"|"х"|"ц"|"ч"|"ш"|"щ") ;
+
   -- This correspond to the abbreviated Zaliznyak index for nouns.
   -- Complete index contains a lot of additions.
 
@@ -47,12 +49,12 @@ oper
     snom=<"","">;pnom=<"","">;sgen=<"","">;pgen=<"","">;sdat=<"","">;pdat=<"","">;sacc=<"","">;pacc=<"","">;sins=<"","">;pins=<"","">;sprep=<"","">;pprep=<"","">
   } ;
 
-  alterStems : Str -> Gender -> DeclType -> StressSchema -> StemForms
-    = \s, g, dt, ss -> {
+  mobileOne : Str -> DeclType -> StressSchema -> StemForms
+   = \s, dt, ss -> {  -- TODO
       snom = s;
       pnom = s;
       sgen = s;
-      pgen = (Predef.tk 1 s) + "и";
+      pgen = s;
       sdat = s;
       pdat = s;
       sacc = s;
@@ -62,6 +64,50 @@ oper
       sprep= s ;
       pprep= s ;
     } ;
+
+  PlGenAlter : Str -> DeclType -> StressSchema -> Str
+   = \s, dt, ss ->
+      let stem1 = Predef.tk 1 s in
+      let stem2 = Predef.tk 1 s in
+      let stemEnd1 = Predef.dp 1 s in
+      case <dt, ss, s> of {
+        <6, B | B' | C | E | F | F', _>  => (Predef.tk 1 s) + "е" ;
+        <6, _, _>                        => (Predef.tk 1 s) + "и" ;
+        <5, _, s1 + ("ь"|"й") + consonant> => s1 + "е" ;
+        <_, A | D | D', s1 + ("ь"|"й") + consonant> => s1 + "е" ;
+        <_, _, s1 + ("ь"|"й") + consonant> => s1 + "ё" ;
+        <_, _, s1 + ("г"|"к"|"х") + consonant> => stem1 + "о" + stemEnd1 ;
+        <5, _, _>                              => stem1 + "е" + stemEnd1 ;
+    --    <3, _, s1 + prev + consonant> => s1 + "о" ;  -- ^жшчщц
+        <_, B | B' | C | E | F | F', s1 + ("ж"|"ч"|"ш"|"щ") + consonant> => stem1 + "о" + stemEnd1 ; -- shorted stem?
+        <_, B | B' | C | E | F | F', _> => stem1 + "ё" + stemEnd1 ; -- shorted stem?
+        _ => s
+   } ;
+-- 'b', 'c', 'e', 'f', "f'", "b'"
+  mobileTwo : Str -> DeclType -> StressSchema -> StemForms
+   = \s, dt, ss -> {
+      snom = s ;
+      pnom = s ;
+      sgen = s ;
+      pgen = PlGenAlter s dt ss ;
+      sdat = s ;
+      pdat = s ;
+      sacc = s ;
+      pacc = s ;
+      sins = s ;
+      pins = s ;
+      sprep= s ;
+      pprep= s ;
+    } ;
+
+  alterStems : Str -> Gender -> DeclType -> StressSchema -> StemForms
+    = \s, g, dt, ss ->
+      case <g, dt> of {
+        <Masc, _> => mobileOne s dt ss;
+        <Neut, _> => mobileTwo s dt ss;
+        <Fem, 8> => mobileOne s dt ss;
+        <Fem, _> => mobileTwo s dt ss
+      } ;
 
   stemsAndEndings : StemForms -> NounEndForms -> StemForms
     = \sf, nef -> {
