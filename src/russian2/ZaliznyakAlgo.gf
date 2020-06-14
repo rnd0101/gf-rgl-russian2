@@ -13,6 +13,7 @@ param
 oper
 
   consonant : pattern Str = #("б"|"в"|"г"|"д"|"ж"|"з"|"й"|"к"|"л"|"м"|"н"|"п"|"р"|"с"|"т"|"ф"|"х"|"ц"|"ч"|"ш"|"щ") ;
+  vowel : pattern Str = #("а"|"е"|"ё"|"и"|"о"|"у"|"ы"|"э"|"ю"|"я") ;
 
   -- This correspond to the abbreviated Zaliznyak index for nouns.
   -- Complete index contains a lot of additions.
@@ -56,7 +57,13 @@ oper
   } ;
 
   mobileOne : Str -> NounEndForms -> DeclType -> StressSchema -> StemForms
-   = \s, nef, dt, ss -> {  -- TODO
+   = \s, nef, dt, ss ->
+     let secondLast = Predef.dp 1 (Predef.tk 1 s) in
+     let mletter : Str = case s of {
+       _ + #vowel + #consonant => secondLast ;  -- what if more than one consonant or sign?
+       _ => ""
+     } in
+     {  -- TODO
       snom = s + nef.snom ;
       pnom = s + nef.pnom ;
       sgen = s + nef.sgen ;
@@ -86,7 +93,7 @@ oper
         <1, Stressed, _ + ("ь"|"й") + #consonant> => stem2 + "ё" + stemEnd1 + end ;
         <1, _, _ + ("ь"|"й") + #consonant> => stem2 + "е" + stemEnd1 + end ;
         <_, Unstressed, _ + ("ь"|"й") + #consonant> => stem2 + "е" + end ;
-        <_, _, _ + ("ь"|"й") + #consonant> => stem2 + "ё!" + end ;
+        <_, _, _ + ("ь"|"й") + #consonant> => stem2 + "ё" + end ;
         <_, _, _ + ("г"|"к"|"х") + #consonant> => stem1 + "о" + stemEnd1 + end ;
         <2, Unstressed, _ + "н"> => stem1 + "е" + stemEnd1 + (case end of {"ь"=>"";_=>end}) ; -- ????? песня - песен//ь
         <2, Stressed, _ + "н"> => s + "ё" + (Predef.dp 1 end) ;
