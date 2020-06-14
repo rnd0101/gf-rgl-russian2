@@ -70,20 +70,21 @@ oper
       let stem1 = Predef.tk 1 s in
       let stem2 = Predef.tk 1 s in
       let stemEnd1 = Predef.dp 1 s in
-      case <dt, ss, s> of {
-        <6, B | B' | C | E | F | F', _>  => (Predef.tk 1 s) + "е" ;
+      let pgenStressed = stressTable ss "pgen" in
+      case <dt, pgenStressed, s> of {
+        <6, Stressed, _>  => (Predef.tk 1 s) + "е" ;
         <6, _, _>                        => (Predef.tk 1 s) + "и" ;
         <5, _, s1 + ("ь"|"й") + consonant> => s1 + "е" ;
-        <_, A | D | D', s1 + ("ь"|"й") + consonant> => s1 + "е" ;
+        <_, Unstressed, s1 + ("ь"|"й") + consonant> => s1 + "е" ;
         <_, _, s1 + ("ь"|"й") + consonant> => s1 + "ё" ;
         <_, _, s1 + ("г"|"к"|"х") + consonant> => stem1 + "о" + stemEnd1 ;
         <5, _, _>                              => stem1 + "е" + stemEnd1 ;
     --    <3, _, s1 + prev + consonant> => s1 + "о" ;  -- ^жшчщц
-        <_, B | B' | C | E | F | F', s1 + ("ж"|"ч"|"ш"|"щ") + consonant> => stem1 + "о" + stemEnd1 ; -- shorted stem?
-        <_, B | B' | C | E | F | F', _> => stem1 + "ё" + stemEnd1 ; -- shorted stem?
+        <_, Stressed, s1 + ("ж"|"ч"|"ш"|"щ") + consonant> => stem1 + "о" + stemEnd1 ; -- shorted stem?
+        <_, Stressed, _> => stem1 + "ё" + stemEnd1 ; -- shorted stem?
         _ => s
    } ;
--- 'b', 'c', 'e', 'f', "f'", "b'"
+
   mobileTwo : Str -> DeclType -> StressSchema -> StemForms
    = \s, dt, ss -> {
       snom = s ;
@@ -206,7 +207,6 @@ oper
       <<s>, _> => s
     } ;
 
-
   gDtSsBasedSelection : NounEndFormsS1 -> StressSchema -> NounEndForms
     = \nef1, ss ->
       {
@@ -226,117 +226,21 @@ oper
 
   stressSelection : EndingSpec -> StressSchema -> Str -> Str
     = \es, ss, c ->
+    selStress es (stressTable ss c) ;
+
+  stressTable : StressSchema -> Str -> Stressedness
+    = \ss, c ->
     case <ss, c> of {
-      <A, "snom"> => selStress es Unstressed ;
-      <A, "sgen"> => selStress es Unstressed ;
-      <A, "sdat"> => selStress es Unstressed ;
-      <A, "sacc"> => selStress es Unstressed ;
-      <A, "sins"> => selStress es Unstressed ;
-      <A, "sprep"> => selStress es Unstressed ;
-      <A, "pnom"> => selStress es Unstressed ;
-      <A, "pgen"> => selStress es Unstressed ;
-      <A, "pdat"> => selStress es Unstressed ;
-      <A, "pins"> => selStress es Unstressed ;
-      <A, "pprep"> => selStress es Unstressed ;
-      <B, "snom"> => selStress es Stressed ;
-      <B, "sgen"> => selStress es Stressed ;
-      <B, "sdat"> => selStress es Stressed ;
-      <B, "sacc"> => selStress es Stressed ;
-      <B, "sins"> => selStress es Stressed ;
-      <B, "sprep"> => selStress es Stressed ;
-      <B, "pnom"> => selStress es Stressed ;
-      <B, "pgen"> => selStress es Stressed ;
-      <B, "pdat"> => selStress es Stressed ;
-      <B, "pins"> => selStress es Stressed ;
-      <B, "pprep"> => selStress es Stressed ;
-      <C, "snom"> => selStress es Unstressed ;
-      <C, "sgen"> => selStress es Unstressed ;
-      <C, "sdat"> => selStress es Unstressed ;
-      <C, "sacc"> => selStress es Unstressed ;
-      <C, "sins"> => selStress es Unstressed ;
-      <C, "sprep"> => selStress es Unstressed ;
-      <C, "pnom"> => selStress es Stressed ;
-      <C, "pgen"> => selStress es Stressed ;
-      <C, "pdat"> => selStress es Stressed ;
-      <C, "pins"> => selStress es Stressed ;
-      <C, "pprep"> => selStress es Stressed ;
-      <D, "snom"> => selStress es Stressed ;
-      <D, "sgen"> => selStress es Stressed ;
-      <D, "sdat"> => selStress es Stressed ;
-      <D, "sacc"> => selStress es Stressed ;
-      <D, "sins"> => selStress es Stressed ;
-      <D, "sprep"> => selStress es Stressed ;
-      <D, "pnom"> => selStress es Unstressed ;
-      <D, "pgen"> => selStress es Unstressed ;
-      <D, "pdat"> => selStress es Unstressed ;
-      <D, "pins"> => selStress es Unstressed ;
-      <D, "pprep"> => selStress es Unstressed ;
-      <E, "snom"> => selStress es Unstressed ;
-      <E, "sgen"> => selStress es Unstressed ;
-      <E, "sdat"> => selStress es Unstressed ;
-      <E, "sacc"> => selStress es Unstressed ;
-      <E, "sins"> => selStress es Unstressed ;
-      <E, "sprep"> => selStress es Unstressed ;
-      <E, "pnom"> => selStress es Unstressed ;
-      <E, "pgen"> => selStress es Stressed ;
-      <E, "pdat"> => selStress es Stressed ;
-      <E, "pins"> => selStress es Stressed ;
-      <E, "pprep"> => selStress es Stressed ;
-      <F, "snom"> => selStress es Stressed ;
-      <F, "sgen"> => selStress es Stressed ;
-      <F, "sdat"> => selStress es Stressed ;
-      <F, "sacc"> => selStress es Stressed ;
-      <F, "sins"> => selStress es Stressed ;
-      <F, "sprep"> => selStress es Stressed ;
-      <F, "pnom"> => selStress es Unstressed ;
-      <F, "pgen"> => selStress es Stressed ;
-      <F, "pdat"> => selStress es Stressed ;
-      <F, "pins"> => selStress es Stressed ;
-      <F, "pprep"> => selStress es Stressed ;
-      <B', "snom"> => selStress es Stressed ;
-      <B', "sgen"> => selStress es Stressed ;
-      <B', "sdat"> => selStress es Stressed ;
-      <B', "sacc"> => selStress es Stressed ;
-      <B', "sins"> => selStress es Unstressed ;
-      <B', "sprep"> => selStress es Stressed ;
-      <B', "pnom"> => selStress es Stressed ;
-      <B', "pgen"> => selStress es Stressed ;
-      <B', "pdat"> => selStress es Stressed ;
-      <B', "pins"> => selStress es Stressed ;
-      <B', "pprep"> => selStress es Stressed ;
-      <D', "snom"> => selStress es Stressed ;
-      <D', "sgen"> => selStress es Stressed ;
-      <D', "sdat"> => selStress es Stressed ;
-      <D', "sacc"> => selStress es Unstressed ;
-      <D', "sins"> => selStress es Stressed ;
-      <D', "sprep"> => selStress es Stressed ;
-      <D', "pnom"> => selStress es Unstressed ;
-      <D', "pgen"> => selStress es Unstressed ;
-      <D', "pdat"> => selStress es Unstressed ;
-      <D', "pins"> => selStress es Unstressed ;
-      <D', "pprep"> => selStress es Unstressed ;
-      <F', "snom"> => selStress es Stressed ;
-      <F', "sgen"> => selStress es Stressed ;
-      <F', "sdat"> => selStress es Stressed ;
-      <F', "sacc"> => selStress es Unstressed ;
-      <F', "sins"> => selStress es Stressed ;
-      <F', "sprep"> => selStress es Stressed ;
-      <F', "pnom"> => selStress es Unstressed ;
-      <F', "pgen"> => selStress es Stressed ;
-      <F', "pdat"> => selStress es Stressed ;
-      <F', "pins"> => selStress es Stressed ;
-      <F', "pprep"> => selStress es Stressed ;
-      <F'', "snom"> => selStress es Stressed ;
-      <F'', "sgen"> => selStress es Stressed ;
-      <F'', "sdat"> => selStress es Stressed ;
-      <F'', "sacc"> => selStress es Stressed ;
-      <F'', "sins"> => selStress es Unstressed ;
-      <F'', "sprep"> => selStress es Stressed ;
-      <F'', "pnom"> => selStress es Unstressed ;
-      <F'', "pgen"> => selStress es Stressed ;
-      <F'', "pdat"> => selStress es Stressed ;
-      <F'', "pins"> => selStress es Stressed ;
-      <F'', "pprep"> => selStress es Stressed
+      <B, "snom"|"sgen"|"sdat"|"sacc"|"sins"|"sprep"|"pnom"|"pgen"|"pdat"|"pins"|"pprep"> => Stressed ;
+      <C, "pnom"|"pgen"|"pdat"|"pins"|"pprep"> => Stressed ;
+      <D, "snom"|"sgen"|"sdat"|"sacc"|"sins"|"sprep"> => Stressed ;
+      <E, "pgen"|"pdat"|"pins"|"pprep"> => Stressed ;
+      <F, "snom"|"sgen"|"sdat"|"sacc"|"sins"|"sprep"|"pgen"|"pdat"|"pins"|"pprep"> => Stressed ;
+      <B', "snom"|"sgen"|"sdat"|"sacc"|"sprep"|"pnom"|"pgen"|"pdat"|"pins"|"pprep"> => Stressed ;
+      <D', "snom"|"sgen"|"sdat"|"sins"|"sprep"> => Stressed ;
+      <F', "snom"|"sgen"|"sdat"|"sins"|"sprep"|"pgen"|"pdat"|"pins"|"pprep"> => Stressed ;
+      <F'', "snom"|"sgen"|"sdat"|"sacc"|"sprep"|"pgen"|"pdat"|"pins"|"pprep"> => Stressed ;
+      <_, _> => Unstressed
     } ;
 
   gDtBasedSelection : Gender -> DeclType -> NounEndFormsS1
