@@ -68,21 +68,22 @@ oper
   PlGenAlter : Str -> DeclType -> StressSchema -> Str
    = \s, dt, ss ->
       let stem1 = Predef.tk 1 s in
-      let stem2 = Predef.tk 1 s in
+      let stem2 = Predef.tk 2 s in
       let stemEnd1 = Predef.dp 1 s in
       let pgenStressed = stressTable ss "pgen" in
       case <dt, pgenStressed, s> of {
         <6, Stressed, _>  => (Predef.tk 1 s) + "е" ;
         <6, _, _>                        => (Predef.tk 1 s) + "и" ;
-        <5, _, s1 + ("ь"|"й") + consonant> => s1 + "е" ;
-        <_, Unstressed, s1 + ("ь"|"й") + consonant> => s1 + "е" ;
-        <_, _, s1 + ("ь"|"й") + consonant> => s1 + "ё" ;
-        <_, _, s1 + ("г"|"к"|"х") + consonant> => stem1 + "о" + stemEnd1 ;
+        <5, _, _ + ("ь"|"й") + #consonant> => stem2 + "е" ;
+        <_, Unstressed, _ + ("ь"|"й") + #consonant> => stem2 + "е" ;
+        <_, _, _ + ("ь"|"й") + #consonant> => stem2 + "ё" ;
+        <3, _, _ + ("ж"|"ц"|"ч"|"ш"|"щ") + #consonant> => stem1 + "е" + stemEnd1 ;
+        <3, _, _ + #consonant> => stem1 + "о" + stemEnd1 ;  -- ^жшчщц
+        <_, _, _ + ("г"|"к"|"х") + #consonant> => stem1 + "о" + stemEnd1 ;
         <5, _, _>                              => stem1 + "е" + stemEnd1 ;
-    --    <3, _, s1 + prev + consonant> => s1 + "о" ;  -- ^жшчщц
-        <_, Stressed, s1 + ("ж"|"ч"|"ш"|"щ") + consonant> => stem1 + "о" + stemEnd1 ; -- shorted stem?
+        <_, Stressed, _ + ("ж"|"ч"|"ш"|"щ") + #consonant> => stem1 + "о" + stemEnd1 ; -- shorted stem?
         <_, Stressed, _> => stem1 + "ё" + stemEnd1 ; -- shorted stem?
-        _ => s
+        _ => s + "?"
    } ;
 
   mobileTwo : Str -> DeclType -> StressSchema -> StemForms
