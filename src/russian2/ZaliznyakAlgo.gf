@@ -55,20 +55,20 @@ oper
     snom=<"","">;pnom=<"","">;sgen=<"","">;pgen=<"","">;sdat=<"","">;pdat=<"","">;sacc=<"","">;pacc=<"","">;sins=<"","">;pins=<"","">;sprep=<"","">;pprep=<"","">
   } ;
 
-  mobileOne : Str -> DeclType -> StressSchema -> StemForms
-   = \s, dt, ss -> {  -- TODO
-      snom = s;
-      pnom = s;
-      sgen = s;
-      pgen = s;
-      sdat = s;
-      pdat = s;
-      sacc = s;
-      pacc = s;
-      sins = s;
-      pins = s;
-      sprep= s ;
-      pprep= s ;
+  mobileOne : Str -> NounEndForms -> DeclType -> StressSchema -> StemForms
+   = \s, nef, dt, ss -> {  -- TODO
+      snom = s + nef.snom ;
+      pnom = s + nef.pnom ;
+      sgen = s + nef.sgen ;
+      pgen = s + nef.pgen ;
+      sdat = s + nef.sdat ;
+      pdat = s + nef.pdat ;
+      sacc = s + nef.sacc ;
+      pacc = s + nef.pacc ;
+      sins = s + nef.sins ;
+      pins = s + nef.pins ;
+      sprep= s + nef.sprep ;
+      pprep= s + nef.pprep ;
     } ;
 
   PlGenAlter : Str -> DeclType -> StressSchema -> Str
@@ -96,51 +96,34 @@ oper
         _ => s + "?!"
    } ;
 
-  mobileTwo : Str -> DeclType -> StressSchema -> StemForms
-   = \s, dt, ss -> {
-      snom = s ;
-      pnom = s ;
-      sgen = s ;
-      pgen = PlGenAlter s dt ss ;
-      sdat = s ;
-      pdat = s ;
-      sacc = s ;
-      pacc = s ;
-      sins = s ;
-      pins = s ;
-      sprep= s ;
-      pprep= s ;
+  mobileTwo : Str -> NounEndForms -> DeclType -> StressSchema -> StemForms
+   = \s, nef, dt, ss -> {
+      snom = s + nef.snom;
+      pnom = s + nef.pnom;
+      sgen = s + nef.sgen;
+      pgen = (PlGenAlter s dt ss) + nef.pgen ;
+      sdat = s + nef.sdat ;
+      pdat = s + nef.pdat ;
+      sacc = s + nef.sacc ;
+      pacc = s + nef.pacc ;
+      sins = s + nef.sins ;
+      pins = s + nef.pins ;
+      sprep= s + nef.sprep;
+      pprep= s + nef.pprep;
     } ;
 
-  alterStems : Str -> Gender -> DeclType -> StressSchema -> StemForms
-    = \s, g, dt, ss ->
+  alterStems : Str -> NounEndForms -> Gender -> DeclType -> StressSchema -> StemForms
+    = \s, nef, g, dt, ss ->
       case <g, dt> of {
-        <Masc, _> => mobileOne s dt ss;
-        <Neut, _> => mobileTwo s dt ss;
-        <Fem, 8> => mobileOne s dt ss;
-        <Fem, _> => mobileTwo s dt ss
+        <Masc, _> => mobileOne s nef dt ss ;
+        <Neut, _> => mobileTwo s nef dt ss ;
+        <Fem, 8> => mobileOne s nef dt ss ;
+        <Fem, _> => mobileTwo s nef dt ss
       } ;
-
-  stemsAndEndings : StemForms -> NounEndForms -> StemForms
-    = \sf, nef -> {
-      snom = sf.snom  + nef.snom ;
-      pnom = sf.pnom  + nef.pnom ;
-      sgen = sf.sgen  + nef.sgen ;
-      pgen = sf.pgen  + nef.pgen ;
-      sdat = sf.sdat  + nef.sdat ;
-      pdat = sf.pdat  + nef.pdat ;
-      sacc = sf.sacc  + nef.sacc ;
-      pacc = sf.pacc  + nef.pacc ;
-      sins = sf.sins  + nef.sins ;
-      pins = sf.pins  + nef.pins ;
-      sprep= sf.sprep + nef.sprep ;
-      pprep= sf.pprep + nef.pprep ;
-    } ;
 
   doAlternations : Str -> NounEndForms -> Gender -> Animacy -> DeclType -> StressSchema -> NounFormsBase
     = \s, nef, g, a, dt, ss ->
-       let stemforms = alterStems s g dt ss in
-       (stemsAndEndings stemforms nef) ** {g=g; a=a} ;
+      (alterStems s nef g dt ss) ** {g=g; a=a} ;
 
   alterForms : Str -> NounEndForms -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> NounFormsBase
     = \s, nef, g, a, dt, at, ss ->
