@@ -58,12 +58,14 @@ oper
 
   mobileOne : Str -> NounEndForms -> DeclType -> StressSchema -> StemForms
    = \s, nef, dt, ss ->
-     let last = Predef.dp 1 s in
-     let butLast = Predef.tk 1 s in
+     let snom = s + nef.snom in
+     let last = Predef.dp 1 snom in
+     let butLast = Predef.tk 1 snom in
      let secondLast = Predef.dp 1 butLast in
-     let butTwolast = Predef.tk 2 s in
+     let butTwolast = Predef.tk 2 snom in
      let thirdLast = Predef.dp 1 butTwolast in
-     let s1 : Str = case <dt, s, thirdLast, secondLast> of {
+     let s1 : Str = case <dt, snom, thirdLast, secondLast> of {
+       <6, _ + #vowel + #consonant, _, "е"|"ё"> => butTwolast + "ь" ;  -- what if more than one consonant or sign?
        <_, _ + #vowel + #consonant, _, "е"|"ё"> => butTwolast + last ;  -- what if more than one consonant or sign?
        _ => s
      } in
