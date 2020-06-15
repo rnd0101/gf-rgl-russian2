@@ -58,24 +58,28 @@ oper
 
   mobileOne : Str -> NounEndForms -> DeclType -> StressSchema -> StemForms
    = \s, nef, dt, ss ->
-     let secondLast = Predef.dp 1 (Predef.tk 1 s) in
-     let mletter : Str = case s of {
-       _ + #vowel + #consonant => secondLast ;  -- what if more than one consonant or sign?
-       _ => ""
+     let last = Predef.dp 1 s in
+     let butLast = Predef.tk 1 s in
+     let secondLast = Predef.dp 1 butLast in
+     let butTwolast = Predef.tk 2 s in
+     let thirdLast = Predef.dp 1 butTwolast in
+     let s1 : Str = case <dt, s, thirdLast, secondLast> of {
+       <_, _ + #vowel + #consonant, _, "е"|"ё"> => butTwolast + last ;  -- what if more than one consonant or sign?
+       _ => s
      } in
      {  -- TODO
       snom = s + nef.snom ;
-      pnom = s + nef.pnom ;
-      sgen = s + nef.sgen ;
-      pgen = s + nef.pgen ;
-      sdat = s + nef.sdat ;
-      pdat = s + nef.pdat ;
-      sacc = s + nef.sacc ;
-      pacc = s + nef.pacc ;
-      sins = s + nef.sins ;
-      pins = s + nef.pins ;
-      sprep= s + nef.sprep ;
-      pprep= s + nef.pprep ;
+      pnom = s1 + nef.pnom ;
+      sgen = s1 + nef.sgen ;
+      pgen = s1 + nef.pgen ;
+      sdat = s1 + nef.sdat ;
+      pdat = s1 + nef.pdat ;
+      sacc = s1 + nef.sacc ;
+      pacc = s1 + nef.pacc ;
+      sins = s1 + nef.sins ;
+      pins = s1 + nef.pins ;
+      sprep= s1 + nef.sprep ;
+      pprep= s1 + nef.pprep ;
     } ;
 
   PlGenAlter : Str -> Str -> DeclType -> StressSchema -> Str
