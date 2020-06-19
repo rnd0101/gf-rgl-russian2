@@ -1,4 +1,4 @@
-resource ResRus = ParamX ** open Prelude, ZaliznyakAlgo in {
+resource ResRus = ParamX ** open Prelude, ParamRus, ZaliznyakAlgo in {
 flags coding=utf8 ; optimize=all ;
 
 -- parameters
@@ -11,11 +11,9 @@ param
 
   -- Move to ParamRus
 
-  Gender     = Masc | Fem | Neut ;  -- род
   -- Number  = Sg | Pl ;  -- число, from ParamX
   Case       = Nom | Gen | Dat | Acc | Ins | Pre  -- падеж, "малые падежи":
               | Loc | Ptv | VocRus ;  -- "minor cases", usually Loc = Pre, Ptv = Gen, VocRus = Nom
-  Animacy    = Animate | Inanimate ;  -- одушевлённый / неодушевлённый
   -- Person  = P1 | P2 | P3 ;  -- лицо, from ParamX
 
   -- For adjectives (mostly)
@@ -72,11 +70,6 @@ param
 -- so this is the lincat of N
 
 oper
-  NounFormsBase : Type = {
-    snom, sgen, sdat, sacc, sins, sprep,
-    pnom, pgen, pdat, pacc, pins, pprep : Str ;
-    g : Gender
-  } ;
 
 -- Mnemonics for cases: (add to lexican as well)
 -- Nom есть (кто? что?)
@@ -92,7 +85,8 @@ oper
   NounForms : Type = {
     snom, sgen, sdat, sacc, sins, sprep, sloc, sptv, svoc,
     pnom, pgen, pdat, pacc, pins, pprep : Str ;
-    g : Gender
+    g : Gender ;
+    a : Animacy
   } ;
 
 -- But traditional tables make agreement easier to handle in syntax
@@ -100,7 +94,8 @@ oper
 
   Noun : Type = {
     s : Number => Case => Str ;
-    g : Gender
+    g : Gender ;
+    a : Animacy
   } ;
 
 -- this is used in UseN
@@ -131,7 +126,8 @@ oper
           VocRus => forms.pnom
         }
       } ;
-      g = forms.g
+      g = forms.g ;
+      a = forms.a
     } ;
 
   DeclensionType : Type = Str -> NounForms ;  -- тип склонения
@@ -188,7 +184,8 @@ oper
       pins  = spor + "ами" ;
       sprep = spor + "е" ;
       pprep = spor + "ах" ;
-      g = Masc
+      g = Masc ;
+      a = Inanimate
   } ;
 
   declVIHR6 : DeclensionType  -- ВИХРЬ - сущ ru m ina 2a
@@ -207,7 +204,8 @@ oper
       pins  = vihr + "ями" ;
       sprep = vihr + "е" ;
       pprep = vihr + "ях" ;
-      g = Masc
+      g = Masc;
+      a = Inanimate
   } ;
 
   declBAK : DeclensionType  -- БАК - сущ ru m ina 3a
@@ -224,7 +222,8 @@ oper
       pins  = bak + "ами" ;
       sprep = bak + "е" ;
       pprep = bak + "ах" ;
-      g = Masc
+      g = Masc;
+      a = Inanimate
   } ;
 
   declSTAZH : DeclensionType  -- СТАЖ - сущ ru m ina 4a
@@ -241,7 +240,8 @@ oper
       pins  = stazh + "ами" ;
       sprep = stazh + "е" ;
       pprep = stazh + "ах" ;
-      g = Masc
+      g = Masc;
+      a = Inanimate
   } ;
 
   declKASHA : DeclensionType  -- КАША - сущ ru f ina 4a
@@ -263,7 +263,8 @@ oper
         sloc  = kash + "ах" ;
         sptv  = kash + "и" ;
         svoc  = variants {kash + "а"; kash} ;
-        g = Fem
+        g = Fem;
+        a = Inanimate
   } ;
 
   removeMobileVowel : Str -> Str
@@ -290,7 +291,8 @@ oper
         pins  = perec1 + "ами" ;
         sprep = perec1 + "е" ;
         pprep = perec1 + "ах" ;
-      g = Masc
+      g = Masc;
+      a = Inanimate
   } ;
 
   declBOJ : DeclensionType  -- БОЙ - сущ ru m ina 6c
@@ -311,7 +313,8 @@ oper
         sloc  = bo + "ю" ;
         sptv  = bo + "ю" ;
         svoc  = bo1 + "и́" ;
-        g = Masc
+        g = Masc;
+        a = Inanimate
     } ;
 
   declZNANIE : DeclensionType  -- ЗНАНИЕ - сущ ru n ina 7a
@@ -330,7 +333,8 @@ oper
           pins  = znan + "иями" ;
           sprep  = znan + "ии" ;
           pprep  = znan + "иях" ;
-          g = Neut
+          g = Neut;
+          a = Inanimate
   } ;
 
   declKRITERIJ : DeclensionType  -- КРИТЕРИЙ - сущ ru m ina 7a
@@ -349,7 +353,8 @@ oper
           pins  = kriter + "иями" ;
           sprep  = kriter + "ии" ;
           pprep  = kriter + "иях" ;
-          g = Masc
+          g = Masc;
+          a = Inanimate
   } ;
 
   declLINIJA : DeclensionType  -- ЛИНИЯ - сущ ru f ina 7a
@@ -368,7 +373,8 @@ oper
           pins  = lini + "ями" ;
           sprep  = lini + "и" ;
           pprep  = lini + "ях" ;
-          g = Fem
+          g = Fem;
+          a = Inanimate
   } ;
 
   declPUT6 : DeclensionType  -- ПУТЬ - сущ ru m ina 8b
@@ -387,7 +393,8 @@ oper
           pins  = put1 + "ями";
           sprep  = put1 + "и" ;
           pprep  = put1 + "ям" ;
-          g = Masc
+          g = Masc;
+          a = Inanimate
   } ;
 
   Determiner : Type = {  -- определяемое слово

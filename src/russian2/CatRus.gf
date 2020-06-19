@@ -1,6 +1,6 @@
 --# -path=.:../abstract:../common:../../prelude
 
-concrete CatRus of Cat = CommonX ** open ResRus, Prelude in {
+concrete CatRus of Cat = CommonX ** open ResRus, ParamRus, Prelude in {
 flags coding=utf8 ; optimize=all ;
 
   lincat

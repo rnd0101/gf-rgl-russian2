@@ -1,4 +1,4 @@
-resource ParadigmsRus = open CatRus, ResRus, (R=ResRus), Prelude in {
+resource ParadigmsRus = open CatRus, ResRus, (R=ResRus), ParamRus, ZaliznyakAlgo, Prelude in {
 
 ----------------
 -- Parameters
@@ -56,6 +56,8 @@ oper
   mkN = overload {
     mkN : (nom : Str) -> N
       = \nom -> lin N (guessNounForms nom) ;
+    mkN : Str -> Gender -> Animacy -> ZIndex -> N
+      = \stem, g, a, z -> lin N (noMinorCases (makeNoun stem g a z)) ;
   } ;
 
 ---------------------
