@@ -97,7 +97,7 @@ oper
       stem + "тель"                           => noMinorCases (makeNoun butLast Masc Inanimate (Z 2 No A)) ;
       stem + "ь"                              => noMinorCases (makeNoun stem Fem Inanimate (Z 8 No A)) ;
       stem + "и"                              => noMinorCases (makeNoun stem Neut Inanimate Z0) ;
-      stem + #consonant + ("к" | "х" | "г") + "а" => noMinorCases (makeNoun butLast Fem Inanimate (Z 3 Ast A)) ;
+      stem + #consonant + ("к"|"х"|"г") + "а" => noMinorCases (makeNoun butLast Fem Inanimate (Z 3 Ast A)) ;
       stem + ("к" | "х" | "г")                => noMinorCases (makeNoun s Masc Inanimate (Z 3 No A)) ;
       stem + ("к" | "х" | "г") + "а"          => noMinorCases (makeNoun butLast Fem Inanimate (Z 3 No A)) ;
       stem + "ца"                             => noMinorCases (makeNoun butLast Fem Animate (Z 5 No A)) ;
