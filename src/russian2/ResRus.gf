@@ -1,61 +1,5 @@
-resource ResRus = ParamX ** open Prelude, ParamRus, ZaliznyakAlgo in {
+resource ResRus = ParamRus ** open Prelude, ZaliznyakAlgo in {
 flags coding=utf8 ; optimize=all ;
-
--- parameters
-
-param
-  -- Mostly follows https://en.wikipedia.org/wiki/List_of_glossing_abbreviations
-  -- see theory.txt
-
-  -- For nouns:
-
-  -- Move to ParamRus
-
-  -- Number  = Sg | Pl ;  -- число, from ParamX
-  Case       = Nom | Gen | Dat | Acc | Ins | Pre  -- падеж, "малые падежи":
-              | Loc | Ptv | VocRus ;  -- "minor cases", usually Loc = Pre, Ptv = Gen, VocRus = Nom
-  -- Person  = P1 | P2 | P3 ;  -- лицо, from ParamX
-
-  -- For adjectives (mostly)
-
-  {-
-  Kind -- разряд прилагательного. The only permanent feature of adjective. Can be dynamic though
-     Qualitative   -- качественные, какой? Only these can have short form, 3 comparison degrees
-     | Possessive  -- притяжательные, чей? No short form
-     | Relative    -- относительные, какой? No short form, can't be more or less of this attribute
-  -}
-
-  Voice      = Act | Pass | Refl ;  -- залог
-  Aspect     = Imperfective | Perfective ;  -- вид / аспект
-  AfterPrep  = Yes | No ;  -- to variate pronouns starting with vowels.
-  Possessive = NonPoss | Poss Agr ;   -- TODO: is this needed?  притяжательность
-  ClForm     = ClIndic Tense Anteriority | ClCond  | ClIndf | ClImp | ClImm ;
-  Agr        = Ag Gender Number Person ; -- The plural never makes a gender distinction
-
--- TODO: dual gender nouns. See [KING1]
-
--- The AfterPrep parameter is introduced in order to describe
--- the variations of the third person personal pronoun forms
--- depending on whether they come after a preposition or not.
-
--- TODO: ++ BIND ++ gluing ? See [LISTENMAA1]
-
--- also: "над ним" - "надо мной"
-
--- TODO: cleanup
--- Declension forms depend on Case, Animacy , Gender:
--- Also can be: "Adjective declension" - can be handled by adjective forms (?)
--- "большие дома" - "больших домов" (big houses - big houses'),
--- Animacy plays role only in the Accusative case (Masc Sg and Plural forms):
--- Accusative Animate = Genetive, Accusaive Inanimate = Nominative
--- "я люблю большие дома-"я люблю больших мужчин"
--- (I love big houses - I love big men);
--- and on Number: "большой дом - "большие дома"
--- (a big house - big houses).
-
-
--- phonology
--- TBD
 
 ---------------
 -- Nouns -- Существительные
@@ -141,24 +85,31 @@ oper
   --  - animacy can influence acc sg/pl, those are gen sg/pl, and not nom-sg / pl
 
   guessNounForms : Str -> NounForms
-    = \s -> case s of {
-      stem + "уть"                            => (declPUT6 s) ** {g = Masc} ;
-      stem + "ия"                             => (declLINIJA s) ** {g = Fem} ;
-      stem + "ий"                             => (declKRITERIJ s) ** {g = Masc} ;
-      stem + "ие"                             => (declZNANIE s) ** {g = Neut} ;
-      stem + "й"                              => (declBOJ s) ** {g = Masc} ;
-      stem + ("к" | "х" | "г")                => (declBAK s) ** {g = Masc} ;
-      stem + ("ж" | "ш" | "ч" | "щ")          => (declSTAZH s) ** {g = Masc} ;
-      stem + ("ж" | "ш" | "ч" | "щ")  + ("а") => (declKASHA s) ** {g = Fem} ;
-      stem + "ц"                              => (declPEREC s) ** {g = Masc} ;
-      stem + "ь"                              => (declVIHR6 s) ** {g = Masc} ;
-      stem                                    => (declSPOR s) ** {g = Masc}
+    = \s ->
+    let butLast = Predef.tk 1 s in
+    let butTwolast = Predef.tk 2 s in
+    case s of {
+      stem + "уть"                            => noMinorCases (makeNoun butLast Masc Inanimate (Z 8 No B)) ;
+      stem + "ий"                             => noMinorCases (makeNoun butLast Masc Inanimate (Z 7 No A)) ;
+      stem + "ия"                             => noMinorCases (makeNoun butLast Fem Inanimate (Z 7 No A)) ;
+      stem + "ие"                             => noMinorCases (makeNoun butLast Neut Inanimate (Z 7 No A)) ;
+      stem + "ье"                             => noMinorCases (makeNoun butLast Neut Inanimate (Z 6 Ast A)) ;
+      stem + "тель"                           => noMinorCases (makeNoun butLast Masc Inanimate (Z 2 No A)) ;
+      stem + "ь"                              => noMinorCases (makeNoun stem Fem Inanimate (Z 8 No A)) ;
+      stem + "и"                              => noMinorCases (makeNoun stem Neut Inanimate Z0) ;
+      stem + #consonant + ("к" | "х" | "г") + "а" => noMinorCases (makeNoun butLast Fem Inanimate (Z 3 Ast A)) ;
+      stem + ("к" | "х" | "г")                => noMinorCases (makeNoun s Masc Inanimate (Z 3 No A)) ;
+      stem + ("к" | "х" | "г") + "а"          => noMinorCases (makeNoun butLast Fem Inanimate (Z 3 No A)) ;
+      stem + "ца"                             => noMinorCases (makeNoun butLast Fem Animate (Z 5 No A)) ;
+      stem + "й"                              => noMinorCases (makeNoun butLast Masc Inanimate (Z 6 No A)) ;
+      stem + ("ж" | "ш" | "ч" | "щ")          => noMinorCases (makeNoun s Masc Inanimate (Z 4 No A)) ;
+      stem + "ша"                             => noMinorCases (makeNoun butLast Fem Animate (Z 4 No A)) ;
+      stem + ("ж" | "ш" | "ч" | "щ") + "а"    => noMinorCases (makeNoun butLast Fem Inanimate (Z 4 No A)) ;
+      stem + "ц"                              => noMinorCases (makeNoun s Masc Inanimate (Z 5 Ast A)) ;
+      stem + "о"                              => noMinorCases (makeNoun butLast Neut Inanimate (Z 1 No A)) ;
+      stem + "а"                              => noMinorCases (makeNoun butLast Fem Inanimate (Z 1 No A)) ;
+      stem                                    => noMinorCases (makeNoun stem Masc Inanimate (Z 1 No A))
     } ;
-
-
-  approxZaliznyakAlgoNounforms : Str -> Gender -> Animacy -> ZIndex -> NounForms
-    = \s, g, a, z -> (declPUT6 s) ** {g = Masc} ;  -- TODO
-
 
   noMinorCases : NounFormsBase -> NounForms
     = \base -> base ** {
@@ -169,233 +120,6 @@ oper
       --pptv = base.pgen ;
       --pvoc = base.pnom
     } ;
-
-  declSPOR : DeclensionType  -- СПОР - сущ ru m ina 1a
-    = \spor -> noMinorCases {
-      snom  = spor ;
-      pnom  = spor + "ы" ;
-      sgen  = spor + "а" ;
-      pgen  = spor + "ов" ;
-      sdat  = spor + "у" ;
-      pdat  = spor + "ам" ;
-      sacc  = spor ;
-      pacc  = spor + "ы" ;
-      sins  = spor + "ом" ;
-      pins  = spor + "ами" ;
-      sprep = spor + "е" ;
-      pprep = spor + "ах" ;
-      g = Masc ;
-      a = Inanimate
-  } ;
-
-  declVIHR6 : DeclensionType  -- ВИХРЬ - сущ ru m ina 2a
-    = \vihr6 ->
-      let vihr = Predef.tk 1 vihr6 in
-      noMinorCases {
-      snom  = vihr + "ь" ;
-      pnom  = vihr + "и" ;
-      sgen  = vihr + "я" ;
-      pgen  = vihr + "ей" ;
-      sdat  = vihr + "ю" ;
-      pdat  = vihr + "ям" ;
-      sacc  = vihr + "ь" ;
-      pacc  = vihr + "и" ;
-      sins  = vihr + "ем" ;
-      pins  = vihr + "ями" ;
-      sprep = vihr + "е" ;
-      pprep = vihr + "ях" ;
-      g = Masc;
-      a = Inanimate
-  } ;
-
-  declBAK : DeclensionType  -- БАК - сущ ru m ina 3a
-    = \bak -> noMinorCases {
-      snom  = bak ;
-      pnom  = bak + "и" ;
-      sgen  = bak + "а" ;
-      pgen  = bak + "ов" ;
-      sdat  = bak + "у" ;
-      pdat  = bak + "ам" ;
-      sacc  = bak ;
-      pacc  = bak + "и" ;
-      sins  = bak + "ом" ;
-      pins  = bak + "ами" ;
-      sprep = bak + "е" ;
-      pprep = bak + "ах" ;
-      g = Masc;
-      a = Inanimate
-  } ;
-
-  declSTAZH : DeclensionType  -- СТАЖ - сущ ru m ina 4a
-    = \stazh -> noMinorCases {
-      snom  = stazh ;
-      pnom  = stazh + "и" ;
-      sgen  = stazh + "а" ;
-      pgen  = stazh + "ей" ;
-      sdat  = stazh + "у" ;
-      pdat  = stazh + "ам" ;
-      sacc  = stazh ;
-      pacc  = stazh + "и" ;
-      sins  = stazh + "ем" ;
-      pins  = stazh + "ами" ;
-      sprep = stazh + "е" ;
-      pprep = stazh + "ах" ;
-      g = Masc;
-      a = Inanimate
-  } ;
-
-  declKASHA : DeclensionType  -- КАША - сущ ru f ina 4a
-    = \kasha -> 
-      let kash = Predef.tk 1 kasha in
-      {
-        snom  = kash + "а" ;
-        pnom  = kash + "и" ;
-        sgen  = kash + "и" ;
-        pgen  = kash ;
-        sdat  = kash + "е" ;
-        pdat  = kash + "ам" ;
-        sacc  = kash + "у" ;
-        pacc  = kash + "и" ;   ----- diff from anim: kash
-        sins  = kash + variants {"ей"; "ею"} ;
-        pins  = kash + "ами" ;
-        sprep = kash + "е" ;
-        pprep = kash + "ах" ;
-        sloc  = kash + "ах" ;
-        sptv  = kash + "и" ;
-        svoc  = variants {kash + "а"; kash} ;
-        g = Fem;
-        a = Inanimate
-  } ;
-
-  removeMobileVowel : Str -> Str
-    = \s ->
-      let stem1 = Predef.tk 2 s in
-      case Predef.dp 1 stem1 of {
-        "л" => stem1 + "ь" + Predef.dp 1 s ;
-        _ => stem1 + Predef.dp 1 s
-      } ;
-
-  declPEREC : DeclensionType  -- ПЕРЕЦ - сущ ru m ina 5*a   -- bad example. Has sptv = sdat
-    = \perec ->
-      let perec1 = removeMobileVowel perec in
-      noMinorCases {
-        snom  = perec ;
-        pnom  = perec1 + "ы" ;
-        sgen  = perec1 + "а" ;
-        pgen  = perec1 + "ев" ;
-        sdat  = perec1 + "у" ;
-        pdat  = perec1 + "ам" ;
-        sacc  = perec ;
-        pacc  = perec1 + "ы" ;
-        sins  = perec1 + "ем" ;
-        pins  = perec1 + "ами" ;
-        sprep = perec1 + "е" ;
-        pprep = perec1 + "ах" ;
-      g = Masc;
-      a = Inanimate
-  } ;
-
-  declBOJ : DeclensionType  -- БОЙ - сущ ru m ina 6c
-    = \boj ->
-      let bo, bo1 = Predef.tk 1 boj in {
-        snom  = bo + "й" ;
-        pnom  = bo1 + "и" ;
-        sgen  = bo + "я" ;
-        pgen  = bo1 + "ёв" ;
-        sdat  = bo + "ю" ;
-        pdat  = bo1 + "ям" ;
-        sacc  = bo + "й" ;
-        pacc  = bo1 + "и" ;
-        sins  = bo + "ем" ;
-        pins  = bo1 + "ями" ;
-        sprep = bo + "е" ;
-        pprep = bo1 + "ях" ;
-        sloc  = bo + "ю" ;
-        sptv  = bo + "ю" ;
-        svoc  = bo1 + "и́" ;
-        g = Masc;
-        a = Inanimate
-    } ;
-
-  declZNANIE : DeclensionType  -- ЗНАНИЕ - сущ ru n ina 7a
-    = \znanie ->
-        let znan = Predef.tk 2 znanie in
-        noMinorCases {
-          snom  = znan + "ие" ;
-          pnom  = znan + "ия" ;
-          sgen  = znan + "ия" ;
-          pgen  = znan + "ий" ;
-          sdat  = znan + "ию" ;
-          pdat  = znan + "иям" ;
-          sacc  = znan + "ие" ;
-          pacc  = znan + "ия" ;
-          sins  = znan + "ием" ;
-          pins  = znan + "иями" ;
-          sprep  = znan + "ии" ;
-          pprep  = znan + "иях" ;
-          g = Neut;
-          a = Inanimate
-  } ;
-
-  declKRITERIJ : DeclensionType  -- КРИТЕРИЙ - сущ ru m ina 7a
-    = \kriterij ->
-        let kriter = Predef.tk 2 kriterij in
-        noMinorCases {
-          snom  = kriter + "ий" ;
-          pnom  = kriter + "ии" ;
-          sgen  = kriter + "ия" ;
-          pgen  = kriter + "иев" ;
-          sdat  = kriter + "ию" ;
-          pdat  = kriter + "иям" ;
-          sacc  = kriter + "ий" ;
-          pacc  = kriter + "ии" ;
-          sins  = kriter + "ием" ;
-          pins  = kriter + "иями" ;
-          sprep  = kriter + "ии" ;
-          pprep  = kriter + "иях" ;
-          g = Masc;
-          a = Inanimate
-  } ;
-
-  declLINIJA : DeclensionType  -- ЛИНИЯ - сущ ru f ina 7a
-    = \linija ->
-        let lini = Predef.tk 1 linija in
-        noMinorCases {
-          snom  = lini + "я" ;
-          pnom  = lini + "и" ;
-          sgen  = lini + "и" ;
-          pgen  = lini + "ий" ;
-          sdat  = lini + "и" ;
-          pdat  = lini + "ям" ;
-          sacc  = lini + "ю" ;
-          pacc  = lini + "и" ;
-          sins  = lini + variants {"ей"; "ею"} ;
-          pins  = lini + "ями" ;
-          sprep  = lini + "и" ;
-          pprep  = lini + "ях" ;
-          g = Fem;
-          a = Inanimate
-  } ;
-
-  declPUT6 : DeclensionType  -- ПУТЬ - сущ ru m ina 8b
-    = \put6 ->
-        let put, put1 = Predef.tk 1 put6 in
-        noMinorCases {
-          snom  = put + "ь" ;
-          pnom  = put1 + "и" ;
-          sgen  = put1 + "и" ;
-          pgen  = put1 + "ей" ;
-          sdat  = put1 + "и" ;
-          pdat  = put1 + "ям";
-          sacc  = put + "ь" ;
-          pacc  = put1 + "и" ;
-          sins  = put1 + "ём" ;
-          pins  = put1 + "ями";
-          sprep  = put1 + "и" ;
-          pprep  = put1 + "ям" ;
-          g = Masc;
-          a = Inanimate
-  } ;
 
   Determiner : Type = {  -- определяемое слово
     s : Gender => Animacy => Case => Str ;

@@ -3,9 +3,6 @@ flags coding=utf8 ; optimize=all ;
 
 oper
 
-  consonant : pattern Str = #("б"|"в"|"г"|"д"|"ж"|"з"|"й"|"к"|"л"|"м"|"н"|"п"|"р"|"с"|"т"|"ф"|"х"|"ц"|"ч"|"ш"|"щ") ;
-  vowel : pattern Str = #("а"|"е"|"ё"|"и"|"о"|"у"|"ы"|"э"|"ю"|"я") ;
-
   -- This correspond to the abbreviated Zaliznyak index for nouns.
   -- Complete index contains a lot of additions.
 
