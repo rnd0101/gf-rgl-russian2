@@ -43,10 +43,15 @@ oper
      let secondLast = Predef.dp 1 butLast in
      let butTwolast = Predef.tk 2 snom in
      let thirdLast = Predef.dp 1 butTwolast in
-     let s1 : Str = case <dt, snom, thirdLast, secondLast> of {
-       <6, _ + #vowel + #consonant, _, "е"|"ё"> => butTwolast + "ь" ;  -- what if more than one consonant or sign?
-       <_, _ + #vowel + #consonant, _, "е"|"ё"> => butTwolast + last ;  -- what if more than one consonant or sign?
-       _ => s
+     let s1 : Str = case <dt, snom, thirdLast, secondLast> of {   -- what if more than one consonant or sign?
+       <6, _ + #vowel + #consonant, _, "е"|"ё"> => butTwolast + "ь" ;
+       <_, _ + #vowel + #consonant, #vowel, "е"|"ё"> => butTwolast + "й" + last ;  --?
+       <3, _ + #vowel + #consonant, #consonant_minus, "е"|"ё"> => butTwolast + "ь" + last ;  -- королёк, but овражек
+       <1|2|4|5|7|8, _ + #vowel + #consonant, "л", "е"|"ё"> => butTwolast + "ь" + last ;
+       <6, _ + #vowel + #consonant, _, "и"> => butTwolast + "ь" + last  ;  --?
+       -- <_, _ + #vowel + #consonant, _, "е"|"ё"> => butTwolast + last ;
+       -- <_, _ + #vowel + #consonant, _, "о"> => butTwolast + last  ;  -- клочок
+       _ => butTwolast + last
      } in
      {  -- TODO
       snom = s + nef.snom ;
