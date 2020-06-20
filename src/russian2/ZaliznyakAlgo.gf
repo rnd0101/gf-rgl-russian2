@@ -110,12 +110,46 @@ oper
       pprep= s + nef.pprep;
     } ;
 
+  mobileThree : Str -> NounEndForms -> DeclType -> StressSchema -> StemForms
+   = \s, nef, dt, ss ->
+     let snom = s + nef.snom in
+     let last = Predef.dp 1 s in
+     let butLast = Predef.tk 1 s in
+     let secondLast = Predef.dp 1 butLast in
+     let butTwolast = Predef.tk 2 s in
+     let thirdLast = Predef.dp 1 butTwolast in
+     let s1 : Str = case <dt, s, thirdLast, secondLast> of {   -- what if more than one consonant or sign?
+       <6, _ + #vowel + #consonant, _, "е"|"ё"> => butTwolast + "ь" ;
+       <_, _ + #vowel + #consonant, #vowel, "е"|"ё"> => butTwolast + "й" + last ;  --?
+       <3, _ + #vowel + #consonant, #consonant_minus, "е"|"ё"> => butTwolast + "ь" + last ;  -- королёк, but овражек
+       <1|2|4|5|7|8, _ + #vowel + #consonant, "л", "е"|"ё"> => butTwolast + "ь" + last ;
+       <6, _ + #vowel + #consonant, _, "и"> => butTwolast + "ь" + last  ;  --?
+       -- <_, _ + #vowel + #consonant, _, "е"|"ё"> => butTwolast + last ;
+       -- <_, _ + #vowel + #consonant, _, "о"> => butTwolast + last  ;  -- клочок
+       _ => butTwolast + last
+     } in
+     {  -- TODO
+      snom = s + nef.snom ;
+      pnom = s1 + nef.pnom ;
+      sgen = s1 + nef.sgen ;
+      pgen = s1 + nef.pgen ;
+      sdat = s1 + nef.sdat ;
+      pdat = s1 + nef.pdat ;
+      sacc = s + nef.sacc ;
+      pacc = s1 + nef.pacc ;
+      sins = s + nef.sins ;
+      pins = s1 + nef.pins ;
+      sprep= s1 + nef.sprep ;
+      pprep= s1 + nef.pprep ;
+    } ;
+
+
   alterStems : Str -> NounEndForms -> Gender -> DeclType -> StressSchema -> StemForms
     = \s, nef, g, dt, ss ->
       case <g, dt> of {
         <Masc, _> => mobileOne s nef dt ss ;
         <Neut, _> => mobileTwo s nef dt ss ;
-        <Fem, 8> => mobileOne s nef dt ss ;
+        <Fem, 8> => mobileThree s nef dt ss ;
         <Fem, _> => mobileTwo s nef dt ss
       } ;
 
