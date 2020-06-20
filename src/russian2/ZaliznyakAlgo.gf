@@ -183,12 +183,13 @@ oper
     = \s, g, a, z ->
     case z of {
       Z0 => immutableNounCases s g a ;
-      Z dt at ss => formsSelection s g a dt at ss
+      Z dt at ss => formsSelection s g a dt at ss NoC ;
+      ZC dt at ss ci => formsSelection s g a dt at ss ci
     } ;
 
-  formsSelection : Str -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> NounFormsBase
-    = \s, g, a, dt, at, ss ->
-      let nef = endingsSelection g a dt at ss in
+  formsSelection : Str -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounFormsBase
+    = \s, g, a, dt, at, ss, ci ->
+      let nef = endingsSelection g a dt at ss ci in
       let alternated = alterForms s nef g a dt at ss in
       animacySelection dt alternated nef
     ;
@@ -217,11 +218,26 @@ oper
         sins=frm.sins  -- TODO: there can be variants {}  ю in addition to й
     } ;
 
-  endingsSelection : Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> NounEndForms
-    = \g, a, dt, at, ss ->
+  endingsSelection : Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounEndForms
+    = \g, a, dt, at, ss, ci ->
     let gDtBased = gDtBasedSelection g dt in
-    gDtSsBasedSelection gDtBased ss
+    let gDtBasedCirc = circCorrection gDtBased g dt ci in
+    gDtSsBasedSelection gDtBasedCirc ss
   ;
+
+  circCorrection : NounEndFormsS1 -> Gender -> DeclType -> ZCirc -> NounEndFormsS1
+    = \nef1, g, dt, ci ->
+      let trans1 : NounEndFormsS1 = case <g, ci> of {
+        <Masc, ZC1|ZC12> => nef1 ** {pnom=(gDtBasedSelection Neut dt).pnom} ;
+        <Neut, ZC1|ZC12> => nef1 ** {pnom=(gDtBasedSelection Masc dt).pnom} ;
+        _ => nef1
+      } in
+      case <g, ci> of {
+        <Masc, ZC2|ZC12> => trans1 ** {pgen=(gDtBasedSelection Neut dt).pgen} ;
+        <Neut, ZC2|ZC12> => trans1 ** {pgen=(gDtBasedSelection Masc dt).pgen} ; -- остриё has problem
+        <Fem,  ZC2|ZC12> => trans1 ** {pgen=(gDtBasedSelection Masc dt).pgen} ;
+        _ => trans1
+      } ;
 
   selStress : EndingSpec -> Stressedness -> Str
     = \es, sness ->

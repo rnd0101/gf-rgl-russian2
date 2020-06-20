@@ -57,7 +57,8 @@ resource ParamRus = ParamX ** open Prelude in {
     Animacy    = Animate | Inanimate ;  -- одушевлённый / неодушевлённый
     AlterType    = No | Ast | Circ  ;     -- Alternation
     StressSchema = A | A' | B | B' | C | C' | C'' | D | D' | E | F | F' | F'' ;
-    ZIndex       = Z0 | Z DeclType AlterType StressSchema ;     -- immutable words are in their own class
+    ZCirc        = NoC | ZC1 | ZC2 | ZC12 ;
+    ZIndex       = Z0 | Z DeclType AlterType StressSchema | ZC DeclType AlterType StressSchema ZCirc ;
     Stressedness = Stressed | Unstressed ;
 
     Voice      = Act | Pass | Refl ;  -- залог

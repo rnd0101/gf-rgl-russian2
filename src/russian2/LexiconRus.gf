@@ -21,8 +21,8 @@ lin
   bone_N = mkN "кость" ;
   book_N = mkN "книга" ;
   boot_N = mkN "сапог" ;
-  boss_N = mkN "начальник" ;
-  boy_N = mkN "мальчик" ;
+  boss_N = mkN "начальник" masculine animate ;
+  boy_N = mkN "мальчик" masculine animate ;
   bread_N = mkN "хлеб" ;
   breast_N = mkN "грудь" ;
   butter_N = mkN "масло";
@@ -54,7 +54,7 @@ lin
   earth_N = mkN "земля" ;
   egg_N = mkN "яйцо" ;
   enemy_N = mkN "враг" ;
-  eye_N = mkN "глаз" ; -- FIXME: Pl -a
+  eye_N = mkN "глаз" Masc Inanimate (ZC 1 No C ZC12) ;
   factory_N = mkN "фабрика" ;
   fat_N = mkN "жир" ;
 --  father_N2 = mkN2 (mkN "отец" "отца" "отцу" "отца" "отцом" "отце" "отце" "отцы" "отцов" "отцам" "отцов" "отцами" "отцах" masculine animate);
@@ -66,7 +66,7 @@ lin
   flower_N = mkN "цветок";
   fog_N = mkN "туман" ;
   foot_N = mkN "ступня" ;
-  forest_N = mkN "лес" ; -- prepos -u
+  forest_N = mkN "лес" Masc Inanimate (ZC 1 No C ZC1) ; -- prepos -u  Loc
   fridge_N = mkN "холодильник" ;
 --  friend_N = mkN "друг" "друга" "другу" "друга" "другом" "друге" "друге" "друзья" "друзей" "друзьям" "друзей" "дузьями" "друзьях" masculine animate ;
   fruit_N = mkN "фрукт" ;
