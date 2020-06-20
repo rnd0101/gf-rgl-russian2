@@ -76,8 +76,6 @@ oper
 
   DeclensionType : Type = Str -> NounForms ;  -- тип склонения
 
-  vowel_but_i : pattern Str = #("а"|"е"|"ё"|"о"|"у"|"ы"|"э"|"ю"|"я") ;
-
   -- TODO:
   --  - more cases can be identified with gender provided (right now automatic below is not good)
   --  - and even more with Zaliznyak code (this gives eg where stress is put on stem or ending, etc)
@@ -111,14 +109,38 @@ oper
       stem                                    => noMinorCases (makeNoun stem Masc Inanimate (Z 1 No A))
     } ;
 
+  guessLessNounForms : Str -> Gender -> Animacy -> NounForms
+    = \s, g, a ->
+    let butLast = Predef.tk 1 s in
+    let butTwolast = Predef.tk 2 s in
+    case s of {
+      stem + "уть"                            => noMinorCases (makeNoun butLast g a (Z 8 No B)) ;
+      stem + "ий"                             => noMinorCases (makeNoun butLast g a (Z 7 No A)) ;
+      stem + "ия"                             => noMinorCases (makeNoun butLast g a (Z 7 No A)) ;
+      stem + "ие"                             => noMinorCases (makeNoun butLast g a (Z 7 No A)) ;
+      stem + "ье"                             => noMinorCases (makeNoun butLast g a (Z 6 Ast A)) ;
+      stem + "тель"                           => noMinorCases (makeNoun butLast g a (Z 2 No A)) ;
+      stem + "ь"                              => noMinorCases (makeNoun stem g a (Z 8 No A)) ;
+      stem + "и"                              => noMinorCases (makeNoun stem g a Z0) ;
+      stem + #consonant + ("к"|"х"|"г") + "а" => noMinorCases (makeNoun butLast g a (Z 3 Ast A)) ;
+      stem + ("к" | "х" | "г")                => noMinorCases (makeNoun s g a (Z 3 No A)) ;
+      stem + ("к" | "х" | "г") + "а"          => noMinorCases (makeNoun butLast g a (Z 3 No A)) ;
+      stem + "ца"                             => noMinorCases (makeNoun butLast g a (Z 5 No A)) ;
+      stem + "й"                              => noMinorCases (makeNoun butLast g a (Z 6 No A)) ;
+      stem + ("ж" | "ш" | "ч" | "щ")          => noMinorCases (makeNoun s g a (Z 4 No A)) ;
+      stem + "ша"                             => noMinorCases (makeNoun butLast g a (Z 4 No A)) ;
+      stem + ("ж" | "ш" | "ч" | "щ") + "а"    => noMinorCases (makeNoun butLast g a (Z 4 No A)) ;
+      stem + "ц"                              => noMinorCases (makeNoun s g a (Z 5 Ast A)) ;
+      stem + "о"                              => noMinorCases (makeNoun butLast g a (Z 1 No A)) ;
+      stem + "а"                              => noMinorCases (makeNoun butLast g a (Z 1 No A)) ;
+      stem                                    => noMinorCases (makeNoun stem g a (Z 1 No A))
+    } ;
+
   noMinorCases : NounFormsBase -> NounForms
     = \base -> base ** {
       sloc = base.sprep ;
       sptv = base.sgen ;
       svoc = base.snom ;
-      --ploc = base.pprep ;
-      --pptv = base.pgen ;
-      --pvoc = base.pnom
     } ;
 
   Determiner : Type = {  -- определяемое слово

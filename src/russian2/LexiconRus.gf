@@ -9,14 +9,13 @@ lin
   apple_N = mkN "яблоко" ;
   art_N = mkN "искусство" ;
   ashes_N = mkN "пепел" masculine inanimate (Z 1 Ast A) ;
---  baby_N = mkN "малыш" animate;
+  baby_N = mkN "малыш" masculine animate (Z 4 No B) ;
   back_N = mkN "спина" ;
   bank_N = mkN "банк" ;
   bark_N = mkN "кора";
-  -- ...
   belly_N = mkN "живот" ;
   bike_N = mkN "велосипед" ;
-  bird_N = mkN "птица" ;
+  bird_N = mkN "птица" feminine animate ;
   blood_N = mkN "кровь" ;
   boat_N = mkN "лодка" ;
   bone_N = mkN "кость" ;
