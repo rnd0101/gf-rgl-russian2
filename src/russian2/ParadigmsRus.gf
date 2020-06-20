@@ -57,7 +57,9 @@ oper
     mkN : (nom : Str) -> N
       = \nom -> lin N (guessNounForms nom) ;
     mkN : Str -> Gender -> Animacy -> ZIndex -> N
-      = \stem, g, a, z -> lin N (noMinorCases (makeNoun stem g a z)) ;
+      = \word, g, a, z -> lin N (noMinorCases (makeNoun word g a z)) ;
+    --mkN : NounForms -> N                   -- problem with order
+    --  = \nf -> lin N nf ;
   } ;
 
 ---------------------
