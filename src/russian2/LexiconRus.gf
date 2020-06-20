@@ -182,10 +182,10 @@ lin
   war_N = mkN "война" ;
   water_N = mkN "вода" ;
   wife_N = mkN "жена" ;
---  wind_N = mkN "ветер" "ветра" "ветру" "ветер" "ветром" "ветра" "ветра" "ветров" "ветра" "ветрам" "ветров" "ветрами" "ветрах" masculine inanimate ;
+  wind_N = mkN "ветер" Masc Inanimate (Z 1 Ast E) ;
   window_N = mkN "окно" ; -- "окон"
   wine_N = mkN "вино" ;
-  wing_N = mkN "крыло" ; -- pl крылья крыльев etc
+  wing_N = mkN "крыл" Neut Inanimate (Z 1 No D) ; -- pl крылья крыльев etc TODO!
   woman_N = mkN "женщина" ;
   wood_N = mkN "дерево" ;
   worm_N = mkN "черв" ;
