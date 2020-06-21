@@ -116,7 +116,7 @@ lin
   newspaper_N = mkN "газета" ;
   night_N = mkN "ночь" ;
   nose_N = mkN "нос" ;
-  number_N = mkN "число" ; -- gen pl "чисел"
+  number_N = mkN "число" neuter inanimate (Z 1 Ast D) ;
   oil_N = mkN "нефть" ;
   paper_N = mkN "бумага" ;
 --  paris_PN = mkPN "Париж" Masc Sg Inanimate ;
