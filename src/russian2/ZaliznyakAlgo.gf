@@ -184,18 +184,28 @@ oper
     } ;
 
   makeNoun : Str -> Gender -> Animacy -> ZIndex -> NounFormsBase
-    = \s, g, a, z ->
+    = \word, g, a, z ->
     case z of {
-      Z0 => immutableNounCases s g a ;
-      Z dt at ss => formsSelection s g a dt at ss NoC ;
-      ZC dt at ss ci => formsSelection s g a dt at ss ci
+      Z0 => immutableNounCases word g a ;
+      Z dt at ss => formsSelection word g a dt at ss NoC ;
+      ZC dt at ss ci => formsSelection word g a dt at ss ci
     } ;
 
   formsSelection : Str -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounFormsBase
-    = \s, g, a, dt, at, ss, ci ->
+    = \word, g, a, dt, at, ss, ci ->
+      let stem = stemFromWord word g dt in
       let nef = endingsSelection g a dt at ss ci in
-      let alternated = alterForms s nef g a dt at ss in
+      let alternated = alterForms stem nef g a dt at ss in
       animacySelection dt alternated nef
+    ;
+
+  stemFromWord : Str -> Gender -> DeclType -> Str
+    = \word, g, dt ->
+      let end1 = (gDtBasedSelection g dt).snom.p1 in
+      case end1 of {
+        "" => word ;
+        _ => Predef.tk 1 word
+      }
     ;
 
   SgAcc : Gender -> Animacy -> DeclType -> NounFormsBase -> Str -> Str

@@ -35,7 +35,7 @@ lin
   chair_N = mkN "стул" ; -- irregular
   cheese_N = mkN "сыр" ;
   child_N = (mkNAltPl (mkN "ребёнок" masculine animate (Z 3 Ast A)) (mkN "деть")) ** {pins="детьми"};
-  church_N = mkN "церков" feminine animate (Z 8 Ast E) ;  -- stem->word
+  church_N = mkN "церковь" feminine animate (Z 8 Ast E) ;  -- stem->word
   city_N = mkN "город" ;
   cloud_N = mkN "облако" ; -- irregular
   coat_N = mkN "пальто" masculine inanimate Z0;
@@ -43,7 +43,7 @@ lin
   country_N = mkN "страна" ;
   cousin_N = mkN "кузен" masculine animate ;  -- also: mkN "кузина" feminine animate ;
   cow_N = mkN "корова";
-  day_N = mkN "ден" masculine inanimate (Z 2 Ast B) ;
+  day_N = mkN "день" masculine inanimate (Z 2 Ast B) ;
 --  distance_N3 = mkN3 (mkN "расстояние") from_Prep to_Prep ;
   doctor_N = mkN "доктор" ;
   dog_N = mkN "собака" ;
@@ -57,9 +57,9 @@ lin
   factory_N = mkN "фабрика" ;
   fat_N = mkN "жир" ;
 --  father_N2 = mkN2 (mkN "отец" "отца" "отцу" "отца" "отцом" "отце" "отце" "отцы" "отцов" "отцам" "отцов" "отцами" "отцах" masculine animate);
-  feather_N = (mkNplus (mkN "пер" neuter inanimate (Z 1 No D))) ** {pnom="перья";pgen="перьев";pdat="перьям";pacc="перья";pins="перьями";pprep="перьях"};
-  fingernail_N = mkN "ногот" masculine inanimate (Z 2 Ast E) ;
-  fire_N = mkN "огон"  masculine inanimate (Z 2 Ast B) ;
+  feather_N = (mkNplus (mkN "перо" neuter inanimate (Z 1 No D))) ** {pnom="перья";pgen="перьев";pdat="перьям";pacc="перья";pins="перьями";pprep="перьях"};
+  fingernail_N = mkN "ноготь" masculine inanimate (Z 2 Ast E) ;
+  fire_N = mkN "огонь"  masculine inanimate (Z 2 Ast B) ;
   fish_N = mkN "рыба";
   floor_N = mkN "пол" ;
   flower_N = mkN "цветок";
@@ -81,7 +81,7 @@ lin
   harbour_N = mkN "порт" ; -- prepos -u
   hat_N = mkN "шляпа" ;
   head_N = mkN "голова" ;
-  heart_N = mkN "сердц" neuter inanimate (Z 5 Ast C) ;
+  heart_N = mkN "сердце" neuter inanimate (Z 5 Ast C) ;
   hill_N = mkN "холм" ;
   horn_N = mkN "рог" ;
   horse_N = mkN "лошадь" ;
@@ -91,17 +91,17 @@ lin
   industry_N = mkN "промышленность" ;
   iron_N = mkN "железо" ;
 --  john_PN = mkPN "Иван" Masc Sg Animate ;
-  king_N = mkN "корол" masculine animate (Z 2 No B);
+  king_N = mkN "король" masculine animate (Z 2 No B);
   knee_N = mkN "колено" ;
-  lake_N = (mkNplus (mkN "озер" neuter inanimate (Z 1 No A)))  ** {pnom="озёра";pgen="озёр";pdat="озёрам";pacc="озёра";pins="озёрами";pprep="озёрах"} ;
+  lake_N = (mkNplus (mkN "озеро" neuter inanimate (Z 1 No A)))  ** {pnom="озёра";pgen="озёр";pdat="озёрам";pacc="озёра";pins="озёрами";pprep="озёрах"} ;
   lamp_N = mkN "лампа" ;
   language_N = mkN "язык" ;
   leaf_N = mkN "лист" ; -- irregular pl
   leather_N = mkN "кожа" ;
   leg_N = mkN "нога" ;
   liver_N = mkN "печень" ;
-  louse_N = (mkNplus (mkN "вош" feminine animate (Z 8 Ast B'))) ** {pdat="вшам";pins="вшами";pprep="вшах"} ;
-  love_N = mkN "любов" feminine inanimate (Z 8 Ast B') ;
+  louse_N = (mkNplus (mkN "вошь" feminine animate (Z 8 Ast B'))) ** {pdat="вшам";pins="вшами";pprep="вшах"} ;
+  love_N = mkN "любовь" feminine inanimate (Z 8 Ast B') ;
   man_N = (mkNAltPl (mkN "человек" masculine animate (Z 3 No A)) (mkN "людь" masculine animate)) ** {pins="людьми"};
   meat_N = mkN "мясо" ;
   milk_N = mkN "молоко" ;
@@ -121,7 +121,7 @@ lin
 --  paris_PN = mkPN "Париж" Masc Sg Inanimate ;
   peace_N = mkN "мир" ;
   pen_N = mkN "ручка" ;
-  person_N = mkN "лиц" neuter animate (Z 5 No D) ;
+  person_N = mkN "лицо" neuter animate (Z 5 No D) ;
   planet_N = mkN "планета" ;
   plastic_N = mkN "пластмасса" ;
   policeman_N = mkN "милиционер" ;
@@ -154,7 +154,7 @@ lin
   silver_N = mkN "серебро" ;
   sister_N = mkN "сестра" ;
   skin_N = mkN "кожа" ;
-  sky_N = (mkNAltPl (mkN "неб" neuter inanimate (Z 1 No C)) (mkN "небес" neuter inanimate (Z 1 No B)));
+  sky_N = (mkNAltPl (mkN "небо" neuter inanimate (Z 1 No C)) (mkN "небесо" neuter inanimate (Z 1 No B)));
   smoke_N = mkN "дым" ;
   snake_N = mkN "змея" ;
   snow_N = mkN "снег" ;
@@ -180,10 +180,10 @@ lin
   war_N = mkN "война" ;
   water_N = mkN "вода" ;
   wife_N = mkN "жена" ;
-  wind_N = mkN "ветер" Masc Inanimate (Z 1 Ast E) ;
-  window_N = mkN "окно" ; -- "окон"
+  wind_N = mkN "ветер" masculine inanimate (Z 1 Ast E) ;
+  window_N = mkN "окно" neuter inanimate  (Z 1 Ast D);
   wine_N = mkN "вино" ;
-  wing_N = mkN "крыл" Neut Inanimate (Z 1 No D) ; -- pl крылья крыльев etc TODO!
+  wing_N = (mkNplus (mkN "крыло" neuter inanimate (Z 1 No D))) ** {pnom="крылья";pgen="крыльев";pdat="крыльям";pacc="крылья";pins="крыльями";pprep="крыльях"};
   woman_N = mkN "женщина" ;
   wood_N = mkN "дерево" ;
   worm_N = mkN "черв" ;
