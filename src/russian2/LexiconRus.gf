@@ -121,7 +121,7 @@ lin
 --  paris_PN = mkPN "Париж" Masc Sg Inanimate ;
   peace_N = mkN "мир" ;
   pen_N = mkN "ручка" ;
---  person_N = mkN "лицo" animate ; -- irregular
+  person_N = mkN "лиц" neuter animate (Z 5 No D) ;
   planet_N = mkN "планета" ;
   plastic_N = mkN "пластмасса" ;
   policeman_N = mkN "милиционер" ;
@@ -141,7 +141,7 @@ lin
   rubber_N = mkN "резина" ;
   rule_N = mkN "правило" ;
   salt_N = mkN "соль" ;
---  sand_N = mkN "песок" "песка" "песку" "песок" "песком" "песке" "песке" "пески" "песков" "пескам" "песков" "песками" "песках"  masculine inanimate ;
+  sand_N = (mkNplus (mkN "песок"  masculine inanimate (Z 3 Ast B))) ** {sptv="песку"} ;
   school_N = mkN "школа" ;
   science_N = mkN "наука" ;
   sea_N = mkN "море" ;
@@ -154,7 +154,7 @@ lin
   silver_N = mkN "серебро" ;
   sister_N = mkN "сестра" ;
   skin_N = mkN "кожа" ;
---  sky_N = mkN "небо" "неба" "небу" "небо" "небом" "небе" "небе" "небеса" "небес" "небесам" "небес" "небесами" "небесах" neuter inanimate ;
+  sky_N = (mkNAltPl (mkN "неб" neuter inanimate (Z 1 No C)) (mkN "небес" neuter inanimate (Z 1 No B)));
   smoke_N = mkN "дым" ;
   snake_N = mkN "змея" ;
   snow_N = mkN "снег" ;
