@@ -410,7 +410,7 @@ lin
   nochq_N = mkN "ночь" Fem Inanimate (Z 8 No E) ;
   nojabrq_N = mkN "ноябрь" Masc Inanimate (Z 2 No B) ;
   obed_N = mkN "обед" Masc Inanimate (Z 1 No A) ;
-  obespechenie_N = mkN "обеспечен и {{по-слогамие" Neut Inanimate (Z 7 No A) ;
+  obespechenie_N = mkN "обеспечение" Neut Inanimate (Z 7 No A) ;
   oblastq_N = mkN "область" Fem Inanimate (Z 8 No E) ;
   oborona_N = mkN "оборона" Fem Inanimate (Z 1 No A) ;
   oborudovanie_N = mkN "оборудование" Neut Inanimate (Z 7 No A) ;
