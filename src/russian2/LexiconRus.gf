@@ -42,9 +42,9 @@ lin
 --  coat_N = mkIndeclinableNoun "пальто" masculine inanimate ;
   computer_N = mkN "компьютер" ;
   country_N = mkN "страна" ;
-  cousin_N = mkN "кузен" ; -- FIXME: is this really correct? can't find it in the dictionary
+  cousin_N = mkN "кузен" masculine animate ;  -- also: mkN "кузина" feminine animate ;
   cow_N = mkN "корова";
---  day_N = mkN "день" "дня" "дню" "день" "днём" "дне" "дне" "дни" "дней" "дням" "дни" "днями" "днях" masculine inanimate ;
+  day_N = mkN "ден" masculine inanimate (Z 2 Ast B) ;
 --  distance_N3 = mkN3 (mkN "расстояние") from_Prep to_Prep ;
   doctor_N = mkN "доктор" ;
   dog_N = mkN "собака" ;

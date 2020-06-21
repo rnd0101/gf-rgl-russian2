@@ -38,20 +38,24 @@ oper
   mobileOne : Str -> NounEndForms -> DeclType -> StressSchema -> StemForms
    = \s, nef, dt, ss ->
      let snom = s + nef.snom in
-     let last = Predef.dp 1 snom in
-     let butLast = Predef.tk 1 snom in
+     let cmp_base : Str = case snom of {
+       _ + "ь" => s ;
+       _ => snom
+     } in
+     let last = Predef.dp 1 cmp_base in
+     let butLast = Predef.tk 1 cmp_base in
      let secondLast = Predef.dp 1 butLast in
-     let butTwolast = Predef.tk 2 snom in
+     let butTwolast = Predef.tk 2 cmp_base in
      let thirdLast = Predef.dp 1 butTwolast in
-     let s1 : Str = case <dt, snom, thirdLast, secondLast> of {   -- what if more than one consonant or sign?
+     let s1 : Str = case <dt, cmp_base, thirdLast, secondLast> of {   -- what if more than one consonant or sign? eg день
        <6, _ + #vowel + #consonant, _, "е"|"ё"> => butTwolast + "ь" ;
        <_, _ + #vowel + #consonant, #vowel, "е"|"ё"> => butTwolast + "й" + last ;  --?
        <3, _ + #vowel + #consonant, #consonant_minus, "е"|"ё"> => butTwolast + "ь" + last ;  -- королёк, but овражек
        <1|2|4|5|7|8, _ + #vowel + #consonant, "л", "е"|"ё"> => butTwolast + "ь" + last ;
        <6, _ + #vowel + #consonant, _, "и"> => butTwolast + "ь" + last  ;  --?
-       -- <_, _ + #vowel + #consonant, _, "е"|"ё"> => butTwolast + last ;
-       -- <_, _ + #vowel + #consonant, _, "о"> => butTwolast + last  ;  -- клочок
-       _ => butTwolast + last
+       <_, _ + #vowel + #consonant, _, "е"|"ё"> => butTwolast + last ;
+       <_, _ + #vowel + #consonant, _, "о"> => butTwolast + last  ;  -- клочок
+       _ => s
      } in
      {  -- TODO
       snom = s + nef.snom ;
