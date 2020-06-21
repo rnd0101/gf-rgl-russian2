@@ -143,6 +143,19 @@ oper
       svoc = base.snom ;
     } ;
 
+  mkNAltPl : NounForms -> NounForms -> NounForms
+    = \sgn, pln -> sgn ** {
+      pnom =  pln.pnom ;
+      pgen =  pln.pgen ;
+      pdat =  pln.pdat ;
+      pacc =  pln.pacc ;
+      pins =  pln.pins ;
+      pprep=  pln.pprep
+    } ;
+
+  mkNplus : NounForms -> NounForms
+    = \nf -> nf ;
+
   Determiner : Type = {  -- определяемое слово
     s : Gender => Animacy => Case => Str ;
     size : NumSize

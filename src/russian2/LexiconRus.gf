@@ -34,12 +34,11 @@ lin
   ceiling_N = mkN "потолок" ; -- vowel change
   chair_N = mkN "стул" ; -- irregular
   cheese_N = mkN "сыр" ;
---  child_N = mkNAltPl "ребёнок" "деть" masculine animate;
---  child_N = mkN "ребёнок" "ребёнка" "ребёнку" "ребёнка" "ребёнком" "ребёнке" "ребёнке" "дети" "детей" "детям" "детей" "детьми" "детях"  masculine animate ;
---  church_N = mkN "церковь" "церкви" "церкви" "церковь" "церковью" "церкви" "церкви" "церкви" "церквей" "церквям" "церкви" "церквями" "церквях"  masculine inanimate ;
+  child_N = (mkNAltPl (mkN "ребёнок" masculine animate (Z 3 Ast A)) (mkN "деть")) ** {pins="детьми"};
+  church_N = mkN "церков" feminine animate (Z 8 Ast E) ;  -- stem->word
   city_N = mkN "город" ;
   cloud_N = mkN "облако" ; -- irregular
---  coat_N = mkIndeclinableNoun "пальто" masculine inanimate ;
+  coat_N = mkN "пальто" masculine inanimate Z0;
   computer_N = mkN "компьютер" ;
   country_N = mkN "страна" ;
   cousin_N = mkN "кузен" masculine animate ;  -- also: mkN "кузина" feminine animate ;
@@ -58,17 +57,17 @@ lin
   factory_N = mkN "фабрика" ;
   fat_N = mkN "жир" ;
 --  father_N2 = mkN2 (mkN "отец" "отца" "отцу" "отца" "отцом" "отце" "отце" "отцы" "отцов" "отцам" "отцов" "отцами" "отцах" masculine animate);
---  feather_N = mkN "перо" "пера" "перу" "пера" "пером" "пере" "пере" "перья" "перьев" "перьям" "перьев" "перьями" "перьях" neuter inanimate ;
---  fingernail_N = mkN "ноготь" "ногтя" "ногтю" "ногтя" "ногтем" "ногте" "ногте" "ногти" "ногтей" "ногтям" "ногтей" "ногтями" "ногтях"  masculine inanimate ;
---  fire_N = mkN "огонь" "огня" "огню" "огня" "огнём" "огне" "огне" "огни" "огней" "огням" "огней" "огнями" "огнях" masculine inanimate ;
+  feather_N = (mkNplus (mkN "пер" neuter inanimate (Z 1 No D))) ** {pnom="перья";pgen="перьев";pdat="перьям";pacc="перья";pins="перьями";pprep="перьях"};
+  fingernail_N = mkN "ногот" masculine inanimate (Z 2 Ast E) ;
+  fire_N = mkN "огон"  masculine inanimate (Z 2 Ast B) ;
   fish_N = mkN "рыба";
   floor_N = mkN "пол" ;
   flower_N = mkN "цветок";
   fog_N = mkN "туман" ;
   foot_N = mkN "ступня" ;
-  forest_N = mkN "лес" Masc Inanimate (ZC 1 No C ZC1) ; -- prepos -u  Loc
+  forest_N = (mkNplus (mkN "лес" masculine inanimate (ZC 1 No C ZC1))) ** {sloc="лесу"} ;
   fridge_N = mkN "холодильник" ;
---  friend_N = mkN "друг" "друга" "другу" "друга" "другом" "друге" "друге" "друзья" "друзей" "друзьям" "друзей" "дузьями" "друзьях" masculine animate ;
+  friend_N = (mkNplus (mkN "друг" masculine inanimate (Z 3 No C))) ** {pnom="друзья";pgen="друзей";pdat="друзьям";pacc="друзей";pins="друзьями";pprep="друзьях"};
   fruit_N = mkN "фрукт" ;
   garden_N = mkN "сад" ;
   girl_N = mkN "девочка"; -- vowel change
@@ -82,34 +81,34 @@ lin
   harbour_N = mkN "порт" ; -- prepos -u
   hat_N = mkN "шляпа" ;
   head_N = mkN "голова" ;
---  heart_N = mkN "сердце" "сердца" "сердцу" "сердца" "сердцем" "сердце" "сердце" "сердца" "сердец" "сердцам" "сердец" "сердцами" "сердцах"  neuter inanimate ;
+  heart_N = mkN "сердц" neuter inanimate (Z 5 Ast C) ;
   hill_N = mkN "холм" ;
   horn_N = mkN "рог" ;
   horse_N = mkN "лошадь" ;
   house_N = mkN "дом" ;
---  husband_N = mkN "муж" "мужа" "мужу" "мужа" "мужем" "муже" "муже" "мужья" "мужей" "мужьям" "мужей" "мужьями" "мужьях" masculine animate ;
---  ice_N = mkN "лёд" "льда" "льду" "льда" "льдом" "льде" "льде" "льды" "льдов" "льдам" "льдов" "льдами" "льдах" masculine inanimate ;
+  husband_N = (mkNplus (mkN "муж" masculine animate (Z 3 No C))) ** {pnom="мужья";pgen="мужей";pdat="мужьям";pacc="мужей";pins="мужьями";pprep="мужьях"};
+  ice_N = (mkNplus (mkN "лёд"  masculine animate (Z 1 Ast B))) ** {sloc="льду";sptv="льду"} ;
   industry_N = mkN "промышленность" ;
   iron_N = mkN "железо" ;
 --  john_PN = mkPN "Иван" Masc Sg Animate ;
---  king_N = mkN "король" "короля" "королю" "короля" "королем" "короле" "короле" "короли" "королей" "королям" "королей" "королями" "королях"  masculine animate ;
+  king_N = mkN "корол" masculine animate (Z 2 No B);
   knee_N = mkN "колено" ;
-  lake_N = mkN "озеро" ; -- gen pl "озёр"
+  lake_N = (mkNplus (mkN "озер" neuter inanimate (Z 1 No A)))  ** {pnom="озёра";pgen="озёр";pdat="озёрам";pacc="озёра";pins="озёрами";pprep="озёрах"} ;
   lamp_N = mkN "лампа" ;
   language_N = mkN "язык" ;
   leaf_N = mkN "лист" ; -- irregular pl
   leather_N = mkN "кожа" ;
   leg_N = mkN "нога" ;
   liver_N = mkN "печень" ;
---  louse_N = mkN "вошь" "вши" "вши" "вошь" "вошью" "вше" "вше" "вши" "вшей" "вшам" "вшей" "вшами" "вшах" feminine animate ;
-  love_N = mkN "любовь" ; -- vowel change
---  man_N = mkNAltPl "человек" "людь" masculine animate ; -- null gen pl
+  louse_N = (mkNplus (mkN "вош" feminine animate (Z 8 Ast B'))) ** {pdat="вшам";pins="вшами";pprep="вшах"} ;
+  love_N = mkN "любов" feminine inanimate (Z 8 Ast B') ;
+  man_N = (mkNAltPl (mkN "человек" masculine animate (Z 3 No A)) (mkN "людь" masculine animate)) ** {pins="людьми"};
   meat_N = mkN "мясо" ;
   milk_N = mkN "молоко" ;
   moon_N = mkN "луна" ;
 --  mother_N2 = mkN2 (mkN "мать" "матери" "матери" "мать" "матерью" "матери" "матери" "матери" "матерей" "матерям" "матерей" "матерями" "матерях" feminine animate) ;
   mountain_N = mkN "гора" ;
---  mouth_N = mkN "рот" "рта" "рту" "рот" "ртом" "рте" "рте" "рты" "ртов" "ртам" "рты" "ртами" "ртах" masculine inanimate ;
+  mouth_N = (mkNplus (mkN "рот"  masculine inanimate (Z 1 Ast B))) ** {sloc="рту"} ;
   music_N = mkN "музыка" ;
   name_N = mkN "имя" ;
   neck_N = mkN "шея" ;

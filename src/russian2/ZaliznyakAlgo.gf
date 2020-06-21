@@ -57,7 +57,7 @@ oper
        <_, _ + #vowel + #consonant, _, "о"> => butTwolast + last  ;  -- клочок
        _ => s
      } in
-     {  -- TODO
+     {
       snom = s + nef.snom ;
       pnom = s1 + nef.pnom ;
       sgen = s1 + nef.sgen ;
