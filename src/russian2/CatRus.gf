@@ -43,7 +43,9 @@ flags coding=utf8 ; optimize=all ;
 
 
   linref
-    N = \s -> s.snom ;
+  --  N = \s -> s.snom ;
+    N = \s -> s.snom ++ s.sgen ++ s.sdat ++ s.sacc ++ s.sins ++ s.sprep
+      ++ s.pnom ++ s.pgen ++ s.pdat ++ s.pacc ++ s.pins ++ s.pprep ;
     A = \s -> s.msnom ;
 
 }

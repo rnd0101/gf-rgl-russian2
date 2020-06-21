@@ -5,6 +5,6 @@ lin
   --NumPl = {s = \\_,_ => [] ; size = Num2_4} ; ---- size
   --NumSg = {s = \\_,_ => [] ; size = Num1} ;
 
-  UsePron pron = pronFormsPronoun ;
+  -- UsePron pron = pronFormsPronoun ;
   UseN n = nounFormsNoun n ;
 }
