@@ -4,7 +4,7 @@ concrete LexiconRus of Lexicon = CatRus **
 flags optimize=values ; coding=utf8 ;
 lin
   airplane_N = mkN "самолёт" ;
---  animal_N = mkN "животное" animate;
+--  animal_N = mkN "животное" animate;  -- TODO: as adjective
   apartment_N = mkN "квартира" ;
   apple_N = mkN "яблоко" ;
   art_N = mkN "искусство" ;
@@ -150,7 +150,7 @@ lin
   sheep_N = mkN "овца" ;
   ship_N = mkN "корабль" ;
   shirt_N = mkN "рубашка" ;
---  shoe_N = mkN "туфля" "туфли" "туфле" "туфлю" "туфлей" "туфле" "туфле" "туфли" "туфель" "туфлям" "туфли" "туфлями" "туфлях"  masculine inanimate ;
+  shoe_N = mkN "туфля" feminine inanimate (Z 2 Ast A) ;
   shop_N = mkN "магазин" ;
   silver_N = mkN "серебро" ;
   sister_N = mkN "сестра" ;
@@ -167,8 +167,7 @@ lin
   stone_N = mkN "камень" ;
   stove_N = mkN "печь" ;
   student_N = mkN "студент" ;
-  sun_N = mkN "солнце" neuter inanimate ;
---  sun_N = mkN "солнце" "солнца" "солнцу" "солнце" "солнцем" "солнце" "солнце" "солнца" "солнц" "солнцам" "солнца" "солнцами" "солнцах"  neuter inanimate ;
+  sun_N = mkN "солнце" neuter inanimate (Z 5 No A);
   table_N = mkN "стол" ;
   tail_N = mkN "хвост" ;
   teacher_N = mkN "учитель" ;
@@ -189,5 +188,5 @@ lin
   woman_N = mkN "женщина" ;
   wood_N = mkN "дерево" ;
   worm_N = mkN "черв" ;
---  year_N = mkNAltPl "год" "лето" masculine inanimate ;
+  year_N = (mkNplus (mkN "год")) ** {sloc="году"; pgen="лет"};
 }
