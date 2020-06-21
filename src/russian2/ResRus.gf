@@ -83,57 +83,53 @@ oper
   --  - animacy can influence acc sg/pl, those are gen sg/pl, and not nom-sg / pl
 
   guessNounForms : Str -> NounForms
-    = \s ->
-    let butLast = Predef.tk 1 s in
-    let butTwolast = Predef.tk 2 s in
-    case s of {
-      stem + "уть"                            => noMinorCases (makeNoun butLast Masc Inanimate (Z 8 No B)) ;
-      stem + "ий"                             => noMinorCases (makeNoun butLast Masc Inanimate (Z 7 No A)) ;
-      stem + "ия"                             => noMinorCases (makeNoun butLast Fem Inanimate (Z 7 No A)) ;
-      stem + "ие"                             => noMinorCases (makeNoun butLast Neut Inanimate (Z 7 No A)) ;
-      stem + "ье"                             => noMinorCases (makeNoun butLast Neut Inanimate (Z 6 Ast A)) ;
-      stem + "тель"                           => noMinorCases (makeNoun butLast Masc Inanimate (Z 2 No A)) ;
-      stem + "ь"                              => noMinorCases (makeNoun stem Fem Inanimate (Z 8 No A)) ;
-      stem + "и"                              => noMinorCases (makeNoun stem Neut Inanimate Z0) ;
-      stem + #consonant + ("к"|"х"|"г") + "а" => noMinorCases (makeNoun butLast Fem Inanimate (Z 3 Ast A)) ;
-      stem + ("к" | "х" | "г")                => noMinorCases (makeNoun s Masc Inanimate (Z 3 No A)) ;
-      stem + ("к" | "х" | "г") + "а"          => noMinorCases (makeNoun butLast Fem Inanimate (Z 3 No A)) ;
-      stem + "ца"                             => noMinorCases (makeNoun butLast Fem Animate (Z 5 No A)) ;
-      stem + "й"                              => noMinorCases (makeNoun butLast Masc Inanimate (Z 6 No A)) ;
-      stem + ("ж" | "ш" | "ч" | "щ")          => noMinorCases (makeNoun s Masc Inanimate (Z 4 No A)) ;
-      stem + "ша"                             => noMinorCases (makeNoun butLast Fem Animate (Z 4 No A)) ;
-      stem + ("ж" | "ш" | "ч" | "щ") + "а"    => noMinorCases (makeNoun butLast Fem Inanimate (Z 4 No A)) ;
-      stem + "ц"                              => noMinorCases (makeNoun s Masc Inanimate (Z 5 Ast A)) ;
-      stem + "о"                              => noMinorCases (makeNoun butLast Neut Inanimate (Z 1 No A)) ;
-      stem + "а"                              => noMinorCases (makeNoun butLast Fem Inanimate (Z 1 No A)) ;
-      stem                                    => noMinorCases (makeNoun stem Masc Inanimate (Z 1 No A))
+    = \word ->
+    case word of {
+      stem + "уть"                            => noMinorCases (makeNoun word Masc Inanimate (Z 8 No B)) ;
+      stem + "ий"                             => noMinorCases (makeNoun word Masc Inanimate (Z 7 No A)) ;
+      stem + "ия"                             => noMinorCases (makeNoun word Fem Inanimate (Z 7 No A)) ;
+      stem + "ие"                             => noMinorCases (makeNoun word Neut Inanimate (Z 7 No A)) ;
+      stem + "ье"                             => noMinorCases (makeNoun word Neut Inanimate (Z 6 Ast A)) ;
+      stem + "тель"                           => noMinorCases (makeNoun word Masc Inanimate (Z 2 No A)) ;
+      stem + "ь"                              => noMinorCases (makeNoun word Fem Inanimate (Z 8 No A)) ;
+      stem + "и"                              => noMinorCases (makeNoun word Neut Inanimate Z0) ;
+      stem + #consonant + ("к"|"х"|"г") + "а" => noMinorCases (makeNoun word Fem Inanimate (Z 3 Ast A)) ;
+      stem + ("к" | "х" | "г")                => noMinorCases (makeNoun word Masc Inanimate (Z 3 No A)) ;
+      stem + ("к" | "х" | "г") + "а"          => noMinorCases (makeNoun word Fem Inanimate (Z 3 No A)) ;
+      stem + "ца"                             => noMinorCases (makeNoun word Fem Animate (Z 5 No A)) ;
+      stem + "й"                              => noMinorCases (makeNoun word Masc Inanimate (Z 6 No A)) ;
+      stem + ("ж" | "ш" | "ч" | "щ")          => noMinorCases (makeNoun word Masc Inanimate (Z 4 No A)) ;
+      stem + "ша"                             => noMinorCases (makeNoun word Fem Animate (Z 4 No A)) ;
+      stem + ("ж" | "ш" | "ч" | "щ") + "а"    => noMinorCases (makeNoun word Fem Inanimate (Z 4 No A)) ;
+      stem + "ц"                              => noMinorCases (makeNoun word Masc Inanimate (Z 5 Ast A)) ;
+      stem + "о"                              => noMinorCases (makeNoun word Neut Inanimate (Z 1 No A)) ;
+      stem + "а"                              => noMinorCases (makeNoun word Fem Inanimate (Z 1 No A)) ;
+      stem                                    => noMinorCases (makeNoun word Masc Inanimate (Z 1 No A))
     } ;
 
   guessLessNounForms : Str -> Gender -> Animacy -> NounForms
-    = \s, g, a ->
-    let butLast = Predef.tk 1 s in
-    let butTwolast = Predef.tk 2 s in
-    case s of {
-      stem + "уть"                            => noMinorCases (makeNoun butLast g a (Z 8 No B)) ;
-      stem + "ий"                             => noMinorCases (makeNoun butLast g a (Z 7 No A)) ;
-      stem + "ия"                             => noMinorCases (makeNoun butLast g a (Z 7 No A)) ;
-      stem + "ие"                             => noMinorCases (makeNoun butLast g a (Z 7 No A)) ;
-      stem + "ье"                             => noMinorCases (makeNoun butLast g a (Z 6 Ast A)) ;
-      stem + "тель"                           => noMinorCases (makeNoun butLast g a (Z 2 No A)) ;
-      stem + "ь"                              => noMinorCases (makeNoun stem g a (Z 8 No A)) ;
-      stem + "и"                              => noMinorCases (makeNoun stem g a Z0) ;
-      stem + #consonant + ("к"|"х"|"г") + "а" => noMinorCases (makeNoun butLast g a (Z 3 Ast A)) ;
-      stem + ("к" | "х" | "г")                => noMinorCases (makeNoun s g a (Z 3 No A)) ;
-      stem + ("к" | "х" | "г") + "а"          => noMinorCases (makeNoun butLast g a (Z 3 No A)) ;
-      stem + "ца"                             => noMinorCases (makeNoun butLast g a (Z 5 No A)) ;
-      stem + "й"                              => noMinorCases (makeNoun butLast g a (Z 6 No A)) ;
-      stem + ("ж" | "ш" | "ч" | "щ")          => noMinorCases (makeNoun s g a (Z 4 No A)) ;
-      stem + "ша"                             => noMinorCases (makeNoun butLast g a (Z 4 No A)) ;
-      stem + ("ж" | "ш" | "ч" | "щ") + "а"    => noMinorCases (makeNoun butLast g a (Z 4 No A)) ;
-      stem + "ц"                              => noMinorCases (makeNoun s g a (Z 5 Ast A)) ;
-      stem + "о"                              => noMinorCases (makeNoun butLast g a (Z 1 No A)) ;
-      stem + "а"                              => noMinorCases (makeNoun butLast g a (Z 1 No A)) ;
-      stem                                    => noMinorCases (makeNoun stem g a (Z 1 No A))
+    = \word, g, a ->
+    case word of {
+      stem + "уть"                            => noMinorCases (makeNoun word g a (Z 8 No B)) ;
+      stem + "ий"                             => noMinorCases (makeNoun word g a (Z 7 No A)) ;
+      stem + "ия"                             => noMinorCases (makeNoun word g a (Z 7 No A)) ;
+      stem + "ие"                             => noMinorCases (makeNoun word g a (Z 7 No A)) ;
+      stem + "ье"                             => noMinorCases (makeNoun word g a (Z 6 Ast A)) ;
+      stem + "тель"                           => noMinorCases (makeNoun word g a (Z 2 No A)) ;
+      stem + "ь"                              => noMinorCases (makeNoun word g a (Z 8 No A)) ;
+      stem + "и"                              => noMinorCases (makeNoun word g a Z0) ;
+      stem + #consonant + ("к"|"х"|"г") + "а" => noMinorCases (makeNoun word g a (Z 3 Ast A)) ;
+      stem + ("к" | "х" | "г")                => noMinorCases (makeNoun word g a (Z 3 No A)) ;
+      stem + ("к" | "х" | "г") + "а"          => noMinorCases (makeNoun word g a (Z 3 No A)) ;
+      stem + "ца"                             => noMinorCases (makeNoun word g a (Z 5 No A)) ;
+      stem + "й"                              => noMinorCases (makeNoun word g a (Z 6 No A)) ;
+      stem + ("ж" | "ш" | "ч" | "щ")          => noMinorCases (makeNoun word g a (Z 4 No A)) ;
+      stem + "ша"                             => noMinorCases (makeNoun word g a (Z 4 No A)) ;
+      stem + ("ж" | "ш" | "ч" | "щ") + "а"    => noMinorCases (makeNoun word g a (Z 4 No A)) ;
+      stem + "ц"                              => noMinorCases (makeNoun word g a (Z 5 Ast A)) ;
+      stem + "о"                              => noMinorCases (makeNoun word g a (Z 1 No A)) ;
+      stem + "а"                              => noMinorCases (makeNoun word g a (Z 1 No A)) ;
+      stem                                    => noMinorCases (makeNoun word g a (Z 1 No A))
     } ;
 
   noMinorCases : NounFormsBase -> NounForms

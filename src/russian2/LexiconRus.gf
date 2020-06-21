@@ -166,6 +166,7 @@ lin
   stone_N = mkN "камень" ;
   stove_N = mkN "печь" ;
   student_N = mkN "студент" ;
+  sun_N = mkN "солнце" neuter inanimate ;
 --  sun_N = mkN "солнце" "солнца" "солнцу" "солнце" "солнцем" "солнце" "солнце" "солнца" "солнц" "солнцам" "солнца" "солнцами" "солнцах"  neuter inanimate ;
   table_N = mkN "стол" ;
   tail_N = mkN "хвост" ;
