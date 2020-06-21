@@ -91,6 +91,7 @@ lin
   industry_N = mkN "промышленность" ;
   iron_N = mkN "железо" ;
 --  john_PN = mkPN "Иван" Masc Sg Animate ;
+  -- (mkNplus (mkN "Ваня" Fem Animate (Z 2 No A)) ** {g=Masc}) ;  -- мо <жо 2а> case (reference)
   king_N = mkN "король" masculine animate (Z 2 No B);
   knee_N = mkN "колено" ;
   lake_N = (mkNplus (mkN "озеро" neuter inanimate (Z 1 No A)))  ** {pnom="озёра";pgen="озёр";pdat="озёрам";pacc="озёра";pins="озёрами";pprep="озёрах"} ;
