@@ -60,8 +60,6 @@ oper
       = \nom, g, a -> lin N (guessLessNounForms nom g a) ;
     mkN : Str -> Gender -> Animacy -> ZIndex -> N
       = \word, g, a, z -> lin N (noMinorCases (makeNoun word g a z)) ;
-    mkN : NounForms -> N                   -- problem with order!
-      = \nf -> lin N nf ;
   } ;
 
 ---------------------
