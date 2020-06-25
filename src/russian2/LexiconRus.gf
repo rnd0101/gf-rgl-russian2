@@ -84,9 +84,9 @@ lin
   heart_N = mkN "сердце" neuter inanimate (Z 5 Ast C) ;
   hill_N = mkN "холм" ;
   horn_N = mkN "рог" masculine inanimate (ZC 3 No C ZC1) ;
-  horse_N = mkN "лошадь" feminine inanimate (Z 8 No E) ;
+  horse_N = mkN "лошадь" feminine animate (Z 8 No E) ;
   house_N = mkN "дом" masculine inanimate (ZC 1 No C ZC1) ;
-  husband_N = (mkNplus (mkN "муж" masculine animate (Z 3 No C))) ** {pnom="мужья";pgen="мужей";pdat="мужьям";pacc="мужей";pins="мужьями";pprep="мужьях"};
+  husband_N = (mkNplus (mkN "муж" masculine animate (Z 4 No C))) ** {pnom="мужья";pgen="мужей";pdat="мужьям";pacc="мужей";pins="мужьями";pprep="мужьях"};
   ice_N = (mkNplus (mkN "лёд"  masculine animate (Z 1 Ast B))) ** {sloc="льду";sptv="льду"} ;
   industry_N = mkN "промышленность" ;
   iron_N = mkN "железо" ;
@@ -105,16 +105,16 @@ lin
   love_N = mkN "любовь" feminine inanimate (Z 8 Ast B') ;
   man_N = (mkNAltPl (mkN "человек" masculine animate (Z 3 No A)) (mkN "людь" masculine animate)) ** {pins="людьми"};
   meat_N = mkN "мясо" neuter inanimate (Z 1 No C) ;
-  milk_N = mkN "молоко" ;
+  milk_N = mkN "молоко" neuter inanimate (ZC 3 No D ZC1) ;
   moon_N = mkN "луна" ;
 --  mother_N2 = mkN2 (mkN "мать" "матери" "матери" "мать" "матерью" "матери" "матери" "матери" "матерей" "матерям" "матерей" "матерями" "матерях" feminine animate) ;
   mountain_N = mkN "гора" ;
   mouth_N = (mkNplus (mkN "рот" masculine inanimate (Z 1 Ast B))) ** {sloc="рту"} ;
   music_N = mkN "музыка" ;
-  name_N = mkN "имя" neuter inanimate (Z 8 No C);  -- irregular
+  name_N = mkN "имя" neuter inanimate (Z 8 No C);  -- TODO: irregular
   neck_N = mkN "шея" feminine inanimate (Z 6 No A);
   newspaper_N = mkN "газета" ;
-  night_N = (mkNplus (mkN "ночь" feminine inanimate (Z 8 No E))) ** {sloc="ночь"};
+  night_N = (mkNplus (mkN "ночь" feminine inanimate (Z 8 No E))) ** {sloc="ночь"};   -- TODO: fix ночям ночями ночях
   nose_N = mkN "нос" ;
   number_N = mkN "число" neuter inanimate (Z 1 Ast D) ;
   oil_N = mkN "нефть" ;
@@ -126,8 +126,8 @@ lin
   planet_N = mkN "планета" ;
   plastic_N = mkN "пластмасса" ;
   policeman_N = mkN "милиционер" ;
-  priest_N = mkN "священник" ;
-  queen_N = mkN "королева" ;
+  priest_N = mkN "священник" masculine animate ;
+  queen_N = mkN "королева" feminine animate ;
   question_N = mkN "вопрос" ;
   rain_N = mkN "дождь" ;
   reason_N = mkN "причина";
@@ -147,17 +147,17 @@ lin
   science_N = mkN "наука" ;
   sea_N = mkN "море" ;
   seed_N = mkN "семя";
-  sheep_N = mkN "овца" ;
+  sheep_N = mkN "овца" feminine animate ;
   ship_N = mkN "корабль" ;
   shirt_N = mkN "рубашка" ;
   shoe_N = mkN "туфля" feminine inanimate (Z 2 Ast A) ;
   shop_N = mkN "магазин" ;
   silver_N = mkN "серебро" ;
-  sister_N = mkN "сестра" ;
+  sister_N = mkN "сестра" feminine animate ;
   skin_N = mkN "кожа" ;
   sky_N = (mkNAltPl (mkN "небо" neuter inanimate (Z 1 No C)) (mkN "небесо" neuter inanimate (Z 1 No B)));
   smoke_N = mkN "дым" ;
-  snake_N = mkN "змея" ;
+  snake_N = mkN "змея" feminine animate ;
   snow_N = mkN "снег" ;
   sock_N = mkN "носок" ;
   song_N = mkN "песня" ;
@@ -166,11 +166,11 @@ lin
   stick_N = mkN "палка" ;
   stone_N = mkN "камень" ;
   stove_N = mkN "печь" ;
-  student_N = mkN "студент" ;
+  student_N = mkN "студент" masculine animate ;
   sun_N = mkN "солнце" neuter inanimate (Z 5 No A);
   table_N = mkN "стол" ;
   tail_N = mkN "хвост" ;
-  teacher_N = mkN "учитель" ;
+  teacher_N = mkN "учитель" masculine animate ;
   television_N = mkN "телевидение" ; -- FIXME: televizor?
   tongue_N = mkN "язык" ;
   tooth_N = mkN "зуб" ;
@@ -180,13 +180,13 @@ lin
   village_N = mkN "деревня" ;
   war_N = mkN "война" ;
   water_N = mkN "вода" ;
-  wife_N = mkN "жена" ;
+  wife_N = mkN "жена" feminine animate ;
   wind_N = mkN "ветер" masculine inanimate (Z 1 Ast E) ;
   window_N = mkN "окно" neuter inanimate  (Z 1 Ast D);
   wine_N = mkN "вино" ;
   wing_N = (mkNplus (mkN "крыло" neuter inanimate (Z 1 No D))) ** {pnom="крылья";pgen="крыльев";pdat="крыльям";pacc="крылья";pins="крыльями";pprep="крыльях"};
-  woman_N = mkN "женщина" ;
+  woman_N = mkN "женщина" feminine animate ;
   wood_N = mkN "дерево" ;
-  worm_N = mkN "черв" ;
+  worm_N = mkN "червь" masculine animate ;
   year_N = (mkNplus (mkN "год")) ** {sloc="году"; pgen="лет"};
 }
