@@ -27,15 +27,15 @@ lin
   breast_N = mkN "грудь" ;
   butter_N = mkN "масло";
   camera_N = mkN "фотоаппарат" ;
-  cap_N = mkN "чашка" ; -- vowel change
+  cap_N = mkN "чашка" ;
   car_N = mkN "машина" ;
-  carpet_N = mkN "ковёр"; -- vowel change
-  cat_N = mkN "кошка" feminine animate (Z 3 Ast A) ; -- vowel change
-  ceiling_N = mkN "потолок" ; -- vowel change
-  chair_N = mkN "стул" ; -- irregular
+  carpet_N = mkN "ковёр" masculine inanimate (Z 1 Ast B) ;
+  cat_N = mkN "кошка" feminine animate (Z 3 Ast A) ;
+  ceiling_N = mkN "потолок" masculine inanimate (Z 3 Ast B);
+  chair_N = (mkNplus (mkN "стул" masculine inanimate (Z 1 No A))) ** {pnom="стулья";pgen="стульев";pdat="стульям";pacc="стулья";pins="стульями";pprep="стульях"} ;
   cheese_N = mkN "сыр" ;
   child_N = (mkNAltPl (mkN "ребёнок" masculine animate (Z 3 Ast A)) (mkN "деть")) ** {pins="детьми"};
-  church_N = mkN "церковь" feminine animate (Z 8 Ast E) ;  -- stem->word
+  church_N = mkN "церковь" feminine animate (Z 8 Ast E) ;
   city_N = mkN "город" ;
   cloud_N = mkN "облако" neuter inanimate (ZC 3 No C ZC2) ;
   coat_N = mkN "пальто" masculine inanimate Z0;
@@ -50,8 +50,8 @@ lin
   door_N = mkN "дверь" ;
   dust_N = mkN "пыль" ;
   ear_N = mkN "ухо" ;
-  earth_N = mkN "земля" ;
-  egg_N = mkN "яйцо" ;
+  earth_N = mkN "земля" feminine inanimate (Z 2 Ast D) ;
+  egg_N = (mkNplus (mkN "яйцо" neuter inanimate (Z 5 Ast D))) ** {pgen="яиц"} ;
   enemy_N = mkN "враг" masculine animate ;
   eye_N = mkN "глаз" masculine inanimate (ZC 1 No C ZC12) ;
   factory_N = mkN "фабрика" ;
@@ -136,8 +136,8 @@ lin
   river_N = mkN "рекa" ;
   road_N = mkN "дорогa" ;
   rock_N = mkN "камень" ;
-  roof_N = mkN "крыша" ;
-  root_N = mkN "корень" ;
+  roof_N = mkN "крыша" feminine inanimate (Z 4 No A) ;
+  root_N = mkN "корень" masculine inanimate (Z 2 Ast E) ;
   rope_N = mkN "верёвка" ;
   rubber_N = mkN "резина" ;
   rule_N = mkN "правило" ;
@@ -145,10 +145,10 @@ lin
   sand_N = (mkNplus (mkN "песок"  masculine inanimate (Z 3 Ast B))) ** {sptv="песку"} ;
   school_N = mkN "школа" ;
   science_N = mkN "наука" ;
-  sea_N = mkN "море" ;
-  seed_N = mkN "семя";
+  sea_N = mkN "море" neuter inanimate (Z 2 No C) ;
+  seed_N = mkN "семя" neuter inanimate (Z 8 No C) ;  -- !!!
   sheep_N = mkN "овца" feminine animate ;
-  ship_N = mkN "корабль" ;
+  ship_N = mkN "корабль" masculine inanimate (Z 2 No B);
   shirt_N = mkN "рубашка" ;
   shoe_N = mkN "туфля" feminine inanimate (Z 2 Ast A) ;
   shop_N = mkN "магазин" ;
@@ -157,14 +157,14 @@ lin
   skin_N = mkN "кожа" ;
   sky_N = (mkNAltPl (mkN "небо" neuter inanimate (Z 1 No C)) (mkN "небесо" neuter inanimate (Z 1 No B)));
   smoke_N = mkN "дым" ;
-  snake_N = mkN "змея" feminine animate ;
+  snake_N = mkN "змея" feminine animate (Z 6 No D);
   snow_N = mkN "снег" ;
   sock_N = mkN "носок" ;
-  song_N = mkN "песня" ;
+  song_N = mkN "песня" feminine inanimate (Z 2 Ast A);
   star_N = mkN "звезда" ;
   steel_N = mkN "сталь" ;
   stick_N = mkN "палка" ;
-  stone_N = mkN "камень" ;
+  stone_N = mkN "камень" masculine inanimate (Z 2 Ast E);
   stove_N = (mkNplus (mkN "печь" feminine inanimate (Z 8 No E))) ** {sloc="печь"} ;
   student_N = mkN "студент" masculine animate ;
   sun_N = mkN "солнце" neuter inanimate (Z 5 No A);
@@ -175,7 +175,7 @@ lin
   tongue_N = mkN "язык" ;
   tooth_N = mkN "зуб" ;
   train_N = mkN "поезд" ;
-  tree_N = mkN "дерево" ; -- irregular
+  tree_N = (mkNplus (mkN "дерево" neuter inanimate (Z 1 No A))) ** {pnom="деревья";pgen="деревьев";pdat="деревьям";pacc="деревья";pins="деревьями";pprep="деревьях"} ;
   university_N = mkN "университет" ;
   village_N = (mkNplus (mkN "деревня" feminine inanimate (Z 2 Ast E))) ** {pgen="деревень"} ;
   war_N = mkN "война" ;
