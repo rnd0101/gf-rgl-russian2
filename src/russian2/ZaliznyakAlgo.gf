@@ -195,8 +195,9 @@ oper
     = \word, g, a, dt, at, ss, ci ->
       let stem = stemFromWord word g dt in
       let nef = endingsSelection g a dt at ss ci in
-      let alternated = alterForms stem nef g a dt at ss in
-      animacySelection dt alternated nef
+      let nef' = specialEndings word stem nef g dt in
+      let alternated = alterForms stem nef' g a dt at ss in
+      animacySelection dt alternated nef'
     ;
 
   stemFromWord : Str -> Gender -> DeclType -> Str
@@ -239,6 +240,16 @@ oper
     gDtSsBasedSelection gDtBasedCirc ss
   ;
 
+  specialEndings : Str -> Str -> NounEndForms -> Gender -> DeclType -> NounEndForms
+    = \word, stem, nef1, g, dt ->
+    let stemEnds = Predef.dp 1 stem in
+    let wordEnds = Predef.dp 1 word in
+    case <g, dt, stemEnds, wordEnds> of {
+      <_, 8, ("ж"|"ч"|"ш"|"щ"), _> => nef1 ** {pdat="ам";pins="ами";pprep="ах"} ;
+      <Neut, 2|6|7, _, "ё"> => nef1 ** {snom="ё"} ;
+      _ => nef1
+    } ;
+
   circCorrection : NounEndFormsS1 -> Gender -> DeclType -> ZCirc -> NounEndFormsS1
     = \nef1, g, dt, ci ->
       let trans1 : NounEndFormsS1 = case <g, ci> of {
@@ -248,7 +259,7 @@ oper
       } in
       case <g, ci> of {
         <Masc, ZC2|ZC12> => trans1 ** {pgen=(gDtBasedSelection Neut dt).pgen} ;
-        <Neut, ZC2|ZC12> => trans1 ** {pgen=(gDtBasedSelection Masc dt).pgen} ; -- остриё has problem
+        <Neut, ZC2|ZC12> => trans1 ** {pgen=(gDtBasedSelection Masc dt).pgen} ;
         <Fem,  ZC2|ZC12> => trans1 ** {pgen=(gDtBasedSelection Masc dt).pgen} ;
         _ => trans1
       } ;

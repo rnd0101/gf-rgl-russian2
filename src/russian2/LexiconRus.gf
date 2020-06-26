@@ -165,7 +165,7 @@ lin
   steel_N = mkN "сталь" ;
   stick_N = mkN "палка" ;
   stone_N = mkN "камень" ;
-  stove_N = mkN "печь" ;
+  stove_N = (mkNplus (mkN "печь" feminine inanimate (Z 8 No E))) ** {sloc="печь"} ;
   student_N = mkN "студент" masculine animate ;
   sun_N = mkN "солнце" neuter inanimate (Z 5 No A);
   table_N = mkN "стол" ;
@@ -177,7 +177,7 @@ lin
   train_N = mkN "поезд" ;
   tree_N = mkN "дерево" ; -- irregular
   university_N = mkN "университет" ;
-  village_N = mkN "деревня" ;
+  village_N = (mkNplus (mkN "деревня" feminine inanimate (Z 2 Ast E))) ** {pgen="деревень"} ;
   war_N = mkN "война" ;
   water_N = mkN "вода" ;
   wife_N = mkN "жена" feminine animate ;
