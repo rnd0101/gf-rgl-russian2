@@ -35,6 +35,68 @@ oper
     snom=<"","">;pnom=<"","">;sgen=<"","">;pgen=<"","">;sdat=<"","">;pdat=<"","">;sacc=<"","">;pacc=<"","">;sins=<"","">;pins=<"","">;sprep=<"","">;pprep=<"","">
   } ;
 
+  digitToDeclType : Str -> DeclType
+    = \s ->
+      case s of {
+        "0" => 0 ;
+        "1" => 1 ;
+        "2" => 2 ;
+        "3" => 3 ;
+        "4" => 4 ;
+        "5" => 5 ;
+        "6" => 6 ;
+        "7" => 7 ;
+        "8" => 8
+      } ;
+
+  toStressSchema : Str -> StressSchema
+    = \s ->
+      case s of {
+        "a" => A ;
+        "a'" => A' ;
+        "b" => B ;
+        "b'" => B' ;
+        "c" => C ;
+        "c'" => C' ;
+        "c''" => C'' ;
+        "d" => D ;
+        "d'" => D' ;
+        "e" => E ;
+        "f" => F ;
+        "f'" => F' ;
+        "f''" => F'' ;
+        _ => A
+      } ;
+
+  toAlterType : Str -> AlterType
+    = \s ->
+      case s of {
+        "*" => Ast ;
+        "°" => Deg ;
+        _ => No
+      } ;
+
+  toZCirc: Str -> ZCirc
+    = \s ->
+      case s of {
+        "①" | "(1)" => ZC1 ;
+        "①②" | "②①" | "(1)(2)" | "(2)(1)" => ZC12 ;
+        "②" | "(2)" => ZC2 ;
+        _ => NoC
+      } ;
+
+  parseIndex : Str -> ZIndex
+    = \s ->
+      case s of {
+        "0" => Z0 ;
+        dt@(#digit) + at@("*"|"°"|"") + ss@(#stress_schema) + zc@("①"|"①②"|"②①"|"②"|"(1)"|"(1)(2)"|"(2)(1)"|"(2)")
+          => ZC (digitToDeclType dt) (toAlterType at) (toStressSchema ss) (toZCirc zc) ;
+        dt@(#digit) + at@("*"|"°"|"") + ss@(#stress_schema)
+          => Z (digitToDeclType dt) (toAlterType at) (toStressSchema ss) ;
+        _ => Predef.error "Error: incorrect ZIndex"
+    }
+ ;
+
   mobileOne : Str -> NounEndForms -> DeclType -> StressSchema -> StemForms
    = \s, nef, dt, ss ->
      let snom = s + nef.snom in

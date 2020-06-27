@@ -51,6 +51,8 @@ resource ParamRus = ParamX ** open Prelude in {
     consonant_minus : pattern Str = #("б"|"в"|"г"|"д"|"з"|"й"|"к"|"л"|"м"|"н"|"п"|"р"|"с"|"т"|"ф"|"х") ; -- шжчщц
     vowel : pattern Str = #("а"|"е"|"ё"|"и"|"о"|"у"|"ы"|"э"|"ю"|"я") ;
     vowel_but_i : pattern Str = #("а"|"е"|"ё"|"о"|"у"|"ы"|"э"|"ю"|"я") ;
+    digit : pattern Str = #("0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9") ;
+    stress_schema : pattern Str = #("a"|"a'"|"b"|"b'"|"c"|"c'"|"c''"|"d"|"d'"|"e"|"f"|"f'"|"f''") ;
 
   param
     Gender     = Masc | Fem | Neut ;  -- род
