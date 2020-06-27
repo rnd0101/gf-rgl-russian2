@@ -1,6 +1,6 @@
 --# -path=.:abstract:common
 concrete LexiconRus of Lexicon = CatRus **
-  open ParadigmsRus, Prelude, MorphoRus in {
+  open ParadigmsRus, Prelude, ResRus in {
 flags optimize=values ; coding=utf8 ;
 lin
   airplane_N = mkN "самолёт" ;
