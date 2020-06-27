@@ -57,12 +57,6 @@ resource ParamRus = ParamX ** open Prelude in {
   param
     Gender     = Masc | Fem | Neut ;  -- род
     Animacy    = Animate | Inanimate ;  -- одушевлённый / неодушевлённый
-    AlterType    = No | Ast | Deg  ;    -- Alternation: eg 1a, 1*a, 1°a
-    StressSchema = A | A' | B | B' | C | C' | C'' | D | D' | E | F | F' | F'' ;
-    ZCirc        = NoC | ZC1 | ZC2 | ZC12 ;
-    ZIndex       = Z0 | Z DeclType AlterType StressSchema | ZC DeclType AlterType StressSchema ZCirc ;
-    Stressedness = Stressed | Unstressed ;
-
     Voice      = Act | Pass | Refl ;  -- залог
     Aspect     = Imperfective | Perfective ;  -- вид / аспект
     AfterPrepPron  = AfterPrep | NotAfterPrep ;  -- to variate pronouns starting with vowels.
