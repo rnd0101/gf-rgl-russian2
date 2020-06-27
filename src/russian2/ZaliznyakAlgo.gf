@@ -188,8 +188,9 @@ oper
     case z of {
       Z0 => immutableNounCases word g a ;
       Z 3 Deg ss => formsSelectionOnok word g a 3 Deg ss NoC ;
+      Z 1 Deg ss => formsSelectionAnin word g a 3 Deg ss NoC ;
       Z dt at ss => formsSelection word g a dt at ss NoC ;
-      ZC 3 Deg ss ci => formsSelectionOnok word g a 3 Deg ss ci ;
+      ZC 1 Deg ss ci => formsSelectionAnin word g a 3 Deg ss ci ;
       ZC dt at ss ci => formsSelection word g a dt at ss ci
     } ;
 
@@ -201,6 +202,15 @@ oper
           _ + "онок" => combineDiffSgPlStems sgForms(formsSelection (Predef.tk 4 word + "ата") Neut a 8 Ast ss NoC) ;
           _ + "ёночек" => combineDiffSgPlStems sgForms (formsSelection (Predef.tk 6 word + "ятка") Fem a 3 Ast ss NoC) ;
           _ + "оночек" => combineDiffSgPlStems sgForms (formsSelection (Predef.tk 6 word + "атка") Fem a 3 Ast ss NoC) ;
+          _ => sgForms
+      } ;
+
+  formsSelectionAnin : Str -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounFormsBase
+    = \word, g, a, dt, at, ss, ci ->
+      let butTwolast = Predef.tk 2 word in
+      let sgForms = formsSelection word g a dt Ast ss ci in
+      case word of {
+          _ + ("анин"|"янин") => combineDiffSgPlStems sgForms (formsSelection (butTwolast + "н") Neut a 8 Ast ss NoC) ** {pnom=butTwolast + "е"};
           _ => sgForms
       } ;
 
