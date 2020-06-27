@@ -95,7 +95,7 @@ oper
         <5, _, _>            => stem1 + "е" + stemEnd1 + end ;
         <_, Stressed, _ + ("ж"|"ч"|"ш"|"щ") + #consonant> => stem1 + "о" + stemEnd1 + end ; -- shorted stem?
         <_, Stressed, _> => stem1 + "ё" + stemEnd1 + end ; -- shorted stem?
-        _ => s + end + "?!"
+        _ => s + end
    } ;
 
   mobileTwo : Str -> NounEndForms -> DeclType -> StressSchema -> StemForms
