@@ -194,13 +194,14 @@ oper
     } ;
 
   formsSelectionOnok : Str -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounFormsBase
-    = \word, g, a, dt, at, ss, ci -> -- TODO: fix inanimate pacc case
+    = \word, g, a, dt, at, ss, ci ->
+      let sgForms = formsSelection word g a dt Ast ss ci in
       case word of {
-          _ + "ёнок" => combineDiffSgPlStems (formsSelection word g a dt Ast ss ci) (formsSelection ((Predef.tk 4 word) + "ята") Neut a 8 Ast ss NoC) ;
-          _ + "онок" => combineDiffSgPlStems (formsSelection word g a dt Ast ss ci) (formsSelection ((Predef.tk 4 word) + "ата") Neut a 8 Ast ss NoC) ;
-          _ + "ёночек" => combineDiffSgPlStems (formsSelection word g a dt Ast ss ci) (formsSelection ((Predef.tk 6 word) + "ятка") Fem a 3 Ast ss NoC) ;
-          _ + "оночек" => combineDiffSgPlStems (formsSelection word g a dt Ast ss ci) (formsSelection ((Predef.tk 6 word) + "атка") Fem a 3 Ast ss NoC) ;
-          _ => formsSelection word g a dt at ss ci
+          _ + "ёнок" => combineDiffSgPlStems sgForms (formsSelection (Predef.tk 4 word + "ята") Neut a 8 Ast ss NoC) ;
+          _ + "онок" => combineDiffSgPlStems sgForms(formsSelection (Predef.tk 4 word + "ата") Neut a 8 Ast ss NoC) ;
+          _ + "ёночек" => combineDiffSgPlStems sgForms (formsSelection (Predef.tk 6 word + "ятка") Fem a 3 Ast ss NoC) ;
+          _ + "оночек" => combineDiffSgPlStems sgForms (formsSelection (Predef.tk 6 word + "атка") Fem a 3 Ast ss NoC) ;
+          _ => sgForms
       } ;
 
   combineDiffSgPlStems : NounFormsBase -> NounFormsBase -> NounFormsBase
