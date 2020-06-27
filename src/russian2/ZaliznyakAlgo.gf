@@ -187,8 +187,30 @@ oper
     = \word, g, a, z ->
     case z of {
       Z0 => immutableNounCases word g a ;
+      Z 3 Deg ss => formsSelectionOnok word g a 3 Deg ss NoC ;
       Z dt at ss => formsSelection word g a dt at ss NoC ;
+      ZC 3 Deg ss ci => formsSelectionOnok word g a 3 Deg ss ci ;
       ZC dt at ss ci => formsSelection word g a dt at ss ci
+    } ;
+
+  formsSelectionOnok : Str -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounFormsBase
+    = \word, g, a, dt, at, ss, ci -> -- TODO: fix inanimate pacc case
+      case word of {
+          _ + "ёнок" => combineDiffSgPlStems (formsSelection word g a dt Ast ss ci) (formsSelection ((Predef.tk 4 word) + "ята") Neut a 8 Ast ss NoC) ;
+          _ + "онок" => combineDiffSgPlStems (formsSelection word g a dt Ast ss ci) (formsSelection ((Predef.tk 4 word) + "ата") Neut a 8 Ast ss NoC) ;
+          _ + "ёночек" => combineDiffSgPlStems (formsSelection word g a dt Ast ss ci) (formsSelection ((Predef.tk 6 word) + "ятка") Fem a 3 Ast ss NoC) ;
+          _ + "оночек" => combineDiffSgPlStems (formsSelection word g a dt Ast ss ci) (formsSelection ((Predef.tk 6 word) + "атка") Fem a 3 Ast ss NoC) ;
+          _ => formsSelection word g a dt at ss ci
+      } ;
+
+  combineDiffSgPlStems : NounFormsBase -> NounFormsBase -> NounFormsBase
+    = \sgn, pln -> sgn ** {
+      pnom =  pln.pnom ;
+      pgen =  pln.pgen ;
+      pdat =  pln.pdat ;
+      pacc =  pln.pacc ;
+      pins =  pln.pins ;
+      pprep=  pln.pprep
     } ;
 
   formsSelection : Str -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounFormsBase
