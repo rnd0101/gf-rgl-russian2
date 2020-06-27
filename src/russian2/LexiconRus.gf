@@ -111,10 +111,10 @@ lin
   mountain_N = mkN "гора" ;
   mouth_N = (mkNplus (mkN "рот" masculine inanimate (Z 1 Ast B))) ** {sloc="рту"} ;
   music_N = mkN "музыка" ;
-  name_N = mkN "имя" neuter inanimate (Z 8 No C);  -- TODO: irregular
+  name_N = mkN "имя" neuter inanimate (Z 8 Deg C);
   neck_N = mkN "шея" feminine inanimate (Z 6 No A);
   newspaper_N = mkN "газета" ;
-  night_N = (mkNplus (mkN "ночь" feminine inanimate (Z 8 No E))) ** {sloc="ночь"};   -- TODO: fix ночям ночями ночях
+  night_N = (mkNplus (mkN "ночь" feminine inanimate (Z 8 No E))) ** {sloc="ночь"};
   nose_N = mkN "нос" ;
   number_N = mkN "число" neuter inanimate (Z 1 Ast D) ;
   oil_N = mkN "нефть" ;
@@ -135,7 +135,7 @@ lin
   restaurant_N = mkN "ресторан" ;
   river_N = mkN "рекa" ;
   road_N = mkN "дорогa" ;
-  rock_N = mkN "камень" ;
+  rock_N = mkN "камень" masculine inanimate (Z 2 Ast E) ;
   roof_N = mkN "крыша" feminine inanimate (Z 4 No A) ;
   root_N = mkN "корень" masculine inanimate (Z 2 Ast E) ;
   rope_N = mkN "верёвка" ;
@@ -146,7 +146,7 @@ lin
   school_N = mkN "школа" ;
   science_N = mkN "наука" ;
   sea_N = mkN "море" neuter inanimate (Z 2 No C) ;
-  seed_N = mkN "семя" neuter inanimate (Z 8 No C) ;  -- !!!
+  seed_N = mkN "семя" neuter inanimate (Z 8 Deg C) ;
   sheep_N = mkN "овца" feminine animate ;
   ship_N = mkN "корабль" masculine inanimate (Z 2 No B);
   shirt_N = mkN "рубашка" ;

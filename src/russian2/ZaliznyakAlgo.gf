@@ -189,10 +189,35 @@ oper
       Z0 => immutableNounCases word g a ;
       Z 3 Deg ss => formsSelectionOnok word g a 3 Deg ss NoC ;
       Z 1 Deg ss => formsSelectionAnin word g a 3 Deg ss NoC ;
+      Z 8 Deg ss => formsSelectionMya word g a 8 Deg ss NoC ;
       Z dt at ss => formsSelection word g a dt at ss NoC ;
       ZC 1 Deg ss ci => formsSelectionAnin word g a 3 Deg ss ci ;
       ZC dt at ss ci => formsSelection word g a dt at ss ci
     } ;
+
+  myaCases : Str -> NounEndForms
+    = \stem ->
+    let suffix="ен" in
+    let pGenSuf=case stem of {("сем"|"стрем") => "ян"; _  => "ён"} in
+    {
+      snom=stem + "я";
+      pnom=stem + suffix + "а";
+      sgen=stem + suffix + "и";
+      pgen=stem + pGenSuf ;
+      sdat=stem + suffix + "и";
+      pdat=stem + suffix + "ам";
+      sacc=stem + "я";
+      pacc=stem + suffix + "а";
+      sins=stem + suffix + "ем";
+      pins=stem + suffix + "ами";
+      sprep=stem + suffix + "и";
+      pprep=stem + suffix + "ах"
+  } ;
+
+  formsSelectionMya : Str -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounFormsBase
+    = \word, g, a, dt, at, ss, ci ->
+      let butLast = Predef.tk 1 word in
+      (myaCases butLast) ** {a=a; g=g} ;
 
   formsSelectionOnok : Str -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounFormsBase
     = \word, g, a, dt, at, ss, ci ->
