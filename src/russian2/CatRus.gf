@@ -1,4 +1,3 @@
---# -path=.:../abstract:../common:../../prelude
 
 concrete CatRus of Cat = CommonX ** open ResRus, ParamRus, Prelude in {
 flags coding=utf8 ; optimize=all ;
@@ -7,13 +6,13 @@ flags coding=utf8 ; optimize=all ;
     Num, Numeral, Card, Digits = Determiner ;
 
     N = ResRus.NounForms ;
+    N2 = ResRus.Noun2Forms ;
+    N3 = ResRus.Noun3Forms ;
     A, Ord = ResRus.AdjForms ;
     CN = ResRus.Noun ;
     Pron = ResRus.PronForms ;
 
   -- TODO: below copy-paste, sort out
-
-
     S   = {s : Str} ;
     Cl  = {subj,clit,compl : Str ; verb : VerbForms ; a : Agr} ;
     Comp = {s : Agr => Str} ;
@@ -46,6 +45,9 @@ flags coding=utf8 ; optimize=all ;
   --  N = \s -> s.snom ;
     N = \s -> s.snom ++ s.sgen ++ s.sdat ++ s.sacc ++ s.sins ++ s.sprep
       ++ s.pnom ++ s.pgen ++ s.pdat ++ s.pacc ++ s.pins ++ s.pprep ;
+    N2 = \s -> s.snom ++ s.c2.s;   -- ???
     A = \s -> s.msnom ;
+    V = \s -> s.inf ;
+    V2 = \s -> s.inf ;
 
 }

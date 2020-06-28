@@ -42,6 +42,9 @@ oper
     a : Animacy
   } ;
 
+  Noun2Forms = NounForms ** {c2 : ComplementCase} ;
+  Noun3Forms = NounForms ** {c2,c3 : ComplementCase} ;
+
 -- this is used in UseN
 
   nounFormsNoun : NounForms -> Noun
@@ -156,6 +159,9 @@ oper
     s : Gender => Animacy => Case => Str ;
     size : NumSize
   } ;
+
+  mkFun : NounForms -> ComplementCase -> Noun2Forms = \f, p -> f ** {c2 = p} ;
+  mkFun2 : NounForms -> ComplementCase -> ComplementCase -> Noun3Forms = \f, p2, p3 -> f ** {c2=p2; c3=p3} ;
 
 ---------------------------
 -- Adjectives -- Прилагательные

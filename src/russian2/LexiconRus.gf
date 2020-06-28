@@ -45,6 +45,7 @@ lin
   cow_N = mkN "корова" feminine animate ;
   day_N = mkN "день" masculine inanimate "2*b" ;
 --  distance_N3 = mkN3 (mkN "расстояние") from_Prep to_Prep ;
+  do_V2 = mkV2 (mkV "делать");
   doctor_N = mkN "доктор" masculine animate ;
   dog_N = mkN "собака" feminine animate ;
   door_N = mkN "дверь" ;
@@ -56,7 +57,7 @@ lin
   eye_N = mkN "глаз" masculine inanimate "1c(1)(2)" ;
   factory_N = mkN "фабрика" ;
   fat_N = mkN "жир" ;
---  father_N2 = mkN2 (mkN "отец" "отца" "отцу" "отца" "отцом" "отце" "отце" "отцы" "отцов" "отцам" "отцов" "отцами" "отцах" masculine animate);
+  father_N2 = mkN2 (mkN "отец" masculine inanimate "5*b");
   feather_N = (mkNplus (mkN "перо" neuter inanimate "1d")) ** {pnom="перья";pgen="перьев";pdat="перьям";pacc="перья";pins="перьями";pprep="перьях"};
   fingernail_N = mkN "ноготь" masculine inanimate "2*e" ;
   fire_N = mkN "огонь" masculine inanimate "2*b" ;

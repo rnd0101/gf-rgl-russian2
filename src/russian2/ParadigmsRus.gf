@@ -64,6 +64,15 @@ oper
       = \word, g, a, zi -> lin N (noMinorCases (makeNoun word g a (parseIndex zi))) ;
   } ;
 
+  mkN2 = overload {
+    mkN2 : N -> N2 = \n -> lin N2 (mkFun n nullPrep) ;
+    mkN2 : N -> Prep -> N2 = \n, p -> lin N2 (mkFun n p) ;
+  } ;
+
+  nullPrep : Prep = lin Prep {s=[]; c=Gen; hasPrep=False} ;
+
+  mkN3 : N -> Prep -> Prep -> N3 = \n, p2, p3 -> lin N3 (mkFun2 n p2 p3) ;
+
 ---------------------
 -- Adjectives
 
@@ -72,8 +81,17 @@ oper
 
   mkV = overload {
     mkV : Str -> V
-      = \inf -> lin N (guessVerbForms inf)
+      = \inf -> lin N (guessVerbForms inf) ** {lock_V=<>}
   } ;
+
+  mkV2 = overload {
+    mkV2 : VerbForms -> VerbForms ** {c : ComplementCase}
+      = \vf -> vf ** {c={s=[] ; c=Acc ; hasPrep=False}} ;
+    mkV2 : VerbForms -> Case -> VerbForms ** {c : ComplementCase}
+      = \vf, c -> vf ** {c={s=[] ; c=c ; hasPrep=False}} ;
+    mkV2 : VerbForms -> ComplementCase -> VerbForms ** {c : ComplementCase}
+      = \vf, c -> vf ** {c=c} ;
+    } ;
 
 ------------------------
 -- Adverbs, prepositions, conjunctions, ...
