@@ -62,6 +62,8 @@ oper
       = \word, g, a, z -> lin N (noMinorCases (makeNoun word g a z)) ;
     mkN : Str -> Gender -> Animacy -> Str -> N
       = \word, g, a, zi -> lin N (noMinorCases (makeNoun word g a (parseIndex zi))) ;
+    -- mkN : Str -> Gender -> Animacy -> Str -> Type -> N
+    --  = \word, g, a, zi, t -> lin N (noMinorCases (makeNoun word g a (parseIndex zi)) ** t) ;
   } ;
 
   mkN2 = overload {
