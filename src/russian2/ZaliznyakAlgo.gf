@@ -10,11 +10,11 @@ param
 
 oper
 
+--------
+-- Nouns
+
   -- This correspond to the abbreviated Zaliznyak index for nouns.
   -- Complete index contains a lot of additions.
-
-  -- example: ПЕРЕЦ: м 5*a  can be: Z 5 Ast A
-  -- Later some interpretation function can be added for:  "5*a" -> Z 5 Ast A
 
   EndingSpec : Type = {p1, p2: Str} ;
 
@@ -101,8 +101,7 @@ oper
         dt@(#digit) + at@("*"|"°"|"") + ss@(#stress_schema)
           => Z (digitToDeclType dt) (toAlterType at) (toStressSchema ss) ;
         _ => Predef.error "Error: incorrect ZIndex"
-    }
- ;
+      } ;
 
   mobileOne : Str -> NounEndForms -> DeclType -> StressSchema -> StemForms
    = \s, nef, dt, ss ->

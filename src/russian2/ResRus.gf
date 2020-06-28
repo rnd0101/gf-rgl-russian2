@@ -15,7 +15,7 @@ flags coding=utf8 ; optimize=all ;
 
 oper
 
--- Mnemonics for cases: (add to lexican as well)
+-- Mnemonics for cases: (add to lexicon as well)
 -- Nom есть (кто? что?)
 -- Gen нет (кого? чего?)
 -- Dat дать (кому? чему?)
@@ -176,10 +176,64 @@ oper
 ---------------------
 -- Verbs -- Глаголы
 
-  VerbForms : Type = {          ---- TODO more forms to add
-    inf
-    : Str
+-- Note 1. Passive voice can be formed only for transitive imperfective verbs
+-- Passive has no P1, P2, imperative,
+-- Reflexive verbs are to provides as as separate lexical entries.
+-- Note 2. Imperative Sg P2 of reflexive verbs, can be сь as well as ся, but because there is no passive forms
+--
+
+  VerbForms : Type = {
+    inf,
+    prsg1, prsg2, prsg3, prpl1, prpl2, prpl3,
+    futsg1, futsg2, futsg3, futpl1, futpl2, futpl3,
+    psgm, psgf, psgn, ppl,
+    isg2, ipl1, ipl2 : Str ;
+    asp : Aspect ;
+    refl : Reflexivity ;
+    tran : Transitivity
   } ;
+
+  Verb : Type = {
+    s : Voice => Tense => Agr => Str ;
+    refl : Reflexivity ;
+    tran : Transitivity
+  } ;
+
+  -- From old Rus RG:
+  -- VerbForm = VFORM Voice VerbConj ;
+  -- VerbConj =  VIND GenNum VTense | VIMP Number Person | VINF | VSUB GenNum ;
+  -- VTense   = VPresent Person | VPast | VFuture Person ;
+  -- GenNum = GSg Gender | GPl ;
+  
+  guessVerbForms : Str -> VerbForms
+    = \word ->
+      let r : Reflexivity = case word of { _ + "ся" => Reflexive; _ => NonReflexive } in
+      let stem = Predef.tk 2 word in  -- remove sya as well
+      {
+        inf=word;  -- TODO: reflexive!
+        prsg1=stem  + "ю";     -- only imperf
+        prsg2=stem  + "ешь";
+        prsg3=stem  + "ет";
+        prpl1=stem  + "ем";
+        prpl2=stem  + "ете";
+        prpl3=stem  + "ют";
+        futsg1=stem + "ю";     -- only perf
+        futsg2=stem + "ешь";
+        futsg3=stem + "ет";
+        futpl1=stem + "ем";
+        futpl2=stem + "ете";
+        futpl3=stem + "ют";
+        psgm=stem   + "л";
+        psgf=stem   + "ла";
+        psgn=stem   + "ло";
+        ppl=stem    + "ли";
+        isg2=stem   + "й";
+        ipl1=stem   + "емте";    -- ???
+        ipl2=stem   + "йте";
+        asp=Imperfective;
+        refl=r;
+        tran=Intransitive;
+    } ;
 
 ---------------------------
 -- Pronouns -- Местоимения
@@ -376,6 +430,5 @@ param
 
 oper -- TODO:
   ComplementCase : Type = {s : Str ; c : Case ; hasPrep : Bool} ;
-
 
 }

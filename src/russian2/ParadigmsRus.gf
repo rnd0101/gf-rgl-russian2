@@ -70,6 +70,11 @@ oper
 -------------------------
 -- Verbs
 
+  mkV = overload {
+    mkV : Str -> V
+      = \inf -> lin N (guessVerbForms inf)
+  } ;
+
 ------------------------
 -- Adverbs, prepositions, conjunctions, ...
 

@@ -59,6 +59,8 @@ resource ParamRus = ParamX ** open Prelude in {
     Animacy    = Animate | Inanimate ;  -- одушевлённый / неодушевлённый
     Voice      = Act | Pass | Refl ;  -- залог
     Aspect     = Imperfective | Perfective ;  -- вид / аспект
+    Reflexivity  = Reflexive | NonReflexive ;  -- возвратность
+    Transitivity  = Transitive | Intransitive ;  -- возвратность
     AfterPrepPron  = AfterPrep | NotAfterPrep ;  -- to variate pronouns starting with vowels.
     Possessive = NonPoss | Poss Agr ;   -- TODO: is this needed?  притяжательность
     ClForm     = ClIndic Tense Anteriority | ClCond  | ClIndf | ClImp | ClImm ;
@@ -75,4 +77,7 @@ resource ParamRus = ParamX ** open Prelude in {
       g : Gender ;
       a : Animacy
     } ;
+
+    ConjType     = Predef.Ints 16 ;        -- Conjugation type
+
 }
