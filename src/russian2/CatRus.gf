@@ -5,7 +5,7 @@ flags coding=utf8 ; optimize=all ;
   lincat
     Num, Numeral, Card, Digits = Determiner ;
 
-    N = ResRus.NounForms ;
+    N, PN = ResRus.NounForms ;
     N2 = ResRus.Noun2Forms ;
     N3 = ResRus.Noun3Forms ;
     A, Ord = ResRus.AdjForms ;
@@ -33,7 +33,6 @@ flags coding=utf8 ; optimize=all ;
     A2 = ResRus.AdjForms ** {c : ComplementCase} ;
 
     NP = {s : Case => Str ; a : Agr } ;
-    PN = {s : Case => Str ; g : Gender} ;
     Det = Determiner ; -- {s : Gender => Case => Str ; size : NumSize} ; -- can contain a numeral, therefore NumSize
     Quant = {s : Gender => Number => Case => Str} ; -- same as AP
 
@@ -45,6 +44,7 @@ flags coding=utf8 ; optimize=all ;
   --  N = \s -> s.snom ;
     N = \s -> s.snom ++ s.sgen ++ s.sdat ++ s.sacc ++ s.sins ++ s.sprep
       ++ s.pnom ++ s.pgen ++ s.pdat ++ s.pacc ++ s.pins ++ s.pprep ;
+    PN = \s -> s.snom ++ s.sgen ++ s.sdat ++ s.sacc ++ s.sins ++ s.sprep ;
     N2 = \s -> s.snom ++ s.c2.s;   -- TODO
     N3 = \s -> s.snom ++ s.c2.s  ++ s.c3.s;   -- TODO
     A = \s -> s.msnom ;

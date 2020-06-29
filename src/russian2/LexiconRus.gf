@@ -91,7 +91,7 @@ lin
   ice_N = (mkNplus (mkN "лёд"  masculine animate "1b")) ** {sloc="льду";sptv="льду"} ;
   industry_N = mkN "промышленность" ;
   iron_N = mkN "железо" ;
---  john_PN = mkPN "Иван" Masc Sg Animate ;
+  john_PN = mkPN "Иван" masculine animate ;
   -- (mkNplus (mkN "Ваня" Fem Animate "2a") ** {g=Masc}) ;  -- мо <жо 2а> case (reference)
   king_N = mkN "король" masculine animate "2b";
   knee_N = (mkNplus (mkN "колено" neuter inanimate "1a")) ** {pnom="колени";pgen="коленей";pdat="коленям";pacc="колени";pins="коленями";pprep="коленях"} ;
@@ -120,7 +120,7 @@ lin
   number_N = mkN "число" neuter inanimate "1*d" ;
   oil_N = mkN "нефть" ;
   paper_N = mkN "бумага" ;
---  paris_PN = mkPN "Париж" Masc Sg Inanimate ;
+  paris_PN = mkPN "Париж" masculine inanimate ;
   peace_N = mkN "мир" ;
   pen_N = mkN "ручка" ;
   person_N = mkN "лицо" neuter animate "5d" ;

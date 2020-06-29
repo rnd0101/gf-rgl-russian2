@@ -82,6 +82,19 @@ oper
       = \word, g, a, zi, p2, p3 -> lin N3 (mkFun2 (noMinorCases (makeNoun word g a (parseIndex zi))) p2 p3) ;
   } ;
 
+  mkPN = overload {
+    mkPN : N -> PN
+      = \n -> lin PN n ;
+    mkPN : (nom : Str) -> PN
+      = \nom -> lin PN (guessNounForms nom) ;
+    mkPN : Str -> Gender -> Animacy -> PN
+      = \nom, g, a -> lin PN (guessLessNounForms nom g a) ;
+    mkPN : Str -> Gender -> Animacy -> ZIndex -> PN
+      = \word, g, a, z -> lin PN (noMinorCases (makeNoun word g a z)) ;
+    mkPN : Str -> Gender -> Animacy -> Str -> PN
+      = \word, g, a, zi -> lin PN (noMinorCases (makeNoun word g a (parseIndex zi))) ;
+  } ;
+
 ---------------------
 -- Adjectives
 
