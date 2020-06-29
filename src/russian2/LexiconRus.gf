@@ -1,6 +1,6 @@
 --# -path=.:abstract:common
 concrete LexiconRus of Lexicon = CatRus **
-  open ParadigmsRus, Prelude, ResRus in {
+  open ParadigmsRus, StructuralRus, Prelude, ExtraRus, ResRus in {
 flags optimize=values ; coding=utf8 ;
 lin
   airplane_N = mkN "самолёт" ;
@@ -44,7 +44,7 @@ lin
   cousin_N = mkN "кузен" masculine animate ;  -- also: mkN "кузина" feminine animate ;
   cow_N = mkN "корова" feminine animate ;
   day_N = mkN "день" masculine inanimate "2*b" ;
---  distance_N3 = mkN3 (mkN "расстояние") from_Prep to_Prep ;
+  distance_N3 = mkN3 (mkN "расстояние") from_Prep on_to_Prep ;
   do_V2 = mkV2 (mkV "делать");
   doctor_N = mkN "доктор" masculine animate ;
   dog_N = mkN "собака" feminine animate ;
@@ -108,7 +108,7 @@ lin
   meat_N = mkN "мясо" neuter inanimate "1c" ;
   milk_N = mkN "молоко" neuter inanimate "3d(1)" ;
   moon_N = mkN "луна" ;
-  -- mother_N2 = mkN2 (mkN "матерь" feminine animate "8e" {snom="мать";sacc="мать"});
+  mother_N2 = (mkN2plus (mkN2 "матерь" feminine animate "8e" nullPrep))  ** {snom="мать";sacc="мать"} ;
   mountain_N = mkN "гора" ;
   mouth_N = (mkNplus (mkN "рот" masculine inanimate "1b")) ** {sloc="рту"} ;
   music_N = mkN "музыка" ;

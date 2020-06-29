@@ -62,18 +62,25 @@ oper
       = \word, g, a, z -> lin N (noMinorCases (makeNoun word g a z)) ;
     mkN : Str -> Gender -> Animacy -> Str -> N
       = \word, g, a, zi -> lin N (noMinorCases (makeNoun word g a (parseIndex zi))) ;
-    -- mkN : Str -> Gender -> Animacy -> Str -> Type -> N
-    --  = \word, g, a, zi, t -> lin N (noMinorCases (makeNoun word g a (parseIndex zi)) ** t) ;
   } ;
 
   mkN2 = overload {
-    mkN2 : N -> N2 = \n -> lin N2 (mkFun n nullPrep) ;
-    mkN2 : N -> Prep -> N2 = \n, p -> lin N2 (mkFun n p) ;
+    mkN2 : N -> N2
+      = \n -> lin N2 (mkFun n nullPrep) ;
+    mkN2 : N -> Prep -> N2
+      = \n, p -> lin N2 (mkFun n p) ;
+    mkN2 : Str -> Gender -> Animacy -> Str -> Prep -> N2
+      = \word, g, a, zi, p -> lin N2 (mkFun (noMinorCases (makeNoun word g a (parseIndex zi))) p)   ;
   } ;
 
   nullPrep : Prep = lin Prep {s=[]; c=Gen; hasPrep=False} ;
 
-  mkN3 : N -> Prep -> Prep -> N3 = \n, p2, p3 -> lin N3 (mkFun2 n p2 p3) ;
+  mkN3 = overload {
+    mkN3 : N -> Prep -> Prep -> N3
+      = \n, p2, p3 -> lin N3 (mkFun2 n p2 p3) ;
+    mkN3 : Str -> Gender -> Animacy -> Str -> Prep -> Prep -> N3
+      = \word, g, a, zi, p2, p3 -> lin N3 (mkFun2 (noMinorCases (makeNoun word g a (parseIndex zi))) p2 p3) ;
+  } ;
 
 ---------------------
 -- Adjectives

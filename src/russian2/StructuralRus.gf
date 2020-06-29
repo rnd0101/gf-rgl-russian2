@@ -11,4 +11,7 @@ lin
     she_Pron = personalPron (Ag Fem Sg P3) ;
     it_Pron = personalPron (Ag Neut Sg P3) ;
     they_Pron = personalPron (Ag Masc Pl P3) ;
+
+    to_Prep = {s="к" ; c = Dat ; hasPrep=True} ;
+    from_Prep = {s="от" ; c = Gen ; hasPrep=True} ;
 }

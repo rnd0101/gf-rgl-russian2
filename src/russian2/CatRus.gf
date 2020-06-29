@@ -45,7 +45,8 @@ flags coding=utf8 ; optimize=all ;
   --  N = \s -> s.snom ;
     N = \s -> s.snom ++ s.sgen ++ s.sdat ++ s.sacc ++ s.sins ++ s.sprep
       ++ s.pnom ++ s.pgen ++ s.pdat ++ s.pacc ++ s.pins ++ s.pprep ;
-    N2 = \s -> s.snom ++ s.c2.s;   -- ???
+    N2 = \s -> s.snom ++ s.c2.s;   -- TODO
+    N3 = \s -> s.snom ++ s.c2.s  ++ s.c3.s;   -- TODO
     A = \s -> s.msnom ;
     V = \s -> s.inf ;
     V2 = \s -> s.inf ;

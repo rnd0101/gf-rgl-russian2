@@ -155,6 +155,9 @@ oper
   mkNplus : NounForms -> NounForms
     = \nf -> nf ;
 
+  mkN2plus : Noun2Forms -> Noun2Forms
+    = \nf -> nf ;
+
   Determiner : Type = {  -- определяемое слово
     s : Gender => Animacy => Case => Str ;
     size : NumSize
