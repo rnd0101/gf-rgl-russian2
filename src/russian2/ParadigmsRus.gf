@@ -103,16 +103,16 @@ oper
 
   mkV = overload {
     mkV : Str -> V
-      = \inf -> lin N (guessVerbForms inf) ** {lock_V=<>}
+      = \inf -> lin V (guessVerbForms inf)
   } ;
 
   mkV2 = overload {
-    mkV2 : VerbForms -> VerbForms ** {c : ComplementCase}
-      = \vf -> vf ** {c={s=[] ; c=Acc ; hasPrep=False}} ;
-    mkV2 : VerbForms -> Case -> VerbForms ** {c : ComplementCase}
-      = \vf, c -> vf ** {c={s=[] ; c=c ; hasPrep=False}} ;
-    mkV2 : VerbForms -> ComplementCase -> VerbForms ** {c : ComplementCase}
-      = \vf, c -> vf ** {c=c} ;
+    mkV2 : V -> V2
+      = \vf -> lin V2 (vf ** {c={s=[] ; c=Acc ; hasPrep=False}}) ;
+    mkV2 : V -> Case -> V2
+      = \vf, c -> lin V2 (vf ** {c={s=[] ; c=c ; hasPrep=False}}) ;
+    mkV2 : V -> ComplementCase -> V2
+      = \vf, c -> lin V2 (vf ** {c=c}) ;
     } ;
 
 ------------------------
