@@ -217,7 +217,8 @@ oper
   guessVerbForms : Str -> VerbForms
     = \word ->
       let r : Reflexivity = case word of { _ + "ся" => Reflexive; _ => NonReflexive } in
-      let stem = Predef.tk 2 word in  -- remove sya as well
+      let stem_info = stemFromVerb word in  -- remove sya as well
+      let stem = stem_info.p1 in
       {
         inf=word;  -- TODO: reflexive!
         prsg1=stem  + "ю";     -- only imperf

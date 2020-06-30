@@ -319,14 +319,14 @@ oper
 
   formsSelection : Str -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounFormsBase
     = \word, g, a, dt, at, ss, ci ->
-      let stem = stemFromWord word g dt in
+      let stem = stemFromNoun word g dt in
       let nef = endingsSelection g a dt at ss ci in
       let nef' = specialEndings word stem nef g dt in
       let alternated = alterForms stem nef' g a dt at ss in
       animacySelection dt alternated nef'
     ;
 
-  stemFromWord : Str -> Gender -> DeclType -> Str
+  stemFromNoun : Str -> Gender -> DeclType -> Str
     = \word, g, dt ->
       let end1 = (gDtBasedSelection g dt).snom.p1 in
       case end1 of {
@@ -462,4 +462,16 @@ oper
       <Neut, 7> => {snom=<"е","е">;pnom=<"я","я">;sgen=<"я","я">;pgen=<"й","й">;sdat=<"ю","ю">;pdat=<"ям","ям">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ем","ём">;pins=<"ями","ями">;sprep=<"и","е">;pprep=<"ях","ях">} ;
       <Neut, 8> => {snom=<"о","о">;pnom=<"а","а">;sgen=<"а","а">;pgen=<"","">;sdat=<"у","у">;pdat=<"ам","ам">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ом","ом">;pins=<"ами","ами">;sprep=<"и","и">;pprep=<"ах","ах">}
     } ;
+
+--------
+-- Verbs
+
+  stemFromVerb : Str -> Str * Reflexivity
+    = \v ->
+      case v of {
+        s + ("ть" | "ти" | "чь") => <s, NonReflexive> ;
+        s + ("ться" | "тись" | "чься") => <s, Reflexive> ;
+        _ => Predef.error "Error: incorrect infinitive"
+      } ;
+
 }
