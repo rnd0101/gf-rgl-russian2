@@ -77,8 +77,6 @@ oper
       a = forms.a
     } ;
 
-  DeclensionType : Type = Str -> NounForms ;  -- тип склонения
-
   guessNounForms : Str -> NounForms
     = \word ->
     let nfb : NounFormsBase =
@@ -182,6 +180,30 @@ oper
     : Str ;
   } ;
 
+  guessAdjectiveForms : Str -> AdjForms  -- stub. TODO: properly
+    = \word ->
+      let stem = Predef.tk 2 word in
+      {
+        msnom=stem  +"ый" ;
+        fsnom=stem  +"ая" ;
+        nsnom=stem  +"ое" ;
+        pnom=stem   +"ых" ;
+        msgen=stem  +"ого" ;
+        fsgen=stem  +"ой" ;
+        pgen=stem   +"ых" ;
+        msdat=stem  +"ому" ;
+        fsdat=stem  +"ой" ;
+        fsacc=stem  +"ая" ;
+        msins=stem  +"ым" ;
+        fsins=stem  +"ой" ;
+        pins=stem   +"ыми" ;
+        msprep=stem +"ом" ;
+        sm=stem     +"" ;
+        sf=stem     +"а" ;
+        sn=stem     +"о" ;
+        sp=stem     +"ы" ;
+    } ;
+
 ---------------------
 -- Verbs -- Глаголы
 
@@ -214,11 +236,11 @@ oper
   -- VTense   = VPresent Person | VPast | VFuture Person ;
   -- GenNum = GSg Gender | GPl ;
   
-  guessVerbForms : Str -> VerbForms
+  guessVerbForms : Str -> VerbForms  -- stub. TODO: properly
     = \word ->
-      let r : Reflexivity = case word of { _ + "ся" => Reflexive; _ => NonReflexive } in
       let stem_info = stemFromVerb word in  -- remove sya as well
       let stem = stem_info.p1 in
+      let r = stem_info.p2 in
       {
         inf=word;  -- TODO: reflexive!
         prsg1=stem  + "ю";     -- only imperf
@@ -242,7 +264,7 @@ oper
         ipl2=stem   + "йте";
         asp=Imperfective;
         refl=r;
-        tran=Intransitive;
+        tran=case r of {Reflexive => Intransitive; NonReflexive => Transitive };   -- TODO: fix non-refl
     } ;
 
 ---------------------------
