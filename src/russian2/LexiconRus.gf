@@ -5,7 +5,7 @@ flags optimize=values ; coding=utf8 ;
 lin
   airplane_N = mkN "самолёт" ;
   alas_Interj = mkInterj "увы" ;
---  animal_N = mkN "животное" animate;  -- TODO: as adjective
+  animal_N = mkN (mkA "животный") masculine animate ;
   apartment_N = mkN "квартира" ;
   apple_N = mkN "яблоко" neuter inanimate "3a(1)" ;
   art_N = mkN "искусство" ;
@@ -17,6 +17,7 @@ lin
   belly_N = mkN "живот" ;
   bike_N = mkN "велосипед" ;
   bird_N = mkN "птица" feminine animate ;
+  black_A = mkA "чёрный" ;  -- TODO:
   blood_N = mkN "кровь" ;
   boat_N = mkN "лодка" ;
   bone_N = mkN "кость" ;

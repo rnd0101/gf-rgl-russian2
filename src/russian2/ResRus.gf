@@ -204,6 +204,68 @@ oper
         sp=stem     +"ы" ;
     } ;
 
+  makeNFFromAF : AdjForms -> Gender -> Animacy -> NounForms
+    = \af, g, a ->
+      case g of {
+        Fem => {
+          snom = af.fsnom ;
+          pnom = af.pnom ;
+          sgen = af.fsgen ;
+          pgen = af.pgen ;
+          sdat = af.fsdat ;
+          pdat = af.msins ;
+          sacc = af.fsacc ;
+          pacc = case a of {Animate => af.pgen ; Inanimate => af.pnom} ;
+          sins = af.fsins ;  -- TODO: there is also variant fsins == fsgen
+          pins = af.pins ;
+          sprep= af.fsgen ;
+          pprep= af.pgen ;
+          sloc = af.fsgen ;
+          sptv = af.fsgen ;
+          svoc = af.fsnom ;
+          g=g ;
+          a=a
+        } ;
+        Masc => {
+          snom = af.msnom ;
+          pnom = af.pnom ;
+          sgen = af.msgen ;
+          pgen = af.pgen ;
+          sdat = af.msdat ;
+          pdat = af.msins ;
+          sacc = case a of {Animate => af.msgen ; Inanimate => af.msnom} ;
+          pacc = case a of {Animate => af.pgen ; Inanimate => af.pnom} ;
+          sins = af.msins ;
+          pins = af.pins ;
+          sprep= af.msprep ;
+          pprep= af.pgen ;
+          sloc = af.msprep ;
+          sptv = af.msgen ;
+          svoc = af.msnom ;
+          g=g ;
+          a=a
+        } ;
+        Neut => {
+          snom = af.nsnom ;
+          pnom = af.pnom ;
+          sgen = af.msgen ;
+          pgen = af.pgen ;
+          sdat = af.msdat ;
+          pdat = af.msins ;
+          sacc = af.nsnom ;
+          pacc = case a of {Animate => af.pgen ; Inanimate => af.pnom} ;
+          sins = af.msins ;
+          pins = af.pins ;
+          sprep= af.msprep ;
+          pprep= af.pgen ;
+          sloc = af.msprep ;
+          sptv = af.msgen ;
+          svoc = af.nsnom ;
+          g=g ;
+          a=a
+        }
+      } ;
+
 ---------------------
 -- Verbs -- Глаголы
 
