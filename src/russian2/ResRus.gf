@@ -204,6 +204,32 @@ oper
         sp=stem     +"ы" ;
     } ;
 
+  the_most = guessAdjectiveForms "самый" ;
+
+  long_superlative : AdjForms -> AdjForms
+    = \af -> {
+      msnom = the_most.msnom  ++ af.msnom ;
+      fsnom = the_most.fsnom  ++ af.fsnom ;
+      nsnom = the_most.nsnom  ++ af.nsnom ;
+      pnom  = the_most.pnom   ++ af.pnom  ;
+      msgen = the_most.msgen  ++ af.msgen ;
+      fsgen = the_most.fsgen  ++ af.fsgen ;
+      pgen  = the_most.pgen   ++ af.pgen  ;
+      msdat = the_most.msdat  ++ af.msdat ;
+      fsdat = the_most.fsdat  ++ af.fsdat ;
+      fsacc = the_most.fsacc  ++ af.fsacc ;
+      msins = the_most.msins  ++ af.msins ;
+      fsins = the_most.fsins  ++ af.fsins ;
+      pins  = the_most.pins   ++ af.pins  ;
+      msprep= the_most.msprep ++ af.msprep;
+      sm    = the_most.sm     ++ af.sm    ;
+      sf    = the_most.sf     ++ af.sf    ;
+      sn    = the_most.sn     ++ af.sn    ;
+      sp    = the_most.sp     ++ af.sp    ;
+      g=af.g ;
+      a=af.a
+    } ;
+
   makeNFFromAF : AdjForms -> Gender -> Animacy -> NounForms
     = \af, g, a ->
       case g of {
