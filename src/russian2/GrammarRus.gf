@@ -1,7 +1,7 @@
 --# -path=.:../abstract:../common:prelude
 
 concrete GrammarRus of Grammar =
-  NounRus
+  NounRus,
   --VerbRus,
   --AdjectiveRus,
   --AdverbRus,
@@ -10,7 +10,7 @@ concrete GrammarRus of Grammar =
   --QuestionRus,
   --RelativeRus,
   --ConjunctionRus,
-  --PhraseRus,
+  PhraseRus
   --TextRus,
 --  StructuralRus,
   --IdiomRus,

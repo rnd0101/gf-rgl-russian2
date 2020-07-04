@@ -4,6 +4,7 @@ concrete LexiconRus of Lexicon = CatRus **
 flags optimize=values ; coding=utf8 ;
 lin
   airplane_N = mkN "самолёт" ;
+  alas_Interj = mkInterj "увы" ;
 --  animal_N = mkN "животное" animate;  -- TODO: as adjective
   apartment_N = mkN "квартира" ;
   apple_N = mkN "яблоко" neuter inanimate "3a(1)" ;

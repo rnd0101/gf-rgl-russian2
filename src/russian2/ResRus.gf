@@ -167,7 +167,7 @@ oper
 ---------------------------
 -- Adjectives -- Прилагательные
 
-  Adjective : Type = {s : Gender => Number => Case => Str} ;
+  Adjective : Type = {s : Gender => Number => Animacy => Case => Str} ;
 
   AdjForms : Type = {
     msnom, fsnom, nsnom, pnom,  -- pvoc = pnom

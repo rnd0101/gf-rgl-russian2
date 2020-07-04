@@ -129,4 +129,7 @@ oper
   mkConj : Str -> Conj
     = \s -> lin Conj {s1 = [] ; s2 = s} ;
 
+  mkInterj : Str -> Interj
+    = \s -> lin Interj {s = s} ;
+
 }
