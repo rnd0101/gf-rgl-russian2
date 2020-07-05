@@ -105,6 +105,12 @@ oper
       = \nom -> lin A (guessAdjectiveForms nom) ;
   } ;
 
+-- Two-place adjectives need a preposition and a case as extra arguments.
+
+  -- TODO: ? mkA2 : A -> Str -> Case -> A2 ;  -- "делим на"
+  mkA2 : A -> Prep -> A2
+    = \a,p -> lin A2 (a ** {c = p}) ;
+
   mkOrd = overload {
     mkOrd : (nom : Str) -> Ord
       = \nom -> lin Ord (guessAdjectiveForms nom) ;

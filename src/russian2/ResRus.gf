@@ -180,7 +180,7 @@ oper
     : Str ;
   } ;
 
-  AdjFormsAdjective : AdjForms -> Adjective
+  adjFormsAdjective : AdjForms -> Adjective
     = \forms -> {
       s = table {
         Fem => table {

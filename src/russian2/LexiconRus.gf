@@ -137,6 +137,7 @@ lin
   reason_N = mkN "причина";
   religion_N = mkN "религия" ;
   restaurant_N = mkN "ресторан" ;
+  right_Ord = mkOrd "правый";
   river_N = mkN "рекa" feminine inanimate "3d'" ;
   road_N = mkN "дорогa" feminine inanimate "3a" ;
   rock_N = mkN "камень" masculine inanimate "2*e" ;

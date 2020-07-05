@@ -3,16 +3,16 @@
 concrete GrammarRus of Grammar =
   NounRus,
   --VerbRus,
-  --AdjectiveRus,
+  AdjectiveRus,
   --AdverbRus,
   -- NumeralRus,
- -- SentenceRus,
+  --SentenceRus,
   --QuestionRus,
   --RelativeRus,
   --ConjunctionRus,
-  PhraseRus
-  --TextRus,
---  StructuralRus,
+  PhraseRus,
+  TextRus,
+  StructuralRus
   --IdiomRus,
   --TenseRus
   ** { flags  startcat = Phr ; unlexer = text ; lexer = text ; coding=utf8 ;} ;

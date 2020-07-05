@@ -12,7 +12,7 @@ flags coding=utf8 ; optimize=all ;
     CN = ResRus.Noun ;
     Pron = ResRus.PronForms ;
 
-  -- TODO: below copy-paste, sort out
+  -- TODO: below copy-paste, sort out (eg, clitics are not needed)
     S   = {s : Str} ;
     Cl  = {subj,clit,compl : Str ; verb : VerbForms ; a : Agr} ;
     Comp = {s : Agr => Str} ;
