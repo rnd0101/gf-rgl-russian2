@@ -105,6 +105,11 @@ oper
       = \nom -> lin A (guessAdjectiveForms nom) ;
   } ;
 
+  mkOrd = overload {
+    mkOrd : (nom : Str) -> Ord
+      = \nom -> lin Ord (guessAdjectiveForms nom) ;
+  } ;
+
 -------------------------
 -- Verbs
 

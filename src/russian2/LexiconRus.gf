@@ -102,6 +102,7 @@ lin
   language_N = mkN "язык" ;
   leaf_N = (mkNplus (mkN "лист" masculine inanimate "1d")) ** {pnom="листья";pgen="листьев";pdat="листьям";pacc="листья";pins="листьями";pprep="листьях"} ;
   leather_N = mkN "кожа" ;
+  left_Ord = mkOrd "левый";
   leg_N = mkN "нога" ;
   liver_N = mkN "печень" ;
   louse_N = (mkNplus (mkN "вошь" feminine animate "8*b'")) ** {pdat="вшам";pins="вшами";pprep="вшах"} ;
