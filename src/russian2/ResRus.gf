@@ -180,6 +180,142 @@ oper
     : Str ;
   } ;
 
+  AdjFormsAdjective : AdjForms -> Adjective
+    = \forms -> {
+      s = table {
+        Fem => table {
+          Sg => table {
+            (Inanimate|Animate) => table {
+              Nom => forms.fsnom ;
+              Gen => forms.fsgen ;
+              Dat => forms.fsdat ;
+              Acc => forms.fsacc ;
+              Ins => forms.fsins ;
+              Pre => forms.fsgen ;
+              Loc => forms.fsgen ;
+              Ptv => forms.fsgen ;
+              VocRus => forms.fsnom
+            }
+          } ;
+          Pl => table {
+            Inanimate => table {
+              Nom => forms.pnom ;
+              Gen => forms.pgen ;
+              Dat => forms.msins ;
+              Acc => forms.pnom ;
+              Ins => forms.pins ;
+              Pre => forms.pgen ;
+              Loc => forms.pgen ;
+              Ptv => forms.pgen ;
+              VocRus => forms.pnom
+            } ;
+            Animate => table {
+              Nom => forms.pnom ;
+              Gen => forms.pgen ;
+              Dat => forms.msins ;
+              Acc => forms.pgen ;
+              Ins => forms.pins ;
+              Pre => forms.pgen ;
+              Loc => forms.pgen ;
+              Ptv => forms.pgen ;
+              VocRus => forms.pnom
+            }
+          }
+        } ;
+        Masc => table {
+          Sg => table {
+            Inanimate => table {
+              Nom => forms.msnom ;
+              Gen => forms.msgen ;
+              Dat => forms.msdat ;
+              Acc => forms.msnom ;
+              Ins => forms.msins ;
+              Pre => forms.msprep ;
+              Loc => forms.msprep ;
+              Ptv => forms.msgen ;
+              VocRus => forms.msnom
+            } ;
+            Animate => table {
+              Nom => forms.msnom ;
+              Gen => forms.msgen ;
+              Dat => forms.msdat ;
+              Acc => forms.msgen ;
+              Ins => forms.msins ;
+              Pre => forms.msprep ;
+              Loc => forms.msprep ;
+              Ptv => forms.msgen ;
+              VocRus => forms.msnom
+            }
+          } ;
+          Pl => table {
+            Inanimate => table {
+              Nom => forms.pnom ;
+              Gen => forms.pgen ;
+              Dat => forms.msins ;
+              Acc => forms.pnom ;
+              Ins => forms.pins ;
+              Pre => forms.pgen ;
+              Loc => forms.pgen ;
+              Ptv => forms.pgen ;
+              VocRus => forms.pnom
+            } ;
+            Animate => table {
+              Nom => forms.pnom ;
+              Gen => forms.pgen ;
+              Dat => forms.msins ;
+              Acc => forms.pgen ;
+              Ins => forms.pins ;
+              Pre => forms.pgen ;
+              Loc => forms.pgen ;
+              Ptv => forms.pgen ;
+              VocRus => forms.pnom
+            }
+          }
+        } ;
+        Neut => table {
+          Sg => table {
+            (Inanimate | Animate) => table {
+              Nom => forms.nsnom ;
+              Gen => forms.msgen ;
+              Dat => forms.msdat ;
+              Acc => forms.nsnom ;
+              Ins => forms.msins ;
+              Pre => forms.msprep ;
+              Loc => forms.msprep ;
+              Ptv => forms.msgen ;
+              VocRus => forms.nsnom
+            }
+          } ;
+          Pl => table {
+            Inanimate => table {
+              Nom => forms.pnom ;
+              Gen => forms.pgen ;
+              Dat => forms.msins ;
+              Acc => forms.pnom ;
+              Ins => forms.pins ;
+              Pre => forms.pgen ;
+              Loc => forms.pgen ;
+              Ptv => forms.pgen ;
+              VocRus => forms.pnom
+            } ;
+            Animate => table {
+              Nom => forms.pnom ;
+              Gen => forms.pgen ;
+              Dat => forms.msins ;
+              Acc => forms.pgen ;
+              Ins => forms.pins ;
+              Pre => forms.pgen ;
+              Loc => forms.pgen ;
+              Ptv => forms.pgen ;
+              VocRus => forms.pnom
+            }
+          }
+        }
+      } ;
+      g = forms.g ;
+      a = forms.a
+    } ;
+
   guessAdjectiveForms : Str -> AdjForms  -- stub. TODO: properly
     = \word ->
       let stem = Predef.tk 2 word in
@@ -187,13 +323,13 @@ oper
         msnom=stem  +"ый" ;
         fsnom=stem  +"ая" ;
         nsnom=stem  +"ое" ;
-        pnom=stem   +"ых" ;
+        pnom=stem   +"ые" ;
         msgen=stem  +"ого" ;
         fsgen=stem  +"ой" ;
         pgen=stem   +"ых" ;
         msdat=stem  +"ому" ;
         fsdat=stem  +"ой" ;
-        fsacc=stem  +"ая" ;
+        fsacc=stem  +"ую" ;
         msins=stem  +"ым" ;
         fsins=stem  +"ой" ;
         pins=stem   +"ыми" ;
