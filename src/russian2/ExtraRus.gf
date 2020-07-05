@@ -1,3 +1,5 @@
+-- Seems like this is deprecated - need to use ExtendRus instead
+
 concrete ExtraRus of ExtraRusAbs = CatRus **
   open ResRus, MorphoRus, (P = ParadigmsRus), Prelude, NounRus in {
   flags optimize=all ; coding=utf8 ;
