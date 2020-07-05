@@ -7,5 +7,5 @@ lin
 
   -- UsePron pron = pronFormsPronoun ;
   UseN n = nounFormsNoun n ;
-  -- OrdSuperl a = long_superlative a ; -- TODO: how???
+  OrdSuperl a = long_superlative a ;
 }
