@@ -236,55 +236,7 @@ oper
           }
         } ;
         Pl => table {
-          Fem => table {
-            Inanimate => table {
-              Nom => forms.pnom ;
-              Gen => forms.pgen ;
-              Dat => forms.msins ;
-              Acc => forms.pnom ;
-              Ins => forms.pins ;
-              Pre => forms.pgen ;
-              Loc => forms.pgen ;
-              Ptv => forms.pgen ;
-              VocRus => forms.pnom
-            } ;
-            Animate => table {
-              Nom => forms.pnom ;
-              Gen => forms.pgen ;
-              Dat => forms.msins ;
-              Acc => forms.pgen ;
-              Ins => forms.pins ;
-              Pre => forms.pgen ;
-              Loc => forms.pgen ;
-              Ptv => forms.pgen ;
-              VocRus => forms.pnom
-            }
-          } ;
-          Masc => table {
-            Inanimate => table {
-              Nom => forms.pnom ;
-              Gen => forms.pgen ;
-              Dat => forms.msins ;
-              Acc => forms.pnom ;
-              Ins => forms.pins ;
-              Pre => forms.pgen ;
-              Loc => forms.pgen ;
-              Ptv => forms.pgen ;
-              VocRus => forms.pnom
-            } ;
-            Animate => table {
-              Nom => forms.pnom ;
-              Gen => forms.pgen ;
-              Dat => forms.msins ;
-              Acc => forms.pgen ;
-              Ins => forms.pins ;
-              Pre => forms.pgen ;
-              Loc => forms.pgen ;
-              Ptv => forms.pgen ;
-              VocRus => forms.pnom
-            }
-          } ;
-          Neut => table {
+          (Fem|Masc|Neut) => table {
             Inanimate => table {
               Nom => forms.pnom ;
               Gen => forms.pgen ;
