@@ -14,4 +14,12 @@ lin
 
     to_Prep = {s="к" ; c = Dat ; hasPrep=True} ;
     from_Prep = {s="от" ; c = Gen ; hasPrep=True} ;
+
+    every_Det = {
+      s = (adjFormsAdjective (guessAdjectiveForms "каждый")).s ! Sg;
+--      n = Sg ;
+--      g = PNoGen ;
+--      c = Nom ;
+      size = Num1 ;
+    } ;
 }
