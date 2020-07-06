@@ -494,7 +494,9 @@ oper
 ---------------------------
 -- Pronouns -- Местоимения
 
-  PronForms : Type = {
+  -- Pronouns in Russian
+
+  PronounForms : Type = {
     nom, gen, dat, acc, ins, prep : Str ;
     a : Agr
   } ;
@@ -514,7 +516,7 @@ oper
   -- Also [RUWIKT]:
   -- exclamative   -- восклицательные
 
-  personalPron : Agr -> PronForms
+  personalPron : Agr -> PronounForms
     = \a -> {a = a} **
       case a of {
         Ag _ Sg P1 => {
@@ -652,7 +654,7 @@ oper
 
   Pronoun = { s : Case => Str ; a : Agr } ;
 
-  pronFormsPronoun : PronForms -> Pronoun
+  pronFormsPronoun : PronounForms -> Pronoun
     = \forms -> {
       s = table {
         (Nom | VocRus) => forms.nom ;

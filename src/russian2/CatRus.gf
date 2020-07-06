@@ -10,7 +10,7 @@ flags coding=utf8 ; optimize=all ;
     N3 = ResRus.Noun3Forms ;
     A, Ord = ResRus.AdjForms ;
     CN = ResRus.Noun ;
-    Pron = ResRus.PronForms ;
+    Pron = ResRus.PronounForms ;
 
   -- TODO: below copy-paste, sort out (eg, clitics are not needed)
     S   = {s : Str} ;

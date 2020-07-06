@@ -323,7 +323,7 @@ oper
       let nef = endingsSelection g a dt at ss ci in
       let nef' = specialEndings word stem nef g dt in
       let alternated = alterForms stem nef' g a dt at ss in
-      animacySelection dt alternated nef'
+      animacySelection dt alternated nef' g a
     ;
 
   stemFromNoun : Str -> Gender -> DeclType -> Str
@@ -352,10 +352,10 @@ oper
       _ => frm.pacc
     } ;
 
-  animacySelection : DeclType -> NounFormsBase -> NounEndForms -> NounFormsBase
-    = \dt, frm, nef -> frm ** {
-        sacc=SgAcc frm.g frm.a dt frm nef.sacc;
-        pacc=PlAcc frm.g frm.a dt frm ;
+  animacySelection : DeclType -> NounFormsBase -> NounEndForms -> Gender -> Animacy -> NounFormsBase
+    = \dt, frm, nef, g, a -> frm ** {
+        sacc=SgAcc g a dt frm nef.sacc;
+        pacc=PlAcc g a dt frm ;
         sins=frm.sins  -- TODO: there can be variants {}  ю in addition to й
     } ;
 
