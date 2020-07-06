@@ -167,7 +167,7 @@ oper
 ---------------------------
 -- Adjectives -- Прилагательные
 
-  Adjective : Type = {s : Gender => Number => Animacy => Case => Str} ;
+  Adjective : Type = {s : Number => Gender => Animacy => Case => Str} ;
 
   AdjForms : Type = {
     msnom, fsnom, nsnom, pnom,  -- pvoc = pnom
@@ -183,8 +183,8 @@ oper
   adjFormsAdjective : AdjForms -> Adjective
     = \forms -> {
       s = table {
-        Fem => table {
-          Sg => table {
+        Sg => table {
+          Fem => table {
             (Inanimate|Animate) => table {
               Nom => forms.fsnom ;
               Gen => forms.fsgen ;
@@ -197,33 +197,7 @@ oper
               VocRus => forms.fsnom
             }
           } ;
-          Pl => table {
-            Inanimate => table {
-              Nom => forms.pnom ;
-              Gen => forms.pgen ;
-              Dat => forms.msins ;
-              Acc => forms.pnom ;
-              Ins => forms.pins ;
-              Pre => forms.pgen ;
-              Loc => forms.pgen ;
-              Ptv => forms.pgen ;
-              VocRus => forms.pnom
-            } ;
-            Animate => table {
-              Nom => forms.pnom ;
-              Gen => forms.pgen ;
-              Dat => forms.msins ;
-              Acc => forms.pgen ;
-              Ins => forms.pins ;
-              Pre => forms.pgen ;
-              Loc => forms.pgen ;
-              Ptv => forms.pgen ;
-              VocRus => forms.pnom
-            }
-          }
-        } ;
-        Masc => table {
-          Sg => table {
+          Masc => table {
             Inanimate => table {
               Nom => forms.msnom ;
               Gen => forms.msgen ;
@@ -247,7 +221,22 @@ oper
               VocRus => forms.msnom
             }
           } ;
-          Pl => table {
+          Neut => table {
+            (Inanimate | Animate) => table {
+              Nom => forms.nsnom ;
+              Gen => forms.msgen ;
+              Dat => forms.msdat ;
+              Acc => forms.nsnom ;
+              Ins => forms.msins ;
+              Pre => forms.msprep ;
+              Loc => forms.msprep ;
+              Ptv => forms.msgen ;
+              VocRus => forms.nsnom
+            }
+          }
+        } ;
+        Pl => table {
+          Fem => table {
             Inanimate => table {
               Nom => forms.pnom ;
               Gen => forms.pgen ;
@@ -270,23 +259,32 @@ oper
               Ptv => forms.pgen ;
               VocRus => forms.pnom
             }
-          }
-        } ;
-        Neut => table {
-          Sg => table {
-            (Inanimate | Animate) => table {
-              Nom => forms.nsnom ;
-              Gen => forms.msgen ;
-              Dat => forms.msdat ;
-              Acc => forms.nsnom ;
-              Ins => forms.msins ;
-              Pre => forms.msprep ;
-              Loc => forms.msprep ;
-              Ptv => forms.msgen ;
-              VocRus => forms.nsnom
+          } ;
+          Masc => table {
+            Inanimate => table {
+              Nom => forms.pnom ;
+              Gen => forms.pgen ;
+              Dat => forms.msins ;
+              Acc => forms.pnom ;
+              Ins => forms.pins ;
+              Pre => forms.pgen ;
+              Loc => forms.pgen ;
+              Ptv => forms.pgen ;
+              VocRus => forms.pnom
+            } ;
+            Animate => table {
+              Nom => forms.pnom ;
+              Gen => forms.pgen ;
+              Dat => forms.msins ;
+              Acc => forms.pgen ;
+              Ins => forms.pins ;
+              Pre => forms.pgen ;
+              Loc => forms.pgen ;
+              Ptv => forms.pgen ;
+              VocRus => forms.pnom
             }
           } ;
-          Pl => table {
+          Neut => table {
             Inanimate => table {
               Nom => forms.pnom ;
               Gen => forms.pgen ;
@@ -676,7 +674,7 @@ oper
 -- combining nouns with numerals
 
 param
-  NumSize = Num1 | Num2_4 | Num5 ;   -- Num2_4 - "Dual"
+  NumSize = Num1 | NumAll | Num2_4 | Num5 ;   -- Num1 - Sg, NumAll - Pl, Num2_4 - "Dual"
 
 -- TODO From po-file Forms:
 -- (n%10==1 && n%100!=11 ? Num1 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? Num2_4 : Num5 );
