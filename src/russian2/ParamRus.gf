@@ -78,6 +78,17 @@ resource ParamRus = ParamX ** open Prelude in {
       a : Animacy
     } ;
 
+    AdjFormsBase : Type = {
+      msnom, fsnom, nsnom, pnom,  -- pvoc = pnom
+      msgen, fsgen, pgen,         -- nsgen = msgen = msptv = nsptv; fsgen = fsptv; ploc = pprep = pgen = pptv
+      msdat,                      -- nsdat = msdat, fsdat = fsgen
+      fsacc,                      -- amsacc = msgen, imsacc = msnom, nsacc = nsnom, pacc = pgen
+      msins, fsins, pins,         -- nsins = msins, pdat = msins ; there is also variant fsins == fsgen
+      msprep                      -- nsprep = msprep, fsprep = fsgen, msloc = msprep
+                                  -- unlike adjective forms, short forms are not here
+      : Str ;
+    } ;
+
     ConjType     = Predef.Ints 16 ;        -- Conjugation type
 
 }

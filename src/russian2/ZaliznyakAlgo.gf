@@ -463,6 +463,34 @@ oper
       <Neut, 8> => {snom=<"о","о">;pnom=<"а","а">;sgen=<"а","а">;pgen=<"","">;sdat=<"у","у">;pdat=<"ам","ам">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ом","ом">;pins=<"ами","ами">;sprep=<"и","и">;pprep=<"ах","ах">}
     } ;
 
+-------------
+-- Adjectives
+
+  adjective2AstB : Str -> AdjFormsBase
+    = \word -> -- весь
+      let stem = Predef.tk 1 word in
+      let stem2 = Predef.tk 2 word ++ Predef.tk 1 word in
+      {
+        msnom=stem   +"ь" ;
+        fsnom=stem2  +"я" ;
+        nsnom=stem2  +"ё" ;
+        pnom=stem2   +"е" ;
+        msgen=stem2  +"его" ;
+        fsgen=stem2  +"ей" ;
+        pgen=stem2   +"ех" ;
+        msdat=stem2  +"ему" ;
+        fsacc=stem2  +"ю" ;
+        msins=stem2  +"ем" ;
+        fsins=stem2  +"ей" ; -- ею
+        pins=stem2   +"еми" ;
+        msprep=stem2 +"ем" ;  --ём
+        sm=stem     +"ь" ;
+        sf=stem     +"ё" ;
+        sn=stem     +"е" ;
+        sp=stem     +"е" ;
+    } ;
+
+
 --------
 -- Verbs
 

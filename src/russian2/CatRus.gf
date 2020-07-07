@@ -34,7 +34,7 @@ flags coding=utf8 ; optimize=all ;
 
     NP = {s, prep : Case => Str ; a : Agr } ;
     Det = Determiner ; -- {s : Gender => Case => Str ; size : NumSize} ; -- can contain a numeral, therefore NumSize
-    Quant = {s : Gender => Number => Case => Str} ; -- same as AP
+    Predet, Quant = ResRus.Adjective ;
 
     Prep = ResRus.ComplementCase ; -- {s : Str ; c : Case ; hasPrep : Bool} ;
     Conj = {s1,s2 : Str} ; ---- may need a number

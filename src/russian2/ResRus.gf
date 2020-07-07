@@ -172,13 +172,21 @@ oper
   AdjForms : Type = {
     msnom, fsnom, nsnom, pnom,  -- pvoc = pnom
     msgen, fsgen, pgen,         -- nsgen = msgen ; ploc = pprep = pgen = pptv (?)
-    msdat, fsdat,               -- nsdat = msdat
+    msdat,                      -- nsdat = msdat ; fsdat = fsgen
     fsacc,                      -- amsacc = msgen, imsacc = msnom, nsacc = nsnom
     msins, fsins, pins,         -- nsins = msins, pdat = msins ; there is also variant fsins == fsgen
     msprep,                     -- nsprep = msprep, fsprep = fsgen, msloc = msprep
     sm, sf, sn, sp              -- short forms
     : Str ;
   } ;
+
+  noShorts : AdjFormsBase -> AdjForms
+    = \base -> base ** {
+      sm = base.msnom ;
+      sf = base.fsnom ;
+      sn = base.nsnom ;
+      sp = base.pnom
+    } ;
 
   adjFormsAdjective : AdjForms -> Adjective
     = \forms -> {
@@ -188,7 +196,7 @@ oper
             (Inanimate|Animate) => table {
               Nom => forms.fsnom ;
               Gen => forms.fsgen ;
-              Dat => forms.fsdat ;
+              Dat => forms.fsgen ;
               Acc => forms.fsacc ;
               Ins => forms.fsins ;
               Pre => forms.fsgen ;
@@ -278,7 +286,6 @@ oper
         fsgen=stem  +"ой" ;
         pgen=stem   +"ых" ;
         msdat=stem  +"ому" ;
-        fsdat=stem  +"ой" ;
         fsacc=stem  +"ую" ;
         msins=stem  +"ым" ;
         fsins=stem  +"ой" ;
@@ -302,7 +309,6 @@ oper
       fsgen = the_most.fsgen  ++ af.fsgen ;
       pgen  = the_most.pgen   ++ af.pgen  ;
       msdat = the_most.msdat  ++ af.msdat ;
-      fsdat = the_most.fsdat  ++ af.fsdat ;
       fsacc = the_most.fsacc  ++ af.fsacc ;
       msins = the_most.msins  ++ af.msins ;
       fsins = the_most.fsins  ++ af.fsins ;
@@ -324,7 +330,7 @@ oper
           pnom = af.pnom ;
           sgen = af.fsgen ;
           pgen = af.pgen ;
-          sdat = af.fsdat ;
+          sdat = af.fsgen ;
           pdat = af.msins ;
           sacc = af.fsacc ;
           pacc = case a of {Animate => af.pgen ; Inanimate => af.pnom} ;
@@ -528,18 +534,7 @@ oper
 
 -- Possessive pronouns are more like adjectives
 
-  AdjlikePronForms : Type = {
-    msnom, fsnom, nsnom, pnom,  -- pvoc = pnom
-    msgen, fsgen, pgen,         -- nsgen = msgen = msptv = nsptv; fsgen = fsptv; ploc = pprep = pgen = pptv
-    msdat,                      -- nsdat = msdat, fsdat = fsgen
-    fsacc,                      -- amsacc = msgen, imsacc = msnom, nsacc = nsnom, pacc = pgen
-    msins, fsins, pins,         -- nsins = msins, pdat = msins ; there is also variant fsins == fsgen
-    msprep                      -- nsprep = msprep, fsprep = fsgen, msloc = msprep
-                                -- unlike adjective forms, short forms are not here
-    : Str ;
-  } ;
-
-  doPossessivePronSgP1P2 : Str -> AdjlikePronForms
+  doPossessivePronSgP1P2 : Str -> AdjFormsBase
     = \mo -> {
       msnom = mo + "й" ;
       fsnom = mo + "я" ;
@@ -556,7 +551,7 @@ oper
       msprep = mo + "ём"
     } ;
 
-  doPossessivePronPlP1P2 : Str -> AdjlikePronForms
+  doPossessivePronPlP1P2 : Str -> AdjFormsBase
     = \nash -> {
       msnom = nash ;
       fsnom = nash + "а" ;
@@ -573,7 +568,7 @@ oper
       msprep = nash + "ем"
     } ;
 
-  doPossessivePronP3 : Str -> AdjlikePronForms
+  doPossessivePronP3 : Str -> AdjFormsBase
     = \ego -> {
       msnom,
       fsnom,
@@ -590,7 +585,7 @@ oper
       msprep = ego
     } ;
 
-  possessivePron : Agr -> AdjlikePronForms
+  possessivePron : Agr -> AdjFormsBase
     = \a -> {a = a} **
       case a of {
         Ag _ Sg P1 => doPossessivePronSgP1P2 "мо" ;
@@ -616,6 +611,10 @@ oper
       } ;
       a = forms.a
     } ;
+
+
+  all_Pron = adjective2AstB "весь" ;
+  only_Pron = guessAdjectiveForms "единственный" ;
 
 ---------------
 -- Numerals -- Числительные

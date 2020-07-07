@@ -36,7 +36,7 @@ concrete ConjunctionRus of Conjunction =
     -- : RS -> RS -> ListRS ;       -- who walks, whom I know
     BaseRS = twoTable Agr ;
 
-    -- : RS -> ListRS -> ListRS ;   -- who wals, whom I know, who is here
+    -- : RS -> ListRS -> ListRS ;   -- who walks, whom I know, who is here
     ConsRS = consrTable Agr comma ;
 
     ConjAdv = conjunctDistrSS ;

@@ -5,6 +5,7 @@ flags optimize=values ; coding=utf8 ;
 lin
   airplane_N = mkN "самолёт" ;
   alas_Interj = mkInterj "увы" ;
+  already_Adv = mkAdv "уже" ;
   animal_N = mkN (mkA "животный") masculine animate ;
   apartment_N = mkN "квартира" ;
   apple_N = mkN "яблоко" neuter inanimate "3a(1)" ;
@@ -58,6 +59,7 @@ lin
   enemy_N = mkN "враг" masculine animate ;
   eye_N = mkN "глаз" masculine inanimate "1c(1)(2)" ;
   factory_N = mkN "фабрика" ;
+  far_Adv = mkAdv "далеко";
   fat_N = mkN "жир" ;
   father_N2 = mkN2 (mkN "отец" masculine inanimate "5*b");
   feather_N = (mkNplus (mkN "перо" neuter inanimate "1d")) ** {pnom="перья";pgen="перьев";pdat="перьям";pacc="перья";pins="перьями";pprep="перьях"};
@@ -94,7 +96,6 @@ lin
   industry_N = mkN "промышленность" ;
   iron_N = mkN "железо" ;
   john_PN = mkPN "Иван" masculine animate ;
-  -- (mkNplus (mkN "Ваня" Fem Animate "2a") ** {g=Masc}) ;  -- мо <жо 2а> case (reference)
   king_N = mkN "король" masculine animate "2b";
   knee_N = (mkNplus (mkN "колено" neuter inanimate "1a")) ** {pnom="колени";pgen="коленей";pdat="коленям";pacc="колени";pins="коленями";pprep="коленях"} ;
   lake_N = (mkNplus (mkN "озеро" neuter inanimate "1a"))  ** {pnom="озёра";pgen="озёр";pdat="озёрам";pacc="озёра";pins="озёрами";pprep="озёрах"} ;
@@ -120,6 +121,7 @@ lin
   newspaper_N = mkN "газета" ;
   night_N = (mkNplus (mkN "ночь" feminine inanimate "8e")) ** {sloc="ночь"};
   nose_N = mkN "нос" ;
+  now_Adv = mkAdv "сейчас" ;
   number_N = mkN "число" neuter inanimate "1*d" ;
   oil_N = mkN "нефть" ;
   paper_N = mkN "бумага" ;
@@ -177,6 +179,7 @@ lin
   tail_N = mkN "хвост" ;
   teacher_N = mkN "учитель" masculine animate "2c(1)";
   television_N = mkN "телевидение" ; -- FIXME: televizor?
+  today_Adv = mkAdv "сегодня" ;
   tongue_N = mkN "язык" ;
   tooth_N = mkN "зуб" ;
   train_N = mkN "поезд" ;
