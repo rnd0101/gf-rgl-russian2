@@ -331,7 +331,7 @@ oper
 
   stemFromNoun : Str -> Gender -> DeclType -> Str
     = \word, g, dt ->
-      let end1 = (gDtBasedSelection g dt).snom.p1 in
+      let end1 = (gDtBasedSelectionNoun g dt).snom.p1 in
       case end1 of {
         "" => word ;
         _ => Predef.tk 1 word
@@ -364,7 +364,7 @@ oper
 
   endingsSelectionNoun : Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounEndForms
     = \g, a, dt, at, ss, ci ->
-    let gDtBased = gDtBasedSelection g dt in
+    let gDtBased = gDtBasedSelectionNoun g dt in
     let gDtBasedCirc = circCorrectionNoun gDtBased g dt ci in
     gDtSsBasedSelectionNoun gDtBasedCirc ss
   ;
@@ -382,14 +382,14 @@ oper
   circCorrectionNoun : NounEndFormsS1 -> Gender -> DeclType -> ZCirc -> NounEndFormsS1
     = \nef1, g, dt, ci ->
       let trans1 : NounEndFormsS1 = case <g, ci> of {
-        <Masc, ZC1|ZC12> => nef1 ** {pnom=(gDtBasedSelection Neut dt).pnom} ;
-        <Neut, ZC1|ZC12> => nef1 ** {pnom=(gDtBasedSelection Masc dt).pnom} ;
+        <Masc, ZC1|ZC12> => nef1 ** {pnom=(gDtBasedSelectionNoun Neut dt).pnom} ;
+        <Neut, ZC1|ZC12> => nef1 ** {pnom=(gDtBasedSelectionNoun Masc dt).pnom} ;
         _ => nef1
       } in
       case <g, ci> of {
-        <Masc, ZC2|ZC12> => trans1 ** {pgen=(gDtBasedSelection Neut dt).pgen} ;
-        <Neut, ZC2|ZC12> => trans1 ** {pgen=(gDtBasedSelection Masc dt).pgen} ;
-        <Fem,  ZC2|ZC12> => trans1 ** {pgen=(gDtBasedSelection Masc dt).pgen} ;
+        <Masc, ZC2|ZC12> => trans1 ** {pgen=(gDtBasedSelectionNoun Neut dt).pgen} ;
+        <Neut, ZC2|ZC12> => trans1 ** {pgen=(gDtBasedSelectionNoun Masc dt).pgen} ;
+        <Fem,  ZC2|ZC12> => trans1 ** {pgen=(gDtBasedSelectionNoun Masc dt).pgen} ;
         _ => trans1
       } ;
 
@@ -437,7 +437,7 @@ oper
       <_, _> => Unstressed
     } ;
 
-  gDtBasedSelection : Gender -> DeclType -> NounEndFormsS1
+  gDtBasedSelectionNoun : Gender -> DeclType -> NounEndFormsS1
     = \g, dt -> case <g, dt> of {
       <_, 0> => immutableCasesS1 ;
       <Masc, 1> => {snom=<"","">;pnom=<"ы","ы">;sgen=<"а","а">;pgen=<"ов","ов">;sdat=<"у","у">;pdat=<"ам","ам">;sacc=<"?","?">;pacc=<"?","?">;sins=<"ом","ом">;pins=<"ами","ами">;sprep=<"е","е">;pprep=<"ах","ах">} ;
@@ -547,7 +547,83 @@ oper
     = \word, a, z ->
     case z of {
       ZA0 => immutableAdjectiveCases word a ;
+      ZA dt at ss => formsSelectionAdjective word a dt at ss NoC ;
+      ZAC dt at ss ci => formsSelectionAdjective word a dt at ss ci ;
       _ => immutableAdjectiveCases word a  -- TODO
+    } ;
+
+  formsSelectionAdjective : Str -> Animacy -> DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjFormsBase
+    = \word, a, dt, at, ss, ci ->
+      let stem = stemFromAdjective word dt in
+      let aef = endingsSelectionAdj a dt at ss ci in
+      -- let aef' = specialEndingsNoun word stem aef dt in
+      let alternated = alterFormsAdj stem aef a dt at ss in
+      --animacySelectionNoun dt alternated aef a
+      alternated
+    ;
+
+  stemFromAdjective : Str -> DeclType -> Str
+    = \word, dt ->
+      let end1 = (gDtBasedSelectionAdj dt).msnom.p1 in
+      case end1 of {
+        "" => word ;
+        _ => Predef.tk 2 word
+      }
+    ;
+
+  alterFormsAdj : Str -> AdjFormsBase -> Animacy -> DeclType -> AlterType -> AdjStressSchema -> AdjFormsBase
+    = \s, aef, a, dt, at, ss ->
+      case at of {
+        -- Ast => doAlternations s aef a dt ss ;
+        _ => {
+          msnom = s + aef.msnom  ;
+          fsnom = s + aef.fsnom  ;
+          nsnom = s + aef.nsnom  ;
+          pnom  = s + aef.pnom   ;
+          msgen = s + aef.msgen  ;
+          fsgen = s + aef.fsgen  ;
+          pgen  = s + aef.pgen   ;
+          msdat = s + aef.msdat  ;
+          fsacc = s + aef.fsacc  ;
+          msins = s + aef.msins  ;
+          fsins = s + aef.fsins  ;
+          pins  = s + aef.pins   ;
+          msprep= s + aef.msprep ;
+          sm    = s + aef.sm     ;
+          sf    = s + aef.sf     ;
+          sn    = s + aef.sn     ;
+          sp    = s + aef.sp
+        }
+    } ;
+
+
+  endingsSelectionAdj : Animacy -> DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjFormsBase
+    = \a, dt, at, ss, ci ->
+    let gDtBased = gDtBasedSelectionAdj dt in
+    -- let gDtBasedCirc = circCorrectionNoun gDtBased dt ci in
+    gDtSsBasedSelectionAdj gDtBased ss
+  ;
+
+  gDtSsBasedSelectionAdj : AdjectiveEndFormsS1 -> AdjStressSchema -> AdjFormsBase
+    = \aef1, ss ->
+      {
+        msnom  = stressSelectionAdj aef1.msnom  ss "msnom" ;
+        fsnom  = stressSelectionAdj aef1.fsnom  ss "fsnom" ;
+        nsnom  = stressSelectionAdj aef1.nsnom  ss "nsnom" ;
+        pnom   = stressSelectionAdj aef1.pnom   ss "pnom" ;
+        msgen  = stressSelectionAdj aef1.msgen  ss "msgen" ;
+        fsgen  = stressSelectionAdj aef1.fsgen  ss "fsgen" ;
+        pgen   = stressSelectionAdj aef1.pgen   ss "pgen " ;
+        msdat  = stressSelectionAdj aef1.msdat  ss "msdat" ;
+        fsacc  = stressSelectionAdj aef1.fsacc  ss "fsacc" ;
+        msins  = stressSelectionAdj aef1.msins  ss "msins" ;
+        fsins  = stressSelectionAdj aef1.fsins  ss "fsins" ;
+        pins   = stressSelectionAdj aef1.pins   ss "pins" ;
+        msprep = stressSelectionAdj aef1.msprep ss "msprep" ;
+        sm     = stressSelectionAdj aef1.sm     ss "sm" ;
+        sf     = stressSelectionAdj aef1.sf     ss "sf" ;
+        sn     = stressSelectionAdj aef1.sn     ss "sn" ;
+        sp     = stressSelectionAdj aef1.sp     ss "sp"
     } ;
 
   stressSelectionAdj : EndingSpec -> AdjStressSchema -> Str -> Str
@@ -576,8 +652,8 @@ oper
       <_, _> => Unstressed
     } ;
 
-  gDtBasedSelectionAdj : Gender -> DeclType -> AdjectiveEndFormsS1
-    = \g, dt -> case dt of {
+  gDtBasedSelectionAdj : DeclType -> AdjectiveEndFormsS1
+    = \dt -> case dt of {
       0 => AdjectiveImmutableCasesS1 ;
       1 => {msnom=<"ый","ой">;msgen=<"ого","ого">;msdat=<"ому","ому">;msins=<"ым","ым">;msprep=<"ом","ом">;sm=<"","">;fsnom=<"ая","ая">;fsgen=<"ой","ой">;fsacc=<"ую","ую">;fsins=<"ой","ой">;sf=<"а","а">;nsnom=<"ое","ое">;sn=<"о","о">;pnom=<"ые","ые">;pgen=<"ых","ых">;pins=<"ыми","ыми">;sp=<"ы","ы">} ;
       2 => {msnom=<"ий","ий">;msgen=<"его","его">;msdat=<"ему","ему">;msins=<"им","им">;msprep=<"ем","ем">;sm=<"ь","ь">;fsnom=<"яя","яя">;fsgen=<"ей","ей">;fsacc=<"юю","юю">;fsins=<"ей","ей">;sf=<"я","я">;nsnom=<"ее","ее">;sn=<"е","ё">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">} ;
