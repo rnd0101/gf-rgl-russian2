@@ -15,6 +15,7 @@ lin
   back_N = mkN "спина" ;
   bank_N = mkN "банк" ;
   bark_N = mkN "кора";
+  beautiful_A = mkA "красивый" ;
   belly_N = mkN "живот" ;
   bike_N = mkN "велосипед" ;
   bird_N = mkN "птица" feminine animate ;
