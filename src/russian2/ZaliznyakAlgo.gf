@@ -8,6 +8,9 @@ param
   ZIndex       = Z0 | Z DeclType AlterType StressSchema | ZC DeclType AlterType StressSchema ZCirc ;
   Stressedness = Stressed | Unstressed ;
 
+  AdjStressSchema = A_ | A'_ | B_ | B'_ | C_ | A_A | A_A' | A_B | A_C | A_A' | A_B' | A_C' | A_C'' | B_A | B_B | B_C | B_A' | B_B' | B_C' | B_C'' ;
+  ZAIndex      = ZA0 | ZA DeclType AlterType AdjStressSchema | ZAC DeclType AlterType AdjStressSchema ZCirc ;
+
 oper
 
 --------
@@ -490,6 +493,42 @@ oper
         sp=stem     +"е" ;
     } ;
 
+  toAdjStressSchema : Str -> AdjStressSchema
+    = \s ->
+      case s of {
+        "b/c''" => B_C'' ;
+        "a/c''" => A_C'' ;
+        "a/b'" => A_B' ;
+        "a/c'" => A_C' ;
+        "b/a'" => B_A' ;
+        "a/a'" => A_A' ;
+        "b/b'" => B_B' ;
+        "b/c'" => B_C' ;
+        "b/c" => B_C ;
+        "b/a" => B_A ;
+        "b/b" => B_B ;
+        "a/a" => A_A ;
+        "a/c" => A_C ;
+        "a/b" => A_B ;
+        "a'" => A'_ ;
+        "b'" => B'_ ;
+        "a" => A_ ;
+        "b" => B_ ;
+        "c" => C_ ;
+        _ => A_
+      } ;
+
+  parseAdjIndex : Str -> ZAIndex
+    = \s ->
+      case s of {
+        "0" => ZA0 ;
+        dt@(#digit) + at@("*"|"°"|"") + ss@(#adj_stress_schema) + zc@("①"|"①②"|"②①"|"②"|"(1)"|"(1)(2)"|"(2)(1)"|"(2)")
+          => ZAC (digitToDeclType dt) (toAlterType at) (toAdjStressSchema ss) (toZCirc zc) ;
+        dt@(#digit) + at@("*"|"°"|"") + ss@(#adj_stress_schema)
+          => ZA (digitToDeclType dt) (toAlterType at) (toAdjStressSchema ss) ;
+        _ => Predef.error "Error: incorrect ZAIndex"
+      } ;
+
 
   AdjectiveEndFormsS1 : Type = {
       msnom, fsnom, nsnom, pnom, msgen, fsgen, pgen, msdat, fsacc, msins, fsins, pins, msprep : EndingSpec ;
@@ -499,16 +538,28 @@ oper
     msnom=<"","">;fsnom=<"","">;nsnom=<"","">;pnom=<"","">;msgen=<"","">;fsgen=<"","">;pgen=<"","">;msdat=<"","">;fsacc=<"","">;msins=<"","">;fsins=<"","">;pins=<"","">;msprep=<"","">;
   } ;
 
-  stressSelectionAdj : EndingSpec -> StressSchema -> Str -> Str
-    = \es, ss, c ->
-    selStress es (stressTable ss c) ;
+  immutableAdjectiveCases : Str -> Animacy -> AdjFormsBase
+    = \s, a -> {
+      msnom=s;fsnom=s;nsnom=s;pnom=s;msgen=s;fsgen=s;pgen=s;msdat=s;fsacc=s;msins=s;fsins=s;pins=s;msprep=s
+    } ;
 
-  stressTableAdj : StressSchema -> Str -> Stressedness
+  makeAdjective : Str -> Animacy -> ZAIndex -> AdjFormsBase
+    = \word, a, z ->
+    case z of {
+      ZA0 => immutableAdjectiveCases word a ;
+      _ => immutableAdjectiveCases word a  -- TODO
+    } ;
+
+  stressSelectionAdj : EndingSpec -> AdjStressSchema -> Str -> Str
+    = \es, ss, c ->
+    selStress es (stressTableAdj ss c) ;
+
+  stressTableAdj : AdjStressSchema -> Str -> Stressedness
     = \ss, c ->
     case <ss, c> of {
-      <A', "sf"> => Stressed ;
-      <B, "msnom"|"fsnom"|"nsnom"|"msgen"|"fsgen"|"msdat"|"fsacc"|"msins"|"fsins"|"msprep"|"pnom"|"pgen"|"pins"|"sf"|"sn"|"sp"> => Stressed ;
-      <B', "msnom"|"fsnom"|"nsnom"|"msgen"|"fsgen"|"msdat"|"fsacc"|"msins"|"fsins"|"msprep"|"pnom"|"pgen"|"pins"|"sf"|"sn"|"sp"> => Stressed ;
+      <A'_, "sf"> => Stressed ;
+      <B_, "msnom"|"fsnom"|"nsnom"|"msgen"|"fsgen"|"msdat"|"fsacc"|"msins"|"fsins"|"msprep"|"pnom"|"pgen"|"pins"|"sf"|"sn"|"sp"> => Stressed ;
+      <B'_, "msnom"|"fsnom"|"nsnom"|"msgen"|"fsgen"|"msdat"|"fsacc"|"msins"|"fsins"|"msprep"|"pnom"|"pgen"|"pins"|"sf"|"sn"|"sp"> => Stressed ;
       <A_B, "sf"|"sn"|"sp"> => Stressed ;
       <A_C, "sf"> => Stressed ;
       <A_A', "sf"> => Stressed ;
