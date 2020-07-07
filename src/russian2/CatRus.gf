@@ -32,7 +32,7 @@ flags coding=utf8 ; optimize=all ;
     AP = ResRus.Adjective ** {isPost : Bool} ; -- {s : Gender => Number => Case => Str}
     A2 = ResRus.AdjForms ** {c : ComplementCase} ;
 
-    NP = {s : Case => Str ; a : Agr } ;
+    NP = {s, prep : Case => Str ; a : Agr } ;
     Det = Determiner ; -- {s : Gender => Case => Str ; size : NumSize} ; -- can contain a numeral, therefore NumSize
     Quant = {s : Gender => Number => Case => Str} ; -- same as AP
 
