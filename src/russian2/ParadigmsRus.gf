@@ -139,7 +139,7 @@ oper
 -- Adverbs, prepositions, conjunctions, ...
 
   mkAdv : Str -> Adv
-    = \s -> lin Adv {s = s} ;
+    = \s -> lin Adv (makeAdverb s) ;
 
   mkConj : Str -> Conj
     = \s -> lin Conj {s1 = [] ; s2 = s} ;

@@ -280,7 +280,10 @@ oper
     } ;
 
   the_most = guessAdjectiveForms "самый" ;
+  utmost_Adv = makeAdverb "наиболее" ;
 
+  -- [ISACHENKO],p.220 there are three forms in Russian: самый важный, наиболее важный, важнее (всех, всего)
+  -- here only first one:
   long_superlative : AdjForms -> AdjForms
     = \af -> {
       msnom = the_most.msnom  ++ af.msnom ;
@@ -602,6 +605,13 @@ oper
 -- Numerals -- Числительные
 ---------------
 
+---------------
+-- Adverbs -- Наречия
+
+  Adverb = { s : Str ; } ;
+
+  makeAdverb : Str -> Adverb
+    = \word -> {s=word} ;
 
 --------------------------------
 -- combining nouns with numerals
