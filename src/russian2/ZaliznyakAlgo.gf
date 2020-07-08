@@ -538,27 +538,27 @@ oper
     msnom=<"","">;fsnom=<"","">;nsnom=<"","">;pnom=<"","">;msgen=<"","">;fsgen=<"","">;pgen=<"","">;msdat=<"","">;fsacc=<"","">;msins=<"","">;fsins=<"","">;pins=<"","">;msprep=<"","">;
   } ;
 
-  immutableAdjectiveCases : Str -> Animacy -> AdjFormsBase
-    = \s, a -> {
+  immutableAdjectiveCases : Str -> AdjFormsBase
+    = \s -> {
       msnom=s;fsnom=s;nsnom=s;pnom=s;msgen=s;fsgen=s;pgen=s;msdat=s;fsacc=s;msins=s;fsins=s;pins=s;msprep=s
     } ;
 
-  makeAdjective : Str -> Animacy -> ZAIndex -> AdjFormsBase
-    = \word, a, z ->
+  makeAdjective : Str -> ZAIndex -> AdjFormsBase
+    = \word, z ->
     case z of {
-      ZA0 => immutableAdjectiveCases word a ;
-      ZA dt at ss => formsSelectionAdjective word a dt at ss NoC ;
-      ZAC dt at ss ci => formsSelectionAdjective word a dt at ss ci ;
-      _ => immutableAdjectiveCases word a  -- TODO
+      ZA0 => immutableAdjectiveCases word ;
+      ZA dt at ss => formsSelectionAdjective word dt at ss NoC ;
+      ZAC dt at ss ci => formsSelectionAdjective word dt at ss ci ;
+      _ => immutableAdjectiveCases word
     } ;
 
-  formsSelectionAdjective : Str -> Animacy -> DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjFormsBase
-    = \word, a, dt, at, ss, ci ->
+  formsSelectionAdjective : Str -> DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjFormsBase
+    = \word, dt, at, ss, ci ->
       let stem = stemFromAdjective word dt in
-      let aef = endingsSelectionAdj a dt at ss ci in
+      let aef = endingsSelectionAdj dt at ss ci in
       -- let aef' = specialEndingsNoun word stem aef dt in
-      let alternated = alterFormsAdj stem aef a dt at ss in
-      --animacySelectionNoun dt alternated aef a
+      let alternated = alterFormsAdj stem aef dt at ss in
+      --animacySelectionNoun dt alternated aef
       alternated
     ;
 
@@ -571,10 +571,10 @@ oper
       }
     ;
 
-  alterFormsAdj : Str -> AdjFormsBase -> Animacy -> DeclType -> AlterType -> AdjStressSchema -> AdjFormsBase
-    = \s, aef, a, dt, at, ss ->
+  alterFormsAdj : Str -> AdjFormsBase -> DeclType -> AlterType -> AdjStressSchema -> AdjFormsBase
+    = \s, aef, dt, at, ss ->
       case at of {
-        -- Ast => doAlternations s aef a dt ss ;
+        -- Ast => doAlternations s aef dt ss ;
         _ => {
           msnom = s + aef.msnom  ;
           fsnom = s + aef.fsnom  ;
@@ -596,9 +596,8 @@ oper
         }
     } ;
 
-
-  endingsSelectionAdj : Animacy -> DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjFormsBase
-    = \a, dt, at, ss, ci ->
+  endingsSelectionAdj : DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjFormsBase
+    = \dt, at, ss, ci ->
     let gDtBased = gDtBasedSelectionAdj dt in
     -- let gDtBasedCirc = circCorrectionNoun gDtBased dt ci in
     gDtSsBasedSelectionAdj gDtBased ss
