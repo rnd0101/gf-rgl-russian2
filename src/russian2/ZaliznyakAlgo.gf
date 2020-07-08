@@ -533,7 +533,7 @@ oper
       let stem = stemFromAdjective word dt in
       let aef = endingsSelectionAdj dt at ss ci in
       -- let aef' = specialEndingsNoun word stem aef dt in
-      let alternated = alterFormsAdj stem aef dt at ss in
+      let alternated = alterFormsAdj stem aef dt at ss in    -- TODO: alternation, fix comparative for dt=3
       --animacySelectionNoun dt alternated aef
       alternated
     ;
@@ -550,28 +550,92 @@ oper
   alterFormsAdj : Str -> AdjForms -> DeclType -> AlterType -> AdjStressSchema -> AdjForms
     = \s, aef, dt, at, ss ->
       case at of {
-        -- Ast => doAlternations s aef dt ss ;
-        _ => {
-          msnom = s + aef.msnom  ;
-          fsnom = s + aef.fsnom  ;
-          nsnom = s + aef.nsnom  ;
-          pnom  = s + aef.pnom   ;
-          msgen = s + aef.msgen  ;
-          fsgen = s + aef.fsgen  ;
-          pgen  = s + aef.pgen   ;
-          msdat = s + aef.msdat  ;
-          fsacc = s + aef.fsacc  ;
-          msins = s + aef.msins  ;
-          fsins = s + aef.fsins  ;
-          pins  = s + aef.pins   ;
-          msprep= s + aef.msprep ;
-          sm    = s + aef.sm     ;
-          sf    = s + aef.sf     ;
-          sn    = s + aef.sn     ;
-          sp    = s + aef.sp     ;
-          comp  = s + aef.comp
-        }
+        Ast => doAlternationsAdj s aef dt ss ;
+        _ => noAlternationsAdj s aef dt ss
     } ;
+
+  mobileShortMascAdj : Str -> DeclType -> AlterType -> AdjStressSchema -> Str
+    = \s, dt, at, ss ->
+      let last = Predef.dp 1 s in
+      let butLast = Predef.tk 1 s in
+      let secondLast = Predef.dp 1 butLast in
+      let butTwolast = Predef.tk 2 s in
+      let thirdLast = Predef.dp 1 butTwolast in
+      let smStressed = stressTableAdj ss "sm" in
+      case <dt, at, s, secondLast, last, smStressed> of {   -- what if more than one consonant or sign? eg день
+         <1, Ast, _, "й", _, _> => butTwolast + "е" + last ;
+         <1, Ast, _, "ж"|"ш"|"ч"|"щ", _, Stressed> => butLast + "о" + last ;
+         <1, Ast, _, _, _, Stressed> => butLast + "ё" + last ;
+         <1, Ast, _, _, _, _> => butLast + "е" + last ;
+         <2, No, _, _, _, _> => s + "ь";
+         <2, Ast, _, _, _, _> => butLast + "е" + last ;
+         <3, Ast, _, _, _, _> => butLast + "о" + last ;   -- долг(ий) - долог
+         _ => s
+      } ;
+
+  mobileCompAdj : Str -> DeclType -> Str
+    = \s, dt ->
+      let last = Predef.dp 1 s in
+      let butLast = Predef.tk 1 s in
+      let secondLast = Predef.dp 1 butLast in
+      let butTwolast = Predef.tk 2 s in
+      let thirdLast = Predef.dp 1 butTwolast in
+      case <dt, s> of {   -- what if more than one consonant or sign? eg день
+         <3, _ + "к"> => butLast + "ч" ;
+         <3, _ + "г"> => butLast + "ж" ;
+         <3, _ + "х"> => butLast + "ш" ;
+         _ => s
+      } ;
+
+  noAlternationsAdj : Str -> AdjForms -> DeclType -> AdjStressSchema -> AdjForms
+    = \s, aef, dt, ss ->
+      let sms = mobileShortMascAdj s dt No ss in
+      let comps = mobileCompAdj s dt in
+      {
+        msnom = s + aef.msnom  ;
+        fsnom = s + aef.fsnom  ;
+        nsnom = s + aef.nsnom  ;
+        pnom  = s + aef.pnom   ;
+        msgen = s + aef.msgen  ;
+        fsgen = s + aef.fsgen  ;
+        pgen  = s + aef.pgen   ;
+        msdat = s + aef.msdat  ;
+        fsacc = s + aef.fsacc  ;
+        msins = s + aef.msins  ;
+        fsins = s + aef.fsins  ;
+        pins  = s + aef.pins   ;
+        msprep= s + aef.msprep ;
+        sm    = sms + aef.sm   ;
+        sf    = s + aef.sf     ;
+        sn    = s + aef.sn     ;
+        sp    = s + aef.sp     ;
+        comp  = comps + aef.comp
+      } ;
+
+  doAlternationsAdj : Str -> AdjForms -> DeclType -> AdjStressSchema -> AdjForms
+    = \s, aef, dt, ss ->
+      let sms = mobileShortMascAdj s dt Ast ss in
+      let comps = mobileCompAdj s dt in
+      {
+        msnom = s + aef.msnom  ;
+        fsnom = s + aef.fsnom  ;
+        nsnom = s + aef.nsnom  ;
+        pnom  = s + aef.pnom   ;
+        msgen = s + aef.msgen  ;
+        fsgen = s + aef.fsgen  ;
+        pgen  = s + aef.pgen   ;
+        msdat = s + aef.msdat  ;
+        fsacc = s + aef.fsacc  ;
+        msins = s + aef.msins  ;
+        fsins = s + aef.fsins  ;
+        pins  = s + aef.pins   ;
+        msprep= s + aef.msprep;
+        sm    = sms + aef.sm   ;
+        sf    = s + aef.sf     ;
+        sn    = s + aef.sn     ;
+        sp    = s + aef.sp     ;
+        comp  = comps + aef.comp
+      } ;
 
   endingsSelectionAdj : DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjForms
     = \dt, at, ss, ci ->
@@ -611,9 +675,9 @@ oper
     = \ss, c ->
     case <ss, c> of {
       <A'_, "sf"> => Stressed ;
-      <B_, "msnom"|"fsnom"|"nsnom"|"msgen"|"fsgen"|"msdat"|"fsacc"|"msins"|"fsins"|"msprep"|"pnom"|"pgen"|"pins"|"sf"|"sn"|"sp"> => Stressed ;
+      <B_, "msnom"|"fsnom"|"nsnom"|"msgen"|"fsgen"|"msdat"|"fsacc"|"msins"|"fsins"|"msprep"|"pnom"|"pgen"|"pins"|"sf"|"sn"|"sp"|"sm"> => Stressed ;
       <B'_, "msnom"|"fsnom"|"nsnom"|"msgen"|"fsgen"|"msdat"|"fsacc"|"msins"|"fsins"|"msprep"|"pnom"|"pgen"|"pins"|"sf"|"sn"|"sp"> => Stressed ;
-      <A_B, "sf"|"sn"|"sp"> => Stressed ;
+      <A_B, "sf"|"sn"|"sp"|"sm"> => Stressed ;
       <A_C, "sf"> => Stressed ;
       <A_A', "sf"> => Stressed ;
       <A_B', "sf"|"sn"|"sp"> => Stressed ;
@@ -633,7 +697,7 @@ oper
     = \dt -> case dt of {
       0 => AdjectiveImmutableCasesS1 ;
       1 => {msnom=<"ый","ой">;msgen=<"ого","ого">;msdat=<"ому","ому">;msins=<"ым","ым">;msprep=<"ом","ом">;sm=<"","">;fsnom=<"ая","ая">;fsgen=<"ой","ой">;fsacc=<"ую","ую">;fsins=<"ой","ой">;sf=<"а","а">;nsnom=<"ое","ое">;sn=<"о","о">;pnom=<"ые","ые">;pgen=<"ых","ых">;pins=<"ыми","ыми">;sp=<"ы","ы">;comp=<"ее","ее">} ;
-      2 => {msnom=<"ий","ий">;msgen=<"его","его">;msdat=<"ему","ему">;msins=<"им","им">;msprep=<"ем","ем">;sm=<"ь","ь">;fsnom=<"яя","яя">;fsgen=<"ей","ей">;fsacc=<"юю","юю">;fsins=<"ей","ей">;sf=<"я","я">;nsnom=<"ее","ее">;sn=<"е","ё">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">;comp=<"ее","ее">} ;
+      2 => {msnom=<"ий","ий">;msgen=<"его","его">;msdat=<"ему","ему">;msins=<"им","им">;msprep=<"ем","ем">;sm=<"","">;fsnom=<"яя","яя">;fsgen=<"ей","ей">;fsacc=<"юю","юю">;fsins=<"ей","ей">;sf=<"я","я">;nsnom=<"ее","ее">;sn=<"е","ё">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">;comp=<"ее","ее">} ;
       3 => {msnom=<"ий","ой">;msgen=<"ого","ого">;msdat=<"ому","ому">;msins=<"им","им">;msprep=<"ом","ом">;sm=<"","">;fsnom=<"ая","ая">;fsgen=<"ой","ой">;fsacc=<"ую","ую">;fsins=<"ой","ой">;sf=<"а","а">;nsnom=<"ое","ое">;sn=<"о","о">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">;comp=<"е","е">} ;
       4 => {msnom=<"ий","ой">;msgen=<"его","ого">;msdat=<"ему","ому">;msins=<"им","им">;msprep=<"ем","ом">;sm=<"","">;fsnom=<"ая","ая">;fsgen=<"ей","ой">;fsacc=<"ую","ую">;fsins=<"ей","ой">;sf=<"а","а">;nsnom=<"ее","ое">;sn=<"е","о">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">;comp=<"ее","ее">} ;
       5 => {msnom=<"ый","ой">;msgen=<"его","ого">;msdat=<"ему","ому">;msins=<"ым","ым">;msprep=<"ем","ом">;sm=<"","">;fsnom=<"ая","ая">;fsgen=<"ей","ой">;fsacc=<"ую","ую">;fsins=<"ей","ой">;sf=<"а","а">;nsnom=<"ее","ое">;sn=<"е","о">;pnom=<"ые","ые">;pgen=<"ых","ых">;pins=<"ыми","ыми">;sp=<"ы","ы">;comp=<"ее","ее">} ;
