@@ -277,24 +277,17 @@ oper
   guessAdjectiveForms : Str -> AdjForms  -- stub. TODO: properly
     = \word ->
       let stem = Predef.tk 2 word in
-      {
-        msnom=stem  +"ый" ;
-        fsnom=stem  +"ая" ;
-        nsnom=stem  +"ое" ;
-        pnom=stem   +"ые" ;
-        msgen=stem  +"ого" ;
-        fsgen=stem  +"ой" ;
-        pgen=stem   +"ых" ;
-        msdat=stem  +"ому" ;
-        fsacc=stem  +"ую" ;
-        msins=stem  +"ым" ;
-        fsins=stem  +"ой" ;
-        pins=stem   +"ыми" ;
-        msprep=stem +"ом" ;
-        sm=stem     +"" ;
-        sf=stem     +"а" ;
-        sn=stem     +"о" ;
-        sp=stem     +"ы" ;
+      case word of {
+        _ + "шеий"                 => makeAdjective word (ZA 6 No A_) ** {sf=""; sm=""; sn=""; sp=""};
+        _ + "цый"                  => makeAdjective word (ZA 5 No A_) ** {sf=""; sm=""; sn=""; sp=""};
+        _ + ("к"|"г"|"х") +"ий"    => makeAdjective word (ZA 3 No A_) ** {sf=""; sm=""; sn=""; sp=""};
+        _ + ("ш"|"ж"|"ч"|"щ")+"ий" => makeAdjective word (ZA 4 No A_) ** {sf=""; sm=""; sn=""; sp=""};
+        _ + #consonant + "ный"     => makeAdjective word (ZA 1 Ast A_) ** {sf=""; sm=""; sn=""; sp=""};
+        _ + #consonant + "ний"     => makeAdjective word (ZA 2 Ast A_) ** {sf=""; sm=""; sn=""; sp=""};
+        _ + "ый"                   => makeAdjective word (ZA 1 No A_) ** {sf=""; sm=""; sn=""; sp=""};
+        _ + "ой"                   => makeAdjective word (ZA 1 No B_) ** {sf=""; sm=""; sn=""; sp=""};
+        _ + "ий"                   => makeAdjective word (ZA 2 No A_) ** {sf=""; sm=""; sn=""; sp=""};
+        _                          => makeAdjective word (ZA 1 No A_) ** {sf=""; sm=""; sn=""; sp=""}
     } ;
 
   the_most = guessAdjectiveForms "самый" ;
