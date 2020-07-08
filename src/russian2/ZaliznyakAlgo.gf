@@ -507,16 +507,16 @@ oper
 
 
   AdjectiveEndFormsS1 : Type = {
-      msnom, fsnom, nsnom, pnom, msgen, fsgen, pgen, msdat, fsacc, msins, fsins, pins, msprep, sm, sf, sn, sp : EndingSpec ;
+      msnom, fsnom, nsnom, pnom, msgen, fsgen, pgen, msdat, fsacc, msins, fsins, pins, msprep, sm, sf, sn, sp, comp : EndingSpec ;
   } ;
 
   AdjectiveImmutableCasesS1 : AdjectiveEndFormsS1 = {
-    msnom=<"","">;fsnom=<"","">;nsnom=<"","">;pnom=<"","">;msgen=<"","">;fsgen=<"","">;pgen=<"","">;msdat=<"","">;fsacc=<"","">;msins=<"","">;fsins=<"","">;pins=<"","">;msprep=<"","">;sm=<"","">;sf=<"","">;sn=<"","">;sp=<"","">;
+    msnom=<"","">;fsnom=<"","">;nsnom=<"","">;pnom=<"","">;msgen=<"","">;fsgen=<"","">;pgen=<"","">;msdat=<"","">;fsacc=<"","">;msins=<"","">;fsins=<"","">;pins=<"","">;msprep=<"","">;sm=<"","">;sf=<"","">;sn=<"","">;sp=<"","">;comp=<"","">;
   } ;
 
   immutableAdjectiveCases : Str -> AdjForms
     = \s -> {
-      msnom=s;fsnom=s;nsnom=s;pnom=s;msgen=s;fsgen=s;pgen=s;msdat=s;fsacc=s;msins=s;fsins=s;pins=s;msprep=s;sm=s;sf=s;sn=s;sp=s
+      msnom=s;fsnom=s;nsnom=s;pnom=s;msgen=s;fsgen=s;pgen=s;msdat=s;fsacc=s;msins=s;fsins=s;pins=s;msprep=s;sm=s;sf=s;sn=s;sp=s;comp=[]
     } ;
 
   makeAdjective : Str -> ZAIndex -> AdjForms
@@ -568,7 +568,8 @@ oper
           sm    = s + aef.sm     ;
           sf    = s + aef.sf     ;
           sn    = s + aef.sn     ;
-          sp    = s + aef.sp
+          sp    = s + aef.sp     ;
+          comp  = s + aef.comp
         }
     } ;
 
@@ -598,7 +599,8 @@ oper
         sm     = stressSelectionAdj aef1.sm     ss "sm" ;
         sf     = stressSelectionAdj aef1.sf     ss "sf" ;
         sn     = stressSelectionAdj aef1.sn     ss "sn" ;
-        sp     = stressSelectionAdj aef1.sp     ss "sp"
+        sp     = stressSelectionAdj aef1.sp     ss "sp" ;
+        comp   = stressSelectionAdj aef1.comp   ss "comp"
     } ;
 
   stressSelectionAdj : EndingSpec -> AdjStressSchema -> Str -> Str
@@ -630,14 +632,14 @@ oper
   gDtBasedSelectionAdj : DeclType -> AdjectiveEndFormsS1
     = \dt -> case dt of {
       0 => AdjectiveImmutableCasesS1 ;
-      1 => {msnom=<"ый","ой">;msgen=<"ого","ого">;msdat=<"ому","ому">;msins=<"ым","ым">;msprep=<"ом","ом">;sm=<"","">;fsnom=<"ая","ая">;fsgen=<"ой","ой">;fsacc=<"ую","ую">;fsins=<"ой","ой">;sf=<"а","а">;nsnom=<"ое","ое">;sn=<"о","о">;pnom=<"ые","ые">;pgen=<"ых","ых">;pins=<"ыми","ыми">;sp=<"ы","ы">} ;
-      2 => {msnom=<"ий","ий">;msgen=<"его","его">;msdat=<"ему","ему">;msins=<"им","им">;msprep=<"ем","ем">;sm=<"ь","ь">;fsnom=<"яя","яя">;fsgen=<"ей","ей">;fsacc=<"юю","юю">;fsins=<"ей","ей">;sf=<"я","я">;nsnom=<"ее","ее">;sn=<"е","ё">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">} ;
-      3 => {msnom=<"ий","ой">;msgen=<"ого","ого">;msdat=<"ому","ому">;msins=<"им","им">;msprep=<"ом","ом">;sm=<"","">;fsnom=<"ая","ая">;fsgen=<"ой","ой">;fsacc=<"ую","ую">;fsins=<"ой","ой">;sf=<"а","а">;nsnom=<"ое","ое">;sn=<"о","о">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">} ;
-      4 => {msnom=<"ий","ой">;msgen=<"его","ого">;msdat=<"ему","ому">;msins=<"им","им">;msprep=<"ем","ом">;sm=<"","">;fsnom=<"ая","ая">;fsgen=<"ей","ой">;fsacc=<"ую","ую">;fsins=<"ей","ой">;sf=<"а","а">;nsnom=<"ее","ое">;sn=<"е","о">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">} ;
-      5 => {msnom=<"ый","ой">;msgen=<"его","ого">;msdat=<"ему","ому">;msins=<"ым","ым">;msprep=<"ем","ом">;sm=<"","">;fsnom=<"ая","ая">;fsgen=<"ей","ой">;fsacc=<"ую","ую">;fsins=<"ей","ой">;sf=<"а","а">;nsnom=<"ее","ое">;sn=<"е","о">;pnom=<"ые","ые">;pgen=<"ых","ых">;pins=<"ыми","ыми">;sp=<"ы","ы">} ;
-      6 => {msnom=<"ий","ий">;msgen=<"его","его">;msdat=<"ему","ему">;msins=<"им","им">;msprep=<"ем","ем">;sm=<"й","й">;fsnom=<"яя","яя">;fsgen=<"ей","ей">;fsacc=<"юю","юю">;fsins=<"ей","ей">;sf=<"я","я">;nsnom=<"ее","ее">;sn=<"е","ё">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">} ;
+      1 => {msnom=<"ый","ой">;msgen=<"ого","ого">;msdat=<"ому","ому">;msins=<"ым","ым">;msprep=<"ом","ом">;sm=<"","">;fsnom=<"ая","ая">;fsgen=<"ой","ой">;fsacc=<"ую","ую">;fsins=<"ой","ой">;sf=<"а","а">;nsnom=<"ое","ое">;sn=<"о","о">;pnom=<"ые","ые">;pgen=<"ых","ых">;pins=<"ыми","ыми">;sp=<"ы","ы">;comp=<"ее","ее">} ;
+      2 => {msnom=<"ий","ий">;msgen=<"его","его">;msdat=<"ему","ему">;msins=<"им","им">;msprep=<"ем","ем">;sm=<"ь","ь">;fsnom=<"яя","яя">;fsgen=<"ей","ей">;fsacc=<"юю","юю">;fsins=<"ей","ей">;sf=<"я","я">;nsnom=<"ее","ее">;sn=<"е","ё">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">;comp=<"ее","ее">} ;
+      3 => {msnom=<"ий","ой">;msgen=<"ого","ого">;msdat=<"ому","ому">;msins=<"им","им">;msprep=<"ом","ом">;sm=<"","">;fsnom=<"ая","ая">;fsgen=<"ой","ой">;fsacc=<"ую","ую">;fsins=<"ой","ой">;sf=<"а","а">;nsnom=<"ое","ое">;sn=<"о","о">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">;comp=<"е","е">} ;
+      4 => {msnom=<"ий","ой">;msgen=<"его","ого">;msdat=<"ему","ому">;msins=<"им","им">;msprep=<"ем","ом">;sm=<"","">;fsnom=<"ая","ая">;fsgen=<"ей","ой">;fsacc=<"ую","ую">;fsins=<"ей","ой">;sf=<"а","а">;nsnom=<"ее","ое">;sn=<"е","о">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">;comp=<"ее","ее">} ;
+      5 => {msnom=<"ый","ой">;msgen=<"его","ого">;msdat=<"ему","ому">;msins=<"ым","ым">;msprep=<"ем","ом">;sm=<"","">;fsnom=<"ая","ая">;fsgen=<"ей","ой">;fsacc=<"ую","ую">;fsins=<"ей","ой">;sf=<"а","а">;nsnom=<"ее","ое">;sn=<"е","о">;pnom=<"ые","ые">;pgen=<"ых","ых">;pins=<"ыми","ыми">;sp=<"ы","ы">;comp=<"ее","ее">} ;
+      6 => {msnom=<"ий","ий">;msgen=<"его","его">;msdat=<"ему","ему">;msins=<"им","им">;msprep=<"ем","ем">;sm=<"й","й">;fsnom=<"яя","яя">;fsgen=<"ей","ей">;fsacc=<"юю","юю">;fsins=<"ей","ей">;sf=<"я","я">;nsnom=<"ее","ее">;sn=<"е","ё">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">;comp=<"ее","ее">} ;
       7|8 => Predef.error "Error: adjectives do not have class 7 or 8" ;
-      _ => {msnom=<"ий","ий">;msgen=<"его","его">;msdat=<"ему","ему">;msins=<"им","им">;msprep=<"ем","ем">;sm=<"ь","ь">;fsnom=<"яя","яя">;fsgen=<"ей","ей">;fsacc=<"юю","юю">;fsins=<"ей","ей">;sf=<"я","я">;nsnom=<"ее","ее">;sn=<"е","ё">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">}
+      _ => {msnom=<"ий","ий">;msgen=<"его","его">;msdat=<"ему","ему">;msins=<"им","им">;msprep=<"ем","ем">;sm=<"ь","ь">;fsnom=<"яя","яя">;fsgen=<"ей","ей">;fsacc=<"юю","юю">;fsins=<"ей","ей">;sf=<"я","я">;nsnom=<"ее","ее">;sn=<"е","ё">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">;comp=<"ее","ее">}
     } ;
 
 -----------

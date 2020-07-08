@@ -86,7 +86,8 @@ resource ParamRus = ParamX ** open Prelude in {
       fsacc,                      -- amsacc = msgen, imsacc = msnom, nsacc = nsnom
       msins, fsins, pins,         -- nsins = msins, pdat = msins ; there is also variant fsins == fsgen
       msprep,                     -- nsprep = msprep, fsprep = fsgen, msloc = msprep
-      sm, sf, sn, sp              -- short forms
+      sm, sf, sn, sp,             -- short forms
+      comp                        -- comparative variants
       : Str ;
     } ;
 
