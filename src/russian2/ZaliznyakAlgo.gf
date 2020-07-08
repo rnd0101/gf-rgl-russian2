@@ -469,30 +469,6 @@ oper
 -------------
 -- Adjectives
 
-  adjective2AstB : Str -> AdjFormsBase
-    = \word -> -- весь
-      let stem = Predef.tk 1 word in
-      let stem2 = Predef.tk 2 word ++ Predef.tk 1 word in
-      {
-        msnom=stem   +"ь" ;
-        fsnom=stem2  +"я" ;
-        nsnom=stem2  +"ё" ;
-        pnom=stem2   +"е" ;
-        msgen=stem2  +"его" ;
-        fsgen=stem2  +"ей" ;
-        pgen=stem2   +"ех" ;
-        msdat=stem2  +"ему" ;
-        fsacc=stem2  +"ю" ;
-        msins=stem2  +"ем" ;
-        fsins=stem2  +"ей" ; -- ею
-        pins=stem2   +"еми" ;
-        msprep=stem2 +"ем" ;  --ём
-        sm=stem     +"ь" ;
-        sf=stem     +"ё" ;
-        sn=stem     +"е" ;
-        sp=stem     +"е" ;
-    } ;
-
   toAdjStressSchema : Str -> AdjStressSchema
     = \s ->
       case s of {
@@ -531,19 +507,19 @@ oper
 
 
   AdjectiveEndFormsS1 : Type = {
-      msnom, fsnom, nsnom, pnom, msgen, fsgen, pgen, msdat, fsacc, msins, fsins, pins, msprep : EndingSpec ;
+      msnom, fsnom, nsnom, pnom, msgen, fsgen, pgen, msdat, fsacc, msins, fsins, pins, msprep, sm, sf, sn, sp : EndingSpec ;
   } ;
 
   AdjectiveImmutableCasesS1 : AdjectiveEndFormsS1 = {
-    msnom=<"","">;fsnom=<"","">;nsnom=<"","">;pnom=<"","">;msgen=<"","">;fsgen=<"","">;pgen=<"","">;msdat=<"","">;fsacc=<"","">;msins=<"","">;fsins=<"","">;pins=<"","">;msprep=<"","">;
+    msnom=<"","">;fsnom=<"","">;nsnom=<"","">;pnom=<"","">;msgen=<"","">;fsgen=<"","">;pgen=<"","">;msdat=<"","">;fsacc=<"","">;msins=<"","">;fsins=<"","">;pins=<"","">;msprep=<"","">;sm=<"","">;sf=<"","">;sn=<"","">;sp=<"","">;
   } ;
 
-  immutableAdjectiveCases : Str -> AdjFormsBase
+  immutableAdjectiveCases : Str -> AdjForms
     = \s -> {
-      msnom=s;fsnom=s;nsnom=s;pnom=s;msgen=s;fsgen=s;pgen=s;msdat=s;fsacc=s;msins=s;fsins=s;pins=s;msprep=s
+      msnom=s;fsnom=s;nsnom=s;pnom=s;msgen=s;fsgen=s;pgen=s;msdat=s;fsacc=s;msins=s;fsins=s;pins=s;msprep=s;sm=s;sf=s;sn=s;sp=s
     } ;
 
-  makeAdjective : Str -> ZAIndex -> AdjFormsBase
+  makeAdjective : Str -> ZAIndex -> AdjForms
     = \word, z ->
     case z of {
       ZA0 => immutableAdjectiveCases word ;
@@ -552,7 +528,7 @@ oper
       _ => immutableAdjectiveCases word
     } ;
 
-  formsSelectionAdjective : Str -> DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjFormsBase
+  formsSelectionAdjective : Str -> DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjForms
     = \word, dt, at, ss, ci ->
       let stem = stemFromAdjective word dt in
       let aef = endingsSelectionAdj dt at ss ci in
@@ -571,7 +547,7 @@ oper
       }
     ;
 
-  alterFormsAdj : Str -> AdjFormsBase -> DeclType -> AlterType -> AdjStressSchema -> AdjFormsBase
+  alterFormsAdj : Str -> AdjForms -> DeclType -> AlterType -> AdjStressSchema -> AdjForms
     = \s, aef, dt, at, ss ->
       case at of {
         -- Ast => doAlternations s aef dt ss ;
@@ -596,14 +572,14 @@ oper
         }
     } ;
 
-  endingsSelectionAdj : DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjFormsBase
+  endingsSelectionAdj : DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjForms
     = \dt, at, ss, ci ->
     let gDtBased = gDtBasedSelectionAdj dt in
     -- let gDtBasedCirc = circCorrectionNoun gDtBased dt ci in
     gDtSsBasedSelectionAdj gDtBased ss
   ;
 
-  gDtSsBasedSelectionAdj : AdjectiveEndFormsS1 -> AdjStressSchema -> AdjFormsBase
+  gDtSsBasedSelectionAdj : AdjectiveEndFormsS1 -> AdjStressSchema -> AdjForms
     = \aef1, ss ->
       {
         msnom  = stressSelectionAdj aef1.msnom  ss "msnom" ;
@@ -662,6 +638,33 @@ oper
       6 => {msnom=<"ий","ий">;msgen=<"его","его">;msdat=<"ему","ему">;msins=<"им","им">;msprep=<"ем","ем">;sm=<"й","й">;fsnom=<"яя","яя">;fsgen=<"ей","ей">;fsacc=<"юю","юю">;fsins=<"ей","ей">;sf=<"я","я">;nsnom=<"ее","ее">;sn=<"е","ё">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">} ;
       8 => Predef.error "Error: adjective do not have class 8" ;
       _ => {msnom=<"ий","ий">;msgen=<"его","его">;msdat=<"ему","ему">;msins=<"им","им">;msprep=<"ем","ем">;sm=<"ь","ь">;fsnom=<"яя","яя">;fsgen=<"ей","ей">;fsacc=<"юю","юю">;fsins=<"ей","ей">;sf=<"я","я">;nsnom=<"ее","ее">;sn=<"е","ё">;pnom=<"ие","ие">;pgen=<"их","их">;pins=<"ими","ими">;sp=<"и","и">}
+    } ;
+
+-----------
+-- Pronouns
+
+  adjective2AstB : Str -> AdjFormsBase
+    = \word -> -- весь
+      let stem = Predef.tk 1 word in
+      let stem2 = Predef.tk 2 word ++ Predef.tk 1 word in
+      {
+        msnom=stem   +"ь" ;
+        fsnom=stem2  +"я" ;
+        nsnom=stem2  +"ё" ;
+        pnom=stem2   +"е" ;
+        msgen=stem2  +"его" ;
+        fsgen=stem2  +"ей" ;
+        pgen=stem2   +"ех" ;
+        msdat=stem2  +"ему" ;
+        fsacc=stem2  +"ю" ;
+        msins=stem2  +"ем" ;
+        fsins=stem2  +"ей" ; -- ею
+        pins=stem2   +"еми" ;
+        msprep=stem2 +"ем" ;  --ём
+        sm=stem     +"ь" ;
+        sf=stem     +"ё" ;
+        sn=stem     +"е" ;
+        sp=stem     +"е" ;
     } ;
 
 --------

@@ -169,23 +169,12 @@ oper
 
   Adjective : Type = {s : Number => Gender => Animacy => Case => Str} ;
 
-  AdjForms : Type = {
-    msnom, fsnom, nsnom, pnom,  -- pvoc = pnom
-    msgen, fsgen, pgen,         -- nsgen = msgen ; ploc = pprep = pgen = pptv (?)
-    msdat,                      -- nsdat = msdat ; fsdat = fsgen
-    fsacc,                      -- amsacc = msgen, imsacc = msnom, nsacc = nsnom
-    msins, fsins, pins,         -- nsins = msins, pdat = msins ; there is also variant fsins == fsgen
-    msprep,                     -- nsprep = msprep, fsprep = fsgen, msloc = msprep
-    sm, sf, sn, sp              -- short forms
-    : Str ;
-  } ;
-
-  noShorts : AdjFormsBase -> AdjForms
+  noShorts : AdjFormsBase -> AdjForms  -- ???
     = \base -> base ** {
-      sm = base.msnom ;
-      sf = base.fsnom ;
-      sn = base.nsnom ;
-      sp = base.pnom
+      sm = [] ;
+      sf = [] ;
+      sn = [] ;
+      sp = []
     } ;
 
   adjFormsAdjective : AdjForms -> Adjective
@@ -274,20 +263,20 @@ oper
       a = forms.a
     } ;
 
-  guessAdjectiveForms : Str -> AdjForms  -- stub. TODO: properly
+  guessAdjectiveForms : Str -> AdjForms
     = \word ->
       let stem = Predef.tk 2 word in
       case word of {
-        _ + "шеий"                 => makeAdjective word (ZA 6 No A_) ** {sf=""; sm=""; sn=""; sp=""};
-        _ + "цый"                  => makeAdjective word (ZA 5 No A_) ** {sf=""; sm=""; sn=""; sp=""};
-        _ + ("к"|"г"|"х") +"ий"    => makeAdjective word (ZA 3 No A_) ** {sf=""; sm=""; sn=""; sp=""};
-        _ + ("ш"|"ж"|"ч"|"щ")+"ий" => makeAdjective word (ZA 4 No A_) ** {sf=""; sm=""; sn=""; sp=""};
-        _ + #consonant + "ный"     => makeAdjective word (ZA 1 Ast A_) ** {sf=""; sm=""; sn=""; sp=""};
-        _ + #consonant + "ний"     => makeAdjective word (ZA 2 Ast A_) ** {sf=""; sm=""; sn=""; sp=""};
-        _ + "ый"                   => makeAdjective word (ZA 1 No A_) ** {sf=""; sm=""; sn=""; sp=""};
-        _ + "ой"                   => makeAdjective word (ZA 1 No B_) ** {sf=""; sm=""; sn=""; sp=""};
-        _ + "ий"                   => makeAdjective word (ZA 2 No A_) ** {sf=""; sm=""; sn=""; sp=""};
-        _                          => makeAdjective word (ZA 1 No A_) ** {sf=""; sm=""; sn=""; sp=""}
+        _ + "шеий"                 => makeAdjective word (ZA 6 No A_) ;
+        _ + "цый"                  => makeAdjective word (ZA 5 No A_) ;
+        _ + ("к"|"г"|"х") +"ий"    => makeAdjective word (ZA 3 No A_) ;
+        _ + ("ш"|"ж"|"ч"|"щ")+"ий" => makeAdjective word (ZA 4 No A_) ;
+        _ + #consonant + "ный"     => makeAdjective word (ZA 1 Ast A_) ;
+        _ + #consonant + "ний"     => makeAdjective word (ZA 2 Ast A_) ;
+        _ + "ый"                   => makeAdjective word (ZA 1 No A_) ;
+        _ + "ой"                   => makeAdjective word (ZA 1 No B_) ;
+        _ + "ий"                   => makeAdjective word (ZA 2 No A_) ;
+        _                          => makeAdjective word (ZA 1 No A_)  
     } ;
 
   the_most = guessAdjectiveForms "самый" ;

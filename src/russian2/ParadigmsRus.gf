@@ -104,7 +104,7 @@ oper
     mkA : (nom : Str) -> A
       = \nom -> lin A (guessAdjectiveForms nom) ;
     mkA : Str -> Str -> A
-      = \word, zi -> lin A (noShorts (Z.makeAdjective word (Z.parseAdjIndex zi))) ;
+      = \word, zi -> lin A (Z.makeAdjective word (Z.parseAdjIndex zi)) ;
   } ;
 
 -- Two-place adjectives need a preposition and a case as extra arguments.
