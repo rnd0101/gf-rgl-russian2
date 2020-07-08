@@ -9,7 +9,7 @@ param
   Stressedness = Stressed | Unstressed ;
 
   AdjStressSchema = A_ | A'_ | B_ | B'_ | C_ | A_A | A_A' | A_B | A_C | A_A' | A_B' | A_C' | A_C'' | B_A | B_B | B_C | B_A' | B_B' | B_C' | B_C'' ;
-  ZAIndex      = ZA0 | ZA DeclType AlterType AdjStressSchema | ZAC DeclType AlterType AdjStressSchema ZCirc ;
+  ZAIndex      = ZA0 | ZA DeclType AlterType AdjStressSchema ZCirc ;
 
 oper
 
@@ -499,9 +499,9 @@ oper
       case s of {
         "0" => ZA0 ;
         dt@(#digit) + at@("*"|"°"|"") + ss@(#adj_stress_schema) + zc@("①"|"①②"|"②①"|"②"|"(1)"|"(1)(2)"|"(2)(1)"|"(2)")
-          => ZAC (digitToDeclType dt) (toAlterType at) (toAdjStressSchema ss) (toZCirc zc) ;
+          => ZA (digitToDeclType dt) (toAlterType at) (toAdjStressSchema ss) (toZCirc zc) ;
         dt@(#digit) + at@("*"|"°"|"") + ss@(#adj_stress_schema)
-          => ZA (digitToDeclType dt) (toAlterType at) (toAdjStressSchema ss) ;
+          => ZA (digitToDeclType dt) (toAlterType at) (toAdjStressSchema ss) NoC ;
         _ => Predef.error "Error: incorrect ZAIndex"
       } ;
 
@@ -523,18 +523,15 @@ oper
     = \word, z ->
     case z of {
       ZA0 => immutableAdjectiveCases word ;
-      ZA dt at ss => formsSelectionAdjective word dt at ss NoC ;
-      ZAC dt at ss ci => formsSelectionAdjective word dt at ss ci ;
+      ZA dt at ss ci => formsSelectionAdjective word dt at ss ci ;
       _ => immutableAdjectiveCases word
     } ;
 
   formsSelectionAdjective : Str -> DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjForms
     = \word, dt, at, ss, ci ->
       let stem = stemFromAdjective word dt in
-      let aef = endingsSelectionAdj dt at ss ci in
-      -- let aef' = specialEndingsNoun word stem aef dt in
-      let alternated = alterFormsAdj stem aef dt at ss in    -- TODO: alternation, fix comparative for dt=3
-      --animacySelectionNoun dt alternated aef
+      let aef = endingsSelectionAdj dt at ss in
+      let alternated = alterFormsAdj stem aef dt at ss ci in    -- TODO: alternation, fix comparative for dt=3
       alternated
     ;
 
@@ -547,8 +544,20 @@ oper
       }
     ;
 
-  alterFormsAdj : Str -> AdjForms -> DeclType -> AlterType -> AdjStressSchema -> AdjForms
-    = \s, aef, dt, at, ss ->
+  alterFormsAdj : Str -> AdjForms -> DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjForms
+    = \s, aef, dt, at, ss, ci ->
+
+
+
+
+
+
+
+
+
+
+
+
       case at of {
         Ast => doAlternationsAdj s aef dt ss ;
         _ => noAlternationsAdj s aef dt ss
@@ -637,10 +646,9 @@ oper
         comp  = comps + aef.comp
       } ;
 
-  endingsSelectionAdj : DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjForms
-    = \dt, at, ss, ci ->
+  endingsSelectionAdj : DeclType -> AlterType -> AdjStressSchema -> AdjForms
+    = \dt, at, ss ->
     let gDtBased = gDtBasedSelectionAdj dt in
-    -- let gDtBasedCirc = circCorrectionNoun gDtBased dt ci in
     gDtSsBasedSelectionAdj gDtBased ss
   ;
 

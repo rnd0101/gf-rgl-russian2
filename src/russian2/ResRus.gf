@@ -268,16 +268,16 @@ oper
     = \word ->
       let stem = Predef.tk 2 word in
       case word of {
-        _ + "шеий"                 => makeAdjective word (ZA 6 No A_) ;
-        _ + "цый"                  => makeAdjective word (ZA 5 No A_) ;
-        _ + ("к"|"г"|"х") +"ий"    => makeAdjective word (ZA 3 No A_) ;
-        _ + ("ш"|"ж"|"ч"|"щ")+"ий" => makeAdjective word (ZA 4 No A_) ;
-        _ + #consonant + "ный"     => makeAdjective word (ZA 1 Ast A_) ;
-        _ + #consonant + "ний"     => makeAdjective word (ZA 2 Ast A_) ;
-        _ + "ый"                   => makeAdjective word (ZA 1 No A_) ;
-        _ + "ой"                   => makeAdjective word (ZA 1 No B_) ;
-        _ + "ий"                   => makeAdjective word (ZA 2 No A_) ;
-        _                          => makeAdjective word (ZA 1 No A_)  
+        _ + "шеий"                 => makeAdjective word (ZA 6 No A_ NoC) ;
+        _ + "цый"                  => makeAdjective word (ZA 5 No A_ NoC) ;
+        _ + ("к"|"г"|"х") +"ий"    => makeAdjective word (ZA 3 No A_ NoC) ;
+        _ + ("ш"|"ж"|"ч"|"щ")+"ий" => makeAdjective word (ZA 4 No A_ NoC) ;
+        _ + #consonant + "ный"     => makeAdjective word (ZA 1 Ast A_ NoC) ;
+        _ + #consonant + "ний"     => makeAdjective word (ZA 2 Ast A_ NoC) ;
+        _ + "ый"                   => makeAdjective word (ZA 1 No A_ NoC) ;
+        _ + "ой"                   => makeAdjective word (ZA 1 No B_ NoC) ;
+        _ + "ий"                   => makeAdjective word (ZA 2 No A_ NoC) ;
+        _                          => makeAdjective word (ZA 1 No A_ NoC)
     } ;
 
   the_most = guessAdjectiveForms "самый" ;
