@@ -16,7 +16,6 @@ flags coding=utf8 ; optimize=all ;
     S   = {s : Str} ;
     Cl  = {subj,clit,compl : Str ; verb : VerbForms ; a : Agr} ;
     Comp = {s : Agr => Str} ;
-    Adv  = {s : Str} ;
 
     QS  = {s : Str} ; ---- TODO: indirect questions
     QCl = {subj,clit,compl : Str ; verb : VerbForms ; a : Agr} ; -- = Cl ---- check if enough

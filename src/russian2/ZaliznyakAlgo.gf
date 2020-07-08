@@ -563,7 +563,8 @@ oper
       case <dt, at, s, secondLast, last, smStressed, ci> of {   -- what if more than one consonant or sign? eg день
          <1, Ast, _, "й", _, _, _> => butTwolast + "е" + last ;
          <1, Ast, _, "ж"|"ш"|"ч"|"щ", _, Stressed, _> => butLast + "о" + last ;
-         <1|2, Ast, _, _, _, _, ZC1 | ZC2 | ZC12> => butLastCirc + "ё" + last ;
+         <1|2, Ast, _, _, _, Stressed, ZC1 | ZC2 | ZC12> => butLastCirc + "ё" + last ;
+         <1|2, Ast, _, _, _, _, ZC1 | ZC2 | ZC12> => butLastCirc + "е" + last ;
          <1, Ast, _, _, _, Stressed, _> => butLast + "ё" + last ;
          <1, Ast, _, _, _, _, _> => butLast + "е" + last ;
          <2, No,  _, _, _, _, _> => s + "ь";
