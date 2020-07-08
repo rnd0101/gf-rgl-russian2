@@ -546,40 +546,37 @@ oper
 
   alterFormsAdj : Str -> AdjForms -> DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjForms
     = \s, aef, dt, at, ss, ci ->
-
-
-
-
-
-
-
-
-
-
-
-
       case at of {
-        Ast => doAlternationsAdj s aef dt ss ;
-        _ => noAlternationsAdj s aef dt ss
+        Ast => doAlternationsAdj s aef dt ss ci ;
+        _ => noAlternationsAdj s aef dt ss ci
     } ;
 
-  mobileShortMascAdj : Str -> DeclType -> AlterType -> AdjStressSchema -> Str
-    = \s, dt, at, ss ->
+  mobileShortMascAdj : Str -> DeclType -> AlterType -> AdjStressSchema -> ZCirc -> Str
+    = \s, dt, at, ss, ci ->
       let last = Predef.dp 1 s in
-      let butLast = Predef.tk 1 s in
+      let butLast = case ci of {NoC => Predef.tk 1 s; ZC1 | ZC2 | ZC12 => Predef.tk 2 s } in
+      let butLastCirc = case ci of {NoC => butLast; ZC1 | ZC2 | ZC12 => Predef.tk 3 s } in
       let secondLast = Predef.dp 1 butLast in
-      let butTwolast = Predef.tk 2 s in
+      let butTwolast = Predef.tk 1 butLast in
       let thirdLast = Predef.dp 1 butTwolast in
       let smStressed = stressTableAdj ss "sm" in
-      case <dt, at, s, secondLast, last, smStressed> of {   -- what if more than one consonant or sign? eg день
-         <1, Ast, _, "й", _, _> => butTwolast + "е" + last ;
-         <1, Ast, _, "ж"|"ш"|"ч"|"щ", _, Stressed> => butLast + "о" + last ;
-         <1, Ast, _, _, _, Stressed> => butLast + "ё" + last ;
-         <1, Ast, _, _, _, _> => butLast + "е" + last ;
-         <2, No, _, _, _, _> => s + "ь";
-         <2, Ast, _, _, _, _> => butLast + "е" + last ;
-         <3, Ast, _, _, _, _> => butLast + "о" + last ;   -- долг(ий) - долог
+      case <dt, at, s, secondLast, last, smStressed, ci> of {   -- what if more than one consonant or sign? eg день
+         <1, Ast, _, "й", _, _, _> => butTwolast + "е" + last ;
+         <1, Ast, _, "ж"|"ш"|"ч"|"щ", _, Stressed, _> => butLast + "о" + last ;
+         <1|2, Ast, _, _, _, _, ZC1 | ZC2 | ZC12> => butLastCirc + "ё" + last ;
+         <1, Ast, _, _, _, Stressed, _> => butLast + "ё" + last ;
+         <1, Ast, _, _, _, _, _> => butLast + "е" + last ;
+         <2, No,  _, _, _, _, _> => s + "ь";
+         <2, Ast, _, _, _, _, _> => butLast + "е" + last ;
+         <3, Ast, _, _, _, _, _> => butLast + "о" + last ;   -- долг(ий) - долог
          _ => s
+      } ;
+
+  mobileShortAdj : Str -> DeclType -> AlterType -> AdjStressSchema -> ZCirc -> Str
+    = \s, dt, at, ss, ci ->
+      case ci of {
+        NoC => s ;
+        ZC1 | ZC2 | ZC12 => (Predef.tk 3 s) + "ен"
       } ;
 
   mobileCompAdj : Str -> DeclType -> Str
@@ -596,9 +593,10 @@ oper
          _ => s
       } ;
 
-  noAlternationsAdj : Str -> AdjForms -> DeclType -> AdjStressSchema -> AdjForms
-    = \s, aef, dt, ss ->
-      let sms = mobileShortMascAdj s dt No ss in
+  noAlternationsAdj : Str -> AdjForms -> DeclType -> AdjStressSchema -> ZCirc -> AdjForms
+    = \s, aef, dt, ss, ci ->
+      let sms = mobileShortMascAdj s dt No ss ci in
+      let sstem = mobileShortAdj s dt No ss ci in
       let comps = mobileCompAdj s dt in
       {
         msnom = s + aef.msnom  ;
@@ -615,15 +613,16 @@ oper
         pins  = s + aef.pins   ;
         msprep= s + aef.msprep ;
         sm    = sms + aef.sm   ;
-        sf    = s + aef.sf     ;
-        sn    = s + aef.sn     ;
-        sp    = s + aef.sp     ;
+        sf    = sstem + aef.sf     ;
+        sn    = sstem + aef.sn     ;
+        sp    = sstem + aef.sp     ;
         comp  = comps + aef.comp
       } ;
 
-  doAlternationsAdj : Str -> AdjForms -> DeclType -> AdjStressSchema -> AdjForms
-    = \s, aef, dt, ss ->
-      let sms = mobileShortMascAdj s dt Ast ss in
+  doAlternationsAdj : Str -> AdjForms -> DeclType -> AdjStressSchema -> ZCirc -> AdjForms
+    = \s, aef, dt, ss, ci ->
+      let sms = mobileShortMascAdj s dt Ast ss ci in
+      let sstem = mobileShortAdj s dt Ast ss ci in
       let comps = mobileCompAdj s dt in
       {
         msnom = s + aef.msnom  ;
@@ -640,9 +639,9 @@ oper
         pins  = s + aef.pins   ;
         msprep= s + aef.msprep;
         sm    = sms + aef.sm   ;
-        sf    = s + aef.sf     ;
-        sn    = s + aef.sn     ;
-        sp    = s + aef.sp     ;
+        sf    = sstem + aef.sf     ;
+        sn    = sstem + aef.sn     ;
+        sp    = sstem + aef.sp     ;
         comp  = comps + aef.comp
       } ;
 
