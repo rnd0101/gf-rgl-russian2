@@ -643,7 +643,7 @@ oper
 -----------
 -- Pronouns
 
-  adjective2AstB : Str -> AdjFormsBase
+  pronoun2AstB : Str -> PronForms
     = \word -> -- весь
       let stem = Predef.tk 1 word in
       let stem2 = Predef.tk 2 word ++ Predef.tk 1 word in

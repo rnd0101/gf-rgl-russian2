@@ -90,7 +90,7 @@ resource ParamRus = ParamX ** open Prelude in {
       : Str ;
     } ;
 
-    AdjFormsBase : Type = {
+    PronForms : Type = {
       msnom, fsnom, nsnom, pnom,  -- pvoc = pnom
       msgen, fsgen, pgen,         -- nsgen = msgen = msptv = nsptv; fsgen = fsptv; ploc = pprep = pgen = pptv
       msdat,                      -- nsdat = msdat, fsdat = fsgen

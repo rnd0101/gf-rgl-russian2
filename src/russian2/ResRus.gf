@@ -169,7 +169,7 @@ oper
 
   Adjective : Type = {s : Number => Gender => Animacy => Case => Str} ;
 
-  noShorts : AdjFormsBase -> AdjForms  -- ???
+  noShorts : PronForms -> AdjForms  -- ???
     = \base -> base ** {
       sm = [] ;
       sf = [] ;
@@ -516,7 +516,7 @@ oper
 
 -- Possessive pronouns are more like adjectives
 
-  doPossessivePronSgP1P2 : Str -> AdjFormsBase
+  doPossessivePronSgP1P2 : Str -> PronForms
     = \mo -> {
       msnom = mo + "й" ;
       fsnom = mo + "я" ;
@@ -533,7 +533,7 @@ oper
       msprep = mo + "ём"
     } ;
 
-  doPossessivePronPlP1P2 : Str -> AdjFormsBase
+  doPossessivePronPlP1P2 : Str -> PronForms
     = \nash -> {
       msnom = nash ;
       fsnom = nash + "а" ;
@@ -550,7 +550,7 @@ oper
       msprep = nash + "ем"
     } ;
 
-  doPossessivePronP3 : Str -> AdjFormsBase
+  doPossessivePronP3 : Str -> PronForms
     = \ego -> {
       msnom,
       fsnom,
@@ -567,7 +567,7 @@ oper
       msprep = ego
     } ;
 
-  possessivePron : Agr -> AdjFormsBase
+  possessivePron : Agr -> PronForms
     = \a -> {a = a} **
       case a of {
         Ag _ Sg P1 => doPossessivePronSgP1P2 "мо" ;
@@ -595,7 +595,7 @@ oper
     } ;
 
 
-  all_Pron = adjective2AstB "весь" ;
+  all_Pron = pronoun2AstB "весь" ;
   only_Pron = guessAdjectiveForms "единственный" ;
 
 ---------------
