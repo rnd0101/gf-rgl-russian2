@@ -1,7 +1,6 @@
 
 concrete CatRus of Cat = CommonX ** open ResRus, ParamRus, Prelude in {
 flags coding=utf8 ; optimize=all ;
-
   lincat
     Num, Numeral, Card, Digits = Determiner ;
 
@@ -29,7 +28,7 @@ flags coding=utf8 ; optimize=all ;
     V  = ResRus.VerbForms ;
     V2 = ResRus.VerbForms ** {c : ComplementCase} ;
 
-    AP = ResRus.Adjective ** {isPost : Bool} ; -- {s : Gender => Number => Case => Str}
+    AP = ResRus.Adjective ** {isPost : Bool} ;
     A2 = ResRus.AdjForms ** {c : ComplementCase} ;
 
     NP = {s, prep : Case => Str ; a : Agr } ;
