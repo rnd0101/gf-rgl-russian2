@@ -101,10 +101,15 @@ oper
 -- Adjectives
 
   mkA = overload {
-    mkA : (nom : Str) -> A
+    mkA : Str -> A
       = \nom -> lin A (guessAdjectiveForms nom) ;
     mkA : Str -> Str -> A
-      = \word, zi -> lin A (Z.makeAdjective word (Z.parseAdjIndex zi)) ;
+      = \nom, comp -> lin A ((guessAdjectiveForms nom) ** {comp=comp}) ;
+    mkA : Str -> Str -> Str -> A
+      = \nom, comp, zi ->
+        let af = (Z.makeAdjective nom (Z.parseAdjIndex zi)) in
+        let comp' = case (Predef.length comp) of {0 => af.comp; _ => comp} in
+        lin A (af ** {comp=comp'});
   } ;
 
 -- Two-place adjectives need a preposition and a case as extra arguments.

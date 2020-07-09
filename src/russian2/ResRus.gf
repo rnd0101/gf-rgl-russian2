@@ -178,6 +178,17 @@ oper
       comp = []
     } ;
 
+  mkAplus : AdjForms -> AdjForms
+    = \af -> af ;
+
+  mkAltShort : AdjForms -> AdjForms -> AdjForms
+    = \full, short -> full ** {
+      sm =  short.sm ;
+      sf =  short.sf ;
+      sn =  short.sn ;
+      sp =  short.sp
+    } ;
+
   adjFormsAdjective : AdjForms -> Adjective
     = \forms -> {
       s = table {

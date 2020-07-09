@@ -13,14 +13,18 @@ lin
   ashes_N = mkN "пепел" masculine inanimate "1*a" ;
   baby_N = mkN "малыш" masculine animate "4b" ;
   back_N = mkN "спина" ;
+  bad_A = mkA "плохой" "хуже" ;
   bank_N = mkN "банк" ;
   bark_N = mkN "кора";
   beautiful_A = mkA "красивый" ;
+  beautiful_A = mkA "красивый";
   belly_N = mkN "живот" ;
+  big_A = (mkAltShort (mkA "большой" "больше") (mkA "великий")) ;
   bike_N = mkN "велосипед" ;
   bird_N = mkN "птица" feminine animate ;
-  black_A = mkA "чёрный" ;  -- TODO:
+  black_A = (mkAltShort (mkA "чёрный") (mkA "черный")) ;  -- workaround TODO: Any way to remove yo from stem?
   blood_N = mkN "кровь" ;
+  blue_A = mkA "голубой" ;
   boat_N = mkN "лодка" ;
   bone_N = mkN "кость" ;
   book_N = mkN "книга" ;
@@ -29,6 +33,8 @@ lin
   boy_N = mkN "мальчик" masculine animate ;
   bread_N = mkN "хлеб" ;
   breast_N = mkN "грудь" ;
+  broad_A = mkA "широкий" "шире" ;
+  brown_A = mkA "коричневый";
   butter_N = mkN "масло";
   camera_N = mkN "фотоаппарат" ;
   cap_N = mkN "чашка" ;
@@ -41,22 +47,30 @@ lin
   child_N = (mkNAltPl (mkN "ребёнок" masculine animate "3*a") (mkN "деть")) ** {pins="детьми"};
   church_N = mkN "церковь" feminine animate "8*e" ;
   city_N = mkN "город" ;
+  clean_A = mkA "чистый" "чище";
+  clever_A = mkA "умный" "" "1*a/b";
   cloud_N = mkN "облако" neuter inanimate "3c(2)" ;
   coat_N = mkN "пальто" masculine inanimate "0";
+  cold_A = mkA "холодный";
   computer_N = mkN "компьютер" ;
+  correct_A = mkA "правильный" "" "1*a";
   country_N = mkN "страна" ;
   cousin_N = mkN "кузен" masculine animate ;  -- also: mkN "кузина" feminine animate ;
   cow_N = mkN "корова" feminine animate ;
   day_N = mkN "день" masculine inanimate "2*b" ;
+  dirty_A = mkA "грязный" ;
   distance_N3 = mkN3 (mkN "расстояние") from_Prep on_to_Prep ;
   do_V2 = mkV2 (mkV "делать");
   doctor_N = mkN "доктор" masculine animate ;
   dog_N = mkN "собака" feminine animate ;
   door_N = mkN "дверь" ;
+  dry_A = mkA "сухой" "" "3b/c'";
+  dull_A = mkA "скучный" ;
   dust_N = mkN "пыль" ;
   ear_N = mkN "ухо" ;
   earth_N = mkN "земля" feminine inanimate "2*d" ;
   egg_N = (mkNplus (mkN "яйцо" neuter inanimate "5*d")) ** {pgen="яиц"} ;
+  empty_A = mkA "пустой" ;
   enemy_N = mkN "враг" masculine animate ;
   eye_N = mkN "глаз" masculine inanimate "1c(1)(2)" ;
   factory_N = mkN "фабрика" ;
@@ -75,12 +89,15 @@ lin
   fridge_N = mkN "холодильник" ;
   friend_N = (mkNplus (mkN "друг" masculine inanimate "3c")) ** {pnom="друзья";pgen="друзей";pdat="друзьям";pacc="друзей";pins="друзьями";pprep="друзьях"};
   fruit_N = mkN "фрукт" ;
+  full_A = (mkAplus (mkA "полный" "" "1*a/c'")) ** {sm="полон"};
   garden_N = mkN "сад" ;
   girl_N = mkN "девочка" feminine animate "3*a";
   glove_N = mkN "перчатка" feminine inanimate "3*a";
   gold_N = mkN "золото" ;
+  good_A = mkA "хороший" "лучше" ;
   grammar_N = mkN "грамматика";
   grass_N = mkN "трава";
+  green_A = (mkAltShort (mkA "зелёный" "зеленее") (mkA "зеленый")) ;  -- workaround TODO: Any way to remove yo from stem?
   guts_N = mkN "внутренность" ;
   hair_N = mkN "волос" masculine inanimate "1e(2)" ;
   hand_N = mkN "рука" feminine inanimate "3f'" ;
@@ -88,12 +105,15 @@ lin
   hat_N = mkN "шляпа" ;
   head_N = mkN "голова" feminine inanimate "1f'";
   heart_N = mkN "сердце" neuter inanimate "5*c" ;
+  heavy_A = (mkAltShort (mkA "тяжёлый" "тяжелее") (mkA "тяжелый")) ** {sm="тяжёл"} ;   -- TODO: same
   hill_N = mkN "холм" ;
   horn_N = mkN "рог" masculine inanimate "3c(1)" ;
   horse_N = mkN "лошадь" feminine animate "8e" ;
+  hot_A = mkA "горячий" "" "4a/b";
   house_N = mkN "дом" masculine inanimate "1c(1)" ;
   husband_N = (mkNplus (mkN "муж" masculine animate "4c")) ** {pnom="мужья";pgen="мужей";pdat="мужьям";pacc="мужей";pins="мужьями";pprep="мужьях"};
   ice_N = (mkNplus (mkN "лёд"  masculine animate "1b")) ** {sloc="льду";sptv="льду"} ;
+  important_A = mkA "важный" ;
   industry_N = mkN "промышленность" ;
   iron_N = mkN "железо" ;
   john_PN = mkPN "Иван" masculine animate ;
@@ -107,6 +127,7 @@ lin
   left_Ord = mkOrd "левый";
   leg_N = mkN "нога" ;
   liver_N = mkN "печень" ;
+  long_A = mkA "длинный" "" "1*a/c'";
   louse_N = (mkNplus (mkN "вошь" feminine animate "8*b'")) ** {pdat="вшам";pins="вшами";pprep="вшах"} ;
   love_N = mkN "любовь" feminine inanimate "8*b'" ;
   man_N = (mkNAltPl (mkN "человек" masculine animate "3a") (mkN "людь" masculine animate)) ** {pins="людьми"};
@@ -118,13 +139,17 @@ lin
   mouth_N = (mkNplus (mkN "рот" masculine inanimate "1b")) ** {sloc="рту"} ;
   music_N = mkN "музыка" ;
   name_N = mkN "имя" neuter inanimate "8°c";
+  narrow_A = mkA "узкий" "уже" "3*a/c'";
+  near_A = mkA "близкий" "ближе";
   neck_N = mkN "шея" feminine inanimate "6a";
+  new_A = mkA "новый" ;
   newspaper_N = mkN "газета" ;
   night_N = (mkNplus (mkN "ночь" feminine inanimate "8e")) ** {sloc="ночь"};
   nose_N = mkN "нос" ;
   now_Adv = mkAdv "сейчас" ;
   number_N = mkN "число" neuter inanimate "1*d" ;
   oil_N = mkN "нефть" ;
+  old_A = mkA "старый" "старше" "1a/c''";  -- Grammatically correct variant "старее" is being used less
   paper_N = mkN "бумага" ;
   paris_PN = mkPN "Париж" masculine inanimate ;
   peace_N = mkN "мир" ;
@@ -138,6 +163,7 @@ lin
   question_N = mkN "вопрос" ;
   rain_N = mkN "дождь" ;
   reason_N = mkN "причина";
+  red_A = mkA "красный" ;
   religion_N = mkN "религия" ;
   restaurant_N = mkN "ресторан" ;
   right_Ord = mkOrd "правый";
@@ -147,6 +173,8 @@ lin
   roof_N = mkN "крыша" feminine inanimate "4a" ;
   root_N = mkN "корень" masculine inanimate "2*e" ;
   rope_N = mkN "верёвка" ;
+  rotten_A = mkA "гнилой" "" "1b/c";
+  round_A = mkA "круглый" "" "1a/c'";
   rubber_N = mkN "резина" ;
   rule_N = mkN "правило" ;
   salt_N = mkN "соль" ;
@@ -155,16 +183,20 @@ lin
   science_N = mkN "наука" ;
   sea_N = mkN "море" neuter inanimate "2c" ;
   seed_N = mkN "семя" neuter inanimate "8°c" ;
+  sharp_A = mkA "острый";
   sheep_N = mkN "овца" feminine animate "5*d" ;
   ship_N = mkN "корабль" masculine inanimate "2b";
   shirt_N = mkN "рубашка" ;
   shoe_N = mkN "туфля" feminine inanimate "2*a" ;
   shop_N = mkN "магазин" ;
+  short_A = mkA "короткий" "короче" "3*a/c'";
   silver_N = mkN "серебро" ;
   sister_N = mkN "сестра" feminine animate ;
   skin_N = mkN "кожа" ;
   sky_N = (mkNAltPl (mkN "небо" neuter inanimate "1c") (mkN "небесо" neuter inanimate "1b"));
+  small_A = (mkAltShort (mkA "маленький" "меньше") (mkA "малый")) ;
   smoke_N = mkN "дым" ;
+  smooth_A = mkA "гладкий" "глаже" "3*a/c";
   snake_N = mkN "змея" feminine animate "6d";
   snow_N = (mkNplus (mkN "снег" masculine inanimate "3c①")) ** {sloc="снегу"; sptv="снегу"} ;
   sock_N = mkN "носок" masculine inanimate "3*b";
@@ -174,21 +206,30 @@ lin
   stick_N = mkN "палка" ;
   stone_N = mkN "камень" masculine inanimate "2*e";
   stove_N = (mkNplus (mkN "печь" feminine inanimate "8e")) ** {sloc="печь"} ;
+  straight_A = mkA "прямой" "" "1b/c'";
   student_N = mkN "студент" masculine animate ;
+  stupid_A = mkA "тупой" ;
   sun_N = mkN "солнце" neuter inanimate "5a";
   table_N = mkN "стол" ;
   tail_N = mkN "хвост" ;
   teacher_N = mkN "учитель" masculine animate "2c(1)";
   television_N = mkN "телевидение" ; -- FIXME: televizor?
+  thick_A = mkA "толстый" "толще" "1a/c'";
+  thin_A = mkA "тонкий" "тоньше" "3*a/c'";
   today_Adv = mkAdv "сегодня" ;
   tongue_N = mkN "язык" ;
   tooth_N = mkN "зуб" ;
   train_N = mkN "поезд" ;
   tree_N = (mkNplus (mkN "дерево" neuter inanimate "1a")) ** {pnom="деревья";pgen="деревьев";pdat="деревьям";pacc="деревья";pins="деревьями";pprep="деревьях"} ;
+  ugly_A = mkA "некрасивый" ;
   university_N = mkN "университет" ;
   village_N = (mkNplus (mkN "деревня" feminine inanimate "2*e")) ** {pgen="деревень"} ;
   war_N = mkN "война" ;
+  warm_A = (mkAltShort (mkA "тёплый" "теплее" "1*a/b") (mkA "теплый" "" "1*a/b")) ** {sm="тёплый"} ;  -- workaround TODO: Any way to remove yo from stem?
   water_N = mkN "вода" feminine inanimate "1d'";
+  wet_A = mkA "мокрый" "" "1a/c'";
+  white_A = mkA "белый" "" "1a/c''";
+  wide_A = mkA "широкий" "шире" "3a/c''";
   wife_N = mkN "жена" feminine animate ;
   wind_N = mkN "ветер" masculine inanimate "1*e" ;
   window_N = mkN "окно" neuter inanimate "1*d";
@@ -198,4 +239,6 @@ lin
   wood_N = mkN "древесина" feminine inanimate "1a" ;
   worm_N = mkN "червь" masculine animate ;
   year_N = (mkNplus (mkN "год")) ** {sloc="году"; pgen="лет"};
+  yellow_A = (mkAplus (mkA "жёлтый" "желтее" "1a/c''") ** {sf="желта"}) ;  -- TODO: variants
+  young_A = mkA "молодой" "моложе" "1b/c";
 }
