@@ -18,6 +18,7 @@ lin
   bark_N = mkN "кора";
   beautiful_A = mkA "красивый" ;
   beautiful_A = mkA "красивый";
+  beer_N = mkN "пиво" neuter inanimate ;
   belly_N = mkN "живот" ;
   big_A = (mkAltShort (mkA "большой" "больше") (mkA "великий")) ;
   bike_N = mkN "велосипед" ;
@@ -34,6 +35,7 @@ lin
   bread_N = mkN "хлеб" ;
   breast_N = mkN "грудь" ;
   broad_A = mkA "широкий" "шире" ;
+  brother_N2 = (mkN2plus (mkN2 "брат" masculine animate "1a" nullPrep)) ** {pnom="братья";pgen="братьев";pdat="братьям";pacc="братьев";pins="братьями";pprep="братьях"} ;
   brown_A = mkA "коричневый";
   butter_N = mkN "масло";
   camera_N = mkN "фотоаппарат" ;
@@ -134,7 +136,7 @@ lin
   meat_N = mkN "мясо" neuter inanimate "1c" ;
   milk_N = mkN "молоко" neuter inanimate "3d(1)" ;
   moon_N = mkN "луна" ;
-  mother_N2 = (mkN2plus (mkN2 "матерь" feminine animate "8e" nullPrep))  ** {snom="мать";sacc="мать"} ;
+  mother_N2 = (mkN2plus (mkN2 "матерь" feminine animate "8e" nullPrep)) ** {snom="мать";sacc="мать"} ;
   mountain_N = mkN "гора" ;
   mouth_N = (mkNplus (mkN "рот" masculine inanimate "1b")) ** {sloc="рту"} ;
   music_N = mkN "музыка" ;
@@ -163,6 +165,7 @@ lin
   question_N = mkN "вопрос" ;
   rain_N = mkN "дождь" ;
   reason_N = mkN "причина";
+  ready_A = mkA "готовый" ;
   red_A = mkA "красный" ;
   religion_N = mkN "религия" ;
   restaurant_N = mkN "ресторан" ;
@@ -222,6 +225,7 @@ lin
   train_N = mkN "поезд" ;
   tree_N = (mkNplus (mkN "дерево" neuter inanimate "1a")) ** {pnom="деревья";pgen="деревьев";pdat="деревьям";pacc="деревья";pins="деревьями";pprep="деревьях"} ;
   ugly_A = mkA "некрасивый" ;
+  uncertain_A = mkA "неопределённый" ;
   university_N = mkN "университет" ;
   village_N = (mkNplus (mkN "деревня" feminine inanimate "2*e")) ** {pgen="деревень"} ;
   war_N = mkN "война" ;
