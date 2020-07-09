@@ -521,8 +521,7 @@ oper
     = \word, z ->
     case z of {
       ZA0 => immutableAdjectiveCases word ;
-      ZA dt at ss ci => formsSelectionAdjective word dt at ss ci ;
-      _ => immutableAdjectiveCases word
+      ZA dt at ss ci => formsSelectionAdjective word dt at ss ci
     } ;
 
   formsSelectionAdjective : Str -> DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjForms
