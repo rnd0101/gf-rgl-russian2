@@ -5,7 +5,7 @@ param
   AlterType    = No | Ast | Deg  ;    -- Alternation: eg 1a, 1*a, 1°a
   StressSchema = A | A' | B | B' | C | C' | C'' | D | D' | E | F | F' | F'' ;
   ZCirc        = NoC | ZC1 | ZC2 | ZC12 ;
-  ZIndex       = Z0 | Z DeclType AlterType StressSchema | ZC DeclType AlterType StressSchema ZCirc ;
+  ZNIndex       = ZN0 | ZN DeclType AlterType StressSchema ZCirc ;
   Stressedness = Stressed | Unstressed ;
 
   AdjStressSchema = A_ | A'_ | B_ | B'_ | C_ | A_A | A_A' | A_B | A_C | A_A' | A_B' | A_C' | A_C'' | B_A | B_B | B_C | B_A' | B_B' | B_C' | B_C'' ;
@@ -95,15 +95,15 @@ oper
         _ => NoC
       } ;
 
-  parseIndex : Str -> ZIndex
+  parseIndex : Str -> ZNIndex
     = \s ->
       case s of {
-        "0" => Z0 ;
+        "0" => ZN0 ;
         dt@(#digit) + at@("*"|"°"|"") + ss@(#stress_schema) + zc@("①"|"①②"|"②①"|"②"|"(1)"|"(1)(2)"|"(2)(1)"|"(2)")
-          => ZC (digitToDeclType dt) (toAlterType at) (toStressSchema ss) (toZCirc zc) ;
+          => ZN (digitToDeclType dt) (toAlterType at) (toStressSchema ss) (toZCirc zc) ;
         dt@(#digit) + at@("*"|"°"|"") + ss@(#stress_schema)
-          => Z (digitToDeclType dt) (toAlterType at) (toStressSchema ss) ;
-        _ => Predef.error "Error: incorrect ZIndex"
+          => ZN (digitToDeclType dt) (toAlterType at) (toStressSchema ss) NoC;
+        _ => Predef.error "Error: incorrect ZNIndex"
       } ;
 
   mobileOne : Str -> NounEndForms -> DeclType -> StressSchema -> StemForms
@@ -254,16 +254,14 @@ oper
         }
     } ;
 
-  makeNoun : Str -> Gender -> Animacy -> ZIndex -> NounFormsBase
+  makeNoun : Str -> Gender -> Animacy -> ZNIndex -> NounFormsBase
     = \word, g, a, z ->
     case z of {
-      Z0 => immutableNounCases word g a ;
-      Z 3 Deg ss => formsSelectionOnok word g a 3 Deg ss NoC ;
-      Z 1 Deg ss => formsSelectionAnin word g a 3 Deg ss NoC ;
-      Z 8 Deg ss => formsSelectionMya word g a 8 Deg ss NoC ;
-      Z dt at ss => formsSelectionNoun word g a dt at ss NoC ;
-      ZC 1 Deg ss ci => formsSelectionAnin word g a 3 Deg ss ci ;
-      ZC dt at ss ci => formsSelectionNoun word g a dt at ss ci
+      ZN0 => immutableNounCases word g a ;
+      ZN 3 Deg ss NoC => formsSelectionOnok word g a 3 Deg ss NoC ;
+      ZN 1 Deg ss ci => formsSelectionAnin word g a 3 Deg ss ci ;
+      ZN 8 Deg ss NoC => formsSelectionMya word g a 8 Deg ss NoC ;
+      ZN dt at ss ci => formsSelectionNoun word g a dt at ss ci
     } ;
 
   myaCases : Str -> NounEndForms

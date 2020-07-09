@@ -58,7 +58,7 @@ oper
       = \nom -> lin N (guessNounForms nom) ;
     mkN : Str -> Gender -> Animacy -> N
       = \nom, g, a -> lin N (guessLessNounForms nom g a) ;
-    mkN : Str -> Gender -> Animacy -> Z.ZIndex -> N
+    mkN : Str -> Gender -> Animacy -> Z.ZNIndex -> N
       = \word, g, a, z -> lin N (noMinorCases (Z.makeNoun word g a z)) ;
     mkN : Str -> Gender -> Animacy -> Str -> N
       = \word, g, a, zi -> lin N (noMinorCases (Z.makeNoun word g a (Z.parseIndex zi))) ;
@@ -91,7 +91,7 @@ oper
       = \nom -> lin PN (guessNounForms nom) ;
     mkPN : Str -> Gender -> Animacy -> PN
       = \nom, g, a -> lin PN (guessLessNounForms nom g a) ;
-    mkPN : Str -> Gender -> Animacy -> Z.ZIndex -> PN
+    mkPN : Str -> Gender -> Animacy -> Z.ZNIndex -> PN
       = \word, g, a, z -> lin PN (noMinorCases (Z.makeNoun word g a z)) ;
     mkPN : Str -> Gender -> Animacy -> Str -> PN
       = \word, g, a, zi -> lin PN (noMinorCases (Z.makeNoun word g a (Z.parseIndex zi))) ;

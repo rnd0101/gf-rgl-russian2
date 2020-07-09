@@ -81,26 +81,26 @@ oper
     = \word ->
     let nfb : NounFormsBase =
     case word of {
-      _ + "уть"                            => makeNoun word Masc Inanimate (Z 8 No B) ;
-      _ + "ий"                             => makeNoun word Masc Inanimate (Z 7 No A) ;
-      _ + "ия"                             => makeNoun word Fem Inanimate (Z 7 No A) ;
-      _ + "ие"                             => makeNoun word Neut Inanimate (Z 7 No A) ;
-      _ + "ье"                             => makeNoun word Neut Inanimate (Z 6 Ast A) ;
-      _ + "тель"                           => makeNoun word Masc Inanimate (Z 2 No A) ;
-      _ + "ь"                              => makeNoun word Fem Inanimate (Z 8 No A) ;
-      _ + "и"                              => makeNoun word Neut Inanimate Z0 ;
-      _ + #consonant + ("к"|"х"|"г") + "а" => makeNoun word Fem Inanimate (Z 3 Ast A) ;
-      _ + ("к" | "х" | "г")                => makeNoun word Masc Inanimate (Z 3 No A) ;
-      _ + ("к" | "х" | "г") + "а"          => makeNoun word Fem Inanimate (Z 3 No A) ;
-      _ + "ца"                             => makeNoun word Fem Animate (Z 5 No A) ;
-      _ + "й"                              => makeNoun word Masc Inanimate (Z 6 No A) ;
-      _ + ("ж" | "ш" | "ч" | "щ")          => makeNoun word Masc Inanimate (Z 4 No A) ;
-      _ + "ша"                             => makeNoun word Fem Animate (Z 4 No A) ;
-      _ + ("ж" | "ш" | "ч" | "щ") + "а"    => makeNoun word Fem Inanimate (Z 4 No A) ;
-      _ + "ц"                              => makeNoun word Masc Inanimate (Z 5 Ast A) ;
-      _ + "о"                              => makeNoun word Neut Inanimate (Z 1 No A) ;
-      _ + "а"                              => makeNoun word Fem Inanimate (Z 1 No A) ;
-      _                                    => makeNoun word Masc Inanimate (Z 1 No A)
+      _ + "уть"                            => makeNoun word Masc Inanimate (ZN 8 No B NoC) ;
+      _ + "ий"                             => makeNoun word Masc Inanimate (ZN 7 No A NoC) ;
+      _ + "ия"                             => makeNoun word Fem Inanimate (ZN 7 No A NoC) ;
+      _ + "ие"                             => makeNoun word Neut Inanimate (ZN 7 No A NoC) ;
+      _ + "ье"                             => makeNoun word Neut Inanimate (ZN 6 Ast A NoC) ;
+      _ + "тель"                           => makeNoun word Masc Inanimate (ZN 2 No A NoC) ;
+      _ + "ь"                              => makeNoun word Fem Inanimate (ZN 8 No A NoC) ;
+      _ + "и"                              => makeNoun word Neut Inanimate ZN0 ;
+      _ + #consonant + ("к"|"х"|"г") + "а" => makeNoun word Fem Inanimate (ZN 3 Ast A NoC) ;
+      _ + ("к" | "х" | "г")                => makeNoun word Masc Inanimate (ZN 3 No A NoC) ;
+      _ + ("к" | "х" | "г") + "а"          => makeNoun word Fem Inanimate (ZN 3 No A NoC) ;
+      _ + "ца"                             => makeNoun word Fem Animate (ZN 5 No A NoC) ;
+      _ + "й"                              => makeNoun word Masc Inanimate (ZN 6 No A NoC) ;
+      _ + ("ж" | "ш" | "ч" | "щ")          => makeNoun word Masc Inanimate (ZN 4 No A NoC) ;
+      _ + "ша"                             => makeNoun word Fem Animate (ZN 4 No A NoC) ;
+      _ + ("ж" | "ш" | "ч" | "щ") + "а"    => makeNoun word Fem Inanimate (ZN 4 No A NoC) ;
+      _ + "ц"                              => makeNoun word Masc Inanimate (ZN 5 Ast A NoC) ;
+      _ + "о"                              => makeNoun word Neut Inanimate (ZN 1 No A NoC) ;
+      _ + "а"                              => makeNoun word Fem Inanimate (ZN 1 No A NoC) ;
+      _                                    => makeNoun word Masc Inanimate (ZN 1 No A NoC)
     } in
     noMinorCases nfb ;
 
@@ -109,27 +109,27 @@ oper
     = \word, g, a ->
     let nfb : NounFormsBase =
     case word of {
-      _ + "уть"                            => makeNoun word g a (Z 8 No B) ;
-      _ + "ий"                             => makeNoun word g a (Z 7 No A) ;
-      _ + "ия"                             => makeNoun word g a (Z 7 No A) ;
-      _ + "ие"                             => makeNoun word g a (Z 7 No A) ;
-      _ + "ье"                             => makeNoun word g a (Z 6 Ast A) ;
-      _ + "тель"                           => makeNoun word g a (Z 2 No A) ;
+      _ + "уть"                            => makeNoun word g a (ZN 8 No B NoC) ;
+      _ + "ий"                             => makeNoun word g a (ZN 7 No A NoC) ;
+      _ + "ия"                             => makeNoun word g a (ZN 7 No A NoC) ;
+      _ + "ие"                             => makeNoun word g a (ZN 7 No A NoC) ;
+      _ + "ье"                             => makeNoun word g a (ZN 6 Ast A NoC) ;
+      _ + "тель"                           => makeNoun word g a (ZN 2 No A NoC) ;
       _ + "ь"                              => makeNoun word g a
-                                               (case g of {Fem => (Z 8 No A); _ => (Z 2 No A)});
-      _ + "и"                              => makeNoun word g a Z0 ;
-      _ + #consonant + ("к"|"х"|"г") + "а" => makeNoun word g a (Z 3 Ast A) ;
-      _ + ("к" | "х" | "г")                => makeNoun word g a (Z 3 No A) ;
-      _ + ("к" | "х" | "г") + "а"          => makeNoun word g a (Z 3 No A) ;
-      _ + "ца"                             => makeNoun word g a (Z 5 No A) ;
-      _ + "й"                              => makeNoun word g a (Z 6 No A) ;
-      _ + ("ж" | "ш" | "ч" | "щ")          => makeNoun word g a (Z 4 No A) ;
-      _ + "ша"                             => makeNoun word g a (Z 4 No A) ;
-      _ + ("ж" | "ш" | "ч" | "щ") + "а"    => makeNoun word g a (Z 4 No A) ;
-      _ + "ц"                              => makeNoun word g a (Z 5 Ast A) ;
-      _ + "о"                              => makeNoun word g a (Z 1 No A) ;
-      _ + "а"                              => makeNoun word g a (Z 1 No A) ;
-      _                                    => makeNoun word g a (Z 1 No A)
+                                               (case g of {Fem => (ZN 8 No A NoC); _ => (ZN 2 No A NoC)});
+      _ + "и"                              => makeNoun word g a ZN0 ;
+      _ + #consonant + ("к"|"х"|"г") + "а" => makeNoun word g a (ZN 3 Ast A NoC) ;
+      _ + ("к" | "х" | "г")                => makeNoun word g a (ZN 3 No A NoC) ;
+      _ + ("к" | "х" | "г") + "а"          => makeNoun word g a (ZN 3 No A NoC) ;
+      _ + "ца"                             => makeNoun word g a (ZN 5 No A NoC) ;
+      _ + "й"                              => makeNoun word g a (ZN 6 No A NoC) ;
+      _ + ("ж" | "ш" | "ч" | "щ")          => makeNoun word g a (ZN 4 No A NoC) ;
+      _ + "ша"                             => makeNoun word g a (ZN 4 No A NoC) ;
+      _ + ("ж" | "ш" | "ч" | "щ") + "а"    => makeNoun word g a (ZN 4 No A NoC) ;
+      _ + "ц"                              => makeNoun word g a (ZN 5 Ast A NoC) ;
+      _ + "о"                              => makeNoun word g a (ZN 1 No A NoC) ;
+      _ + "а"                              => makeNoun word g a (ZN 1 No A NoC) ;
+      _                                    => makeNoun word g a (ZN 1 No A NoC)
     } in
     noMinorCases nfb ;
 
