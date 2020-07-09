@@ -146,8 +146,8 @@ oper
   mkAdv : Str -> Adv
     = \s -> lin Adv (makeAdverb s) ;
 
-  mkConj : Str -> Conj
-    = \s -> lin Conj {s1 = [] ; s2 = s} ;
+  mkConj : Str -> Number -> Conj
+    = \s, n -> lin Conj {s1 = [] ; s2 = s ; n = n} ;
 
   mkInterj : Str -> Interj
     = \s -> lin Interj {s = s} ;

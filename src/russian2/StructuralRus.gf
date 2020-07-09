@@ -30,6 +30,8 @@ lin
   through_Prep = {s="через" ; c=Acc ; hasPrep=True};
   to_Prep = {s="к" ; c=Dat ; hasPrep=True} ;
   under_Prep = {s="под" ; c=Ins ; hasPrep=True};
+  or_Conj = mkConj "или" Sg ;
+  and_Conj = mkConj "и" Pl ;
 
   every_Det = {
     s = (adjFormsAdjective (guessAdjectiveForms "каждый")).s ! Sg;
@@ -55,4 +57,6 @@ lin
   only_Predet = adjFormsAdjective (noShorts only_Pron) ;       -- ** { g = PNoGen; c = Nom; size = nom} ;  -- TODO:
   --most_Predet   = bolshinstvoSgDet ** {n = Sg; g = (PGen Neut); c= Gen; size = plg}
   all_Predet = adjFormsAdjective (noShorts all_Pron) ;         -- ** { g = PNoGen; c = Nom; size = nom} ;  -- TODO:
+
+  yes_Utt = ss ["Да"] ;
 }

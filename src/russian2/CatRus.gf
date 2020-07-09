@@ -36,7 +36,7 @@ flags coding=utf8 ; optimize=all ;
     Predet, Quant = ResRus.Adjective ;
 
     Prep = ResRus.ComplementCase ; -- {s : Str ; c : Case ; hasPrep : Bool} ;
-    Conj = {s1,s2 : Str} ; ---- may need a number
+    Conj = {s1,s2 : Str ; n : Number} ;
 
 
   linref
