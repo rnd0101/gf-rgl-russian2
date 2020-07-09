@@ -76,6 +76,7 @@ lin
   enemy_N = mkN "враг" masculine animate ;
   eye_N = mkN "глаз" masculine inanimate "1c(1)(2)" ;
   factory_N = mkN "фабрика" ;
+  fall_V = mkV "падать" ;
   far_Adv = mkAdv "далеко";
   fat_N = mkN "жир" ;
   father_N2 = mkN2 (mkN "отец" masculine inanimate "5*b");

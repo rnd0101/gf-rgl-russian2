@@ -2,6 +2,16 @@
 -- manual for now, may be generated from the ru.wiktionary dump in the future
 
 
+  Verb : Type = {s : ClForm => GenNum => Person => Str ; asp : Aspect ; w: Voice} ;
+  Verb : Type = { prc : Tense => Str ;
+                  nstem : Str ; -- Nominal stem : ibiltze
+                  val : AuxType  --TODO change name of the field
+                } ;
+
+
+
+
+
 Verb : Type = {
   stem1,
   stem2,
