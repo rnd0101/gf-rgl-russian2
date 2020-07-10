@@ -16,6 +16,10 @@ flags coding=utf8 ; optimize=all ;
     Cl  = {subj,clit,compl : Str ; verb : VerbForms ; a : Agr} ;
     Comp = {s : Agr => Str} ;
 
+--    Cl    = {s : ResFin.Tense => Anteriority => Polarity => SType => Str} ;
+--    ClSlash = {s : ResFin.Tense => Anteriority => Polarity => Str ; c2 : Compl} ;
+--    Imp   = {s : Polarity => Agr => Str} ;
+
     QS  = {s : Str} ; ---- TODO: indirect questions
     QCl = {subj,clit,compl : Str ; verb : VerbForms ; a : Agr} ; -- = Cl ---- check if enough
 

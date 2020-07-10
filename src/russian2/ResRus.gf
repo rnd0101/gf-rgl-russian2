@@ -643,4 +643,10 @@ param
 oper -- TODO:
   ComplementCase : Type = {s : Str ; c : Case ; hasPrep : Bool} ;
 
+
+----------------
+-- Clauses
+
+  --Clause : Type = { s : Tense => Anteriority => Polarity => ClType => Sentence } ;
+
 }

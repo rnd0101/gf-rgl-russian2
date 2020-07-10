@@ -6,7 +6,7 @@ concrete GrammarRus of Grammar =
   AdjectiveRus,
   --AdverbRus,
   -- NumeralRus,
-  --SentenceRus,
+  SentenceRus,
   --QuestionRus,
   --RelativeRus,
   --ConjunctionRus,
