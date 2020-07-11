@@ -9,11 +9,11 @@ lin
 
   -- : CAdv -> A -> NP -> Adv ; -- more warmly than John - более тепло чем Иван
   ComparAdvAdj cadv a np = {
-    s = cadv.s ++ a.sn ++ "чем" ++ np.s ! Nom -- ???
+    s = cadv.s ++ a.sn ++ cadv.p ++ np.s ! Nom
     } ;
   -- : CAdv -> A -> S  -> Adv ; -- more warmly than he runs - более тепло чем он бежал
   ComparAdvAdjS cadv a s = {
-    s = cadv.s ++ a.sn ++ "чем" ++ s.s
+    s = cadv.s ++ a.sn ++ cadv.p ++ s.s
     } ;
 
   -- : Prep -> NP -> Adv ;        -- in the house - в доме
