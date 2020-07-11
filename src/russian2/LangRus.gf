@@ -1,9 +1,9 @@
 --# -path=.:../abstract:../common:../prelude
 
 concrete LangRus of Lang =
---  GrammarRus,
+  GrammarRus,
   LexiconRus,
---  ConstructionRus,
+  -- ConstructionRus,
   DocumentationRus
   ** {
 

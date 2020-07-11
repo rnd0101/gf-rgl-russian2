@@ -1,5 +1,5 @@
 concrete StructuralRus of Structural = CatRus **
-  open ParadigmsRus, ResRus, Prelude in {
+  open ParadigmsRus, ResRus, (X = ConstructX), Prelude in {
 
 lin
   i_Pron = personalPron (Ag Masc Sg P1) ;
@@ -32,6 +32,9 @@ lin
   under_Prep = {s="под" ; c=Ins ; hasPrep=True};
   or_Conj = mkConj "или" Sg ;
   and_Conj = mkConj "и" Pl ;
+
+  less_CAdv = X.mkCAdv "менее" "чем" ;
+  more_CAdv = X.mkCAdv "более" "чем" ;
 
   every_Det = {
     s = (adjFormsAdjective (guessAdjectiveForms "каждый")).s ! Sg;
