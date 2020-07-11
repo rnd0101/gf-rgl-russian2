@@ -5,7 +5,7 @@ concrete AdjectiveRus of Adjective = CatRus ** open ResRus, Prelude in {
     -- : A2 -> AP ;       -- married
     UseA2 a = adjFormsAdjective a ** {isPost = False} ;
     -- : A  -> AP ;       -- warmer - теплее
-    UseComparA a = adjFormsAdjective (immutableAdjForms a.comp) ** {isPost = False} ;  -- prefer short?
-
-    --AdvAP ap adv = ap ** {s = \\g,n,c => ap.s ! g ! n ! c ++ adv.s ; isPost = True} ;
+    UseComparA a = adjFormsAdjective (immutableAdjForms a.comp) ** {isPost = False} ;  -- prefer short? TODO: non-qual
+    -- : AP -> Adv -> AP ; -- warm by nature
+    AdvAP ap adv = ap ** {s = \\g,n,a,c => ap.s ! g ! n ! a ! c ++ adv.s ; isPost = False} ;
 }

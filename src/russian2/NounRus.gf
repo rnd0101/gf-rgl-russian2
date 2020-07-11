@@ -5,6 +5,13 @@ lin
   NumSg = {s = \\_,_,_ => [] ; size = Num1 } ;
   NumPl = {s = \\_,_,_ => [] ; size = NumAll } ;
 
+  -- : AP -> CN  -> CN ;   -- big house - большой дом
+  AdjCN ap cn = {
+    s = \\n,c => preOrPost (notB ap.isPost) (ap.s ! n ! cn.g ! cn.a ! c) (cn.s ! n ! c) ;
+    g = cn.g ;
+    a = cn.a
+    } ;
+
   -- : N -> CN
   UseN n = nounFormsNoun n ;
 
