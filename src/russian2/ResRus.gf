@@ -178,6 +178,8 @@ oper
       comp = []
     } ;
 
+  immutableAdjForms = immutableAdjectiveCases ;
+
   mkAplus : AdjForms -> AdjForms
     = \af -> af ;
 
@@ -389,7 +391,7 @@ oper
 -- Passive has no P1, P2, imperative,
 -- Reflexive verbs are to provides as as separate lexical entries.
 -- Note 2. Imperative Sg P2 of reflexive verbs, can be сь as well as ся, but because there is no passive forms
---
+-- we can store the sya-schema and 'BIND++' as necessary.
 
   VerbForms : Type = {
     inf,
