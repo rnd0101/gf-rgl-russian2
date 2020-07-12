@@ -420,7 +420,7 @@ oper
 oper
   guessVerbForms : Str -> VerbForms  -- stub. TODO: properly
     = \word ->
-      let stem_info = stemFromVerb word in  -- remove sya as well
+      let stem_info = stemFromVerb word in  -- remove reflexive postfix as well
       let stem = stem_info.p1 in
       let r = stem_info.p2 in
       {
@@ -449,8 +449,67 @@ oper
         tran=case r of {Reflexive => Intransitive; NonReflexive => Transitive };   -- TODO: fix non-refl
     } ;
 
+  refl_postfix_schema : VerbForms
+    = { -- TODO: make in parallel with guessVerbForms
+      inf="ся";
+      prsg1="сь";
+      prsg2="ся";
+      prsg3="ся";
+      prpl1="ся";
+      prpl2="сь";
+      prpl3="ся";
+      futsg1="сь";
+      futsg2="ся";
+      futsg3="ся";
+      futpl1="ся";
+      futpl2="сь";
+      futpl3="ся";
+      psgm="ся";
+      psgf="сь";
+      psgn="сь";
+      ppl ="сь";
+      isg2="ся";
+      ipl1="сь";
+      ipl2="сь";
+      asp=Imperfective; -- these 3 are not-relevant here
+      refl=Reflexive;
+      tran=Intransitive
+    };
+
+  passivateNonReflexive : VerbForms -> VerbForms
+    = \vf ->
+      let post = refl_postfix_schema in {
+      inf=vf.inf ++ BIND ++ post.inf ;
+      prsg1=vf.prsg1 ++ BIND ++ post.prsg1 ;
+      prsg2=vf.prsg2 ++ BIND ++ post.prsg2 ;
+      prsg3=vf.prsg3 ++ BIND ++ post.prsg3 ;
+      prpl1=vf.prpl1 ++ BIND ++ post.prpl1 ;
+      prpl2=vf.prpl2 ++ BIND ++ post.prpl2 ;
+      prpl3=vf.prpl3 ++ BIND ++ post.prpl3 ;
+      futsg1=vf.futsg1 ++ BIND ++ post.futsg1 ;
+      futsg2=vf.futsg2 ++ BIND ++ post.futsg2 ;
+      futsg3=vf.futsg3 ++ BIND ++ post.futsg3 ;
+      futpl1=vf.futpl1 ++ BIND ++ post.futpl1 ;
+      futpl2=vf.futpl2 ++ BIND ++ post.futpl2 ;
+      futpl3=vf.futpl3 ++ BIND ++ post.futpl3 ;
+      psgm=vf.psgm ++ BIND ++ post.psgm ;
+      psgf=vf.psgf ++ BIND ++ post.psgf ;
+      psgn=vf.psgn ++ BIND ++ post.psgn ;
+      ppl=vf.ppl ++ BIND ++ post.ppl ;
+      isg2=vf.isg2 ++ BIND ++ post.isg2 ;
+      ipl1=vf.ipl1 ++ BIND ++ post.ipl1 ;
+      ipl2=vf.ipl2 ++ BIND ++ post.ipl2 ;
+      asp=vf.asp ;
+      refl=vf.refl ;
+      tran=vf.tran
+    } ;
+
   passivate : VerbForms -> VerbForms
-    = \forms -> forms ; -- TODO: implement
+    = \vf ->
+      case vf.refl of {
+        Reflexive => vf ;
+        NonReflexive => passivateNonReflexive vf
+    } ;
 
 ---------------------------
 -- Pronouns -- Местоимения
