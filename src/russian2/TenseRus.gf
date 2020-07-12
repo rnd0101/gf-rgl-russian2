@@ -1,19 +1,13 @@
-concrete TenseRus of Tense = CatRus [Tense,Temp], TenseX [Ant,AAnter,ASimul]
+concrete TenseRus of Tense = CatRus, TenseX - [PNeg,PPos]
   ** open ResRus, (P=ParamRus), Prelude in {
 flags coding=utf8 ; optimize=all ;
 lin
   PNeg = {
-    s = "не" ++ Predef.BIND ;
-    p = False
+    s = "не" ;
+    p = Neg
     } ;
   PPos = {
     s = [] ;
-    p = True
+    p = Pos
     } ;
-  -- : Tense -> Ant -> Temp
-  TTAnt t a = {s = t.s ++ a.s ; t = t.t ; a = a.a} ;
-
-  TPres = {s = []} ** {t = P.RusPres} ;
-  TPast = {s = []} ** {t = P.RusPast} ;   --# notpresent
-  TFut  = {s = []} ** {t = P.RusFut} ;    --# notpresent
 }

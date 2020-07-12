@@ -171,6 +171,10 @@ oper
       _ => c.s  -- TODO: implement
     } ;
 
+  verbAgr : VerbForms -> Mood -> Tense -> Agr -> Polarity -> Str
+    = \vf,m,temp,a,pol ->
+      "" ;  -- TODO: Implement
+
 ---------------------------
 -- Adjectives -- Прилагательные
 
@@ -551,14 +555,14 @@ oper
           dat, prep, loc = "тебе" ;
           ins = variants {"тобой" ; "тобою"}
         } ;
-        Ag MSg P3 => {
+        Ag (GSg Masc) P3 => {
           nom, voc = "он" ;
           gen, acc, ptv = "его" ;   -- TODO: n
           dat = "ему" ;   -- TODO: n
           ins = "им" ;   -- TODO: n
           prep, loc = "нём"
         } ;
-        Ag FSg P3 => {
+        Ag (GSg Fem) P3 => {
           nom, voc = "она" ;
           gen, ptv = variants { "её"; "ей" } ;           -- TODO: n
           dat = "ей" ;                     -- TODO: n
@@ -566,7 +570,7 @@ oper
           ins = variants { "ей"; "ею" } ;   -- TODO: n
           prep, loc = "ней"
         } ;
-        Ag NSg P3 => {  -- TODO: same as Masc, how to combine?
+        Ag (GSg Neut) P3 => {  -- TODO: same as Masc, how to combine?
           nom, voc = "оно" ;
           gen, acc, ptv = "его" ;   -- TODO: n
           dat = "ему" ;   -- TODO: n

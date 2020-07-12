@@ -9,8 +9,8 @@ concrete ConjunctionRus of Conjunction =
     [Adv] = {s1,s2 : Str} ;
     [AP] = {s1,s2 : Number => Gender => Animacy => Case => Str ; isPost : Bool} ;
     [NP] = {s1,s2,prep1,prep2 : Case => Str ; a : Agr} ;
-    [S] = {s1,s2 : Str} ;
-    [RS] = {s1,s2 : AgrTable} ;
+    [S] = {s1,s2 : Mood => Str} ;
+    [RS] = {s1,s2 : Mood => Agr => Str ; c : Case} ;
 
   lin
     -- : Adv -> Adv -> ListAdv ;     -- here, there
@@ -28,24 +28,30 @@ concrete ConjunctionRus of Conjunction =
                   ** {isPost = orB x.isPost xs.isPost} ;
 
     -- : S -> S -> ListS ;      -- John walks, Mary runs
-    BaseS = twoSS ;
+    BaseS = twoTable Mood ;
 
     -- : S -> ListS -> ListS ;  -- John walks, Mary runs, Bill swims
-    ConsS = consrSS comma ;
+    ConsS = consrTable Mood comma ;
 
     -- : RS -> RS -> ListRS ;       -- who walks, whom I know
-    BaseRS = twoTable Agr ;
+    BaseRS x y = twoTable2 Mood Agr x y ** {c = y.c} ;
+--    BaseRS = twoTable Agr ;
 
     -- : RS -> ListRS -> ListRS ;   -- who walks, whom I know, who is here
-    ConsRS = consrTable Agr comma ;
+    ConsRS xs x = consrTable2 Mood Agr comma xs x ** {c = xs.c} ;
+--    ConsRS = consrTable Agr comma ;
 
     ConjAdv = conjunctDistrSS ;
 
     ConjAP conj xs = conjunctDistrTable4 Number Gender Animacy Case conj xs
                        ** {isPost = xs.isPost} ;
 
-    ConjS = conjunctDistrSS ;
-    ConjRS = conjunctDistrTable Agr ;
+    ConjS conj ss = conjunctDistrTable Mood conj ss ;
+
+    -- : Conj -> ListRS -> RS ;     -- who walks and whose mother runs
+    ConjRS conj ss = conjunctDistrTable2 Mood Agr conj ss ** {
+      c = ss.c
+      } ;
 
     -- : NP -> NP -> ListNP ;      -- John, Mary
     BaseNP x y = {

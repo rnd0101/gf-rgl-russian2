@@ -1,4 +1,4 @@
-concrete CatRus of Cat = CommonX - [Temp,Tense]  ** open ResRus, ParamRus, Prelude in {
+concrete CatRus of Cat = CommonX ** open ResRus, Prelude in {
 flags coding=utf8 ; optimize=all ;
   lincat
     Num, Numeral, Card, Digits = Determiner ;
@@ -23,20 +23,16 @@ flags coding=utf8 ; optimize=all ;
 
     AP = ResRus.Adjective ** {isPost : Bool} ;
 
-    Clause = {s : Polarity => ClForm => Str} ;
-
-  -- TODO: below copy-paste, sort out (eg, clitics are not needed)
-    S   = {s : Str} ;
-    Cl  = {subj,compl : Str ; verb : VerbForms ; a : Agr} ;
+    S = {s : Mood => Str} ;
+    Cl = {subj,compl : Str ; verb : VerbForms ; a : Agr} ;
     Comp = {s : AgrTable} ;
 
-    Temp  = {s : Str ; t : RusTense ; a : Anteriority} ;
-    Tense = {s : Str ; t : RusTense} ;
+    -- TODO: below copy-paste, sort out (eg, clitics are not needed?)
 
     QS  = {s : Str} ; ---- TODO: indirect questions
     QCl = {subj,compl : Str ; verb : VerbForms ; a : Agr} ; -- = Cl ---- check if enough
 
-    RS  = {s : AgrTable} ;
+    RS  = {s : Mood => Agr => Str ; c : Case} ;
     RCl = {subj,compl : AgrTable ; verb : VerbForms} ; ---- RAgr with composite RP
     RP  = AdjForms ;
 

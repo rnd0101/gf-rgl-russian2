@@ -1,7 +1,7 @@
 concrete PhraseRus of Phrase = CatRus ** open Prelude, ResRus in {
 
 lin
-    UttS s = s ;
+    UttS s = {s = s.s ! Ind} ;
     UttAdv adv = adv ;
     UttCN cn = {s = cn.s ! Sg ! Nom} ;
     UttAP ap = {s = ap.s ! Sg ! Masc ! Animate ! Nom } ;

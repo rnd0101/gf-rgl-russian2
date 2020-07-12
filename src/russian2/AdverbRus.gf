@@ -14,9 +14,9 @@ lin
   ComparAdvAdj cadv a np = {
     s = cadv.s ++ a.sn ++ cadv.p ++ np.s ! Nom
     } ;
-  -- : CAdv -> A -> S  -> Adv ;   -- more warmly than he runs - более тепло чем он бежал
+  -- : CAdv -> A -> S -> Adv ;   -- more warmly than he runs - более тепло чем он бежал
   ComparAdvAdjS cadv a s = {
-    s = cadv.s ++ a.sn ++ cadv.p ++ s.s
+    s = cadv.s ++ a.sn ++ cadv.p ++ s.s ! Ind
     } ;
 
   -- : Prep -> NP -> Adv ;        -- in the house - в доме
@@ -26,7 +26,7 @@ lin
   AdAdv = cc2 ;
 
   -- : Subj -> S -> Adv ;         -- when she sleeps - когда она спит
-  SubjS = cc2 ;
+  SubjS subj s = {s=subj.s ++ s.s ! Ind} ;
 
   -- : CAdv -> AdN ;              -- less (than five) - менее (пяти)
   AdnCAdv cadv = {s = cadv.s ++ cadv.p} ;
