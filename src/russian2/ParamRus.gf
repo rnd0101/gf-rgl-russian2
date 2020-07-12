@@ -1,4 +1,4 @@
-resource ParamRus = ParamX ** open Prelude in {
+resource ParamRus = ParamX - [Tense,Past,Fut] ** open Prelude in {
   -- Mostly follows https://en.wikipedia.org/wiki/List_of_glossing_abbreviations
   -- see theory.txt
 
@@ -18,8 +18,6 @@ resource ParamRus = ParamX ** open Prelude in {
      | Possessive  -- притяжательные, чей? No short form
      | Relative    -- относительные, какой? No short form, can't be more or less of this attribute
   -}
-
-
 
 -- TODO: dual gender nouns. See [KING1]
 
@@ -56,20 +54,32 @@ resource ParamRus = ParamX ** open Prelude in {
     adj_stress_schema : pattern Str = #("b/c''"|"a/c''"|"a/b'"|"a/c'"|"b/a'"|"b/b'"|"b/c'"|"b/c"|"b/a"|"b/b"|"a/a'"|"a/a"|"a/c"|"a/b"|"a'"|"b'"|"a"|"b"|"c") ;
 
   param
-    Gender     = Masc | Fem | Neut ;  -- род
-    Animacy    = Animate | Inanimate ;  -- одушевлённый / неодушевлённый
-    Voice      = Act | Pass | Refl ;  -- залог
-    Aspect     = Imperfective | Perfective ;  -- вид / аспект
-    Reflexivity  = Reflexive | NonReflexive ;  -- возвратность
+    Gender        = Masc | Fem | Neut ;  -- род
+    Animacy       = Animate | Inanimate ;  -- одушевлённый / неодушевлённый
+    Voice         = Act | Pass ;  -- залог
+    Aspect        = Imperfective | Perfective ;  -- вид / аспект
+    Reflexivity   = Reflexive | NonReflexive ;  -- возвратность
     Transitivity  = Transitive | Intransitive ;  -- возвратность
-    AfterPrepPron  = AfterPrep | NotAfterPrep ;  -- to variate pronouns starting with vowels.
-    Possessive = NonPoss | Poss Agr ;   -- TODO: is this needed?  притяжательность
-    ClForm     = ClIndic Tense Anteriority | ClCond  | ClIndf | ClImp | ClImm ;
-    Agr        = Ag Gender Number Person ; -- The plural never makes a gender distinction
+    RusTense      = RusPres | RusPast | RusFut ;
+    AfterPrepPron = AfterPrep | NotAfterPrep ;  -- TODO: not needed? to variate pronouns starting with vowels.
+    Possessive    = NonPoss | Poss Agr ;   -- TODO: is this needed?  притяжательность
+    ClForm        = ClIndPres | ClIndPast | ClIndFut | ClCond | ClInf | ClImp ;
 
-    Case       = Nom | Gen | Dat | Acc | Ins | Pre  -- падеж, "малые падежи":
+    GenNum   = GSg Gender | GPl ; -- The plural never makes a gender distinction
+    Agr      = Ag GenNum Person ;
+
+    Case     = Nom | Gen | Dat | Acc | Ins | Pre  -- падеж, "малые падежи":
               | Loc | Ptv | VocRus ;  -- "minor cases", usually Loc = Pre, Ptv = Gen, VocRus = Nom
   oper
+    -- GenNum helpers and coercions
+    MSg        = GSg Masc ;
+    FSg        = GSg Fem ;
+    NSg        = GSg Neut ;
+    gennum : Gender -> Number -> GenNum
+      = \g,n -> case n of {Sg => GSg g ; Pl => GPl} ;
+    numGenNum : GenNum -> Number
+      = \gn -> case gn of {GSg _ => Sg ; GPl => Pl} ;
+
     DeclType     = Predef.Ints 8 ;        -- Declension type
 
     NounFormsBase : Type = {

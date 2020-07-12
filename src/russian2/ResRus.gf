@@ -164,6 +164,13 @@ oper
   mkFun : NounForms -> ComplementCase -> Noun2Forms = \f, p -> f ** {c2 = p} ;
   mkFun2 : NounForms -> ComplementCase -> ComplementCase -> Noun3Forms = \f, p2, p3 -> f ** {c2=p2; c3=p3} ;
 
+  AgrTable = Agr => Str ;
+
+  agree : ComplementCase -> AgrTable
+    = \c -> table {
+      _ => c.s  -- TODO: implement
+    } ;
+
 ---------------------------
 -- Adjectives -- Прилагательные
 
@@ -410,12 +417,7 @@ oper
     tran : Transitivity
   } ;
 
-  -- From old Rus RG:
-  -- VerbForm = VFORM Voice VerbConj ;
-  -- VerbConj =  VIND GenNum VTense | VIMP Number Person | VINF | VSUB GenNum ;
-  -- VTense   = VPresent Person | VPast | VFuture Person ;
-  -- GenNum = GSg Gender | GPl ;
-  
+oper
   guessVerbForms : Str -> VerbForms  -- stub. TODO: properly
     = \word ->
       let stem_info = stemFromVerb word in  -- remove sya as well
@@ -447,6 +449,9 @@ oper
         tran=case r of {Reflexive => Intransitive; NonReflexive => Transitive };   -- TODO: fix non-refl
     } ;
 
+  passivate : VerbForms -> VerbForms
+    = \forms -> forms ; -- TODO: implement
+
 ---------------------------
 -- Pronouns -- Местоимения
 
@@ -475,26 +480,26 @@ oper
   personalPron : Agr -> PronounForms
     = \a -> {a = a} **
       case a of {
-        Ag _ Sg P1 => {
+        Ag (GSg _) P1 => {
           nom, voc = "я" ;
           gen, acc, ptv = "меня" ;
           dat, prep, loc = "мне" ;
           ins = variants {"мной" ; "мною"}
         } ;
-        Ag _ Sg P2 => {
+        Ag (GSg _) P2 => {
           nom, voc = "ты" ;
           gen, acc, ptv = "тебя" ;
           dat, prep, loc = "тебе" ;
           ins = variants {"тобой" ; "тобою"}
         } ;
-        Ag Masc Sg P3 => {
+        Ag MSg P3 => {
           nom, voc = "он" ;
           gen, acc, ptv = "его" ;   -- TODO: n
           dat = "ему" ;   -- TODO: n
           ins = "им" ;   -- TODO: n
           prep, loc = "нём"
         } ;
-        Ag Fem Sg P3 => {
+        Ag FSg P3 => {
           nom, voc = "она" ;
           gen, ptv = variants { "её"; "ей" } ;           -- TODO: n
           dat = "ей" ;                     -- TODO: n
@@ -502,28 +507,28 @@ oper
           ins = variants { "ей"; "ею" } ;   -- TODO: n
           prep, loc = "ней"
         } ;
-        Ag Neut Sg P3 => {  -- TODO: same as Masc, how to combine?
+        Ag NSg P3 => {  -- TODO: same as Masc, how to combine?
           nom, voc = "оно" ;
           gen, acc, ptv = "его" ;   -- TODO: n
           dat = "ему" ;   -- TODO: n
           ins = "им" ;   -- TODO: n
           prep, loc = "нём"
         } ;
-        Ag _ Pl P1 => {
+        Ag GPl P1 => {
           nom, voc = "мы" ;
           gen, acc, ptv = "нас" ;
           dat = "нам" ;
           ins = "нами" ;
           prep, loc = "нас"
         } ;
-        Ag _ Pl P2 => {
+        Ag GPl P2 => {
           nom, voc = "вы" ;
           gen, acc, ptv = "вас" ;
           dat = "вам" ;
           ins = "вами" ;
           prep, loc = "вас"
         } ;
-        Ag _ Pl P3 => {
+        Ag GPl P3 => {
           nom, voc = "они" ;
           gen, acc, ptv = "их" ;   -- TODO: n
           dat = "им" ;   -- TODO: n
@@ -588,13 +593,13 @@ oper
   possessivePron : Agr -> PronForms
     = \a -> {a = a} **
       case a of {
-        Ag _ Sg P1 => doPossessivePronSgP1P2 "мо" ;
-        Ag _ Sg P2 => doPossessivePronSgP1P2 "тво" ;
-        Ag (Masc|Neut) Sg P3 => doPossessivePronP3 "его" ;
-        Ag Fem Sg P3 => doPossessivePronP3 "её" ;
-        Ag _ Pl P1 => doPossessivePronPlP1P2 "наш" ;
-        Ag _ Pl P2 => doPossessivePronPlP1P2 "ваш" ;
-        Ag _ Pl P3 => doPossessivePronP3 "их"    -- TODO: "ихний" variant
+        Ag (GSg _) P1 => doPossessivePronSgP1P2 "мо" ;
+        Ag (GSg _) P2 => doPossessivePronSgP1P2 "тво" ;
+        Ag (GSg Fem) P3 => doPossessivePronP3 "её" ;
+        Ag (GSg _) P3 => doPossessivePronP3 "его" ;
+        Ag GPl P1 => doPossessivePronPlP1P2 "наш" ;
+        Ag GPl P2 => doPossessivePronPlP1P2 "ваш" ;
+        Ag GPl P3 => doPossessivePronP3 "их"    -- TODO: "ихний" variant
       } ;
 
   Pronoun = { s : Case => Str ; a : Agr } ;
@@ -648,7 +653,5 @@ oper -- TODO:
 
 ----------------
 -- Clauses
-
-  --Clause : Type = { s : Tense => Anteriority => Polarity => ClType => Sentence } ;
 
 }

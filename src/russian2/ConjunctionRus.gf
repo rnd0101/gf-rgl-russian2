@@ -10,7 +10,7 @@ concrete ConjunctionRus of Conjunction =
     [AP] = {s1,s2 : Number => Gender => Animacy => Case => Str ; isPost : Bool} ;
     [NP] = {s1,s2,prep1,prep2 : Case => Str ; a : Agr} ;
     [S] = {s1,s2 : Str} ;
-    [RS] = {s1,s2 : Agr => Str} ;
+    [RS] = {s1,s2 : AgrTable} ;
 
   lin
     -- : Adv -> Adv -> ListAdv ;     -- here, there
@@ -84,12 +84,18 @@ concrete ConjunctionRus of Conjunction =
       <Sg,Sg> => Sg ;
       _ => Pl
     } ;
+    conjGenNum : GenNum -> GenNum -> GenNum = \m,n -> case <m,n> of {
+      <GSg Fem,GSg Fem> => FSg ;
+      <GSg Masc,GSg Masc> => MSg ;
+      <GSg Neut,GSg Neut> => NSg ;
+      <GSg _,GSg _> => GPl;  -- TODO: Is this true for animate only or in general?
+      _ => GPl
+    } ;
     conjPerson : Person -> Person -> Person = \_,p -> p ;
     conjAgr : Agr -> Agr -> Agr
       = \a1,a2 ->
-        let a1rec = case a1 of {Ag g n p => {g=g; n=n; p=p} } in
-        let a2rec = case a2 of {Ag g n p => {g=g; n=n; p=p} } in
-        Ag (conjGender a1rec.g a2rec.g) (conjNumber a1rec.n a2rec.n) (conjPerson a1rec.p a2rec.p);
+        let a1rec = case a1 of {Ag gn p => {gn=gn; p=p} } in
+        let a2rec = case a2 of {Ag gn p => {gn=gn; p=p} } in
+        Ag (conjGenNum a1rec.gn a2rec.gn) (conjPerson a1rec.p a2rec.p);
 
 }
-

@@ -2,15 +2,15 @@ concrete StructuralRus of Structural = CatRus **
   open ParadigmsRus, ResRus, (X = ConstructX), Prelude in {
 
 lin
-  i_Pron = personalPron (Ag Masc Sg P1) ;
-  we_Pron = personalPron (Ag Masc Pl P1) ;
-  youSg_Pron = personalPron (Ag Masc Sg P2) ;
-  youPl_Pron = personalPron (Ag Masc Pl P2) ;
+  i_Pron = personalPron (Ag MSg P1) ;
+  we_Pron = personalPron (Ag GPl P1) ;
+  youSg_Pron = personalPron (Ag MSg P2) ;
+  youPl_Pron = personalPron (Ag GPl P2) ;
   youPol_Pron = youPl_Pron ;
-  he_Pron = personalPron (Ag Masc Sg P3) ;
-  she_Pron = personalPron (Ag Fem Sg P3) ;
-  it_Pron = personalPron (Ag Neut Sg P3) ;
-  they_Pron = personalPron (Ag Masc Pl P3) ;
+  he_Pron = personalPron (Ag MSg P3) ;
+  she_Pron = personalPron (Ag FSg P3) ;
+  it_Pron = personalPron (Ag NSg P3) ;
+  they_Pron = personalPron (Ag GPl P3) ;
 
   above_Prep = {s="над" ; c=Ins; hasPrep=True} ;
   after_Prep = {s="после" ; c=Gen; hasPrep=True };
