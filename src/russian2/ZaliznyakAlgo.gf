@@ -518,17 +518,17 @@ oper
       preferShort=PrefFull
     } ;
 
-  makeAdjective : Str -> ZAIndex -> AdjForms
-    = \word, z ->
+  makeAdjective : Str -> ZAIndex -> ShortFormPreference -> AdjForms
+    = \word, z, sfp ->
     case z of {
       ZA0 => immutableAdjectiveCases word ;
-      ZA dt at ss ci => formsSelectionAdjective word dt at ss ci
+      ZA dt at ss ci => formsSelectionAdjective word dt at ss ci sfp
     } ;
 
-  formsSelectionAdjective : Str -> DeclType -> AlterType -> AdjStressSchema -> ZCirc -> AdjForms
-    = \word, dt, at, ss, ci ->
+  formsSelectionAdjective : Str -> DeclType -> AlterType -> AdjStressSchema -> ZCirc -> ShortFormPreference -> AdjForms
+    = \word, dt, at, ss, ci, sfp ->
       let stem = stemFromAdjective word dt in
-      let aef = endingsSelectionAdj dt at ss in
+      let aef = endingsSelectionAdj dt at ss sfp in
       let alternated = alterFormsAdj stem aef dt at ss ci in    -- TODO: alternation, fix comparative for dt=3
       alternated
     ;
@@ -646,14 +646,14 @@ oper
         preferShort = aef.preferShort
       } ;
 
-  endingsSelectionAdj : DeclType -> AlterType -> AdjStressSchema -> AdjForms
-    = \dt, at, ss ->
+  endingsSelectionAdj : DeclType -> AlterType -> AdjStressSchema -> ShortFormPreference -> AdjForms
+    = \dt, at, ss, sfp ->
     let gDtBased = gDtBasedSelectionAdj dt in
-    gDtSsBasedSelectionAdj gDtBased ss
+    gDtSsBasedSelectionAdj gDtBased ss sfp
   ;
 
-  gDtSsBasedSelectionAdj : AdjectiveEndFormsS1 -> AdjStressSchema -> AdjForms
-    = \aef1, ss ->
+  gDtSsBasedSelectionAdj : AdjectiveEndFormsS1 -> AdjStressSchema -> ShortFormPreference -> AdjForms
+    = \aef1, ss, sfp ->
       {
         msnom  = stressSelectionAdj aef1.msnom  ss "msnom" ;
         fsnom  = stressSelectionAdj aef1.fsnom  ss "fsnom" ;
@@ -673,7 +673,7 @@ oper
         sn     = stressSelectionAdj aef1.sn     ss "sn" ;
         sp     = stressSelectionAdj aef1.sp     ss "sp" ;
         comp   = stressSelectionAdj aef1.comp   ss "comp" ;
-        preferShort = PrefFull   -- TODO: this is arbitrary. Make parameter?
+        preferShort = sfp
     } ;
 
   stressSelectionAdj : EndingSpec -> AdjStressSchema -> Str -> Str

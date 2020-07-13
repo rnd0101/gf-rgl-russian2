@@ -16,6 +16,11 @@ oper
   neuter : Gender
     = Neut ;
 
+  short : ShortFormPreference
+    = PrefShort ;
+  full : ShortFormPreference
+    = PrefFull ;
+
   animate : Animacy
     = Animate ;
   inanimate : Animacy
@@ -107,9 +112,14 @@ oper
       = \nom, comp -> lin A ((guessAdjectiveForms nom) ** {comp=comp}) ;
     mkA : Str -> Str -> Str -> A
       = \nom, comp, zi ->
-        let af = (Z.makeAdjective nom (Z.parseAdjIndex zi)) in
+        let af = Z.makeAdjective nom (Z.parseAdjIndex zi) PrefFull in
         let comp' = case (Predef.length comp) of {0 => af.comp; _ => comp} in
-        lin A (af ** {comp=comp'});
+        lin A (af ** {comp=comp'}) ;
+    mkA : Str -> Str -> Str -> ShortFormPreference -> A
+      = \nom, comp, zi, sfp ->
+        let af = Z.makeAdjective nom (Z.parseAdjIndex zi) sfp in
+        let comp' = case (Predef.length comp) of {0 => af.comp; _ => comp} in
+        lin A (af ** {comp=comp'}) ;
   } ;
 
 -- Two-place adjectives need a preposition and a case as extra arguments.

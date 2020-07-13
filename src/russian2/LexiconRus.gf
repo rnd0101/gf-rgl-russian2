@@ -17,7 +17,6 @@ lin
   bank_N = mkN "банк" ;
   bark_N = mkN "кора";
   beautiful_A = mkA "красивый" ;
-  beautiful_A = mkA "красивый";
   beer_N = mkN "пиво" neuter inanimate ;
   belly_N = mkN "живот" ;
   big_A = (mkAltShort (mkA "большой" "больше") (mkA "великий")) ;

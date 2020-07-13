@@ -47,7 +47,7 @@ flags coding=utf8 ; optimize=all ;
     PN = \s -> s.snom ;
     N2 = \s -> s.snom ++ s.c2.s;   -- TODO
     N3 = \s -> s.snom ++ s.c2.s ++ s.c3.s;   -- TODO
-    A = \s -> s.msnom ;
+    A = \s -> case s.preferShort of {PrefShort => s.sm ; _ => s.msnom};
     V = \s -> s.inf ;
     V2 = \s -> s.inf ;
 
