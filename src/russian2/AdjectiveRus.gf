@@ -13,11 +13,9 @@ concrete AdjectiveRus of Adjective = CatRus ** open ResRus, Prelude in {
     SentAP ap sc = ap ** {s = \\gn,a,c => ap.s ! gn ! a ! c ++ [", "] ++ sc.s ; isPost = True} ;
 
     -- : A  -> NP -> AP ;  -- warmer than I
-    ComparA
-      = \a,np ->
-        let af = adjFormsAdjective (immutableAdjForms a.comp) in {
-          s = \\gn,anim,cas => a.comp ++ np.s ! Gen ;
-          isPost = False ;
-          preferShort = PrefShort
-          } ;
+    ComparA a np = {
+      s = \\gn,anim,cas => a.comp ++ np.s ! Gen ;
+      isPost = False ;
+      preferShort = PrefShort
+      } ;
 }
