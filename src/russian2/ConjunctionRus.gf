@@ -97,7 +97,6 @@ concrete ConjunctionRus of Conjunction =
       <GSg _,GSg _> => GPl;  -- TODO: Is this true for animate only or in general?
       _ => GPl
     } ;
-    conjPerson : Person -> Person -> Person = \_,p -> p ;
     conjAgr : Agr -> Agr -> Agr
       = \a1,a2 ->
         let a1rec = case a1 of {Ag gn p => {gn=gn; p=p} } in

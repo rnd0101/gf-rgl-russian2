@@ -62,7 +62,7 @@ resource ParamRus = ParamX, CommonX [Temp] ** open Prelude in {
     Transitivity  = Transitive | Intransitive ;  -- возвратность
     AfterPrepPron = AfterPrep | NotAfterPrep ;  -- TODO: not needed? to variate pronouns starting with vowels.
     Possessive    = NonPoss | Poss Agr ;   -- TODO: is this needed?  притяжательность
-    Mood          = Infinitive | Sbjv | Imp | Ind ;  -- SBJV and COND will be treated as same for now
+    Mood          = Infinitive | Sbjv | Imperative | Ind ;  -- SBJV and COND will be treated as same for now
 
     GenNum   = GSg Gender | GPl ; -- The plural never makes a gender distinction
     Agr      = Ag GenNum Person ;

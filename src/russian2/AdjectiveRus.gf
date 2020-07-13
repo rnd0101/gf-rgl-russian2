@@ -8,4 +8,6 @@ concrete AdjectiveRus of Adjective = CatRus ** open ResRus, Prelude in {
     UseComparA a = adjFormsAdjective (immutableAdjForms a.comp) ** {isPost = False} ;  -- prefer short? TODO: non-qual
     -- : AP -> Adv -> AP ; -- warm by nature
     AdvAP ap adv = ap ** {s = \\g,n,a,c => ap.s ! g ! n ! a ! c ++ adv.s ; isPost = False} ;
+    -- : AP -> SC -> AP ;  -- good that she is here
+    SentAP ap sc = ap ** {s = \\g,n,a,c => ap.s ! g ! n ! a ! c ++ [", "] ++ sc.s ; isPost = True} ;
 }
