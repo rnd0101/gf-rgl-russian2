@@ -12,10 +12,27 @@ concrete AdjectiveRus of Adjective = CatRus ** open ResRus, Prelude in {
     -- : AP -> SC -> AP ;  -- good that she is here
     SentAP ap sc = ap ** {s = \\gn,a,c => ap.s ! gn ! a ! c ++ [", "] ++ sc.s ; isPost = True} ;
 
-    -- : A  -> NP -> AP ;  -- warmer than I
+    -- : A  -> NP -> AP ;  -- warmer than I - теплее меня
     ComparA a np = {
       s = \\gn,anim,cas => a.comp ++ np.s ! Gen ;
       isPost = False ;
       preferShort = PrefShort
       } ;
+
+    -- : A2 -> NP -> AP ;  -- married to him - замужем за ним (NB: gender change requires different word!)
+    ComplA2 a2 np = {
+      s = \\gn,anim,cas => (adjFormsAdjective a2).s ! gn ! anim ! (a2.c.c) ++ a2.c.s ++ np.s ! (a2.c.c) ;
+      isPost = False ;
+      preferShort = a2.preferShort
+      } ;
+
+    -- : A2 -> AP ;        -- married to itself - замужем за собой
+    ReflA2 a2 = {
+      s = \\gn,anim,cas => (adjFormsAdjective a2).s ! gn ! anim ! cas ++ a2.c.s
+        ++ sam.s ! (a2.c.c)
+      ;
+      isPost = False ;
+      preferShort = a2.preferShort
+      } ;
+
 }

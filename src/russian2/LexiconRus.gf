@@ -133,6 +133,8 @@ lin
   louse_N = (mkNplus (mkN "вошь" feminine animate "8*b'")) ** {pdat="вшам";pins="вшами";pprep="вшах"} ;
   love_N = mkN "любовь" feminine inanimate "8*b'" ;
   man_N = (mkNAltPl (mkN "человек" masculine animate "3a") (mkN "людь" masculine animate)) ** {pins="людьми"};
+  -- married_A2 = mkA2 (mkA "замужем" "" "0") behind_Prep ;  -- for Fem only
+  married_A2 = mkA2 (mkA "женатый" ) behind_Prep ;  -- for Fem only
   meat_N = mkN "мясо" neuter inanimate "1c" ;
   milk_N = mkN "молоко" neuter inanimate "3d(1)" ;
   moon_N = mkN "луна" ;

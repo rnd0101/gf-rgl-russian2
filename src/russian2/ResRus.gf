@@ -679,6 +679,17 @@ oper
       a = forms.a
     } ;
 
+  sam: Pronoun = {
+    s = table {
+      (Nom | VocRus) => "сам" ;  -- actually, missing!
+      (Gen | Ptv)  => "себя" ;
+      Dat => "себе" ;
+      Acc => "себя" ;
+      Ins => "собой" ;
+      (Pre | Loc) => "себе"
+      } ;
+    a = Ag (GSg Masc) P3 ;   -- also Fem, Neut ???
+    } ;
 
   all_Pron = pronoun2AstB "весь" ;
   only_Pron = guessAdjectiveForms "единственный" ;

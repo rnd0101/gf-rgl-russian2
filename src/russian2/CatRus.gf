@@ -45,9 +45,10 @@ flags coding=utf8 ; optimize=all ;
   linref
     N = \s -> s.snom ;
     PN = \s -> s.snom ;
-    N2 = \s -> s.snom ++ s.c2.s;   -- TODO
-    N3 = \s -> s.snom ++ s.c2.s ++ s.c3.s;   -- TODO
-    A = \s -> case s.preferShort of {PrefShort => s.sm ; _ => s.msnom};
+    N2 = \s -> s.snom ++ s.c2.s ;   -- TODO
+    N3 = \s -> s.snom ++ s.c2.s ++ s.c3.s ;   -- TODO
+    A = \s -> case s.preferShort of {PrefShort => s.sm ; _ => s.msnom} ;
+    A2 = \s -> case s.preferShort of {PrefShort => s.sm ; _ => s.msnom} ++ s.c.s ;  -- ?
     V = \s -> s.inf ;
     V2 = \s -> s.inf ;
 
