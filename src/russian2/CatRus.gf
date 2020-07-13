@@ -17,7 +17,9 @@ flags coding=utf8 ; optimize=all ;
 
     CN = ResRus.Noun ;
 
-    NP = {s, prep : Case => Str ; a : Agr } ;
+    NP = {s : Case => Str ;
+      -- , prep : Case => Str   -- what for is this neeeded?
+      a : Agr } ;
     VP = {verb : ResRus.VerbForms ; compl : AgrTable} ; ---- more fields probably needed (adverbials?)
     VPSlash = {verb : ResRus.VerbForms ; compl : AgrTable ; c : ComplementCase} ; ----
 

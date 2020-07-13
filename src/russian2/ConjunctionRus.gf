@@ -8,7 +8,9 @@ concrete ConjunctionRus of Conjunction =
   lincat
     [Adv] = {s1,s2 : Str} ;
     [AP] = {s1,s2 : GenNum => Animacy => Case => Str ; isPost : Bool; preferShort : ShortFormPreference} ;
-    [NP] = {s1,s2,prep1,prep2 : Case => Str ; a : Agr} ;
+    [NP] = {s1,s2  : Case => Str ;
+           -- prep1,prep2 : Case => Str ;
+           a : Agr} ;
     [S] = {s1,s2 : Mood => Str} ;
     [RS] = {s1,s2 : Mood => Agr => Str ; c : Case} ;
 
@@ -58,8 +60,8 @@ concrete ConjunctionRus of Conjunction =
     BaseNP x y = {
       s1 = x.s ;
       s2 = y.s ;
-      prep1 = x.prep ;
-      prep2 = y.prep ;
+    --  prep1 = x.prep ;
+    --  prep2 = y.prep ;
       a = y.a
     } ;
 
@@ -67,8 +69,8 @@ concrete ConjunctionRus of Conjunction =
     ConsNP x xs = {
       s1 = \\c => x.s ! c ++ comma ++ xs.s1 ! c ;
       s2 = xs.s2 ;
-      prep1 = \\c => x.prep ! c ++ comma ++ xs.prep1 ! c ;
-      prep2 = xs.prep2 ;
+      --prep1 = \\c => x.prep ! c ++ comma ++ xs.prep1 ! c ;
+      --prep2 = xs.prep2 ;
       a = conjAgr x.a xs.a ;
       anim = conjAnim x.anim xs.anim
     } ;
@@ -76,7 +78,7 @@ concrete ConjunctionRus of Conjunction =
     -- : Conj -> ListNP -> NP ;     -- she or we
     ConjNP conj xs = {
       s = \\c => conj.s1 ++ xs.s1 ! c ++ conj.s2 ++ xs.s2 ! c ;
-      prep = \\c => conj.s1 ++ xs.prep1 ! c ++ conj.s2 ++ xs.prep2 ! c ;
+      --prep = \\c => conj.s1 ++ xs.prep1 ! c ++ conj.s2 ++ xs.prep2 ! c ;
       a = xs.a ; -- TODO: dep. on conj as well?
       anim = xs.anim
     } ;

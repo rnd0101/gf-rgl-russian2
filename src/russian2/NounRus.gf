@@ -27,4 +27,33 @@ lin
   -- : A -> Ord ;
   OrdSuperl a = long_superlative a ;
 
+  -- : Pron -> NP ;
+  UsePron pron = lin NP (pronFormsPronoun pron) ;
+
+  -- : CN -> RS -> CN ;   -- house that John bought
+  RelCN cn rs = {
+    s = \\n,c => cn.s ! n ! c ++ rs.s ! Ind ! Ag (gennum cn.g n) P3 ; -- RS case ignored???
+    g = cn.g ;
+    a = cn.a
+    } ;
+
+  -- : CN -> SC -> CN ;   -- question where she sleeps
+  SentCN cn sc = {
+    s = \\n,c => cn.s ! n ! c ++ sc.s ; -- SC type will change???
+    g = cn.g ;
+    a = cn.a
+    } ;
+
+  -- : CN -> Adv -> CN ;   -- house on the hill
+  AdvCN cn adv = {
+    s = \\n,c => cn.s ! n ! c ++ adv.s ;
+    g = cn.g ;
+    a = cn.a
+    } ;
+
+  -- : CN -> NP ;           -- (beer)
+  MassNP cn = {
+    s = \\c => cn.s ! Sg ! c ;   -- can it be plural-only? eg квасцы
+    a = Ag (gennum cn.g Sg) P3
+  } ;
 }
