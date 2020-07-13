@@ -21,7 +21,6 @@ flags coding=utf8 ; optimize=all ;
     VP = {verb : ResRus.VerbForms ; compl : AgrTable} ; ---- more fields probably needed (adverbials?)
     VPSlash = {verb : ResRus.VerbForms ; compl : AgrTable ; c : ComplementCase} ; ----
 
-    -- AP = ResRus.Adjective ** {isPost : Bool; preferShort : ShortFormPreference} ;  -- TODO:
     AP = ResRus.Adjective ** {isPost : Bool} ;
 
     S = {s : Mood => Str} ;

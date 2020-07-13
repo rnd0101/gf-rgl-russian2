@@ -7,7 +7,7 @@ concrete ConjunctionRus of Conjunction =
 
   lincat
     [Adv] = {s1,s2 : Str} ;
-    [AP] = {s1,s2 : GenNum => Animacy => Case => Str ; isPost : Bool} ;
+    [AP] = {s1,s2 : GenNum => Animacy => Case => Str ; isPost : Bool; preferShort : ShortFormPreference} ;
     [NP] = {s1,s2,prep1,prep2 : Case => Str ; a : Agr} ;
     [S] = {s1,s2 : Mood => Str} ;
     [RS] = {s1,s2 : Mood => Agr => Str ; c : Case} ;
@@ -21,11 +21,13 @@ concrete ConjunctionRus of Conjunction =
 
     -- : AP -> AP -> ListAP ;       -- red, white
     BaseAP x y = twoTable3 GenNum Animacy Case x y
-                  ** {isPost = orB x.isPost y.isPost} ;
+                 ** {isPost = orB x.isPost y.isPost;
+                     preferShort = selectAPForm x.preferShort y.preferShort} ;
 
     -- ConsAP : AP -> ListAP -> ListAP ;   -- red, white, blue
     ConsAP x xs = consrTable3 GenNum Animacy Case comma x xs
-                  ** {isPost = orB x.isPost xs.isPost} ;
+                  ** {isPost = orB x.isPost xs.isPost ;
+                      preferShort = selectAPForm x.preferShort xs.preferShort} ;
 
     -- : S -> S -> ListS ;      -- John walks, Mary runs
     BaseS = twoTable Mood ;
@@ -35,16 +37,15 @@ concrete ConjunctionRus of Conjunction =
 
     -- : RS -> RS -> ListRS ;       -- who walks, whom I know
     BaseRS x y = twoTable2 Mood Agr x y ** {c = y.c} ;
---    BaseRS = twoTable Agr ;
 
     -- : RS -> ListRS -> ListRS ;   -- who walks, whom I know, who is here
     ConsRS xs x = consrTable2 Mood Agr comma xs x ** {c = xs.c} ;
---    ConsRS = consrTable Agr comma ;
 
     ConjAdv = conjunctDistrSS ;
 
+    -- : Conj -> ListAP -> AP ;     -- cold and warm
     ConjAP conj xs = conjunctDistrTable3 GenNum Animacy Case conj xs
-                       ** {isPost = xs.isPost} ;
+                       ** {isPost = xs.isPost; preferShort = xs.preferShort} ;
 
     ConjS conj ss = conjunctDistrTable Mood conj ss ;
 
@@ -102,5 +103,10 @@ concrete ConjunctionRus of Conjunction =
         let a1rec = case a1 of {Ag gn p => {gn=gn; p=p} } in
         let a2rec = case a2 of {Ag gn p => {gn=gn; p=p} } in
         Ag (conjGenNum a1rec.gn a2rec.gn) (conjPerson a1rec.p a2rec.p);
-
+    selectAPForm : ShortFormPreference -> ShortFormPreference -> ShortFormPreference
+      = \sfp1,sfp2 ->
+      case <sfp1,sfp2> of {
+        <PrefShort, PrefShort> => PrefShort ;
+        _ => PrefFull
+        } ;
 }

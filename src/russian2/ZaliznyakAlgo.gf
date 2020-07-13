@@ -514,7 +514,8 @@ oper
 
   immutableAdjectiveCases : Str -> AdjForms
     = \s -> {
-      msnom=s;fsnom=s;nsnom=s;pnom=s;msgen=s;fsgen=s;pgen=s;msdat=s;fsacc=s;msins=s;fsins=s;pins=s;msprep=s;sm=s;sf=s;sn=s;sp=s;comp=[]
+      msnom=s;fsnom=s;nsnom=s;pnom=s;msgen=s;fsgen=s;pgen=s;msdat=s;fsacc=s;msins=s;fsins=s;pins=s;msprep=s;sm=s;sf=s;sn=s;sp=s;comp=[];
+      preferShort=PrefFull
     } ;
 
   makeAdjective : Str -> ZAIndex -> AdjForms
@@ -611,10 +612,11 @@ oper
         pins  = s + aef.pins   ;
         msprep= s + aef.msprep ;
         sm    = sms + aef.sm   ;
-        sf    = sstem + aef.sf     ;
-        sn    = sstem + aef.sn     ;
-        sp    = sstem + aef.sp     ;
-        comp  = comps + aef.comp
+        sf    = sstem + aef.sf ;
+        sn    = sstem + aef.sn ;
+        sp    = sstem + aef.sp ;
+        comp  = comps + aef.comp ;
+        preferShort = aef.preferShort
       } ;
 
   doAlternationsAdj : Str -> AdjForms -> DeclType -> AdjStressSchema -> ZCirc -> AdjForms
@@ -635,12 +637,13 @@ oper
         msins = s + aef.msins  ;
         fsins = s + aef.fsins  ;
         pins  = s + aef.pins   ;
-        msprep= s + aef.msprep;
+        msprep= s + aef.msprep ;
         sm    = sms + aef.sm   ;
-        sf    = sstem + aef.sf     ;
-        sn    = sstem + aef.sn     ;
-        sp    = sstem + aef.sp     ;
-        comp  = comps + aef.comp
+        sf    = sstem + aef.sf ;
+        sn    = sstem + aef.sn ;
+        sp    = sstem + aef.sp ;
+        comp  = comps + aef.comp ;
+        preferShort = aef.preferShort
       } ;
 
   endingsSelectionAdj : DeclType -> AlterType -> AdjStressSchema -> AdjForms
@@ -669,7 +672,8 @@ oper
         sf     = stressSelectionAdj aef1.sf     ss "sf" ;
         sn     = stressSelectionAdj aef1.sn     ss "sn" ;
         sp     = stressSelectionAdj aef1.sp     ss "sp" ;
-        comp   = stressSelectionAdj aef1.comp   ss "comp"
+        comp   = stressSelectionAdj aef1.comp   ss "comp" ;
+        preferShort = PrefFull   -- TODO: this is arbitrary. Make parameter?
     } ;
 
   stressSelectionAdj : EndingSpec -> AdjStressSchema -> Str -> Str

@@ -69,7 +69,7 @@ resource ParamRus = ParamX, CommonX [Temp] ** open Prelude in {
 
     Case     = Nom | Gen | Dat | Acc | Ins | Pre  -- падеж, "малые падежи":
               | Loc | Ptv | VocRus ;  -- "minor cases", usually Loc = Pre, Ptv = Gen, VocRus = Nom
-    -- ShortFormPreference = PrefShort | PrefFull ;
+    ShortFormPreference = PrefShort | PrefFull ;
   oper
     -- GenNum helpers and coercions
     MSg        = GSg Masc ;
@@ -99,6 +99,7 @@ resource ParamRus = ParamX, CommonX [Temp] ** open Prelude in {
       sm, sf, sn, sp,             -- short forms
       comp                        -- comparative variants
       : Str ;
+      preferShort : ShortFormPreference
     } ;
 
     PronForms : Type = {

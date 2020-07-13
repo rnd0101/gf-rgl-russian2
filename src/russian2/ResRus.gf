@@ -178,7 +178,7 @@ oper
 ---------------------------
 -- Adjectives -- Прилагательные
 
-  Adjective : Type = {s : GenNum => Animacy => Case => Str} ;
+  Adjective : Type = {s : GenNum => Animacy => Case => Str; preferShort : ShortFormPreference} ;
 
   noShorts : PronForms -> AdjForms  -- ???
     = \base -> base ** {
@@ -186,7 +186,8 @@ oper
       sf = [] ;
       sn = [] ;
       sp = [] ;
-      comp = []
+      comp = [] ;
+      preferShort = PrefFull
     } ;
 
   immutableAdjForms = immutableAdjectiveCases ;
@@ -281,7 +282,8 @@ oper
         }
       } ;
       g = forms.g ;
-      a = forms.a
+      a = forms.a ;
+      preferShort = forms.preferShort
     } ;
 
   guessAdjectiveForms : Str -> AdjForms
@@ -326,7 +328,8 @@ oper
       sp    = the_most.sp     ++ af.sp    ;
       comp  = the_most.comp   ++ af.comp  ;
       g=af.g ;
-      a=af.a
+      a=af.a ;
+      preferShort = PrefFull
     } ;
 
   makeNFFromAF : AdjForms -> Gender -> Animacy -> NounForms
