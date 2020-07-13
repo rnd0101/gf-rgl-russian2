@@ -7,7 +7,7 @@ concrete ConjunctionRus of Conjunction =
 
   lincat
     [Adv] = {s1,s2 : Str} ;
-    [AP] = {s1,s2 : Number => Gender => Animacy => Case => Str ; isPost : Bool} ;
+    [AP] = {s1,s2 : GenNum => Animacy => Case => Str ; isPost : Bool} ;
     [NP] = {s1,s2,prep1,prep2 : Case => Str ; a : Agr} ;
     [S] = {s1,s2 : Mood => Str} ;
     [RS] = {s1,s2 : Mood => Agr => Str ; c : Case} ;
@@ -20,11 +20,11 @@ concrete ConjunctionRus of Conjunction =
     ConsAdv = consrSS comma ;
 
     -- : AP -> AP -> ListAP ;       -- red, white
-    BaseAP x y = twoTable4 Number Gender Animacy Case x y
+    BaseAP x y = twoTable3 GenNum Animacy Case x y
                   ** {isPost = orB x.isPost y.isPost} ;
 
     -- ConsAP : AP -> ListAP -> ListAP ;   -- red, white, blue
-    ConsAP x xs = consrTable4 Number Gender Animacy Case comma x xs
+    ConsAP x xs = consrTable3 GenNum Animacy Case comma x xs
                   ** {isPost = orB x.isPost xs.isPost} ;
 
     -- : S -> S -> ListS ;      -- John walks, Mary runs
@@ -43,7 +43,7 @@ concrete ConjunctionRus of Conjunction =
 
     ConjAdv = conjunctDistrSS ;
 
-    ConjAP conj xs = conjunctDistrTable4 Number Gender Animacy Case conj xs
+    ConjAP conj xs = conjunctDistrTable3 GenNum Animacy Case conj xs
                        ** {isPost = xs.isPost} ;
 
     ConjS conj ss = conjunctDistrTable Mood conj ss ;

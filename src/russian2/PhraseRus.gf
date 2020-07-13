@@ -4,7 +4,7 @@ lin
     UttS s = {s = s.s ! Ind} ;
     UttAdv adv = adv ;
     UttCN cn = {s = cn.s ! Sg ! Nom} ;
-    UttAP ap = {s = ap.s ! Sg ! Masc ! Animate ! Nom } ;
+    UttAP ap = {s = ap.s ! GSg Masc ! Animate ! Nom } ;
     UttNP np = {s = np.s ! Nom} ;
     UttInterj i = i ;
 

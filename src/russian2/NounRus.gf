@@ -7,7 +7,7 @@ lin
 
   -- : AP -> CN  -> CN ;   -- big house - большой дом
   AdjCN ap cn = {
-    s = \\n,c => preOrPost (notB ap.isPost) (ap.s ! n ! cn.g ! cn.a ! c) (cn.s ! n ! c) ;
+    s = \\n,c => preOrPost (notB ap.isPost) (ap.s ! (gennum cn.g n) ! cn.a ! c) (cn.s ! n ! c) ;
     g = cn.g ;
     a = cn.a
     } ;

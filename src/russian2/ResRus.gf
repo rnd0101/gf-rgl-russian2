@@ -178,7 +178,7 @@ oper
 ---------------------------
 -- Adjectives -- Прилагательные
 
-  Adjective : Type = {s : Number => Gender => Animacy => Case => Str} ;
+  Adjective : Type = {s : GenNum => Animacy => Case => Str} ;
 
   noShorts : PronForms -> AdjForms  -- ???
     = \base -> base ** {
@@ -205,82 +205,78 @@ oper
   adjFormsAdjective : AdjForms -> Adjective
     = \forms -> {
       s = table {
-        Sg => table {
-          Fem => table {
-            (Inanimate|Animate) => table {
-              Nom => forms.fsnom ;
-              Gen => forms.fsgen ;
-              Dat => forms.fsgen ;
-              Acc => forms.fsacc ;
-              Ins => forms.fsins ;
-              Pre => forms.fsgen ;
-              Loc => forms.fsgen ;
-              Ptv => forms.fsgen ;
-              VocRus => forms.fsnom
-            }
-          } ;
-          Masc => table {
-            Inanimate => table {
-              Nom => forms.msnom ;
-              Gen => forms.msgen ;
-              Dat => forms.msdat ;
-              Acc => forms.msnom ;
-              Ins => forms.msins ;
-              Pre => forms.msprep ;
-              Loc => forms.msprep ;
-              Ptv => forms.msgen ;
-              VocRus => forms.msnom
-            } ;
-            Animate => table {
-              Nom => forms.msnom ;
-              Gen => forms.msgen ;
-              Dat => forms.msdat ;
-              Acc => forms.msgen ;
-              Ins => forms.msins ;
-              Pre => forms.msprep ;
-              Loc => forms.msprep ;
-              Ptv => forms.msgen ;
-              VocRus => forms.msnom
-            }
-          } ;
-          Neut => table {
-            (Inanimate | Animate) => table {
-              Nom => forms.nsnom ;
-              Gen => forms.msgen ;
-              Dat => forms.msdat ;
-              Acc => forms.nsnom ;
-              Ins => forms.msins ;
-              Pre => forms.msprep ;
-              Loc => forms.msprep ;
-              Ptv => forms.msgen ;
-              VocRus => forms.nsnom
-            }
+        GSg Fem => table {
+          (Inanimate|Animate) => table {
+            Nom => forms.fsnom ;
+            Gen => forms.fsgen ;
+            Dat => forms.fsgen ;
+            Acc => forms.fsacc ;
+            Ins => forms.fsins ;
+            Pre => forms.fsgen ;
+            Loc => forms.fsgen ;
+            Ptv => forms.fsgen ;
+            VocRus => forms.fsnom
           }
         } ;
-        Pl => table {
-          (Fem|Masc|Neut) => table {
-            Inanimate => table {
-              Nom => forms.pnom ;
-              Gen => forms.pgen ;
-              Dat => forms.msins ;
-              Acc => forms.pnom ;
-              Ins => forms.pins ;
-              Pre => forms.pgen ;
-              Loc => forms.pgen ;
-              Ptv => forms.pgen ;
-              VocRus => forms.pnom
-            } ;
-            Animate => table {
-              Nom => forms.pnom ;
-              Gen => forms.pgen ;
-              Dat => forms.msins ;
-              Acc => forms.pgen ;
-              Ins => forms.pins ;
-              Pre => forms.pgen ;
-              Loc => forms.pgen ;
-              Ptv => forms.pgen ;
-              VocRus => forms.pnom
-            }
+        GSg Masc => table {
+          Inanimate => table {
+            Nom => forms.msnom ;
+            Gen => forms.msgen ;
+            Dat => forms.msdat ;
+            Acc => forms.msnom ;
+            Ins => forms.msins ;
+            Pre => forms.msprep ;
+            Loc => forms.msprep ;
+            Ptv => forms.msgen ;
+            VocRus => forms.msnom
+          } ;
+          Animate => table {
+            Nom => forms.msnom ;
+            Gen => forms.msgen ;
+            Dat => forms.msdat ;
+            Acc => forms.msgen ;
+            Ins => forms.msins ;
+            Pre => forms.msprep ;
+            Loc => forms.msprep ;
+            Ptv => forms.msgen ;
+            VocRus => forms.msnom
+          }
+        } ;
+        GSg Neut => table {
+          (Inanimate | Animate) => table {
+            Nom => forms.nsnom ;
+            Gen => forms.msgen ;
+            Dat => forms.msdat ;
+            Acc => forms.nsnom ;
+            Ins => forms.msins ;
+            Pre => forms.msprep ;
+            Loc => forms.msprep ;
+            Ptv => forms.msgen ;
+            VocRus => forms.nsnom
+          }
+        } ;
+        GPl => table {
+          Inanimate => table {
+            Nom => forms.pnom ;
+            Gen => forms.pgen ;
+            Dat => forms.msins ;
+            Acc => forms.pnom ;
+            Ins => forms.pins ;
+            Pre => forms.pgen ;
+            Loc => forms.pgen ;
+            Ptv => forms.pgen ;
+            VocRus => forms.pnom
+          } ;
+          Animate => table {
+            Nom => forms.pnom ;
+            Gen => forms.pgen ;
+            Dat => forms.msins ;
+            Acc => forms.pgen ;
+            Ins => forms.pins ;
+            Pre => forms.pgen ;
+            Loc => forms.pgen ;
+            Ptv => forms.pgen ;
+            VocRus => forms.pnom
           }
         }
       } ;
