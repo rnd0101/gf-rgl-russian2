@@ -679,17 +679,20 @@ oper
       a = forms.a
     } ;
 
-  sam: Pronoun = {
-    s = table {
-      (Nom | VocRus) => "сам" ;  -- actually, missing!
-      (Gen | Ptv)  => "себя" ;
-      Dat => "себе" ;
-      Acc => "себя" ;
-      Ins => "собой" ;
-      (Pre | Loc) => "себе"
-      } ;
-    a = Ag (GSg Masc) P3 ;   -- also Fem, Neut ???
-    } ;
+  doReflexivePron : Str -> Agr -> PronounForms
+    -- Nominative is not strictly correct, but also usually not needed
+    = \nom,a -> {nom=nom ; gen="себя" ; dat="себе" ; acc="себя" ; ins="собой" ; prep="себе" ; a=a} ;
+
+  reflexivePron : Agr -> PronounForms
+    = \a -> {a = a} **
+      case a of {
+        Ag (GSg Masc) _ => doReflexivePron "сам" a;
+        Ag (GSg Fem) _ => doReflexivePron "сама" a;
+        Ag (GSg Neut) _ => doReflexivePron "само" a;
+        Ag GPl _ => doReflexivePron "сами" a
+        };
+
+  sam = pronFormsPronoun (reflexivePron (Ag (GSg Masc) P3)) ;
 
   all_Pron = pronoun2AstB "весь" ;
   only_Pron = guessAdjectiveForms "единственный" ;
