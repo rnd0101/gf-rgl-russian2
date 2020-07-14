@@ -7,8 +7,10 @@ concrete ConjunctionRus of Conjunction =
 
   lincat
     [Adv] = {s1,s2 : Str} ;
-    [AP] = {s1,s2 : GenNum => Animacy => Case => Str ; isPost : Bool; preferShort : ShortFormPreference} ;
-    [NP] = {s1,s2  : Case => Str ;
+    [AP] = {s1,s2 : AdjTable ;
+      isPost : Bool;
+      preferShort : ShortFormPreference} ;
+    [NP] = {s1,s2 : Case => Str ;
            -- prep1,prep2 : Case => Str ;
            a : Agr} ;
     [S] = {s1,s2 : Mood => Str} ;

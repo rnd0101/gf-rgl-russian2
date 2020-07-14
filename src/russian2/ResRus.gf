@@ -178,7 +178,12 @@ oper
 ---------------------------
 -- Adjectives -- Прилагательные
 
-  Adjective : Type = {s : GenNum => Animacy => Case => Str; preferShort : ShortFormPreference} ;
+  AdjTable = GenNum => Animacy => Case => Str ;
+
+  Adjective : Type = {
+    s : AdjTable ;
+    preferShort : ShortFormPreference
+    } ;
 
   noShorts : PronForms -> AdjForms  -- ???
     = \base -> base ** {
@@ -521,8 +526,101 @@ oper
 
   PronounForms : Type = {
     nom, gen, dat, acc, ins, prep : Str ;
+    poss : PronForms ;
     a : Agr
   } ;
+
+  PronTable = GenNum => Animacy => Case => Str ;
+
+  nullPron : Pronoun = {
+    s=\\cas => [] ;
+    poss=\\gn,a,cas => [] ;
+    a=Ag (GSg Neut) P3
+    } ;
+
+  mkPronTable : PronForms -> PronTable
+    = \forms -> table {
+      GSg Fem => table {
+        (Inanimate|Animate) => table {
+          Nom => forms.fsnom ;
+          Gen => forms.fsgen ;
+          Dat => forms.fsgen ;
+          Acc => forms.fsacc ;
+          Ins => forms.fsins ;
+          Pre => forms.fsgen ;
+          Loc => forms.fsgen ;
+          Ptv => forms.fsgen ;
+          VocRus => forms.fsnom
+        }
+      } ;
+      GSg Masc => table {
+        Inanimate => table {
+          Nom => forms.msnom ;
+          Gen => forms.msgen ;
+          Dat => forms.msdat ;
+          Acc => forms.msnom ;
+          Ins => forms.msins ;
+          Pre => forms.msprep ;
+          Loc => forms.msprep ;
+          Ptv => forms.msgen ;
+          VocRus => forms.msnom
+        } ;
+        Animate => table {
+          Nom => forms.msnom ;
+          Gen => forms.msgen ;
+          Dat => forms.msdat ;
+          Acc => forms.msgen ;
+          Ins => forms.msins ;
+          Pre => forms.msprep ;
+          Loc => forms.msprep ;
+          Ptv => forms.msgen ;
+          VocRus => forms.msnom
+        }
+      } ;
+      GSg Neut => table {
+        (Inanimate | Animate) => table {
+          Nom => forms.nsnom ;
+          Gen => forms.msgen ;
+          Dat => forms.msdat ;
+          Acc => forms.nsnom ;
+          Ins => forms.msins ;
+          Pre => forms.msprep ;
+          Loc => forms.msprep ;
+          Ptv => forms.msgen ;
+          VocRus => forms.nsnom
+        }
+      } ;
+      GPl => table {
+        Inanimate => table {
+          Nom => forms.pnom ;
+          Gen => forms.pgen ;
+          Dat => forms.msins ;
+          Acc => forms.pnom ;
+          Ins => forms.pins ;
+          Pre => forms.pgen ;
+          Loc => forms.pgen ;
+          Ptv => forms.pgen ;
+          VocRus => forms.pnom
+        } ;
+        Animate => table {
+          Nom => forms.pnom ;
+          Gen => forms.pgen ;
+          Dat => forms.msins ;
+          Acc => forms.pgen ;
+          Ins => forms.pins ;
+          Pre => forms.pgen ;
+          Loc => forms.pgen ;
+          Ptv => forms.pgen ;
+          VocRus => forms.pnom
+        }
+      }
+    } ;
+
+  Pronoun = {
+    s : Case => Str ;
+    poss : PronTable ;
+    a : Agr
+    } ;
 
   -- From [RUSGRAM]:
   -- personal      -- личные
@@ -546,20 +644,23 @@ oper
           nom, voc = "я" ;
           gen, acc, ptv = "меня" ;
           dat, prep, loc = "мне" ;
-          ins = variants {"мной" ; "мною"}
+          ins = variants {"мной" ; "мною"} ;
+          poss = doPossessivePronSgP1P2 "мо"
         } ;
         Ag (GSg _) P2 => {
           nom, voc = "ты" ;
           gen, acc, ptv = "тебя" ;
           dat, prep, loc = "тебе" ;
-          ins = variants {"тобой" ; "тобою"}
+          ins = variants {"тобой" ; "тобою"} ;
+          poss = doPossessivePronSgP1P2 "тво"
         } ;
         Ag (GSg Masc) P3 => {
           nom, voc = "он" ;
           gen, acc, ptv = "его" ;   -- TODO: n
           dat = "ему" ;   -- TODO: n
           ins = "им" ;   -- TODO: n
-          prep, loc = "нём"
+          prep, loc = "нём" ;
+          poss = doPossessivePronP3 "его"
         } ;
         Ag (GSg Fem) P3 => {
           nom, voc = "она" ;
@@ -567,35 +668,40 @@ oper
           dat = "ей" ;                     -- TODO: n
           acc = "её" ;           -- TODO: n
           ins = variants { "ей"; "ею" } ;   -- TODO: n
-          prep, loc = "ней"
+          prep, loc = "ней" ;
+          poss = doPossessivePronP3 "её"
         } ;
         Ag (GSg Neut) P3 => {  -- TODO: same as Masc, how to combine?
           nom, voc = "оно" ;
           gen, acc, ptv = "его" ;   -- TODO: n
           dat = "ему" ;   -- TODO: n
           ins = "им" ;   -- TODO: n
-          prep, loc = "нём"
+          prep, loc = "нём" ;
+          poss = doPossessivePronP3 "его"
         } ;
         Ag GPl P1 => {
           nom, voc = "мы" ;
           gen, acc, ptv = "нас" ;
           dat = "нам" ;
           ins = "нами" ;
-          prep, loc = "нас"
+          prep, loc = "нас" ;
+          poss = doPossessivePronPlP1P2 "наш"
         } ;
         Ag GPl P2 => {
           nom, voc = "вы" ;
           gen, acc, ptv = "вас" ;
           dat = "вам" ;
           ins = "вами" ;
-          prep, loc = "вас"
+          prep, loc = "вас" ;
+          poss = doPossessivePronPlP1P2 "ваш"
         } ;
         Ag GPl P3 => {
           nom, voc = "они" ;
           gen, acc, ptv = "их" ;   -- TODO: n
           dat = "им" ;   -- TODO: n
           ins = "ими" ;   -- TODO: n
-          prep, loc = "них"
+          prep, loc = "них" ;
+          poss = doPossessivePronP3 "их"
         }
       } ;
 
@@ -652,20 +758,6 @@ oper
       msprep = ego
     } ;
 
-  possessivePron : Agr -> PronForms
-    = \a -> {a = a} **
-      case a of {
-        Ag (GSg _) P1 => doPossessivePronSgP1P2 "мо" ;
-        Ag (GSg _) P2 => doPossessivePronSgP1P2 "тво" ;
-        Ag (GSg Fem) P3 => doPossessivePronP3 "её" ;
-        Ag (GSg _) P3 => doPossessivePronP3 "его" ;
-        Ag GPl P1 => doPossessivePronPlP1P2 "наш" ;
-        Ag GPl P2 => doPossessivePronPlP1P2 "ваш" ;
-        Ag GPl P3 => doPossessivePronP3 "их"    -- TODO: "ихний" variant
-      } ;
-
-  Pronoun = { s : Case => Str ; a : Agr } ;
-
   pronFormsPronoun : PronounForms -> Pronoun
     = \forms -> {
       s = table {
@@ -676,12 +768,16 @@ oper
         Ins            => forms.ins ;
         (Pre | Loc)    => forms.prep
       } ;
+      poss = nullPron.poss ;
       a = forms.a
     } ;
 
   doReflexivePron : Str -> Agr -> PronounForms
     -- Nominative is not strictly correct, but also usually not needed
-    = \nom,a -> {nom=nom ; gen="себя" ; dat="себе" ; acc="себя" ; ins="собой" ; prep="себе" ; a=a} ;
+    = \nom,a -> {
+      nom=nom ; gen="себя" ; dat="себе" ; acc="себя" ; ins="собой" ; prep="себе" ;
+      poss=doPossessivePronSgP1P2 "сво" ;  -- "myself's" to "my own" this may be too artificially put here...
+      a=a} ;
 
   reflexivePron : Agr -> PronounForms
     = \a -> {a = a} **

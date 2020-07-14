@@ -55,5 +55,11 @@ lin
   MassNP cn = {
     s = \\c => cn.s ! Sg ! c ;   -- can it be plural-only? eg квасцы
     a = Ag (gennum cn.g Sg) P3
-  } ;
+    } ;
+
+  -- : Pron -> Quant ;    -- my (house)
+  PossPron pron = {
+    s=mkPronTable pron.poss ;
+    preferShort=PrefFull
+    } ;
 }
