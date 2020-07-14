@@ -22,7 +22,11 @@ lin
   -- : Predet -> NP -> NP ; -- only the man
   PredetNP predet np = np ** {s=\\cas => predet.s ! (agrGenNum np.a) ! Inanimate ! cas ++ np.s ! cas} ;
 
-  -- TODO: PPartNP : NP -> V2  -> NP ;    -- the man seen
+  -- : NP -> V2  -> NP ;    -- the man seen
+  PPartNP np v2 = np ** {
+    s = \\cas => np.s ! cas ++ (shortPastPassPart v2 (agrGenNum np.a))
+    } ;
+
   -- TODO: AdvNP   : NP -> Adv -> NP ;    -- Paris today
   -- TODO: ExtAdvNP: NP -> Adv -> NP ;    -- boys, such as ..
   -- TODO: RelNP   : NP -> RS  -> NP ;    -- Paris, which is here

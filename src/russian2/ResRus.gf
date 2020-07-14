@@ -415,7 +415,9 @@ oper
     prsg1, prsg2, prsg3, prpl1, prpl2, prpl3,
     futsg1, futsg2, futsg3, futpl1, futpl2, futpl3,
     psgm, psgf, psgn, ppl,
-    isg2, ipl1, ipl2 : Str ;
+    isg2, ipl1, ipl2,
+    pppsm, pppsf, pppsn, pppsp
+    : Str ;
     asp : Aspect ;
     refl : Reflexivity ;
     tran : Transitivity
@@ -454,6 +456,10 @@ oper
         isg2=stem   + "й";
         ipl1=stem   + "емте";    -- ???
         ipl2=stem   + "йте";
+        pppsm=stem   + "н";
+        pppsf=stem   + "на";
+        pppsn=stem   + "но";
+        pppsp=stem   + "ны";
         asp=Imperfective;
         refl=r;
         tran=case r of {Reflexive => Intransitive; NonReflexive => Transitive };   -- TODO: fix non-refl
@@ -481,6 +487,10 @@ oper
       isg2="ся";
       ipl1="сь";
       ipl2="сь";
+      pppsm="";
+      pppsf="";
+      pppsn="";
+      pppsp="";
       asp=Imperfective; -- these 3 are not-relevant here
       refl=Reflexive;
       tran=Intransitive
@@ -509,17 +519,30 @@ oper
       isg2=vf.isg2 ++ BIND ++ post.isg2 ;
       ipl1=vf.ipl1 ++ BIND ++ post.ipl1 ;
       ipl2=vf.ipl2 ++ BIND ++ post.ipl2 ;
+      pppsm=vf.pppsm;
+      pppsf=vf.pppsf;
+      pppsn=vf.pppsn;
+      pppsp=vf.pppsp;
       asp=vf.asp ;
       refl=vf.refl ;
       tran=vf.tran
-    } ;
+      } ;
 
   passivate : VerbForms -> VerbForms
     = \vf ->
       case vf.refl of {
         Reflexive => vf ;
         NonReflexive => passivateNonReflexive vf
-    } ;
+      } ;
+
+  shortPastPassPart : VerbForms -> GenNum -> Str
+    = \vf,gn ->
+      case gn of {
+        GSg Fem => vf.pppsf ;
+        GSg Masc => vf.pppsm ;
+        GSg Neut => vf.pppsn ;
+        GPl => vf.pppsf
+        } ;
 
 ---------------------------
 -- Pronouns -- Местоимения
