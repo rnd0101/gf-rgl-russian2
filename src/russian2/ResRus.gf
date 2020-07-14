@@ -39,7 +39,7 @@ oper
   Noun : Type = {
     s : Number => Case => Str ;
     g : Gender ;
-    a : Animacy
+    anim : Animacy
   } ;
 
   Noun2Forms = NounForms ** {c2 : ComplementCase} ;
@@ -74,7 +74,7 @@ oper
         }
       } ;
       g = forms.g ;
-      a = forms.a
+      anim = forms.a
     } ;
 
   guessNounForms : Str -> NounForms

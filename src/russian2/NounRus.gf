@@ -5,12 +5,8 @@ lin
   NumSg = {s = \\_,_,_ => [] ; size = Num1 } ;
   NumPl = {s = \\_,_,_ => [] ; size = NumAll } ;
 
-  -- : AP -> CN  -> CN ;   -- big house - большой дом
-  AdjCN ap cn = {
-    s = \\n,c => preOrPost (notB ap.isPost) (ap.s ! (gennum cn.g n) ! cn.a ! c) (cn.s ! n ! c) ;
-    g = cn.g ;
-    a = cn.a
-    } ;
+  -- : AP -> CN -> CN ;   -- big house - большой дом
+  AdjCN ap cn = cn ** {s = \\n,c => preOrPost (notB ap.isPost) (ap.s ! (gennum cn.g n) ! cn.anim ! c) (cn.s ! n ! c)} ;
 
   -- : N -> CN
   UseN n = nounFormsNoun n ;
@@ -31,25 +27,13 @@ lin
   UsePron pron = lin NP (pronFormsPronoun pron) ;
 
   -- : CN -> RS -> CN ;   -- house that John bought
-  RelCN cn rs = {
-    s = \\n,c => cn.s ! n ! c ++ rs.s ! Ind ! Ag (gennum cn.g n) P3 ; -- RS case ignored???
-    g = cn.g ;
-    a = cn.a
-    } ;
+  RelCN cn rs = cn ** {s = \\n,c => cn.s ! n ! c ++ rs.s ! Ind ! Ag (gennum cn.g n) P3}; -- RS case ignored???
 
   -- : CN -> SC -> CN ;   -- question where she sleeps
-  SentCN cn sc = {
-    s = \\n,c => cn.s ! n ! c ++ sc.s ; -- SC type will change???
-    g = cn.g ;
-    a = cn.a
-    } ;
+  SentCN cn sc = cn ** {s = \\n,c => cn.s ! n ! c ++ sc.s}; -- SC type will change???
 
   -- : CN -> Adv -> CN ;   -- house on the hill
-  AdvCN cn adv = {
-    s = \\n,c => cn.s ! n ! c ++ adv.s ;
-    g = cn.g ;
-    a = cn.a
-    } ;
+  AdvCN cn adv = cn ** {s = \\n,c => cn.s ! n ! c ++ adv.s};
 
   -- : CN -> NP ;           -- (beer)
   MassNP cn = {
@@ -66,6 +50,14 @@ lin
   -- : Det -> NP ;        -- these five
   DetNP det = {
     s=\\c => det.s ! det.g ! Inanimate ! c ;
-    a=Ag (gennum det.g (numSizeNumber det.size)) P3 ;
+    a=Ag (gennum det.g (numSizeNumber det.size)) P3
     } ;
+
+  -- : Det -> CN -> NP ;   -- the man
+  DetCN det cn =
+    let n = numSizeNumber det.size in {
+      s=\\cas => det.s ! cn.g ! cn.anim ! cas ++ cn.s ! n ! cas ;
+      a=Ag (gennum det.g n) P3
+      } ;
+
 }
