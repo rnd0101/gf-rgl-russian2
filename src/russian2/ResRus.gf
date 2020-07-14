@@ -157,9 +157,11 @@ oper
     = \nf -> nf ;
 
   Determiner : Type = {  -- определяемое слово
-    s : Gender => Animacy => Case => Str ;
+    s : DetTable ;
+    g : Gender ;  -- is this enough? Is noGender case needed?
+    c : Case ;
     size : NumSize
-  } ;
+    } ;
 
   mkFun : NounForms -> ComplementCase -> Noun2Forms = \f, p -> f ** {c2 = p} ;
   mkFun2 : NounForms -> ComplementCase -> ComplementCase -> Noun3Forms = \f, p2, p3 -> f ** {c2=p2; c3=p3} ;
@@ -808,16 +810,27 @@ oper
 --------------------------------
 -- combining nouns with numerals
 
-param
-  NumSize = Num1 | NumAll | Num2_4 | Num5 ;   -- Num1 - Sg, NumAll - Pl, Num2_4 - "Dual"
+oper
+  DetTable = Gender => Animacy => Case => Str ;
+
+  NumDet : Type = {  -- определяемое слово
+    s : DetTable ;
+    size : NumSize
+    } ;
+
 
 -- TODO From po-file Forms:
 -- (n%10==1 && n%100!=11 ? Num1 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? Num2_4 : Num5 );
-
--- oper
 --   numSizeForm : (Number => Case => Str) -> NumSize -> Case -> Str ;  -- TODO:
 --   numSizeAgr : Gender -> NumSize -> Person -> Agr ; -- TODO
---   numSizeNumber : NumSize -> Number ; -- TODO
+
+  numSizeNumber : NumSize -> Number
+    = \ns -> case ns of {
+      Num1 => Sg ;
+      NumAll => Pl ;
+      Num2_4 => Pl ;
+      Num5 => Pl
+    } ;
 
 oper -- TODO:
   ComplementCase : Type = {s : Str ; c : Case ; hasPrep : Bool} ;

@@ -1,8 +1,6 @@
 concrete CatRus of Cat = CommonX ** open ResRus, Prelude in {
 flags coding=utf8 ; optimize=all ;
   lincat
-    Num, Numeral, Card, Digits = Determiner ;
-
     N, PN = ResRus.NounForms ;
     N2 = ResRus.Noun2Forms ;
     N3 = ResRus.Noun3Forms ;
@@ -30,6 +28,10 @@ flags coding=utf8 ; optimize=all ;
     Cl = {subj,compl : Str ; verb : VerbForms ; a : Agr} ;
     Comp = {s : AgrTable} ;
 
+    Det = Determiner ;
+    Predet, Quant = ResRus.Adjective ;
+    Num, Numeral, Card, Digits = NumDet ;
+
     -- TODO: below copy-paste, sort out (eg, clitics are not needed?)
 
     QS  = {s : Str} ; ---- TODO: indirect questions
@@ -38,9 +40,6 @@ flags coding=utf8 ; optimize=all ;
     RS  = {s : Mood => Agr => Str ; c : Case} ;
     RCl = {subj,compl : AgrTable ; verb : VerbForms} ; ---- RAgr with composite RP
     RP  = AdjForms ;
-
-    Det = Determiner ; -- {s : Gender => Case => Str ; size : NumSize} ; -- can contain a numeral, therefore NumSize
-    Predet, Quant = ResRus.Adjective ;
 
     Prep = ResRus.ComplementCase ; -- {s : Str ; c : Case ; hasPrep : Bool} ;
     Conj = {s1,s2 : Str ; n : Number} ;

@@ -63,6 +63,7 @@ resource ParamRus = ParamX, CommonX [Temp] ** open Prelude in {
     Mood          = Infinitive | Sbjv | Imperative | Ind ;  -- SBJV and COND will be treated as same for now
 
     GenNum   = GSg Gender | GPl ; -- The plural never makes a gender distinction
+    NumSize  = Num1 | NumAll | Num2_4 | Num5 ;   -- Num1 - Sg, NumAll - Pl, Num2_4 - "Dual"
     Agr      = Ag GenNum Person ;
 
     Case     = Nom | Gen | Dat | Acc | Ins | Pre  -- падеж, "малые падежи":

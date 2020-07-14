@@ -1,4 +1,4 @@
-concrete NounRus of Noun = CatRus ** open ResRus, Prelude in {
+concrete NounRus of Noun = CatRus ** open ResRus, ParamRus, Prelude in {
 flags coding=utf8 ; optimize=all ;
 
 lin
@@ -61,5 +61,11 @@ lin
   PossPron pron = {
     s=mkPronTable pron.poss ;
     preferShort=PrefFull
+    } ;
+
+  -- : Det -> NP ;        -- these five
+  DetNP det = {
+    s=\\c => det.s ! det.g ! Inanimate ! c ;
+    a=Ag (gennum det.g (numSizeNumber det.size)) P3 ;
     } ;
 }

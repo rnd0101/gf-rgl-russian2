@@ -38,22 +38,27 @@ lin
 
   every_Det = {
     s = \\g => (adjFormsAdjective (guessAdjectiveForms "каждый")).s ! GSg g;
---  n = Sg ; g = PNoGen ; c = Nom ;
+    g = Masc ;
+    c = Nom ;
     size = Num1 ;
   } ;
   someSg_Det   = {
     s = \\g => (adjFormsAdjective (guessAdjectiveForms "некоторый")).s ! GSg g;
---  n = Sg ; g = PNoGen ; c = Nom ;
+    g = Masc ;
+    c = Nom ;
     size = Num1 ;
   } ;
   somePl_Det = {
     s = \\g => (adjFormsAdjective (guessAdjectiveForms "некоторый")).s ! GPl;
-    size = Num1 ;
+    g = Masc ;
+    c = Nom ;
+    size = NumAll ;
   } ;
 
   few_Det = { -- numeral! TODO: мало ? немного ?
     s = \\g => (adjFormsAdjective (guessAdjectiveForms "немногий")).s ! GSg g;
---  n = Sg ; g = PNoGen ; c = Nom ;
+    g = Masc ;
+    c = Nom ;
     size = Num5 ;
   } ;
 
