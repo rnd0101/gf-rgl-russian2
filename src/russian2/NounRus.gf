@@ -13,12 +13,15 @@ lin
       a=Ag (gennum det.g n) P3
       } ;
 
-  -- TODO: UsePN   : PN -> NP ;          -- John
+  -- : PN -> NP ;          -- John
+  UsePN pn = {s=\\cas => (nounFormsNoun pn).s ! Sg ! cas ; a=Ag (gennum pn.g Sg) P3} ;   -- Does NP need animacy?
 
   -- : Pron -> NP ;
   UsePron pron = lin NP (pronFormsPronoun pron) ;
 
-  -- TODO: PredetNP : Predet -> NP -> NP ; -- only the man
+  -- : Predet -> NP -> NP ; -- only the man
+  PredetNP predet np = np ** {s=\\cas => predet.s ! (agrGenNum np.a) ! Inanimate ! cas ++ np.s ! cas} ;
+
   -- TODO: PPartNP : NP -> V2  -> NP ;    -- the man seen
   -- TODO: AdvNP   : NP -> Adv -> NP ;    -- Paris today
   -- TODO: ExtAdvNP: NP -> Adv -> NP ;    -- boys, such as ..
@@ -48,10 +51,7 @@ lin
   OrdSuperl a = long_superlative a ;
 
   -- : Pron -> Quant ;    -- my (house)
-  PossPron pron = {
-    s=mkPronTable pron.poss ;
-    preferShort=PrefFull
-    } ;
+  PossPron pron = {s=mkPronTable pron.poss ; preferShort=PrefFull} ;
 
 ---------------
 -- Common nouns
@@ -82,7 +82,8 @@ lin
 
 -------------
 -- Apposition
-  -- TODO:    ApposCN : CN -> NP -> CN ;    -- city Paris (, numbers x and y)
+  -- : CN -> NP -> CN ;    -- city Paris (, numbers x and y)
+  ApposCN cn np = cn ** {s=\\n,cas => cn.s ! n ! cas ++ np.s ! cas} ;
 
 --------------------------------------
 -- Possessive and partitive constructs
@@ -92,7 +93,7 @@ lin
     s=\\n,cas => np.s ! Gen ++ cn.s ! n ! cas ;   -- TODO: possessive pronouns P1, P2
     } ;
 
-  -- TODO: PartNP  : CN -> NP -> CN ;     -- glass of wine - стакан чаю (чая)
+  -- : CN -> NP -> CN ;     -- glass of wine - стакан чаю (чая)
   PartNP cn np = cn ** {
     s=\\n,cas => cn.s ! n ! cas ++ np.s ! Ptv ;   -- also Gen
     } ;
