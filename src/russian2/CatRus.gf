@@ -67,5 +67,6 @@ flags coding=utf8 ; optimize=all ;
     A2 = \s -> case s.preferShort of {PrefShort => s.sm ; _ => s.msnom} ++ s.c.s ;  -- ?
     V = \s -> s.inf ;
     V2 = \s -> s.inf ;
+    Ord = \s -> s.nsnom ;
 
 }
