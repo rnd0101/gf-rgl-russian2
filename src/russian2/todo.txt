@@ -1,0 +1,6 @@
+# Some problematic places
+
+> l (ComparAdvAdj less_CAdv dry_A (DetNP few_Det))
+менее сухо чем немногие
+
+(should it be менее сухо чем немного? what is the idea of few_Det?)

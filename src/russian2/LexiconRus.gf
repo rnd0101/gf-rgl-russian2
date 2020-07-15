@@ -137,7 +137,7 @@ lin
   meat_N = mkN "мясо" neuter inanimate "1c" ;
   milk_N = mkN "молоко" neuter inanimate "3d(1)" ;
   moon_N = mkN "луна" ;
-  mother_N2 = (mkN2plus (mkN2 "матерь" feminine animate "8e" nullPrep)) ** {snom="мать";sacc="мать"} ;
+  mother_N2 = (mkN2plus (mkN2 "матерь" feminine animate "8e" nullPrep)) ** {snom="мать";sacc="мать";svoc="мать";} ;
   mountain_N = mkN "гора" ;
   mouth_N = (mkNplus (mkN "рот" masculine inanimate "1b")) ** {sloc="рту"} ;
   music_N = mkN "музыка" ;
