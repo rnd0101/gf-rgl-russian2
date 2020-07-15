@@ -115,5 +115,5 @@ resource ParamRus = ParamX, CommonX [Temp] ** open Prelude in {
     } ;
 
     ConjType     = Predef.Ints 16 ;        -- Conjugation type
-
+    TempParts = {p1: Str; p2: Str} ;
 }

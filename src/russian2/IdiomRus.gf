@@ -8,6 +8,8 @@ lin
   ImpersCl vp = {subj="" ; compl="" ; verb=vp.verb ; a=Ag (GSg Neut) P3 } ;
 
   -- TODO: GenericCl : VP -> Cl ;        -- one sleeps
+  GenericCl vp = {subj="ты" ; compl="" ; verb=vp.verb ; a=Ag (GSg Masc) P2 } ;
+
   -- TODO: CleftNP   : NP  -> RS -> Cl ; -- it is I who did it
   -- TODO: CleftAdv  : Adv -> S  -> Cl ; -- it is here she slept
 

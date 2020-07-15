@@ -173,9 +173,55 @@ oper
       _ => c.s  -- TODO: implement
     } ;
 
-  verbAgr : VerbForms -> Mood -> Tense -> Agr -> Polarity -> Str
+  verbPastAgree : VerbForms -> Agr -> Str -> TempParts
+    = \vf,a,after -> <"", case a of {
+      Ag (GSg Fem) _ => vf.psgf ++ after ;
+      Ag (GSg Masc) _ => vf.psgm ++ after ;
+      Ag (GSg Neut) _ => vf.psgn ++ after ;
+      Ag GPl _ => vf.ppl ++ after
+    }> ;
+
+  verbPresAgree : VerbForms -> Agr -> Str -> TempParts
+    = \vf,a,after -> <"", case a of {
+      Ag (GSg _) P1 => vf.prsg1 ++ after ;
+      Ag (GSg _) P2 => vf.prsg2 ++ after ;
+      Ag (GSg _) P3 => vf.prsg3 ++ after ;
+      Ag GPl P1 => vf.prpl1 ++ after ;
+      Ag GPl P2 => vf.prpl2 ++ after ;
+      Ag GPl P3 => vf.prpl3 ++ after
+    }> ;
+
+  verbFutAgree : VerbForms -> Agr -> Str -> TempParts
+    = \vf,a,after -> <"", case a of {
+      Ag (GSg _) P1 => vf.futsg1 ++ after ;
+      Ag (GSg _) P2 => vf.futsg2 ++ after ;
+      Ag (GSg _) P3 => vf.futsg3 ++ after ;
+      Ag GPl P1 => vf.futpl1 ++ after ;
+      Ag GPl P2 => vf.futpl2 ++ after ;
+      Ag GPl P3 => vf.futpl3 ++ after
+    }> ;
+
+  verbImperativeAgree : VerbForms -> Agr -> Str -> TempParts
+    = \vf,a,after -> case a of {
+      Ag (GSg _) P1 => <"давайте", vf.inf ++ after> ;  -- ?
+      Ag (GSg _) P2 => <"", vf.isg2 ++ after> ;
+      Ag (GSg _) P3 => <"пусть", vf.futsg3 ++ after> ;  -- ?
+      Ag GPl P1 => <"", vf.ipl1 ++ after> ;
+      Ag GPl P2 => <"", vf.ipl2 ++ after> ;
+      Ag GPl P3 => <"пусть", vf.futpl3 ++ after>
+    } ;
+
+  verbAgr : VerbForms -> Mood -> Tense -> Agr -> Polarity -> TempParts
     = \vf,m,temp,a,pol ->
-      "" ;  -- TODO: Implement
+      case <m, temp> of {
+        <Infinitive, _> => <"",vf.inf> ;
+        <Ind, Past> => verbPastAgree vf a "";
+        <Ind, Pres> => verbPresAgree vf a "";
+        <Ind, Fut> => verbFutAgree vf a "";
+        <Ind, Cond> => verbPastAgree vf a "бы" ;
+        <Sbjv, _> => verbPastAgree vf a "бы" ;
+        <Imperative, _> => verbImperativeAgree vf a ""
+      } ;
 
 ---------------------------
 -- Adjectives -- Прилагательные

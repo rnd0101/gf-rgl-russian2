@@ -7,10 +7,14 @@ lin
   -- : Temp -> Pol -> Cl -> S ;   -- she had not slept - она не спала
   UseCl temp pol cl = {
     s = table {
-      Infinitive => temp.s ++ cl.subj ++ pol.s ++ cl.verb.inf ++ cl.compl ;
-      Ind        => temp.s ++ cl.subj ++ pol.s ++ R.verbAgr cl.verb Ind temp.t cl.a pol.p ++ cl.compl ;
-      Sbjv       => temp.s ++ cl.subj ++ pol.s ++ R.verbAgr cl.verb Sbjv temp.t cl.a pol.p ++ cl.compl ;
-      Imperative => temp.s ++ cl.subj ++ pol.s ++ R.verbAgr cl.verb Imperative temp.t cl.a pol.p ++ cl.compl
+      Infinitive => let parts = R.verbAgr cl.verb Infinitive temp.t cl.a pol.p in
+        temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ parts.p2 ++ cl.compl ;
+      Ind => let parts = R.verbAgr cl.verb Ind temp.t cl.a pol.p in
+        temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ parts.p2 ++ cl.compl ;
+      Sbjv => let parts = R.verbAgr cl.verb Sbjv temp.t cl.a pol.p in
+        temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ parts.p2 ++ cl.compl ;
+      Imperative => let parts = R.verbAgr cl.verb Imperative temp.t cl.a pol.p in
+        temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ parts.p2 ++ cl.compl
       }
     } ;
 
@@ -32,4 +36,5 @@ lin
 
   -- : S -> SC ;               -- that she goes - что она идёт
   EmbedS s = {s = "что" ++ s.s ! Ind} ;
+
 }
