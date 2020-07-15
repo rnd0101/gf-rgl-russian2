@@ -696,7 +696,7 @@ oper
           prep, loc = "ней" ;
           poss = doPossessivePronP3 "её"
         } ;
-        Ag (GSg Neut) P3 => {  -- TODO: same as Masc, how to combine?
+        Ag (GSg Neut) P3 => {
           nom, voc = "оно" ;
           gen, acc, ptv = "его" ;   -- TODO: n
           dat = "ему" ;   -- TODO: n

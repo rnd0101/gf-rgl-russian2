@@ -1,8 +1,4 @@
-concrete NumeralRus of Numeral =
-
-  CatRus [Numeral,Digits] **
-
-  open
+concrete NumeralRus of Numeral = CatRus [Numeral,Digits] ** open
     ResRus,
     Prelude
   in {
@@ -42,8 +38,8 @@ oper bigNumeral : Str -> LinNumeral = \s -> invarNumeral s ;
 lin num x = x ;
 
 lin n2 = mk2Num twoNumeral "два" "две" "двести" ;
-lin n3 = mk2Num threeNumeral "три" "три" "тристо ;
-lin n4 = mk2Num fourNumeral "четыре" "четыр" "четыресто" ;
+lin n3 = mk2Num threeNumeral "три" "три" "триста" ;
+lin n4 = mk2Num fourNumeral "четыре" "четыр" "четыреста" ;
 lin n5 = mk5Num "пять" "пятых" "пятым" "пятыми" "пять" "пять" ; ----
 lin n6 = mk5Num "шесть" "шестых" "шестым" "шестыми" "шесть" "шесть" ; ----
 lin n7 = mk5Num "семь" "седьмых" "седьмым" "седьмыми" "семь" "семь"; ----

@@ -720,8 +720,14 @@ oper
 
   pronoun2AstB : Str -> PronForms
     = \word -> -- весь
-      let stem = Predef.tk 1 word in
-      let stem2 = Predef.tk 2 word ++ Predef.tk 1 word in
+      let cmp_base : Str = case word of {s + "ь" => s ; _ => word} in
+      let last = Predef.dp 1 cmp_base in
+      let butLast = Predef.tk 1 cmp_base in
+      let secondLast = Predef.dp 1 butLast in
+      let butTwolast = Predef.tk 2 cmp_base in
+      let thirdLast = Predef.dp 1 butTwolast in
+      let stem = cmp_base in
+      let stem2 = butTwolast + last in
       {
         msnom=stem   +"ь" ;
         fsnom=stem2  +"я" ;
