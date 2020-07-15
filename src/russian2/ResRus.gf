@@ -822,6 +822,14 @@ oper
 -- Numerals -- Числительные
 ---------------
 
+param DForm = unit | teen | ten | hund ;
+param Place = attr | indep ;
+-- param Size  = nom | nompl | sgg | plg ;
+oper mille : NumSize => Str = table {
+  Num1 => "тысяча" ;
+  Num2_4 => "тысячи" ;   -- NumAll ?
+  _     => "тысяч"} ;
+
 ---------------
 -- Adverbs -- Наречия
 

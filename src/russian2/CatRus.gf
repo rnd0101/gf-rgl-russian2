@@ -30,7 +30,21 @@ flags coding=utf8 ; optimize=all ;
 
     Det = Determiner ;
     Predet, Quant = ResRus.Adjective ;
-    Num, Numeral, Card, Digits = NumDet ;
+    -- Num, Numeral, Card, Digits = NumDet ;
+
+    Num = {
+      s : Gender => Animacy => Case => Str ;
+      size: NumSize
+      } ;
+    Numeral, Card = {
+      s : Gender => Animacy => Case => Str ;
+      size: NumSize
+      } ;
+    Digits = {
+      s : Str ;
+      size: NumSize
+    } ; ----
+
 
     -- TODO: below copy-paste, sort out (eg, clitics are not needed?)
 
