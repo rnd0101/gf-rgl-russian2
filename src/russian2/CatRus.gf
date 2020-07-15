@@ -68,5 +68,6 @@ flags coding=utf8 ; optimize=all ;
     V = \s -> s.inf ;
     V2 = \s -> s.inf ;
     Ord = \s -> s.nsnom ;
+    S = \s -> s.s ! Ind ;
 
 }

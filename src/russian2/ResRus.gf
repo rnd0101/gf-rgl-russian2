@@ -214,13 +214,13 @@ oper
   verbAgr : VerbForms -> Mood -> Tense -> Agr -> Polarity -> TempParts
     = \vf,m,temp,a,pol ->
       case <m, temp> of {
-        <Infinitive, _> => <"",vf.inf> ;
         <Ind, Past> => verbPastAgree vf a "";
         <Ind, Pres> => verbPresAgree vf a "";
         <Ind, Fut> => verbFutAgree vf a "";
         <Ind, Cond> => verbPastAgree vf a "бы" ;
         <Sbjv, _> => verbPastAgree vf a "бы" ;
-        <Imperative, _> => verbImperativeAgree vf a ""
+        <Imperative, _> => verbImperativeAgree vf a "" ;
+        <Infinitive, _> => <"",vf.inf>
       } ;
 
 ---------------------------
