@@ -541,7 +541,7 @@ oper
         GSg Fem => vf.pppsf ;
         GSg Masc => vf.pppsm ;
         GSg Neut => vf.pppsn ;
-        GPl => vf.pppsf
+        GPl => vf.pppsp
         } ;
 
 ---------------------------

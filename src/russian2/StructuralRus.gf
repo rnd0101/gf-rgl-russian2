@@ -56,7 +56,7 @@ lin
   } ;
 
   few_Det = { -- numeral! TODO: мало ? немного ?
-    s = \\g => (adjFormsAdjective (guessAdjectiveForms "немногий")).s ! GSg g;
+    s = \\g => (adjFormsAdjective (guessAdjectiveForms "немногий")).s ! GPl;
     g = Masc ;
     c = Nom ;
     size = Num5 ;
@@ -66,5 +66,5 @@ lin
   --most_Predet   = bolshinstvoSgDet ** {n = Sg; g = (PGen Neut); c= Gen; size = plg}
   all_Predet = adjFormsAdjective (noShorts all_Pron) ;         -- ** { g = PNoGen; c = Nom; size = nom} ;  -- TODO:
 
-  yes_Utt = ss ["Да"] ;
+  yes_Utt = ss ["да"] ;
 }
