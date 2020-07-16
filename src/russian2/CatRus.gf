@@ -40,7 +40,7 @@ flags coding=utf8 ; optimize=all ;
       a : Agr
       } ;
     Imp = {s: Polarity => GenNum => Str} ;
-    Comp = {s : AgrTable; adv : Str} ;
+    Comp = {s : AgrTable ; adv : Str} ;
 
     Det = Determiner ;
     Predet, Quant = ResRus.Adjective ;
@@ -86,4 +86,5 @@ flags coding=utf8 ; optimize=all ;
     VP = \s -> s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ++ s.adv ;      -- Are these useful?
     Comp = \s -> copula.inf ++ s.s ! Ag (GSg Neut) P3 ++ s.adv ;
     VPSlash = \s -> s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ++ s.c.s ; -- Are these useful?
+    Cl = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.compl ;
 }

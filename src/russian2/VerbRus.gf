@@ -65,7 +65,7 @@ lin
 
   -- TODO: CompAP   : AP  -> Comp ;            -- (be) small
   -- TODO: CompNP   : NP  -> Comp ;            -- (be) the man
-  CompNP np = {s=\\a=>np.s ! Nom  ; adv=[]} ;   -- TODO: Ins with other forms but present!
+  CompNP np = {s=\\a=>np.s ! Ins ; adv=[]} ;
 
   -- : Adv -> Comp ;            -- (be) here
   CompAdv adv = {s=\\a=>[] ; adv=adv.s} ;
