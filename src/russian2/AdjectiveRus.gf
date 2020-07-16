@@ -8,7 +8,15 @@ concrete AdjectiveRus of Adjective = CatRus ** open ResRus, Prelude in {
     UseComparA a = adjFormsAdjective (immutableAdjForms a.comp)
                    ** {isPost = False; preferShort = PrefShort} ;  -- TODO: non-qual
     -- : AP -> Adv -> AP ; -- warm by nature
-    AdvAP ap adv = ap ** {s = \\gn,a,c => ap.s ! gn ! a ! c ++ adv.s ; isPost = False} ;
+    AdvAP ap adv = ap ** {s = \\gn,a,c => adv.s ++ ap.s ! gn ! a ! c ; isPost = False} ;
+
+    -- : AdA -> AP -> AP ;
+    AdAP ada ap = ap ** {s=\\gn,a,c => ada.s ++ ap.s ! gn ! a ! c } ;
+    -- : CAdv -> AP -> NP -> AP ; -- as cool as John
+    CAdvAP cadv ap np = ap ** {
+      s = \\gn,a,c => cadv.s ++ ap.s ! gn ! a ! c ++ cadv.p ++ np.s ! Nom
+    } ;
+
     -- : AP -> SC -> AP ;  -- good that she is here
     SentAP ap sc = ap ** {s = \\gn,a,c => ap.s ! gn ! a ! c ++ [", "] ++ sc.s ; isPost = True} ;
 
@@ -18,6 +26,9 @@ concrete AdjectiveRus of Adjective = CatRus ** open ResRus, Prelude in {
       isPost = False ;
       preferShort = PrefShort
       } ;
+
+    -- : Ord -> AP ;       -- warmest
+    AdjOrd ord = adjFormsAdjective ord ** {isPost = False; preferShort = PrefFull} ;
 
     -- : A2 -> NP -> AP ;  -- married to him - замужем за ним (NB: gender change requires different word!)
     ComplA2 a2 np = {

@@ -67,8 +67,8 @@ lin
   all_Predet = adjFormsAdjective (noShorts all_Pron) ;         -- ** { g = PNoGen; c = Nom; size = nom} ;  -- TODO:
 
   always_AdV = ss "всегда" ;
-  almost_AdA = {s= "почти"} ;
-  almost_AdN = {s= "почти"} ;
+  almost_AdA = ss "почти" ;
+  almost_AdN = ss "почти" ;
 
   yes_Utt = ss ["да"] ;
 }

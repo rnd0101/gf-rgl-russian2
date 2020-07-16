@@ -28,9 +28,16 @@ Russian nouns and adjectives using a subset of algorithms by A.A.Zaliznyak (see 
 
 TODO: Most frequent copula in present tense requires Nom, so needs to be done via Extend / Idioms. For example:
 
+TODO: Check: Old
 ```
-Lang:
-LangRus:
+> l CAdvAP less_CAdv (ComplA2 married_A2 (UsePron youPl_Pron)) (MassNP (ApposCN (UseN2 brother_N2) (UsePron youSg_Pron)))
+менее замужем за вами менее брата тебя
+```
+New:
+
+```
+Lang: CAdvAP less_CAdv (ComplA2 married_A2 (UsePron youPl_Pron)) (MassNP (ApposCN (UseN2 brother_N2) (UsePron youSg_Pron)))
+LangRus: менее замужем за вами чем брат ты
 ```
 
 ## Maintainer
