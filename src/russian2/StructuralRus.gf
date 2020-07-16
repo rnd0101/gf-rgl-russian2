@@ -66,5 +66,9 @@ lin
   --most_Predet   = bolshinstvoSgDet ** {n = Sg; g = (PGen Neut); c= Gen; size = plg}
   all_Predet = adjFormsAdjective (noShorts all_Pron) ;         -- ** { g = PNoGen; c = Nom; size = nom} ;  -- TODO:
 
+  always_AdV = ss "всегда" ;
+  almost_AdA = {s= "почти"} ;
+  almost_AdN = {s= "почти"} ;
+
   yes_Utt = ss ["да"] ;
 }

@@ -83,8 +83,8 @@ flags coding=utf8 ; optimize=all ;
     V2 = \s -> s.inf ;
     Ord = \s -> s.nsnom ;
     S = \s -> s.s ! Ind ;
-    VP = \s -> s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ++ s.adv ;      -- Are these useful?
+    VP = \s -> s.adv ++ s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ;      -- Are these useful?
     Comp = \s -> copula.inf ++ s.s ! Ag (GSg Neut) P3 ++ s.adv ;
-    VPSlash = \s -> s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ++ s.c.s ; -- Are these useful?
+    VPSlash = \s -> s.adv ++ s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ++ s.c.s ; -- Are these useful?
     Cl = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.compl ;
 }
