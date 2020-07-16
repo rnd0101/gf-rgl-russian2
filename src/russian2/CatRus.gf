@@ -40,7 +40,7 @@ flags coding=utf8 ; optimize=all ;
       a : Agr
       } ;
     Imp = {s: Polarity => GenNum => Str} ;
-    Comp = {s : AgrTable ; adv : Str} ;
+    Comp = {s : AgrTable ; adv : Str ; cop : CopulaType } ;
 
     Det = Determiner ;
     Predet, Quant = ResRus.Adjective ;

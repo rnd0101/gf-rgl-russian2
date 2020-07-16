@@ -48,7 +48,7 @@ lin
   UseComp comp = {
     adv=comp.adv ;
     compl=comp.s ;
-    verb=copula
+    verb=selectCopula comp.cop
     } ;
 
   -- : VP -> Adv -> VP ;        -- sleep here
@@ -62,14 +62,17 @@ lin
   -- TODO: AdVVPSlash : AdV -> VPSlash -> VPSlash ;  -- always use (it)
 
   -- TODO: VPSlashPrep : VP -> Prep -> VPSlash ;  -- live in (it)
+  -- : AP -> Comp ;            -- (be) small
+  CompAP ap = {s=\\a=>ap.s ! agrGenNum a ! Inanimate ! Ins ; adv=[] ; cop=InsCopula} ;
 
-  -- TODO: CompAP   : AP  -> Comp ;            -- (be) small
-  -- TODO: CompNP   : NP  -> Comp ;            -- (be) the man
-  CompNP np = {s=\\a=>np.s ! Ins ; adv=[]} ;
+  -- : NP -> Comp ;            -- (be) the man
+  CompNP np = {s=\\a=>np.s ! Ins ; adv=[] ; cop=InsCopula} ;
 
   -- : Adv -> Comp ;            -- (be) here
-  CompAdv adv = {s=\\a=>[] ; adv=adv.s} ;
-  -- TODO: CompCN   : CN  -> Comp ;            -- (be) a man/men
+  CompAdv adv = {s=\\a=>[] ; adv=adv.s ; cop=NomCopula} ;
+  -- : CN -> Comp ;             -- (be) a man/men
+  CompCN cn = {s=\\a=>cn.s ! numGenNum (agrGenNum a) ! Ins ; adv=[] ; cop=InsCopula} ;
 
-  -- TODO: UseCopula : VP ;                    -- be
+  -- : VP ;                     -- be
+  UseCopula = {adv=[] ; verb=copulaIns ; compl=\\a=>[]} ;
 }

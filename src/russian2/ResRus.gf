@@ -619,7 +619,25 @@ oper
       asp=Imperfective;
       refl=NonReflexive;
       tran=Intransitive
-    };
+    } ;
+
+  -- normal copula require Nom in Pres. So this is Ins-friendly substitute.
+  -- TODO: Provide also Nom-based as idiomatic (?)
+  copulaIns : VerbForms
+    = copula ** {
+      prsg1="являюсь" ;
+      prsg2="являешься" ;
+      prsg3="является" ;
+      prpl1="являемся" ;
+      prpl2="являетесь" ;
+      prpl3="являются"
+    } ;
+
+  selectCopula : CopulaType -> VerbForms
+    = \cop -> case cop of {
+       NomCopula => copula ;
+       InsCopula => copulaIns
+    } ;
 
 ---------------------------
 -- Pronouns -- Местоимения

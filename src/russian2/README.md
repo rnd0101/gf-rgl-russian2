@@ -26,7 +26,7 @@ Russian nouns and adjectives using a subset of algorithms by A.A.Zaliznyak (see 
 
 ### Known issues
 
-Clitic pronouns do not combine like they are supposed to. For example:
+TODO: Most frequent copula in present tense requires Nom, so needs to be done via Extend / Idioms. For example:
 
 ```
 Lang:
