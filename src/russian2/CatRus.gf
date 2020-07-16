@@ -19,15 +19,28 @@ flags coding=utf8 ; optimize=all ;
       s : Case => Str ;
       -- , prep : Case => Str   -- what for is this neeeded?
       a : Agr } ;
-    VP = {verb : ResRus.VerbForms ; compl : AgrTable} ; ---- more fields probably needed (adverbials?)
-    VPSlash = {verb : ResRus.VerbForms ; compl : AgrTable ; c : ComplementCase} ; ----
+    VP = {
+      adv : Str ;
+      verb : ResRus.VerbForms ;
+      compl : AgrTable
+      } ;
+    VPSlash = {
+      adv : Str ;
+      verb : ResRus.VerbForms ;
+      compl : AgrTable ;
+      c : ComplementCase
+      } ; ----
 
     AP = ResRus.Adjective ** {isPost : Bool} ;
 
     S = {s : Mood => Str} ;
-    Cl = {subj,compl : Str ; verb : VerbForms ; a : Agr} ;
+    Cl = {
+      subj,compl,adv : Str ;
+      verb : VerbForms ;
+      a : Agr
+      } ;
     Imp = {s: Polarity => GenNum => Str} ;
-    Comp = {s : AgrTable} ;
+    Comp = {s : AgrTable; adv : Str} ;
 
     Det = Determiner ;
     Predet, Quant = ResRus.Adjective ;
@@ -56,7 +69,7 @@ flags coding=utf8 ; optimize=all ;
     RCl = {subj,compl : AgrTable ; verb : VerbForms} ; ---- RAgr with composite RP
     RP  = AdjForms ;
 
-    Prep = ResRus.ComplementCase ; -- {s : Str ; c : Case ; hasPrep : Bool} ;
+    Prep = ResRus.ComplementCase ;
     Conj = {s1,s2 : Str ; n : Number} ;
 
   linref
@@ -70,6 +83,7 @@ flags coding=utf8 ; optimize=all ;
     V2 = \s -> s.inf ;
     Ord = \s -> s.nsnom ;
     S = \s -> s.s ! Ind ;
-    VP = \s -> s.verb.inf ++ s.compl ! Ag (GSg Neut) P3;      -- Are these useful?
+    VP = \s -> s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ++ s.adv ;      -- Are these useful?
+    Comp = \s -> copula.inf ++ s.s ! Ag (GSg Neut) P3 ++ s.adv ;
     VPSlash = \s -> s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ++ s.c.s ; -- Are these useful?
 }

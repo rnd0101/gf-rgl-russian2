@@ -590,6 +590,37 @@ oper
         GPl => vf.pppsp
         } ;
 
+  copula : VerbForms
+    = {
+      inf="быть";
+      prsg1="—";
+      prsg2="—";
+      prsg3="есть";
+      prpl1="—";
+      prpl2="—";
+      prpl3="—";   -- also "суть"
+      futsg1="буду";
+      futsg2="будешь";
+      futsg3="будет";
+      futpl1="будем";
+      futpl2="будете";
+      futpl3="будут";
+      psgm="был";
+      psgf="была";
+      psgn="было";
+      ppl ="были";
+      isg2="будь";
+      ipl1="давайте будем";
+      ipl2="будьте";
+      pppsm="";
+      pppsf="";
+      pppsn="";
+      pppsp="";
+      asp=Imperfective;
+      refl=NonReflexive;
+      tran=Intransitive
+    };
+
 ---------------------------
 -- Pronouns -- Местоимения
 

@@ -8,13 +8,13 @@ lin
   UseCl temp pol cl = {
     s = table {
       Infinitive => let parts = R.verbAgr cl.verb Infinitive temp.t cl.a pol.p in
-        temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ parts.p2 ++ cl.compl ;
+        temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ cl.adv ++ parts.p2 ++ cl.compl ;
       Ind => let parts = R.verbAgr cl.verb Ind temp.t cl.a pol.p in
-        temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ parts.p2 ++ cl.compl ;
+        temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ cl.adv ++ parts.p2 ++ cl.compl ;
       Sbjv => let parts = R.verbAgr cl.verb Sbjv temp.t cl.a pol.p in
-        temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ parts.p2 ++ cl.compl ;
+        temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ cl.adv ++ parts.p2 ++ cl.compl ;
       Imperative => let parts = R.verbAgr cl.verb Imperative temp.t cl.a pol.p in
-        temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ parts.p2 ++ cl.compl
+        temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ cl.adv ++ parts.p2 ++ cl.compl
       }
     } ;
 
@@ -24,22 +24,24 @@ lin
       let pol = case polarity of {Neg => PNeg; Pos => PPos} in
       let a = Ag gn P2 in
       let parts = R.verbAgr vp.verb Imperative Pres a pol.p in
-          parts.p1 ++ pol.s ++ parts.p2 ++ vp.compl ! a
+          parts.p1 ++ pol.s ++ vp.adv ++ parts.p2 ++ vp.compl ! a
     } ;
 
   -- : NP -> VP -> Cl ;         -- John walks - Иван гуляет
   PredVP np vp = {
     subj=np.s ! Nom ;
-    compl=vp.compl ! np.a ;
+    adv=[] ;
     verb=vp.verb ;
+    compl=vp.compl ! np.a ;
     a=np.a
     } ;
 
   -- : SC -> VP -> Cl ;         -- that she goes is good - что она идёт есть хорошо
   PredSCVP sc vp = {
     subj=sc.s ;
-    compl=vp.compl ! Ag (GSg Neut) P3 ;  -- ???
+    adv=[] ;
     verb=vp.verb ;
+    compl=vp.compl ! Ag (GSg Neut) P3 ;  -- ???
     a=Ag (GSg Neut) P3   -- ???
     } ;
 

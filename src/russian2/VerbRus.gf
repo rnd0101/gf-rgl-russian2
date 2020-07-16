@@ -1,16 +1,18 @@
 concrete VerbRus of Verb = CatRus ** open ResRus, Prelude in {
 
 lin
-  -- : V   -> VP ;        -- sleep
+  -- : V -> VP ;        -- sleep
   UseV v = {
+    adv = [] ;
     verb = v ;
     compl = \\_ => []
     } ;
 
   -- : V2 -> VP ;         -- be loved
   PassV2 v2 = {
+    adv = [] ;
     verb = passivate v2 ;
-    compl = agree v2.c
+    compl = agree v2.c    -- TODO:
   } ;
 
   -- TODO: ComplVV  : VV  -> VP -> VP ;  -- want to run
@@ -19,7 +21,7 @@ lin
   -- TODO: ComplVA  : VA  -> AP -> VP ;  -- they become red
 
   -- SlashV2a : V2 -> VPSlash ;  -- love (it)
-  SlashV2a v = {verb=v ; compl=\\_ => [] ; c=v.c} ;
+  SlashV2a v = {adv=[] ; verb=v ; compl=\\_ => [] ; c=v.c} ;
 
   -- TODO: Slash2V3 : V3  -> NP -> VPSlash ;  -- give it (to her)
   -- TODO: Slash3V3 : V3  -> NP -> VPSlash ;  -- give (it) to her
@@ -42,11 +44,19 @@ lin
     compl=\\a => vps.compl ! a ++ vps.c.s ++ sam.s ! vps.c.c
     } ;
 
-  -- TODO: UseComp  : Comp -> VP ;            -- be warm
+  -- : Comp -> VP ;            -- be warm
+  UseComp comp = {
+    adv=comp.adv ;
+    compl=comp.s ;
+    verb=copula
+    } ;
 
-  -- TODO: AdvVP    : VP -> Adv -> VP ;        -- sleep here
+  -- : VP -> Adv -> VP ;        -- sleep here
+  AdvVP vp adv = vp ** {compl=\\a => vp.compl ! a ++ adv.s} ;
+
   -- TODO: ExtAdvVP : VP -> Adv -> VP ;        -- sleep , even though ...
-  -- TODO: AdVVP    : AdV -> VP -> VP ;        -- always sleep
+  -- : AdV -> VP -> VP ;        -- always sleep
+  AdVVP adv vp = vp ** {adv=adv.s ++ vp.adv} ;
 
   -- TODO: AdvVPSlash : VPSlash -> Adv -> VPSlash ;  -- use (it) here
   -- TODO: AdVVPSlash : AdV -> VPSlash -> VPSlash ;  -- always use (it)
@@ -55,7 +65,10 @@ lin
 
   -- TODO: CompAP   : AP  -> Comp ;            -- (be) small
   -- TODO: CompNP   : NP  -> Comp ;            -- (be) the man
-  -- TODO: CompAdv  : Adv -> Comp ;            -- (be) here
+  CompNP np = {s=\\a=>np.s ! Nom  ; adv=[]} ;   -- TODO: Ins with other forms but present!
+
+  -- : Adv -> Comp ;            -- (be) here
+  CompAdv adv = {s=\\a=>[] ; adv=adv.s} ;
   -- TODO: CompCN   : CN  -> Comp ;            -- (be) a man/men
 
   -- TODO: UseCopula : VP ;                    -- be

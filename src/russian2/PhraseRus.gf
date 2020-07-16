@@ -16,7 +16,7 @@ lin
     -- : Adv -> Utt ;               -- here
     UttAdv adv = adv ;
 
-    -- TODO: UttVP     : VP   -> Utt ;               -- to sleep
+    -- TODO: UttVP     : VP -> Utt ;               -- to sleep
     -- : CN -> Utt ;               -- house
     UttCN cn = {s = cn.s ! Sg ! Nom} ;
     -- TODO: UttCard   : Card -> Utt ;               -- five
