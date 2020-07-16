@@ -58,8 +58,11 @@ lin
   -- : AdV -> VP -> VP ;        -- always sleep
   AdVVP adv vp = vp ** {adv=adv.s ++ vp.adv} ;
 
-  -- TODO: AdvVPSlash : VPSlash -> Adv -> VPSlash ;  -- use (it) here
-  -- TODO: AdVVPSlash : AdV -> VPSlash -> VPSlash ;  -- always use (it)
+  -- : VPSlash -> Adv -> VPSlash ;  -- use (it) here
+  AdvVPSlash vps adv = vps ** {compl=\\a => vps.compl ! a ++ adv.s} ;
+
+  -- : AdV -> VPSlash -> VPSlash ;  -- always use (it)
+  AdVVPSlash adv vps = vps ** {adv=adv.s ++ vps.adv} ;
 
   -- TODO: VPSlashPrep : VP -> Prep -> VPSlash ;  -- live in (it)
   -- : AP -> Comp ;            -- (be) small
