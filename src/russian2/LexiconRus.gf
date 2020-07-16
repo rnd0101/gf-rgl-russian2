@@ -62,6 +62,7 @@ lin
   dirty_A = mkA "грязный" ;
   distance_N3 = mkN3 (mkN "расстояние") from_Prep on_to_Prep ;
   do_V2 = mkV2 (mkV "делать");
+  play_V2 = mkV2 (mkV "играть" ) "c" Ins;
   doctor_N = mkN "доктор" masculine animate ;
   dog_N = mkN "собака" feminine animate ;
   door_N = mkN "дверь" ;

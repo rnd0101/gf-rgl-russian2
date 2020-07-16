@@ -146,8 +146,8 @@ oper
       = \vf -> lin V2 (vf ** {c={s=[] ; c=Acc ; hasPrep=False}}) ;
     mkV2 : V -> Case -> V2
       = \vf, c -> lin V2 (vf ** {c={s=[] ; c=c ; hasPrep=False}}) ;
-    mkV2 : V -> ComplementCase -> V2
-      = \vf, c -> lin V2 (vf ** {c=c}) ;
+    mkV2 : V -> Str -> Case -> V2
+      = \vf, prep, c -> lin V2 (vf ** {c={s=prep ; c=c ; hasPrep=True}}) ;
     } ;
 
 ------------------------

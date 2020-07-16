@@ -1,4 +1,4 @@
-concrete SentenceRus of Sentence = CatRus ** open Prelude, ParamRus, (R=ResRus) in {
+concrete SentenceRus of Sentence = CatRus ** open Prelude, TenseRus, ParamRus, (R=ResRus) in {
 flags optimize=all_subs ; coding=utf8 ;
 lin
   -- : Adv -> S -> S ;            -- then I will go home
@@ -16,6 +16,15 @@ lin
       Imperative => let parts = R.verbAgr cl.verb Imperative temp.t cl.a pol.p in
         temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ parts.p2 ++ cl.compl
       }
+    } ;
+
+  -- : VP -> Imp ;             -- love yourselves
+  ImpVP vp = {
+    s = \\polarity, gn =>
+      let pol = case polarity of {Neg => PNeg; Pos => PPos} in
+      let a = Ag gn P2 in
+      let parts = R.verbAgr vp.verb Imperative Pres a pol.p in
+          parts.p1 ++ pol.s ++ parts.p2 ++ vp.compl ! a
     } ;
 
   -- : NP -> VP -> Cl ;         -- John walks - Иван гуляет
