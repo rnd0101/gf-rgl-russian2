@@ -16,7 +16,12 @@ lin
     -- : Adv -> Utt ;               -- here
     UttAdv adv = adv ;
 
-    -- TODO: UttVP     : VP -> Utt ;               -- to sleep
+    -- : VP -> Utt ;               -- to sleep
+    UttVP vp
+      = let a=Ag (GSg Neut) P3 in {
+        s=vp.adv ! a ++ vp.verb.inf ++ vp.compl ! a
+        } ;
+
     -- : CN -> Utt ;               -- house
     UttCN cn = {s = cn.s ! Sg ! Nom} ;
     -- TODO: UttCard   : Card -> Utt ;               -- five

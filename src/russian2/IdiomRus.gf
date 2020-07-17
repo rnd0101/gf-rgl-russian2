@@ -21,7 +21,7 @@ lin
   -- TODO: ExistIPAdv : IP -> Adv -> QCl ;   -- which houses are there in Paris
   -- TODO: ProgrVP   : VP -> VP ;        -- be sleeping
   -- TODO: ImpPl1    : VP -> Utt ;       -- let's go
-  -- TODO: ImpP3     : NP -> VP -> Utt ; -- let John walk
+  -- : NP -> VP -> Utt ; -- let John walk
   ImpP3 np vp =
     let a = Ag (GSg Neut) P3 in
     let pol = PPos in
