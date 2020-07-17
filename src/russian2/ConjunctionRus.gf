@@ -7,12 +7,19 @@ concrete ConjunctionRus of Conjunction =
 
   lincat
     [Adv] = {s1,s2 : Str} ;
+    [AdV] = {s1,s2 : Str} ;
     [AP] = {s1,s2 : AdjTable ;
       isPost : Bool;
-      preferShort : ShortFormPreference} ;
+      preferShort : ShortFormPreference
+      } ;
     [NP] = {s1,s2 : Case => Str ;
-           -- prep1,prep2 : Case => Str ;
-           a : Agr} ;
+      -- prep1,prep2 : Case => Str ;
+      a : Agr
+      } ;
+    [CN] = {s1,s2 : Number => Case => Str ;
+      g : Gender ;
+      anim : Animacy
+      } ;
     [S] = {s1,s2 : Mood => Str} ;
     [RS] = {s1,s2 : Mood => Agr => Str ; c : Case} ;
 
@@ -22,6 +29,11 @@ concrete ConjunctionRus of Conjunction =
 
     -- : Adv -> ListAdv -> ListAdv ; -- here, there, everywhere
     ConsAdv = consrSS comma ;
+
+    -- : AdV -> AdV -> ListAdV ;     -- always, sometimes
+    BaseAdV = twoSS ;
+    -- : AdV -> ListAdV -> ListAdV ; -- always, sometimes, never
+    ConsAdV = consrSS comma ;
 
     -- : AP -> AP -> ListAP ;       -- red, white
     BaseAP x y = twoTable3 GenNum Animacy Case x y
@@ -45,7 +57,10 @@ concrete ConjunctionRus of Conjunction =
     -- : RS -> ListRS -> ListRS ;   -- who walks, whom I know, who is here
     ConsRS xs x = consrTable2 Mood Agr comma xs x ** {c = xs.c} ;
 
+    -- : Conj -> ListAdv -> Adv ;   -- here or there
     ConjAdv = conjunctDistrSS ;
+    -- : Conj -> ListAdV -> AdV ;   -- always or sometimes
+    ConjAdV = conjunctDistrSS ;
 
     -- : Conj -> ListAP -> AP ;     -- cold and warm
     ConjAP conj xs = conjunctDistrTable3 GenNum Animacy Case conj xs
@@ -57,6 +72,27 @@ concrete ConjunctionRus of Conjunction =
     ConjRS conj ss = conjunctDistrTable2 Mood Agr conj ss ** {
       c = ss.c
       } ;
+
+    -- : CN -> CN -> ListCN ;      -- man, woman
+    BaseCN x y = {
+      s1 = x.s ;
+      s2 = y.s ;
+      g = y.g ;
+      anim = conjAnim x.anim y.anim
+      } ;
+
+    -- : CN -> ListCN -> ListCN ;  -- man, woman, child
+    ConsCN x xs = consrTable2 Number Case comma x xs ** {
+      g = conjGender x.g xs.g ;
+      anim = conjAnim x.anim xs.anim
+      } ;
+
+    -- : Conj -> ListCN -> CN ;     -- man and woman
+    ConjCN conj xs = {
+      s = \\n,cas => conj.s1 ++ xs.s1 ! n ! cas ++ conj.s2 ++ xs.s2 ! n ! cas ;
+      g = xs.g ;
+      anim = xs.anim
+    } ;
 
     -- : NP -> NP -> ListNP ;      -- John, Mary
     BaseNP x y = {
