@@ -24,7 +24,7 @@ lin
       let pol = case polarity of {Neg => PNeg; Pos => PPos} in
       let a = Ag gn P2 in
       let parts = R.verbAgr vp.verb Imperative Pres a pol.p in
-          parts.p1 ++ pol.s ++ vp.adv ++ parts.p2 ++ vp.compl ! a
+          parts.p1 ++ pol.s ++ vp.adv ! a ++ parts.p2 ++ vp.compl ! a
     } ;
 
   -- : NP -> VP -> Cl ;         -- John walks - Иван гуляет

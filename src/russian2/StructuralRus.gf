@@ -36,6 +36,11 @@ lin
   less_CAdv = X.mkCAdv "менее" "чем" ;
   more_CAdv = X.mkCAdv "более" "чем" ;
 
+  can8know_VV = {v=can; modal=\\a=>[]} ;
+  can_VV = {v=can; modal=\\a=>[]} ;
+  must_VV = {v=nullVerb; modal=adjFormsToModal (guessAdjectiveForms "должный")} ;
+--  want_VV = want ;
+
   every_Det = {
     s = \\g => (adjFormsAdjective (guessAdjectiveForms "каждый")).s ! GSg g;
     g = Masc ;

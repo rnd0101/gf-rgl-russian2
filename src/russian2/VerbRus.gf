@@ -3,25 +3,30 @@ concrete VerbRus of Verb = CatRus ** open ResRus, Prelude in {
 lin
   -- : V -> VP ;        -- sleep
   UseV v = {
-    adv = [] ;
+    adv = \\a=>[] ;
     verb = v ;
     compl = \\_ => []
     } ;
 
   -- : V2 -> VP ;         -- be loved
   PassV2 v2 = {
-    adv = [] ;
+    adv = \\a=>[] ;
     verb = passivate v2 ;
     compl = agree v2.c    -- TODO:
   } ;
 
-  -- TODO: ComplVV  : VV  -> VP -> VP ;  -- want to run
+  -- : VV -> VP -> VP ;  -- want to run
+  ComplVV vv vp = vp ** {
+    verb=concatVebForms vv.v vp.verb.inf ;
+    adv=\\a=>vv.modal ! a ++ vp.adv ! a
+    } ;
+
   -- TODO: ComplVS  : VS  -> S  -> VP ;  -- say that she runs
   -- TODO: ComplVQ  : VQ  -> QS -> VP ;  -- wonder who runs
   -- TODO: ComplVA  : VA  -> AP -> VP ;  -- they become red
 
   -- SlashV2a : V2 -> VPSlash ;  -- love (it)
-  SlashV2a v = {adv=[] ; verb=v ; compl=\\_ => [] ; c=v.c} ;
+  SlashV2a v = {adv=\\a=>[] ; verb=v ; compl=\\_ => [] ; c=v.c} ;
 
   -- TODO: Slash2V3 : V3  -> NP -> VPSlash ;  -- give it (to her)
   -- TODO: Slash3V3 : V3  -> NP -> VPSlash ;  -- give (it) to her
@@ -46,7 +51,7 @@ lin
 
   -- : Comp -> VP ;            -- be warm
   UseComp comp = {
-    adv=comp.adv ;
+    adv=\\a=>comp.adv ;
     compl=comp.s ;
     verb=selectCopula comp.cop
     } ;
@@ -56,13 +61,13 @@ lin
 
   -- TODO: ExtAdvVP : VP -> Adv -> VP ;        -- sleep , even though ...
   -- : AdV -> VP -> VP ;        -- always sleep
-  AdVVP adv vp = vp ** {adv=adv.s ++ vp.adv} ;
+  AdVVP adv vp = vp ** {adv=\\a => adv.s ++ vp.adv ! a} ;
 
   -- : VPSlash -> Adv -> VPSlash ;  -- use (it) here
   AdvVPSlash vps adv = vps ** {compl=\\a => vps.compl ! a ++ adv.s} ;
 
   -- : AdV -> VPSlash -> VPSlash ;  -- always use (it)
-  AdVVPSlash adv vps = vps ** {adv=adv.s ++ vps.adv} ;
+  AdVVPSlash adv vps = vps ** {adv=\\a=>adv.s ++ vps.adv ! a} ;
 
   -- TODO: VPSlashPrep : VP -> Prep -> VPSlash ;  -- live in (it)
   -- : AP -> Comp ;            -- (be) small
@@ -77,5 +82,5 @@ lin
   CompCN cn = {s=\\a=>cn.s ! numGenNum (agrGenNum a) ! Ins ; adv=[] ; cop=InsCopula} ;
 
   -- : VP ;                     -- be
-  UseCopula = {adv=[] ; verb=copulaIns ; compl=\\a=>[]} ;
+  UseCopula = {adv=\\a=>[] ; verb=copulaIns ; compl=\\a=>[]} ;
 }

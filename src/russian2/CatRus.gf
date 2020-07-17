@@ -10,8 +10,9 @@ flags coding=utf8 ; optimize=all ;
 
     Pron = ResRus.PronounForms ;
 
-    V  = ResRus.VerbForms ;
+    V = ResRus.VerbForms ;
     V2 = ResRus.VerbForms ** {c : ComplementCase} ;
+    VV = {v : ResRus.VerbForms ; modal : AgrTable} ;
 
     CN = ResRus.Noun ;
 
@@ -20,12 +21,12 @@ flags coding=utf8 ; optimize=all ;
       -- , prep : Case => Str   -- what for is this neeeded?
       a : Agr } ;
     VP = {
-      adv : Str ;
+      adv : AgrTable ;  -- modals are in position of adverbials ones numgen gets fixed
       verb : ResRus.VerbForms ;
       compl : AgrTable
       } ;
     VPSlash = {
-      adv : Str ;
+      adv : AgrTable ;  -- modals are in position of adverbials ones numgen gets fixed
       verb : ResRus.VerbForms ;
       compl : AgrTable ;
       c : ComplementCase
@@ -83,8 +84,8 @@ flags coding=utf8 ; optimize=all ;
     V2 = \s -> s.inf ;
     Ord = \s -> s.nsnom ;
     S = \s -> s.s ! Ind ;
-    VP = \s -> s.adv ++ s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ;      -- Are these useful?
+    VP = \s -> s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ;      -- Are these useful?
     Comp = \s -> copula.inf ++ s.s ! Ag (GSg Neut) P3 ++ s.adv ;
-    VPSlash = \s -> s.adv ++ s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ++ s.c.s ; -- Are these useful?
+    VPSlash = \s -> s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ++ s.c.s ; -- Are these useful?
     Cl = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.compl ;
 }

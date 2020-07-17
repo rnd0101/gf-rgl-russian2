@@ -574,6 +574,37 @@ oper
       tran=vf.tran
       } ;
 
+  concatVebForms : VerbForms -> Str -> VerbForms
+    = \vf,s -> {
+      inf=vf.inf ++ s ;
+      prsg1=vf.prsg1 ++ s ;
+      prsg2=vf.prsg2 ++ s ;
+      prsg3=vf.prsg3 ++ s ;
+      prpl1=vf.prpl1 ++ s ;
+      prpl2=vf.prpl2 ++ s ;
+      prpl3=vf.prpl3 ++ s ;
+      futsg1=vf.futsg1 ++ s ;
+      futsg2=vf.futsg2 ++ s ;
+      futsg3=vf.futsg3 ++ s ;
+      futpl1=vf.futpl1 ++ s ;
+      futpl2=vf.futpl2 ++ s ;
+      futpl3=vf.futpl3 ++ s ;
+      psgm=vf.psgm ++ s ;
+      psgf=vf.psgf ++ s ;
+      psgn=vf.psgn ++ s ;
+      ppl=vf.ppl ++ s ;
+      isg2=vf.isg2 ++ s ;
+      ipl1=vf.ipl1 ++ s ;
+      ipl2=vf.ipl2 ++ s ;
+      pppsm=vf.pppsm;
+      pppsf=vf.pppsf;
+      pppsn=vf.pppsn;
+      pppsp=vf.pppsp;
+      asp=vf.asp ;
+      refl=vf.refl ;
+      tran=vf.tran
+      } ;
+
   passivate : VerbForms -> VerbForms
     = \vf ->
       case vf.refl of {
@@ -637,6 +668,58 @@ oper
     = \cop -> case cop of {
        NomCopula => copula ;
        InsCopula => copulaIns
+    } ;
+
+  can : VerbForms
+    = {
+      inf="мочь";
+      prsg1="могу";
+      prsg2="можешь";
+      prsg3="может";
+      prpl1="можем";
+      prpl2="можете";
+      prpl3="могут";
+      futsg1="смогу";  -- from the perfective counterpart, only for aux verb use here
+      futsg2="сможешь";
+      futsg3="сможет";
+      futpl1="сможем";
+      futpl2="сможете";
+      futpl3="смогут";
+      psgm="был";
+      psgf="была";
+      psgn="было";
+      ppl ="были";
+      isg2="будь способен";  -- some improvisation here
+      ipl1="давайте будем способны";
+      ipl2="будьте способны";
+      pppsm="";
+      pppsf="";
+      pppsn="";
+      pppsp="";
+      asp=Imperfective;
+      refl=NonReflexive;
+      tran=Intransitive
+    } ;
+
+  nullVerb : VerbForms
+    = {
+      inf,
+      prsg1, prsg2, prsg3, prpl1, prpl2, prpl3,
+      futsg1, futsg2, futsg3, futpl1, futpl2, futpl3,
+      psgm, psgf, psgn, ppl,
+      isg2, ipl1, ipl2,
+      pppsm, pppsf, pppsn, pppsp="";
+      asp=Imperfective;
+      refl=NonReflexive;
+      tran=Intransitive
+    } ;
+
+  adjFormsToModal : AdjForms -> AgrTable
+    = \af -> table {
+      Ag (GSg Fem) _ => af.sf ;
+      Ag (GSg Masc) _ => af.sm ;
+      Ag (GSg Neut) _ => af.sn ;
+      Ag GPl _ => af.sp
     } ;
 
 ---------------------------
