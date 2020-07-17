@@ -146,9 +146,21 @@ oper
       = \vf -> lin V2 (vf ** {c={s=[] ; c=Acc ; hasPrep=False}}) ;
     mkV2 : V -> Case -> V2
       = \vf, c -> lin V2 (vf ** {c={s=[] ; c=c ; hasPrep=False}}) ;
-    mkV2 : V -> Str -> Case -> V2
-      = \vf, prep, c -> lin V2 (vf ** {c={s=prep ; c=c ; hasPrep=True}}) ;
+    mkV2 : V -> Prep -> V2
+      = \vf, prep -> lin V2 (vf ** {c=prep}) ;
     } ;
+
+  mkV3 = overload {
+    mkV3 : V -> Case -> Case -> V3   -- "сложить письмо в конверт"
+      = \vf, cas1, cas2 -> lin V3 (vf ** {c={s=[] ; c=cas1 ; hasPrep=False} ; c2={s=[] ; c=cas2 ; hasPrep=False}} ) ;
+    mkV3 : V -> Prep -> Prep -> V3   -- "сложить письмо в конверт"
+      = \vf, prep1, prep2 -> lin V3 (vf ** {c=prep1 ; c2=prep2} ) ;
+  } ;
+
+  dirV2 : V -> V2 ;
+  dirV2 v = mkV2 v Acc ;
+  tvDirDir : V -> V3 ;
+  tvDirDir v = mkV3 v Acc Dat ;
 
 ------------------------
 -- Adverbs, prepositions, conjunctions, ...

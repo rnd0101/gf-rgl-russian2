@@ -12,7 +12,9 @@ flags coding=utf8 ; optimize=all ;
 
     V = ResRus.VerbForms ;
     V2 = ResRus.VerbForms ** {c : ComplementCase} ;
+    V3 = ResRus.VerbForms ** {c : ComplementCase ; c2 : ComplementCase} ;
     VV = {v : ResRus.VerbForms ; modal : AgrTable} ;
+    V2V, V2S, V2Q = ResRus.VerbForms ** {c : ComplementCase} ;
 
     CN = ResRus.Noun ;
 
@@ -81,7 +83,8 @@ flags coding=utf8 ; optimize=all ;
     A = \s -> case s.preferShort of {PrefShort => s.sm ; _ => s.msnom} ;
     A2 = \s -> case s.preferShort of {PrefShort => s.sm ; _ => s.msnom} ++ s.c.s ;  -- ?
     V = \s -> s.inf ;
-    V2 = \s -> s.inf ;
+    V2 = \s -> s.inf ++ s.c.s ;
+    V3 = \s -> s.inf ++ s.c.s ++ s.c2.s ;
     Ord = \s -> s.nsnom ;
     S = \s -> s.s ! Ind ;
     VP = \s -> s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ;      -- Are these useful?

@@ -31,7 +31,12 @@ lin
   -- TODO: Slash2V3 : V3  -> NP -> VPSlash ;  -- give it (to her)
   -- TODO: Slash3V3 : V3  -> NP -> VPSlash ;  -- give (it) to her
 
-  -- TODO: SlashV2V : V2V -> VP -> VPSlash ;  -- beg (her) to go
+  -- : V2V -> VP -> VPSlash ;  -- beg (her) to go
+  SlashV2V v2v vp = vp ** {
+    verb=concatVebForms v2v vp.verb.inf ;
+    c=v2v.c
+    } ;
+
   -- TODO: SlashV2S : V2S -> S  -> VPSlash ;  -- answer (to him) that it is good
   -- TODO: SlashV2Q : V2Q -> QS -> VPSlash ;  -- ask (him) who came
   -- TODO: SlashV2A : V2A -> AP -> VPSlash ;  -- paint (it) red
@@ -41,10 +46,14 @@ lin
     compl=\\a => vps.compl ! a ++ vps.c.s ++ np.s ! vps.c.c      -- hasPrep ignored?!
     } ;
 
-  -- TODO: SlashVV    : VV  -> VPSlash -> VPSlash ;       -- want to buy
+  -- : VV -> VPSlash -> VPSlash ;       -- want to buy
+  SlashVV vv vps = vps ** {
+    verb=concatVebForms vv.v vps.verb.inf ;
+    adv=\\a=>vv.modal ! a ++ vps.adv ! a
+    } ;
   -- TODO: SlashV2VNP : V2V -> NP -> VPSlash -> VPSlash ; -- beg me to buy
 
-  -- TODO: ReflVP   : VPSlash -> VP ;         -- love himself
+  -- : VPSlash -> VP ;         -- love himself
   ReflVP vps = vps ** {
     compl=\\a => vps.compl ! a ++ vps.c.s ++ sam.s ! vps.c.c
     } ;
@@ -69,7 +78,8 @@ lin
   -- : AdV -> VPSlash -> VPSlash ;  -- always use (it)
   AdVVPSlash adv vps = vps ** {adv=\\a=>adv.s ++ vps.adv ! a} ;
 
-  -- TODO: VPSlashPrep : VP -> Prep -> VPSlash ;  -- live in (it)
+  -- : VP -> Prep -> VPSlash ;  -- live in (it)
+  VPSlashPrep vp prep = vp ** {c=prep} ;
   -- : AP -> Comp ;            -- (be) small
   CompAP ap = {s=\\a=>ap.s ! agrGenNum a ! Inanimate ! Ins ; adv=[] ; cop=InsCopula} ;
 

@@ -33,6 +33,8 @@ lin
   or_Conj = mkConj "или" Sg ;
   and_Conj = mkConj "и" Pl ;
 
+  with_Prep = {s="с" ; c=Ins; hasPrep=True};
+
   less_CAdv = X.mkCAdv "менее" "чем" ;
   more_CAdv = X.mkCAdv "более" "чем" ;
 

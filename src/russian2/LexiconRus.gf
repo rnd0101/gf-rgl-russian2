@@ -18,6 +18,7 @@ lin
   bark_N = mkN "кора";
   beautiful_A = mkA "красивый" ;
   beer_N = mkN "пиво" neuter inanimate ;
+  beg_V2V = dirV2 (mkV "просить");
   belly_N = mkN "живот" ;
   big_A = (mkAltShort (mkA "большой" "больше") (mkA "великий")) ;
   bike_N = mkN "велосипед" ;
@@ -62,7 +63,7 @@ lin
   dirty_A = mkA "грязный" ;
   distance_N3 = mkN3 (mkN "расстояние") from_Prep on_to_Prep ;
   do_V2 = mkV2 (mkV "делать");
-  play_V2 = mkV2 (mkV "играть" ) "c" Ins;
+  play_V2 = mkV2 (mkV "играть" ) with_Prep;
   doctor_N = mkN "доктор" masculine animate ;
   dog_N = mkN "собака" feminine animate ;
   door_N = mkN "дверь" ;

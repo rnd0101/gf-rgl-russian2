@@ -40,4 +40,10 @@ Lang: CAdvAP less_CAdv (ComplA2 married_A2 (UsePron youPl_Pron)) (MassNP (ApposC
 LangRus: менее замужем за вами чем брат ты
 ```
 
+TODO: Check:
+```
+Lang: UseCl (TTAnt TPres ASimul) PPos (GenericCl (UseComp (CompAdv already_Adv)))
+LangRus: ты уже —
+```
+
 ## Maintainer
