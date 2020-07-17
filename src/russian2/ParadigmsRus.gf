@@ -128,7 +128,7 @@ oper
   mkA2 : A -> Prep -> A2
     = \a,p -> lin A2 (a ** {c = p}) ;
 
-  mkOrd = overload {
+  mkOrd = overload {   -- ord from adj. TODO: This shadows mkOrd from constructors...
     mkOrd : (nom : Str) -> Ord
       = \nom -> lin Ord (guessAdjectiveForms nom) ;
   } ;
