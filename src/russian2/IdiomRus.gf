@@ -1,6 +1,6 @@
 --# -path=.:../abstract:../common:../../prelude
 
-concrete IdiomRus of Idiom = CatRus ** open Prelude, ResRus, MorphoRus in {
+concrete IdiomRus of Idiom = CatRus ** open Prelude, TenseRus, ResRus, MorphoRus in {
 flags optimize=all_subs ;  coding=utf8 ;
 
 lin
@@ -22,6 +22,14 @@ lin
   -- TODO: ProgrVP   : VP -> VP ;        -- be sleeping
   -- TODO: ImpPl1    : VP -> Utt ;       -- let's go
   -- TODO: ImpP3     : NP -> VP -> Utt ; -- let John walk
+  ImpP3 np vp =
+    let a = Ag (GSg Neut) P3 in
+    let pol = PPos in
+    let parts = verbAgr vp.verb Ind Pres a pol.p in
+    let p1 = "пусть" in {
+      s = p1 ++ pol.s ++ vp.adv ! a ++ np.s ! Nom ++ parts.p2 ++ vp.compl ! a
+      } ;
+
   -- TODO: SelfAdvVP : VP -> VP ;        -- is at home himself
   -- TODO: SelfAdVVP : VP -> VP ;        -- is himself at home
   -- TODO: SelfNP    : NP -> NP ;        -- the president himself (is at home)
