@@ -84,6 +84,7 @@ flags coding=utf8 ; optimize=all ;
     A2 = \s -> case s.preferShort of {PrefShort => s.sm ; _ => s.msnom} ++ s.c.s ;  -- ?
     V = \s -> s.inf ;
     V2 = \s -> s.inf ++ s.c.s ;
+    V2V = \s -> s.inf ++ s.c.s ;
     V3 = \s -> s.inf ++ s.c.s ++ s.c2.s ;
     Ord = \s -> s.nsnom ;
     S = \s -> s.s ! Ind ;

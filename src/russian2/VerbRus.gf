@@ -32,11 +32,17 @@ lin
   Slash2V3 v3 np = {
     adv=\\a=>[] ;
     verb=v3 ;
-    compl=\\a=> v3.c.s ++ np.s ! v3.c.c;   -- np.s np a
+    compl=\\a=> v3.c.s ++ np.s ! v3.c.c;
     c=v3.c2
     } ;
 
-  -- TODO: Slash3V3 : V3  -> NP -> VPSlash ;  -- give (it) to her
+  -- : V3  -> NP -> VPSlash ;  -- give (it) to her
+  Slash3V3 v3 np = {
+    adv=\\a=>[] ;
+    verb=v3 ;
+    compl=\\a=> v3.c2.s ++ np.s ! v3.c2.c;
+    c=v3.c
+    } ;
 
   -- : V2V -> VP -> VPSlash ;  -- beg (her) to go
   SlashV2V v2v vp = vp ** {
@@ -50,7 +56,7 @@ lin
 
   -- : VPSlash -> NP -> VP ; -- love it
   ComplSlash vps np = vps ** {
-    compl=\\a => vps.compl ! a ++ vps.c.s ++ np.s ! vps.c.c      -- hasPrep ignored?!
+    compl=\\a => vps.compl ! a ++ vps.c.s ++ np.s ! vps.c.c      -- hasPrep?
     } ;
 
   -- : VV -> VPSlash -> VPSlash ;       -- want to buy
@@ -58,7 +64,12 @@ lin
     verb=concatVebForms vv.v vps.verb.inf ;
     adv=\\a=>vv.modal ! a ++ vps.adv ! a
     } ;
-  -- TODO: SlashV2VNP : V2V -> NP -> VPSlash -> VPSlash ; -- beg me to buy
+  -- : V2V -> NP -> VPSlash -> VPSlash ; -- beg me to buy
+  SlashV2VNP v2v np vps = vps ** {
+    verb=concatVebForms v2v vps.verb.inf ;
+    compl=\\a=>vps.compl ! a ++ vps.c.s ++ np.s ! vps.c.c;   -- hasPrep?
+    c=v2v.c
+    } ;
 
   -- : VPSlash -> VP ;         -- love himself
   ReflVP vps = vps ** {
