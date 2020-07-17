@@ -28,7 +28,14 @@ lin
   -- SlashV2a : V2 -> VPSlash ;  -- love (it)
   SlashV2a v = {adv=\\a=>[] ; verb=v ; compl=\\_ => [] ; c=v.c} ;
 
-  -- TODO: Slash2V3 : V3  -> NP -> VPSlash ;  -- give it (to her)
+  -- : V3 -> NP -> VPSlash ;  -- give it (to her)
+  Slash2V3 v3 np = {
+    adv=\\a=>[] ;
+    verb=v3 ;
+    compl=\\a=> v3.c.s ++ np.s ! v3.c.c;   -- np.s np a
+    c=v3.c2
+    } ;
+
   -- TODO: Slash3V3 : V3  -> NP -> VPSlash ;  -- give (it) to her
 
   -- : V2V -> VP -> VPSlash ;  -- beg (her) to go
@@ -41,7 +48,7 @@ lin
   -- TODO: SlashV2Q : V2Q -> QS -> VPSlash ;  -- ask (him) who came
   -- TODO: SlashV2A : V2A -> AP -> VPSlash ;  -- paint (it) red
 
-  -- TODO: ComplSlash : VPSlash -> NP -> VP ; -- love it
+  -- : VPSlash -> NP -> VP ; -- love it
   ComplSlash vps np = vps ** {
     compl=\\a => vps.compl ! a ++ vps.c.s ++ np.s ! vps.c.c      -- hasPrep ignored?!
     } ;

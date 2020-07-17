@@ -3,6 +3,7 @@ concrete LexiconRus of Lexicon = CatRus **
   open ParadigmsRus, StructuralRus, Prelude, ExtraRus, ResRus in {
 flags optimize=values ; coding=utf8 ;
 lin
+  add_V3 = mkV3 (mkV "складывать" ) obj_no_Prep to2_Prep ;
   airplane_N = mkN "самолёт" ;
   alas_Interj = mkInterj "увы" ;
   already_Adv = mkAdv "уже" ;
@@ -96,6 +97,7 @@ lin
   full_A = (mkAplus (mkA "полный" "" "1*a/c'")) ** {sm="полон"};
   garden_N = mkN "сад" ;
   girl_N = mkN "девочка" feminine animate "3*a";
+  give_V3 = tvDirDir (mkV "давать") ;
   glove_N = mkN "перчатка" feminine inanimate "3*a";
   gold_N = mkN "золото" ;
   good_A = mkA "хороший" "лучше" ;
@@ -189,6 +191,8 @@ lin
   science_N = mkN "наука" ;
   sea_N = mkN "море" neuter inanimate "2c" ;
   seed_N = mkN "семя" neuter inanimate "8°c" ;
+  sell_V3 = tvDirDir (mkV "продавать" );
+  send_V3 = tvDirDir (mkV "посылать" );
   sharp_A = mkA "острый";
   sheep_N = mkN "овца" feminine animate "5*d" ;
   ship_N = mkN "корабль" masculine inanimate "2b";
@@ -218,6 +222,7 @@ lin
   sun_N = mkN "солнце" neuter inanimate "5a";
   table_N = mkN "стол" ;
   tail_N = mkN "хвост" ;
+  talk_V3 = mkV3 (mkV "говорить") with_Prep about_Prep ;
   teacher_N = mkN "учитель" masculine animate "2c(1)";
   television_N = mkN "телевидение" ; -- FIXME: televizor?
   thick_A = mkA "толстый" "толще" "1a/c'";
