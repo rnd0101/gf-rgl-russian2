@@ -685,10 +685,10 @@ oper
       futpl1="сможем";
       futpl2="сможете";
       futpl3="смогут";
-      psgm="был";
-      psgf="была";
-      psgn="было";
-      ppl ="были";
+      psgm="мог";
+      psgf="могла";
+      psgn="могло";
+      ppl ="могли";
       isg2="будь способен";  -- some improvisation here
       ipl1="давайте будем способны";
       ipl2="будьте способны";
@@ -700,6 +700,38 @@ oper
       refl=NonReflexive;
       tran=Intransitive
     } ;
+
+  want : VerbForms
+    = {
+      inf="хотеть";
+      prsg1="хочу";
+      prsg2="хочешь";
+      prsg3="хочет";
+      prpl1="хотим";
+      prpl2="хотите";
+      prpl3="хотят";
+      futsg1="захочу";  -- from the perfective counterpart, only for aux verb use here
+      futsg2="захочешь";
+      futsg3="захочет";
+      futpl1="захотим";
+      futpl2="захотите";
+      futpl3="захотят";
+      psgm="хотел";
+      psgf="хотела";
+      psgn="хотело";
+      ppl ="хотели";
+      isg2="хоти";    -- *
+      ipl1="давайте будем хотеть";
+      ipl2="хотите";  -- *
+      pppsm="";
+      pppsf="";
+      pppsn="";
+      pppsp="";
+      asp=Imperfective;
+      refl=NonReflexive;
+      tran=Transitive
+    } ;
+
 
   nullVerb : VerbForms
     = {

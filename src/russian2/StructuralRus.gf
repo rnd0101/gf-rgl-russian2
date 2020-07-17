@@ -35,13 +35,15 @@ lin
 
   with_Prep = {s="с" ; c=Ins; hasPrep=True};
 
+  please_Voc = ss "пожалуйста" ;
+
   less_CAdv = X.mkCAdv "менее" "чем" ;
   more_CAdv = X.mkCAdv "более" "чем" ;
 
   can8know_VV = {v=can; modal=\\a=>[]} ;
   can_VV = {v=can; modal=\\a=>[]} ;
   must_VV = {v=nullVerb; modal=adjFormsToModal (guessAdjectiveForms "должный")} ;
---  want_VV = want ;
+  want_VV = {v=want; modal=\\a=>[]} ;
 
   every_Det = {
     s = \\g => (adjFormsAdjective (guessAdjectiveForms "каждый")).s ! GSg g;
