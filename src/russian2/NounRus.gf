@@ -46,6 +46,16 @@ lin
 --------------
 -- Determiners
 
+  -- : Quant -> Num -> Det ;  -- these five
+  DetQuant quant num = {
+    s=\\g,a,c => num.s ! g ! a ! c ++ quant.s ! (gennum g (numSizeNumber num.size)) ! a ! c ;
+    g=quant.g ;
+    c=quant.c ;
+    size=num.size
+    } ;
+
+  -- TODO:  DetQuantOrd : Quant -> Num -> Ord -> Det ;  -- these five best
+
   -- : Num  -- mark as singular
   NumSg = {s = \\_,_,_ => [] ; size = Num1 } ;
   -- : Num  -- mark as plural
@@ -55,7 +65,7 @@ lin
   OrdSuperl a = long_superlative a ;
 
   -- : Pron -> Quant ;    -- my (house)
-  PossPron pron = {s=mkPronTable pron.poss ; preferShort=PrefFull} ;
+  PossPron pron = {s=mkPronTable pron.poss ; g=Neut; c=Nom; preferShort=PrefFull} ;
 
 ---------------
 -- Common nouns
@@ -110,4 +120,12 @@ lin
   -- TODO: AdjDAP : DAP -> AP -> DAP ;    -- the large (one)
   -- TODO: DetDAP : Det -> DAP ;          -- this (or that)
 
+---------------------------------------------------
+-- Backwards compatibility
+{-
+  --  : Quant ;       -- the (house), the (houses)
+  DefArt = {s = \\_=>[] ; c=Nom; g = Neut; size = nom };
+  --  : Quant ;       -- a (house), (houses)
+  IndefArt = { s = \\_=>[] ; c=Nom; g = Neut; size = nom };
+  -}
 }

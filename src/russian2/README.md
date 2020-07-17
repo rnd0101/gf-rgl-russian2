@@ -46,4 +46,10 @@ Lang: UseCl (TTAnt TPres ASimul) PPos (GenericCl (UseComp (CompAdv already_Adv))
 LangRus: ты уже —
 ```
 
+```
+> l DetCN (DetQuant (PossPron i_Pron) NumSg)  (ConjCN and_Conj (ConsCN (UseN grammar_N) (BaseCN (UseN apple_N) (UseN flower_N))))
+мой грамматика , яблоко и цветок
+```
+
+
 ## Maintainer

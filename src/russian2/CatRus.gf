@@ -46,22 +46,10 @@ flags coding=utf8 ; optimize=all ;
     Comp = {s : AgrTable ; adv : Str ; cop : CopulaType } ;
 
     Det = Determiner ;
-    Predet, Quant = ResRus.Adjective ;
-    -- Num, Numeral, Card, Digits = NumDet ;
-
-    Num = {
-      s : Gender => Animacy => Case => Str ;
-      size: NumSize
-      } ;
-    Numeral, Card = {
-      s : Gender => Animacy => Case => Str ;
-      size: NumSize
-      } ;
-    Digits = {
-      s : Str ;
-      size: NumSize
-    } ; ----
-
+    Predet = ResRus.Adjective ;
+    Quant = ResRus.Adjective ** {g: Gender; c: Case} ;
+    Num, Numeral, Card = NumDet ;
+    Digits = {s : Str ; size: NumSize} ; ---- TODO:
 
     -- TODO: below copy-paste, sort out (eg, clitics are not needed?)
 
