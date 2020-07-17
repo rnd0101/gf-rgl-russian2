@@ -3,7 +3,7 @@ concrete ConstructionRus of Construction = CatRus **
 
 lin
   hungry_VP = mkVP (mkA "голодный") ;
- -- thirsty_VP = mkVP want_VV (mkVP (mkV пить")) ;
+  thirsty_VP = mkVP want_VV (mkVP (mkV "пить")) ;
   tired_VP = mkVP (mkA "уставший") ;
   scared_VP = mkVP (mkV "бояться") ;
   ill_VP = mkVP (mkA "больной") ;
