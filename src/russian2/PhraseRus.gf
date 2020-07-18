@@ -3,12 +3,15 @@ concrete PhraseRus of Phrase = CatRus ** open Prelude, ResRus in {
 lin
     -- : S -> Utt ;                -- John walks
     UttS s = {s = s.s ! Ind} ;
-    -- TODO: UttQS     : QS  -> Utt ;                -- is it good
+    -- : QS -> Utt ;                -- is it good
+    UttQS qs = {s = qs.s ! QDir} ;
     -- TODO: UttImpSg  : Pol -> Imp -> Utt ;         -- (don't) love yourself
     -- TODO: UttImpPl  : Pol -> Imp -> Utt ;         -- (don't) love yourselves
     -- TODO: UttImpPol : Pol -> Imp -> Utt ;         -- (don't) sleep (polite)
 
-    -- TODO: UttIP     : IP   -> Utt ;               -- who
+    -- : IP -> Utt ;               -- who
+    UttIP ip = {s = ip.nom} ; --- Acc also?
+
     -- TODO: UttIAdv   : IAdv -> Utt ;               -- why
     -- : NP -> Utt ;               -- this man
     UttNP np = {s = np.s ! Nom} ;

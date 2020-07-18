@@ -7,81 +7,68 @@ lin
   -- : Cl -> QCl ;            -- does John walk
   QuestCl cl = cl ** {qf=QDir} ;
 
-{-
   -- : IP -> VP -> QCl ;      -- who walks
-  QuestVP ip vp = notYet "" ;
-  -- {s = \\b,clf,qf  => (predVerbPhrase kto spit).s!b!clf  } ;
+  QuestVP ip vp = {
+    subj=ip.nom ;
+    adv=[] ;
+    verb=vp.verb ;
+    compl=vp.compl ! ip.a ;
+    a=ip.a
+    } ;
 
   -- : IP -> ClSlash -> QCl ; -- whom does John love
-  QuestSlash Kto yaGovoruO = notYet "" ;
---    let {  kom = Kto.s ! (mkPronForm yaGovoruO.c No NonPoss) ; o = yaGovoruO.s2 } in
---    {s =  \\b,clf,_ => o ++ kom ++ yaGovoruO.s ! b ! clf
---    } ;
+  QuestSlash ip cls = cls ** {
+    subj=cls.c.s ++ selectPronCase ip cls.c.c ++ cls.subj ;   -- cls.subj ???
+    a=ip.a
+    } ;
 
   -- : IAdv -> Cl -> QCl ;    -- why does John walk
-  QuestIAdv kak tuPozhivaesh = notYet "" ;
---    {s = \\b,clf,q => kak.s ++ tuPozhivaesh.s!b!clf } ;
+  QuestIAdv iadv cl = cl ** {
+    subj=iadv.s ++ cl.subj
+    } ;
 
   -- : IComp -> NP -> QCl ;   -- where is John
-  QuestIComp kak tuPozhivaesh = notYet "" ;
---    {s = \\b,clf,q => let ne = case b of {Neg => ""; Pos => []}
---     in
---     kak.s ++ ne ++tuPozhivaesh.s! PF Nom No NonPoss } ;
-
--}
-
-{-
-    QuestSlash
-    QuestIAdv
-    QuestIComp
-
-
-    PrepIP p ip = {s = p.s ++ ip.s ! PF Nom No NonPoss} ;
-
-    AdvIP ip adv = {
-      s = \\c => ip.s ! c ++ adv.s ;
-       n = ip.n; p=ip.p; g=ip.g; anim=ip.anim; pron=ip.pron
-      } ;
-
-    IdetCN kakoj okhotnik =
-    {s = \\pf => case kakoj.c of {
-       Nom =>
-        kakoj.s ! AF (extCase pf) okhotnik.anim (gennum okhotnik.g kakoj.n) ++
-         okhotnik.nounpart ! NF kakoj.n (extCase pf) nom ++ okhotnik.relcl ! kakoj.n ! extCase pf ;
-       _ =>
-        kakoj.s ! AF (extCase pf) okhotnik.anim (gennum okhotnik.g kakoj.n) ++
-        okhotnik.nounpart ! NF kakoj.n kakoj.c plg } ++ okhotnik.relcl ! kakoj.n ! kakoj.c ;
-     n = kakoj.n ;
-     p = P3 ;
-     pron = False;
-     g = kakoj.g ;
-     anim = okhotnik.anim
+  QuestIComp icomp np = {
+    subj=icomp.s ! Ag (GSg Neut) P3 ;  --???
+    compl=np.s ! Nom ;  --???
+    adv=icomp.adv ;
+    verb=selectCopula icomp.cop ;
+    a=np.a
     } ;
 
--- 1.4 additions 17/6/2008 by AR
+  -- : Prep -> IP -> IAdv ;  -- with whom
+  PrepIP prep ip = {s = prep.s ++ ip.nom} ;
 
-    IdetIP kakoj = let anim = Inanimate in
-    {s = \\pf => kakoj.s ! AF (extCase pf) anim (pgNum kakoj.g kakoj.n) ;
-     n = kakoj.n ;
-     p = P3 ;
-     pron = False;
-     g = kakoj.g ;
-     anim = anim
+  -- : IP -> Adv -> IP
+  AdvIP ip adv = prependIP adv.s ip ** {a=ip.a} ;
+
+  -- : IAdv -> Adv -> IAdv ;    -- where in Paris
+  AdvIAdv = cc2 ;
+
+  -- CompIAdv  : IAdv -> IComp ;          -- where (is it)
+
+  -- : IP -> IComp ;          -- who (is it)
+  CompIP ip = {
+    s=\\a=>ip.nom ;   -- ???
+    adv=[] ;
+    cop=EllCopula   -- ???
+  } ;
+
+  -- : IDet -> CN -> IP ;       -- which five songs
+  -- Hmmm. size should influence case later, but it's lost here?!
+  IdetCN idet cn = caseTableToRecord (\\cas => idet.s ! cn.g ! cn.anim ! cas ++ cn.s ! numSizeNumber idet.size ! cas)
+    (Ag (gennum idet.g (numSizeNumber idet.size)) P3) cn.anim ;
+
+  -- : IDet -> IP ;       -- which five
+  IdetIP idet = caseTableToRecord (\\cas => idet.s ! idet.g ! Inanimate ! cas)
+    (Ag (gennum idet.g (numSizeNumber idet.size)) P3) Inanimate ;
+
+  -- : IQuant -> Num -> IDet ;  -- which (five)
+  IdetQuant iq num = {
+    s=\\n,a,cas => iq.s ! numSizeNumber num.size ! a ! cas ++ num.s ! iq.g ! a ! cas ;
+    size=num.size ;
+    g=iq.g ;
+    c=iq.c
     } ;
-
-    IdetQuant kakoj pyat = -- okhotnik =
-    {s = \\af =>
-           kakoj.s ! pyat.n ! af ++
-           pyat.s ! genAF af ! animAF af ! caseAF af ;
-     n = pyat.n ;
-     g = kakoj.g ;
-     c = kakoj.c
-    } ;
-
-    AdvIAdv i a = {s = i.s ++ a.s} ;
-
-    CompIAdv a = a ;
-    CompIP ip = {s = ip.s ! PF Nom No NonPoss} ;
--}
 
 }

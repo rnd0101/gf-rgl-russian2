@@ -48,4 +48,15 @@ lin
   -- : S -> SC ;               -- that she goes - что она идёт
   EmbedS s = {s = "что" ++ s.s ! Ind} ;
 
+  -- : Temp -> Pol -> QCl -> QS ;  -- who had not slept
+  UseQCl temp pol cl = {
+    s = table {_ =>
+      let parts = R.verbAgr cl.verb Ind temp.t cl.a pol.p in
+        temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ cl.adv ++ parts.p2 ++ cl.compl
+      }
+    } ;
+
+  -- : QS -> SC                -- who goes
+  EmbedQS qs = {s = qs.s ! QIndir} ;
+
 }

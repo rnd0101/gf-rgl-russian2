@@ -42,6 +42,12 @@ flags coding=utf8 ; optimize=all ;
       verb : VerbForms ;
       a : Agr
       } ;
+    ClSlash = {
+      subj,compl,adv : Str ;
+      verb : VerbForms ;
+      a : Agr ;
+      c : ComplementCase
+      } ;
     Imp = {s: Polarity => GenNum => Str} ;
     Comp = {s : AgrTable ; adv : Str ; cop : CopulaType } ;
 
@@ -58,17 +64,17 @@ flags coding=utf8 ; optimize=all ;
       a : Agr
       } ;
 
-    IP = Pron ** {anim : Animacy} ;
-    IComp = {s : Str} ;
+    IP = ResRus.IPronounForms ;
+    IComp = {s : AgrTable ; adv : Str ; cop : CopulaType } ;
     IDet = {
       s : DetTable ;
       g : Gender ;
-      n : Number ;
+      size : NumSize ;
       c : Case
     } ;
     IQuant = {
       s : Number => Animacy => Case => Str ;
-      g: Gender;
+      g: Gender ;
       c: Case
       } ;
 
@@ -94,6 +100,9 @@ flags coding=utf8 ; optimize=all ;
     S = \s -> s.s ! Ind ;
     VP = \s -> s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ;      -- Are these useful?
     Comp = \s -> copula.inf ++ s.s ! Ag (GSg Neut) P3 ++ s.adv ;
+    IComp = \s -> s.s ! Ag (GSg Neut) P3 ++ s.adv ++ copula.inf;
     VPSlash = \s -> s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ++ s.c.s ; -- Are these useful?
     Cl = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.compl ;
+    QCl = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.compl ;
+    IP = \s -> s.nom ;
 }

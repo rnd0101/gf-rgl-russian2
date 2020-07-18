@@ -770,13 +770,13 @@ oper
 ---------------------------
 -- Pronouns -- Местоимения
 
-  -- Pronouns in Russian
-
   PronounForms : Type = {
     nom, gen, dat, acc, ins, prep : Str ;
     poss : PronForms ;
     a : Agr
   } ;
+
+  IPronounForms : Type = PronounForms ** {anim : Animacy} ;
 
   PronTable = GenNum => Animacy => Case => Str ;
 
@@ -1006,16 +1006,19 @@ oper
       msprep = ego
     } ;
 
+  selectPronCase : PronounForms -> Case -> Str
+    = \forms,cas -> case cas of {
+      (Nom | VocRus) => forms.nom ;
+      (Gen | Ptv)    => forms.gen ;
+      Dat            => forms.dat ;
+      Acc            => forms.acc ;
+      Ins            => forms.ins ;
+      (Pre | Loc)    => forms.prep
+    } ;
+
   pronFormsPronoun : PronounForms -> Pronoun
     = \forms -> {
-      s = table {
-        (Nom | VocRus) => forms.nom ;
-        (Gen | Ptv)    => forms.gen ;
-        Dat            => forms.dat ;
-        Acc            => forms.acc ;
-        Ins            => forms.ins ;
-        (Pre | Loc)    => forms.prep
-      } ;
+      s = \\cas => selectPronCase forms cas ;
       poss = nullPron.poss ;
       a = forms.a
     } ;
@@ -1040,6 +1043,97 @@ oper
 
   all_Pron = pronoun2AstB "весь" ;
   only_Pron = guessAdjectiveForms "единственный" ;
+
+  doChPron : Str -> Agr -> Animacy -> IPronounForms
+    = \ch, a, anim -> {  -- "ч", "нич"
+      a = a ;
+      anim=anim ;
+      nom, voc = ch + "то" ;
+      gen, acc, ptv = ch + "его" ;
+      dat = ch + "ему" ;
+      prep, loc = ch + "ём" ;
+      ins = ch + "ем" ;
+      poss = {
+        msnom = ch + "ей" ;
+        fsnom = ch + "ья" ;
+        nsnom = ch + "ьё" ;
+        pnom = ch + "ьи" ;
+        msgen = ch + "ьего" ;
+        fsgen = ch + "ьей" ;
+        pgen  = ch + "ьих" ;
+        msdat = ch + "ьему" ;
+        fsacc = ch + "ью" ;
+        msins = ch + "ьим" ;
+        fsins = ch + "ьей" ;
+        pins  = ch + "ьими" ;
+        msprep = ch + "ьём"
+      }
+    } ;
+
+  doKPron : Str -> Agr -> Animacy -> IPronounForms
+    = \ch, a, anim ->   -- "к", "ник"
+      let subPoss = (Predef.tk 1 ch) + "ч" in {
+      a = a ;
+      anim=anim ;
+      nom, voc = ch + "то" ;
+      gen, acc, ptv = ch + "ого" ;
+      dat = ch + "ому" ;
+      prep, loc = ch + "ом" ;
+      ins = ch + "ем" ;
+      poss = (doChPron subPoss a anim).poss
+    } ;
+
+  prependIP : Str -> IPronounForms -> IPronounForms
+    = \s,ip -> ip ** {
+      nom=ip.nom ++ s;
+      gen=ip.gen ++ s;
+      dat=ip.dat ++ s;
+      acc=ip.acc ++ s;
+      ins=ip.ins ++ s;
+      prep=ip.prep ++ s;
+      poss={
+        msnom = ip.poss.msnom ++ s;
+        fsnom = ip.poss.fsnom ++ s;
+        nsnom = ip.poss.nsnom ++ s;
+        pnom  = ip.poss.pnom ++ s;
+        msgen = ip.poss.msgen ++ s;
+        fsgen = ip.poss.fsgen ++ s;
+        pgen  = ip.poss.pgen ++ s;
+        msdat = ip.poss.msdat ++ s;
+        fsacc = ip.poss.fsacc ++ s;
+        msins = ip.poss.msins ++ s;
+        fsins = ip.poss.fsins ++ s;
+        pins  = ip.poss.pins ++ s;
+        msprep= ip.poss.msprep ++ s;
+      }
+    } ;
+
+  caseTableToRecord : (Case => Str) -> Agr -> Animacy -> IPronounForms
+    = \ct,a,anim -> {
+      nom=ct ! Nom ;
+      gen=ct ! Gen ;
+      dat=ct ! Dat ;
+      acc=ct ! Acc ;
+      ins=ct ! Ins ;
+      prep=ct ! Pre ;
+      poss={
+        msnom = [] ;
+        fsnom = [] ;
+        nsnom = [] ;
+        pnom  = [] ;
+        msgen = [] ;
+        fsgen = [] ;
+        pgen  = [] ;
+        msdat = [] ;
+        fsacc = [] ;
+        msins = [] ;
+        fsins = [] ;
+        pins  = [] ;
+        msprep= [] ;
+      } ;
+      a=a ;
+      anim=anim
+    } ;
 
 ---------------
 -- Numerals -- Числительные

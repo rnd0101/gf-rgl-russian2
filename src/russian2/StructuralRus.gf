@@ -12,6 +12,17 @@ lin
   it_Pron = personalPron (Ag NSg P3) ;
   they_Pron = personalPron (Ag GPl P3) ;
 
+  whatSg_IP = doChPron "ч" (Ag (GSg Neut) P3) Inanimate ;
+  whatPl_IP = doChPron "ч" (Ag GPl P3) Inanimate ;
+  whoSg_IP = doKPron "к" (Ag (GSg Neut) P3) Animate ;
+  whoPl_IP = doKPron "к" (Ag (GSg Neut) P3) Animate ;
+
+  which_IQuant = let af=adjFormsAdjective (guessAdjectiveForms "который") in {
+      s=\\n,anim,cas => af.s ! gennum Neut n ! anim ! cas ;
+      g=Neut ;
+      c=Nom
+    } ;
+
   above_Prep = {s="над" ; c=Ins; hasPrep=True} ;
   after_Prep = {s="после" ; c=Gen; hasPrep=True };
   before_Prep = {s="перед" ; c=Ins; hasPrep=True};
@@ -36,6 +47,18 @@ lin
   with_Prep = {s="с" ; c=Ins; hasPrep=True};
 
   please_Voc = ss "пожалуйста" ;
+
+  everywhere_Adv = mkAdv "везде" ;
+  here_Adv = mkAdv "здесь" ;
+  here7to_Adv = mkAdv "сюда" ;
+  here7from_Adv = mkAdv "отсюда" ;
+  quite_Adv = mkAdv "довольно" ;
+  somewhere_Adv  = mkAdv "где-нибудь" ;
+  there_Adv = mkAdv "там" ;
+  there7to_Adv = mkAdv "туда" ;
+  there7from_Adv = mkAdv "оттуда" ;
+
+  so_AdA = ss "так";
 
   less_CAdv = X.mkCAdv "менее" "чем" ;
   more_CAdv = X.mkCAdv "более" "чем" ;

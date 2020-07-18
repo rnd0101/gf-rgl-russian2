@@ -51,5 +51,9 @@ LangRus: ты уже —
 мой грамматика , яблоко и цветок
 ```
 
+```
+> l UseCl (TTAnt TCond ASimul) PPos (GenericCl (ComplVV can_VV hungry_VP))
+ты мог быть бы голоден
+```
 
 ## Maintainer
