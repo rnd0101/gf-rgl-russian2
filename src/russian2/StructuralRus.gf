@@ -42,7 +42,7 @@ lin
 
   can8know_VV = {v=can; modal=\\a=>[]} ;
   can_VV = {v=can; modal=\\a=>[]} ;
-  must_VV = {v=nullVerb; modal=adjFormsToModal (guessAdjectiveForms "должный")} ;
+  must_VV = {v=nullVerb; modal=adjFormsToShort (guessAdjectiveForms "должный")} ;
   want_VV = {v=want; modal=\\a=>[]} ;
 
   every_Det = {

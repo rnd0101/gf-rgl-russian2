@@ -65,7 +65,7 @@ lin
   OrdSuperl a = long_superlative a ;
 
   -- : Pron -> Quant ;    -- my (house)
-  PossPron pron = {s=mkPronTable pron.poss ; g=Neut; c=Nom; preferShort=PrefFull} ;
+  PossPron pron = {s=mkPronTable pron.poss ; short=\\a=>[] ; g=Neut; c=Nom; preferShort=PrefFull} ;
 
 ---------------
 -- Common nouns

@@ -23,6 +23,7 @@ concrete AdjectiveRus of Adjective = CatRus ** open ResRus, Prelude in {
     -- : A  -> NP -> AP ;  -- warmer than I - теплее меня
     ComparA a np = {
       s = \\gn,anim,cas => a.comp ++ np.s ! Gen ;
+      short = \\ag=>a.comp ++ np.s ! Gen ;
       isPost = False ;
       preferShort = PrefShort
       } ;
@@ -31,17 +32,17 @@ concrete AdjectiveRus of Adjective = CatRus ** open ResRus, Prelude in {
     AdjOrd ord = adjFormsAdjective ord ** {isPost = False; preferShort = PrefFull} ;
 
     -- : A2 -> NP -> AP ;  -- married to him - замужем за ним (NB: gender change requires different word!)
-    ComplA2 a2 np = {
-      s = \\gn,anim,cas => (adjFormsAdjective a2).s ! gn ! anim ! (a2.c.c) ++ a2.c.s ++ np.s ! (a2.c.c) ;
+    ComplA2 a2 np = let af=adjFormsAdjective a2 in  {
+      s = \\gn,anim,cas => af.s ! gn ! anim ! (a2.c.c) ++ a2.c.s ++ np.s ! (a2.c.c) ;
+      short = \\a=>af.short ! a ++ a2.c.s ++ np.s ! (a2.c.c) ;
       isPost = False ;
       preferShort = a2.preferShort
       } ;
 
     -- : A2 -> AP ;        -- married to itself - замужем за собой
-    ReflA2 a2 = {
-      s = \\gn,anim,cas => (adjFormsAdjective a2).s ! gn ! anim ! cas ++ a2.c.s
-        ++ sam.s ! (a2.c.c)
-      ;
+    ReflA2 a2 = let af=adjFormsAdjective a2 in {
+      s = \\gn,anim,cas => af.s ! gn ! anim ! cas ++ a2.c.s ++ sam.s ! (a2.c.c) ;
+      short = \\a=>af.short ! a ++ a2.c.s ++ sam.s ! (a2.c.c) ;
       isPost = False ;
       preferShort = a2.preferShort
       } ;

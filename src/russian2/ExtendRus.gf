@@ -1,4 +1,4 @@
---# -path=alltenses:../common:../abstract
+--# -path=../common:../abstract
 
 concrete ExtendRus of Extend =
   CatRus ** ExtendFunctor - [

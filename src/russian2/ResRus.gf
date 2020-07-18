@@ -230,6 +230,7 @@ oper
 
   Adjective : Type = {
     s : AdjTable ;
+    short : AgrTable ;
     preferShort : ShortFormPreference
     } ;
 
@@ -258,6 +259,7 @@ oper
 
   adjFormsAdjective : AdjForms -> Adjective
     = \forms -> {
+      short =adjFormsToShort forms ;
       s = table {
         GSg Fem => table {
           (Inanimate|Animate) => table {
@@ -664,9 +666,20 @@ oper
       prpl3="являются"
     } ;
 
+  copulaEll : VerbForms
+    = copula ** {
+      prsg1="" ;
+      prsg2="" ;
+      prsg3="" ;
+      prpl1="" ;
+      prpl2="" ;
+      prpl3=""
+    } ;
+
   selectCopula : CopulaType -> VerbForms
     = \cop -> case cop of {
        NomCopula => copula ;
+       EllCopula => copulaEll ;
        InsCopula => copulaIns
     } ;
 
@@ -746,7 +759,7 @@ oper
       tran=Intransitive
     } ;
 
-  adjFormsToModal : AdjForms -> AgrTable
+  adjFormsToShort : AdjForms -> AgrTable
     = \af -> table {
       Ag (GSg Fem) _ => af.sf ;
       Ag (GSg Masc) _ => af.sm ;

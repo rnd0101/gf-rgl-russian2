@@ -9,6 +9,7 @@ concrete ConjunctionRus of Conjunction =
     [Adv] = {s1,s2 : Str} ;
     [AdV] = {s1,s2 : Str} ;
     [AP] = {s1,s2 : AdjTable ;
+      short1,short2 : AgrTable ;
       isPost : Bool;
       preferShort : ShortFormPreference
       } ;
@@ -36,14 +37,20 @@ concrete ConjunctionRus of Conjunction =
     ConsAdV = consrSS comma ;
 
     -- : AP -> AP -> ListAP ;       -- red, white
-    BaseAP x y = twoTable3 GenNum Animacy Case x y
-                 ** {isPost = orB x.isPost y.isPost;
-                     preferShort = selectAPForm x.preferShort y.preferShort} ;
+    BaseAP x y = twoTable3 GenNum Animacy Case x y ** {
+      short1 = x.short ;
+      short2 = y.short ;
+      isPost = orB x.isPost y.isPost;
+      preferShort = selectAPForm x.preferShort y.preferShort
+      } ;
 
     -- ConsAP : AP -> ListAP -> ListAP ;   -- red, white, blue
-    ConsAP x xs = consrTable3 GenNum Animacy Case comma x xs
-                  ** {isPost = orB x.isPost xs.isPost ;
-                      preferShort = selectAPForm x.preferShort xs.preferShort} ;
+    ConsAP x xs = consrTable3 GenNum Animacy Case comma x xs ** {
+      short1 = \\ag=> x.short ! ag ++ comma ++ xs.short1 ! ag ;
+      short2 = xs.short2 ;
+      isPost = orB x.isPost xs.isPost ;
+      preferShort = selectAPForm x.preferShort xs.preferShort
+      } ;
 
     -- : S -> S -> ListS ;      -- John walks, Mary runs
     BaseS = twoTable Mood ;
@@ -63,8 +70,11 @@ concrete ConjunctionRus of Conjunction =
     ConjAdV = conjunctDistrSS ;
 
     -- : Conj -> ListAP -> AP ;     -- cold and warm
-    ConjAP conj xs = conjunctDistrTable3 GenNum Animacy Case conj xs
-                       ** {isPost = xs.isPost; preferShort = xs.preferShort} ;
+    ConjAP conj xs = conjunctDistrTable3 GenNum Animacy Case conj xs ** {
+      short = \\ag => conj.s1 ++ xs.short1 ! ag ++ conj.s2 ++ xs.short2 ! ag ;
+      isPost = xs.isPost;
+      preferShort = xs.preferShort
+      } ;
 
     ConjS conj ss = conjunctDistrTable Mood conj ss ;
 

@@ -99,7 +99,10 @@ lin
   -- : VP -> Prep -> VPSlash ;  -- live in (it)
   VPSlashPrep vp prep = vp ** {c=prep} ;
   -- : AP -> Comp ;            -- (be) small
-  CompAP ap = {s=\\a=>ap.s ! agrGenNum a ! Inanimate ! Ins ; adv=[] ; cop=InsCopula} ;
+  CompAP ap = case ap.preferShort of {
+    PrefFull => {s=\\a=>ap.s ! agrGenNum a ! Inanimate ! Ins ; adv=[] ; cop=InsCopula} ;
+    PrefShort => {s=ap.short ; adv=[] ; cop=EllCopula}
+    };
 
   -- : NP -> Comp ;            -- (be) the man
   CompNP np = {s=\\a=>np.s ! Ins ; adv=[] ; cop=InsCopula} ;
