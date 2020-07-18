@@ -73,6 +73,11 @@ lin
   -- : Pron -> Quant ;    -- my (house)
   PossPron pron = {s=mkPronTable pron.poss ; short=\\a=>[] ; g=Neut; c=Nom; preferShort=PrefFull} ;
 
+  -- : AdN -> Card -> Card
+  AdNum adn card = card ** {
+    s=\\g,a,c => adn.s ++ card.s ! g ! a ! c
+    } ;
+
 ---------------
 -- Common nouns
 

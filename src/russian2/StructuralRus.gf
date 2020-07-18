@@ -1,5 +1,5 @@
 concrete StructuralRus of Structural = CatRus **
-  open ParadigmsRus, ResRus, (X = ConstructX), Prelude in {
+  open ParadigmsRus, ResRus, MorphoRus, (X = ConstructX), Prelude in {
 
 lin
   i_Pron = personalPron (Ag MSg P1) ;
@@ -101,6 +101,9 @@ lin
   always_AdV = ss "всегда" ;
   almost_AdA = ss "почти" ;
   almost_AdN = ss "почти" ;
+
+  everybody_NP = lin NP everybody ;
+  everything_NP = lin NP everything;
 
   yes_Utt = ss ["да"] ;
 }

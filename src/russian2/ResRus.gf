@@ -1044,6 +1044,18 @@ oper
   all_Pron = pronoun2AstB "весь" ;
   only_Pron = guessAdjectiveForms "единственный" ;
 
+  vse : PronounForms = {
+    nom="все" ; gen="всех" ; dat="всем" ; acc="всех" ; ins="всеми" ; prep="всех" ;
+    poss=all_Pron ;
+    a=Ag GPl P3
+    } ;
+
+  vse_ina : PronounForms = {
+    nom="всё" ; gen="всего" ; dat="всему" ; acc="всё" ; ins="всем" ; prep="всём" ;
+    poss=all_Pron ;
+    a=Ag (GSg Neut) P3
+    } ;
+
   doChPron : Str -> Agr -> Animacy -> IPronounForms
     = \ch, a, anim -> {  -- "ч", "нич"
       a = a ;

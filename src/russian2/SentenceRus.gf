@@ -1,8 +1,10 @@
-concrete SentenceRus of Sentence = CatRus ** open Prelude, TenseRus, ParamRus, (R=ResRus) in {
+concrete SentenceRus of Sentence = CatRus ** open Prelude, TenseRus, ParamRus, Coordination, (R=ResRus) in {
 flags optimize=all_subs ; coding=utf8 ;
 lin
   -- : Adv -> S -> S ;            -- then I will go home
-  AdvS a s = {s=\\m => a.s ++ s.s ! m} ;
+  AdvS adv s = {s=\\m => adv.s ++ s.s ! m} ;
+  -- : Adv -> S -> S ;            -- next week, I will go home
+  ExtAdvS adv s = {s=\\m => adv.s ++ comma ++ s.s ! m} ;   -- TODO: what is the case for this?
 
   -- : Temp -> Pol -> Cl -> S ;   -- she had not slept - она не спала
   UseCl temp pol cl = {
