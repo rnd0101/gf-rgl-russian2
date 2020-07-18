@@ -24,7 +24,8 @@ lin
 
     -- : CN -> Utt ;               -- house
     UttCN cn = {s = cn.s ! Sg ! Nom} ;
-    -- TODO: UttCard   : Card -> Utt ;               -- five
+    -- : Card -> Utt ;               -- five
+    UttCard card = {s=card.s ! Neut ! Inanimate ! Nom};
     -- : AP -> Utt ;               -- fine
     UttAP ap = {s = ap.s ! GSg Masc ! Animate ! Nom } ;
     -- : Interj -> Utt ;             -- alas

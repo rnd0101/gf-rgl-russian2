@@ -41,7 +41,6 @@ oper SlashV2S : V2S -> S -> VPSlash = notYet "SlashV2S" ;
 oper SlashVP : NP -> VPSlash -> ClSlash = notYet "SlashVP" ;
 oper SlashVS : NP -> VS -> SSlash -> ClSlash = notYet "SlashVS" ;
 oper UseSlash : Temp -> Pol -> ClSlash -> SSlash = notYet "UseSlash" ;
-oper UttCard : Card -> Utt = notYet "UttCard" ;
 oper UttIAdv : IAdv -> Utt = notYet "UttIAdv" ;
 oper UttImpPl : Pol -> Imp -> Utt = notYet "UttImpPl" ;
 oper UttImpPol : Pol -> Imp -> Utt = notYet "UttImpPol" ;
@@ -55,12 +54,7 @@ oper whoSg_IP : IP = notYet "whoSg_IP" ;
 -- diff with Slo:
 oper
   AdvNP   : NP -> Adv -> NP = notYet "AdvNP";
-  DefArt   : Quant  = notYet "";       -- the (house), the (houses)
-  IndefArt : Quant  = notYet "" ;       -- a (house), (houses)
   IdRP  : RP =  notYet "" ;                      -- which
-  NumCard : Card -> Num =  notYet "" ; -- one/five [explicit numeral]
-  NumDigits : Digits  -> Card = notYet "";
-  NumNumeral : Numeral -> Card = notYet "" ;  -- fifty-one
   QuestCl     : Cl -> QCl = notYet "";            -- does John walk
   RelVP    : RP -> VP -> RCl = notYet "";      -- who loves John
   that_Quant : Quant = notYet "";

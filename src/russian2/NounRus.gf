@@ -45,6 +45,12 @@ lin
 
 --------------
 -- Determiners
+  -- : Numeral -> Card  ;  -- fifty-one
+  NumNumeral n = n ;
+  -- : Card -> Num
+  NumCard c = c ;
+  -- : Digits -> Card ;  -- 51
+  NumDigits n = {s = \\_,_,_ => n.s ; n = n.n ; size = n.size } ;
 
   -- : Quant -> Num -> Det ;  -- these five
   DetQuant quant num = {
@@ -114,6 +120,7 @@ lin
 
   -- TODO: CountNP : Det -> NP -> NP ;    -- three of them, some of the boys
 
+
 ---------------------------------------------------
 -- Conjoinable determiners and ones with adjectives
 
@@ -122,10 +129,9 @@ lin
 
 ---------------------------------------------------
 -- Backwards compatibility
-{-
   --  : Quant ;       -- the (house), the (houses)
-  DefArt = {s = \\_=>[] ; c=Nom; g = Neut; size = nom };
+  DefArt = {s = \\gn,anim,cas=>[] ; short=\\a=>[] ; c=Nom; g = Neut; size = Num1 ; preferShort=PrefFull};
   --  : Quant ;       -- a (house), (houses)
-  IndefArt = { s = \\_=>[] ; c=Nom; g = Neut; size = nom };
-  -}
+  IndefArt = {s = \\gn,anim,cas=>[] ; short=\\a=>[] ; c=Nom; g = Neut; size = Num1 ; preferShort=PrefFull};
+
 }
