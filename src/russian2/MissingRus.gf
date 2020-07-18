@@ -55,7 +55,7 @@ oper whoSg_IP : IP = notYet "whoSg_IP" ;
 oper
   AdvNP   : NP -> Adv -> NP = notYet "AdvNP";
   IdRP  : RP =  notYet "" ;                      -- which
-  QuestCl     : Cl -> QCl = notYet "";            -- does John walk
+  -- QuestCl     : Cl -> QCl = notYet "";            -- does John walk
   RelVP    : RP -> VP -> RCl = notYet "";      -- who loves John
   that_Quant : Quant = notYet "";
   this_Quant : Quant = notYet "";

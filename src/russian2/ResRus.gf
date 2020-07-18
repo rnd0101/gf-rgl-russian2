@@ -156,7 +156,7 @@ oper
   mkN2plus : Noun2Forms -> Noun2Forms
     = \nf -> nf ;
 
-  Determiner : Type = {  -- определяемое слово
+  Determiner : Type = {
     s : DetTable ;
     g : Gender ;  -- is this enough? Is noGender case needed?
     c : Case ;

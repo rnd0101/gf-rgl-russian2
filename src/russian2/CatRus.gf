@@ -51,10 +51,26 @@ flags coding=utf8 ; optimize=all ;
     Num, Numeral, Card = NumDet ;
     Digits = {s : Str ; size: NumSize} ; ---- TODO:
 
-    -- TODO: below copy-paste, sort out (eg, clitics are not needed?)
+    QS  = {s : QForm => Str} ;
+    QCl = {
+      subj,compl,adv : Str ;
+      verb : VerbForms ;
+      a : Agr
+      } ;
 
-    QS  = {s : Str} ; ---- TODO: indirect questions
-    QCl = {subj,compl : Str ; verb : VerbForms ; a : Agr} ; -- = Cl ---- check if enough
+    IP = Pron ** {anim : Animacy} ;
+    IComp = {s : Str} ;
+    IDet = {
+      s : DetTable ;
+      g : Gender ;
+      n : Number ;
+      c : Case
+    } ;
+    IQuant = {
+      s : Number => Animacy => Case => Str ;
+      g: Gender;
+      c: Case
+      } ;
 
     RS  = {s : Mood => Agr => Str ; c : Case} ;
     RCl = {subj,compl : AgrTable ; verb : VerbForms} ; ---- RAgr with composite RP
