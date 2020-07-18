@@ -3,7 +3,7 @@
 concrete LangRus of Lang =
   GrammarRus,
   LexiconRus,
-  -- ConstructionRus,
+  ConstructionRus,
   DocumentationRus
   ** {
 

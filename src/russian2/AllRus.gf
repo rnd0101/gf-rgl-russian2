@@ -1,3 +1,3 @@
 --# -path=.:../abstract:../common:../api
 
-concrete AllRus of AllRusAbs = LangRus, ExtendRus, ExtraRus ** {flags coding=utf8;} ;
+concrete AllRus of AllRusAbs = LangRus, ExtraRus, ExtendRus ** {flags coding=utf8;} ;

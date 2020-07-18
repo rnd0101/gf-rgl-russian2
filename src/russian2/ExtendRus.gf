@@ -1,7 +1,9 @@
---# -path=.:../common:../abstract
+--# -path=alltenses:../common:../abstract
 
 concrete ExtendRus of Extend =
   CatRus ** ExtendFunctor - [
+    iFem_Pron,
+    theyFem_Pron, weFem_Pron, youFem_Pron, youPlFem_Pron, youPolFem_Pron, youPolPlFem_Pron, youPolPl_Pron,
     VPS, ListVPS, VPI, ListVPI, VPS2, ListVPS2, VPI2, ListVPI2, RNP, RNPList,
     UseComp, RelNP, UseComp_estar, SubjRelNP, PredAPVP, ImpersCl, UseComp, CompAP, EmbedVP, ExistNP, UseQCl,
     QuestCl, ExistNP, UseQCl, ExistIP, AdvVP, AdvVP, AdvVP, UseComp, CompAP, ExistS, ExistNPQS, ExistIPQS,
@@ -26,7 +28,7 @@ concrete ExtendRus of Extend =
     RNP     = {s : Agr => Str} ;
     RNPList = {s1,s2 : Agr => Str} ;
 
-  lin
-    iFem_Pron = personalPron (Ag (GSg Fem) P1) ;
-    youFem_Pron = personalPron (Ag (GSg Fem) P2) ;
+--  lin
+--    iFem_Pron = personalPron (Ag (GSg Fem) P1) ;
+--    youFem_Pron = personalPron (Ag (GSg Fem) P2) ;
  } ;
