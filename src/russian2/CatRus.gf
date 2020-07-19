@@ -65,7 +65,7 @@ flags coding=utf8 ; optimize=all ;
       a : Agr
       } ;
 
-    IP = ResRus.IPronounForms ;
+    IP, RP = ResRus.IPronounForms ;
     IComp = {s : AgrTable ; adv : Str ; cop : CopulaType } ;
     IDet = {
       s : DetTable ;
@@ -73,9 +73,13 @@ flags coding=utf8 ; optimize=all ;
       size : NumSize ;
       c : Case
     } ;
-    RS  = {s : Mood => Agr => Str ; c : Case} ;
-    RCl = {subj,compl : AgrTable ; verb : VerbForms} ; ---- RAgr with composite RP
-    RP  = AdjForms ;
+    RS  = {s : AdjTable} ;
+    RCl = {
+      subj : AdjTable ;
+      compl,adv : AgrTable ;
+      verb : VerbForms ;
+      a : Agr
+      } ;
 
     Prep = ResRus.ComplementCase ;
     Conj = {s1,s2 : Str ; n : Number} ;
@@ -101,5 +105,7 @@ flags coding=utf8 ; optimize=all ;
     Cl = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.compl ;
     ClSlash = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.compl ;
     QCl = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.compl ;
+    RCl = \s -> s.subj ! GSg Neut ! Inanimate ! Nom ++ s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.compl ! Ag (GSg Neut) P3  ;
     IP = \s -> s.nom ;
+    RP = \s -> s.nom ;
 }

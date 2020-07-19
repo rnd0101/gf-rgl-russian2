@@ -1,4 +1,4 @@
-concrete NounRus of Noun = CatRus ** open ResRus, ParamRus, Prelude in {
+concrete NounRus of Noun = CatRus ** open ResRus, ParamRus, Coordination, Prelude in {
 flags coding=utf8 ; optimize=all ;
 
 lin
@@ -28,7 +28,9 @@ lin
     s = \\cas => np.s ! cas ++ (shortPastPassPart v2 (agrGenNum np.a))
     } ;
 
-  -- TODO: AdvNP   : NP -> Adv -> NP ;    -- Paris today
+  -- : NP -> Adv -> NP ;    -- Paris today
+  AdvNP np adv = np ** {s=\\cas=>np.s ! cas ++ adv.s} ;
+
   -- TODO: ExtAdvNP: NP -> Adv -> NP ;    -- boys, such as ..
   -- TODO: RelNP   : NP -> RS  -> NP ;    -- Paris, which is here
 
@@ -98,7 +100,7 @@ lin
   Use3N3 n3 = lin N2 n3 ;
 
   -- : CN -> RS -> CN ;   -- house that John bought
-  RelCN cn rs = cn ** {s = \\n,c => cn.s ! n ! c ++ rs.s ! Ind ! Ag (gennum cn.g n) P3}; -- RS case ignored???
+  RelCN cn rs = cn ** {s = \\n,c => cn.s ! n ! c ++ comma ++ rs.s ! gennum cn.g n ! cn.anim ! c }; -- RS case ignored???
 
   -- : CN -> SC -> CN ;   -- question where she sleeps
   SentCN cn sc = cn ** {s = \\n,c => cn.s ! n ! c ++ sc.s}; -- SC type will change???

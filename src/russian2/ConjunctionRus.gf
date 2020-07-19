@@ -22,7 +22,7 @@ concrete ConjunctionRus of Conjunction =
       anim : Animacy
       } ;
     [S] = {s1,s2 : Mood => Str} ;
-    [RS] = {s1,s2 : Mood => Agr => Str ; c : Case} ;
+    [RS] = {s1,s2 : AdjTable} ;
 
   lin
     -- : Adv -> Adv -> ListAdv ;     -- here, there
@@ -59,10 +59,10 @@ concrete ConjunctionRus of Conjunction =
     ConsS = consrTable Mood comma ;
 
     -- : RS -> RS -> ListRS ;       -- who walks, whom I know
-    BaseRS x y = twoTable2 Mood Agr x y ** {c = y.c} ;
+    BaseRS x y = twoTable3 GenNum Animacy Case x y ** {c = y.c} ;
 
     -- : RS -> ListRS -> ListRS ;   -- who walks, whom I know, who is here
-    ConsRS xs x = consrTable2 Mood Agr comma xs x ** {c = xs.c} ;
+    ConsRS xs x = consrTable3 GenNum Animacy Case comma xs x ** {c = xs.c} ;
 
     -- : Conj -> ListAdv -> Adv ;   -- here or there
     ConjAdv = conjunctDistrSS ;
@@ -79,7 +79,7 @@ concrete ConjunctionRus of Conjunction =
     ConjS conj ss = conjunctDistrTable Mood conj ss ;
 
     -- : Conj -> ListRS -> RS ;     -- who walks and whose mother runs
-    ConjRS conj ss = conjunctDistrTable2 Mood Agr conj ss ** {
+    ConjRS conj ss = conjunctDistrTable3 GenNum Animacy Case conj ss ** {
       c = ss.c
       } ;
 

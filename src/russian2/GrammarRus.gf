@@ -8,7 +8,7 @@ concrete GrammarRus of Grammar =
   NumeralRus,
   SentenceRus,
   QuestionRus,
-  --RelativeRus,
+  RelativeRus,
   ConjunctionRus,
   PhraseRus,
   TextRus,

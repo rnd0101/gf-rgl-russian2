@@ -264,7 +264,7 @@ oper
 
   adjFormsAdjective : AdjForms -> Adjective
     = \forms -> {
-      short =adjFormsToShort forms ;
+      short = adjFormsToShort forms ;
       s = table {
         GSg Fem => table {
           (Inanimate|Animate) => table {
@@ -1061,7 +1061,7 @@ oper
     a=Ag (GSg Neut) P3
     } ;
 
-  doChPron : Str -> Agr -> Animacy -> IPronounForms
+  doChPron : Str -> Agr -> Animacy -> IPronounForms  -- что, ничто
     = \ch, a, anim -> {  -- "ч", "нич"
       a = a ;
       anim=anim ;
@@ -1087,7 +1087,7 @@ oper
       }
     } ;
 
-  doKPron : Str -> Agr -> Animacy -> IPronounForms
+  doKPron : Str -> Agr -> Animacy -> IPronounForms  -- кто, никто
     = \ch, a, anim ->   -- "к", "ник"
       let subPoss = (Predef.tk 1 ch) + "ч" in {
       a = a ;
@@ -1098,6 +1098,19 @@ oper
       prep, loc = ch + "ом" ;
       ins = ch + "ем" ;
       poss = (doChPron subPoss a anim).poss
+    } ;
+
+  doKotoryjPron : Str -> Agr -> Animacy -> IPronounForms
+    = \w, a, anim ->   -- "который", "некоторый"
+      let stem = (Predef.tk 2 w) in {
+      a = a ;
+      anim=anim ;
+      nom, voc = stem + "ое" ;
+      gen, acc, ptv = stem + "ого" ;
+      dat = stem + "ому" ;
+      prep, loc = stem + "ом" ;
+      ins = stem + "ым" ;
+      poss = guessAdjectiveForms w
     } ;
 
   prependIP : Str -> IPronounForms -> IPronounForms

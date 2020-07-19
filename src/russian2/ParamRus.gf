@@ -83,6 +83,8 @@ resource ParamRus = ParamX, CommonX [Temp] ** open Prelude in {
       = \gn -> case gn of {GSg x => x ; GPl => Neut} ;
     agrGenNum : Agr -> GenNum
       = \a -> case a of {Ag gn _ => gn} ;
+    genNumAgrP3 : GenNum -> Agr
+      = \gn -> Ag gn P3 ;
 
     DeclType     = Predef.Ints 8 ;        -- Declension type
 

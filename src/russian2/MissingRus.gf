@@ -23,13 +23,4 @@ oper SlashPrep : Cl -> Prep -> ClSlash = notYet "SlashPrep" ;
 oper SlashV2A : V2A -> AP -> VPSlash = notYet "SlashV2A" ;
 oper SlashV2Q : V2Q -> QS -> VPSlash = notYet "SlashV2Q" ;
 oper SlashV2S : V2S -> S -> VPSlash = notYet "SlashV2S" ;
-
--- diff with Slo:
-oper
-  AdvNP   : NP -> Adv -> NP = notYet "AdvNP";
-  IdRP  : RP =  notYet "" ;                      -- which
-  RelVP    : RP -> VP -> RCl = notYet "";      -- who loves John
-  that_Quant : Quant = notYet "";
-  this_Quant : Quant = notYet "";
-  UseRCl   : Temp -> Pol -> RCl -> RS = notYet "";  -- that had not slept
 }

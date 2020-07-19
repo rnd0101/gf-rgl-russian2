@@ -14,8 +14,8 @@ lin
 
   whatSg_IP = doChPron "ч" (Ag (GSg Neut) P3) Inanimate ;
   whatPl_IP = doChPron "ч" (Ag GPl P3) Inanimate ;
-  whoSg_IP = doKPron "к" (Ag (GSg Neut) P3) Animate ;
-  whoPl_IP = doKPron "к" (Ag (GSg Neut) P3) Animate ;
+  whoSg_IP = doKPron "к" (Ag (GSg Masc) P3) Animate ;
+  whoPl_IP = doKPron "к" (Ag GPl P3) Animate ;
 
   which_IQuant = (adjFormsAdjective (guessAdjectiveForms "который")) ** {
       preferShort=PrefFull ;
