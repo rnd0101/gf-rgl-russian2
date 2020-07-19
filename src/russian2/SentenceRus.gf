@@ -20,6 +20,41 @@ lin
       }
     } ;
 
+  -- : Temp -> Pol -> ClSlash -> SSlash ; -- (that) she had not seen
+  UseSlash temp pol cls = {
+    s = table {
+      Infinitive => let parts = R.verbAgr cls.verb Infinitive temp.t cls.a pol.p in
+        temp.s ++ parts.p1 ++ cls.subj ++ pol.s ++ cls.adv ++ parts.p2 ++ cls.compl ;
+      Ind => let parts = R.verbAgr cls.verb Ind temp.t cls.a pol.p in
+        temp.s ++ parts.p1 ++ cls.subj ++ pol.s ++ cls.adv ++ parts.p2 ++ cls.compl ;
+      Sbjv => let parts = R.verbAgr cls.verb Sbjv temp.t cls.a pol.p in
+        temp.s ++ parts.p1 ++ cls.subj ++ pol.s ++ cls.adv ++ parts.p2 ++ cls.compl ;
+      Imperative => let parts = R.verbAgr cls.verb Imperative temp.t cls.a pol.p in
+        temp.s ++ parts.p1 ++ cls.subj ++ pol.s ++ cls.adv ++ parts.p2 ++ cls.compl
+      } ;
+    c=cls.c
+  } ;
+
+  -- : NP -> VPSlash -> ClSlash ;      -- (whom) he sees
+  SlashVP np vps = {
+    subj=np.s ! Nom ; -- ????????
+    compl=vps.compl ! np.a ;  -- ??
+    adv=vps.adv ! np.a ;  -- ??
+    verb=vps.verb ;
+    a=np.a ;
+    c=vps.c
+  } ;
+
+  -- NP -> VS -> SSlash -> ClSlash ; -- (whom) she says that he loves
+  SlashVS np vs ss = {
+    subj=np.s ! Nom  ; -- ????????
+    compl=comma ++ "что" ++ ss.s ! Ind ;  -- ?? that?
+    adv=[];  -- ??
+    verb=vs ;
+    a=np.a ;
+    c=ss.c
+  } ;
+
   -- : VP -> Imp ;             -- love yourselves
   ImpVP vp = {
     s = \\polarity, gn =>

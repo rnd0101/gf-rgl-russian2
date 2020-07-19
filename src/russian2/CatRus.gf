@@ -10,7 +10,7 @@ flags coding=utf8 ; optimize=all ;
 
     Pron = ResRus.PronounForms ;
 
-    V = ResRus.VerbForms ;
+    V, VS = ResRus.VerbForms ;
     V2 = ResRus.VerbForms ** {c : ComplementCase} ;
     V3 = ResRus.VerbForms ** {c : ComplementCase ; c2 : ComplementCase} ;
     VV = {v : ResRus.VerbForms ; modal : AgrTable} ;
@@ -37,6 +37,7 @@ flags coding=utf8 ; optimize=all ;
     AP = ResRus.Adjective ** {isPost : Bool} ;
 
     S = {s : Mood => Str} ;
+    SSlash = {s : Mood => Str; c: ComplementCase} ;
     Cl = {
       subj,compl,adv : Str ;
       verb : VerbForms ;
@@ -92,11 +93,13 @@ flags coding=utf8 ; optimize=all ;
     V3 = \s -> s.inf ++ s.c.s ++ s.c2.s ;
     Ord = \s -> s.nsnom ;
     S = \s -> s.s ! Ind ;
+    SSlash = \s -> s.s ! Ind ++ s.c.s ;  --?
     VP = \s -> s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ;      -- Are these useful?
     Comp = \s -> copula.inf ++ s.s ! Ag (GSg Neut) P3 ++ s.adv ;
     IComp = \s -> s.s ! Ag (GSg Neut) P3 ++ s.adv ++ copula.inf;
     VPSlash = \s -> s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ++ s.c.s ; -- Are these useful?
     Cl = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.compl ;
+    ClSlash = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.compl ;
     QCl = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.compl ;
     IP = \s -> s.nom ;
 }

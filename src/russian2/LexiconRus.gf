@@ -253,4 +253,10 @@ lin
   year_N = (mkNplus (mkN "год")) ** {sloc="году"; pgen="лет"};
   yellow_A = (mkAplus (mkA "жёлтый" "желтее" "1a/c''") ** {sf="желта"}) ;  -- TODO: variants
   young_A = mkA "молодой" "моложе" "1b/c";
+
+  fear_VS = mkV "бояться" ;
+  hope_VS= mkV "надеяться" ;
+  know_VS= mkV "знать" ;
+  say_VS = mkV "говорить" ;
+
 }
