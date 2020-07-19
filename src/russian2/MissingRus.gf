@@ -12,7 +12,6 @@ oper ComplVQ : VQ -> QS -> VP = notYet "ComplVQ" ;
 oper ComplVS : VS -> S -> VP = notYet "ComplVS" ;
 oper DetQuantOrd : Quant -> Num -> Ord -> Det = notYet "DetQuantOrd" ;
 oper EmbedVP : VP -> SC = notYet "EmbedVP" ;
---oper ExistIP : IP -> QCl = notYet "ExistIP" ;
 oper FunRP : Prep -> NP -> RP -> RP = notYet "FunRP" ;
 oper ImpPl1 : VP -> Utt = notYet "ImpPl1" ;
 oper OrdDigits : Digits -> Ord = notYet "OrdDigits" ;

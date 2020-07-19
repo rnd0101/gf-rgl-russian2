@@ -223,6 +223,11 @@ oper
         <Infinitive, _> => <"",vf.inf>
       } ;
 
+  selectCase : (Case => Str) -> ComplementCase -> Str
+    = \np,prep -> prep.s ++ np ! prep.c ;  -- TODO: NP - pronoun speacial treatment
+
+  from2 = {s="из"; c=Gen; hasPrep=True} ;
+
 ---------------------------
 -- Adjectives -- Прилагательные
 
@@ -1153,11 +1158,19 @@ oper
 
 param DForm = unit | teen | ten | hund ;
 param Place = attr | indep ;
--- param Size  = nom | nompl | sgg | plg ;
-oper mille : NumSize => Str = table {
-  Num1 => "тысяча" ;
-  Num2_4 => "тысячи" ;   -- NumAll ?
-  _     => "тысяч"} ;
+oper
+  mille : NumSize => Str = table {
+    Num1 => "тысяча" ;
+    Num2_4 => "тысячи" ;   -- NumAll ?
+    _     => "тысяч"
+    } ;
+  sizeNumCase : (Number => Case => Str) -> NumSize -> Str
+    = \nt,size -> case size of {
+      Num1 => nt ! Sg ! Nom ;
+      Num2_4 => nt ! Sg ! Gen ;   --?
+      Num5 => nt ! Pl ! Gen ;
+      NumAll => nt ! Pl ! Nom
+    } ;
 
 ---------------
 -- Adverbs -- Наречия

@@ -61,4 +61,12 @@ LangRus: ты уже —
 которое шляпа
 ```
 
+```
+> cc mkUtt (mkNP (mkDigits n4_Dig) (mkCN old_A apple_N))
+{s = "4" ++ "старого" ++ "яблока"; lock_Utt = <>}
+11 msec
+> cc mkUtt (mkNP (mkDigits n4_Dig) (mkCN apple_N))
+{s = "4" ++ "яблока"; lock_Utt = <>}
+```
+
 ## Maintainer

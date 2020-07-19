@@ -9,7 +9,8 @@ lin
   -- : Det -> CN -> NP ;   -- the man
   DetCN det cn =
     let n = numSizeNumber det.size in {
-      s=\\cas => det.s ! cn.g ! cn.anim ! cas ++ cn.s ! n ! cas ;
+      -- TODO: fix some cases in README
+      s=\\cas => det.s ! cn.g ! cn.anim ! cas ++ sizeNumCase cn.s det.size ;
       a=Ag (gennum det.g n) P3
       } ;
 
@@ -123,8 +124,11 @@ lin
     s=\\n,cas => cn.s ! n ! cas ++ np.s ! Ptv ;   -- also Gen
     } ;
 
-  -- TODO: CountNP : Det -> NP -> NP ;    -- three of them, some of the boys
-
+  -- : Det -> NP -> NP ;    -- three of them, some of the boys
+  CountNP det np = {
+    s=\\cas => det.s ! Neut ! Inanimate ! cas ++ selectCase np.s from2 ;
+    a=np.a
+    } ;
 
 ---------------------------------------------------
 -- Conjoinable determiners and ones with adjectives
