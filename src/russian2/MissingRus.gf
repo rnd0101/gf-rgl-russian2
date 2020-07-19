@@ -27,10 +27,6 @@ oper SlashV2S : V2S -> S -> VPSlash = notYet "SlashV2S" ;
 oper SlashVP : NP -> VPSlash -> ClSlash = notYet "SlashVP" ;
 oper SlashVS : NP -> VS -> SSlash -> ClSlash = notYet "SlashVS" ;
 oper UseSlash : Temp -> Pol -> ClSlash -> SSlash = notYet "UseSlash" ;
-oper UttIAdv : IAdv -> Utt = notYet "UttIAdv" ;
-oper UttImpPl : Pol -> Imp -> Utt = notYet "UttImpPl" ;
-oper UttImpPol : Pol -> Imp -> Utt = notYet "UttImpPol" ;
-oper UttImpSg : Pol -> Imp -> Utt = notYet "UttImpSg" ;
 
 -- diff with Slo:
 oper

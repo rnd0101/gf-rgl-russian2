@@ -5,14 +5,20 @@ lin
     UttS s = {s = s.s ! Ind} ;
     -- : QS -> Utt ;                -- is it good
     UttQS qs = {s = qs.s ! QDir} ;
-    -- TODO: UttImpSg  : Pol -> Imp -> Utt ;         -- (don't) love yourself
-    -- TODO: UttImpPl  : Pol -> Imp -> Utt ;         -- (don't) love yourselves
-    -- TODO: UttImpPol : Pol -> Imp -> Utt ;         -- (don't) sleep (polite)
+
+    -- : Pol -> Imp -> Utt ;         -- (don't) love yourself
+    UttImpSg pol imp = {s = imp.s ! pol.p ! GSg Masc} ;
+    -- : Pol -> Imp -> Utt ;         -- (don't) love yourselves
+    UttImpPl pol imp = {s = imp.s ! pol.p ! GPl} ;
+    -- : Pol -> Imp -> Utt ;         -- (don't) sleep (polite)
+    UttImpPol pol imp = {s = imp.s ! pol.p ! GPl} ;
 
     -- : IP -> Utt ;               -- who
     UttIP ip = {s = ip.nom} ; --- Acc also?
 
-    -- TODO: UttIAdv   : IAdv -> Utt ;               -- why
+    -- : IAdv -> Utt ;               -- why
+    UttIAdv iadv = iadv ;
+
     -- : NP -> Utt ;               -- this man
     UttNP np = {s = np.s ! Nom} ;
 

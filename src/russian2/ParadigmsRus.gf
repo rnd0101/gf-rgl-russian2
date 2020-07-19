@@ -168,6 +168,9 @@ oper
   mkAdv : Str -> Adv
     = \s -> lin Adv (makeAdverb s) ;
 
+  mkIAdv : Str -> IAdv
+    = \s -> lin IAdv (makeAdverb s) ;
+
   mkConj : Str -> Number -> Conj
     = \s, n -> lin Conj {s1 = [] ; s2 = s ; n = n} ;
 
