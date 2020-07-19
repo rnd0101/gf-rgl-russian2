@@ -1,8 +1,6 @@
 resource MissingRus = open GrammarRus, Prelude in {
 
 -- temporary definitions to enable the compilation of RGL API0
-oper CleftAdv : Adv -> S -> Cl = notYet "CleftAdv" ;
-oper CleftNP : NP -> RS -> Cl = notYet "CleftNP" ;
 oper CompIAdv : IAdv -> IComp = notYet "CompIAdv" ;
 oper ComplN2 : N2 -> NP -> CN = notYet "ComplN2" ;
 oper ComplN3 : N3 -> NP -> N2 = notYet "ComplN3" ;

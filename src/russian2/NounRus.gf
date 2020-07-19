@@ -100,7 +100,7 @@ lin
   Use3N3 n3 = lin N2 n3 ;
 
   -- : CN -> RS -> CN ;   -- house that John bought
-  RelCN cn rs = cn ** {s = \\n,c => cn.s ! n ! c ++ comma ++ rs.s ! gennum cn.g n ! cn.anim ! c }; -- RS case ignored???
+  RelCN cn rs = cn ** {s = \\n,c => cn.s ! n ! c ++ embedInCommas (rs.s ! gennum cn.g n ! cn.anim ! c)} ;
 
   -- : CN -> SC -> CN ;   -- question where she sleeps
   SentCN cn sc = cn ** {s = \\n,c => cn.s ! n ! c ++ sc.s}; -- SC type will change???

@@ -4,7 +4,7 @@ lin
   -- : Adv -> S -> S ;            -- then I will go home
   AdvS adv s = {s=\\m => adv.s ++ s.s ! m} ;
   -- : Adv -> S -> S ;            -- next week, I will go home
-  ExtAdvS adv s = {s=\\m => adv.s ++ comma ++ s.s ! m} ;   -- TODO: what is the case for this?
+  ExtAdvS adv s = {s=\\m => adv.s ++ comma ++ s.s ! m} ;   -- TODO: what is the case for this? embed in commas?
 
   -- : Temp -> Pol -> Cl -> S ;   -- she had not slept - она не спала
   UseCl temp pol cl = {
@@ -57,7 +57,7 @@ lin
   -- NP -> VS -> SSlash -> ClSlash ; -- (whom) she says that he loves
   SlashVS np vs ss = {
     subj=np.s ! Nom  ; -- ????????
-    compl=comma ++ "что" ++ ss.s ! Ind ;  -- ?? that?
+    compl=embedInCommas ("что" ++ ss.s ! Ind) ;  -- ?? that?
     adv=[];  -- ??
     verb=vs ;
     a=np.a ;

@@ -1,6 +1,6 @@
 --# -path=.:../abstract:../common:../../prelude
 
-concrete IdiomRus of Idiom = CatRus ** open Prelude, TenseRus, ResRus, MorphoRus in {
+concrete IdiomRus of Idiom = CatRus ** open Prelude, TenseRus, ResRus, Coordination, MorphoRus in {
 flags optimize=all_subs ;  coding=utf8 ;
 
 lin
@@ -10,8 +10,22 @@ lin
   -- : VP -> Cl ;        -- one sleeps
   GenericCl vp = let a = Ag (GSg Masc) P2 in  {subj="ты" ; compl=vp.compl ! a; verb=vp.verb ; adv=vp.adv ! a; a=a} ;
 
-  -- TODO: CleftNP   : NP  -> RS -> Cl ; -- it is I who did it
-  -- TODO: CleftAdv  : Adv -> S  -> Cl ; -- it is here she slept
+  -- : NP -> RS -> Cl ; -- it is I who did it
+  CleftNP np rs = {
+    subj=np.s ! Nom ++ embedInCommas (rs.s ! agrGenNum np.a ! Animate ! Nom) ;
+    adv=[] ;
+    verb=nullVerb ;   -- ???
+    compl=[] ;
+    a=np.a
+    } ;
+  -- : Adv -> S -> Cl ; -- it is here she slept
+  CleftAdv adv s = {
+    subj="это" ++ adv.s ++ comma ++ s.s ! Ind ;  -- TODO: Check what is expressed by this? Why comma?
+    adv=[] ;
+    verb=nullVerb ;   -- ???
+    compl=[] ;
+    a=Ag (GSg Neut) P3
+    } ;
 
   -- : NP -> Cl ;        -- there is a house
   ExistNP np = {subj=np.s ! Nom ; compl="" ; verb=to_exist ; adv=[] ; a=np.a} ;  -- TODO: Different order!
