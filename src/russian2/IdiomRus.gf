@@ -41,7 +41,14 @@ lin
   -- TODO: ExistNPAdv : NP -> Adv -> Cl ;    -- there is a house in Paris
   -- TODO: ExistIPAdv : IP -> Adv -> QCl ;   -- which houses are there in Paris
   -- TODO: ProgrVP   : VP -> VP ;        -- be sleeping
-  -- TODO: ImpPl1    : VP -> Utt ;       -- let's go
+  -- : VP -> Utt ;       -- let's go
+  ImpPl1 vp =
+    let a = Ag GPl P1 in
+    let pol = PPos in
+    let parts = verbAgr vp.verb Infinitive Pres a pol.p in
+    let p1 = "давайте" in {
+      s = p1 ++ pol.s ++ vp.adv ! a ++ parts.p2 ++ vp.compl ! a
+      } ;
   -- : NP -> VP -> Utt ; -- let John walk
   ImpP3 np vp =
     let a = Ag (GSg Neut) P3 in

@@ -40,7 +40,7 @@ lin
   PrepIP prep ip = {s = prep.s ++ selectPronCase ip prep.c} ;
 
   -- : IP -> Adv -> IP
-  AdvIP ip adv = prependIP adv.s ip ** {a=ip.a} ;
+  AdvIP ip adv = appendToIP (ip ** {a=ip.a}) adv.s ;
 
   -- : IAdv -> Adv -> IAdv ;    -- where in Paris
   AdvIAdv = cc2 ;

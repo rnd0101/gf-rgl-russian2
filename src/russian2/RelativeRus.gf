@@ -20,5 +20,7 @@ lin
   -- : RP ;                      -- which
   IdRP = lin RP (doKotoryjPron "который" (Ag (GSg Neut) P3) Inanimate) ;
 
-  -- FunRP : Prep -> NP -> RP -> RP ;  -- the mother of whom
+  -- Prep -> NP -> RP -> RP ;  -- the mother of whom
+  FunRP prep np rp = (prependIP (np.s ! Nom ++ prep.s) rp) ;   -- TODO: This is wrong... RP should be in agreement, but with records it's a bit hard...
+
 }

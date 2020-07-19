@@ -1024,7 +1024,7 @@ oper
   pronFormsPronoun : PronounForms -> Pronoun
     = \forms -> {
       s = \\cas => selectPronCase forms cas ;
-      poss = nullPron.poss ;
+      poss = mkPronTable forms.poss ;
       a = forms.a
     } ;
 
@@ -1115,6 +1115,31 @@ oper
 
   prependIP : Str -> IPronounForms -> IPronounForms
     = \s,ip -> ip ** {
+      nom=s ++ ip.nom ;
+      gen=s ++ ip.gen ;
+      dat=s ++ ip.dat ;
+      acc=s ++ ip.acc ;
+      ins=s ++ ip.ins ;
+      prep=s ++ ip.prep ;
+      poss={
+        msnom = s ++ ip.poss.msnom ;
+        fsnom = s ++ ip.poss.fsnom ;
+        nsnom = s ++ ip.poss.nsnom ;
+        pnom  = s ++ ip.poss.pnom ;
+        msgen = s ++ ip.poss.msgen ;
+        fsgen = s ++ ip.poss.fsgen ;
+        pgen  = s ++ ip.poss.pgen ;
+        msdat = s ++ ip.poss.msdat ;
+        fsacc = s ++ ip.poss.fsacc ;
+        msins = s ++ ip.poss.msins ;
+        fsins = s ++ ip.poss.fsins ;
+        pins  = s ++ ip.poss.pins ;
+        msprep= s ++ ip.poss.msprep ;
+      }
+    } ;
+
+  appendToIP : IPronounForms -> Str -> IPronounForms
+    = \ip,s -> ip ** {
       nom=ip.nom ++ s;
       gen=ip.gen ++ s;
       dat=ip.dat ++ s;
