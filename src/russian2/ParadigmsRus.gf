@@ -171,8 +171,12 @@ oper
   mkIAdv : Str -> IAdv
     = \s -> lin IAdv (makeAdverb s) ;
 
-  mkConj : Str -> Number -> Conj
-    = \s, n -> lin Conj {s1 = [] ; s2 = s ; n = n} ;
+  mkConj = overload {
+    mkConj : Str -> Number -> Conj
+      = \s, n -> lin Conj {s1 = [] ; s2 = s ; n = n} ;
+    mkConj : Str -> Str -> Number -> Conj
+      = \s1, s2, n -> lin Conj {s1 = s1 ; s2 = s2 ; n = n} ;
+  } ;
 
   mkInterj : Str -> Interj
     = \s -> lin Interj {s = s} ;

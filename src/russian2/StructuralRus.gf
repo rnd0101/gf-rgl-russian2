@@ -1,5 +1,5 @@
 concrete StructuralRus of Structural = CatRus **
-  open ParadigmsRus, ResRus, MorphoRus, (X = ConstructX), Prelude in {
+  open ParadigmsRus, ResRus, MorphoRus, (X = ConstructX), Coordination, Prelude in {
 
 lin
   i_Pron = personalPron (Ag MSg P1) ;
@@ -53,6 +53,8 @@ lin
   under_Prep = {s="под" ; c=Ins ; hasPrep=True};
   or_Conj = mkConj "или" Sg ;
   and_Conj = mkConj "и" Pl ;
+  both7and_DConj = mkConj "как" (comma ++ "так и") Pl ;
+  either7or_DConj  = mkConj "либо" (comma ++ "либо") Sg ;
 
   with_Prep = {s="с" ; c=Ins; hasPrep=True};
 
@@ -135,5 +137,15 @@ lin
   everybody_NP = lin NP everybody ;
   everything_NP = lin NP everything;
 
+  but_PConj = ss "но" ;
+  otherwise_PConj = ss "иначе" ;
+  therefore_PConj = ss "следовательно" ;
+
+  although_Subj = ss "хотя" ;
+  because_Subj = ss ["потому что"] ;
+  if_Subj = ss "если" ;
+  when_Subj = ss "когда" ;
+
   yes_Utt = ss ["да"] ;
+  no_Utt  = ss ["нет"] ;
 }
