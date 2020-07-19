@@ -79,6 +79,8 @@ resource ParamRus = ParamX, CommonX [Temp] ** open Prelude in {
       = \g,n -> case n of {Sg => GSg g ; Pl => GPl} ;
     numGenNum : GenNum -> Number
       = \gn -> case gn of {GSg _ => Sg ; GPl => Pl} ;
+    genGenNum : GenNum -> Gender
+      = \gn -> case gn of {GSg x => x ; GPl => Neut} ;
     agrGenNum : Agr -> GenNum
       = \a -> case a of {Ag gn _ => gn} ;
 

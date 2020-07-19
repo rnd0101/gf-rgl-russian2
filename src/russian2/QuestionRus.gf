@@ -57,7 +57,7 @@ lin
   -- : IDet -> CN -> IP ;       -- which five songs
   -- Hmmm. size should influence case later, but it's lost here?!
   IdetCN idet cn = caseTableToRecord (\\cas => idet.s ! cn.g ! cn.anim ! cas ++ cn.s ! numSizeNumber idet.size ! cas)
-    (Ag (gennum idet.g (numSizeNumber idet.size)) P3) cn.anim ;
+    (Ag (gennum cn.g (numSizeNumber idet.size)) P3) cn.anim ;
 
   -- : IDet -> IP ;       -- which five
   IdetIP idet = caseTableToRecord (\\cas => idet.s ! idet.g ! Inanimate ! cas)
@@ -65,7 +65,7 @@ lin
 
   -- : IQuant -> Num -> IDet ;  -- which (five)
   IdetQuant iq num = {
-    s=\\n,a,cas => iq.s ! numSizeNumber num.size ! a ! cas ++ num.s ! iq.g ! a ! cas ;
+    s=\\g,a,cas => iq.s ! gennum g (numSizeNumber num.size) ! a ! cas ++ num.s ! iq.g ! a ! cas ;
     size=num.size ;
     g=iq.g ;
     c=iq.c

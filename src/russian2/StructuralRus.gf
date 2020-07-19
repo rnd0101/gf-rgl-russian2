@@ -17,8 +17,8 @@ lin
   whoSg_IP = doKPron "к" (Ag (GSg Neut) P3) Animate ;
   whoPl_IP = doKPron "к" (Ag (GSg Neut) P3) Animate ;
 
-  which_IQuant = let af=adjFormsAdjective (guessAdjectiveForms "который") in {
-      s=\\n,anim,cas => af.s ! gennum Neut n ! anim ! cas ;
+  which_IQuant = (adjFormsAdjective (guessAdjectiveForms "который")) ** {
+      preferShort=PrefFull ;
       g=Neut ;
       c=Nom
     } ;

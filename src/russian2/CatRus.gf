@@ -53,7 +53,7 @@ flags coding=utf8 ; optimize=all ;
 
     Det = Determiner ;
     Predet = ResRus.Adjective ;
-    Quant = ResRus.Adjective ** {g: Gender; c: Case} ;
+    Quant, IQuant = ResRus.Adjective ** {g: Gender; c: Case} ;
     Num, Numeral, Card = NumDet ;
     Digits = {s : Str ; size: NumSize} ; ---- TODO:
 
@@ -72,12 +72,6 @@ flags coding=utf8 ; optimize=all ;
       size : NumSize ;
       c : Case
     } ;
-    IQuant = {
-      s : Number => Animacy => Case => Str ;
-      g: Gender ;
-      c: Case
-      } ;
-
     RS  = {s : Mood => Agr => Str ; c : Case} ;
     RCl = {subj,compl : AgrTable ; verb : VerbForms} ; ---- RAgr with composite RP
     RP  = AdjForms ;
