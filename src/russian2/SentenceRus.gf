@@ -55,6 +55,12 @@ lin
     c=ss.c
   } ;
 
+  -- : ClSlash -> Adv -> ClSlash ;     -- (whom) he sees today
+  AdvSlash cls adv = cls ** {
+--    subj=cls.subj ++ adv.s    -- two variants? TODO: check
+    adv=cls.adv ++ adv.s
+    } ;
+
   -- : VP -> Imp ;             -- love yourselves
   ImpVP vp = {
     s = \\polarity, gn =>
