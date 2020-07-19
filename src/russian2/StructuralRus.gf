@@ -22,6 +22,16 @@ lin
       g=Neut ;
       c=Nom
     } ;
+  this_Quant = (adjFormsAdjective this_forms) ** {
+      preferShort=PrefFull ;
+      g=Neut ;
+      c=Nom
+    } ;
+  that_Quant = (adjFormsAdjective that_forms) ** {
+      preferShort=PrefFull ;
+      g=Neut ;
+      c=Nom
+    } ;
 
   above_Prep = {s="над" ; c=Ins; hasPrep=True} ;
   after_Prep = {s="после" ; c=Gen; hasPrep=True };

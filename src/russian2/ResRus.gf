@@ -1152,6 +1152,42 @@ oper
       anim=anim
     } ;
 
+  that_forms = {
+    msnom, sm = "тот" ;
+    fsnom, sf = "та" ;
+    nsnom, sn = "то" ;
+    pnom, sp = "те" ;
+    msgen = "того" ;
+    fsgen = "той" ;
+    pgen  = "тех" ;
+    msdat = "тому" ;
+    fsacc = "ту" ;
+    msins = "тем" ;
+    fsins = "той" ;
+    pins  = "тех" ;
+    msprep = "том" ;
+    preferShort = PrefFull ;
+    comp = []
+    } ;
+
+  this_forms = {
+    msnom, sm = "этот" ;
+    fsnom, sf = "эта" ;
+    nsnom, sn = "это" ;
+    pnom, sp = "эти" ;
+    msgen = "этого" ;
+    fsgen = "этой" ;
+    pgen  = "этих" ;
+    msdat = "этому" ;
+    fsacc = "эту" ;
+    msins = "этим" ;
+    fsins = "этой" ;
+    pins  = "этих" ;
+    msprep = "этом" ;
+    preferShort = PrefFull ;
+    comp = []
+    } ;
+
 ---------------
 -- Numerals -- Числительные
 ---------------
