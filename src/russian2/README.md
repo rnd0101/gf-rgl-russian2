@@ -56,4 +56,9 @@ LangRus: ты уже —
 ты мог быть бы голоден
 ```
 
+```
+> l (IdetCN (IdetQuant which_IQuant NumSg) (UseN hat_N))
+которое шляпа
+```
+
 ## Maintainer

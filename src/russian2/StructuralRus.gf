@@ -98,6 +98,20 @@ lin
   --most_Predet   = bolshinstvoSgDet ** {n = Sg; g = (PGen Neut); c= Gen; size = plg}
   all_Predet = adjFormsAdjective (noShorts all_Pron) ;         -- ** { g = PNoGen; c = Nom; size = nom} ;  -- TODO:
 
+  how8many_IDet = {
+    s=\\g,anim,cas => case <anim,cas> of {
+      <_,Nom|VocRus|Ptv> => "сколько" ;
+      <_,Gen|Pre|Loc> => "скольких" ;
+      <_,Dat> => "скольким" ;
+      <_,Ins> => "сколькими" ;
+      <Inanimate,Acc> => "сколько" ;
+      <Animate,Acc> => "скольких"   -- also as Nom?
+    } ;
+    g=Neut ;
+    size=NumAll ;    --it depends???
+    c=Nom    --???
+  } ;
+
   always_AdV = ss "всегда" ;
   almost_AdA = ss "почти" ;
   almost_AdN = ss "почти" ;

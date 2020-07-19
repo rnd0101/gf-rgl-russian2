@@ -37,7 +37,7 @@ lin
     } ;
 
   -- : Prep -> IP -> IAdv ;  -- with whom
-  PrepIP prep ip = {s = prep.s ++ ip.nom} ;
+  PrepIP prep ip = {s = prep.s ++ selectPronCase ip prep.c} ;
 
   -- : IP -> Adv -> IP
   AdvIP ip adv = prependIP adv.s ip ** {a=ip.a} ;

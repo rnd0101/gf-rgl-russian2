@@ -16,7 +16,14 @@ lin
   -- : NP -> Cl ;        -- there is a house
   ExistNP np = {subj=np.s ! Nom ; compl="" ; verb=to_exist ; adv=[] ; a=np.a} ;  -- TODO: Different order!
 
-  -- TODO: ExistIP   : IP -> QCl ;       -- which houses are there
+  -- : IP -> QCl ;       -- which houses are there
+  ExistIP ip = {
+    subj=ip.nom ; -- gen?
+    adv=[] ;
+    verb=to_exist;
+    compl=[];
+    a=ip.a
+    } ;
   -- TODO: ExistNPAdv : NP -> Adv -> Cl ;    -- there is a house in Paris
   -- TODO: ExistIPAdv : IP -> Adv -> QCl ;   -- which houses are there in Paris
   -- TODO: ProgrVP   : VP -> VP ;        -- be sleeping
