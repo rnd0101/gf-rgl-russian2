@@ -40,7 +40,8 @@ lin
     } ;
   -- TODO: ExistNPAdv : NP -> Adv -> Cl ;    -- there is a house in Paris
   -- TODO: ExistIPAdv : IP -> Adv -> QCl ;   -- which houses are there in Paris
-  -- TODO: ProgrVP   : VP -> VP ;        -- be sleeping
+  -- : VP -> VP ;        -- be sleeping
+  ProgrVP vp = vp ;
   -- : VP -> Utt ;       -- let's go
   ImpPl1 vp =
     let a = Ag GPl P1 in

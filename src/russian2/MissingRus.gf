@@ -12,7 +12,6 @@ oper EmbedVP : VP -> SC = notYet "EmbedVP" ;
 -- oper FunRP : Prep -> NP -> RP -> RP = notYet "FunRP" ;
 oper OrdDigits : Digits -> Ord = notYet "OrdDigits" ;
 oper OrdNumeral : Numeral -> Ord = notYet "OrdNumeral" ;
-oper ProgrVP : VP -> VP = notYet "ProgrVP" ;
 oper RelCl : Cl -> RCl = notYet "RelCl" ;
 oper RelNP : NP -> RS -> NP = notYet "RelNP" ;
 oper RelSlash : RP -> ClSlash -> RCl = notYet "RelSlash" ;
