@@ -2,14 +2,12 @@ resource MissingRus = open GrammarRus, Prelude in {
 
 -- temporary definitions to enable the compilation of RGL API0
 oper CompIAdv : IAdv -> IComp = notYet "CompIAdv" ;
-oper ComplN2 : N2 -> NP -> CN = notYet "ComplN2" ;
 oper ComplN3 : N3 -> NP -> N2 = notYet "ComplN3" ;
 oper ComplVA : VA -> AP -> VP = notYet "ComplVA" ;
 oper ComplVQ : VQ -> QS -> VP = notYet "ComplVQ" ;
 oper ComplVS : VS -> S -> VP = notYet "ComplVS" ;
 oper DetQuantOrd : Quant -> Num -> Ord -> Det = notYet "DetQuantOrd" ;
 oper EmbedVP : VP -> SC = notYet "EmbedVP" ;
--- oper FunRP : Prep -> NP -> RP -> RP = notYet "FunRP" ;
 oper OrdDigits : Digits -> Ord = notYet "OrdDigits" ;
 oper OrdNumeral : Numeral -> Ord = notYet "OrdNumeral" ;
 oper RelCl : Cl -> RCl = notYet "RelCl" ;

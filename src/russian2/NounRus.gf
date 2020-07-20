@@ -46,6 +46,14 @@ lin
     a = Ag (gennum cn.g Sg) P3
     } ;
 
+  -- : N2 -> NP -> CN ;    -- mother of the king - мать короля
+  ComplN2 n2 np = {
+    s=\\n,cas=> (nounFormsNoun n2).s ! n ! cas ++ n2.c2.s ++ np.s ! n2.c2.c ; -- Number => Case => Str ;
+    g=n2.g ;
+    anim=n2.a
+    } ;
+  -- TODO: ComplN3 : N3 -> NP -> N2 ;    -- distance from this city (to Paris)
+
 --------------
 -- Determiners
   -- : Numeral -> Card  ;  -- fifty-one
