@@ -1258,19 +1258,15 @@ oper
     size : NumSize
     } ;
 
-
--- TODO From po-file Forms:
--- (n%10==1 && n%100!=11 ? Num1 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? Num2_4 : Num5 );
---   numSizeForm : (Number => Case => Str) -> NumSize -> Case -> Str ;  -- TODO:
---   numSizeAgr : Gender -> NumSize -> Person -> Agr ; -- TODO
-
+  -- Number from size to be used in agreement after numeral has been applied
   numSizeNumber : NumSize -> Number
-    = \ns -> case ns of {
-      Num1 => Sg ;
-      NumAll => Pl ;
-      Num2_4 => Pl ;
-      Num5 => Pl
-    } ;
+    = \ns -> case ns of {Num1 => Sg ; NumAll | Num2_4 | Num5 => Pl} ;
+
+  -- The following two used in tandem to form the word, controlled by numeral
+  numSizeNum : NumSize -> Number
+    = \ns -> case ns of {Num1 | Num2_4 => Sg ; Num5 | NumAll => Pl} ;
+  numSizeCase : NumSize -> Case
+    = \ns -> case ns of {Num1 | NumAll => Nom ; Num2_4 | Num5 => Gen} ;
 
 oper -- TODO:
   ComplementCase : Type = {s : Str ; c : Case ; hasPrep : Bool} ;
