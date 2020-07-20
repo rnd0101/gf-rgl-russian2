@@ -12,10 +12,10 @@ lin
   it_Pron = personalPron (Ag NSg P3) ;
   they_Pron = personalPron (Ag GPl P3) ;
 
-  whatSg_IP = doChPron "ч" (Ag (GSg Neut) P3) Inanimate ;
-  whatPl_IP = doChPron "ч" (Ag GPl P3) Inanimate ;
-  whoSg_IP = doKPron "к" (Ag (GSg Masc) P3) Animate ;
-  whoPl_IP = doKPron "к" (Ag GPl P3) Animate ;
+  whatSg_IP = what_sg ;
+  whatPl_IP = what_pl ;
+  whoSg_IP = who_sg ;
+  whoPl_IP = who_pl ;
 
   which_IQuant = (adjFormsAdjective (guessAdjectiveForms "который")) ** {
       preferShort=PrefFull ;
@@ -135,7 +135,9 @@ lin
   almost_AdN = ss "почти" ;
 
   everybody_NP = lin NP everybody ;
-  everything_NP = lin NP everything;
+  everything_NP = lin NP everything ;
+  something_NP = lin NP something ;
+  someone_NP = lin NP someone ;
 
   but_PConj = ss "но" ;
   otherwise_PConj = ss "иначе" ;

@@ -12,10 +12,10 @@ lin
 
   -- : NP -> RS -> Cl ; -- it is I who did it
   CleftNP np rs = {
-    subj=np.s ! Nom ++ embedInCommas (rs.s ! agrGenNum np.a ! Animate ! Nom) ;
-    adv=[] ;
+    subj=np.s ! Nom ;
+    adv="это" ;
     verb=nullVerb ;   -- ???
-    compl=[] ;
+    compl=embedInCommas (rs.s ! agrGenNum np.a ! Animate ! Nom) ;
     a=np.a
     } ;
   -- : Adv -> S -> Cl ; -- it is here she slept
