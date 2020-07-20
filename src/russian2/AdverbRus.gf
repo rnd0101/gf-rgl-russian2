@@ -1,6 +1,6 @@
 --# -path=.:../abstract:../common:../../prelude
 
-concrete AdverbRus of Adverb = CatRus ** open ResRus, Prelude in {
+concrete AdverbRus of Adverb = CatRus ** open ResRus, Prelude, Coordination in {
 flags coding=utf8 ;
 
 lin
@@ -12,7 +12,7 @@ lin
 
   -- : CAdv -> A -> NP -> Adv ;   -- more warmly than John - более тепло чем Иван
   ComparAdvAdj cadv a np = {
-    s = cadv.s ++ a.sn ++ cadv.p ++ np.s ! Nom
+    s = cadv.s ++ a.sn ++ comma ++ cadv.p ++ np.s ! Nom
     } ;
   -- : CAdv -> A -> S -> Adv ;   -- more warmly than he runs - более тепло чем он бежал
   ComparAdvAdjS cadv a s = {

@@ -1,4 +1,4 @@
-concrete AdjectiveRus of Adjective = CatRus ** open ResRus, Prelude in {
+concrete AdjectiveRus of Adjective = CatRus ** open ResRus, Prelude, Coordination in {
   lin
     -- : A -> AP ;        -- warm - тёплый
     PositA a = adjFormsAdjective a ** {isPost = False} ;
@@ -14,7 +14,7 @@ concrete AdjectiveRus of Adjective = CatRus ** open ResRus, Prelude in {
     AdAP ada ap = ap ** {s=\\gn,a,c => ada.s ++ ap.s ! gn ! a ! c } ;
     -- : CAdv -> AP -> NP -> AP ; -- as cool as John
     CAdvAP cadv ap np = ap ** {
-      s = \\gn,a,c => cadv.s ++ ap.s ! gn ! a ! c ++ cadv.p ++ np.s ! Nom
+      s = \\gn,a,c => cadv.s ++ ap.s ! gn ! a ! c ++ comma ++ cadv.p ++ np.s ! Nom   -- TODO: embedInCommas ?
     } ;
 
     -- : AP -> SC -> AP ;  -- good that she is here
