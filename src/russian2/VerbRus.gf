@@ -61,6 +61,15 @@ lin
   -- TODO: SlashV2S : V2S -> S  -> VPSlash ;  -- answer (to him) that it is good
   -- TODO: SlashV2Q : V2Q -> QS -> VPSlash ;  -- ask (him) who came
   -- TODO: SlashV2A : V2A -> AP -> VPSlash ;  -- paint (it) red
+  SlashV2A v2a ap = {
+    adv=\\a=>[] ;
+    verb=v2a ;
+    compl=case ap.preferShort of {
+      PrefFull => (\\a => ap.s ! agrGenNum a ! Inanimate ! v2a.c.c) ;   -- TODO: Check acc dep on animacy
+      PrefShort => ap.short
+      } ;
+    c=v2a.c
+    } ;
 
   -- : VPSlash -> NP -> VP ; -- love it
   ComplSlash vps np = vps ** {

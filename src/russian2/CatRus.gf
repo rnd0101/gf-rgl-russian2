@@ -11,7 +11,7 @@ flags coding=utf8 ; optimize=all ;
     Pron = ResRus.PronounForms ;
 
     V, VS, VQ, VA = ResRus.VerbForms ;
-    V2 = ResRus.VerbForms ** {c : ComplementCase} ;
+    V2, V2S, V2Q, V2A = ResRus.VerbForms ** {c : ComplementCase} ;
     V3 = ResRus.VerbForms ** {c : ComplementCase ; c2 : ComplementCase} ;
     VV = {v : ResRus.VerbForms ; modal : AgrTable} ;
     V2V, V2S, V2Q = ResRus.VerbForms ** {c : ComplementCase} ;
@@ -99,6 +99,7 @@ flags coding=utf8 ; optimize=all ;
     V = \s -> s.inf ;
     V2 = \s -> s.inf ++ s.c.s ;
     V2V = \s -> s.inf ++ s.c.s ;
+    V2A = \s -> s.inf ++ s.c.s ;
     V3 = \s -> s.inf ++ s.c.s ++ s.c2.s ;
     Ord = \s -> s.nsnom ;
     S = \s -> s.s ! Ind ;

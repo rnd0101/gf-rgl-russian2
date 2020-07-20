@@ -66,6 +66,7 @@ lin
   do_V2 = mkV2 (mkV "делать");
   teach_V2 = mkV2 (mkV "учить");
   become_VA = mkV "становиться" ;
+  paint_V2A = dirV2 (mkV "рисовать") ;
   play_V2 = mkV2 (mkV "играть" ) with_Prep;
   doctor_N = mkN "доктор" masculine animate ;
   dog_N = mkN "собака" feminine animate ;
