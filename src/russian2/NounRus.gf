@@ -32,7 +32,11 @@ lin
   AdvNP np adv = np ** {s=\\cas=>np.s ! cas ++ adv.s} ;
 
   -- TODO: ExtAdvNP: NP -> Adv -> NP ;    -- boys, such as ..
-  -- TODO: RelNP   : NP -> RS  -> NP ;    -- Paris, which is here
+  -- : NP -> RS -> NP ;    -- Paris, which is here
+  RelNP np rs = {
+    s=\\cas=>np.s ! cas ++ embedInCommas (rs.s ! agrGenNum np.a ! Inanimate !cas);   -- GenNum => Animacy => Case => Str ;
+    a=np.a
+    } ;
 
   -- : Det -> NP ;        -- these five
   DetNP det = {

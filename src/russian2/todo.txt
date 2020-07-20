@@ -8,3 +8,5 @@
 Lang: UttS (AdvS (AdAdv quite_Adv (ComparAdvAdj less_CAdv narrow_A everything_NP)) (UseCl (TTAnt TPres ASimul) PNeg (ExistNP something_NP)))
 LangRus: довольно менее узко чем всё существовает не что &+ -то
 
+Lang: DetCN few_Det (UseN airplane_N)
+LangRus: немногие самолётов

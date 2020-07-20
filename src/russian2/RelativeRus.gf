@@ -1,10 +1,18 @@
 concrete RelativeRus of Relative = CatRus ** open
   ParadigmsRus,
   ResRus,
-  Prelude in {
+  MorphoRus,
+  Prelude, Coordination in {
 
 lin
-  -- TODO: RelCl    : Cl -> RCl ;            -- such that John loves her
+  -- : Cl -> RCl ;            -- such that John loves her
+  RelCl cl = {
+    subj=such.s ;
+    adv=\\a=> comma ++ "что" ++ cl.adv ;  -- TODO: this should be after subj in this case
+    verb=cl.verb ;
+    compl=\\a=>cl.compl ;
+    a=cl.a
+    } ;
   -- : RP -> ClSlash -> RCl ; -- whom John loves
   RelSlash rp cls = let rp_as_adj = rp.poss ** {preferShort=PrefFull;  sf,sm,sn,sp,comp = []} in {
     subj=(adjFormsAdjective rp_as_adj).s ;

@@ -119,7 +119,7 @@ lin
     s = \\g => (adjFormsAdjective (guessAdjectiveForms "немногий")).s ! GPl;
     g = Masc ;
     c = Nom ;
-    size = Num5 ;
+    size = NumAll ;
     } ;
 
   many_Det, much_Det = {

@@ -9,7 +9,5 @@ oper DetQuantOrd : Quant -> Num -> Ord -> Det = notYet "DetQuantOrd" ;
 oper EmbedVP : VP -> SC = notYet "EmbedVP" ;
 oper OrdDigits : Digits -> Ord = notYet "OrdDigits" ;
 oper OrdNumeral : Numeral -> Ord = notYet "OrdNumeral" ;
-oper RelCl : Cl -> RCl = notYet "RelCl" ;
-oper RelNP : NP -> RS -> NP = notYet "RelNP" ;
-oper SlashPrep : Cl -> Prep -> ClSlash = notYet "SlashPrep" ;
+
 }
