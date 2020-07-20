@@ -13,7 +13,7 @@ lin
         temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ cl.adv ++ parts.p2 ++ cl.compl ;
       Ind => let parts = R.verbAgr cl.verb Ind temp.t cl.a pol.p in
 --        temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ cl.adv ++ parts.p2 ++ cl.compl ;
-        temp.s ++ cl.adv ++ parts.p2 ++ pol.s ++ parts.p1 ++ cl.subj ++ cl.compl ;
+          temp.s ++ cl.adv ++ pol.s ++ parts.p1 ++ parts.p2 ++ cl.subj ++ cl.compl ;
       Sbjv => let parts = R.verbAgr cl.verb Sbjv temp.t cl.a pol.p in
         temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ cl.adv ++ parts.p2 ++ cl.compl ;
       Imperative => let parts = R.verbAgr cl.verb Imperative temp.t cl.a pol.p in
@@ -77,7 +77,7 @@ lin
       let pol = case polarity of {Neg => PNeg; Pos => PPos} in
       let a = Ag gn P2 in
       let parts = R.verbAgr vp.verb Imperative Pres a pol.p in
-          parts.p1 ++ pol.s ++ vp.adv ! a ++ parts.p2 ++ vp.compl ! a
+          parts.p1 ++ pol.s ++ parts.p2 ++ vp.adv ! a ++ vp.compl ! a
     } ;
 
   -- : NP -> VP -> Cl ;         -- John walks - Иван гуляет

@@ -52,7 +52,12 @@ flags coding=utf8 ; optimize=all ;
     Imp = {s: Polarity => GenNum => Str} ;
     Comp = {s : AgrTable ; adv : Str ; cop : CopulaType } ;
 
-    Det = Determiner ;
+    Det = {
+      s : DetTable ;
+      g : Gender ;  -- is this enough? Is noGender case needed?
+      c : Case ;
+      size : NumSize
+      } ;
     Predet = ResRus.Adjective ;
     Quant, IQuant = ResRus.Adjective ** {g: Gender; c: Case} ;
     Num, Numeral, Card = NumDet ;

@@ -156,13 +156,6 @@ oper
   mkN2plus : Noun2Forms -> Noun2Forms
     = \nf -> nf ;
 
-  Determiner : Type = {
-    s : DetTable ;
-    g : Gender ;  -- is this enough? Is noGender case needed?
-    c : Case ;
-    size : NumSize
-    } ;
-
   mkFun : NounForms -> ComplementCase -> Noun2Forms = \f, p -> f ** {c2 = p} ;
   mkFun2 : NounForms -> ComplementCase -> ComplementCase -> Noun3Forms = \f, p2, p3 -> f ** {c2=p2; c3=p3} ;
 

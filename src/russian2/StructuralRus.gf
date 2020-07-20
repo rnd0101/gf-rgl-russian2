@@ -137,7 +137,9 @@ lin
   everybody_NP = lin NP everybody ;
   everything_NP = lin NP everything ;
   something_NP = lin NP something ;
-  someone_NP = lin NP someone ;
+  somebody_NP = lin NP somebody ;
+  nothing_NP = lin NP nothing ;
+  nobody_NP = lin NP nobody ;
 
   but_PConj = ss "но" ;
   otherwise_PConj = ss "иначе" ;

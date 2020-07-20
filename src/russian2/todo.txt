@@ -4,3 +4,7 @@
 менее сухо чем немногие
 
 (should it be менее сухо чем немного? what is the idea of few_Det?)
+
+Lang: UttS (AdvS (AdAdv quite_Adv (ComparAdvAdj less_CAdv narrow_A everything_NP)) (UseCl (TTAnt TPres ASimul) PNeg (ExistNP something_NP)))
+LangRus: довольно менее узко чем всё существовает не что &+ -то
+
