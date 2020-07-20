@@ -54,7 +54,8 @@ lin
   or_Conj = mkConj "или" Sg ;
   and_Conj = mkConj "и" Pl ;
   both7and_DConj = mkConj "как" (comma ++ "так и") Pl ;
-  either7or_DConj  = mkConj "либо" (comma ++ "либо") Sg ;
+  either7or_DConj = mkConj "либо" (comma ++ "либо") Sg ;
+  if_then_Conj = mkConj "если" (comma ++ "то") Sg ;
 
   with_Prep = {s="с" ; c=Ins; hasPrep=True};
 
@@ -133,6 +134,8 @@ lin
   always_AdV = ss "всегда" ;
   almost_AdA = ss "почти" ;
   almost_AdN = ss "почти" ;
+  at_least_AdN = ss "по меньшей мере" ; -- TODO: ?
+  at_most_AdN = ss "самое большее" ; -- TODO: ?
 
   everybody_NP = lin NP everybody ;
   everything_NP = lin NP everything ;
