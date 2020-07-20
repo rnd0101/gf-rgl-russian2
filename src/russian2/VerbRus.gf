@@ -58,9 +58,22 @@ lin
     c=v2v.c
     } ;
 
-  -- TODO: SlashV2S : V2S -> S  -> VPSlash ;  -- answer (to him) that it is good
-  -- TODO: SlashV2Q : V2Q -> QS -> VPSlash ;  -- ask (him) who came
-  -- TODO: SlashV2A : V2A -> AP -> VPSlash ;  -- paint (it) red
+  -- : V2S -> S  -> VPSlash ;  -- answer (to him) that it is good
+  SlashV2S v2s s = {
+    adv=\\a=>[] ;
+    verb=v2s ;
+    compl=\\a=> embedInCommas ("что" ++ s.s ! Ind) ;
+    c=v2s.c
+    } ;
+  -- : V2Q -> QS -> VPSlash ;  -- ask (him) who came
+  SlashV2Q v2q qs = {
+    adv=\\a=>[] ;
+    verb=v2q ;
+    compl=\\a=>qs.s ! QDir;
+    c=v2q.c
+    } ;
+
+  -- : V2A -> AP -> VPSlash ;  -- paint (it) red
   SlashV2A v2a ap = {
     adv=\\a=>[] ;
     verb=v2a ;

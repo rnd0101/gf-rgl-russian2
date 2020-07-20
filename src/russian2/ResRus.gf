@@ -217,7 +217,7 @@ oper
       } ;
 
   selectCase : (Case => Str) -> ComplementCase -> Str
-    = \np,prep -> prep.s ++ np ! prep.c ;  -- TODO: NP - pronoun speacial treatment
+    = \np,prep -> prep.s ++ np ! prep.c ;  -- TODO: NP - pronoun special treatment
 
   from2 = {s="из"; c=Gen; hasPrep=True} ;
 

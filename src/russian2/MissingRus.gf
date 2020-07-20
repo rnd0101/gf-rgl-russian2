@@ -12,7 +12,4 @@ oper OrdNumeral : Numeral -> Ord = notYet "OrdNumeral" ;
 oper RelCl : Cl -> RCl = notYet "RelCl" ;
 oper RelNP : NP -> RS -> NP = notYet "RelNP" ;
 oper SlashPrep : Cl -> Prep -> ClSlash = notYet "SlashPrep" ;
-oper SlashV2A : V2A -> AP -> VPSlash = notYet "SlashV2A" ;
-oper SlashV2Q : V2Q -> QS -> VPSlash = notYet "SlashV2Q" ;
-oper SlashV2S : V2S -> S -> VPSlash = notYet "SlashV2S" ;
 }

@@ -55,6 +55,16 @@ lin
     c=vps.c
   } ;
 
+  -- : Cl -> Prep -> ClSlash ;         -- (with whom) he walks
+  SlashPrep cl prep = {
+    subj=cl.subj ;
+    compl=cl.compl ;
+    adv=cl.adv ;
+    verb=cl.verb ;
+    a=cl.a ;
+    c=prep
+    } ;
+
   -- NP -> VS -> SSlash -> ClSlash ; -- (whom) she says that he loves
   SlashVS np vs ss = {
     subj=np.s ! Nom  ; -- ????????
