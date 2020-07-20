@@ -18,19 +18,24 @@ lin
   whoPl_IP = who_pl ;
 
   which_IQuant = (adjFormsAdjective (guessAdjectiveForms "который")) ** {
-      preferShort=PrefFull ;
-      g=Neut ;
-      c=Nom
+    preferShort=PrefFull ;
+    g=Neut ;
+    c=Nom
     } ;
   this_Quant = (adjFormsAdjective this_forms) ** {
-      preferShort=PrefFull ;
-      g=Neut ;
-      c=Nom
+    preferShort=PrefFull ;
+    g=Neut ;
+    c=Nom
     } ;
   that_Quant = (adjFormsAdjective that_forms) ** {
-      preferShort=PrefFull ;
-      g=Neut ;
-      c=Nom
+    preferShort=PrefFull ;
+    g=Neut ;
+    c=Nom
+    } ;
+  no_Quant = (adjFormsAdjective (guessAdjectiveForms "никакой")) ** {
+    preferShort=PrefFull ;
+    g=Neut ;
+    c=Nom
     } ;
 
   above_Prep = {s="над" ; c=Ins; hasPrep=True} ;
@@ -41,6 +46,7 @@ lin
   by8agent_Prep = {s=["с помощью"] ; c=Gen; hasPrep=True};
   by8means_Prep = {s=["с помощью"] ; c=Gen; hasPrep=True};
   during_Prep = {s=["в течение"] ; c=Gen; hasPrep=True};
+  except_Prep = {s=["за исключением"] ; c=Gen; hasPrep=True};
   for_Prep = {s="для" ; c=Gen ; hasPrep=True};
   from_Prep = {s="от" ; c=Gen ; hasPrep=True} ;
   in8front_Prep = {s="перед" ; c=Ins; hasPrep=True};
@@ -51,6 +57,8 @@ lin
   through_Prep = {s="через" ; c=Acc ; hasPrep=True};
   to_Prep = {s="к" ; c=Dat ; hasPrep=True} ;
   under_Prep = {s="под" ; c=Ins ; hasPrep=True};
+  without_Prep = {s="без" ; c=Gen; hasPrep=True };
+
   or_Conj = mkConj "или" Sg ;
   and_Conj = mkConj "и" Pl ;
   both7and_DConj = mkConj "как" (comma ++ "так и") Pl ;
@@ -81,6 +89,7 @@ lin
 
   less_CAdv = X.mkCAdv "менее" "чем" ;
   more_CAdv = X.mkCAdv "более" "чем" ;
+  as_CAdv = X.mkCAdv "так же" "как и" ;
 
   can8know_VV = {v=can; modal=\\a=>[]} ;
   can_VV = {v=can; modal=\\a=>[]} ;
@@ -92,30 +101,38 @@ lin
     g = Masc ;
     c = Nom ;
     size = Num1 ;
-  } ;
+    } ;
   someSg_Det   = {
     s = \\g => (adjFormsAdjective (guessAdjectiveForms "некоторый")).s ! GSg g;
     g = Masc ;
     c = Nom ;
     size = Num1 ;
-  } ;
+    } ;
   somePl_Det = {
     s = \\g => (adjFormsAdjective (guessAdjectiveForms "некоторый")).s ! GPl;
     g = Masc ;
     c = Nom ;
     size = NumAll ;
-  } ;
+    } ;
 
   few_Det = { -- numeral! TODO: мало ? немного ?
     s = \\g => (adjFormsAdjective (guessAdjectiveForms "немногий")).s ! GPl;
     g = Masc ;
     c = Nom ;
     size = Num5 ;
-  } ;
+    } ;
+
+  many_Det, much_Det = {
+    s = \\g => (adjFormsAdjective (guessAdjectiveForms "многий")).s ! GPl;
+    g = Neut ;
+    c = Gen ;
+    size = Num5
+    } ;
 
   only_Predet = adjFormsAdjective (noShorts only_Pron) ;       -- ** { g = PNoGen; c = Nom; size = nom} ;  -- TODO:
   --most_Predet   = bolshinstvoSgDet ** {n = Sg; g = (PGen Neut); c= Gen; size = plg}
   all_Predet = adjFormsAdjective (noShorts all_Pron) ;         -- ** { g = PNoGen; c = Nom; size = nom} ;  -- TODO:
+  not_Predet = adjFormsAdjective (mkA "не" "" "0") ;         -- ** { g = PNoGen; c = Nom; size = nom} ;  -- TODO:
 
   how8many_IDet = {
     s=\\g,anim,cas => case <anim,cas> of {
@@ -125,17 +142,19 @@ lin
       <_,Ins> => "сколькими" ;
       <Inanimate,Acc> => "сколько" ;
       <Animate,Acc> => "скольких"   -- also as Nom?
-    } ;
+      } ;
     g=Neut ;
     size=NumAll ;    --it depends???
     c=Nom    --???
-  } ;
+    } ;
 
-  always_AdV = ss "всегда" ;
   almost_AdA = ss "почти" ;
   almost_AdN = ss "почти" ;
+  always_AdV = ss "всегда" ;
   at_least_AdN = ss "по меньшей мере" ; -- TODO: ?
   at_most_AdN = ss "самое большее" ; -- TODO: ?
+  too_AdA = ss "слишком" ;
+  very_AdA = ss "очень" ;
 
   everybody_NP = lin NP everybody ;
   everything_NP = lin NP everything ;
@@ -152,7 +171,11 @@ lin
   because_Subj = ss ["потому что"] ;
   if_Subj = ss "если" ;
   when_Subj = ss "когда" ;
+  that_Subj = ss "что" ;  -- TODO: ?
 
+  have_V2 = dirV2 (mkV "иметь");
+
+  language_title_Utt = ss "русский" ;
   yes_Utt = ss ["да"] ;
   no_Utt  = ss ["нет"] ;
 }

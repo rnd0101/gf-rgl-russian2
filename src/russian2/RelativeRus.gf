@@ -5,7 +5,7 @@ concrete RelativeRus of Relative = CatRus ** open
 
 lin
   -- TODO: RelCl    : Cl -> RCl ;            -- such that John loves her
-  -- TODO: RelSlash : RP -> ClSlash -> RCl ; -- whom John loves
+  -- : RP -> ClSlash -> RCl ; -- whom John loves
   RelSlash rp cls = let rp_as_adj = rp.poss ** {preferShort=PrefFull;  sf,sm,sn,sp,comp = []} in {
     subj=(adjFormsAdjective rp_as_adj).s ;
     adv=\\a=>cls.adv ;  -- TODO: this should be after subj in this case
