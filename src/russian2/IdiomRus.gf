@@ -15,7 +15,7 @@ lin
     subj=np.s ! Nom ;
     adv="это" ;
     verb=nullVerb ;   -- ???
-    compl=embedInCommas (rs.s ! agrGenNum np.a ! Animate ! Nom) ;
+    compl=embedInCommas (rs.s ! agrGenNum np.a ! Animate ! Nom) ;  -- TODO: here or in subj???
     a=np.a
     } ;
   -- : Adv -> S -> Cl ; -- it is here she slept
