@@ -65,6 +65,7 @@ lin
   distance_N3 = mkN3 (mkN "расстояние") from_Prep on_to_Prep ;
   do_V2 = mkV2 (mkV "делать");
   teach_V2 = mkV2 (mkV "учить");
+  become_VA = mkV "становиться" ;
   play_V2 = mkV2 (mkV "играть" ) with_Prep;
   doctor_N = mkN "доктор" masculine animate ;
   dog_N = mkN "собака" feminine animate ;

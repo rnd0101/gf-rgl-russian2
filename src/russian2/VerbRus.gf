@@ -23,7 +23,15 @@ lin
 
   -- TODO: ComplVS  : VS  -> S  -> VP ;  -- say that she runs
   -- TODO: ComplVQ  : VQ  -> QS -> VP ;  -- wonder who runs
-  -- TODO: ComplVA  : VA  -> AP -> VP ;  -- they become red
+  -- : VA -> AP -> VP ;  -- they become red
+  ComplVA va ap = {
+    verb=va ;
+    adv=\\a=>[] ;
+    compl=case ap.preferShort of {
+      PrefFull => (\\a => ap.s ! agrGenNum a ! Inanimate ! Ins) ;
+      PrefShort => ap.short
+      }
+    } ;
 
   -- SlashV2a : V2 -> VPSlash ;  -- love (it)
   SlashV2a v = {adv=\\a=>[] ; verb=v ; compl=\\_ => [] ; c=v.c} ;

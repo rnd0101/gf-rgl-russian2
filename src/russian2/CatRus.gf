@@ -10,7 +10,7 @@ flags coding=utf8 ; optimize=all ;
 
     Pron = ResRus.PronounForms ;
 
-    V, VS = ResRus.VerbForms ;
+    V, VS, VQ, VA = ResRus.VerbForms ;
     V2 = ResRus.VerbForms ** {c : ComplementCase} ;
     V3 = ResRus.VerbForms ** {c : ComplementCase ; c2 : ComplementCase} ;
     VV = {v : ResRus.VerbForms ; modal : AgrTable} ;
