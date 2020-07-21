@@ -7,6 +7,7 @@ concrete ConjunctionRus of Conjunction =
 
   lincat
     [Adv] = {s1,s2 : Str} ;
+    [IAdv] = {s1,s2 : Str} ;
     [AdV] = {s1,s2 : Str} ;
     [AP] = {s1,s2 : AdjTable ;
       short1,short2 : AgrTable ;
@@ -41,6 +42,11 @@ concrete ConjunctionRus of Conjunction =
     -- : AdV -> ListAdV -> ListAdV ; -- always, sometimes, never
     ConsAdV = consrSS comma ;
 
+    -- : IAdv -> IAdv -> ListIAdv ;     -- where, when
+    BaseIAdv = twoSS ;
+    -- : IAdv -> ListIAdv -> ListIAdv ; -- where, when, why
+    ConsIAdv = consrSS comma ;
+
     -- : AP -> AP -> ListAP ;       -- red, white
     BaseAP x y = twoTable3 GenNum Animacy Case x y ** {
       short1 = x.short ;
@@ -64,11 +70,19 @@ concrete ConjunctionRus of Conjunction =
       size = conjSize x.size y.size ;  -- different genders -> plural?
       } ;
 
-    -- ConsDAP : DAP -> ListDAP -> ListDAP ;   --
+    -- : DAP -> ListDAP -> ListDAP ;   --
     ConsDAP x xs = consrTable3 Gender Animacy Case comma x xs ** {
       g = xs.g ;  --?
       c = xs.c ;  -- ?
       size = xs.size  -- different genders -> plural?
+      } ;
+
+    -- ConjDet  : Conj -> ListDAP -> Det ;   -- his or her
+    ConjDet conj xs = {
+      s=\\g,anim,cas => conj.s1 ++ xs.s1 ! g ! anim ! cas ++ conj.s2 ++ xs.s2 ! g ! anim ! cas ;
+      g=xs.g ;
+      c=xs.c ;
+      size=xs.size
       } ;
 
     -- : S -> S -> ListS ;      -- John walks, Mary runs
@@ -85,6 +99,8 @@ concrete ConjunctionRus of Conjunction =
 
     -- : Conj -> ListAdv -> Adv ;   -- here or there
     ConjAdv = conjunctDistrSS ;
+    -- : Conj -> ListIAdv -> IAdv ;   -- where or why
+    ConjIAdv = conjunctDistrSS ;
     -- : Conj -> ListAdV -> AdV ;   -- always or sometimes
     ConjAdV = conjunctDistrSS ;
 
