@@ -17,7 +17,7 @@ lin
   whoSg_IP = who_sg ;
   whoPl_IP = who_pl ;
 
-  which_IQuant = (adjFormsAdjective (guessAdjectiveForms "который")) ** {
+  which_IQuant = (adjFormsAdjective (makeAdjectiveForms "который" "" "1a" PrefFull)) ** {
     preferShort=PrefFull ;
     g=Neut ;
     c=Nom
@@ -32,7 +32,7 @@ lin
     g=Neut ;
     c=Nom
     } ;
-  no_Quant = (adjFormsAdjective (guessAdjectiveForms "никакой")) ** {
+  no_Quant = (adjFormsAdjective (makeAdjectiveForms "никакой" "" "3b" PrefFull)) ** {
     preferShort=PrefFull ;
     g=Neut ;
     c=Nom
@@ -93,46 +93,46 @@ lin
 
   can8know_VV = {v=can; modal=\\a=>[]} ;
   can_VV = {v=can; modal=\\a=>[]} ;
-  must_VV = {v=nullVerb; modal=adjFormsToShort (guessAdjectiveForms "должный")} ;
+  must_VV = {v=nullVerb; modal=adjFormsToShort (makeAdjectiveForms "должный" "" "1*a" PrefFull)} ;
   want_VV = {v=want; modal=\\a=>[]} ;
 
   every_Det = {
-    s = \\g => (adjFormsAdjective (guessAdjectiveForms "каждый")).s ! GSg g;
+    s = \\g => (adjFormsAdjective (makeAdjectiveForms "каждый" "" "1*a" PrefFull)).s ! GSg g;
     g = Masc ;
     c = Nom ;
     size = Num1 ;
     } ;
   someSg_Det   = {
-    s = \\g => (adjFormsAdjective (guessAdjectiveForms "некоторый")).s ! GSg g;
+    s = \\g => (adjFormsAdjective (makeAdjectiveForms "некоторый" "" "1*a" PrefFull)).s ! GSg g;
     g = Masc ;
     c = Nom ;
     size = Num1 ;
     } ;
   somePl_Det = {
-    s = \\g => (adjFormsAdjective (guessAdjectiveForms "некоторый")).s ! GPl;
+    s = \\g => (adjFormsAdjective (makeAdjectiveForms "некоторый" "" "1*a" PrefFull)).s ! GPl;
     g = Masc ;
     c = Nom ;
     size = NumAll ;
     } ;
 
   few_Det = { -- numeral! TODO: мало ? немного ?
-    s = \\g => (adjFormsAdjective (guessAdjectiveForms "немногий")).s ! GPl;
+    s = \\g => (adjFormsAdjective (makeAdjectiveForms "немногий"  "" "3a" PrefFull)).s ! GPl;
     g = Masc ;
     c = Nom ;
     size = NumAll ;
     } ;
 
   many_Det, much_Det = {
-    s = \\g => (adjFormsAdjective (guessAdjectiveForms "многий")).s ! GPl;
+    s = \\g => (adjFormsAdjective (makeAdjectiveForms "многий"  "" "3a" PrefFull)).s ! GPl;
     g = Neut ;
     c = Gen ;
     size = Num5
     } ;
 
-  only_Predet = adjFormsAdjective (noShorts only_Pron) ;
-  --most_Predet   = bolshinstvoSgDet ** {n = Sg; g = (PGen Neut); c= Gen; size = plg}
-  all_Predet = adjFormsAdjective (noShorts all_Pron) ;
-  not_Predet = adjFormsAdjective (mkA "не" "" "0") ;
+  only_Predet = (adjFormsAdjective (noShorts only_Pron)) ** {size=Num1} ;
+  most_Predet = (makeAdjectiveFromNoun (nounFormsNoun (guessNounForms "большинство"))) ** {size=Num5} ;
+  all_Predet = (adjFormsAdjective (noShorts all_Pron)) ** {size=NumAll};
+  not_Predet = (adjFormsAdjective (mkA "не" "" "0")) ** {size=Num1} ;
 
   how8many_IDet = {
     s=\\g,anim,cas => case <anim,cas> of {

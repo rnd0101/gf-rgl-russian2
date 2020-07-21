@@ -58,7 +58,7 @@ flags coding=utf8 ; optimize=all ;
       c : Case ;
       size : NumSize
       } ;
-    Predet = ResRus.Adjective ;
+    Predet = ResRus.Adjective ** {size : NumSize} ;
     Quant, IQuant = ResRus.Adjective ** {g: Gender; c: Case} ;
     Num, Numeral, Card = NumDet ;
     Digits = {s : Str ; size: NumSize} ;

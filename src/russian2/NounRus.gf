@@ -21,7 +21,7 @@ lin
   UsePron pron = lin NP (pronFormsPronoun pron) ;
 
   -- : Predet -> NP -> NP ; -- only the man
-  PredetNP predet np = np ** {s=\\cas => predet.s ! (agrGenNum np.a) ! Inanimate ! cas ++ np.s ! cas} ;
+  PredetNP predet np = np ** {s=\\cas => predet.s ! (agrGenNum np.a) ! Inanimate ! cas ++ np.s ! numSizeCase predet.size} ;
 
   -- : NP -> V2  -> NP ;    -- the man seen
   PPartNP np v2 = np ** {

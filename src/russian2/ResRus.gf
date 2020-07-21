@@ -361,6 +361,13 @@ oper
         let comp' = case (Predef.length comp) of {0 => af.comp; _ => comp} in
         af ** {comp=comp'} ;
 
+  makeAdjectiveFromNoun : Noun -> Adjective
+    = \n -> {
+       s = \\gn,anim,cas=> n.s ! numGenNum gn ! cas ;
+       short=\\a=>[] ;
+       preferShort=PrefFull
+    } ;
+
   the_most = guessAdjectiveForms "самый" ;
   utmost_Adv = makeAdverb "наиболее" ;
 
