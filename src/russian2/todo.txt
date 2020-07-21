@@ -10,3 +10,12 @@ LangRus: довольно менее узко чем всё существова
 
 Lang: DetCN few_Det (UseN airplane_N)
 LangRus: немногие самолётов
+
+Lang: DetCN many_Det (RelCN (UseN bike_N) (UseRCl (TTAnt TPres AAnter) PNeg (RelVP IdRP (UseV fall_V))))
+LangRus: многие велосипедов , которых не падает
+
+Lang: DetCN (DetQuantOrd (PossPron he_Pron) (NumCard (NumDigits (IDig D_0))) (OrdSuperl bad_A)) (RelCN (ConjCN both7and_DConj (BaseCN (UseN2 mother_N2) (UseN lamp_N))) (UseRCl (TTAnt TPast ASimul) PNeg (RelCl (ImpersCl ready_VP))))
+LangRus: 0 его самых плохых как матерей , так и ламп , такых не , что было готово
+
+Lang: AdvS there7from_Adv (UseCl (TTAnt TFut AAnter) PPos (CleftNP everybody_NP (UseRCl (TTAnt TPres AAnter) PPos (RelSlash (FunRP in8front_Prep (languageNP polish_Language) IdRP) (SlashPrep (PredVP somebody_NP hungry_VP) through_Prep)))))
+LangRus: оттуда это все , польский перед которые голоден

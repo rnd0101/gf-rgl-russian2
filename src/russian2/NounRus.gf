@@ -76,6 +76,15 @@ lin
     } ;
 
   -- TODO:  DetQuantOrd : Quant -> Num -> Ord -> Det ;  -- these five best
+  DetQuantOrd quant num ord = {
+    s=\\g,a,c => num.s ! g ! a ! c
+      ++ quant.s ! (gennum g (numSizeNumber num.size)) ! a ! c
+      --GenNum => Animacy => Case => Str
+      ++ (adjFormsAdjective ord).s ! gennum quant.g (numSizeNum num.size) ! Inanimate ! numSizeCase num.size ;
+    g=quant.g ;
+    c=quant.c ;
+    size=num.size
+    } ;
 
   -- : Num  -- mark as singular
   NumSg = {s = \\_,_,_ => [] ; size = Num1 } ;

@@ -12,7 +12,7 @@ lin
       Infinitive => let parts = R.verbAgr cl.verb Infinitive temp.t cl.a pol.p in
         temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ cl.adv ++ parts.p2 ++ cl.compl ;
       Ind => let parts = R.verbAgr cl.verb Ind temp.t cl.a pol.p in
---        temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ cl.adv ++ parts.p2 ++ cl.compl ;
+--          temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ cl.adv ++ parts.p2 ++ cl.compl ;
           temp.s ++ cl.adv ++ pol.s ++ parts.p1 ++ parts.p2 ++ cl.subj ++ cl.compl ;
       Sbjv => let parts = R.verbAgr cl.verb Sbjv temp.t cl.a pol.p in
         temp.s ++ parts.p1 ++ cl.subj ++ pol.s ++ cl.adv ++ parts.p2 ++ cl.compl ;
@@ -74,6 +74,12 @@ lin
     a=np.a ;
     c=ss.c
   } ;
+
+
+  -- SSubjS    : S -> Subj -> S -> S ;       -- I go home, if she comes
+  SSubjS s subj s2 = {
+    s=\\m => s.s ! m ++ comma ++ subj.s ++ s2.s ! Ind
+    } ;
 
   -- : ClSlash -> Adv -> ClSlash ;     -- (whom) he sees today
   AdvSlash cls adv = cls ** {
