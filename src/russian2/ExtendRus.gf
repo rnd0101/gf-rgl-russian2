@@ -25,7 +25,7 @@ concrete ExtendRus of Extend =
     UncontractedNeg, UttAccIP, UttAccNP, UttAdV, UttDatIP, UttDatNP, UttVPShort, WithoutVP, BaseVPS2, ConsVPS2, ConjVPS2, ComplVPS2, MkVPS2
    ]
   with (Grammar=GrammarRus)
-  ** open Prelude, ResRus in {
+  ** open Prelude, ResRus, ParadigmsRus, Overload, (E=Extend) in {
 
 lincat
   RNP     = {s : Agr => Str} ;
@@ -37,4 +37,7 @@ lin
     s=\\cas=> np.s ! cas ++ embedInCommas (np2.s ! cas) ;
     a=np.a
     } ;
+
+  -- : IAdv -> VP -> QCl ; -- how to walk?
+  PredIAdvVP iadv vp = QuestIAdv iadv (GenericCl vp) ; -- DEFAULT how does one walk
 } ;
