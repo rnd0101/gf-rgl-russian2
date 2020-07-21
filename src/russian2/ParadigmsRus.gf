@@ -111,15 +111,9 @@ oper
     mkA : Str -> Str -> A
       = \nom, comp -> lin A ((guessAdjectiveForms nom) ** {comp=comp}) ;
     mkA : Str -> Str -> Str -> A
-      = \nom, comp, zi ->
-        let af = Z.makeAdjective nom (Z.parseAdjIndex zi) PrefFull in
-        let comp' = case (Predef.length comp) of {0 => af.comp; _ => comp} in
-        lin A (af ** {comp=comp'}) ;
+      = \nom, comp, zi -> lin A (makeAdjectiveForms nom comp zi PrefFull) ;
     mkA : Str -> Str -> Str -> ShortFormPreference -> A
-      = \nom, comp, zi, sfp ->
-        let af = Z.makeAdjective nom (Z.parseAdjIndex zi) sfp in
-        let comp' = case (Predef.length comp) of {0 => af.comp; _ => comp} in
-        lin A (af ** {comp=comp'}) ;
+      = \nom, comp, zi, spf -> lin A (makeAdjectiveForms nom comp zi spf) ;
   } ;
 
 -- Two-place adjectives need a preposition and a case as extra arguments.

@@ -129,10 +129,10 @@ lin
     size = Num5
     } ;
 
-  only_Predet = adjFormsAdjective (noShorts only_Pron) ;       -- ** { g = PNoGen; c = Nom; size = nom} ;  -- TODO:
+  only_Predet = adjFormsAdjective (noShorts only_Pron) ;
   --most_Predet   = bolshinstvoSgDet ** {n = Sg; g = (PGen Neut); c= Gen; size = plg}
-  all_Predet = adjFormsAdjective (noShorts all_Pron) ;         -- ** { g = PNoGen; c = Nom; size = nom} ;  -- TODO:
-  not_Predet = adjFormsAdjective (mkA "не" "" "0") ;         -- ** { g = PNoGen; c = Nom; size = nom} ;  -- TODO:
+  all_Predet = adjFormsAdjective (noShorts all_Pron) ;
+  not_Predet = adjFormsAdjective (mkA "не" "" "0") ;
 
   how8many_IDet = {
     s=\\g,anim,cas => case <anim,cas> of {

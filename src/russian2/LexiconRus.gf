@@ -14,7 +14,7 @@ lin
   ashes_N = mkN "пепел" masculine inanimate "1*a" ;
   baby_N = mkN "малыш" masculine animate "4b" ;
   back_N = mkN "спина" ;
-  bad_A = mkA "плохой" "хуже" ;
+  bad_A = mkA "плохой" "хуже" "3b/c'";
   bank_N = mkN "банк" ;
   bark_N = mkN "кора";
   beautiful_A = mkA "красивый" ;

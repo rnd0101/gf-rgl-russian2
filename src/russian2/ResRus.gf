@@ -355,6 +355,12 @@ oper
         _                          => makeAdjective word (ZA 1 No A_ NoC) PrefFull
     } ;
 
+  makeAdjectiveForms : Str -> Str -> Str -> ShortFormPreference -> AdjForms
+    = \nom, comp, zi, spf ->
+        let af = makeAdjective nom (parseAdjIndex zi) spf in
+        let comp' = case (Predef.length comp) of {0 => af.comp; _ => comp} in
+        af ** {comp=comp'} ;
+
   the_most = guessAdjectiveForms "самый" ;
   utmost_Adv = makeAdverb "наиболее" ;
 
