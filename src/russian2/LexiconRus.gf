@@ -99,7 +99,8 @@ lin
   fridge_N = mkN "холодильник" ;
   friend_N = (mkNplus (mkN "друг" masculine inanimate "3c")) ** {pnom="друзья";pgen="друзей";pdat="друзьям";pacc="друзей";pins="друзьями";pprep="друзьях"};
   fruit_N = mkN "фрукт" ;
-  full_A = (mkAplus (mkA "полный" "" "1*a/c'")) ** {sm="полон"};
+  full_A = (mkAplus (mkA "полный" "" "1*a/c'")) ** {sm="полон"} ;
+  fun_AV = (mkAltShort (mkA "весёлый" "" "1a/c'") (mkA "веселый")) ;
   garden_N = mkN "сад" ;
   girl_N = mkN "девочка" feminine animate "3*a";
   give_V3 = tvDirDir (mkV "давать") ;
