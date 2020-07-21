@@ -129,7 +129,9 @@ lin
   -- : VP -> Adv -> VP ;        -- sleep here
   AdvVP vp adv = vp ** {compl=\\a => vp.compl ! a ++ adv.s} ;
 
-  -- TODO: ExtAdvVP : VP -> Adv -> VP ;        -- sleep , even though ...
+  -- : VP -> Adv -> VP ;        -- sleep , even though ...
+  ExtAdvVP vp adv = vp ** {compl=\\a => vp.compl ! a ++ embedInCommas adv.s};
+
   -- : AdV -> VP -> VP ;        -- always sleep
   AdVVP adv vp = vp ** {adv=\\a => adv.s ++ vp.adv ! a} ;
 

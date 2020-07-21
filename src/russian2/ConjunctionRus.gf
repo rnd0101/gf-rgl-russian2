@@ -13,6 +13,11 @@ concrete ConjunctionRus of Conjunction =
       isPost : Bool;
       preferShort : ShortFormPreference
       } ;
+    [DAP] = {s1,s2 : DetTable ;
+      g : Gender ;
+      c : Case ;
+      size : NumSize
+      } ;
     [NP] = {s1,s2 : Case => Str ;
       -- prep1,prep2 : Case => Str ;
       a : Agr
@@ -50,6 +55,20 @@ concrete ConjunctionRus of Conjunction =
       short2 = xs.short2 ;
       isPost = orB x.isPost xs.isPost ;
       preferShort = selectAPForm x.preferShort xs.preferShort
+      } ;
+
+    -- : DAP -> DAP -> ListDAP ;       --
+    BaseDAP x y = twoTable3 Gender Animacy Case x y ** {
+      g = conjGender x.g y.g ;
+      c = y.c ;
+      size = conjSize x.size y.size ;  -- different genders -> plural?
+      } ;
+
+    -- ConsDAP : DAP -> ListDAP -> ListDAP ;   --
+    ConsDAP x xs = consrTable3 Gender Animacy Case comma x xs ** {
+      g = xs.g ;  --?
+      c = xs.c ;  -- ?
+      size = xs.size  -- different genders -> plural?
       } ;
 
     -- : S -> S -> ListS ;      -- John walks, Mary runs
@@ -141,6 +160,7 @@ concrete ConjunctionRus of Conjunction =
       <Sg,Sg> => Sg ;
       _ => Pl
     } ;
+    conjSize : NumSize -> NumSize -> NumSize = \m,n -> n ;   -- TODO: check latest win?
     conjGenNum : GenNum -> GenNum -> GenNum = \m,n -> case <m,n> of {
       <GSg Fem,GSg Fem> => FSg ;
       <GSg Masc,GSg Masc> => MSg ;

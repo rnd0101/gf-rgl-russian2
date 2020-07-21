@@ -31,7 +31,11 @@ lin
   -- : NP -> Adv -> NP ;    -- Paris today
   AdvNP np adv = np ** {s=\\cas=>np.s ! cas ++ adv.s} ;
 
-  -- TODO: ExtAdvNP: NP -> Adv -> NP ;    -- boys, such as ..
+  -- ExtAdvNP: NP -> Adv -> NP ;    -- boys, such as ..
+  ExtAdvNP np adv = {
+    s=\\cas=>np.s ! cas ++ embedInCommas adv.s ;
+    a=np.a
+    } ;
   -- : NP -> RS -> NP ;    -- Paris, which is here
   RelNP np rs = {
     s=\\cas=>np.s ! cas ++ embedInCommas (rs.s ! agrGenNum np.a ! Inanimate !cas);
@@ -80,7 +84,7 @@ lin
     size=num.size
     } ;
 
-  -- TODO:  DetQuantOrd : Quant -> Num -> Ord -> Det ;  -- these five best
+  -- : Quant -> Num -> Ord -> Det ;  -- these five best
   DetQuantOrd quant num ord = {
     s=\\g,a,c => num.s ! g ! a ! c
       ++ quant.s ! (gennum g (numSizeNumber num.size)) ! a ! c
@@ -161,8 +165,13 @@ lin
 ---------------------------------------------------
 -- Conjoinable determiners and ones with adjectives
 
-  -- TODO: AdjDAP : DAP -> AP -> DAP ;    -- the large (one)
-  -- TODO: DetDAP : Det -> DAP ;          -- this (or that)
+  -- DAP -> AP -> DAP ;    -- the large (one)
+  AdjDAP dap ap = dap ** {
+    s=\\g,anim,cas => ap.s ! GSg g ! anim ! cas ++ dap.s ! g ! anim ! cas
+    } ;
+
+  -- DetDAP : Det -> DAP ;          -- this (or that)
+  DetDAP det = det ;
 
 ---------------------------------------------------
 -- Backwards compatibility
