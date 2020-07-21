@@ -12,7 +12,7 @@ lin
     subj=ip.nom ;
     adv=[] ;
     verb=vp.verb ;
-    compl=vp.compl ! ip.a ;
+    compl=vp.compl ! ip.a ;  --???
     a=ip.a
     } ;
 

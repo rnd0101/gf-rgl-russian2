@@ -126,7 +126,7 @@ lin
     s = \\g => (adjFormsAdjective (makeAdjectiveForms "многий"  "" "3a" PrefFull)).s ! GPl;
     g = Neut ;
     c = Gen ;
-    size = Num5
+    size = NumAll
     } ;
 
   only_Predet = (adjFormsAdjective (noShorts only_Pron)) ** {size=Num1} ;

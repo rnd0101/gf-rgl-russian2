@@ -1,15 +1,7 @@
 # Some problematic places
 
-> l (ComparAdvAdj less_CAdv dry_A (DetNP few_Det))
-менее сухо чем немногие
-
-(should it be менее сухо чем немного? what is the idea of few_Det?)
-
-Lang: UttS (AdvS (AdAdv quite_Adv (ComparAdvAdj less_CAdv narrow_A everything_NP)) (UseCl (TTAnt TPres ASimul) PNeg (ExistNP something_NP)))
-LangRus: довольно менее узко чем всё существовает не что &+ -то
-
-Lang: DetCN few_Det (UseN airplane_N)
-LangRus: немногие самолётов
+> l UttS (AdvS (AdAdv quite_Adv (ComparAdvAdj less_CAdv narrow_A everything_NP)) (UseCl (TTAnt TPres ASimul) PNeg (ExistNP something_NP)))
+довольно менее узко , чем всё не существовает что &+ -то
 
 Lang: DetCN many_Det (RelCN (UseN bike_N) (UseRCl (TTAnt TPres AAnter) PNeg (RelVP IdRP (UseV fall_V))))
 LangRus: многие велосипедов , которых не падает
@@ -22,3 +14,6 @@ LangRus: оттуда это все , польский перед которые
 
 Lang: ComplN3 distance_N3 (DetCN (DetQuant (PossPron youPol_Pron) NumSg) (SentCN (ComplN2 brother_N2 everything_NP) (EmbedVP hungry_VP)))
 LangRus: расстояние от вашего брат всего быть голодно до
+
+> l (RelNP everybody_NP (UseRCl (TTAnt TFut ASimul) PPos (RelVP IdRP ill_VP)))
+все , которые будет больны

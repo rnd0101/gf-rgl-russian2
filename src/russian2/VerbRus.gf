@@ -12,7 +12,7 @@ lin
   PassV2 v2 = {
     adv = \\a=>[] ;
     verb = passivate v2 ;
-    compl = agree v2.c    -- TODO:
+    compl = \\a=>[]
   } ;
 
   -- : VV -> VP -> VP ;  -- want to run
