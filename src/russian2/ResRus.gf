@@ -1278,7 +1278,7 @@ oper
 oper
   DetTable = Gender => Animacy => Case => Str ;
 
-  NumDet : Type = {  -- определяемое слово
+  NumDet : Type = {
     s : DetTable ;
     size : NumSize
     } ;

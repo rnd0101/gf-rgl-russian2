@@ -100,6 +100,12 @@ lin
   -- : Num  -- mark as plural
   NumPl = {s = \\_,_,_ => [] ; size = NumAll } ;
 
+  -- Digits -> Ord ;  -- 51st
+  OrdDigits d = immutableAdjForms d.s ;  -- TODO: better implementation?
+
+  -- TODO: : Numeral -> Ord ;  -- fifty-first
+  OrdNumeral numeral = variants {} ;
+
   -- : A -> Ord ;
   OrdSuperl a = long_superlative a ;
 
