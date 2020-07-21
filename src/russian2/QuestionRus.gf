@@ -45,7 +45,12 @@ lin
   -- : IAdv -> Adv -> IAdv ;    -- where in Paris
   AdvIAdv = cc2 ;
 
-  -- CompIAdv  : IAdv -> IComp ;          -- where (is it)
+  -- : IAdv -> IComp ;          -- where (is it)
+  CompIAdv iadv = {
+    s=\\a=>[] ;
+    adv=iadv.s ;
+    cop=EllCopula   -- ???
+  } ;
 
   -- : IP -> IComp ;          -- who (is it)
   CompIP ip = {

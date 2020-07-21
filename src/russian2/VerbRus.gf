@@ -1,4 +1,4 @@
-concrete VerbRus of Verb = CatRus ** open ResRus, Prelude in {
+concrete VerbRus of Verb = CatRus ** open ResRus, Prelude, Coordination in {
 
 lin
   -- : V -> VP ;        -- sleep
@@ -21,8 +21,21 @@ lin
     adv=\\a=>vv.modal ! a ++ vp.adv ! a
     } ;
 
-  -- TODO: ComplVS  : VS  -> S  -> VP ;  -- say that she runs
-  -- TODO: ComplVQ  : VQ  -> QS -> VP ;  -- wonder who runs
+  -- : VS -> S -> VP ;  -- say that she runs
+  ComplVS vs s = {
+    verb = vs ;
+    adv=\\a=>[] ;
+    compl=\\A=>comma ++ "что" ++ s.s ! Ind
+    } ;
+
+  -- : VQ -> QS -> VP ;  -- wonder who runs
+  ComplVQ vq qs = {
+    verb = vq ;
+    adv=\\a=>[] ;
+    compl=\\A=>comma ++ "что" ++ qs.s ! QDir
+    } ;
+
+
   -- : VA -> AP -> VP ;  -- they become red
   ComplVA va ap = {
     verb=va ;

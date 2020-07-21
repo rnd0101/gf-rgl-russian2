@@ -34,7 +34,7 @@ lin
   -- TODO: ExtAdvNP: NP -> Adv -> NP ;    -- boys, such as ..
   -- : NP -> RS -> NP ;    -- Paris, which is here
   RelNP np rs = {
-    s=\\cas=>np.s ! cas ++ embedInCommas (rs.s ! agrGenNum np.a ! Inanimate !cas);   -- GenNum => Animacy => Case => Str ;
+    s=\\cas=>np.s ! cas ++ embedInCommas (rs.s ! agrGenNum np.a ! Inanimate !cas);
     a=np.a
     } ;
 
@@ -56,7 +56,12 @@ lin
     g=n2.g ;
     anim=n2.a
     } ;
-  -- TODO: ComplN3 : N3 -> NP -> N2 ;    -- distance from this city (to Paris)
+  -- : N3 -> NP -> N2 ;    -- distance from this city (to Paris)
+  ComplN3 n3 np = let n3_noun = nounFormsNoun n3 in nounToNounForm {
+    s=\\n,g=>n3_noun.s ! n ! g ++ n3.c2.s ++ np.s ! n3.c2.c ;
+    g=n3.g ;
+    anim=n3.a
+  } ** {c2=n3.c3} ;
 
 --------------
 -- Determiners

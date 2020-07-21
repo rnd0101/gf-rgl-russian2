@@ -1156,6 +1156,31 @@ oper
       }
     } ;
 
+  nounToNounForm : Noun -> NounForms
+    = \n -> {
+      snom=n.s ! Sg ! Nom ;
+      sgen=n.s ! Sg ! Gen ;
+      sdat=n.s ! Sg ! Dat ;
+      sacc=n.s ! Sg ! Acc ;
+      sins=n.s ! Sg ! Ins ;
+      sprep=n.s ! Sg ! Pre ;
+      sloc=n.s ! Sg ! Loc ;
+      sptv=n.s ! Sg ! Ptv ;
+      svoc=n.s ! Sg ! VocRus ;
+      pnom=n.s ! Pl ! Nom ;
+      pgen=n.s ! Pl ! Gen ;
+      pdat=n.s ! Pl ! Dat ;
+      pacc=n.s ! Pl ! Acc ;
+      pins=n.s ! Pl ! Ins ;
+      pprep=n.s ! Pl ! Pre ;
+      ploc=n.s ! Pl ! Loc ;
+      pptv=n.s ! Pl ! Ptv ;
+      pvoc=n.s ! Pl ! VocRus ;
+      g=n.g ;
+      a=n.anim
+    } ;
+
+
   caseTableToRecord : (Case => Str) -> Agr -> Animacy -> IPronounForms
     = \ct,a,anim -> {
       nom=ct ! Nom ;

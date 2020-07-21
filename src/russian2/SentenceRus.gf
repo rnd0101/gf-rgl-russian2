@@ -76,7 +76,7 @@ lin
   } ;
 
 
-  -- SSubjS    : S -> Subj -> S -> S ;       -- I go home, if she comes
+  -- : S -> Subj -> S -> S ;       -- I go home, if she comes
   SSubjS s subj s2 = {
     s=\\m => s.s ! m ++ comma ++ subj.s ++ s2.s ! Ind
     } ;
@@ -125,7 +125,14 @@ lin
       }
     } ;
 
-  -- : QS -> SC                -- who goes
+  -- : QS -> SC ;               -- who goes
   EmbedQS qs = {s = qs.s ! QIndir} ;
 
+  -- : VP -> SC ;               -- to go
+  EmbedVP vp = {s=vp.adv ! Ag (GSg Neut) P3 ++ vp.verb.inf ++ vp.compl ! Ag (GSg Neut) P3} ;
+
+  -- : S -> RS -> S ;              -- she sleeps, which is good
+  RelS s rs = {
+    s=\\m=>s.s ! m ++ embedInCommas (rs.s ! GSg Neut ! Inanimate ! Nom) ;
+    } ;
 }
