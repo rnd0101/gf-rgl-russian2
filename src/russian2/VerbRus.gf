@@ -46,8 +46,8 @@ lin
       }
     } ;
 
-  -- SlashV2a : V2 -> VPSlash ;  -- love (it)
-  SlashV2a v = {adv=\\a=>[] ; verb=v ; compl=\\_ => [] ; c=v.c} ;
+  -- : V2 -> VPSlash ;  -- love (it)
+  SlashV2a v2 = {adv=\\a=>[] ; verb=v2 ; compl=\\_ => [] ; c=v2.c} ; -- looses complement info?
 
   -- : V3 -> NP -> VPSlash ;  -- give it (to her)
   Slash2V3 v3 np = {

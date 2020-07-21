@@ -1,5 +1,5 @@
 concrete ConstructionRus of Construction = CatRus **
-  open SyntaxRus, ParadigmsRus, ResRus, AdverbRus in {
+  open SyntaxRus, ParadigmsRus, ResRus, QuestionRus, SentenceRus, AdverbRus, VerbRus, IdiomRus, ExtendRus in {
 
 lin
   hungry_VP = mkVP (mkA "голодный" "" "1*a/c'" PrefShort) ;
@@ -8,6 +8,9 @@ lin
   scared_VP = mkVP (mkV "бояться") ;
   ill_VP = mkVP ( mkA "больной" "" "1*b" PrefShort) ;
   ready_VP = mkVP (mkA "готовый" "" "1a" PrefShort) ;
+
+  -- : NP -> QCl ;          -- what is x's name / wie heisst x (Ger)
+  what_name_QCl np = PredIAdvVP how_IAdv (ComplSlash (SlashV2a (mkV2 (mkV "звать") Gen)) np) ;
 
 -- languages
 

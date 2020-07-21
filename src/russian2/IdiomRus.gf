@@ -8,7 +8,7 @@ lin
   ImpersCl vp = let a = Ag (GSg Neut) P3 in {subj="" ; compl=vp.compl ! a ; verb=vp.verb ; adv=vp.adv ! a ; a=a } ;
 
   -- : VP -> Cl ;        -- one sleeps
-  GenericCl vp = let a = Ag (GSg Masc) P2 in  {subj="ты" ; compl=vp.compl ! a; verb=vp.verb ; adv=vp.adv ! a; a=a} ;
+  GenericCl vp = let a = Ag (GSg Masc) P2 in {subj="" ; compl=vp.compl ! a ; verb=vp.verb ; adv=vp.adv ! a; a=a } ;
 
   -- : NP -> RS -> Cl ; -- it is I who did it
   CleftNP np rs = {

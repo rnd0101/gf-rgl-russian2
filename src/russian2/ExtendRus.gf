@@ -18,17 +18,14 @@ concrete ExtendRus of Extend =
     FocusAP, FocusAdV, FocusAdv, FocusObj, GenIP, GenModIP, GenModNP, GenNP, GenRP,
     GerundAdv, GerundCN, GerundNP, IAdvAdv, ICompAP, InOrderToVP, MkVPS, NominalizeVPSlashNP,
     PassAgentVPSlash, PassVPSlash, ProgrVPSlash, PastPartAP, PastPartAgentAP, PositAdVAdj, PredVPS, PredVPSVV, PredetRNP, PrepCN,
-    EmbedSSlash, PredIAdvVP, PresPartAP, PurposeVP, ReflPoss, ReflPron, ReflRNP, SlashBareV2S, SlashV2V, StrandQuestSlash, StrandRelSlash,
+    EmbedSSlash, PresPartAP, PurposeVP, ReflPoss, ReflPron, ReflRNP, SlashBareV2S, SlashV2V, StrandQuestSlash, StrandRelSlash,
+    -- PredIAdvVP,
     UncontractedNeg, UttAccIP, UttAccNP, UttAdV, UttDatIP, UttDatNP, UttVPShort, WithoutVP, BaseVPS2, ConsVPS2, ConjVPS2, ComplVPS2, MkVPS2
    ]
   with (Grammar=GrammarRus)
   ** open Prelude, ResRus in {
 
-  lincat
-    RNP     = {s : Agr => Str} ;
-    RNPList = {s1,s2 : Agr => Str} ;
-
---  lin
---    iFem_Pron = personalPron (Ag (GSg Fem) P1) ;
---    youFem_Pron = personalPron (Ag (GSg Fem) P2) ;
- } ;
+lincat
+  RNP     = {s : Agr => Str} ;
+  RNPList = {s1,s2 : Agr => Str} ;
+} ;
