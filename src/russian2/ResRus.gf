@@ -481,7 +481,8 @@ oper
     futsg1, futsg2, futsg3, futpl1, futpl2, futpl3,
     psgm, psgf, psgn, ppl,
     isg2, ipl1, ipl2,
-    pppsm, pppsf, pppsn, pppsp
+    pppsm, pppsf, pppsn, pppsp,   -- past passive participle. Here only short forms
+    prtr, ptr  -- present and past transgressives (converbs)
     : Str ;
     asp : Aspect ;
     refl : Reflexivity ;
@@ -521,10 +522,12 @@ oper
         isg2=stem   + "й";
         ipl1=stem   + "емте";    -- ???
         ipl2=stem   + "йте";
-        pppsm=stem   + "н";
-        pppsf=stem   + "на";
-        pppsn=stem   + "но";
-        pppsp=stem   + "ны";
+        pppsm=stem  + "н";
+        pppsf=stem  + "на";
+        pppsn=stem  + "но";
+        pppsp=stem  + "ны";
+        prtr=stem   + "я" ;
+        ptr=stem    + "в" ;  -- there is a variant "-вши" also
         asp=Imperfective;
         refl=r;
         tran=case r of {Reflexive => Intransitive; NonReflexive => Transitive };   -- TODO: fix non-refl
@@ -556,6 +559,8 @@ oper
       pppsf="";
       pppsn="";
       pppsp="";
+      prtr="" ;
+      ptr=""  ;
       asp=Imperfective; -- these 3 are not-relevant here
       refl=Reflexive;
       tran=Intransitive
@@ -588,6 +593,8 @@ oper
       pppsf=vf.pppsf;
       pppsn=vf.pppsn;
       pppsp=vf.pppsp;
+      prtr=vf.prtr ++ BIND ++ post.prtr ;
+      ptr=vf.ptr ++ BIND ++ "шись" ;
       asp=vf.asp ;
       refl=vf.refl ;
       tran=vf.tran
@@ -615,10 +622,12 @@ oper
       isg2=vf.isg2 ++ s ;
       ipl1=vf.ipl1 ++ s ;
       ipl2=vf.ipl2 ++ s ;
-      pppsm=vf.pppsm;
-      pppsf=vf.pppsf;
-      pppsn=vf.pppsn;
-      pppsp=vf.pppsp;
+      pppsm=vf.pppsm ++ s ;
+      pppsf=vf.pppsf ++ s ;
+      pppsn=vf.pppsn ++ s ;
+      pppsp=vf.pppsp ++ s ;
+      prtr=vf.prtr ++ s ;
+      ptr=vf.ptr ++ s ;
       asp=vf.asp ;
       refl=vf.refl ;
       tran=vf.tran
@@ -666,6 +675,8 @@ oper
       pppsf="";
       pppsn="";
       pppsp="";
+      prtr="будучи";
+      ptr="быв";
       asp=Imperfective;
       refl=NonReflexive;
       tran=Intransitive
@@ -726,6 +737,8 @@ oper
       pppsf="";
       pppsn="";
       pppsp="";
+      prtr="";
+      ptr="могши";
       asp=Imperfective;
       refl=NonReflexive;
       tran=Intransitive
@@ -757,6 +770,8 @@ oper
       pppsf="";
       pppsn="";
       pppsp="";
+      prtr="хотя";
+      ptr="хотев";
       asp=Imperfective;
       refl=NonReflexive;
       tran=Transitive
@@ -770,7 +785,8 @@ oper
       futsg1, futsg2, futsg3, futpl1, futpl2, futpl3,
       psgm, psgf, psgn, ppl,
       isg2, ipl1, ipl2,
-      pppsm, pppsf, pppsn, pppsp="";
+      pppsm, pppsf, pppsn, pppsp,
+      prtr, ptr ="";
       asp=Imperfective;
       refl=NonReflexive;
       tran=Intransitive
