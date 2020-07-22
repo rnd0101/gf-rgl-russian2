@@ -86,19 +86,17 @@ lin
   -- : Year -> Adv ;                         -- in 1976
   yearAdv year = mkAdv ("в" ++ year.s ! Loc) ;
 
-{- TODO:
-  dayMonthAdv     : Monthday -> Month -> Adv ;            -- on 17 May
-  monthYearAdv    : Month -> Year -> Adv ;                -- in May 2013
-  dayMonthYearAdv : Monthday -> Month -> Year -> Adv ;    -- on 17 May 2013
-
-  intYear
-  intMonthday : Int -> Monthday ; -- 31th (March)
-
-  intMonthday = symb ;
--}
+  -- : Monthday -> Month -> Adv ;            -- on 17 May
+  dayMonthAdv monthday month = mkAdv (monthday.s ! Gen ++ month.sgen) ;
+  -- : Month -> Year -> Adv ;                -- in May 2013
+  monthYearAdv month year = mkAdv ("в" ++ month.sloc ++ year.s ! Gen ++ "года") ;
+  -- : Monthday -> Month -> Year -> Adv ;    -- on 17 May 2013
+  dayMonthYearAdv monthday month year = mkAdv (monthday.s ! Gen ++ month.sgen ++ year.s ! Gen ++ "года") ;
 
   -- : Int -> Year ;  -- (year) 1963
   intYear = symb ;
+  -- : Int -> Monthday ; -- 31th (March)
+  intMonthday = symb ;
 
 ----------------------------------------------
 ---- lexicon of special names
