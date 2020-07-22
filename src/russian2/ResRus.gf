@@ -133,6 +133,9 @@ oper
     } in
     noMinorCases nfb ;
 
+  immutableNounForms : Str -> Gender -> Animacy -> NounForms
+    = \s, g, a -> noMinorCases (immutableNounCases s g a ) ;
+
   noMinorCases : NounFormsBase -> NounForms
     = \base -> base ** {
       sloc = base.sprep ;
@@ -1192,7 +1195,6 @@ oper
       g=n.g ;
       a=n.anim
     } ;
-
 
   caseTableToRecord : (Case => Str) -> Agr -> Animacy -> IPronounForms
     = \ct,a,anim -> {

@@ -74,7 +74,7 @@ lin
   -- : Card -> Num
   NumCard c = c ;
   -- : Digits -> Card ;  -- 51
-  NumDigits n = {s = \\_,_,_ => n.s ; n = n.n ; size = n.size } ;
+  NumDigits n = {s = \\_,_,_ => n.s ; size = n.size } ;
 
   -- : Quant -> Num -> Det ;  -- these five
   DetQuant quant num = {
@@ -101,7 +101,7 @@ lin
   NumPl = {s = \\_,_,_ => [] ; size = NumAll } ;
 
   -- Digits -> Ord ;  -- 51st
-  OrdDigits d = immutableAdjForms d.s ;  -- TODO: better implementation?
+  OrdDigits d = immutableAdjForms d.s ;  -- TODO: better implementation
 
   -- TODO: : Numeral -> Ord ;  -- fifty-first
   OrdNumeral numeral = variants {} ;
