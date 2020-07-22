@@ -497,7 +497,7 @@ oper
 oper
   guessVerbForms : Str -> VerbForms  -- stub. TODO: properly
     = \word ->
-      let stem_info = stemFromVerb word in  -- remove reflexive postfix as well
+      let stem_info = infStemFromVerb word in  -- remove reflexive postfix as well
       let stem = stem_info.p1 in
       let r = stem_info.p2 in
       {

@@ -11,6 +11,10 @@ param
   AdjStressSchema = A_ | A'_ | B_ | B'_ | C_ | A_A | A_A' | A_B | A_C | A_A' | A_B' | A_C' | A_C'' | B_A | B_B | B_C | B_A' | B_B' | B_C' | B_C'' ;
   ZAIndex      = ZA0 | ZA DeclType AlterType AdjStressSchema ZCirc ;
 
+  VerbSS         = _A | _B | _C | _C' | _C'' ;
+  Conjug         = II | I ;
+  VerbStressSchema = VSS VerbSS VerbSS ;   -- Pres / Imp and Past forms respectively. By default, _A as second
+  ZVIndex      = ZV ConjType AlterType VerbStressSchema ;
 oper
 
 --------
@@ -747,7 +751,7 @@ oper
 --------
 -- Verbs
 
-  stemFromVerb : Str -> Str * Reflexivity
+  infStemFromVerb : Str -> Str * Reflexivity
     = \v ->
       case v of {
         s + ("ть" | "ти" | "чь") => <s, NonReflexive> ;
@@ -755,4 +759,60 @@ oper
         _ => Predef.error "Error: incorrect infinitive"
       } ;
 
+  infDropRefl : Str -> Str
+    = \v -> case v of {s + ("ся" | "сь") => s ; _ => v} ;
+
+  sg1StemFromVerb : Str -> Str
+    = \v ->
+      case v of {
+        s + ("у" | "ю" | "усь" | "юсь") => s ;
+        _ => Predef.error "Error: incorrect Sg P1 Pres/Fut"
+      } ;
+
+  sg3StemAndConjFromVerb : Str -> Str * Conjug
+    = \v ->
+      case v of {
+        s + ("ет" | "ёт" | "ется" | "ётся") => <s, I> ;
+        s + ("ит" | "ится") => <s, II> ;
+        _ => Predef.error "Error: incorrect Sg P3 Pres/Fut"
+      } ;
+
+  guessRegularIndex : Str -> Str -> Str -> ZVIndex * Reflexivity
+    = \inf,sgP1PresFut,sgP3PresFut ->
+      let inf1 = infDropRefl inf in
+      let stem_info = infStemFromVerb inf in
+      let inf_s = stem_info.p1 in
+      let refl = stem_info.p2 in
+      let sg1 = sg1StemFromVerb sgP1PresFut in
+      let sg3 = sg3StemAndConjFromVerb sgP3PresFut in
+      let conjtype : ConjType = case <sg3.p2,inf1,sg1,sg3.p1> of {
+        <I, i+("овать"|"евать"), s2+"у", s3+"у"> => 2 ;
+        <I, i+"евать", s2+"ю", s3+"ю"> => 2 ;
+        <I, i+"авать", s2+"а", s3+"а"> => 13 ;
+        <I, i+("ереть"), s2+"р", s3+"р"> => 9 ;
+        <I, i+("олоть"), s2+"ол", s3+"ол"> => 10 ;
+        <I, i+("ороть"), s2+"ор", s3+"ор"> => 10 ;
+        <I, i+("зти"|"зть"), s2 + "з", s3 + "з"> => 7 ;
+        <I, i+("сти"|"сть"), s2 + ("с"|"д"|"ст"|"т"|"б"), s3 + ("с"|"д"|"ст"|"т"|"б")> => 7 ;
+        <I, i+"ать", s2+"а", s3+"а"> => 1 ;
+        <I, i+"ять", s2+"я", s3+"я"> => 1 ;
+        <I, i+"еть", s2+"е", s3+"е"> => 1 ;     -- ё?
+        <I, i+"нуть", s2+"н", s3+"н"> => 3 ;
+        <I, i+"чь", s2+"г", s3+"ж"> => 8 ;
+        <I, i+"чь", s2+"к", s3+"ч"> => 8 ;
+        <I, i+"ить", s2+"ь", s3+"ь"> => 11 ;
+        <I, i+"ыть", s2+"о", s3+"о"> => 12 ;  -- also some knowsn others
+        <I, i+"уть", s2+"у", s3+"у"> => 12 ;
+        <I, i+"ить", s2+"и", s3+"и"> => 12 ;
+        <I, i+("ать"|"ять"), s2+"н", s3+"н"> => 14 ;
+        <I, i+("ать"|"ять"), s2+"м", s3+"м"> => 14 ;
+        <I, i+("ать"|"ять"), s2+"им", s3+"им"> => 14 ;
+        <I, i+"ть", s2+"н", s3+"н"> => 15 ;
+        <I, i+"ть", s2+"в", s3+"в"> => 16 ;
+        <I, i+("ать"|"ять"), s2, s3> => 6 ;
+        <II, i+"ить", s2, s3> => 4 ;  -- после шип  -- here and below alternations possible
+        <II, i+("ать"|"ять"|"еть"), s2, s3> => 5 ;
+        _ => Predef.error "Error: guessing verb conjugation does not work"
+      } in <ZV conjtype No (VSS _A _A), refl>
+      ;
 }
