@@ -50,7 +50,7 @@ oper
     snom, sgen, sdat, sacc, sins, sprep,
     pnom, pgen, pdat, pacc, pins, pprep : Str ;
     g : Gender ;
-    a : Animacy
+    anim : Animacy
   } ;
 
   AdjForms : Type = {

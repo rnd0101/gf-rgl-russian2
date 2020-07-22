@@ -30,7 +30,7 @@ oper
     snom, sgen, sdat, sacc, sins, sprep, sloc, sptv, svoc,
     pnom, pgen, pdat, pacc, pins, pprep : Str ;
     g : Gender ;
-    a : Animacy
+    anim : Animacy
   } ;
 
 -- But traditional tables make agreement easier to handle in syntax
@@ -74,7 +74,7 @@ oper
         }
       } ;
       g = forms.g ;
-      anim = forms.a
+      anim = forms.anim
     } ;
 
   guessNounForms : Str -> NounForms
@@ -106,35 +106,35 @@ oper
 
   -- TODO: gender can help identify cases more precisely
   guessLessNounForms : Str -> Gender -> Animacy -> NounForms
-    = \word, g, a ->
+    = \word, g, anim ->
     let nfb : NounFormsBase =
     case word of {
-      _ + "уть"                            => makeNoun word g a (ZN 8 No B NoC) ;
-      _ + "ий"                             => makeNoun word g a (ZN 7 No A NoC) ;
-      _ + "ия"                             => makeNoun word g a (ZN 7 No A NoC) ;
-      _ + "ие"                             => makeNoun word g a (ZN 7 No A NoC) ;
-      _ + "ье"                             => makeNoun word g a (ZN 6 Ast A NoC) ;
-      _ + "тель"                           => makeNoun word g a (ZN 2 No A NoC) ;
-      _ + "ь"                              => makeNoun word g a
+      _ + "уть"                            => makeNoun word g anim (ZN 8 No B NoC) ;
+      _ + "ий"                             => makeNoun word g anim (ZN 7 No A NoC) ;
+      _ + "ия"                             => makeNoun word g anim (ZN 7 No A NoC) ;
+      _ + "ие"                             => makeNoun word g anim (ZN 7 No A NoC) ;
+      _ + "ье"                             => makeNoun word g anim (ZN 6 Ast A NoC) ;
+      _ + "тель"                           => makeNoun word g anim (ZN 2 No A NoC) ;
+      _ + "ь"                              => makeNoun word g anim
                                                (case g of {Fem => (ZN 8 No A NoC); _ => (ZN 2 No A NoC)});
-      _ + "и"                              => makeNoun word g a ZN0 ;
-      _ + #consonant + ("к"|"х"|"г") + "а" => makeNoun word g a (ZN 3 Ast A NoC) ;
-      _ + ("к" | "х" | "г")                => makeNoun word g a (ZN 3 No A NoC) ;
-      _ + ("к" | "х" | "г") + "а"          => makeNoun word g a (ZN 3 No A NoC) ;
-      _ + "ца"                             => makeNoun word g a (ZN 5 No A NoC) ;
-      _ + "й"                              => makeNoun word g a (ZN 6 No A NoC) ;
-      _ + ("ж" | "ш" | "ч" | "щ")          => makeNoun word g a (ZN 4 No A NoC) ;
-      _ + "ша"                             => makeNoun word g a (ZN 4 No A NoC) ;
-      _ + ("ж" | "ш" | "ч" | "щ") + "а"    => makeNoun word g a (ZN 4 No A NoC) ;
-      _ + "ц"                              => makeNoun word g a (ZN 5 Ast A NoC) ;
-      _ + "о"                              => makeNoun word g a (ZN 1 No A NoC) ;
-      _ + "а"                              => makeNoun word g a (ZN 1 No A NoC) ;
-      _                                    => makeNoun word g a (ZN 1 No A NoC)
+      _ + "и"                              => makeNoun word g anim ZN0 ;
+      _ + #consonant + ("к"|"х"|"г") + "а" => makeNoun word g anim (ZN 3 Ast A NoC) ;
+      _ + ("к" | "х" | "г")                => makeNoun word g anim (ZN 3 No A NoC) ;
+      _ + ("к" | "х" | "г") + "а"          => makeNoun word g anim (ZN 3 No A NoC) ;
+      _ + "ца"                             => makeNoun word g anim (ZN 5 No A NoC) ;
+      _ + "й"                              => makeNoun word g anim (ZN 6 No A NoC) ;
+      _ + ("ж" | "ш" | "ч" | "щ")          => makeNoun word g anim (ZN 4 No A NoC) ;
+      _ + "ша"                             => makeNoun word g anim (ZN 4 No A NoC) ;
+      _ + ("ж" | "ш" | "ч" | "щ") + "а"    => makeNoun word g anim (ZN 4 No A NoC) ;
+      _ + "ц"                              => makeNoun word g anim (ZN 5 Ast A NoC) ;
+      _ + "о"                              => makeNoun word g anim (ZN 1 No A NoC) ;
+      _ + "а"                              => makeNoun word g anim (ZN 1 No A NoC) ;
+      _                                    => makeNoun word g anim (ZN 1 No A NoC)
     } in
     noMinorCases nfb ;
 
   immutableNounForms : Str -> Gender -> Animacy -> NounForms
-    = \s, g, a -> noMinorCases (immutableNounCases s g a ) ;
+    = \s, g, anim -> noMinorCases (immutableNounCases s g anim ) ;
 
   noMinorCases : NounFormsBase -> NounForms
     = \base -> base ** {
@@ -163,7 +163,7 @@ oper
   mkFun2 : NounForms -> ComplementCase -> ComplementCase -> Noun3Forms = \f, p2, p3 -> f ** {c2=p2; c3=p3} ;
 
   ellNoun : NounForms -> NounForms
-   = \n -> noMinorCases (immutableNounCases "" n.g n.a) ;
+   = \n -> noMinorCases (immutableNounCases "" n.g n.anim) ;
 
   AgrTable = Agr => Str ;
 
@@ -341,7 +341,7 @@ oper
         }
       } ;
       g = forms.g ;
-      a = forms.a ;
+      -- a = forms.a ;
       preferShort = forms.preferShort
     } ;
 
@@ -400,12 +400,12 @@ oper
       sp    = the_most.sp     ++ af.sp    ;
       comp  = the_most.comp   ++ af.comp  ;
       g=af.g ;
-      a=af.a ;
+      -- a=af.a ;
       preferShort = PrefFull
     } ;
 
   makeNFFromAF : AdjForms -> Gender -> Animacy -> NounForms
-    = \af, g, a ->
+    = \af, g, anim ->
       case g of {
         Fem => {
           snom = af.fsnom ;
@@ -415,7 +415,7 @@ oper
           sdat = af.fsgen ;
           pdat = af.msins ;
           sacc = af.fsacc ;
-          pacc = case a of {Animate => af.pgen ; Inanimate => af.pnom} ;
+          pacc = case anim of {Animate => af.pgen ; Inanimate => af.pnom} ;
           sins = af.fsins ;  -- TODO: there is also variant fsins == fsgen
           pins = af.pins ;
           sprep= af.fsgen ;
@@ -424,7 +424,7 @@ oper
           sptv = af.fsgen ;
           svoc = af.fsnom ;
           g=g ;
-          a=a
+          anim=anim
         } ;
         Masc => {
           snom = af.msnom ;
@@ -433,8 +433,8 @@ oper
           pgen = af.pgen ;
           sdat = af.msdat ;
           pdat = af.msins ;
-          sacc = case a of {Animate => af.msgen ; Inanimate => af.msnom} ;
-          pacc = case a of {Animate => af.pgen ; Inanimate => af.pnom} ;
+          sacc = case anim of {Animate => af.msgen ; Inanimate => af.msnom} ;
+          pacc = case anim of {Animate => af.pgen ; Inanimate => af.pnom} ;
           sins = af.msins ;
           pins = af.pins ;
           sprep= af.msprep ;
@@ -443,7 +443,7 @@ oper
           sptv = af.msgen ;
           svoc = af.msnom ;
           g=g ;
-          a=a
+          anim=anim
         } ;
         Neut => {
           snom = af.nsnom ;
@@ -453,7 +453,7 @@ oper
           sdat = af.msdat ;
           pdat = af.msins ;
           sacc = af.nsnom ;
-          pacc = case a of {Animate => af.pgen ; Inanimate => af.pnom} ;
+          pacc = case anim of {Animate => af.pgen ; Inanimate => af.pnom} ;
           sins = af.msins ;
           pins = af.pins ;
           sprep= af.msprep ;
@@ -462,7 +462,7 @@ oper
           sptv = af.msgen ;
           svoc = af.nsnom ;
           g=g ;
-          a=a
+          anim=anim
         }
       } ;
 
@@ -815,7 +815,7 @@ oper
 
   nullPron : Pronoun = {
     s=\\cas => [] ;
-    poss=\\gn,a,cas => [] ;
+    poss=\\gn,anim,cas => [] ;
     a=Ag (GSg Neut) P3
     } ;
 
@@ -1212,7 +1212,7 @@ oper
       pptv=n.s ! Pl ! Ptv ;
       pvoc=n.s ! Pl ! VocRus ;
       g=n.g ;
-      a=n.anim
+      anim=n.anim
     } ;
 
   caseTableToRecord : (Case => Str) -> Agr -> Animacy -> IPronounForms

@@ -40,9 +40,10 @@ oper
   } ;
 
   immutableNounCases : Str -> Gender -> Animacy -> NounFormsBase
-    = \s, g, a -> {
+    = \s, g, anim -> {
       snom=s;pnom=s;sgen=s;pgen=s;sdat=s;pdat=s;sacc=s;pacc=s;sins=s;pins=s;sprep=s;pprep=s;
-      a=a;g=g
+      anim=anim;
+      g=g
     } ;
 
   immutableCasesS1 : NounEndFormsS1 = {
@@ -233,13 +234,13 @@ oper
       } ;
 
   doAlternations : Str -> NounEndForms -> Gender -> Animacy -> DeclType -> StressSchema -> NounFormsBase
-    = \s, nef, g, a, dt, ss ->
-      (alterStems s nef g dt ss) ** {g=g; a=a} ;
+    = \s, nef, g, anim, dt, ss ->
+      (alterStems s nef g dt ss) ** {g=g; anim=anim} ;
 
   alterForms : Str -> NounEndForms -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> NounFormsBase
-    = \s, nef, g, a, dt, at, ss ->
+    = \s, nef, g, anim, dt, at, ss ->
       case at of {
-        Ast => doAlternations s nef g a dt ss ;
+        Ast => doAlternations s nef g anim dt ss ;
         _ => {
           snom = s + nef.snom ;
           pnom = s + nef.pnom ;
@@ -254,18 +255,18 @@ oper
           sprep= s + nef.sprep ;
           pprep= s + nef.pprep ;
           g=g ;
-          a=a
+          anim=anim
         }
     } ;
 
   makeNoun : Str -> Gender -> Animacy -> ZNIndex -> NounFormsBase
-    = \word, g, a, z ->
+    = \word, g, anim, z ->
     case z of {
-      ZN0 => immutableNounCases word g a ;
-      ZN 3 Deg ss NoC => formsSelectionOnok word g a 3 Deg ss NoC ;
-      ZN 1 Deg ss ci => formsSelectionAnin word g a 3 Deg ss ci ;
-      ZN 8 Deg ss NoC => formsSelectionMya word g a 8 Deg ss NoC ;
-      ZN dt at ss ci => formsSelectionNoun word g a dt at ss ci
+      ZN0 => immutableNounCases word g anim ;
+      ZN 3 Deg ss NoC => formsSelectionOnok word g anim 3 Deg ss NoC ;
+      ZN 1 Deg ss ci => formsSelectionAnin word g anim 3 Deg ss ci ;
+      ZN 8 Deg ss NoC => formsSelectionMya word g anim 8 Deg ss NoC ;
+      ZN dt at ss ci => formsSelectionNoun word g anim dt at ss ci
     } ;
 
   myaCases : Str -> NounEndForms
@@ -288,27 +289,28 @@ oper
   } ;
 
   formsSelectionMya : Str -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounFormsBase
-    = \word, g, a, dt, at, ss, ci ->
+    = \word, g, anim, dt, at, ss, ci ->
       let butLast = Predef.tk 1 word in
-      (myaCases butLast) ** {a=a; g=g} ;
+      (myaCases butLast) ** {anim=anim; g=g} ;
 
   formsSelectionOnok : Str -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounFormsBase
-    = \word, g, a, dt, at, ss, ci ->
-      let sgForms = formsSelectionNoun word g a dt Ast ss ci in
+    = \word, g, anim, dt, at, ss, ci ->
+      let sgForms = formsSelectionNoun word g anim dt Ast ss ci in
       case word of {
-          _ + "ёнок" => combineDiffSgPlStems sgForms (formsSelectionNoun (Predef.tk 4 word + "ята") Neut a 8 Ast ss NoC) ;
-          _ + "онок" => combineDiffSgPlStems sgForms(formsSelectionNoun (Predef.tk 4 word + "ата") Neut a 8 Ast ss NoC) ;
-          _ + "ёночек" => combineDiffSgPlStems sgForms (formsSelectionNoun (Predef.tk 6 word + "ятка") Fem a 3 Ast ss NoC) ;
-          _ + "оночек" => combineDiffSgPlStems sgForms (formsSelectionNoun (Predef.tk 6 word + "атка") Fem a 3 Ast ss NoC) ;
+          _ + "ёнок" => combineDiffSgPlStems sgForms (formsSelectionNoun (Predef.tk 4 word + "ята") Neut anim 8 Ast ss NoC) ;
+          _ + "онок" => combineDiffSgPlStems sgForms(formsSelectionNoun (Predef.tk 4 word + "ата") Neut anim 8 Ast ss NoC) ;
+          _ + "ёночек" => combineDiffSgPlStems sgForms (formsSelectionNoun (Predef.tk 6 word + "ятка") Fem anim 3 Ast ss NoC) ;
+          _ + "оночек" => combineDiffSgPlStems sgForms (formsSelectionNoun (Predef.tk 6 word + "атка") Fem anim 3 Ast ss NoC) ;
           _ => sgForms
       } ;
 
   formsSelectionAnin : Str -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounFormsBase
-    = \word, g, a, dt, at, ss, ci ->
+    = \word, g, anim, dt, at, ss, ci ->
       let butTwolast = Predef.tk 2 word in
-      let sgForms = formsSelectionNoun word g a dt Ast ss ci in
+      let sgForms = formsSelectionNoun word g anim dt Ast ss ci in
       case word of {
-          _ + ("анин"|"янин") => combineDiffSgPlStems sgForms (formsSelectionNoun (butTwolast + "н") Neut a 8 Ast ss NoC) ** {pnom=butTwolast + "е"};
+          _ + ("анин"|"янин") => combineDiffSgPlStems sgForms (formsSelectionNoun (butTwolast + "н") Neut anim 8 Ast ss NoC)
+            ** {pnom=butTwolast + "е"};
           _ => sgForms
       } ;
 
@@ -323,12 +325,12 @@ oper
     } ;
 
   formsSelectionNoun : Str -> Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounFormsBase
-    = \word, g, a, dt, at, ss, ci ->
+    = \word, g, anim, dt, at, ss, ci ->
       let stem = stemFromNoun word g dt in
-      let nef = endingsSelectionNoun g a dt at ss ci in
+      let nef = endingsSelectionNoun g anim dt at ss ci in
       let nef' = specialEndingsNoun word stem nef g dt in
-      let alternated = alterForms stem nef' g a dt at ss in
-      animacySelectionNoun dt alternated nef' g a
+      let alternated = alterForms stem nef' g anim dt at ss in
+      animacySelectionNoun dt alternated nef' g anim
     ;
 
   stemFromNoun : Str -> Gender -> DeclType -> Str
@@ -341,7 +343,7 @@ oper
     ;
 
   SgAcc : Gender -> Animacy -> DeclType -> NounFormsBase -> Str -> Str
-    = \g, a, dt, frm, sacc -> case <g, dt, a, sacc> of {
+    = \g, anim, dt, frm, sacc -> case <g, dt, anim, sacc> of {
       <Neut, (3 | 4 | 5 | 6 | 7 | 8), Animate, "?"> => frm.snom ;
       <_, _, Animate, "?"> => frm.sgen ;
       <_, _, Inanimate, "?"> => frm.snom ;
@@ -349,7 +351,7 @@ oper
     } ;
 
   PlAcc : Gender -> Animacy -> DeclType -> NounFormsBase -> Str
-    = \g, a, dt, frm -> case <g, dt, a> of {
+    = \g, anim, dt, frm -> case <g, dt, anim> of {
       <Neut, (5 | 7), Animate> => frm.pnom ;
       <Neut, 6, Animate> => frm.pnom ;  -- does not exist
       <_, _, Animate> => frm.pgen ;
@@ -358,14 +360,14 @@ oper
     } ;
 
   animacySelectionNoun : DeclType -> NounFormsBase -> NounEndForms -> Gender -> Animacy -> NounFormsBase
-    = \dt, frm, nef, g, a -> frm ** {
-        sacc=SgAcc g a dt frm nef.sacc;
-        pacc=PlAcc g a dt frm ;
+    = \dt, frm, nef, g, anim -> frm ** {
+        sacc=SgAcc g anim dt frm nef.sacc;
+        pacc=PlAcc g anim dt frm ;
         sins=frm.sins  -- TODO: there can be variants {}  ю in addition to й
     } ;
 
   endingsSelectionNoun : Gender -> Animacy -> DeclType -> AlterType -> StressSchema -> ZCirc -> NounEndForms
-    = \g, a, dt, at, ss, ci ->
+    = \g, anim, dt, at, ss, ci ->
     let gDtBased = gDtBasedSelectionNoun g dt in
     let gDtBasedCirc = circCorrectionNoun gDtBased g dt ci in
     gDtSsBasedSelectionNoun gDtBasedCirc ss

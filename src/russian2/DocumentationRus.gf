@@ -18,7 +18,7 @@ lin
         Neut    => "(ср.р.)"
         } ++
   
-      case n.a of {
+      case n.anim of {
           Animate => "Одушевлённое" ;
           Inanimate => "Неодушевлённое"
         }
