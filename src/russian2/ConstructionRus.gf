@@ -1,5 +1,5 @@
-concrete ConstructionRus of Construction = CatRus **
-  open SyntaxRus, ParadigmsRus, ResRus, QuestionRus, SentenceRus, AdverbRus, VerbRus, IdiomRus, (E=ExtendRus) in {
+concrete ConstructionRus of Construction = CatRus, SymbolRus [Symb] **
+  open Predef, SyntaxRus, ParadigmsRus, ResRus, QuestionRus, SentenceRus, AdverbRus, VerbRus, IdiomRus, (E=ExtendRus), (EX=ExtraRus) in {
 
 lin
   hungry_VP = mkVP (mkA "голодный" "" "1*a/c'" PrefShort) ;
@@ -17,6 +17,7 @@ lin
 lincat
   Language = N ;
   Timeunit = N ;
+  Hour = Symb ;
   Weekday = N ;
   Monthday = NP ;
   Month = N ;
@@ -27,49 +28,65 @@ oper
     mkLanguage : Str -> N = \s -> mkN (mkA s) masculine animate ;
     mkLanguage : Str -> Str -> N = \s,zi -> mkN s masculine inanimate zi;
   } ;
+  mkHour : Str -> Symb = \s -> lin Symb {s=s} ;
 
 lin
   -- : Card -> Timeunit -> Adv ; -- (for) three hours
   timeunitAdv n time = mkAdv ((mkNP <lin Card n : Card> time).s ! Nom) ;
 
-{-
-  timeunitRange : Card -> Card -> Timeunit -> Adv ; -- (cats live) ten to twenty years
+  -- : Card -> Card -> Timeunit -> Adv ; -- (cats live) ten to twenty years
+  timeunitRange l u time = {
+    -- TODO: Fancier logic.
+    s = from_Prep.s ++ (mkAdv ((mkNP <lin Card l : Card> <lin N (ellNoun time) : N>).s ! from_Prep.c)).s
+      ++ EX.on_to_Prep.s ++ (mkAdv ((mkNP <lin Card u : Card> time).s ! EX.on_to_Prep.c)).s
+    } ;
 
-  oneHour : Hour ;
-  twoHour : Hour ;
-  threeHour : Hour ;
-  fourHour : Hour ;
-  fiveHour : Hour ;
-  sixHour : Hour ;
-  sevenHour : Hour ;
-  eightHour : Hour ;
-  nineHour : Hour ;
-  tenHour : Hour ;
-  elevenHour : Hour ;
-  twelveHour : Hour ;
-  thirteenHour : Hour ;
-  fourteenHour : Hour ;
-  fifteenHour : Hour ;
-  sixteenHour : Hour ;
-  seventeenHour : Hour ;
-  eighteenHour : Hour ;
-  nineteenHour : Hour ;
-  twentyHour : Hour ;
-  twentyOneHour : Hour ;
-  twentyTwoHour : Hour ;
-  twentyThreeHour : Hour ;
-  twentyFourHour : Hour ;
+  oneHour = mkHour "1" ;
+  twoHour = mkHour "2" ;
+  threeHour = mkHour "3" ;
+  fourHour = mkHour "4" ;
+  fiveHour = mkHour "5" ;
+  sixHour = mkHour "6" ;
+  sevenHour = mkHour "7" ;
+  eightHour = mkHour "8" ;
+  nineHour = mkHour "9" ;
+  tenHour = mkHour "10" ;
+  elevenHour = mkHour "11" ;
+  twelveHour = mkHour "12" ;
+  thirteenHour = mkHour "13" ;
+  fourteenHour = mkHour "14" ;
+  fifteenHour = mkHour "15" ;
+  sixteenHour = mkHour "16" ;
+  seventeenHour = mkHour "17" ;
+  eighteenHour = mkHour "18" ;
+  nineteenHour = mkHour "19" ;
+  twentyHour = mkHour "20" ;
+  twentyOneHour = mkHour "21" ;
+  twentyTwoHour = mkHour "22" ;
+  twentyThreeHour = mkHour "23" ;
+  twentyFourHour = mkHour "24" ;
 
-  timeHour : Hour -> Adv ; -- at three a.m./p.m.
-  timeHourMinute : Hour -> Card -> Adv ; -- at six forty a.m./p.m.
+  -- : Hour -> Adv ; -- at three a.m./p.m.
+  timeHour h = mkAdv (in_Prep.s ++ h.s) ;
 
-  weekdayPunctualAdv : Weekday -> Adv ;  -- on Monday
-  weekdayHabitualAdv : Weekday -> Adv ;  -- on Mondays
-  weekdayLastAdv : Weekday -> Adv ;      -- last Monday
-  weekdayNextAdv : Weekday -> Adv ;      -- next Monday
+  -- : Hour -> Card -> Adv ; -- at six forty a.m./p.m.
+  timeHourMinute h card = mkAdv ((timeHour h).s ++ BIND ++ ":" ++ BIND ++ card.s ! Neut ! Inanimate ! Nom) ;  -- TODO: ?
 
-  monthAdv        : Month -> Adv ;                        -- in June
-  yearAdv         : Year -> Adv ;                         -- in 1976
+  -- : Weekday -> Adv ;  -- on Monday
+  weekdayPunctualAdv w = mkAdv (in_Prep.s ++ w.snom) ;         -- on Sunday
+  -- : Weekday -> Adv ;  -- on Mondays
+  weekdayHabitualAdv w = mkAdv (EX.along_Prep.s ++ (w.pdat)) ; -- on Sundays
+  -- : Weekday -> Adv ;      -- last Monday
+  weekdayLastAdv w = mkAdv ("в прошлый" ++ w.snom) ;
+  -- : Weekday -> Adv ;      -- next Monday
+  weekdayNextAdv w = mkAdv ("в следующий" ++ w.snom) ;
+
+  -- : Month -> Adv ;                        -- in June
+  monthAdv month = mkAdv ("в" ++ month.sloc) ;
+  -- : Year -> Adv ;                         -- in 1976
+  yearAdv year = mkAdv ("в" ++ year.s ! Loc) ;
+
+{- TODO:
   dayMonthAdv     : Monthday -> Month -> Adv ;            -- on 17 May
   monthYearAdv    : Month -> Year -> Adv ;                -- in May 2013
   dayMonthYearAdv : Monthday -> Month -> Year -> Adv ;    -- on 17 May 2013
@@ -78,7 +95,6 @@ lin
   intMonthday : Int -> Monthday ; -- 31th (March)
   intYear = symb ;
   intMonthday = symb ;
-
 -}
 
 ----------------------------------------------
@@ -101,18 +117,18 @@ lin
   saturday_Weekday = mkN "суббота" ;
   sunday_Weekday = mkN "воскресенье" ;
 
-  january_Month = mkN "январь" ;
-  february_Month = mkN "февраль" ;
+  january_Month = mkN "январь" masculine inanimate;
+  february_Month = mkN "февраль" masculine inanimate;
   march_Month = mkN "март" ;
-  april_Month = mkN "апрель" ;
+  april_Month = mkN "апрель" masculine inanimate "2a";
   may_Month = mkN "май" ;
-  june_Month = mkN "июнь" ;
-  july_Month = mkN "июль" ;
+  june_Month = mkN "июнь" masculine inanimate ;
+  july_Month = mkN "июль" masculine inanimate ;
   august_Month = mkN "август" ;
-  september_Month = mkN "сентябрь" ;
-  october_Month = mkN "октябрь" ;
-  november_Month = mkN "ноябрь" ;
-  december_Month = mkN "декабрь" ;
+  september_Month = mkN "сентябрь" masculine inanimate ;
+  october_Month = mkN "октябрь" masculine inanimate ;
+  november_Month = mkN "ноябрь" masculine inanimate ;
+  december_Month = mkN "декабрь" masculine inanimate ;
 
 -- : Language -> Adv ; -- in English, auf englisch, englanniksi, etc
 lin

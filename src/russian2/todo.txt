@@ -17,3 +17,6 @@ LangRus: расстояние от вашего брат всего быть г�
 
 > l (RelNP everybody_NP (UseRCl (TTAnt TFut ASimul) PPos (RelVP IdRP ill_VP)))
 все , которые будет больны
+
+> l timeunitRange (NumDigits (IDig D_1)) (NumDigits (IDig D_2))  year_Timeunit
+от 1 до 2 года
