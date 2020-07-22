@@ -1,5 +1,6 @@
 concrete ConstructionRus of Construction = CatRus **
-  open Predef, SyntaxRus, SymbolicRus, ParadigmsRus, ResRus, QuestionRus, SentenceRus, AdverbRus, VerbRus, IdiomRus, (E=ExtendRus), (EX=ExtraRus) in {
+  open Predef, SyntaxRus, SymbolicRus, ParadigmsRus, ResRus, Prelude,
+    QuestionRus, SentenceRus, AdverbRus, VerbRus, IdiomRus, (E=ExtendRus), (EX=ExtraRus) in {
 
 lin
   hungry_VP = mkVP (mkA "голодный" "" "1*a/c'" PrefShort) ;
@@ -32,7 +33,7 @@ oper
 
 lin
   -- : Card -> Timeunit -> Adv ; -- (for) three hours
-  timeunitAdv n time = mkAdv ((mkNP <lin Card n : Card> time).s ! Nom) ;
+  timeunitAdv card time = mkAdv ((mkNP <lin Card card : Card> time).s ! Nom) ;
 
   -- : Card -> Card -> Timeunit -> Adv ; -- (cats live) ten to twenty years
   timeunitRange l u time = {
@@ -97,6 +98,43 @@ lin
   intYear = symb ;
   -- : Int -> Monthday ; -- 31th (March)
   intMonthday = symb ;
+
+  -- : Weekday -> N ; -- (this) Monday
+  weekdayN wd = wd ;
+  -- : Month -> N ;   -- (this) November
+  monthN month = month ;
+
+  -- : Weekday -> PN ; -- Monday (is free)
+  weekdayPN wd = wd ;
+  -- : Month -> PN ;   -- March (is cold)
+  monthPN month = month ;
+
+  -- : Card -> CN -> A -> AP ;  -- x inches long
+  n_units_AP card cn a =
+    let ap=adjFormsAdjective a in
+    let as_n_units=(how_IAdv.s
+      ++ card.s ! Neut ! Inanimate ! Nom
+      ++ cn.s ! numSizeNum card.size ! (numSizeCase card.size)) in {
+    s=\\gn,anim,cas=> ap.s!gn!anim!cas ++ as_n_units ;
+    short=\\a=> ap.short ! a ++ as_n_units ;
+    preferShort=PrefFull ;
+    isPost=True
+    } ;
+  -- This does not work in Russian naturally
+  -- : Card -> CN -> NP -> NP ;  -- x ounces of this flour
+  n_units_of_NP card cn np = {
+    s = \\cas => card.s ! Neut ! Inanimate ! cas
+      ++ cn.s ! numSizeNum card.size ! (numSizeCase card.size)
+      ++ np.s ! Gen ;
+    a = Ag (gennum cn.g (numSizeNumber card.size)) P3
+    } ;
+  -- : Card -> CN -> CN -> CN ;  -- x gallon bottle
+  n_unit_CN card cn_unit cn = cn ** {
+    s=\\n,cas=> cn.s ! n ! cas
+      ++ "на"
+      ++ card.s ! Neut ! Inanimate ! Nom
+      ++ cn_unit.s ! (numSizeNum card.size) ! (numSizeCase card.size)
+    } ;
 
 ----------------------------------------------
 ---- lexicon of special names
