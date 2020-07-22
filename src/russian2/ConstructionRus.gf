@@ -1,5 +1,5 @@
-concrete ConstructionRus of Construction = CatRus, SymbolRus [Symb] **
-  open Predef, SyntaxRus, ParadigmsRus, ResRus, QuestionRus, SentenceRus, AdverbRus, VerbRus, IdiomRus, (E=ExtendRus), (EX=ExtraRus) in {
+concrete ConstructionRus of Construction = CatRus **
+  open Predef, SyntaxRus, SymbolicRus, ParadigmsRus, ResRus, QuestionRus, SentenceRus, AdverbRus, VerbRus, IdiomRus, (E=ExtendRus), (EX=ExtraRus) in {
 
 lin
   hungry_VP = mkVP (mkA "голодный" "" "1*a/c'" PrefShort) ;
@@ -91,11 +91,14 @@ lin
   monthYearAdv    : Month -> Year -> Adv ;                -- in May 2013
   dayMonthYearAdv : Monthday -> Month -> Year -> Adv ;    -- on 17 May 2013
 
-  intYear     : Int -> Year ;  -- (year) 1963
+  intYear
   intMonthday : Int -> Monthday ; -- 31th (March)
-  intYear = symb ;
+
   intMonthday = symb ;
 -}
+
+  -- : Int -> Year ;  -- (year) 1963
+  intYear = symb ;
 
 ----------------------------------------------
 ---- lexicon of special names
