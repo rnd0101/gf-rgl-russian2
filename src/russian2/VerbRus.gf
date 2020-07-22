@@ -5,6 +5,7 @@ lin
   UseV v = {
     adv = \\a=>[] ;
     verb = v ;
+    dep=[] ;
     compl = \\_ => []
     } ;
 
@@ -12,18 +13,21 @@ lin
   PassV2 v2 = {
     adv = \\a=>[] ;
     verb = passivate v2 ;
+    dep=[] ;
     compl = \\a=>[]
   } ;
 
   -- : VV -> VP -> VP ;  -- want to run
   ComplVV vv vp = vp ** {
-    verb=concatVebForms vv.v vp.verb.inf ;
+    verb=vv.v ;
+    dep=vp.verb.inf ;
     adv=\\a=>vv.modal ! a ++ vp.adv ! a
     } ;
 
   -- : VS -> S -> VP ;  -- say that she runs
   ComplVS vs s = {
     verb = vs ;
+    dep=[] ;
     adv=\\a=>[] ;
     compl=\\A=>comma ++ "что" ++ s.s ! Ind
     } ;
@@ -31,6 +35,7 @@ lin
   -- : VQ -> QS -> VP ;  -- wonder who runs
   ComplVQ vq qs = {
     verb = vq ;
+    dep=[] ;
     adv=\\a=>[] ;
     compl=\\A=>comma ++ "что" ++ qs.s ! QDir
     } ;
@@ -39,6 +44,7 @@ lin
   -- : VA -> AP -> VP ;  -- they become red
   ComplVA va ap = {
     verb=va ;
+    dep=[] ;
     adv=\\a=>[] ;
     compl=case ap.preferShort of {
       PrefFull => (\\a => ap.s ! agrGenNum a ! Inanimate ! Ins) ;
@@ -47,12 +53,13 @@ lin
     } ;
 
   -- : V2 -> VPSlash ;  -- love (it)
-  SlashV2a v2 = {adv=\\a=>[] ; verb=v2 ; compl=\\_ => [] ; c=v2.c} ; -- looses complement info?
+  SlashV2a v2 = {adv=\\a=>[] ; verb=v2 ; dep=[] ; compl=\\_ => [] ; c=v2.c} ; -- looses complement info?
 
   -- : V3 -> NP -> VPSlash ;  -- give it (to her)
   Slash2V3 v3 np = {
     adv=\\a=>[] ;
     verb=v3 ;
+    dep=[] ;
     compl=\\a=> v3.c.s ++ np.s ! v3.c.c;
     c=v3.c2
     } ;
@@ -61,13 +68,15 @@ lin
   Slash3V3 v3 np = {
     adv=\\a=>[] ;
     verb=v3 ;
+    dep=[] ;
     compl=\\a=> v3.c2.s ++ np.s ! v3.c2.c;
     c=v3.c
     } ;
 
   -- : V2V -> VP -> VPSlash ;  -- beg (her) to go
   SlashV2V v2v vp = vp ** {
-    verb=concatVebForms v2v vp.verb.inf ;
+    verb=v2v ;
+    dep=vp.verb.inf ;
     c=v2v.c
     } ;
 
@@ -75,6 +84,7 @@ lin
   SlashV2S v2s s = {
     adv=\\a=>[] ;
     verb=v2s ;
+    dep=[] ;
     compl=\\a=> embedInCommas ("что" ++ s.s ! Ind) ;
     c=v2s.c
     } ;
@@ -82,6 +92,7 @@ lin
   SlashV2Q v2q qs = {
     adv=\\a=>[] ;
     verb=v2q ;
+    dep=[] ;
     compl=\\a=>qs.s ! QDir;
     c=v2q.c
     } ;
@@ -90,6 +101,7 @@ lin
   SlashV2A v2a ap = {
     adv=\\a=>[] ;
     verb=v2a ;
+    dep=[] ;
     compl=case ap.preferShort of {
       PrefFull => (\\a => ap.s ! agrGenNum a ! Inanimate ! v2a.c.c) ;   -- TODO: Check acc dep on animacy
       PrefShort => ap.short
@@ -104,12 +116,14 @@ lin
 
   -- : VV -> VPSlash -> VPSlash ;       -- want to buy
   SlashVV vv vps = vps ** {
-    verb=concatVebForms vv.v vps.verb.inf ;
+    verb=vv.v ;
+    dep=vps.verb.inf ++ vps.dep ;
     adv=\\a=>vv.modal ! a ++ vps.adv ! a
     } ;
   -- : V2V -> NP -> VPSlash -> VPSlash ; -- beg me to buy
   SlashV2VNP v2v np vps = vps ** {
-    verb=concatVebForms v2v vps.verb.inf ;
+    verb=v2v ;
+    dep=vps.verb.inf ++ vps.dep ;
     compl=\\a=>vps.compl ! a ++ vps.c.s ++ np.s ! vps.c.c;   -- hasPrep?
     c=v2v.c
     } ;
@@ -123,7 +137,8 @@ lin
   UseComp comp = {
     adv=\\a=>comp.adv ;
     compl=comp.s ;
-    verb=selectCopula comp.cop
+    verb=selectCopula comp.cop ;
+    dep=[] ;
     } ;
 
   -- : VP -> Adv -> VP ;        -- sleep here
@@ -158,5 +173,5 @@ lin
   CompCN cn = {s=\\a=>cn.s ! numGenNum (agrGenNum a) ! Ins ; adv=[] ; cop=InsCopula} ;
 
   -- : VP ;                     -- be
-  UseCopula = {adv=\\a=>[] ; verb=copulaIns ; compl=\\a=>[]} ;
+  UseCopula = {adv=\\a=>[] ; verb=copulaIns ; dep=[] ; compl=\\a=>[]} ;
 }

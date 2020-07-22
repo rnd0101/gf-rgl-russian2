@@ -10,6 +10,7 @@ lin
     subj=such.s ;
     adv=\\a=> comma ++ "что" ++ cl.adv ;  -- TODO: this should be after subj in this case
     verb=cl.verb ;
+    dep=cl.dep ;
     compl=\\a=>cl.compl ;
     a=cl.a
     } ;
@@ -18,6 +19,7 @@ lin
     subj=(adjFormsAdjective rp_as_adj).s ;
     adv=\\a=>cls.adv ;  -- TODO: this should be after subj in this case
     verb=cls.verb ;
+    dep=cls.dep ;
     compl=\\a=>cls.compl ;
     a=cls.a
     } ;
@@ -28,6 +30,7 @@ lin
     subj=(adjFormsAdjective rp_as_adj).s ;
     adv=\\a=>[] ;
     verb=vp.verb ;
+    dep=vp.dep ;
     compl=vp.compl ;
     a=rp.a
     } ;

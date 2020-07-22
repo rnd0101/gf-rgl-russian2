@@ -12,6 +12,7 @@ lin
     subj=ip.nom ;
     adv=[] ;
     verb=vp.verb ;
+    dep=vp.dep ;
     compl=vp.compl ! ip.a ;  --???
     a=ip.a
     } ;
@@ -33,6 +34,7 @@ lin
     compl=np.s ! Nom ;  --???
     adv=icomp.adv ;
     verb=selectCopula icomp.cop ;
+    dep=[] ;
     a=np.a
     } ;
 

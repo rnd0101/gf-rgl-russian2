@@ -25,11 +25,13 @@ lincat
   VP = {
     adv : AgrTable ;  -- modals are in position of adverbials ones numgen gets fixed
     verb : ResRus.VerbForms ;
+    dep : Str ;  -- dependent infinites and such
     compl : AgrTable
     } ;
   VPSlash = {
     adv : AgrTable ;  -- modals are in position of adverbials ones numgen gets fixed
     verb : ResRus.VerbForms ;
+    dep : Str ;  -- dependent infinites and such
     compl : AgrTable ;
     c : ComplementCase
     } ; ----
@@ -41,11 +43,13 @@ lincat
   Cl = {
     subj,compl,adv : Str ;
     verb : VerbForms ;
+    dep : Str ;  -- dependent infinites and such
     a : Agr
     } ;
   ClSlash = {
     subj,compl,adv : Str ;
     verb : VerbForms ;
+    dep : Str ;  -- dependent infinites and such
     a : Agr ;
     c : ComplementCase
     } ;
@@ -67,6 +71,7 @@ lincat
   QCl = {
     subj,compl,adv : Str ;
     verb : VerbForms ;
+    dep : Str ;  -- dependent infinites and such
     a : Agr
     } ;
 
@@ -83,6 +88,7 @@ lincat
     subj : AdjTable ;
     compl,adv : AgrTable ;
     verb : VerbForms ;
+    dep : Str ;  -- dependent infinites and such
     a : Agr
     } ;
 
@@ -104,14 +110,14 @@ linref
   Ord = \s -> s.nsnom ;
   S = \s -> s.s ! Ind ;
   SSlash = \s -> s.s ! Ind ++ s.c.s ;  --?
-  VP = \s -> s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ;      -- Are these useful?
+  VP = \s -> s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.dep ++ s.compl ! Ag (GSg Neut) P3 ;      -- Are these useful?
   Comp = \s -> copula.inf ++ s.s ! Ag (GSg Neut) P3 ++ s.adv ;
   IComp = \s -> s.s ! Ag (GSg Neut) P3 ++ s.adv ++ copula.inf;
-  VPSlash = \s -> s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.compl ! Ag (GSg Neut) P3 ++ s.c.s ; -- Are these useful?
-  Cl = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.compl ;
-  ClSlash = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.compl ;
-  QCl = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.compl ;
-  RCl = \s -> s.subj ! GSg Neut ! Inanimate ! Nom ++ s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.compl ! Ag (GSg Neut) P3  ;
+  VPSlash = \s -> s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.dep ++ s.compl ! Ag (GSg Neut) P3 ++ s.c.s ; -- Are these useful?
+  Cl = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.dep ++ s.compl ;
+  ClSlash = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.dep ++ s.compl ;
+  QCl = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.dep ++ s.compl ;
+  RCl = \s -> s.subj ! GSg Neut ! Inanimate ! Nom ++ s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.dep ++ s.compl ! Ag (GSg Neut) P3  ;
   IP = \s -> s.nom ;
   RP = \s -> s.nom ;
 }
