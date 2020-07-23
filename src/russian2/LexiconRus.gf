@@ -8,16 +8,19 @@ lin
   alas_Interj = mkInterj "увы" ;
   already_Adv = mkAdv "уже" ;
   animal_N = mkN (mkA "животный") masculine animate ;
+  answer_V2S = dirV2 (mkV imperfective "отвечать" "отвечаю" "отвечает");
   apartment_N = mkN "квартира" ;
   apple_N = mkN "яблоко" neuter inanimate "3a(1)" ;
   art_N = mkN "искусство" ;
   ashes_N = mkN "пепел" masculine inanimate "1*a" ;
+  ask_V2Q = dirV2 (mkV perfective "спросить" "спрошу" "спросит") ;
   baby_N = mkN "малыш" masculine animate "4b" ;
   back_N = mkN "спина" ;
   bad_A = mkA "плохой" "хуже" "3b/c'";
   bank_N = mkN "банк" ;
   bark_N = mkN "кора";
   beautiful_A = mkA "красивый" ;
+  become_VA = mkV imperfective intransitive "становиться" "становлюсь" "становится";
   beer_N = mkN "пиво" neuter inanimate ;
   beg_V2V = dirV2 (mkV imperfective "просить" "прошу" "просит");
   belly_N = mkN "живот" ;
@@ -64,12 +67,6 @@ lin
   dirty_A = mkA "грязный" ;
   distance_N3 = mkN3 (mkN "расстояние") from_Prep on_to_Prep ;
   do_V2 = mkV2 (mkV imperfective "делать" "делаю");
-  teach_V2 = mkV2 (mkV imperfective "учить" "учу" "учит");
-  become_VA = mkV imperfective intransitive "становиться" "становлюсь" "становится";
-  paint_V2A = dirV2 (mkV imperfective "рисовать" "рисую") ;
-  ask_V2Q = dirV2 (mkV perfective "спросить" "спрошу" "спросит") ;
-  answer_V2S = dirV2 (mkV imperfective "отвечать" "отвечаю" "отвечает");
-  play_V2 = mkV2 (mkV imperfective "играть" "играю") with_Prep;
   doctor_N = mkN "доктор" masculine animate ;
   dog_N = mkN "собака" feminine animate ;
   door_N = mkN "дверь" ;
@@ -87,6 +84,7 @@ lin
   far_Adv = mkAdv "далеко";
   fat_N = mkN "жир" ;
   father_N2 = mkN2 (mkN "отец" masculine inanimate "5*b");
+  fear_VS = mkV imperfective "бояться" "боюсь" "боится";  --intran
   feather_N = (mkNplus (mkN "перо" neuter inanimate "1d")) ** {pnom="перья";pgen="перьев";pdat="перьям";pacc="перья";pins="перьями";pprep="перьях"};
   fingernail_N = mkN "ноготь" masculine inanimate "2*e" ;
   fire_N = mkN "огонь" masculine inanimate "2*b" ;
@@ -119,6 +117,7 @@ lin
   heart_N = mkN "сердце" neuter inanimate "5*c" ;
   heavy_A = (mkAltShort (mkA "тяжёлый" "тяжелее") (mkA "тяжелый")) ** {sm="тяжёл"} ;   -- TODO: same
   hill_N = mkN "холм" ;
+  hope_VS= mkV imperfective "надеяться" "надеюсь" ;
   horn_N = mkN "рог" masculine inanimate "3c(1)" ;
   horse_N = mkN "лошадь" feminine animate "8e" ;
   hot_A = mkA "горячий" "" "4a/b";
@@ -131,6 +130,7 @@ lin
   john_PN = mkPN "Иван" masculine animate ;
   king_N = mkN "король" masculine animate "2b";
   knee_N = (mkNplus (mkN "колено" neuter inanimate "1a")) ** {pnom="колени";pgen="коленей";pdat="коленям";pacc="колени";pins="коленями";pprep="коленях"} ;
+  know_VS= mkV imperfective "знать" "знаю" ;
   lake_N = (mkNplus (mkN "озеро" neuter inanimate "1a"))  ** {pnom="озёра";pgen="озёр";pdat="озёрам";pacc="озёра";pins="озёрами";pprep="озёрах"} ;
   lamp_N = mkN "лампа" ;
   language_N = mkN "язык" ;
@@ -163,6 +163,7 @@ lin
   number_N = mkN "число" neuter inanimate "1*d" ;
   oil_N = mkN "нефть" ;
   old_A = mkA "старый" "старше" "1a/c''";  -- Grammatically correct variant "старее" is being used less
+  paint_V2A = dirV2 (mkV imperfective "рисовать" "рисую") ;
   paper_N = mkN "бумага" ;
   paris_PN = mkPN "Париж" masculine inanimate ;
   peace_N = mkN "мир" ;
@@ -170,13 +171,14 @@ lin
   person_N = mkN "лицо" neuter animate "5d" ;
   planet_N = mkN "планета" ;
   plastic_N = mkN "пластмасса" ;
+  play_V2 = mkV2 (mkV imperfective "играть" "играю") with_Prep;
   policeman_N = mkN "милиционер" ;
   priest_N = mkN "священник" masculine animate ;
   queen_N = mkN "королева" feminine animate ;
   question_N = mkN "вопрос" ;
   rain_N = mkN "дождь" ;
-  reason_N = mkN "причина";
   ready_A = mkA "готовый" ;
+  reason_N = mkN "причина";
   red_A = mkA "красный" ;
   religion_N = mkN "религия" ;
   restaurant_N = mkN "ресторан" ;
@@ -193,6 +195,7 @@ lin
   rule_N = mkN "правило" ;
   salt_N = mkN "соль" ;
   sand_N = (mkNplus (mkN "песок"  masculine inanimate "3*b")) ** {sptv="песку"} ;
+  say_VS = mkV imperfective "говорить" "говорю" "говорит" ;
   school_N = mkN "школа" ;
   science_N = mkN "наука" ;
   sea_N = mkN "море" neuter inanimate "2c" ;
@@ -229,6 +232,7 @@ lin
   table_N = mkN "стол" ;
   tail_N = mkN "хвост" ;
   talk_V3 = mkV3 (mkV imperfective "говорить" "говорю" "говорит") with_Prep about_Prep ;
+  teach_V2 = mkV2 (mkV imperfective "учить" "учу" "учит");
   teacher_N = mkN "учитель" masculine animate "2c(1)";
   television_N = mkN "телевидение" ; -- FIXME: televizor?
   thick_A = mkA "толстый" "толще" "1a/c'";
@@ -259,10 +263,4 @@ lin
   year_N = (mkNplus (mkN "год")) ** {sloc="году"; pgen="лет"};
   yellow_A = (mkAplus (mkA "жёлтый" "желтее" "1a/c''") ** {sf="желта"}) ;  -- TODO: variants
   young_A = mkA "молодой" "моложе" "1b/c";
-
-  fear_VS = mkV imperfective "бояться" "боюсь" "боится";  --intran
-  hope_VS= mkV imperfective "надеяться" "надеюсь" ;
-  know_VS= mkV imperfective "знать" "знаю" ;
-  say_VS = mkV imperfective "говорить" "говорю" "говорит" ;
-
 }

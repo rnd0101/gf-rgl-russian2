@@ -1,6 +1,6 @@
 concrete ConstructionRus of Construction = CatRus **
   open Predef, SyntaxRus, SymbolicRus, ParadigmsRus, ResRus, Prelude,
-    QuestionRus, SentenceRus, AdverbRus, VerbRus, IdiomRus, (E=ExtendRus), (EX=ExtraRus) in {
+    QuestionRus, SentenceRus, AdverbRus, AdjectiveRus, VerbRus, IdiomRus, (E=ExtendRus), (EX=ExtraRus) in {
 
 lin
   hungry_VP = mkVP (mkA "голодный" "" "1*a/c'" PrefShort) ;
@@ -79,9 +79,9 @@ lin
   -- : Weekday -> Adv ;  -- on Mondays
   weekdayHabitualAdv w = mkAdv (EX.along_Prep.s ++ (w.pdat)) ; -- on Sundays
   -- : Weekday -> Adv ;      -- last Monday
-  weekdayLastAdv w = mkAdv (EX.to2_Prep.s ++ "прошлый" ++ w.sacc) ;
+  weekdayLastAdv w = mkAdv (EX.to2_Prep.s ++ (PositA (mkA "прошлый")).s ! GSg Fem ! Inanimate ! Acc ++ w.sacc) ;
   -- : Weekday -> Adv ;      -- next Monday
-  weekdayNextAdv w = mkAdv (EX.to2_Prep.s ++ "следующий" ++ w.sacc) ;
+  weekdayNextAdv w = mkAdv (EX.to2_Prep.s ++ (PositA (mkA "следующий")).s ! GSg Fem ! Inanimate ! Acc ++ w.sacc) ;
 
   -- : Month -> Adv ;                        -- in June
   monthAdv month = mkAdv ("в" ++ month.sloc) ;
