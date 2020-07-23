@@ -73,14 +73,15 @@ lin
   -- : Hour -> Card -> Adv ; -- at six forty a.m./p.m.
   timeHourMinute h card = mkAdv ((timeHour h).s ++ BIND ++ ":" ++ BIND ++ card.s ! Neut ! Inanimate ! Nom) ;  -- TODO: ?
 
+ -- TODO: Fix the following (genders)
   -- : Weekday -> Adv ;  -- on Monday
-  weekdayPunctualAdv w = mkAdv (in_Prep.s ++ w.snom) ;         -- on Sunday
+  weekdayPunctualAdv w = mkAdv (in_Prep.s ++ w.sacc) ;         -- on Sunday
   -- : Weekday -> Adv ;  -- on Mondays
   weekdayHabitualAdv w = mkAdv (EX.along_Prep.s ++ (w.pdat)) ; -- on Sundays
   -- : Weekday -> Adv ;      -- last Monday
-  weekdayLastAdv w = mkAdv ("в прошлый" ++ w.snom) ;
+  weekdayLastAdv w = mkAdv (EX.to2_Prep.s ++ "прошлый" ++ w.sacc) ;
   -- : Weekday -> Adv ;      -- next Monday
-  weekdayNextAdv w = mkAdv ("в следующий" ++ w.snom) ;
+  weekdayNextAdv w = mkAdv (EX.to2_Prep.s ++ "следующий" ++ w.sacc) ;
 
   -- : Month -> Adv ;                        -- in June
   monthAdv month = mkAdv ("в" ++ month.sloc) ;
@@ -148,13 +149,13 @@ lin
   month_Timeunit = mkN "месяц" Masc Inanimate "5a" ;
   year_Timeunit = lin N ((mkNplus (mkN "год")) ** {sloc="году"; pgen="лет"}) ;
 
-  monday_Weekday = mkN "понедельник" ;
-  tuesday_Weekday = mkN "вторник" ;
-  wednesday_Weekday = mkN "среда" ;
-  thursday_Weekday = mkN "четверг" ;
-  friday_Weekday = mkN "пятница" ;
-  saturday_Weekday = mkN "суббота" ;
-  sunday_Weekday = mkN "воскресенье" ;
+  monday_Weekday = mkN "понедельник" masculine inanimate ;
+  tuesday_Weekday = mkN "вторник" masculine inanimate ;
+  wednesday_Weekday = mkN "среда" feminine inanimate ;
+  thursday_Weekday = mkN "четверг" masculine inanimate ;
+  friday_Weekday = mkN "пятница" feminine inanimate ;
+  saturday_Weekday = mkN "суббота" feminine inanimate ;
+  sunday_Weekday = mkN "воскресенье" neuter inanimate ;
 
   january_Month = mkN "январь" masculine inanimate;
   february_Month = mkN "февраль" masculine inanimate;

@@ -24,6 +24,9 @@ LangRus: расстояние от вашего брат всего быть г�
 AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (CleftNP (PredetNP not_Predet (CountNP somePl_Det everybody_NP)) (UseRCl (TTAnt TFut AAnter) PNeg (RelVP IdRP ready_VP)))
 AllRus: это не не некоторые из всех , которые не будет готовы
 
+> l (AdvS (weekdayNextAdv saturday_Weekday) (UseCl (TTAnt TPres AAnter) PNeg (GenericCl UseCopula)))
+в следующий суббота не являешься
+
 
 "над ним" - "надо мной"
 
