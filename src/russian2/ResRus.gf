@@ -591,10 +591,10 @@ oper
 
   verbPastAgree : VerbForms -> Agr -> Str -> TempParts
     = \vf,a,after -> <"", case a of {
-      Ag (GSg Masc) _ => vf.psgm ++ after ;
-      Ag (GSg Fem) _ => vf.psgs ++ BIND ++ "ла" ++ after ;
-      Ag (GSg Neut) _ => vf.psgs ++ BIND ++ "ло" ++ after ;
-      Ag GPl _ => vf.psgs ++ BIND ++ "ли" ++ after
+      Ag (GSg Masc) _ => vf.psgm ++ (verbReflAfterConsonant vf) ++ after ;
+      Ag (GSg Fem) _ => vf.psgs ++ BIND ++ "ла" ++ (verbRefl vf) ++ after ;
+      Ag (GSg Neut) _ => vf.psgs ++ BIND ++ "ло" ++ (verbRefl vf) ++ after ;
+      Ag GPl _ => vf.psgs ++ BIND ++ "ли"++ (verbRefl vf) ++ after
     }> ;
 
   verbReflAfterConsonant : VerbForms -> Str
