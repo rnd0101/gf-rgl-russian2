@@ -888,7 +888,7 @@ oper
       } ;
 
   addRefl : Str -> Str
-    = \v -> case v of {s + ("ь"|#consonant) => v + "ся" ; _ => "сь"} ;
+    = \v -> case v of {s + ("ь"|#consonant) => v + "ся" ; _ => v + "сь"} ;
 
   makeVerbInf : Str -> Reflexivity -> VerbInf
     = \inf, refl -> {
@@ -931,7 +931,7 @@ oper
         <_,_A,s + "щ",_> => imps + "и" ;
         <_,_A,s + #consonant + #consonant,_> => imps + "и" ;
         <_,_A,s + #consonant + "ь" + #consonant,_> => imps + "и" ;
-        _ => "ь"
+        _ => imps + "ь"
         } in {
       isg2=isg2 ;
       ipl1=prpl1 ;
