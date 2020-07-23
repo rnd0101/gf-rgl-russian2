@@ -28,6 +28,7 @@ param
             | Loc | Ptv | VocRus ;  -- "minor cases", usually Loc = Pre, Ptv = Gen, VocRus = Nom
   ShortFormPreference = PrefShort | PrefFull ;
   CopulaType = NomCopula | InsCopula | EllCopula;
+  SpecialFuture = NormalFuture | BeFuture | CanFuture | WantFuture | NullFuture ;
 oper
   -- GenNum helpers and coercions
   MSg        = GSg Masc ;

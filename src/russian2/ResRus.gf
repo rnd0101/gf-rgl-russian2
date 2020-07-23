@@ -172,56 +172,6 @@ oper
       _ => c.s  -- TODO: implement
     } ;
 
-  verbPastAgree : VerbForms -> Agr -> Str -> TempParts
-    = \vf,a,after -> <"", case a of {
-      Ag (GSg Fem) _ => vf.psgf ++ after ;
-      Ag (GSg Masc) _ => vf.psgm ++ after ;
-      Ag (GSg Neut) _ => vf.psgn ++ after ;
-      Ag GPl _ => vf.ppl ++ after
-    }> ;
-
-  verbPresAgree : VerbForms -> Agr -> Str -> TempParts
-    = \vf,a,after -> <"", case a of {
-      Ag (GSg _) P1 => vf.prsg1 ++ after ;
-      Ag (GSg _) P2 => vf.prsg2 ++ after ;
-      Ag (GSg _) P3 => vf.prsg3 ++ after ;
-      Ag GPl P1 => vf.prpl1 ++ after ;
-      Ag GPl P2 => vf.prpl2 ++ after ;
-      Ag GPl P3 => vf.prpl3 ++ after
-    }> ;
-
-  verbFutAgree : VerbForms -> Agr -> Str -> TempParts
-    = \vf,a,after -> <"", case a of {
-      Ag (GSg _) P1 => vf.futsg1 ++ after ;
-      Ag (GSg _) P2 => vf.futsg2 ++ after ;
-      Ag (GSg _) P3 => vf.futsg3 ++ after ;
-      Ag GPl P1 => vf.futpl1 ++ after ;
-      Ag GPl P2 => vf.futpl2 ++ after ;
-      Ag GPl P3 => vf.futpl3 ++ after
-    }> ;
-
-  verbImperativeAgree : VerbForms -> Agr -> Str -> TempParts
-    = \vf,a,after -> case a of {
-      Ag (GSg _) P1 => <"давайте", vf.inf ++ after> ;  -- ?
-      Ag (GSg _) P2 => <"", vf.isg2 ++ after> ;
-      Ag (GSg _) P3 => <"пусть", vf.futsg3 ++ after> ;  -- ?
-      Ag GPl P1 => <"", vf.ipl1 ++ after> ;
-      Ag GPl P2 => <"", vf.ipl2 ++ after> ;
-      Ag GPl P3 => <"пусть", vf.futpl3 ++ after>
-    } ;
-
-  verbAgr : VerbForms -> Mood -> Tense -> Agr -> Polarity -> TempParts
-    = \vf,m,temp,a,pol ->
-      case <m, temp> of {
-        <Ind, Past> => verbPastAgree vf a "";
-        <Ind, Pres> => verbPresAgree vf a "";
-        <Ind, Fut> => verbFutAgree vf a "";
-        <Ind, Cond> => verbPastAgree vf a "бы" ;
-        <Sbjv, _> => verbPastAgree vf a "бы" ;
-        <Imperative, _> => verbImperativeAgree vf a "" ;
-        <Infinitive, _> => <"",vf.inf>
-      } ;
-
   selectCase : (Case => Str) -> ComplementCase -> Str
     = \np,prep -> prep.s ++ np ! prep.c ;  -- TODO: NP - pronoun special treatment
 
@@ -466,6 +416,14 @@ oper
         }
       } ;
 
+  adjFormsToShort : AdjForms -> AgrTable
+    = \af -> table {
+      Ag (GSg Fem) _ => af.sf ;
+      Ag (GSg Masc) _ => af.sm ;
+      Ag (GSg Neut) _ => af.sn ;
+      Ag GPl _ => af.sp
+    } ;
+
 ---------------------
 -- Verbs -- Глаголы
 
@@ -476,14 +434,14 @@ oper
 -- we can store the sya-schema and 'BIND++' as necessary.
 
   VerbForms : Type = {
-    inf,
+    inf, infrefl,
     prsg1, prsg2, prsg3, prpl1, prpl2, prpl3,
-    futsg1, futsg2, futsg3, futpl1, futpl2, futpl3,
-    psgm, psgf, psgn, ppl,
-    isg2, ipl1, ipl2,
-    pppsm, pppsf, pppsn, pppsp,   -- past passive participle. Here only short forms
+    psgm, psgs,
+    isg2, ipl1, isg2refl,
+    pppsm, pppss,   -- past passive participle. Here only short for masc and stem for fem, neut, pl
     prtr, ptr  -- present and past transgressives (converbs)
     : Str ;
+    fut : SpecialFuture ;
     asp : Aspect ;
     refl : Reflexivity ;
     tran : Transitivity
@@ -496,6 +454,7 @@ oper
   } ;
 
 oper
+
   guessVerbForms : Str -> VerbForms  -- stub. TODO: properly
     = \word ->
       let stem_info = infStemFromVerb word in  -- remove reflexive postfix as well
@@ -503,29 +462,21 @@ oper
       let r = stem_info.p2 in
       {
         inf=word;  -- TODO: reflexive!
+        infrefl=word + "ся" ;
         prsg1=stem  + "ю";     -- only imperf
         prsg2=stem  + "ешь";
         prsg3=stem  + "ет";
         prpl1=stem  + "ем";
         prpl2=stem  + "ете";
         prpl3=stem  + "ют";
-        futsg1=stem + "ю";     -- only perf
-        futsg2=stem + "ешь";
-        futsg3=stem + "ет";
-        futpl1=stem + "ем";
-        futpl2=stem + "ете";
-        futpl3=stem + "ют";
+        fut=NormalFuture ;
         psgm=stem   + "л";
-        psgf=stem   + "ла";
-        psgn=stem   + "ло";
-        ppl=stem    + "ли";
+        psgs=stem ;
         isg2=stem   + "й";
-        ipl1=stem   + "емте";    -- ???
-        ipl2=stem   + "йте";
+        isg2refl=stem + "йся";
+        ipl1=stem   + "ем";
         pppsm=stem  + "н";
-        pppsf=stem  + "на";
-        pppsn=stem  + "но";
-        pppsp=stem  + "ны";
+        pppss=stem ;
         prtr=stem   + "я" ;
         ptr=stem    + "в" ;  -- there is a variant "-вши" also
         asp=Imperfective;
@@ -533,105 +484,8 @@ oper
         tran=case r of {Reflexive => Intransitive; NonReflexive => Transitive };   -- TODO: fix non-refl
     } ;
 
-  refl_postfix_schema : VerbForms
-    = { -- TODO: make in parallel with guessVerbForms
-      inf="ся";
-      prsg1="сь";
-      prsg2="ся";
-      prsg3="ся";
-      prpl1="ся";
-      prpl2="сь";
-      prpl3="ся";
-      futsg1="сь";
-      futsg2="ся";
-      futsg3="ся";
-      futpl1="ся";
-      futpl2="сь";
-      futpl3="ся";
-      psgm="ся";
-      psgf="сь";
-      psgn="сь";
-      ppl ="сь";
-      isg2="ся";
-      ipl1="сь";
-      ipl2="сь";
-      pppsm="";
-      pppsf="";
-      pppsn="";
-      pppsp="";
-      prtr="" ;
-      ptr=""  ;
-      asp=Imperfective; -- these 3 are not-relevant here
-      refl=Reflexive;
-      tran=Intransitive
-    };
-
   passivateNonReflexive : VerbForms -> VerbForms
-    = \vf ->
-      let post = refl_postfix_schema in {
-      inf=vf.inf ++ BIND ++ post.inf ;
-      prsg1=vf.prsg1 ++ BIND ++ post.prsg1 ;
-      prsg2=vf.prsg2 ++ BIND ++ post.prsg2 ;
-      prsg3=vf.prsg3 ++ BIND ++ post.prsg3 ;
-      prpl1=vf.prpl1 ++ BIND ++ post.prpl1 ;
-      prpl2=vf.prpl2 ++ BIND ++ post.prpl2 ;
-      prpl3=vf.prpl3 ++ BIND ++ post.prpl3 ;
-      futsg1=vf.futsg1 ++ BIND ++ post.futsg1 ;
-      futsg2=vf.futsg2 ++ BIND ++ post.futsg2 ;
-      futsg3=vf.futsg3 ++ BIND ++ post.futsg3 ;
-      futpl1=vf.futpl1 ++ BIND ++ post.futpl1 ;
-      futpl2=vf.futpl2 ++ BIND ++ post.futpl2 ;
-      futpl3=vf.futpl3 ++ BIND ++ post.futpl3 ;
-      psgm=vf.psgm ++ BIND ++ post.psgm ;
-      psgf=vf.psgf ++ BIND ++ post.psgf ;
-      psgn=vf.psgn ++ BIND ++ post.psgn ;
-      ppl=vf.ppl ++ BIND ++ post.ppl ;
-      isg2=vf.isg2 ++ BIND ++ post.isg2 ;
-      ipl1=vf.ipl1 ++ BIND ++ post.ipl1 ;
-      ipl2=vf.ipl2 ++ BIND ++ post.ipl2 ;
-      pppsm=vf.pppsm;
-      pppsf=vf.pppsf;
-      pppsn=vf.pppsn;
-      pppsp=vf.pppsp;
-      prtr=vf.prtr ++ BIND ++ post.prtr ;
-      ptr=vf.ptr ++ BIND ++ "шись" ;
-      asp=vf.asp ;
-      refl=vf.refl ;
-      tran=vf.tran
-      } ;
-
-  concatVebForms : VerbForms -> Str -> VerbForms
-    = \vf,s -> {
-      inf=vf.inf ++ s ;
-      prsg1=vf.prsg1 ++ s ;
-      prsg2=vf.prsg2 ++ s ;
-      prsg3=vf.prsg3 ++ s ;
-      prpl1=vf.prpl1 ++ s ;
-      prpl2=vf.prpl2 ++ s ;
-      prpl3=vf.prpl3 ++ s ;
-      futsg1=vf.futsg1 ++ s ;
-      futsg2=vf.futsg2 ++ s ;
-      futsg3=vf.futsg3 ++ s ;
-      futpl1=vf.futpl1 ++ s ;
-      futpl2=vf.futpl2 ++ s ;
-      futpl3=vf.futpl3 ++ s ;
-      psgm=vf.psgm ++ s ;
-      psgf=vf.psgf ++ s ;
-      psgn=vf.psgn ++ s ;
-      ppl=vf.ppl ++ s ;
-      isg2=vf.isg2 ++ s ;
-      ipl1=vf.ipl1 ++ s ;
-      ipl2=vf.ipl2 ++ s ;
-      pppsm=vf.pppsm ++ s ;
-      pppsf=vf.pppsf ++ s ;
-      pppsn=vf.pppsn ++ s ;
-      pppsp=vf.pppsp ++ s ;
-      prtr=vf.prtr ++ s ;
-      ptr=vf.ptr ++ s ;
-      asp=vf.asp ;
-      refl=vf.refl ;
-      tran=vf.tran
-      } ;
+    = \vf -> vf ** {refl=Reflexive} ;
 
   passivate : VerbForms -> VerbForms
     = \vf ->
@@ -643,38 +497,30 @@ oper
   shortPastPassPart : VerbForms -> GenNum -> Str
     = \vf,gn ->
       case gn of {
-        GSg Fem => vf.pppsf ;
         GSg Masc => vf.pppsm ;
-        GSg Neut => vf.pppsn ;
-        GPl => vf.pppsp
+        GSg Fem => vf.pppss ++ BIND ++ "ла" ;
+        GSg Neut => vf.pppss ++ BIND ++ "ло" ;
+        GPl => vf.pppss ++ BIND ++ "ли"
         } ;
 
   copula : VerbForms
     = {
-      inf="быть";
+      inf="быть" ;
+      infrefl="являться" ;  --?
       prsg1="—";
       prsg2="—";
       prsg3="есть";
       prpl1="—";
       prpl2="—";
       prpl3="—";   -- also "суть"
-      futsg1="буду";
-      futsg2="будешь";
-      futsg3="будет";
-      futpl1="будем";
-      futpl2="будете";
-      futpl3="будут";
+      fut=BeFuture ;
       psgm="был";
-      psgf="была";
-      psgn="было";
-      ppl ="были";
+      psgs="был";
       isg2="будь";
+      isg2refl="явись" ; -- ?
       ipl1="давайте будем";
-      ipl2="будьте";
       pppsm="";
-      pppsf="";
-      pppsn="";
-      pppsp="";
+      pppss="";
       prtr="будучи";
       ptr="быв";
       asp=Imperfective;
@@ -714,29 +560,21 @@ oper
   can : VerbForms
     = {
       inf="мочь";
+      infrefl="мочь" ;
       prsg1="могу";
       prsg2="можешь";
       prsg3="может";
       prpl1="можем";
       prpl2="можете";
       prpl3="могут";
-      futsg1="смогу";  -- from the perfective counterpart, only for aux verb use here
-      futsg2="сможешь";
-      futsg3="сможет";
-      futpl1="сможем";
-      futpl2="сможете";
-      futpl3="смогут";
+      fut=CanFuture ;
       psgm="мог";
-      psgf="могла";
-      psgn="могло";
-      ppl ="могли";
+      psgs="мог";
+      isg2refl="будь способны" ;   -- *
       isg2="будь способен";  -- some improvisation here
-      ipl1="давайте будем способны";
-      ipl2="будьте способны";
+      ipl1="давайте будем способны";   -- maybe, special like for future?
       pppsm="";
-      pppsf="";
-      pppsn="";
-      pppsp="";
+      pppss="";
       prtr="";
       ptr="могши";
       asp=Imperfective;
@@ -747,29 +585,21 @@ oper
   want : VerbForms
     = {
       inf="хотеть";
+      infrefl="хотеться" ;
       prsg1="хочу";
       prsg2="хочешь";
       prsg3="хочет";
       prpl1="хотим";
       prpl2="хотите";
       prpl3="хотят";
-      futsg1="захочу";  -- from the perfective counterpart, only for aux verb use here
-      futsg2="захочешь";
-      futsg3="захочет";
-      futpl1="захотим";
-      futpl2="захотите";
-      futpl3="захотят";
+      fut=WantFuture ;
       psgm="хотел";
-      psgf="хотела";
-      psgn="хотело";
-      ppl ="хотели";
+      psgs="хоте";
       isg2="хоти";    -- *
+      isg2refl="хотись" ;   -- *
       ipl1="давайте будем хотеть";
-      ipl2="хотите";  -- *
       pppsm="";
-      pppsf="";
-      pppsn="";
-      pppsp="";
+      pppss="";
       prtr="хотя";
       ptr="хотев";
       asp=Imperfective;
@@ -777,28 +607,101 @@ oper
       tran=Transitive
     } ;
 
-
   nullVerb : VerbForms
     = {
-      inf,
+      inf, infrefl,
       prsg1, prsg2, prsg3, prpl1, prpl2, prpl3,
-      futsg1, futsg2, futsg3, futpl1, futpl2, futpl3,
-      psgm, psgf, psgn, ppl,
-      isg2, ipl1, ipl2,
-      pppsm, pppsf, pppsn, pppsp,
+      psgm, psgs,
+      isg2, isg2refl, ipl1,
+      pppsm, pppss,
       prtr, ptr ="";
+      fut=NullFuture ;
       asp=Imperfective;
       refl=NonReflexive;
       tran=Intransitive
     } ;
 
-  adjFormsToShort : AdjForms -> AgrTable
-    = \af -> table {
-      Ag (GSg Fem) _ => af.sf ;
-      Ag (GSg Masc) _ => af.sm ;
-      Ag (GSg Neut) _ => af.sn ;
-      Ag GPl _ => af.sp
+  verbPastAgree : VerbForms -> Agr -> Str -> TempParts
+    = \vf,a,after -> <"", case a of {
+      Ag (GSg Masc) _ => vf.psgm ++ after ;
+      Ag (GSg Fem) _ => vf.psgs ++ BIND ++ "ла" ++ after ;
+      Ag (GSg Neut) _ => vf.psgs ++ BIND ++ "ло" ++ after ;
+      Ag GPl _ => vf.psgs ++ BIND ++ "ли" ++ after
+    }> ;
+
+  verbReflAfterConsonant : VerbForms -> Str
+    = \vf -> case vf.refl of {Reflexive => BIND ++ "ся" ; NonReflexive => ""} ;
+
+  verbRefl : VerbForms -> Str
+    = \vf -> case vf.refl of {Reflexive => BIND ++ "сь" ; NonReflexive => ""} ;
+
+  verbInf : VerbForms -> Str
+    = \vf -> case vf.refl of {Reflexive => vf.infrefl ; NonReflexive => vf.inf} ;
+
+  verbPresAgree : VerbForms -> Agr -> Str
+    = \vf,a -> case a of {
+      Ag (GSg _) P1 => vf.prsg1 ++ (verbRefl vf) ;
+      Ag (GSg _) P2 => vf.prsg2 ++ (verbReflAfterConsonant vf) ;
+      Ag (GSg _) P3 => vf.prsg3 ++ (verbReflAfterConsonant vf) ;
+      Ag GPl P1 => vf.prpl1 ++ (verbReflAfterConsonant vf) ;
+      Ag GPl P2 => vf.prpl2 ++ (verbRefl vf) ;
+      Ag GPl P3 => vf.prpl3 ++ (verbReflAfterConsonant vf)
     } ;
+
+  beFuture : Agr -> Str
+    = \a -> case a of {
+      Ag (GSg _) P1 => "буду" ;
+      Ag (GSg _) P2 => "будешь" ;
+      Ag (GSg _) P3 => "будет" ;
+      Ag GPl P1     => "будем" ;
+      Ag GPl P2     => "будете" ;
+      Ag GPl P3     => "будут"
+    } ;
+
+  verbFutAgree : VerbForms -> Agr -> Str
+    = \vf,a -> case <vf.fut,a> of {
+      <NullFuture,_> => [] ;
+      <WantFuture,Ag (GSg _) P1> => "захочу" ;
+      <WantFuture,Ag (GSg _) P2> => "захочешь" ;
+      <WantFuture,Ag (GSg _) P3> => "захочет" ;
+      <WantFuture,Ag GPl P1    > => "захотим" ;
+      <WantFuture,Ag GPl P2    > => "захотите" ;
+      <WantFuture,Ag GPl P3    > => "захотят" ;
+      <CanFuture,Ag (GSg _) P1> => "смогу" ;
+      <CanFuture,Ag (GSg _) P2> => "сможешь" ;
+      <CanFuture,Ag (GSg _) P3> => "сможет" ;
+      <CanFuture,Ag GPl P1    > => "сможем" ;
+      <CanFuture,Ag GPl P2    > => "сможете" ;
+      <CanFuture,Ag GPl P3    > => "смогут" ;
+      <BeFuture,_> => beFuture a ;
+      _ => case vf.asp of {
+        Perfective => verbPresAgree vf a ;
+        Imperfective => (beFuture a) ++ verbInf vf
+        }
+      } ;
+
+  verbImperativeAgree : VerbForms -> Agr -> TempParts
+    = \vf,a -> case a of {
+      Ag (GSg _) P1 => <"давайте", (verbInf vf)> ;  -- ?
+      Ag (GSg _) P2 => <"", vf.isg2> ;
+      Ag (GSg x) P3 => <"пусть", verbFutAgree vf (Ag (GSg x) P3)> ;  -- ?
+      Ag GPl P1 => <"", vf.ipl1> ;
+      Ag GPl P2 => <"", vf.ipl1 ++ BIND ++ "те"> ;
+      Ag GPl P3 => <"пусть", verbFutAgree vf (Ag GPl P3)>
+    } ;
+
+  verbAgr : VerbForms -> Mood -> Tense -> Agr -> Polarity -> TempParts
+    = \vf,m,temp,a,pol ->
+      case <vf.fut,m,temp> of {
+        <NullFuture, _, _> => <"",""> ;
+        <_, Ind, Past> => verbPastAgree vf a "";
+        <_, Ind, Pres> => <"",verbPresAgree vf a>;
+        <_, Ind, Fut> => <"",verbFutAgree vf a>;
+        <_, Ind, Cond> => verbPastAgree vf a "бы" ;
+        <_, Sbjv, _> => verbPastAgree vf a "бы" ;
+        <_, Imperative, _> => verbImperativeAgree vf a ;
+        <_, Infinitive, _> => <"",verbInf vf>
+      } ;
 
 ---------------------------
 -- Pronouns -- Местоимения
