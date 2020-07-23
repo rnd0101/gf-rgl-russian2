@@ -55,6 +55,16 @@ oper
   superlative : Degree
     = Superl ;
 
+  perfective : Aspect
+    = Perfective ;
+  imperfective : Aspect
+    = Imperfective ;
+
+  transitive : Transitivity
+    = Transitive ;
+  intransitive : Transitivity
+    = Intransitive ;
+
 ------------------------------
 -- Nouns
 
@@ -131,8 +141,16 @@ oper
 -- Verbs
 
   mkV = overload {
-    mkV : Str -> V
-      = \inf -> lin V (guessVerbForms inf)
+    mkV : Str -> Str -> V
+      = \inf,sg1 -> lin V (guessVerbForms Perfective Transitive inf sg1 (Z.sg1StemFromVerb sg1 + "ет")) ;
+    mkV : Str -> Str -> Str -> V
+      = \inf,sg1,sg3 -> lin V (guessVerbForms Perfective Transitive inf sg1 sg3) ;
+    mkV : Aspect -> Str -> Str -> V
+      = \asp,inf,sg1 -> lin V (guessVerbForms asp Transitive inf sg1 (Z.sg1StemFromVerb sg1 + "ет")) ;
+    mkV : Aspect -> Str -> Str -> Str -> V
+      = \asp,inf,sg1,sg3 -> lin V (guessVerbForms asp Transitive inf sg1 sg3) ;
+    mkV : Aspect -> Transitivity -> Str -> Str -> Str -> V
+      = \asp,tran,inf,sg1,sg3 -> lin V (guessVerbForms asp tran inf sg1 sg3) ;
   } ;
 
   mkV2 = overload {

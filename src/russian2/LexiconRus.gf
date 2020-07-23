@@ -3,7 +3,7 @@ concrete LexiconRus of Lexicon = CatRus **
   open ParadigmsRus, StructuralRus, Prelude, ExtraRus, ResRus in {
 flags optimize=values ; coding=utf8 ;
 lin
-  add_V3 = mkV3 (mkV "складывать" ) obj_no_Prep to2_Prep ;
+  add_V3 = mkV3 (mkV imperfective "складывать" "складываю") obj_no_Prep to2_Prep ;
   airplane_N = mkN "самолёт" ;
   alas_Interj = mkInterj "увы" ;
   already_Adv = mkAdv "уже" ;
@@ -19,7 +19,7 @@ lin
   bark_N = mkN "кора";
   beautiful_A = mkA "красивый" ;
   beer_N = mkN "пиво" neuter inanimate ;
-  beg_V2V = dirV2 (mkV "просить");
+  beg_V2V = dirV2 (mkV imperfective "просить" "прошу" "просит");
   belly_N = mkN "живот" ;
   big_A = (mkAltShort (mkA "большой" "больше") (mkA "великий")) ;
   bike_N = mkN "велосипед" ;
@@ -63,13 +63,13 @@ lin
   day_N = mkN "день" masculine inanimate "2*b" ;
   dirty_A = mkA "грязный" ;
   distance_N3 = mkN3 (mkN "расстояние") from_Prep on_to_Prep ;
-  do_V2 = mkV2 (mkV "делать");
-  teach_V2 = mkV2 (mkV "учить");
-  become_VA = mkV "становиться" ;
-  paint_V2A = dirV2 (mkV "рисовать") ;
-  ask_V2Q = dirV2 (mkV "спросить") ;
-  answer_V2S = dirV2 (mkV "отвечать" );
-  play_V2 = mkV2 (mkV "играть" ) with_Prep;
+  do_V2 = mkV2 (mkV imperfective "делать" "делаю");
+  teach_V2 = mkV2 (mkV imperfective "учить" "учу" "учит");
+  become_VA = mkV imperfective intransitive "становиться" "становлюсь" "становится";
+  paint_V2A = dirV2 (mkV imperfective "рисовать" "рисую") ;
+  ask_V2Q = dirV2 (mkV perfective "спросить" "спрошу" "спросит") ;
+  answer_V2S = dirV2 (mkV imperfective "отвечать" "отвечаю" "отвечает");
+  play_V2 = mkV2 (mkV imperfective "играть" "играю") with_Prep;
   doctor_N = mkN "доктор" masculine animate ;
   dog_N = mkN "собака" feminine animate ;
   door_N = mkN "дверь" ;
@@ -83,7 +83,7 @@ lin
   enemy_N = mkN "враг" masculine animate ;
   eye_N = mkN "глаз" masculine inanimate "1c(1)(2)" ;
   factory_N = mkN "фабрика" ;
-  fall_V = mkV "падать" ;
+  fall_V = mkV imperfective intransitive "падать" "падаю" "падает";
   far_Adv = mkAdv "далеко";
   fat_N = mkN "жир" ;
   father_N2 = mkN2 (mkN "отец" masculine inanimate "5*b");
@@ -103,7 +103,7 @@ lin
   fun_AV = (mkAltShort (mkA "весёлый" "" "1a/c'") (mkA "веселый")) ;
   garden_N = mkN "сад" ;
   girl_N = mkN "девочка" feminine animate "3*a";
-  give_V3 = tvDirDir (mkV "давать") ;
+  give_V3 = tvDirDir (mkV imperfective "давать" "даю" "даёт") ;
   glove_N = mkN "перчатка" feminine inanimate "3*a";
   gold_N = mkN "золото" ;
   good_A = mkA "хороший" "лучше" ;
@@ -197,8 +197,8 @@ lin
   science_N = mkN "наука" ;
   sea_N = mkN "море" neuter inanimate "2c" ;
   seed_N = mkN "семя" neuter inanimate "8°c" ;
-  sell_V3 = tvDirDir (mkV "продавать" );
-  send_V3 = tvDirDir (mkV "посылать" );
+  sell_V3 = tvDirDir (mkV imperfective "продавать" "продаю" "продаёт");
+  send_V3 = tvDirDir (mkV imperfective "посылать" "посылаю");
   sharp_A = mkA "острый";
   sheep_N = mkN "овца" feminine animate "5*d" ;
   ship_N = mkN "корабль" masculine inanimate "2b";
@@ -228,7 +228,7 @@ lin
   sun_N = mkN "солнце" neuter inanimate "5a";
   table_N = mkN "стол" ;
   tail_N = mkN "хвост" ;
-  talk_V3 = mkV3 (mkV "говорить") with_Prep about_Prep ;
+  talk_V3 = mkV3 (mkV imperfective "говорить" "говорю" "говорит") with_Prep about_Prep ;
   teacher_N = mkN "учитель" masculine animate "2c(1)";
   television_N = mkN "телевидение" ; -- FIXME: televizor?
   thick_A = mkA "толстый" "толще" "1a/c'";
@@ -260,9 +260,9 @@ lin
   yellow_A = (mkAplus (mkA "жёлтый" "желтее" "1a/c''") ** {sf="желта"}) ;  -- TODO: variants
   young_A = mkA "молодой" "моложе" "1b/c";
 
-  fear_VS = mkV "бояться" ;
-  hope_VS= mkV "надеяться" ;
-  know_VS= mkV "знать" ;
-  say_VS = mkV "говорить" ;
+  fear_VS = mkV imperfective "бояться" "боюсь" "боится";  --intran
+  hope_VS= mkV imperfective "надеяться" "надеюсь" ;
+  know_VS= mkV imperfective "знать" "знаю" ;
+  say_VS = mkV imperfective "говорить" "говорю" "говорит" ;
 
 }

@@ -173,7 +173,7 @@ lin
   when_Subj = ss "когда" ;
   that_Subj = ss "что" ;  -- TODO: ?
 
-  have_V2 = dirV2 (mkV "иметь");
+  have_V2 = dirV2 (mkV Imperfective "иметь" "имею" "имеет");
 
   language_title_Utt = ss "русский" ;
   yes_Utt = ss ["да"] ;

@@ -433,20 +433,6 @@ oper
 -- Note 2. Imperative Sg P2 of reflexive verbs, can be сь as well as ся, but because there is no passive forms
 -- we can store the sya-schema and 'BIND++' as necessary.
 
-  VerbForms : Type = {
-    inf, infrefl,
-    prsg1, prsg2, prsg3, prpl1, prpl2, prpl3,
-    psgm, psgs,
-    isg2, ipl1, isg2refl,
-    pppsm, pppss,   -- past passive participle. Here only short for masc and stem for fem, neut, pl
-    prtr, ptr  -- present and past transgressives (converbs)
-    : Str ;
-    fut : SpecialFuture ;
-    asp : Aspect ;
-    refl : Reflexivity ;
-    tran : Transitivity
-  } ;
-
   Verb : Type = {
     s : Voice => Tense => Agr => Str ;
     refl : Reflexivity ;
@@ -455,34 +441,16 @@ oper
 
 oper
 
-  guessVerbForms : Str -> VerbForms  -- stub. TODO: properly
-    = \word ->
-      let stem_info = infStemFromVerb word in  -- remove reflexive postfix as well
+  guessVerbForms : Aspect -> Transitivity -> Str -> Str -> Str -> VerbForms
+    = \asp,tran,inf,sg1,sg3 ->
+      let guessed : ZVIndex * Reflexivity = guessRegularIndex inf sg1 sg3 in
+      makeVerb inf sg1 sg3 guessed.p1 asp tran guessed.p2 ;
+
+  quickGuessVerbForms : Str -> VerbForms
+    = \inf ->
+      let stem_info = infStemFromVerb inf in
       let stem = stem_info.p1 in
-      let r = stem_info.p2 in
-      {
-        inf=word;  -- TODO: reflexive!
-        infrefl=word + "ся" ;
-        prsg1=stem  + "ю";     -- only imperf
-        prsg2=stem  + "ешь";
-        prsg3=stem  + "ет";
-        prpl1=stem  + "ем";
-        prpl2=stem  + "ете";
-        prpl3=stem  + "ют";
-        fut=NormalFuture ;
-        psgm=stem   + "л";
-        psgs=stem ;
-        isg2=stem   + "й";
-        isg2refl=stem + "йся";
-        ipl1=stem   + "ем";
-        pppsm=stem  + "н";
-        pppss=stem ;
-        prtr=stem   + "я" ;
-        ptr=stem    + "в" ;  -- there is a variant "-вши" also
-        asp=Imperfective;
-        refl=r;
-        tran=case r of {Reflexive => Intransitive; NonReflexive => Transitive };   -- TODO: fix non-refl
-    } ;
+      guessVerbForms Imperfective Transitive inf (stem+"ю") (stem+"ет") ;
 
   passivateNonReflexive : VerbForms -> VerbForms
     = \vf -> vf ** {refl=Reflexive} ;

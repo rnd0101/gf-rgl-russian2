@@ -1,7 +1,7 @@
 resource MorphoRus = ResRus ** open Prelude in {
 flags coding=utf8 ;
 oper
-  to_exist = guessVerbForms "существовать" ;
+  to_exist = guessVerbForms Imperfective Intransitive "существовать" "существую" "существует";
   everybody = pronFormsPronoun vse ;
   everything = pronFormsPronoun vse_ina ;
   what_sg = doChPron "ч" (Ag (GSg Neut) P3) Inanimate ;

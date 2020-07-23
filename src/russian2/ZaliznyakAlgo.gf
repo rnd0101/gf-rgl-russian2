@@ -12,7 +12,7 @@ param
   ZAIndex      = ZA0 | ZA DeclType AlterType AdjStressSchema ZCirc ;
 
   VerbSS         = _A | _B | _C | _C' | _C'' ;
-  Conjug         = II | I ;
+  Conjug         = I | I' | II ;   -- first, first with stressed ending, second conjugation
   VerbStressSchema = VSS VerbSS VerbSS ;   -- Pres / Imp and Past forms respectively. By default, _A as second
   ZVIndex      = ZV ConjType AlterType VerbStressSchema ;
 oper
@@ -753,6 +753,37 @@ oper
 --------
 -- Verbs
 
+  VerbInherent : Type = {
+    fut : SpecialFuture ;
+    refl : Reflexivity ;
+    asp : Aspect ;
+    tran : Transitivity
+    } ;
+
+  VerbInf : Type = {
+    inf, infrefl : Str
+    } ;
+
+  VerbPresFut : Type = {
+    prsg1, prsg2, prsg3, prpl1, prpl2, prpl3 : Str
+    } ;
+
+  VerbPast : Type = {
+    psgm, psgs : Str
+    } ;
+
+  VerbImp : Type = {
+    isg2, ipl1, isg2refl : Str
+    } ;
+
+  VerbPassPastPart : Type = {
+    pppsm, pppss : Str
+    } ;
+
+  VerbTransgressive : Type = {
+    prtr, ptr: Str
+    } ;
+
   infStemFromVerb : Str -> Str * Reflexivity
     = \v ->
       case v of {
@@ -774,7 +805,8 @@ oper
   sg3StemAndConjFromVerb : Str -> Str * Conjug
     = \v ->
       case v of {
-        s + ("ет" | "ёт" | "ется" | "ётся") => <s, I> ;
+        s + ("ет" | "ется") => <s, I> ;
+        s + ("ёт" | "ётся") => <s, I'> ;
         s + ("ит" | "ится") => <s, II> ;
         _ => Predef.error "Error: incorrect Sg P3 Pres/Fut"
       } ;
@@ -788,33 +820,148 @@ oper
       let sg1 = sg1StemFromVerb sgP1PresFut in
       let sg3 = sg3StemAndConjFromVerb sgP3PresFut in
       let conjtype : ConjType = case <sg3.p2,inf1,sg1,sg3.p1> of {
-        <I, i+("овать"|"евать"), s2+"у", s3+"у"> => 2 ;
-        <I, i+"евать", s2+"ю", s3+"ю"> => 2 ;
-        <I, i+"авать", s2+"а", s3+"а"> => 13 ;
-        <I, i+("ереть"), s2+"р", s3+"р"> => 9 ;
-        <I, i+("олоть"), s2+"ол", s3+"ол"> => 10 ;
-        <I, i+("ороть"), s2+"ор", s3+"ор"> => 10 ;
-        <I, i+("зти"|"зть"), s2 + "з", s3 + "з"> => 7 ;
-        <I, i+("сти"|"сть"), s2 + ("с"|"д"|"ст"|"т"|"б"), s3 + ("с"|"д"|"ст"|"т"|"б")> => 7 ;
-        <I, i+"ать", s2+"а", s3+"а"> => 1 ;
-        <I, i+"ять", s2+"я", s3+"я"> => 1 ;
-        <I, i+"еть", s2+"е", s3+"е"> => 1 ;     -- ё?
-        <I, i+"нуть", s2+"н", s3+"н"> => 3 ;
-        <I, i+"чь", s2+"г", s3+"ж"> => 8 ;
-        <I, i+"чь", s2+"к", s3+"ч"> => 8 ;
-        <I, i+"ить", s2+"ь", s3+"ь"> => 11 ;
-        <I, i+"ыть", s2+"о", s3+"о"> => 12 ;  -- also some knowsn others
-        <I, i+"уть", s2+"у", s3+"у"> => 12 ;
-        <I, i+"ить", s2+"и", s3+"и"> => 12 ;
-        <I, i+("ать"|"ять"), s2+"н", s3+"н"> => 14 ;
-        <I, i+("ать"|"ять"), s2+"м", s3+"м"> => 14 ;
-        <I, i+("ать"|"ять"), s2+"им", s3+"им"> => 14 ;
-        <I, i+"ть", s2+"н", s3+"н"> => 15 ;
-        <I, i+"ть", s2+"в", s3+"в"> => 16 ;
-        <I, i+("ать"|"ять"), s2, s3> => 6 ;
+        <I | I', i+("овать"|"евать"), s2+"у", s3+"у"> => 2 ;
+        <I | I', i+"евать", s2+"ю", s3+"ю"> => 2 ;
+        <I | I', i+"авать", s2+"а", s3+"а"> => 13 ;
+        <I | I', i+("ереть"), s2+"р", s3+"р"> => 9 ;
+        <I | I', i+("олоть"), s2+"ол", s3+"ол"> => 10 ;
+        <I | I', i+("ороть"), s2+"ор", s3+"ор"> => 10 ;
+        <I | I', i+("зти"|"зть"), s2 + "з", s3 + "з"> => 7 ;
+        <I | I', i+("сти"|"сть"), s2 + ("с"|"д"|"ст"|"т"|"б"), s3 + ("с"|"д"|"ст"|"т"|"б")> => 7 ;
+        <I | I', i+"ать", s2+"а", s3+"а"> => 1 ;
+        <I | I', i+"ять", s2+"я", s3+"я"> => 1 ;
+        <I     , i+"еть", s2+"е", s3+"е"> => 1 ;
+        <    I', i+"еть", s2+"ё", s3+"ё"> => 1 ; -- ?
+        <I | I', i+"нуть", s2+"н", s3+"н"> => 3 ;
+        <I | I', i+"чь", s2+"г", s3+"ж"> => 8 ;
+        <I | I', i+"чь", s2+"к", s3+"ч"> => 8 ;
+        <I | I', i+"ить", s2+"ь", s3+"ь"> => 11 ;
+        <I | I', i+"ыть", s2+"о", s3+"о"> => 12 ;  -- also some knowsn others
+        <I | I', i+"уть", s2+"у", s3+"у"> => 12 ;
+        <I | I', i+"ить", s2+"и", s3+"и"> => 12 ;
+        <I | I', i+("ать"|"ять"), s2+"н", s3+"н"> => 14 ;
+        <I | I', i+("ать"|"ять"), s2+"м", s3+"м"> => 14 ;
+        <I | I', i+("ать"|"ять"), s2+"им", s3+"им"> => 14 ;
+        <I | I', i+"ть", s2+"н", s3+"н"> => 15 ;
+        <I | I', i+"ть", s2+"в", s3+"в"> => 16 ;
+        <I | I', i+("ать"|"ять"), s2, s3> => 6 ;
         <II, i+"ить", s2, s3> => 4 ;  -- после шип  -- here and below alternations possible
         <II, i+("ать"|"ять"|"еть"), s2, s3> => 5 ;
         _ => Predef.error "Error: guessing verb conjugation does not work"
-      } in <ZV conjtype No (VSS _A _A), refl>
-      ;
+      } in <ZV conjtype No (VSS (case sg3.p2 of {I' => _B; _ => _A}) _A), refl> ;
+
+  makeVerb : Str -> Str -> Str -> ZVIndex -> Aspect -> Transitivity -> Reflexivity -> VerbForms
+    = \inf, sgP1PresFut, sgP3PresFut, zv, asp, tran, refl ->
+      let infs = (infStemFromVerb (infDropRefl inf)).p1 in
+      let sg1 = sg1StemFromVerb sgP1PresFut in
+      let sg3 = sg3StemAndConjFromVerb sgP3PresFut in
+      let pl3 = case sg3.p2 of {(I|I') => sg1; II => sg3.p1} in
+      let conjtype = case zv of {ZV ct _ _ => ct} in
+      let alt = case zv of {ZV _ at _ => at} in
+      let prss = case zv of {ZV _ _ (VSS x _) => x} in
+      let inff = makeVerbInf inf refl in
+      let past = makeVerbPast infs sg1 conjtype alt in
+      let presfut = makeVerbPresFut sgP1PresFut sgP3PresFut sg3 in
+      let imp = makeVerbImp conjtype prss infs sg3.p1 pl3 presfut.prpl1 in
+      let ppp = makeVerbPassPastPart conjtype infs sg1 sg3.p1 past.psgm in
+      let tr = makeVerbTransgressive conjtype infs pl3 past.psgm in {
+        fut=NormalFuture ;
+        refl=refl ;
+        asp=asp ;
+        tran=tran ;
+        inf=inff.inf ;
+        infrefl=inff.infrefl ;
+        prsg1=presfut.prsg1 ;
+        prsg2=presfut.prsg2 ;
+        prsg3=presfut.prsg3 ;
+        prpl1=presfut.prpl1 ;
+        prpl2=presfut.prpl2 ;
+        prpl3=presfut.prpl3 ;
+        psgm=past.psgm ;
+        psgs=past.psgs ;
+        isg2=imp.isg2 ;
+        isg2refl=imp.isg2refl ;
+        ipl1=imp.ipl1 ;
+        pppsm=ppp.pppsm ;
+        pppss=ppp.pppss ;
+        prtr=tr.prtr ;
+        ptr=tr.ptr
+      } ;
+
+  addRefl : Str -> Str
+    = \v -> case v of {s + #consonant => v + "ся" ; _ => "сь"} ;
+
+  makeVerbInf : Str -> Reflexivity -> VerbInf
+    = \inf, refl -> {
+      inf=inf ;
+      infrefl=addRefl inf
+    } ;
+
+  makeVerbPast : Str -> Str -> ConjType -> AlterType -> VerbPast
+    = \infs, sg1, conjtype, alt ->
+      case <conjtype,alt,infs,sg1> of {
+        <7|8,_,_,s+("т"|"д")> => {psgm=s + "л"; psgs=s} ;
+        <7|8,_,_,_> => {psgm=sg1; psgs=sg1} ;
+        <9,_,s+("е"|"ё"),_> => {psgm=s; psgs=s} ;
+        <3,Deg,s + "ну",_> => {psgm=s; psgs=s} ;
+        <_,_,s+#consonant,_> => {psgm=infs; psgs=infs} ;
+        _ => {psgm=infs + "л"; psgs=infs}
+      } ;
+
+  makeVerbPresFut : Str -> Str -> (Str * Conjug) -> VerbPresFut
+    = \sgP1PresFut, sgP3PresFut, sg3 ->
+    let sg3s = sg3.p1 in {
+      prsg1=sgP1PresFut ;
+      prsg2=case sg3.p2 of {I=>sg3s+"ешь" ; I' => sg3s+"ёшь" ; II=>sg3s+"ишь"} ;
+      prsg3=sgP3PresFut ;
+      prpl1=case sg3.p2 of {I=>sg3s+"ем" ; I' => sg3s+"ём" ; II=>sg3s+"им"} ;
+      prpl2=case sg3.p2 of {I=>sg3s+"ете" ; I' => sg3s+"ёте" ; II=>sg3s+"ите"} ;
+      prpl3=case sg3 of {<_,I|I'>=>sgP1PresFut+"т" ; <_+("ж"|"ш"|"ч"|"щ"),II> => sg3s+"ат" ; _=>sg3s+"ят"}
+      } ;
+
+  makeVerbImp : ConjType -> VerbSS -> Str -> Str -> Str -> Str -> VerbImp =
+    \ct, prss, infs, sg3, pl3, prpl1 ->
+      let imps=case ct of {13=>infs;_=>pl3} in
+      let isg2 : Str =case <ct,prss,imps,sg3> of {
+        <4,_B|_C,s + #vowel,_> => imps + "й" ;
+        <4,_A,"вы" + s + #vowel,_> => imps + "и" ;
+        <11,_,_,s+"ь"> => (Predef.tk 1 sg3) + "ей";
+        <_,_,s + #vowel,_> => imps + "й" ;
+        <_,_B|_C,s + #consonant,_> => imps + "и" ;
+        <_,_A,"вы" + s + #consonant,_> => imps + "и" ;
+        <_,_A,s + "щ",_> => imps + "и" ;
+        <_,_A,s + #consonant + #consonant,_> => imps + "и" ;
+        <_,_A,s + #consonant + "ь" + #consonant,_> => imps + "и" ;
+        _ => "ь"
+        } in {
+      isg2=isg2 ;
+      ipl1=prpl1 ;
+      isg2refl=addRefl isg2
+      } ;
+
+  makeVerbPassPastPart : ConjType -> Str -> Str -> Str -> Str -> VerbPassPastPart =
+    \ct, infs, sg1, sg3, psgm -> {
+      pppss, pppsm=case <ct,infs> of {
+        <9|11|12|14|15|16,_> => case psgm of {s+"л"=>s+"т"; _=>psgm+"т"} ;
+        <4,_> => sg1 + "ен" ;   -- TODO: ён
+        <5,s+("е"|"ё")> => sg1 + "ен" ;  -- TODO: ён
+        <7|8,_> => sg3 + "ен" ;  -- TODO: ён
+        <3|10,_> => infs + "т" ;
+        _ => infs + "н"
+        } ;
+      } ;
+
+  makeVerbTransgressive : ConjType -> Str -> Str -> Str -> VerbTransgressive
+    = \ct, infs, pl3, psgm -> {
+    prtr=case <ct,pl3> of {
+      <13,_> => infs + "я" ;
+      <_,s + ("ж" | "ш" | "ч" | "щ")> => pl3 + "а" ;
+      _ => pl3 + "я"
+      } ;
+    ptr=case <ct,psgm> of {
+      -- <7, s+"л"> => s+"тши" ;  -- TODO: fix , use sg1 in some cases
+      <_, s+"л"> => s+"вши" ;
+      <_, s> => psgm+"ши"
+      } ;
+    } ;
 }

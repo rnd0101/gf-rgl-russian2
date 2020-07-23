@@ -80,4 +80,17 @@ oper
 
   ConjType     = Predef.Ints 16 ;        -- Conjugation type
   TempParts = {p1: Str; p2: Str} ;
+  VerbForms : Type = {
+    inf, infrefl,
+    prsg1, prsg2, prsg3, prpl1, prpl2, prpl3,
+    psgm, psgs,
+    isg2, ipl1, isg2refl,
+    pppsm, pppss,   -- past passive participle. Here only short for masc and stem for fem, neut, pl
+    prtr, ptr  -- present and past transgressives (converbs)
+    : Str ;
+    fut : SpecialFuture ;
+    asp : Aspect ;
+    refl : Reflexivity ;
+    tran : Transitivity
+  } ;
 }

@@ -4,14 +4,14 @@ concrete ConstructionRus of Construction = CatRus **
 
 lin
   hungry_VP = mkVP (mkA "голодный" "" "1*a/c'" PrefShort) ;
-  thirsty_VP = mkVP want_VV (mkVP (mkV "пить")) ;
+  thirsty_VP = mkVP want_VV (mkVP (mkV imperfective "пить" "пью" "пьёт")) ;
   tired_VP = mkVP (mkA "усталый" "" "1*a/c'" PrefFull) ;
-  scared_VP = mkVP (mkV "бояться") ;
+  scared_VP = mkVP (mkV imperfective "бояться" "боюсь" "боится") ;   -- intran
   ill_VP = mkVP ( mkA "больной" "" "1*b" PrefShort) ;
   ready_VP = mkVP (mkA "готовый" "" "1a" PrefShort) ;
 
   -- : NP -> QCl ;          -- what is x's name / wie heisst x (Ger)
-  what_name_QCl np = E.PredIAdvVP how_IAdv (ComplSlash (SlashV2a (mkV2 (mkV "звать") Gen)) np) ;
+  what_name_QCl np = E.PredIAdvVP how_IAdv (ComplSlash (SlashV2a (mkV2 (mkV imperfective "звать" "зову" "зовёт") Gen)) np) ;
 
 -- languages
 
