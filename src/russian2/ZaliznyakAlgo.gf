@@ -777,7 +777,7 @@ oper
     } ;
 
   VerbPassPastPart : Type = {
-    pppsm, pppss : Str
+    pppss : Str
     } ;
 
   VerbTransgressive : Type = {
@@ -792,7 +792,7 @@ oper
         _ => Predef.error "Error: incorrect infinitive"
       } ;
 
-  infDropRefl : Str -> Str
+  dropRefl : Str -> Str
     = \v -> case v of {s + ("ся" | "сь") => s ; _ => v} ;
 
   sg1StemFromVerb : Str -> Str
@@ -813,7 +813,7 @@ oper
 
   guessRegularIndex : Str -> Str -> Str -> ZVIndex * Reflexivity
     = \inf,sgP1PresFut,sgP3PresFut ->
-      let inf1 = infDropRefl inf in
+      let inf1 = dropRefl inf in
       let stem_info = infStemFromVerb inf in
       let inf_s = stem_info.p1 in
       let refl = stem_info.p2 in
@@ -852,16 +852,16 @@ oper
 
   makeVerb : Str -> Str -> Str -> ZVIndex -> Aspect -> Transitivity -> Reflexivity -> VerbForms
     = \inf, sgP1PresFut, sgP3PresFut, zv, asp, tran, refl ->
-      let infs = (infStemFromVerb (infDropRefl inf)).p1 in
+      let infs = (infStemFromVerb (dropRefl inf)).p1 in
       let sg1 = sg1StemFromVerb sgP1PresFut in
       let sg3 = sg3StemAndConjFromVerb sgP3PresFut in
       let pl3 = case sg3.p2 of {(I|I') => sg1; II => sg3.p1} in
       let conjtype = case zv of {ZV ct _ _ => ct} in
       let alt = case zv of {ZV _ at _ => at} in
       let prss = case zv of {ZV _ _ (VSS x _) => x} in
-      let inff = makeVerbInf inf refl in
+      let inff = makeVerbInf (dropRefl inf) refl in
       let past = makeVerbPast infs sg1 conjtype alt in
-      let presfut = makeVerbPresFut sgP1PresFut sgP3PresFut sg3 in
+      let presfut = makeVerbPresFut (dropRefl sgP1PresFut) (dropRefl sgP3PresFut) sg3 in
       let imp = makeVerbImp conjtype prss infs sg3.p1 pl3 presfut.prpl1 in
       let ppp = makeVerbPassPastPart conjtype infs sg1 sg3.p1 past.psgm in
       let tr = makeVerbTransgressive conjtype infs pl3 past.psgm in {
@@ -882,14 +882,13 @@ oper
         isg2=imp.isg2 ;
         isg2refl=imp.isg2refl ;
         ipl1=imp.ipl1 ;
-        pppsm=ppp.pppsm ;
         pppss=ppp.pppss ;
         prtr=tr.prtr ;
         ptr=tr.ptr
       } ;
 
   addRefl : Str -> Str
-    = \v -> case v of {s + #consonant => v + "ся" ; _ => "сь"} ;
+    = \v -> case v of {s + ("ь"|#consonant) => v + "ся" ; _ => "сь"} ;
 
   makeVerbInf : Str -> Reflexivity -> VerbInf
     = \inf, refl -> {
@@ -941,7 +940,7 @@ oper
 
   makeVerbPassPastPart : ConjType -> Str -> Str -> Str -> Str -> VerbPassPastPart =
     \ct, infs, sg1, sg3, psgm -> {
-      pppss, pppsm=case <ct,infs> of {
+      pppss=case <ct,infs> of {
         <9|11|12|14|15|16,_> => case psgm of {s+"л"=>s+"т"; _=>psgm+"т"} ;
         <4,_> => sg1 + "ен" ;   -- TODO: ён
         <5,s+("е"|"ё")> => sg1 + "ен" ;  -- TODO: ён

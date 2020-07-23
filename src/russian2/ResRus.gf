@@ -465,10 +465,10 @@ oper
   shortPastPassPart : VerbForms -> GenNum -> Str
     = \vf,gn ->
       case gn of {
-        GSg Masc => vf.pppsm ;
-        GSg Fem => vf.pppss ++ BIND ++ "ла" ;
-        GSg Neut => vf.pppss ++ BIND ++ "ло" ;
-        GPl => vf.pppss ++ BIND ++ "ли"
+        GSg Masc => vf.pppss ;
+        GSg Fem => vf.pppss ++ BIND ++ "а" ;
+        GSg Neut => vf.pppss ++ BIND ++ "о" ;
+        GPl => vf.pppss ++ BIND ++ "ы"
         } ;
 
   copula : VerbForms
@@ -483,11 +483,10 @@ oper
       prpl3="—";   -- also "суть"
       fut=BeFuture ;
       psgm="был";
-      psgs="был";
+      psgs="бы";
       isg2="будь";
       isg2refl="явись" ; -- ?
       ipl1="давайте будем";
-      pppsm="";
       pppss="";
       prtr="будучи";
       ptr="быв";
@@ -541,7 +540,6 @@ oper
       isg2refl="будь способны" ;   -- *
       isg2="будь способен";  -- some improvisation here
       ipl1="давайте будем способны";   -- maybe, special like for future?
-      pppsm="";
       pppss="";
       prtr="";
       ptr="могши";
@@ -566,7 +564,6 @@ oper
       isg2="хоти";    -- *
       isg2refl="хотись" ;   -- *
       ipl1="давайте будем хотеть";
-      pppsm="";
       pppss="";
       prtr="хотя";
       ptr="хотев";
@@ -581,7 +578,7 @@ oper
       prsg1, prsg2, prsg3, prpl1, prpl2, prpl3,
       psgm, psgs,
       isg2, isg2refl, ipl1,
-      pppsm, pppss,
+      pppss,
       prtr, ptr ="";
       fut=NullFuture ;
       asp=Imperfective;
