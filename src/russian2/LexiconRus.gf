@@ -170,7 +170,7 @@ lin
   language_N = mkN "язык" ;
   laugh_V = mkV imperfective "смеяться" "смеюсь" "смеётся";
   leaf_N = (mkNplus (mkN "лист" masculine inanimate "1d")) ** {pnom="листья";pgen="листьев";pdat="листьям";pacc="листья";pins="листьями";pprep="листьях"} ;
-  learn_V2 = mkV2 (mkV imperfective "учить" "учу" "учит");
+  learn_V2 = mkV2 (mkV imperfective transitive "учить" "учу" "учит" "4c");
   leather_N = mkN "кожа" ;
   leave_V2 = mkV2 (mkV imperfective intransitive "уходить" "ухожу" "уходит") ;
   left_Ord = mkOrd "левый";
