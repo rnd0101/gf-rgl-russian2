@@ -37,3 +37,14 @@ AllRus: это не не некоторые из всех , которые не 
 AllRusAbs: UttImpPol PPos (ImpVP (ComplSlash (Slash2V3 add_V3 everybody_NP) (PPartNP somebody_NP drink_V2)))
 AllRus: складываем &+ те всех в кого &+ -то пит
 
+** UseCl (TTAnt TPres ASimul) PPos (ExistNP (DetCN (DetQuant this_Quant (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot1 ∅))))))) (UseN worm_N)))
+LangRus-NEW> существуют двадцать эти червей
+
+** UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a like_V2) (DetCN (DetQuant this_Quant (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 ∅)))))))) (UseN year_N))))
+LangRus-NEW> нравишься двум этим года
+
+** UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a like_V2) (DetCN (DetQuant this_Quant (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot1 ∅))))))) (UseN woman_N))))
+LangRus-NEW> нравишься двадцати этим женщин
+
+** UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a speak_V2) (DetCN (DetQuant this_Quant (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 ∅)))))))) (UseN person_N))))
+LangRus-NEW> говоришь на двух этих лица
