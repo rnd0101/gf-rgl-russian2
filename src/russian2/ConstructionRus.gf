@@ -37,7 +37,7 @@ lin
 
   -- : Card -> Card -> Timeunit -> Adv ; -- (cats live) ten to twenty years
   timeunitRange l u time = {
-    -- TODO: Fancier logic.
+    -- TODO: Fancier logic. Also reqrite with applyPrep
     s = from_Prep.s ++ (mkAdv ((mkNP <lin Card l : Card> <lin N (ellNoun time) : N>).s ! from_Prep.c)).s
       ++ EX.on_to_Prep.s ++ (mkAdv ((mkNP <lin Card u : Card> time).s ! EX.on_to_Prep.c)).s
     } ;

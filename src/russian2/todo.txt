@@ -4,10 +4,10 @@
 довольно менее узко , чем всё не существовает что &+ -то
 
 Lang: DetCN many_Det (RelCN (UseN bike_N) (UseRCl (TTAnt TPres AAnter) PNeg (RelVP IdRP (UseV fall_V))))
-LangRus: многие велосипедов , которых не падает
+LangRus: многие велосипеды , которые не падает
 
 Lang: DetCN (DetQuantOrd (PossPron he_Pron) (NumCard (NumDigits (IDig D_0))) (OrdSuperl bad_A)) (RelCN (ConjCN both7and_DConj (BaseCN (UseN2 mother_N2) (UseN lamp_N))) (UseRCl (TTAnt TPast ASimul) PNeg (RelCl (ImpersCl ready_VP))))
-LangRus: 0 его самых плохых как матерей , так и ламп , такых не , что было готово
+LangRus: 0 его самых плохих как матерей , так и ламп , таких не , что бы &+ ло готово
 
 Lang: AdvS there7from_Adv (UseCl (TTAnt TFut AAnter) PPos (CleftNP everybody_NP (UseRCl (TTAnt TPres AAnter) PPos (RelSlash (FunRP in8front_Prep (languageNP polish_Language) IdRP) (SlashPrep (PredVP somebody_NP hungry_VP) through_Prep)))))
 LangRus: оттуда это все , польский перед которые голоден
@@ -27,7 +27,12 @@ AllRus: это не не некоторые из всех , которые не 
 > l (AdvS (weekdayNextAdv saturday_Weekday) (UseCl (TTAnt TPres AAnter) PNeg (GenericCl UseCopula)))
 в следующий суббота не являешься
 
+> l PrepNP above_Prep (UsePron he_Pron)
+над им
+(should be: над ним)
 
-"над ним" - "надо мной"
+> l PrepNP above_Prep (UsePron i_Pron)
+над мной
+(should be: надо мной)
 
 - verb zv index does not support "*", it figures forms out from 3 given examples instead. Most of the time.
