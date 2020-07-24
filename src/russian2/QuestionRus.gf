@@ -19,7 +19,7 @@ lin
 
   -- : IP -> ClSlash -> QCl ; -- whom does John love
   QuestSlash ip cls = cls ** {
-    subj=(applyPronPrep cls.c ip) ++ cls.subj ;   -- cls.subj ???
+    subj=(applyIPronPrep cls.c ip) ++ cls.subj ;   -- cls.subj ???
     a=ip.a
     } ;
 
@@ -39,7 +39,7 @@ lin
     } ;
 
   -- : Prep -> IP -> IAdv ;  -- with whom
-  PrepIP prep ip = {s=applyPronPrep prep ip} ;
+  PrepIP prep ip = {s=applyIPronPrep prep ip} ;
 
   -- : IP -> Adv -> IP
   AdvIP ip adv = appendToIP (ip ** {a=ip.a}) adv.s ;

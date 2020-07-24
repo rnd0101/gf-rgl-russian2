@@ -11,11 +11,16 @@ lin
     let n = numSizeNumber det.size in {
       -- TODO: fix some cases in README
       s=\\cas => det.s ! cn.g ! cn.anim ! cas ++ sizeNumCase cn.s det.size ;
+      pron=False ;
       a=Ag (gennum det.g n) P3
       } ;
 
   -- : PN -> NP ;          -- John
-  UsePN pn = {s=\\cas => (nounFormsNoun pn).s ! Sg ! cas ; a=Ag (gennum pn.g Sg) P3} ;   -- Does NP need animacy?
+  UsePN pn = {
+    s=\\cas => (nounFormsNoun pn).s ! Sg ! cas ;
+    pron=False;
+    a=Ag (gennum pn.g Sg) P3
+    } ;   -- Does NP need animacy?
 
   -- : Pron -> NP ;
   UsePron pron = lin NP (pronFormsPronoun pron) ;
@@ -31,26 +36,22 @@ lin
   -- : NP -> Adv -> NP ;    -- Paris today
   AdvNP np adv = np ** {s=\\cas=>np.s ! cas ++ adv.s} ;
 
-  -- ExtAdvNP: NP -> Adv -> NP ;    -- boys, such as ..
-  ExtAdvNP np adv = {
-    s=\\cas=>np.s ! cas ++ embedInCommas adv.s ;
-    a=np.a
-    } ;
+  -- : NP -> Adv -> NP ;    -- boys, such as ..
+  ExtAdvNP np adv = np ** {s=\\cas=>np.s ! cas ++ embedInCommas adv.s} ;
   -- : NP -> RS -> NP ;    -- Paris, which is here
-  RelNP np rs = {
-    s=\\cas=>np.s ! cas ++ embedInCommas (rs.s ! agrGenNum np.a ! Inanimate !cas);
-    a=np.a
-    } ;
+  RelNP np rs = np ** {s=\\cas=>np.s ! cas ++ embedInCommas (rs.s ! agrGenNum np.a ! Inanimate !cas)} ;
 
   -- : Det -> NP ;        -- these five
   DetNP det = {
     s=\\c => det.s ! det.g ! Inanimate ! c ;
+    pron=False ;
     a=Ag (gennum det.g (numSizeNumber det.size)) P3
     } ;
 
   -- : CN -> NP ;           -- (beer)
   MassNP cn = {
     s = \\c => cn.s ! Sg ! c ;   -- can it be plural-only? eg квасцы
+    pron=False ;
     a = Ag (gennum cn.g Sg) P3
     } ;
 
@@ -165,6 +166,7 @@ lin
   -- : Det -> NP -> NP ;    -- three of them, some of the boys
   CountNP det np = {
     s=\\cas => det.s ! Neut ! Inanimate ! cas ++ selectCase np.s from2 ;
+    pron=False ;
     a=np.a
     } ;
 

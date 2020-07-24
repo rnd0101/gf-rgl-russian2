@@ -21,6 +21,7 @@ concrete ConjunctionRus of Conjunction =
       } ;
     [NP] = {s1,s2 : Case => Str ;
       -- prep1,prep2 : Case => Str ;
+      pron : Bool ;
       a : Agr
       } ;
     [CN] = {s1,s2 : Number => Case => Str ;
@@ -145,6 +146,7 @@ concrete ConjunctionRus of Conjunction =
       s2 = y.s ;
     --  prep1 = x.prep ;
     --  prep2 = y.prep ;
+      pron = y.pron ; --???
       a = y.a
     } ;
 
@@ -155,6 +157,7 @@ concrete ConjunctionRus of Conjunction =
       --prep1 = \\c => x.prep ! c ++ comma ++ xs.prep1 ! c ;
       --prep2 = xs.prep2 ;
       a = conjAgr x.a xs.a ;
+      pron = xs.pron ;
       anim = conjAnim x.anim xs.anim
     } ;
 
@@ -163,6 +166,7 @@ concrete ConjunctionRus of Conjunction =
       s = \\c => conj.s1 ++ xs.s1 ! c ++ conj.s2 ++ xs.s2 ! c ;
       --prep = \\c => conj.s1 ++ xs.prep1 ! c ++ conj.s2 ++ xs.prep2 ! c ;
       a = xs.a ; -- TODO: dep. on conj as well?
+      pron = xs.pron ;
       anim = xs.anim
     } ;
 

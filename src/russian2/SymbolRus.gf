@@ -17,12 +17,14 @@ lin
   -- : CN -> Card -> NP ;          -- level five ; level 5
   CNNumNP cn n = {
     s = \\cas => cn.s ! Sg ! cas ++ n.s ! cn.g ! cn.anim ! cas ;
+    pron=False ;
     a = Ag (gennum cn.g Sg) P3
     } ;
 
   -- : Det -> CN -> [Symb] -> NP ; -- (the) (2) numbers x and
   CNSymbNP det cn xs = {
     s=\\cas => det.s ! cn.g ! cn.anim ! cas ++ sizeNumCase cn.s det.size ++ xs.s ;
+    pron=False ;
     a=Ag (gennum cn.g (numSizeNumber det.size)) P3
 		} ;
 

@@ -674,19 +674,19 @@ oper
 
   PronounForms : Type = {
     nom, gen, dat, acc, ins, prep : Str ;
+    nPrefix : Bool ;  -- can have forms with prepended "н". Only with personal pronouns, not possessive
     poss : PronForms ;
     a : Agr
   } ;
 
-  IPronounForms : Type = PronounForms ** {anim : Animacy} ;
+  IPronounForms : Type = {
+    nom, gen, dat, acc, ins, prep : Str ;
+    poss : PronForms ;
+    anim : Animacy ;
+    a : Agr
+  } ;
 
   PronTable = GenNum => Animacy => Case => Str ;
-
-  nullPron : Pronoun = {
-    s=\\cas => [] ;
-    poss=\\gn,anim,cas => [] ;
-    a=Ag (GSg Neut) P3
-    } ;
 
   mkPronTable : PronForms -> PronTable
     = \forms -> table {
@@ -768,6 +768,7 @@ oper
 
   Pronoun = {
     s : Case => Str ;
+    pron : Bool ;
     poss : PronTable ;
     a : Agr
     } ;
@@ -788,13 +789,14 @@ oper
   -- exclamative   -- восклицательные
 
   personalPron : Agr -> PronounForms
-    = \a -> {a = a} **
+    = \a -> {a=a} **
       case a of {
         Ag (GSg _) P1 => {
           nom, voc = "я" ;
           gen, acc, ptv = "меня" ;
           dat, prep, loc = "мне" ;
           ins = variants {"мной" ; "мною"} ;
+          nPrefix = False ;
           poss = doPossessivePronSgP1P2 "мо"
         } ;
         Ag (GSg _) P2 => {
@@ -802,6 +804,7 @@ oper
           gen, acc, ptv = "тебя" ;
           dat, prep, loc = "тебе" ;
           ins = variants {"тобой" ; "тобою"} ;
+          nPrefix = False ;
           poss = doPossessivePronSgP1P2 "тво"
         } ;
         Ag (GSg Masc) P3 => {
@@ -810,6 +813,7 @@ oper
           dat = "ему" ;   -- TODO: n
           ins = "им" ;   -- TODO: n
           prep, loc = "нём" ;
+          nPrefix = True ;
           poss = doPossessivePronP3 "его"
         } ;
         Ag (GSg Fem) P3 => {
@@ -819,6 +823,7 @@ oper
           acc = "её" ;           -- TODO: n
           ins = variants { "ей"; "ею" } ;   -- TODO: n
           prep, loc = "ней" ;
+          nPrefix = True ;
           poss = doPossessivePronP3 "её"
         } ;
         Ag (GSg Neut) P3 => {
@@ -827,6 +832,7 @@ oper
           dat = "ему" ;   -- TODO: n
           ins = "им" ;   -- TODO: n
           prep, loc = "нём" ;
+          nPrefix = True ;
           poss = doPossessivePronP3 "его"
         } ;
         Ag GPl P1 => {
@@ -835,6 +841,7 @@ oper
           dat = "нам" ;
           ins = "нами" ;
           prep, loc = "нас" ;
+          nPrefix = False ;
           poss = doPossessivePronPlP1P2 "наш"
         } ;
         Ag GPl P2 => {
@@ -843,6 +850,7 @@ oper
           dat = "вам" ;
           ins = "вами" ;
           prep, loc = "вас" ;
+          nPrefix = False ;
           poss = doPossessivePronPlP1P2 "ваш"
         } ;
         Ag GPl P3 => {
@@ -851,6 +859,7 @@ oper
           dat = "им" ;   -- TODO: n
           ins = "ими" ;   -- TODO: n
           prep, loc = "них" ;
+          nPrefix = False ;
           poss = doPossessivePronP3 "их"
         }
       } ;
@@ -908,7 +917,7 @@ oper
       msprep = ego
     } ;
 
-  selectPronCase : PronounForms -> Case -> Str
+  selectPronCase : PronounForms -> Case -> Str  -- apply nPrefix ?
     = \forms,cas -> case cas of {
       (Nom | VocRus) => forms.nom ;
       (Gen | Ptv)    => forms.gen ;
@@ -918,9 +927,21 @@ oper
       (Pre | Loc)    => forms.prep
     } ;
 
+  selectIPronCase : IPronounForms -> Case -> Str  -- apply nPrefix ?
+    = \forms,cas -> case cas of {
+      (Nom | VocRus) => forms.nom ;
+      (Gen | Ptv)    => forms.gen ;
+      Dat            => forms.dat ;
+      Acc            => forms.acc ;
+      Ins            => forms.ins ;
+      (Pre | Loc)    => forms.prep
+    } ;
+
+
   pronFormsPronoun : PronounForms -> Pronoun
     = \forms -> {
       s = \\cas => selectPronCase forms cas ;
+      pron = forms.nPrefix ;
       poss = mkPronTable forms.poss ;
       a = forms.a
     } ;
@@ -929,11 +950,12 @@ oper
     -- Nominative is not strictly correct, but also usually not needed
     = \nom,a -> {
       nom=nom ; gen="себя" ; dat="себе" ; acc="себя" ; ins="собой" ; prep="себе" ;
+      nPrefix=False ;
       poss=doPossessivePronSgP1P2 "сво" ;  -- "myself's" to "my own" this may be too artificially put here...
       a=a} ;
 
   reflexivePron : Agr -> PronounForms
-    = \a -> {a = a} **
+    = \a -> {a = a; nPrefix=False} **
       case a of {
         Ag (GSg Masc) _ => doReflexivePron "сам" a;
         Ag (GSg Fem) _ => doReflexivePron "сама" a;
@@ -948,12 +970,14 @@ oper
 
   vse : PronounForms = {
     nom="все" ; gen="всех" ; dat="всем" ; acc="всех" ; ins="всеми" ; prep="всех" ;
+    nPrefix=False ;
     poss=all_Pron ;
     a=Ag GPl P3
     } ;
 
   vse_ina : PronounForms = {
     nom="всё" ; gen="всего" ; dat="всему" ; acc="всё" ; ins="всем" ; prep="всём" ;
+    nPrefix=False ;
     poss=all_Pron ;
     a=Ag (GSg Neut) P3
     } ;
@@ -1206,12 +1230,16 @@ oper
   applyPrep : ComplementCase -> NounPhrase -> Str
     = \prep,np -> prep.s ++ np.s ! prep.c ;
 
-  applyPronPrep : ComplementCase -> IPronounForms -> Str
+  applyPronPrep : ComplementCase -> PronounForms -> Str
     = \prep,ip -> prep.s ++ selectPronCase ip prep.c ;
+
+  applyIPronPrep : ComplementCase -> IPronounForms -> Str
+    = \prep,ip -> prep.s ++ selectIPronCase ip prep.c ;
 
   NounPhrase = {
     s : Case => Str ;
     -- , prep : Case => Str   -- what for is this neeeded?
+    pron : Bool ; -- this only indicates n-prefixable pronouns
     a : Agr
     } ;
 }

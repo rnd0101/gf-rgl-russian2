@@ -127,6 +127,7 @@ lin
     s = \\cas => card.s ! Neut ! Inanimate ! cas
       ++ cn.s ! numSizeNum card.size ! (numSizeCase card.size)
       ++ np.s ! Gen ;
+    pron=False ;
     a = Ag (gennum cn.g (numSizeNumber card.size)) P3
     } ;
   -- : Card -> CN -> CN -> CN ;  -- x gallon bottle
