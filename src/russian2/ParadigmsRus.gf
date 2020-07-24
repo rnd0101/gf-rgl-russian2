@@ -159,6 +159,17 @@ oper
       = \asp,tran,inf,sg1,sg3 -> lin V (guessVerbForms asp tran inf sg1 sg3) ;
     mkV : Aspect -> Transitivity -> Str -> Str -> Str -> Str -> V
       = \asp,tran,inf,sg1,sg3,zv -> lin V (Z.makeVerb inf sg1 sg3 (Z.parseVerbIndex zv) asp tran (Z.infStemFromVerb inf).p2 ) ;
+    -- For backwards compatibility:
+    mkV : Aspect -> (presSg1,presSg2,presSg3,presPl1,presPl2,presPl3,pastSgMasc,imp,inf: Str) -> V
+      = \asp, sgP1, sgP2, sgP3, plP1, plP2, plP3, sgMascPast, imperSgP2, inf ->
+        lin V ((guessVerbForms asp Transitive inf sgP1 sgP3) ** {
+          prsg1=Z.dropRefl sgP1 ;
+          prsg2=Z.dropRefl sgP2 ;
+          prsg3=Z.dropRefl sgP3 ;
+          prpl1=Z.dropRefl plP1 ;
+          prpl2=Z.dropRefl plP2 ;
+          prpl3=Z.dropRefl plP3 ;
+        })
   } ;
 
   mkV2 = overload {
@@ -181,6 +192,36 @@ oper
   dirV2 v = mkV2 v Acc ;
   tvDirDir : V -> V3 ;
   tvDirDir v = mkV3 v Acc Dat ;
+
+  -- for backwards compatibility only. Use mkV methods instead.
+  -- These are deprecated!
+param Conjugation = First | FirstE | Second | SecondA | Mixed | Dolzhen | Foreign ;
+oper
+  first   : Conjugation ;
+  firstE  : Conjugation ;
+  second  : Conjugation ;
+  mixed   : Conjugation ;
+  dolzhen : Conjugation ;
+  foreign : Conjugation ;
+  first = First ;
+  firstE = FirstE ;
+  second = Second ;
+  secondA = SecondA ;
+  mixed = Mixed ;
+  dolzhen = Dolzhen;
+  foreign = Foreign;
+
+  -- Do not use the following method as it is only approximate because it does not use most informative SgP3 amd
+  -- SgP3 is being guessed instead from SgP1.
+  regV : Aspect -> Conjugation -> (stemPresSg1,endPresSg1,pastSg1,imp,inf : Str) -> V ;
+  regV asp bconj stemPresSg1 endPresSg1 pastSg1 imp inf =
+    let sg1=stemPresSg1 + endPresSg1 in
+    let sg3 : Str = case bconj of {
+      First => stemPresSg1 + "ет" ;
+      FirstE => stemPresSg1 + "ёт" ;
+      Second | SecondA => stemPresSg1 + "ит" ;
+      _ => stemPresSg1 + "ет"
+      } in (guessVerbForms asp Transitive inf sg1 sg3);
 
 ------------------------
 -- Adverbs, prepositions, conjunctions, ...
