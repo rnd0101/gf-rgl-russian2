@@ -562,8 +562,8 @@ oper
       fut=WantFuture ;
       psgm="хотел";
       psgs="хоте";
-      isg2="хоти";    -- *
-      isg2refl="хотись" ;   -- *
+      isg2="желай";
+      isg2refl="желайся" ;
       ipl1="давайте будем хотеть";
       pppss="";
       prtr="хотя";
