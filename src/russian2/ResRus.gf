@@ -1228,10 +1228,10 @@ oper -- TODO:
 
 oper
   applyPrep : ComplementCase -> NounPhrase -> Str
-    = \prep,np -> prep.s ++ np.s ! prep.c ;
-
-  applyPronPrep : ComplementCase -> PronounForms -> Str
-    = \prep,ip -> prep.s ++ selectPronCase ip prep.c ;
+    = \prep,np -> case <np.pron, prep.hasPrep, prep.c> of {
+      <True, True, Gen|Dat|Acc|Ins|Ptv> => prep.s ++ "н" ++ BIND ++ (np.s ! prep.c) ;
+      _ => prep.s ++ np.s ! prep.c
+    } ;
 
   applyIPronPrep : ComplementCase -> IPronounForms -> Str
     = \prep,ip -> prep.s ++ selectIPronCase ip prep.c ;
