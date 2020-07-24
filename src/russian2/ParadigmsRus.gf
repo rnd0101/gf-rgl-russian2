@@ -197,4 +197,6 @@ oper
   mkInterj : Str -> Interj
     = \s -> lin Interj {s = s} ;
 
+  mkPrep : Str -> Case -> Prep
+    = \s,c -> lin Prep {s = s ; c = c ; hasPrep = True} ;
 }
