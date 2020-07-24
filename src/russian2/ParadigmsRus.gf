@@ -81,6 +81,16 @@ oper
       = \word, g, anim, zi -> lin N (noMinorCases (Z.makeNoun word g anim (Z.parseIndex zi))) ;
     mkN : A -> Gender -> Animacy -> N
       = \a, g, anim -> lin N (makeNFFromAF a g anim) ;
+
+    -- For backwards compatibility:
+    mkN : (nomSg, genSg, datSg, accSg, instSg, preposSg, prepos2Sg, nomPl, genPl, datPl, accPl, instPl, preposPl : Str) -> Gender -> Animacy -> N
+      = \nomSg, genSg, datSg, accSg, instSg, preposSg, prepos2Sg, nomPl, genPl, datPl, accPl, instPl, preposPl, g, anim ->
+        lin N {
+          snom=nomSg;pnom=nomPl;sgen=genSg;pgen=genPl;sdat=datSg;pdat=datPl;sacc=accSg;pacc=accPl;sins=instSg;pins=instPl;sprep=preposSg;pprep=preposPl;
+          sloc=prepos2Sg; sptv=genSg ; svoc=nomSg ;
+          anim=anim;
+          g=g
+        } ;
   } ;
 
   mkN2 = overload {
@@ -176,9 +186,13 @@ oper
     mkV2 : V -> V2
       = \vf -> lin V2 (vf ** {c={s=[] ; c=Acc ; hasPrep=False}}) ;
     mkV2 : V -> Case -> V2
-      = \vf, c -> lin V2 (vf ** {c={s=[] ; c=c ; hasPrep=False}}) ;
+      = \vf, c -> lin V2 (vf ** {c={s=[] ; c=c ; hasPrep=True}}) ;
     mkV2 : V -> Prep -> V2
       = \vf, prep -> lin V2 (vf ** {c=prep}) ;
+
+    -- For backwards compatibility:
+    mkV2 : V -> Str -> Case -> V2
+      = \vf, prep_s, c -> lin V2 (vf ** {c={s=prep_s ; c=c ; hasPrep=True}})
     } ;
 
   mkV3 = overload {
@@ -186,6 +200,10 @@ oper
       = \vf, cas1, cas2 -> lin V3 (vf ** {c={s=[] ; c=cas1 ; hasPrep=False} ; c2={s=[] ; c=cas2 ; hasPrep=False}} ) ;
     mkV3 : V -> Prep -> Prep -> V3   -- "сложить письмо в конверт"
       = \vf, prep1, prep2 -> lin V3 (vf ** {c=prep1 ; c2=prep2} ) ;
+
+    -- For backwards compatibility:
+    mkV3 : V -> Str -> Str -> Case -> Case -> V3
+      = \vf, prep1, prep2, cas1, cas2 -> lin V3 (vf ** {c={s=prep1 ; c=cas1 ; hasPrep=True} ; c2={s=prep2 ; c=cas2 ; hasPrep=True}} ) ;
   } ;
 
   dirV2 : V -> V2 ;
@@ -206,10 +224,10 @@ oper
   regV asp bconj stemPresSg1 endPresSg1 pastSg1 imp inf =
     let sg1=stemPresSg1 + endPresSg1 in
     let sg3 : Str = case bconj of {
-      First => stemPresSg1 + "ет" ;
-      FirstE => stemPresSg1 + "ёт" ;
-      Second | SecondA => stemPresSg1 + "ит" ;
-      _ => stemPresSg1 + "ет"
+      First => (Z.sg1StemFromVerb sg1) + "ет" ;
+      FirstE => (Z.sg1StemFromVerb sg1) + "ёт" ;
+      Second | SecondA => (Z.sg1StemFromVerb sg1) + "ит" ;
+      _ => (Z.sg1StemFromVerb sg1) + "ет"
       } in (guessVerbForms asp Transitive inf sg1 sg3);
 
 ------------------------
