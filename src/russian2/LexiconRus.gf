@@ -23,7 +23,7 @@ lin
   beautiful_A = mkA "красивый" ;
   become_VA = mkV imperfective intransitive "становиться" "становлюсь" "становится";
   beer_N = mkN "пиво" neuter inanimate ;
-  beg_V2V = dirV2 (mkV imperfective "просить" "прошу" "просит");
+  beg_V2V = dirV2 (mkV imperfective transitive "просить" "прошу" "просит" "4c");
   belly_N = mkN "живот" ;
   big_A = (mkAltShort (mkA "большой" "больше") (mkA "великий")) ;
   bike_N = mkN "велосипед" ;
@@ -184,7 +184,7 @@ lin
   lose_V2 = mkV2 (mkV imperfective "терять" "теряю" "теряет");
   louse_N = (mkNplus (mkN "вошь" feminine animate "8*b'")) ** {pdat="вшам";pins="вшами";pprep="вшах"} ;
   love_N = mkN "любовь" feminine inanimate "8*b'" ;
-  love_V2 = mkV2 (mkV imperfective "любить" "люблю" "любит"); -- TODO: isg2
+  love_V2 = mkV2 (mkV imperfective transitive "любить" "люблю" "любит" "4c");
   man_N = (mkNAltPl (mkN "человек" masculine animate "3a") (mkN "людь" masculine animate)) ** {pins="людьми"};
   married_A2 = mkA2 (mkA "замужем" "" "0") behind_Prep ;  -- for Fem only
   meat_N = mkN "мясо" neuter inanimate "1c" ;

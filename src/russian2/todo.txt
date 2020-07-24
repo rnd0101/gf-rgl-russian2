@@ -27,12 +27,13 @@ AllRus: это не не некоторые из всех , которые не 
 > l (AdvS (weekdayNextAdv saturday_Weekday) (UseCl (TTAnt TPres AAnter) PNeg (GenericCl UseCopula)))
 в следующий суббота не являешься
 
-> l PrepNP above_Prep (UsePron he_Pron)
-над им
-(should be: над ним)
-
 > l PrepNP above_Prep (UsePron i_Pron)
 над мной
 (should be: надо мной)
 
 - verb zv index does not support "*", it figures forms out from 3 given examples instead. Most of the time.
+
+
+AllRusAbs: UttImpPol PPos (ImpVP (ComplSlash (Slash2V3 add_V3 everybody_NP) (PPartNP somebody_NP drink_V2)))
+AllRus: складываем &+ те всех в кого &+ -то пит
+
