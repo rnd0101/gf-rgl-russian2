@@ -99,22 +99,22 @@ linref
   N3 = \s -> s.snom ++ s.c2.s ++ s.c3.s ;   -- TODO
   A = \s -> case s.preferShort of {PrefShort => s.sm ; _ => s.msnom} ;
   A2 = \s -> case s.preferShort of {PrefShort => s.sm ; _ => s.msnom} ++ s.c.s ;  -- ?
-  V = \s -> s.inf ;
-  V2 = \s -> s.inf ++ s.c.s ;
-  V2V = \s -> s.inf ++ s.c.s ;
-  V2A = \s -> s.inf ++ s.c.s ;
-  V3 = \s -> s.inf ++ s.c.s ++ s.c2.s ;
+  V = \s -> verbInf s ;
+  V2 = \s -> (verbInf s) ++ s.c.s ;
+  V2V = \s -> (verbInf s) ++ s.c.s ;
+  V2A = \s -> (verbInf s) ++ s.c.s ;
+  V3 = \s -> (verbInf s) ++ s.c.s ++ s.c2.s ;
   Ord = \s -> s.nsnom ;
   S = \s -> s.s ! Ind ;
   SSlash = \s -> s.s ! Ind ++ s.c.s ;  --?
-  VP = \s -> s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.dep ++ s.compl ! Ag (GSg Neut) P3 ;      -- Are these useful?
+  VP = \s -> s.adv ! Ag (GSg Neut) P3 ++ (verbInf s.verb) ++ s.dep ++ s.compl ! Ag (GSg Neut) P3 ;      -- Are these useful?
   Comp = \s -> copula.inf ++ s.s ! Ag (GSg Neut) P3 ++ s.adv ;
   IComp = \s -> s.s ! Ag (GSg Neut) P3 ++ s.adv ++ copula.inf;
-  VPSlash = \s -> s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.dep ++ s.compl ! Ag (GSg Neut) P3 ++ s.c.s ; -- Are these useful?
-  Cl = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.dep ++ s.compl ;
-  ClSlash = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.dep ++ s.compl ;
-  QCl = \s -> s.subj ++ s.adv ++ s.verb.inf ++ s.dep ++ s.compl ;
-  RCl = \s -> s.subj ! GSg Neut ! Inanimate ! Nom ++ s.adv ! Ag (GSg Neut) P3 ++ s.verb.inf ++ s.dep ++ s.compl ! Ag (GSg Neut) P3  ;
+  VPSlash = \s -> s.adv ! Ag (GSg Neut) P3 ++ (verbInf s.verb) ++ s.dep ++ s.compl ! Ag (GSg Neut) P3 ++ s.c.s ; -- Are these useful?
+  Cl = \s -> s.subj ++ s.adv ++ (verbInf s.verb) ++ s.dep ++ s.compl ;
+  ClSlash = \s -> s.subj ++ s.adv ++ (verbInf s.verb) ++ s.dep ++ s.compl ;
+  QCl = \s -> s.subj ++ s.adv ++ (verbInf s.verb) ++ s.dep ++ s.compl ;
+  RCl = \s -> s.subj ! GSg Neut ! Inanimate ! Nom ++ s.adv ! Ag (GSg Neut) P3 ++ (verbInf s.verb) ++ s.dep ++ s.compl ! Ag (GSg Neut) P3  ;
   IP = \s -> s.nom ;
   RP = \s -> s.nom ;
 }

@@ -28,7 +28,7 @@ lin
   -- : VP -> Utt ;               -- to sleep
   UttVP vp
     = let a=Ag (GSg Neut) P3 in {
-      s=vp.adv ! a ++ vp.verb.inf ++ vp.dep ++ vp.compl ! a
+      s=vp.adv ! a ++ (verbInf vp.verb) ++ vp.dep ++ vp.compl ! a
       } ;
 
   -- : CN -> Utt ;               -- house

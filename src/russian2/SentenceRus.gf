@@ -134,7 +134,7 @@ lin
   EmbedQS qs = {s = qs.s ! QIndir} ;
 
   -- : VP -> SC ;               -- to go
-  EmbedVP vp = {s=vp.adv ! Ag (GSg Neut) P3 ++ vp.verb.inf ++ vp.dep ++ vp.compl ! Ag (GSg Neut) P3} ;
+  EmbedVP vp = {s=vp.adv ! Ag (GSg Neut) P3 ++ (R.verbInf vp.verb) ++ vp.dep ++ vp.compl ! Ag (GSg Neut) P3} ;
 
   -- : S -> RS -> S ;              -- she sleeps, which is good
   RelS s rs = {

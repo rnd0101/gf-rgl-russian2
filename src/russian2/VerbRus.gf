@@ -20,7 +20,7 @@ lin
   -- : VV -> VP -> VP ;  -- want to run
   ComplVV vv vp = vp ** {
     verb=vv.v ;
-    dep=vp.verb.inf ;
+    dep=verbInf vp.verb ;
     adv=\\a=>vv.modal ! a ++ vp.adv ! a
     } ;
 
@@ -76,7 +76,7 @@ lin
   -- : V2V -> VP -> VPSlash ;  -- beg (her) to go
   SlashV2V v2v vp = vp ** {
     verb=v2v ;
-    dep=vp.verb.inf ;
+    dep=verbInf vp.verb ;
     c=v2v.c
     } ;
 
@@ -117,13 +117,13 @@ lin
   -- : VV -> VPSlash -> VPSlash ;       -- want to buy
   SlashVV vv vps = vps ** {
     verb=vv.v ;
-    dep=vps.verb.inf ++ vps.dep ;
+    dep=(verbInf vps.verb) ++ vps.dep ;
     adv=\\a=>vv.modal ! a ++ vps.adv ! a
     } ;
   -- : V2V -> NP -> VPSlash -> VPSlash ; -- beg me to buy
   SlashV2VNP v2v np vps = vps ** {
     verb=v2v ;
-    dep=vps.verb.inf ++ vps.dep ;
+    dep=(verbInf vps.verb) ++ vps.dep ;
     compl=\\a=>vps.compl ! a ++ (applyPrep vps.c np);   -- hasPrep? Order?
     c=v2v.c
     } ;
