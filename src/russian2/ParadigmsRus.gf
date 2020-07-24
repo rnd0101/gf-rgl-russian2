@@ -197,19 +197,8 @@ oper
   -- These are deprecated!
 param Conjugation = First | FirstE | Second | SecondA | Mixed | Dolzhen | Foreign ;
 oper
-  first   : Conjugation ;
-  firstE  : Conjugation ;
-  second  : Conjugation ;
-  mixed   : Conjugation ;
-  dolzhen : Conjugation ;
-  foreign : Conjugation ;
-  first = First ;
-  firstE = FirstE ;
-  second = Second ;
-  secondA = SecondA ;
-  mixed = Mixed ;
-  dolzhen = Dolzhen;
-  foreign = Foreign;
+  first, firstE, second, mixed, dolzhen, foreign : Conjugation ;
+  first = First ; firstE = FirstE ; second = Second ; secondA = SecondA ; mixed = Mixed ; dolzhen = Dolzhen; foreign = Foreign;
 
   -- Do not use the following method as it is only approximate because it does not use most informative SgP3 amd
   -- SgP3 is being guessed instead from SgP1.
