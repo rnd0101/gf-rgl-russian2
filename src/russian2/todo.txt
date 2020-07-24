@@ -48,3 +48,6 @@ LangRus-NEW> говоришь на двух этих лица
 
 ** UseCl (TTAnt TPres ASimul) PPos (ExistNP (CountNP someSg_Det (DetCN (DetQuant this_Quant (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot1 ∅))))))) (UseN worm_N))))
 LangRus-NEW> существуют некоторое из двадцати этих червей
+
+
+Inherent number for nouns. eg, for geonames or pluralia tantum.

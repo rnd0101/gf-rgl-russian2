@@ -69,14 +69,16 @@ oper
 -- Nouns
 
   mkN = overload {
-    mkN : (nom : Str) -> N
+    mkN : Str -> N
       = \nom -> lin N (guessNounForms nom) ;
+    mkN : Str -> Animacy -> N
+      = \nom,anim -> lin N ((guessNounForms nom) ** {anim=anim}) ;
     mkN : Str -> Gender -> Animacy -> N
-      = \nom, g, a -> lin N (guessLessNounForms nom g a) ;
+      = \nom, g, anim -> lin N (guessLessNounForms nom g anim) ;
     mkN : Str -> Gender -> Animacy -> Z.ZNIndex -> N
-      = \word, g, a, z -> lin N (noMinorCases (Z.makeNoun word g a z)) ;
+      = \word, g, anim, z -> lin N (noMinorCases (Z.makeNoun word g anim z)) ;
     mkN : Str -> Gender -> Animacy -> Str -> N
-      = \word, g, a, zi -> lin N (noMinorCases (Z.makeNoun word g a (Z.parseIndex zi))) ;
+      = \word, g, anim, zi -> lin N (noMinorCases (Z.makeNoun word g anim (Z.parseIndex zi))) ;
     mkN : A -> Gender -> Animacy -> N
       = \a, g, anim -> lin N (makeNFFromAF a g anim) ;
   } ;
