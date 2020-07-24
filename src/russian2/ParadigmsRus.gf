@@ -149,6 +149,8 @@ oper
       = \asp,inf,sg1 -> lin V (guessVerbForms asp Transitive inf sg1 (Z.sg1StemFromVerb sg1 + "ет")) ;
     mkV : Aspect -> Str -> Str -> Str -> V
       = \asp,inf,sg1,sg3 -> lin V (guessVerbForms asp Transitive inf sg1 sg3) ;
+    mkV : Aspect -> Transitivity -> Str -> Str -> V
+      = \asp,tran,inf,sg1 -> lin V (guessVerbForms asp tran inf sg1 (Z.sg1StemFromVerb sg1 + "ет")) ;
     mkV : Aspect -> Transitivity -> Str -> Str -> Str -> V
       = \asp,tran,inf,sg1,sg3 -> lin V (guessVerbForms asp tran inf sg1 sg3) ;
   } ;

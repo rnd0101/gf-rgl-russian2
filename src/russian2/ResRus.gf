@@ -444,7 +444,8 @@ oper
   guessVerbForms : Aspect -> Transitivity -> Str -> Str -> Str -> VerbForms
     = \asp,tran,inf,sg1,sg3 ->
       let guessed : ZVIndex * Reflexivity = guessRegularIndex inf sg1 sg3 in
-      makeVerb inf sg1 sg3 guessed.p1 asp tran guessed.p2 ;
+      let corr_tran = case guessed.p2 of {Reflexive=>Intransitive ; NonReflexive=>tran} in
+      makeVerb inf sg1 sg3 guessed.p1 asp corr_tran guessed.p2 ;
 
   quickGuessVerbForms : Str -> VerbForms
     = \inf ->

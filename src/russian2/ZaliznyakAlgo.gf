@@ -836,7 +836,7 @@ oper
         <I | I', i+"чь", s2+"г", s3+"ж"> => 8 ;
         <I | I', i+"чь", s2+"к", s3+"ч"> => 8 ;
         <I | I', i+"ить", s2+"ь", s3+"ь"> => 11 ;
-        <I | I', i+"ыть", s2+"о", s3+"о"> => 12 ;  -- also some knowsn others
+        <I | I', i+"ыть", s2+"о", s3+"о"> => 12 ;  -- also some known others
         <I | I', i+"уть", s2+"у", s3+"у"> => 12 ;
         <I | I', i+"ить", s2+"и", s3+"и"> => 12 ;
         <I | I', i+("ать"|"ять"), s2+"н", s3+"н"> => 14 ;
@@ -847,7 +847,7 @@ oper
         <I | I', i+("ать"|"ять"), s2, s3> => 6 ;
         <II, i+"ить", s2, s3> => 4 ;  -- после шип  -- here and below alternations possible
         <II, i+("ать"|"ять"|"еть"), s2, s3> => 5 ;
-        _ => Predef.error "Error: guessing verb conjugation does not work"
+        _ => Predef.error ("Error: guessing verb conjugation does not work for " ++ inf)
       } in <ZV conjtype No (VSS (case sg3.p2 of {I' => _B; _ => _A}) _A), refl> ;
 
   makeVerb : Str -> Str -> Str -> ZVIndex -> Aspect -> Transitivity -> Reflexivity -> VerbForms
