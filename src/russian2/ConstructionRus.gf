@@ -1,5 +1,5 @@
 concrete ConstructionRus of Construction = CatRus **
-  open Predef, SyntaxRus, SymbolicRus, ParadigmsRus, ResRus, Prelude,
+  open Predef, SyntaxRus, SymbolicRus, ParadigmsRus - [mkIAdv], ResRus, Prelude,
     QuestionRus, SentenceRus, AdverbRus, AdjectiveRus, VerbRus, IdiomRus, (E=ExtendRus), (EX=ExtraRus) in {
 
 lin
