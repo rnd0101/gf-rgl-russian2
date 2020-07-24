@@ -16,7 +16,7 @@ lin
     } ;
   -- : RP -> ClSlash -> RCl ; -- whom John loves
   RelSlash rp cls = let rp_as_adj = rp.poss ** {preferShort=PrefFull;  sf,sm,sn,sp,comp = []} in {
-    subj=(adjFormsAdjective rp_as_adj).s ;
+    subj=(adjFormsAdjective rp_as_adj).s ;     -- TODO: cls.c and applyPrep not used?
     adv=\\a=>cls.adv ;  -- TODO: this should be after subj in this case
     verb=cls.verb ;
     dep=cls.dep ;

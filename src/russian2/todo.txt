@@ -30,4 +30,4 @@ AllRus: это не не некоторые из всех , которые не 
 
 "над ним" - "надо мной"
 
-
+- verb zv index does not support "*", it figures forms out from 3 given examples instead. Most of the time.

@@ -18,10 +18,7 @@ lincat
 
   CN = ResRus.Noun ;
 
-  NP = {
-    s : Case => Str ;
-    -- , prep : Case => Str   -- what for is this neeeded?
-    a : Agr } ;
+  NP = ResRus.NounPhrase ;
   VP = {
     adv : AgrTable ;  -- modals are in position of adverbials ones numgen gets fixed
     verb : ResRus.VerbForms ;

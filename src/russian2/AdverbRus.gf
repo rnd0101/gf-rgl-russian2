@@ -20,7 +20,7 @@ lin
     } ;
 
   -- : Prep -> NP -> Adv ;        -- in the house - в доме
-  PrepNP p np = ss (p.s ++ np.s ! p.c) ;
+  PrepNP prep np = ss (applyPrep prep np) ;
 
   -- : AdA -> Adv -> Adv ;        -- very quickly - очень быстро
   AdAdv = cc2 ;

@@ -111,7 +111,7 @@ lin
 
   -- : VPSlash -> NP -> VP ; -- love it
   ComplSlash vps np = vps ** {
-    compl=\\a => vps.compl ! a ++ vps.c.s ++ np.s ! vps.c.c      -- hasPrep?
+    compl=\\a => vps.compl ! a ++ (applyPrep vps.c np)      -- hasPrep? order?
     } ;
 
   -- : VV -> VPSlash -> VPSlash ;       -- want to buy
@@ -124,7 +124,7 @@ lin
   SlashV2VNP v2v np vps = vps ** {
     verb=v2v ;
     dep=vps.verb.inf ++ vps.dep ;
-    compl=\\a=>vps.compl ! a ++ vps.c.s ++ np.s ! vps.c.c;   -- hasPrep?
+    compl=\\a=>vps.compl ! a ++ (applyPrep vps.c np);   -- hasPrep? Order?
     c=v2v.c
     } ;
 

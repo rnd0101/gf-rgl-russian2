@@ -1199,8 +1199,19 @@ oper
 oper -- TODO:
   ComplementCase : Type = {s : Str ; c : Case ; hasPrep : Bool} ;
 
-
 ----------------
--- Clauses
+-- Misc
 
+oper
+  applyPrep : ComplementCase -> NounPhrase -> Str
+    = \prep,np -> prep.s ++ np.s ! prep.c ;
+
+  applyPronPrep : ComplementCase -> IPronounForms -> Str
+    = \prep,ip -> prep.s ++ selectPronCase ip prep.c ;
+
+  NounPhrase = {
+    s : Case => Str ;
+    -- , prep : Case => Str   -- what for is this neeeded?
+    a : Agr
+    } ;
 }
