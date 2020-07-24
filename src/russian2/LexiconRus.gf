@@ -3,7 +3,7 @@ concrete LexiconRus of Lexicon = CatRus **
   open ParadigmsRus, StructuralRus, Prelude, ExtraRus, ResRus in {
 flags optimize=values ; coding=utf8 ;
 lin
-  --sing_V = mkV imperfective "петь" "пою" "поёт";
+  sing_V = mkV imperfective transitive "петь" "пою" "поёт" "12b";
   add_V3 = mkV3 (mkV imperfective "складывать" "складываю") obj_no_Prep to2_Prep ;
   airplane_N = mkN "самолёт" ;
   alas_Interj = mkInterj "увы" ;

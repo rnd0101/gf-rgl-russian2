@@ -8,8 +8,10 @@ oper
   vowel : pattern Str = #("а"|"е"|"ё"|"и"|"о"|"у"|"ы"|"э"|"ю"|"я") ;
   vowel_but_i : pattern Str = #("а"|"е"|"ё"|"о"|"у"|"ы"|"э"|"ю"|"я") ;
   digit : pattern Str = #("0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9") ;
+  small_num : pattern Str = #("1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"|"10"|"11"|"12"|"13"|"14"|"15"|"16") ;
   stress_schema : pattern Str = #("a'"|"a"|"b'"|"b"|"c''"|"c'"|"c"|"d'"|"d"|"e"|"f''"|"f'"|"f") ;
   adj_stress_schema : pattern Str = #("b/c''"|"a/c''"|"a/b'"|"a/c'"|"b/a'"|"b/b'"|"b/c'"|"b/c"|"b/a"|"b/b"|"a/a'"|"a/a"|"a/c"|"a/b"|"a'"|"b'"|"a"|"b"|"c") ;
+  verb_stress_schema : pattern Str = #("a/c'"|"b/c'"|"c/c'"|"a/c"|"b/c"|"c/c"|"a/b"|"a/c"|"b/b"|"b/c"|"c/b"|"c/c"|"a"|"b"|"c") ;
 
 param
   Gender        = Masc | Fem | Neut ;  -- род

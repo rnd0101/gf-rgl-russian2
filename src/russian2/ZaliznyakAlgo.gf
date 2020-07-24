@@ -64,6 +64,27 @@ oper
         "8" => 8
       } ;
 
+  numToConjType : Str -> ConjType
+    = \s ->
+      case s of {
+        "1" => 1 ;
+        "2" => 2 ;
+        "3" => 3 ;
+        "4" => 4 ;
+        "5" => 5 ;
+        "6" => 6 ;
+        "7" => 7 ;
+        "8" => 8 ;
+        "9" => 9 ;
+        "10" => 10 ;
+        "11" => 11 ;
+        "12" => 12 ;
+        "13" => 13 ;
+        "14" => 14 ;
+        "15" => 15 ;
+        "16" => 16
+      } ;
+
   toStressSchema : Str -> StressSchema
     = \s ->
       case s of {
@@ -753,6 +774,24 @@ oper
 --------
 -- Verbs
 
+  toVerbStressSchema : Str -> VerbStressSchema
+    = \s ->
+      case s of {
+        "a/c'" => VSS _A _C' ;
+        "b/c'" => VSS _B _C' ;
+        "c/c'" => VSS _B _C' ;
+        "a/b" => VSS _A _B ;
+        "a/c" => VSS _A _C ;
+        "b/b" => VSS _B _B ;
+        "b/c" => VSS _B _C ;
+        "c/b" => VSS _B _B ;
+        "c/c" => VSS _B _C ;
+        "a" => VSS _A _A ;
+        "b" => VSS _B _A ;
+        "c" => VSS _C _A ;
+        _ => VSS _A _A
+      } ;
+
   VerbInherent : Type = {
     fut : SpecialFuture ;
     refl : Reflexivity ;
@@ -809,6 +848,14 @@ oper
         s + ("ёт" | "ётся") => <s, I'> ;
         s + ("ит" | "ится") => <s, II> ;
         _ => Predef.error "Error: incorrect Sg P3 Pres/Fut"
+      } ;
+
+  parseVerbIndex : Str -> ZVIndex
+    = \s ->
+      case s of {
+        dt@(#small_num) + at@("*"|"°"|"") + ss@(#verb_stress_schema)
+          => ZV (numToConjType dt) (toAlterType at) (toVerbStressSchema ss) ;
+        _ => Predef.error ("Error: incorrect ZVIndex" ++ s)
       } ;
 
   guessRegularIndex : Str -> Str -> Str -> ZVIndex * Reflexivity
