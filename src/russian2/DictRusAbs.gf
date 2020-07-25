@@ -1,6 +1,7 @@
 abstract DictRusAbs = Cat ** {
 
 fun
+  sdelatq_V : V;
   administracija_N : N;
   adres_N : N;
   akademija_N : N;
