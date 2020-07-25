@@ -22,9 +22,6 @@ LangRus: расстояние от вашего брат всего быть г�
 > l (RelNP everybody_NP (UseRCl (TTAnt TFut ASimul) PPos (RelVP IdRP ill_VP)))
 все , которые будет больны
 
-> l timeunitRange (NumDigits (IDig D_1)) (NumDigits (IDig D_2))  year_Timeunit
-от 1 до 2 года
-
 AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (CleftNP (PredetNP not_Predet (CountNP somePl_Det everybody_NP)) (UseRCl (TTAnt TFut AAnter) PNeg (RelVP IdRP ready_VP)))
 AllRus: это не не некоторые из всех , которые не будет готовы
 

@@ -114,7 +114,7 @@ lin
     let ap=adjFormsAdjective a in
     let as_n_units=(how_IAdv.s
       ++ card.s ! Neut ! Inanimate ! Nom
-      ++ cn.s ! numSizeNum card.size ! (numSizeCase card.size)) in {
+      ++ cn.s ! numSizeNum Nom card.size ! (numSizeCase Nom card.size)) in {   --? Nom?
     s=\\gn,anim,cas=> ap.s!gn!anim!cas ++ as_n_units ;
     short=\\a=> ap.short ! a ++ as_n_units ;
     preferShort=PrefFull ;
@@ -124,7 +124,7 @@ lin
   -- : Card -> CN -> NP -> NP ;  -- x ounces of this flour
   n_units_of_NP card cn np = {
     s = \\cas => card.s ! Neut ! Inanimate ! cas
-      ++ cn.s ! numSizeNum card.size ! (numSizeCase card.size)
+      ++ cn.s ! numSizeNum cas card.size ! (numSizeCase cas card.size)
       ++ np.s ! Gen ;
     pron=False ;
     a = Ag (gennum cn.g (numSizeNumber card.size)) P3
@@ -134,7 +134,7 @@ lin
     s=\\n,cas=> cn.s ! n ! cas
       ++ "на"
       ++ card.s ! Neut ! Inanimate ! Nom
-      ++ cn_unit.s ! (numSizeNum card.size) ! (numSizeCase card.size)
+      ++ cn_unit.s ! numSizeNum Nom card.size ! numSizeCase Nom card.size
     } ;
 
 ----------------------------------------------
