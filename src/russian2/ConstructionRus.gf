@@ -14,7 +14,6 @@ lin
   what_name_QCl np = E.PredIAdvVP how_IAdv (ComplSlash (SlashV2a (P.mkV2 (P.mkV Imperfective "звать" "зову" "зовёт") Gen)) np) ;
 
 -- languages
-
 lincat
   Language = N ;
   Timeunit = N ;
@@ -79,9 +78,9 @@ lin
   -- : Weekday -> Adv ;  -- on Mondays
   weekdayHabitualAdv w = P.mkAdv (EX.along_Prep.s ++ (w.pdat)) ; -- on Sundays
   -- : Weekday -> Adv ;      -- last Monday
-  weekdayLastAdv w = P.mkAdv (EX.to2_Prep.s ++ (PositA (P.mkA "прошлый")).s ! GSg Fem ! Inanimate ! Acc ++ w.sacc) ;
+  weekdayLastAdv w = P.mkAdv (EX.to2_Prep.s ++ (PositA (P.mkA "прошлый")).s ! GSg w.g ! Inanimate ! Acc ++ w.sacc) ;
   -- : Weekday -> Adv ;      -- next Monday
-  weekdayNextAdv w = P.mkAdv (EX.to2_Prep.s ++ (PositA (P.mkA "следующий")).s ! GSg Fem ! Inanimate ! Acc ++ w.sacc) ;
+  weekdayNextAdv w = P.mkAdv (EX.to2_Prep.s ++ (PositA (P.mkA "следующий")).s ! GSg w.g ! Inanimate ! Acc ++ w.sacc) ;
 
   -- : Month -> Adv ;                        -- in June
   monthAdv month = P.mkAdv ("в" ++ month.sloc) ;

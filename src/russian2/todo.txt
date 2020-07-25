@@ -1,5 +1,9 @@
 # Some problematic places
 
+
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (PredVP (AdvNP (CountNP much_Det (DetCN (DetQuant DefArt NumSg) (UseN house_N))) (weekdayNextAdv monday_Weekday)) ready_VP)
+AllRus: многие из дом в следующий понедельник будет готовым
+
 > l UttS (AdvS (AdAdv quite_Adv (ComparAdvAdj less_CAdv narrow_A everything_NP)) (UseCl (TTAnt TPres ASimul) PNeg (ExistNP something_NP)))
 довольно менее узко , чем всё не существовает что &+ -то
 
