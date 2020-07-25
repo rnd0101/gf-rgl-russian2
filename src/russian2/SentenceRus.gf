@@ -102,7 +102,7 @@ lin
   -- : NP -> VP -> Cl ;         -- John walks - Иван гуляет
   PredVP np vp = {
     subj=np.s ! Nom ;
-    adv=[] ;
+    adv=vp.adv ! np.a ;
     verb=vp.verb ;
     dep=vp.dep ;
     compl=vp.compl ! np.a ;
@@ -112,7 +112,7 @@ lin
   -- : SC -> VP -> Cl ;         -- that she goes is good - что она идёт есть хорошо
   PredSCVP sc vp = {
     subj=sc.s ;
-    adv=[] ;
+    adv=vp.adv ! (Ag (GSg Neut) P3) ;  -- ???
     verb=vp.verb ;
     dep=vp.dep ;
     compl=vp.compl ! Ag (GSg Neut) P3 ;  -- ???
