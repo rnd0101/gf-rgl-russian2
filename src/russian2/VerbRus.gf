@@ -20,7 +20,7 @@ lin
   -- : VV -> VP -> VP ;  -- want to run
   ComplVV vv vp = vp ** {
     verb=vv.v ;
-    dep=verbInf vp.verb ;
+    dep=verbInf vp.verb ++ vp.dep ;
     adv=\\a=>vv.modal ! a ++ vp.adv ! a
     } ;
 
