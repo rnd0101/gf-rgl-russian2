@@ -10,7 +10,7 @@ lin
   -- : IP -> VP -> QCl ;      -- who walks
   QuestVP ip vp = {
     subj=ip.nom ;
-    adv=[] ;
+    adv=vp.adv ! ip.a ;
     verb=vp.verb ;
     dep=vp.dep ;
     compl=vp.compl ! ip.a ;  --???

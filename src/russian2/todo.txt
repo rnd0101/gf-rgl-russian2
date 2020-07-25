@@ -49,5 +49,10 @@ LangRus-NEW> говоришь на двух этих лица
 ** UseCl (TTAnt TPres ASimul) PPos (ExistNP (CountNP someSg_Det (DetCN (DetQuant this_Quant (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot1 ∅))))))) (UseN worm_N))))
 LangRus-NEW> существуют некоторое из двадцати этих червей
 
+Lang: AdvVP (ExtAdvVP (ComplVV must_VV (AdVVP always_AdV scared_VP)) (weekdayNextAdv tuesday_Weekday)) here7from_Adv
+LangRus: должно всегда бояться , в следующую вторник , отсюда
+
+> l AdvVP (ComplSlash (SlashV2V beg_V2V ready_VP) (ExtAdvNP everybody_NP there7from_Adv)) already_Adv
+просить быть готовыми всех , оттуда , уже
 
 Inherent number for nouns. eg, for geonames or pluralia tantum.

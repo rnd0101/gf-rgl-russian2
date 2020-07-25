@@ -8,7 +8,7 @@ lin
   tired_VP = mkVP (P.mkA "усталый" "" "1*a/c'" PrefFull) ;
   scared_VP = mkVP (P.mkV Imperfective "бояться" "боюсь" "боится") ;   -- intran
   ill_VP = mkVP ( P.mkA "больной" "" "1*b" PrefShort) ;
-  ready_VP = mkVP (P.mkA "готовый" "" "1a" PrefShort) ;
+  ready_VP = mkVP (P.mkA "готовый" "" "1a" PrefFull) ;
 
   -- : NP -> QCl ;          -- what is x's name / wie heisst x (Ger)
   what_name_QCl np = E.PredIAdvVP how_IAdv (ComplSlash (SlashV2a (P.mkV2 (P.mkV Imperfective "звать" "зову" "зовёт") Gen)) np) ;
