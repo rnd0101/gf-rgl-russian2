@@ -74,7 +74,8 @@ lincat
     a : Agr
     } ;
 
-  IP, RP = ResRus.IPronounForms ;
+  IP = ResRus.IPronounForms ;
+  RP = ResRus.RPronounForms ;
   IComp = {s : AgrTable ; adv : Str ; cop : CopulaType } ;
   IDet = {
     s : DetTable ;
@@ -118,5 +119,5 @@ linref
   QCl = \s -> s.subj ++ s.adv ++ (verbInf s.verb) ++ s.dep ++ s.compl ;
   RCl = \s -> s.subj ! GSg Neut ! Inanimate ! Nom ++ s.adv ! Ag (GSg Neut) P3 ++ (verbInf s.verb) ++ s.dep ++ s.compl ! Ag (GSg Neut) P3  ;
   IP = \s -> s.nom ;
-  RP = \s -> s.nom ;
+  RP = \s -> s.s!GSg Neut!Inanimate!Nom ;
 }

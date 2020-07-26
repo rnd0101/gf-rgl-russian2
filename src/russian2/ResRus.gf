@@ -686,6 +686,11 @@ oper
     a : Agr
   } ;
 
+  RPronounForms : Type = {
+    s : AdjTable ;
+    a : Agr
+  } ;
+
   PronTable = GenNum => Animacy => Case => Str ;
 
   mkPronTable : PronForms -> PronTable
@@ -1019,20 +1024,13 @@ oper
       prep, loc = ch + "ом" ;
       ins = ch + "ем" ;
       poss = (doChPron subPoss a anim).poss
-    } ;
+      } ;
 
-  doKotoryjPron : Str -> Agr -> Animacy -> IPronounForms
-    = \w, a, anim ->   -- "который", "некоторый"
-      let stem = (Predef.tk 2 w) in {
+  doKotoryjPron : Str -> Agr -> RPronounForms
+    = \w, a -> {   -- "который"
       a = a ;
-      anim=anim ;
-      nom, voc = stem + "ое" ;
-      gen, acc, ptv = stem + "ого" ;
-      dat = stem + "ому" ;
-      prep, loc = stem + "ом" ;
-      ins = stem + "ым" ;
-      poss = guessAdjectiveForms w
-    } ;
+      s=(adjFormsAdjective (guessAdjectiveForms w)).s
+      } ;
 
   prependIP : Str -> IPronounForms -> IPronounForms
     = \s,ip -> ip ** {
@@ -1056,8 +1054,8 @@ oper
         fsins = s ++ ip.poss.fsins ;
         pins  = s ++ ip.poss.pins ;
         msprep= s ++ ip.poss.msprep ;
-      }
-    } ;
+        }
+      } ;
 
   appendToIP : IPronounForms -> Str -> IPronounForms
     = \ip,s -> ip ** {

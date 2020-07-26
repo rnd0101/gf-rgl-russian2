@@ -11,7 +11,7 @@ Lang: DetCN (DetQuantOrd (PossPron he_Pron) (NumCard (NumDigits (IDig D_0))) (Or
 LangRus: 0 его самых плохих как матерей , так и ламп , таких не , что бы &+ ли готовым
 
 Lang: AdvS there7from_Adv (UseCl (TTAnt TFut AAnter) PPos (CleftNP everybody_NP (UseRCl (TTAnt TPres AAnter) PPos (RelSlash (FunRP in8front_Prep (languageNP polish_Language) IdRP) (SlashPrep (PredVP somebody_NP hungry_VP) through_Prep)))))
-LangRus: оттуда это все , польский перед которые голоден
+LangRus: оттуда все это , польский перед которыми голоден
 
 Lang: ComplN3 distance_N3 (DetCN (DetQuant (PossPron youPol_Pron) NumSg) (SentCN (ComplN2 brother_N2 everything_NP) (EmbedVP hungry_VP)))
 LangRus: расстояние от вашего брат всего быть голодно до
