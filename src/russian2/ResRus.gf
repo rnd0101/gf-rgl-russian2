@@ -1171,7 +1171,7 @@ oper
     comp = []
     } ;
 
-  a_forms = { -- these are approximate translations of indef article; preventing DetNP parsing problems
+  a_forms = { -- this pronoun is an approximate translation of indef article; preventing DetNP parsing problems
     msnom, sm = "некий" ;
     fsnom, sf = "некая" ;
     nsnom, sn = "некое" ;
@@ -1189,7 +1189,15 @@ oper
     comp = []
     } ;
 
-  the_forms = { -- these are approximate translations of def article; preventing DetNP parsing problems
+  a_Det = {
+    s : DetTable = \\g => (adjFormsAdjective a_forms).s ! GSg g;
+    type=NormalDet ;
+    g = Masc ;
+    c = Nom ;
+    size = Num1 ;
+    } ;
+
+  the_forms = { -- this pronoun is an approximate translation of def article; preventing DetNP parsing problems
     msnom, sm = "данный" ;
     fsnom, sf = "данная" ;
     nsnom, sn = "данное" ;
@@ -1205,6 +1213,14 @@ oper
     msprep = "данном" ;
     preferShort = PrefFull ;
     comp = []
+    } ;
+
+  the_Det = {
+    s : DetTable = \\g => (adjFormsAdjective the_forms).s ! GSg g;
+    type=NormalDet ;
+    g = Masc ;
+    c = Nom ;
+    size = Num1 ;
     } ;
 
 ---------------

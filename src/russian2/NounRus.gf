@@ -9,7 +9,16 @@ lin
   -- : Det -> CN -> NP ;   -- the man
   DetCN det cn =
     let n = numSizeNumber det.size in {
-      s=\\cas => det.s ! cn.g ! cn.anim ! cas ++ cn.s ! numSizeNum cas det.size ! numSizeCase cas det.size;
+      s=case det.type of {
+        EmptyIndef => \\cas => a_Det.s ! det.g ! Inanimate ! cas
+          ++ det.s ! cn.g ! cn.anim ! cas
+          ++ cn.s ! numSizeNum cas det.size ! numSizeCase cas det.size ;
+        EmptyDef => \\cas => the_Det.s ! det.g ! Inanimate ! cas
+          ++ det.s ! cn.g ! cn.anim ! cas
+          ++ cn.s ! numSizeNum cas det.size ! numSizeCase cas det.size ;
+        _ => \\cas => det.s ! cn.g ! cn.anim ! cas
+          ++ cn.s ! numSizeNum cas det.size ! numSizeCase cas det.size
+        } ;
       pron=False ;
       a=Ag (gennum det.g n) P3
       } ;
@@ -42,7 +51,11 @@ lin
 
   -- : Det -> NP ;        -- these five
   DetNP det = {
-    s=\\cas => det.s ! det.g ! Inanimate ! cas ;
+    s=case det.type of {
+      EmptyIndef => \\cas => a_Det.s ! det.g ! Inanimate ! cas ++ det.s ! det.g ! Inanimate ! cas ;
+      EmptyDef => \\cas => the_Det.s ! det.g ! Inanimate ! cas ++ det.s ! det.g ! Inanimate ! cas ;
+      _ => \\cas => det.s ! det.g ! Inanimate ! cas
+      } ;
     pron=False ;
     a=Ag (gennum det.g (numSizeNumber det.size)) P3
     } ;
@@ -78,7 +91,8 @@ lin
 
   -- : Quant -> Num -> Det ;  -- these five
   DetQuant quant num = {
-    s=\\g,a,cas => quant.s ! (gennum g (numSizeNumber num.size)) ! a ! cas ++ num.s ! g ! a ! cas ;
+    s=\\g,anim,cas => quant.s ! (gennum g (numSizeNumber num.size)) ! anim ! cas ++ num.s ! g ! anim ! cas ;
+    type=quant.type ;
     g=quant.g ;
     c=quant.c ;
     size=num.size
@@ -89,6 +103,7 @@ lin
     s=\\g,a,cas => num.s ! g ! a ! cas
       ++ quant.s ! (gennum g (numSizeNumber num.size)) ! a ! cas
       ++ (adjFormsAdjective ord).s ! gennum quant.g (numSizeNum cas num.size) ! Inanimate ! numSizeCase cas num.size ;
+    type=quant.type ;
     g=quant.g ;
     c=quant.c ;
     size=num.size
@@ -109,7 +124,14 @@ lin
   OrdSuperl a = long_superlative a ;
 
   -- : Pron -> Quant ;    -- my (house)
-  PossPron pron = {s=mkPronTable pron.poss ; short=\\a=>[] ; g=Neut; c=Nom; preferShort=PrefFull} ;
+  PossPron pron = {
+    s=mkPronTable pron.poss ;
+    type=NormalDet ;
+    short=\\a=>[] ;
+    g=Neut ;
+    c=Nom ;
+    preferShort=PrefFull
+    } ;
 
   -- : AdN -> Card -> Card
   AdNum adn card = card ** {
@@ -182,10 +204,25 @@ lin
 ---------------------------------------------------
 -- Backwards compatibility
   --  : Quant ;       -- the (house), the (houses)
-  DefArt = adjFormsAdjective the_forms ** {preferShort=PrefFull ; g=Neut ; c=Nom} ;
+  DefArt = {
+    s=\\gn,anim,cas=>[] ;
+    type=EmptyDef ;
+    short=\\a=>[] ;
+    c=Nom ;
+    g=Neut ;
+    size=Num1 ;
+    preferShort=PrefFull
+    } ;
+  -- DefArt = adjFormsAdjective the_forms ** {preferShort=PrefFull ; g=Neut ; c=Nom} ;
   --  : Quant ;       -- a (house), (houses)
-  -- IndefArt = {s = \\gn,anim,cas=>[] ; short=\\a=>[] ; c=Nom; g = Neut; size = Num1 ; preferShort=PrefFull};
-
-  IndefArt = adjFormsAdjective a_forms ** {preferShort=PrefFull ; g=Neut ; c=Nom} ;
+  IndefArt = {
+    s=\\gn,anim,cas=>[] ;
+    type=EmptyIndef ;
+    short=\\a=>[] ;
+    c=Nom ;
+    g=Neut ;
+    size=Num1 ;
+    preferShort=PrefFull
+    } ;
 
 }

@@ -51,17 +51,4 @@ LangRus: уже — ты
 мой грамматика , яблоко и цветок
 ```
 
-```
-> l UseCl (TTAnt TCond ASimul) PPos (GenericCl (ComplVV can_VV hungry_VP))
-мог быть бы ты голоден
-```
-
-```
-> cc mkUtt (mkNP (mkDigits n4_Dig) (mkCN old_A apple_N))
-{s = "4" ++ "старого" ++ "яблока"; lock_Utt = <>}
-11 msec
-> cc mkUtt (mkNP (mkDigits n4_Dig) (mkCN apple_N))
-{s = "4" ++ "яблока"; lock_Utt = <>}
-```
-
 ## Maintainer
