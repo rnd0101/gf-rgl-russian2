@@ -2,16 +2,13 @@
 
 
 AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (PredVP (AdvNP (CountNP much_Det (DetCN (DetQuant DefArt NumSg) (UseN house_N))) (weekdayNextAdv monday_Weekday)) ready_VP)
-AllRus: многие из дом в следующий понедельник будет готовым
+AllRus: многие из данного дома в следующий понедельник будет готовым
 
 > l UttS (AdvS (AdAdv quite_Adv (ComparAdvAdj less_CAdv narrow_A everything_NP)) (UseCl (TTAnt TPres ASimul) PNeg (ExistNP something_NP)))
 довольно менее узко , чем всё не существовает что &+ -то
 
-Lang: DetCN many_Det (RelCN (UseN bike_N) (UseRCl (TTAnt TPres AAnter) PNeg (RelVP IdRP (UseV fall_V))))
-LangRus: многие велосипеды , которые не падает
-
 Lang: DetCN (DetQuantOrd (PossPron he_Pron) (NumCard (NumDigits (IDig D_0))) (OrdSuperl bad_A)) (RelCN (ConjCN both7and_DConj (BaseCN (UseN2 mother_N2) (UseN lamp_N))) (UseRCl (TTAnt TPast ASimul) PNeg (RelCl (ImpersCl ready_VP))))
-LangRus: 0 его самых плохих как матерей , так и ламп , таких не , что бы &+ ло готово
+LangRus: 0 его самых плохих как матерей , так и ламп , таких не , что бы &+ ли готовым
 
 Lang: AdvS there7from_Adv (UseCl (TTAnt TFut AAnter) PPos (CleftNP everybody_NP (UseRCl (TTAnt TPres AAnter) PPos (RelSlash (FunRP in8front_Prep (languageNP polish_Language) IdRP) (SlashPrep (PredVP somebody_NP hungry_VP) through_Prep)))))
 LangRus: оттуда это все , польский перед которые голоден
