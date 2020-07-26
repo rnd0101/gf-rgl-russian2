@@ -1173,7 +1173,7 @@ oper
     msnom, sm = "некий" ;
     fsnom, sf = "некая" ;
     nsnom, sn = "некое" ;
-    pnom, sp = "некии" ;
+    pnom, sp = "некие" ;
     msgen = "некого" ;
     fsgen = "некой" ;
     pgen  = "неких" ;
@@ -1194,6 +1194,15 @@ oper
     c = Nom ;
     size = Num1 ;
     } ;
+
+  a_Pl_Det = {
+    s : DetTable = \\g => (adjFormsAdjective a_forms).s ! GPl;
+    type=NormalDet ;
+    g = Masc ;
+    c = Nom ;
+    size = NumAll ;
+    } ;
+
 
   the_forms = { -- this pronoun is an approximate translation of def article; preventing DetNP parsing problems
     msnom, sm = "данный" ;
@@ -1219,6 +1228,14 @@ oper
     g = Masc ;
     c = Nom ;
     size = Num1 ;
+    } ;
+
+  the_Pl_Det = {
+    s : DetTable = \\g => (adjFormsAdjective the_forms).s ! GPl;
+    type=NormalDet ;
+    g = Masc ;
+    c = Nom ;
+    size = NumAll ;
     } ;
 
 ---------------

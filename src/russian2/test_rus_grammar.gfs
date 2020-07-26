@@ -1,6 +1,8 @@
 -- invoke script with command :
 -- > gf --run AllRus.gf < test_rus_grammar.gfs
+gt UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a eat_V2) (MassNP (UseN apple_N))))  | l -treebank
 gt UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron ?) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant IndefArt NumSg) (UseN apple_N))))  | l -treebank
 gt UseCl (TTAnt TFut ASimul) PPos (PredVP (DetCN (DetQuant DefArt NumPl) (AdvCN (UseN apple_N) (weekdayNextAdv monday_Weekday))) ready_VP) | l -treebank
 gt UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron ?) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (UseN apple_N)))) | l -treebank
 gt UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron ?) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_5)))) (UseN apple_N)))) | l -treebank
+gt UseCl (TTAnt TPast AAnter) PNeg (PredVP (UsePron she_Pron) (UseV sleep_V)) | l -treebank

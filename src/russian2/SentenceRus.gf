@@ -26,7 +26,7 @@ lin
     s = \\gn,anim,cas =>
       let a=genNumAgrP3 gn in
       let parts = R.verbAgr rcl.verb Ind temp.t a pol.p in
-      temp.s ++ parts.p1 ++ rcl.subj ! gn ! anim ! cas ++ pol.s ++ rcl.adv ! a ++ parts.p2 ++ rcl.dep ++ rcl.compl ! a ;
+      temp.s ++ parts.p1 ++ pol.s ++ rcl.subj ! gn ! anim ! cas ++ rcl.adv ! a ++ parts.p2 ++ rcl.dep ++ rcl.compl ! a ;
     c = Nom
     } ;
 

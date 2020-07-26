@@ -16,11 +16,8 @@ LangRus: оттуда все это , польский перед которым
 Lang: ComplN3 distance_N3 (DetCN (DetQuant (PossPron youPol_Pron) NumSg) (SentCN (ComplN2 brother_N2 everything_NP) (EmbedVP hungry_VP)))
 LangRus: расстояние от вашего брат всего быть голодно до
 
-> l (RelNP everybody_NP (UseRCl (TTAnt TFut ASimul) PPos (RelVP IdRP ill_VP)))
-все , которые будет больны
-
 AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (CleftNP (PredetNP not_Predet (CountNP somePl_Det everybody_NP)) (UseRCl (TTAnt TFut AAnter) PNeg (RelVP IdRP ready_VP)))
-AllRus: это не не некоторые из всех , которые не будет готовы
+AllRus: не некоторые из всех не это , которые не будут готовыми
 
 > l (AdvS (weekdayNextAdv saturday_Weekday) (UseCl (TTAnt TPres AAnter) PNeg (GenericCl UseCopula)))
 в следующий суббота не являешься
