@@ -191,7 +191,7 @@ lin
   CountNP det np = {
     s=\\cas => det.s ! Neut ! Inanimate ! cas ++ selectCase np.s from2 ;
     pron=False ;
-    a=np.a
+    a=numSizeGenAgr det.size Neut P3
     } ;
 
 ---------------------------------------------------

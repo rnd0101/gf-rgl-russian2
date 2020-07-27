@@ -1289,6 +1289,8 @@ oper
       <Acc,Num2_4 | Num5> => Gen ;
       _ => cas
       } ;
+  numSizeGenAgr : NumSize -> Gender -> Person -> Agr
+    = \ns,g,p -> Ag (case ns of {Num1 => GSg g ; NumAll | Num2_4 | Num5 => GPl}) p ;
 
 oper -- TODO:
   ComplementCase : Type = {s : Str ; c : Case ; hasPrep : Bool} ;
