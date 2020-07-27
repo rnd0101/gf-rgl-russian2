@@ -1163,7 +1163,7 @@ oper
     fsacc = "эту" ;
     msins = "этим" ;
     fsins = "этой" ;
-    pins  = "этих" ;
+    pins  = "этими" ;
     msprep = "этом" ;
     preferShort = PrefFull ;
     comp = []
