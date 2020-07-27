@@ -1,9 +1,5 @@
 # Some problematic places
 
-
-AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (PredVP (AdvNP (CountNP much_Det (DetCN (DetQuant DefArt NumSg) (UseN house_N))) (weekdayNextAdv monday_Weekday)) ready_VP)
-AllRus: многие из данного дома в следующий понедельник будет готовым
-
 > l UttS (AdvS (AdAdv quite_Adv (ComparAdvAdj less_CAdv narrow_A everything_NP)) (UseCl (TTAnt TPres ASimul) PNeg (ExistNP something_NP)))
 довольно менее узко , чем всё не существовает что &+ -то
 
@@ -19,9 +15,6 @@ LangRus: расстояние от вашего брат всего быть г�
 AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (CleftNP (PredetNP not_Predet (CountNP somePl_Det everybody_NP)) (UseRCl (TTAnt TFut AAnter) PNeg (RelVP IdRP ready_VP)))
 AllRus: не некоторые из всех не это , которые не будут готовыми
 
-> l (AdvS (weekdayNextAdv saturday_Weekday) (UseCl (TTAnt TPres AAnter) PNeg (GenericCl UseCopula)))
-в следующий суббота не являешься
-
 > l PrepNP above_Prep (UsePron i_Pron)
 над мной
 (should be: надо мной)
@@ -32,22 +25,7 @@ AllRus: не некоторые из всех не это , которые не 
 AllRusAbs: UttImpPol PPos (ImpVP (ComplSlash (Slash2V3 add_V3 everybody_NP) (PPartNP somebody_NP drink_V2)))
 AllRus: складываем &+ те всех в кого &+ -то пит
 
-** UseCl (TTAnt TPres ASimul) PPos (ExistNP (DetCN (DetQuant this_Quant (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot1 ∅))))))) (UseN worm_N)))
-LangRus-NEW> существуют двадцать эти червей
-
-** UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a like_V2) (DetCN (DetQuant this_Quant (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot1 ∅))))))) (UseN woman_N))))
-LangRus-NEW> нравишься двадцати этим женщин
-
-** UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a speak_V2) (DetCN (DetQuant this_Quant (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 ∅)))))))) (UseN person_N))))
-LangRus-NEW> говоришь на двух этих лица
-
 ** UseCl (TTAnt TPres ASimul) PPos (ExistNP (CountNP someSg_Det (DetCN (DetQuant this_Quant (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot1 ∅))))))) (UseN worm_N))))
-LangRus-NEW> существуют некоторое из двадцати этих червей
-
-Lang: AdvVP (ExtAdvVP (ComplVV must_VV (AdVVP always_AdV scared_VP)) (weekdayNextAdv tuesday_Weekday)) here7from_Adv
-LangRus: должно всегда бояться , в следующую вторник , отсюда
-
-> l AdvVP (ComplSlash (SlashV2V beg_V2V ready_VP) (ExtAdvNP everybody_NP there7from_Adv)) already_Adv
-просить быть готовыми всех , оттуда , уже
+LangRus-NEW> некоторое из этих двадцати червей существует
 
 Inherent number for nouns. eg, for geonames or pluralia tantum.
