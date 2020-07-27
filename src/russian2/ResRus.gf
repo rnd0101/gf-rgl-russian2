@@ -1245,11 +1245,7 @@ oper
 param DForm = unit | teen | ten | hund ;
 param Place = attr | indep ;
 oper
-  mille : NumSize => Str = table {
-    Num1 => "тысяча" ;
-    Num2_4 => "тысячи" ;   -- NumAll ?
-    _     => "тысяч"
-    } ;
+  mille : Noun = nounFormsNoun ((guessNounForms "тысяча") ** {sins=variants {"тысячей" ; "тысячью"}});
 
 ---------------
 -- Adverbs -- Наречия
