@@ -1,6 +1,6 @@
 --# -path=.:../abstract:../common:../../prelude
 
-concrete IdiomRus of Idiom = CatRus ** open Prelude, TenseRus, ResRus, Coordination, MorphoRus in {
+concrete IdiomRus of Idiom = CatRus ** open Prelude, ParamX, TenseRus, ResRus, Coordination, MorphoRus in {
 flags optimize=all_subs ;  coding=utf8 ;
 
 lin
@@ -49,7 +49,7 @@ lin
   ImpPl1 vp =
     let a = Ag GPl P1 in
     let pol = PPos in
-    let parts = verbAgr vp.verb Infinitive Pres a pol.p in
+    let parts = verbAgr vp.verb Infinitive Pres a pol.p in    -- colloquial, should be Fut, but then present fails...
     let p1 = "давайте" in {
       s = p1 ++ pol.s ++ vp.adv ! a ++ parts.p2 ++ vp.dep ++ vp.compl ! a
       } ;
