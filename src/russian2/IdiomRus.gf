@@ -12,8 +12,8 @@ lin
 
   -- : NP -> RS -> Cl ; -- it is I who did it
   CleftNP np rs = {
-    subj=np.s ! Nom ;
-    adv="это" ;
+    subj="это" ++ np.s ! Nom ;
+    adv=[];
     verb=nullVerb ;   -- ???
     dep=[] ;
     compl=embedInCommas (rs.s ! agrGenNum np.a ! Animate ! Nom) ;  -- TODO: here or in subj???
@@ -21,7 +21,7 @@ lin
     } ;
   -- : Adv -> S -> Cl ; -- it is here she slept
   CleftAdv adv s = {
-    subj="это" ++ adv.s ++ comma ++ s.s ! Ind ;  -- TODO: Check what is expressed by this? Why comma?
+    subj="это" ++ adv.s ++ s.s ! Ind ;  -- TODO: Check what is expressed by this? Why comma?
     adv=[] ;
     verb=nullVerb ;   -- ???
     dep=[] ;

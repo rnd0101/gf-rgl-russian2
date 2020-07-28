@@ -10,4 +10,5 @@ gt UseCl (TTAnt TPres ASimul) PPos (GenericCl (UseComp (CompCN (RelCN (UseN worm
 gt UseQCl (TTAnt TPres ASimul) PPos (QuestSlash whatSg_IP (SlashVP (UsePN john_PN) (VPSlashPrep (UseV ?) for_Prep)))  | l -treebank
 gt RelCN (UseN apple_N) (UseRCl ? PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN))))) | l -treebank
 gt RelCN (UseN apple_N) (UseRCl (TTAnt TCond AAnter) PPos (RelSlash IdRP (SlashVP (MassNP (RelCN (UseN bird_N) (UseRCl (TTAnt TPres ASimul) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 send_V3 (UsePN paris_PN))))))) (Slash3V3 add_V3 (UsePN paris_PN))))) | l -treebank
+gt UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a like_V2) (MassNP (RelCN (UseN worm_N) (UseRCl (TTAnt TPres ASimul) PPos (RelVP IdRP thirsty_VP)))))) | l -treebank
 
