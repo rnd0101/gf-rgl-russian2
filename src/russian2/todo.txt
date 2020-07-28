@@ -12,6 +12,10 @@ LangRus: оттуда все это , через польского перед �
 AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (CleftNP (PredetNP not_Predet (CountNP somePl_Det everybody_NP)) (UseRCl (TTAnt TFut AAnter) PNeg (RelVP IdRP ready_VP)))
 AllRus: не некоторые из всех не это , не которые будут готовыми
 
+Lang: RelCN (UseN apple_N) (UseRCl (TTAnt TPast AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
+LangRus: яблоко , которое Иван складыва &+ ло в Париж
+
+
 > l PrepNP above_Prep (UsePron i_Pron)
 над мной
 (should be: надо мной)
@@ -23,13 +27,17 @@ AllRus: складываем &+ те всех в кого &+ -то пит
 
 Inherent number for nouns. eg, for geonames or pluralia tantum.
 
-** UseCl (TTAnt TPres ASimul) PPos (CleftNP (UsePron she_Pron) (UseRCl (TTAnt TPres ASimul) PPos (RelSlash ∅ (SlashVP somebody_NP (SlashV2a write_V2)))))
+** UseCl (TTAnt TPres ASimul) PPos (CleftNP (UsePron she_Pron) (UseRCl (TTAnt TCond ASimul) PPos (RelSlash IdRP (SlashVP somebody_NP (SlashV2a write_V2)))))
 LangRus-NEW> она это , которую кто &+ -то пишет
 LangRus-OLD> это она , которую кто-то пишет
 
 ** UseCl (TTAnt TPres ASimul) PPos (CleftNP (UsePron she_Pron) (UseRCl (TTAnt TPres ASimul) PPos (RelVP (FunRP with_Prep somebody_NP IdRP) thirsty_VP)))
 LangRus-NEW> она это, кто-то с которой хочет пить
 LangRus-OLD> это она , кто-то с которой хочет пить
+
+> l UseCl (TTAnt TPres ASimul) PPos (CleftNP (UsePron she_Pron) (UseRCl (TTAnt TPast ASimul) PPos (RelVP (FunRP with_Prep somebody_NP IdRP) thirsty_VP)))
+она это , кто &+ -то с которой хоте &+ ла пить
+
 
 ** UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a like_V2) (MassNP (RelCN (UseN worm_N) (UseRCl (TTAnt TPres ASimul) PPos (RelVP IdRP thirsty_VP))))))
 LangRus-NEW> нравишься червю, которому хочет пить
@@ -48,6 +56,3 @@ UseCl (TTAnt TPres ASimul) PPos (GenericCl (ReflVP (SlashV2A paint_V2A (PositA h
 LangRus-NEW> рисуешь горячую неё
 LangRus-OLD> ты рисуешь горячим её
 
-** UseCl (TTAnt TPres ASimul) PPos (GenericCl (UseComp (CompCN (RelCN (UseN worm_N) (UseRCl (TTAnt TPres ASimul) PPos (RelVP IdRP thirsty_VP))))))
-LangRus-NEW> являешься червем, которым хочет пить
-LangRus-OLD> ты черв , который хочет пить
