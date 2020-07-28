@@ -14,18 +14,18 @@ lin
   CleftNP np rs = {
     subj="это" ++ np.s ! Nom ;
     adv=[];
-    verb=nullVerb ;   -- ???
+    verb=copulaEll ;   -- ???
     dep=[] ;
     compl=embedInCommas (rs.s ! agrGenNum np.a ! Animate ! Nom) ;  -- TODO: here or in subj???
     a=np.a
     } ;
   -- : Adv -> S -> Cl ; -- it is here she slept
   CleftAdv adv s = {
-    subj="это" ++ adv.s ++ s.s ! Ind ;  -- TODO: Check what is expressed by this? Why comma?
-    adv=[] ;
+    subj="это" ;
+    adv=adv.s ;
     verb=nullVerb ;   -- ???
     dep=[] ;
-    compl=[] ;
+    compl=s.s ! Ind ;
     a=Ag (GSg Neut) P3
     } ;
 
