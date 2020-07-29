@@ -25,7 +25,7 @@ lin
   UseRCl temp pol rcl = {
     s = \\gn,anim,cas =>
       let parts = R.verbAgr rcl.verb Ind temp.t (genNumAgrP3 gn) pol.p in
-      temp.s ++ parts.p1 ++ pol.s ++ rcl.subj ! gn ! anim ! Nom ++ rcl.adv ! (genNumAgrP3 gn) ++ parts.p2 ++ rcl.dep ++ rcl.compl ! (genNumAgrP3 gn)
+      temp.s ++ parts.p1 ++ rcl.subj ! gn ! anim ! Nom ++ rcl.adv ! (genNumAgrP3 gn) ++ pol.s ++ parts.p2 ++ rcl.dep ++ rcl.compl ! (genNumAgrP3 gn)
     } ;
 
   -- : Temp -> Pol -> ClSlash -> SSlash ; -- (that) she had not seen
