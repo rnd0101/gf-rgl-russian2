@@ -1,3 +1,22 @@
+AllRusAbs: what_name_QCl (UsePron he_Pron)
+AllRus: как звать его
+AllRusAbs: what_name_QCl (UsePron i_Pron)
+AllRus: как звать меня
+AllRusAbs: what_name_QCl (UsePron it_Pron)
+AllRus: как звать его
+AllRusAbs: what_name_QCl (UsePron she_Pron)
+AllRus: как звать её
+AllRusAbs: what_name_QCl (UsePron they_Pron)
+AllRus: как звать их
+AllRusAbs: what_name_QCl (UsePron we_Pron)
+AllRus: как звать нас
+AllRusAbs: what_name_QCl (UsePron youPl_Pron)
+AllRus: как звать вас
+AllRusAbs: what_name_QCl (UsePron youPol_Pron)
+AllRus: как звать вас
+AllRusAbs: what_name_QCl (UsePron youSg_Pron)
+AllRus: как звать тебя
+
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a eat_V2) (MassNP (UseN apple_N))))
 AllRus: он кушал яблоко
 
@@ -104,7 +123,7 @@ AllRus: для чего Иван играет
 AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestSlash whatSg_IP (SlashVP (UsePN john_PN) (VPSlashPrep (UseV rain_V0) for_Prep)))
 AllRus: для чего Иван дождит
 AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestSlash whatSg_IP (SlashVP (UsePN john_PN) (VPSlashPrep (UseV run_V) for_Prep)))
-AllRus: для чего Иван бегет
+AllRus: для чего Иван бежит
 AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestSlash whatSg_IP (SlashVP (UsePN john_PN) (VPSlashPrep (UseV sew_V) for_Prep)))
 AllRus: для чего Иван шьёт
 AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestSlash whatSg_IP (SlashVP (UsePN john_PN) (VPSlashPrep (UseV sing_V) for_Prep)))
@@ -137,24 +156,24 @@ AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestSlash whatSg_IP (SlashVP (UseP
 AllRus: для чего Иван гуляет
 
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TCond AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
-AllRus: яблоко , которое Иван складывал бы в Париж
+AllRus: яблоко , которое Иван складыва &+ ло бы в Париж
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TCond ASimul) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
-AllRus: яблоко , которое Иван складывал бы в Париж
+AllRus: яблоко , которое Иван складыва &+ ло бы в Париж
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TFut AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
 AllRus: яблоко , которое Иван будет складывать в Париж
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TFut ASimul) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
 AllRus: яблоко , которое Иван будет складывать в Париж
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TPast AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
-AllRus: яблоко , которое Иван складывал в Париж
+AllRus: яблоко , которое Иван складыва &+ ло в Париж
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TPast ASimul) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
-AllRus: яблоко , которое Иван складывал в Париж
+AllRus: яблоко , которое Иван складыва &+ ло в Париж
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TPres AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
 AllRus: яблоко , которое Иван складывает в Париж
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TPres ASimul) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
 AllRus: яблоко , которое Иван складывает в Париж
 
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TCond AAnter) PPos (RelSlash IdRP (SlashVP (MassNP (RelCN (UseN bird_N) (UseRCl (TTAnt TPres ASimul) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 send_V3 (UsePN paris_PN))))))) (Slash3V3 add_V3 (UsePN paris_PN)))))
-AllRus: яблоко , которое птица , которую Иван посылает Парижу , складыва &+ ла бы в Париж
+AllRus: яблоко , которое птица , которую Иван посылает Парижу , складыва &+ ло бы в Париж
 
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a like_V2) (MassNP (RelCN (UseN worm_N) (UseRCl (TTAnt TPres ASimul) PPos (RelVP IdRP thirsty_VP))))))
 AllRus: нравишь &+ ся червю , который хочет пить
@@ -164,4 +183,264 @@ AllRus: перед которым это сейчас все не являютс
 
 AllRusAbs: UseRCl (TTAnt TCond ASimul) PPos (RelSlash IdRP (SlashPrep (CleftAdv now_Adv (ConjS and_Conj (BaseS (UseCl (TTAnt TPres ASimul) PNeg (PredVP everybody_NP UseCopula)) (UseCl (TTAnt TPast ASimul) PPos (ImpersCl hungry_VP))))) after_Prep))
 AllRus: после которого это сейчас все не являются и бы &+ ло голодно
+
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron he_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
+AllRus: это он , который был готовым
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron i_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
+AllRus: это я , который был готовым
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron it_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
+AllRus: это оно , которое бы &+ ло готовым
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron she_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
+AllRus: это она , которая бы &+ ла готовой
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron they_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
+AllRus: это они , которые бы &+ ли готовыми
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron we_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
+AllRus: это мы , которые бы &+ ли готовыми
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youPl_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
+AllRus: это вы , которые бы &+ ли готовыми
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youPol_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
+AllRus: это вы , которые бы &+ ли готовыми
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youSg_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
+AllRus: это ты , который был готовым
+
+AllRusAbs: ComplA2 easy_A2V (UsePron she_Pron)
+AllRus: лёгкого для н &+ её
+AllRusAbs: ComplA2 married_A2 (UsePron she_Pron)
+AllRus: замужем за н &+ ей
+
+AllRusAbs: ReflA2 easy_A2V
+AllRus: лёгкий для себя
+AllRusAbs: ReflA2 married_A2
+AllRus: замужем за собой
+
+AllRusAbs: EmbedQS (UseQCl (TTAnt TCond ASimul) PNeg (ExistIP whatSg_IP))
+AllRus: что не существова &+ ло бы
+AllRusAbs: EmbedQS (UseQCl (TTAnt TFut ASimul) PNeg (ExistIP whatSg_IP))
+AllRus: что не будет существовать
+AllRusAbs: EmbedQS (UseQCl (TTAnt TPast ASimul) PNeg (ExistIP whatSg_IP))
+AllRus: что не существова &+ ло
+AllRusAbs: EmbedQS (UseQCl (TTAnt TPres ASimul) PNeg (ExistIP whatSg_IP))
+AllRus: что не существует
+
+AllRusAbs: timeunitRange (NumDigits (IDig D_0)) (NumDigits (IDig D_0)) second_Timeunit
+AllRus: от 0 до 0 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_0)) (NumDigits (IDig D_1)) second_Timeunit
+AllRus: от 0 до 1 секунды
+AllRusAbs: timeunitRange (NumDigits (IDig D_0)) (NumDigits (IDig D_2)) second_Timeunit
+AllRus: от 0 до 2 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_0)) (NumDigits (IDig D_3)) second_Timeunit
+AllRus: от 0 до 3 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_0)) (NumDigits (IDig D_4)) second_Timeunit
+AllRus: от 0 до 4 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_0)) (NumDigits (IDig D_5)) second_Timeunit
+AllRus: от 0 до 5 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_0)) (NumDigits (IDig D_6)) second_Timeunit
+AllRus: от 0 до 6 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_0)) (NumDigits (IDig D_7)) second_Timeunit
+AllRus: от 0 до 7 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_0)) (NumDigits (IDig D_8)) second_Timeunit
+AllRus: от 0 до 8 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_0)) (NumDigits (IDig D_9)) second_Timeunit
+AllRus: от 0 до 9 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_1)) (NumDigits (IDig D_0)) second_Timeunit
+AllRus: от 1 до 0 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_1)) (NumDigits (IDig D_1)) second_Timeunit
+AllRus: от 1 до 1 секунды
+AllRusAbs: timeunitRange (NumDigits (IDig D_1)) (NumDigits (IDig D_2)) second_Timeunit
+AllRus: от 1 до 2 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_1)) (NumDigits (IDig D_3)) second_Timeunit
+AllRus: от 1 до 3 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_1)) (NumDigits (IDig D_4)) second_Timeunit
+AllRus: от 1 до 4 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_1)) (NumDigits (IDig D_5)) second_Timeunit
+AllRus: от 1 до 5 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_1)) (NumDigits (IDig D_6)) second_Timeunit
+AllRus: от 1 до 6 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_1)) (NumDigits (IDig D_7)) second_Timeunit
+AllRus: от 1 до 7 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_1)) (NumDigits (IDig D_8)) second_Timeunit
+AllRus: от 1 до 8 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_1)) (NumDigits (IDig D_9)) second_Timeunit
+AllRus: от 1 до 9 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_2)) (NumDigits (IDig D_0)) second_Timeunit
+AllRus: от 2 до 0 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_2)) (NumDigits (IDig D_1)) second_Timeunit
+AllRus: от 2 до 1 секунды
+AllRusAbs: timeunitRange (NumDigits (IDig D_2)) (NumDigits (IDig D_2)) second_Timeunit
+AllRus: от 2 до 2 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_2)) (NumDigits (IDig D_3)) second_Timeunit
+AllRus: от 2 до 3 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_2)) (NumDigits (IDig D_4)) second_Timeunit
+AllRus: от 2 до 4 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_2)) (NumDigits (IDig D_5)) second_Timeunit
+AllRus: от 2 до 5 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_2)) (NumDigits (IDig D_6)) second_Timeunit
+AllRus: от 2 до 6 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_2)) (NumDigits (IDig D_7)) second_Timeunit
+AllRus: от 2 до 7 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_2)) (NumDigits (IDig D_8)) second_Timeunit
+AllRus: от 2 до 8 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_2)) (NumDigits (IDig D_9)) second_Timeunit
+AllRus: от 2 до 9 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_3)) (NumDigits (IDig D_0)) second_Timeunit
+AllRus: от 3 до 0 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_3)) (NumDigits (IDig D_1)) second_Timeunit
+AllRus: от 3 до 1 секунды
+AllRusAbs: timeunitRange (NumDigits (IDig D_3)) (NumDigits (IDig D_2)) second_Timeunit
+AllRus: от 3 до 2 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_3)) (NumDigits (IDig D_3)) second_Timeunit
+AllRus: от 3 до 3 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_3)) (NumDigits (IDig D_4)) second_Timeunit
+AllRus: от 3 до 4 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_3)) (NumDigits (IDig D_5)) second_Timeunit
+AllRus: от 3 до 5 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_3)) (NumDigits (IDig D_6)) second_Timeunit
+AllRus: от 3 до 6 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_3)) (NumDigits (IDig D_7)) second_Timeunit
+AllRus: от 3 до 7 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_3)) (NumDigits (IDig D_8)) second_Timeunit
+AllRus: от 3 до 8 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_3)) (NumDigits (IDig D_9)) second_Timeunit
+AllRus: от 3 до 9 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_4)) (NumDigits (IDig D_0)) second_Timeunit
+AllRus: от 4 до 0 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_4)) (NumDigits (IDig D_1)) second_Timeunit
+AllRus: от 4 до 1 секунды
+AllRusAbs: timeunitRange (NumDigits (IDig D_4)) (NumDigits (IDig D_2)) second_Timeunit
+AllRus: от 4 до 2 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_4)) (NumDigits (IDig D_3)) second_Timeunit
+AllRus: от 4 до 3 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_4)) (NumDigits (IDig D_4)) second_Timeunit
+AllRus: от 4 до 4 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_4)) (NumDigits (IDig D_5)) second_Timeunit
+AllRus: от 4 до 5 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_4)) (NumDigits (IDig D_6)) second_Timeunit
+AllRus: от 4 до 6 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_4)) (NumDigits (IDig D_7)) second_Timeunit
+AllRus: от 4 до 7 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_4)) (NumDigits (IDig D_8)) second_Timeunit
+AllRus: от 4 до 8 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_4)) (NumDigits (IDig D_9)) second_Timeunit
+AllRus: от 4 до 9 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_5)) (NumDigits (IDig D_0)) second_Timeunit
+AllRus: от 5 до 0 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_5)) (NumDigits (IDig D_1)) second_Timeunit
+AllRus: от 5 до 1 секунды
+AllRusAbs: timeunitRange (NumDigits (IDig D_5)) (NumDigits (IDig D_2)) second_Timeunit
+AllRus: от 5 до 2 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_5)) (NumDigits (IDig D_3)) second_Timeunit
+AllRus: от 5 до 3 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_5)) (NumDigits (IDig D_4)) second_Timeunit
+AllRus: от 5 до 4 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_5)) (NumDigits (IDig D_5)) second_Timeunit
+AllRus: от 5 до 5 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_5)) (NumDigits (IDig D_6)) second_Timeunit
+AllRus: от 5 до 6 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_5)) (NumDigits (IDig D_7)) second_Timeunit
+AllRus: от 5 до 7 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_5)) (NumDigits (IDig D_8)) second_Timeunit
+AllRus: от 5 до 8 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_5)) (NumDigits (IDig D_9)) second_Timeunit
+AllRus: от 5 до 9 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_6)) (NumDigits (IDig D_0)) second_Timeunit
+AllRus: от 6 до 0 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_6)) (NumDigits (IDig D_1)) second_Timeunit
+AllRus: от 6 до 1 секунды
+AllRusAbs: timeunitRange (NumDigits (IDig D_6)) (NumDigits (IDig D_2)) second_Timeunit
+AllRus: от 6 до 2 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_6)) (NumDigits (IDig D_3)) second_Timeunit
+AllRus: от 6 до 3 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_6)) (NumDigits (IDig D_4)) second_Timeunit
+AllRus: от 6 до 4 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_6)) (NumDigits (IDig D_5)) second_Timeunit
+AllRus: от 6 до 5 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_6)) (NumDigits (IDig D_6)) second_Timeunit
+AllRus: от 6 до 6 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_6)) (NumDigits (IDig D_7)) second_Timeunit
+AllRus: от 6 до 7 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_6)) (NumDigits (IDig D_8)) second_Timeunit
+AllRus: от 6 до 8 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_6)) (NumDigits (IDig D_9)) second_Timeunit
+AllRus: от 6 до 9 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_7)) (NumDigits (IDig D_0)) second_Timeunit
+AllRus: от 7 до 0 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_7)) (NumDigits (IDig D_1)) second_Timeunit
+AllRus: от 7 до 1 секунды
+AllRusAbs: timeunitRange (NumDigits (IDig D_7)) (NumDigits (IDig D_2)) second_Timeunit
+AllRus: от 7 до 2 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_7)) (NumDigits (IDig D_3)) second_Timeunit
+AllRus: от 7 до 3 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_7)) (NumDigits (IDig D_4)) second_Timeunit
+AllRus: от 7 до 4 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_7)) (NumDigits (IDig D_5)) second_Timeunit
+AllRus: от 7 до 5 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_7)) (NumDigits (IDig D_6)) second_Timeunit
+AllRus: от 7 до 6 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_7)) (NumDigits (IDig D_7)) second_Timeunit
+AllRus: от 7 до 7 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_7)) (NumDigits (IDig D_8)) second_Timeunit
+AllRus: от 7 до 8 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_7)) (NumDigits (IDig D_9)) second_Timeunit
+AllRus: от 7 до 9 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_8)) (NumDigits (IDig D_0)) second_Timeunit
+AllRus: от 8 до 0 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_8)) (NumDigits (IDig D_1)) second_Timeunit
+AllRus: от 8 до 1 секунды
+AllRusAbs: timeunitRange (NumDigits (IDig D_8)) (NumDigits (IDig D_2)) second_Timeunit
+AllRus: от 8 до 2 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_8)) (NumDigits (IDig D_3)) second_Timeunit
+AllRus: от 8 до 3 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_8)) (NumDigits (IDig D_4)) second_Timeunit
+AllRus: от 8 до 4 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_8)) (NumDigits (IDig D_5)) second_Timeunit
+AllRus: от 8 до 5 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_8)) (NumDigits (IDig D_6)) second_Timeunit
+AllRus: от 8 до 6 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_8)) (NumDigits (IDig D_7)) second_Timeunit
+AllRus: от 8 до 7 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_8)) (NumDigits (IDig D_8)) second_Timeunit
+AllRus: от 8 до 8 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_8)) (NumDigits (IDig D_9)) second_Timeunit
+AllRus: от 8 до 9 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_9)) (NumDigits (IDig D_0)) second_Timeunit
+AllRus: от 9 до 0 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_9)) (NumDigits (IDig D_1)) second_Timeunit
+AllRus: от 9 до 1 секунды
+AllRusAbs: timeunitRange (NumDigits (IDig D_9)) (NumDigits (IDig D_2)) second_Timeunit
+AllRus: от 9 до 2 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_9)) (NumDigits (IDig D_3)) second_Timeunit
+AllRus: от 9 до 3 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_9)) (NumDigits (IDig D_4)) second_Timeunit
+AllRus: от 9 до 4 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_9)) (NumDigits (IDig D_5)) second_Timeunit
+AllRus: от 9 до 5 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_9)) (NumDigits (IDig D_6)) second_Timeunit
+AllRus: от 9 до 6 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_9)) (NumDigits (IDig D_7)) second_Timeunit
+AllRus: от 9 до 7 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_9)) (NumDigits (IDig D_8)) second_Timeunit
+AllRus: от 9 до 8 секунд
+AllRusAbs: timeunitRange (NumDigits (IDig D_9)) (NumDigits (IDig D_9)) second_Timeunit
+AllRus: от 9 до 9 секунд
+
+AllRusAbs: timeunitAdv (NumDigits (IDig D_0)) second_Timeunit
+AllRus: 0 секунд
+AllRusAbs: timeunitAdv (NumDigits (IDig D_1)) second_Timeunit
+AllRus: 1 секунда
+AllRusAbs: timeunitAdv (NumDigits (IDig D_2)) second_Timeunit
+AllRus: 2 секунды
+AllRusAbs: timeunitAdv (NumDigits (IDig D_3)) second_Timeunit
+AllRus: 3 секунды
+AllRusAbs: timeunitAdv (NumDigits (IDig D_4)) second_Timeunit
+AllRus: 4 секунды
+AllRusAbs: timeunitAdv (NumDigits (IDig D_5)) second_Timeunit
+AllRus: 5 секунд
+AllRusAbs: timeunitAdv (NumDigits (IDig D_6)) second_Timeunit
+AllRus: 6 секунд
+AllRusAbs: timeunitAdv (NumDigits (IDig D_7)) second_Timeunit
+AllRus: 7 секунд
+AllRusAbs: timeunitAdv (NumDigits (IDig D_8)) second_Timeunit
+AllRus: 8 секунд
+AllRusAbs: timeunitAdv (NumDigits (IDig D_9)) second_Timeunit
+AllRus: 9 секунд
 
