@@ -246,7 +246,7 @@ lin
   rub_V2 = mkV2 (mkV imperfective "тереть" "тру" "трёт");
   rubber_N = mkN "резина" ;
   rule_N = mkN "правило" ;
-  run_V = mkV imperfective intransitive "бегать" "бегу";
+  run_V = mkV imperfective intransitive "бегать" "бегу" "бежит" ;
   salt_N = mkN "соль" ;
   sand_N = (mkNplus (mkN "песок"  masculine inanimate "3*b")) ** {sptv="песку"} ;
   say_VS = mkV imperfective "говорить" "говорю" "говорит" ;

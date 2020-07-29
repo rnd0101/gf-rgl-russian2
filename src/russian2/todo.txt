@@ -45,3 +45,12 @@ UseCl (TTAnt TPres ASimul) PPos (GenericCl (ReflVP (SlashV2A paint_V2A (PositA h
 LangRus-NEW> рисуешь горячую неё
 LangRus-OLD> ты рисуешь горячим её
 
+> cc mkUtt (mkCN (mkCN old_A man_N) (mkRS (mkRCl which_RP she_NP love_V2)) )
+"старый" ++ "человек" ++ "," ++ "который" ++ "она" ++ "любит" ...
+
+      mkRCl : RP -> NP -> V2 -> RCl        -- who does she love ~ RelCN
+      = \ip,np,v -> RelSlash ip (SlashVP np (SlashV2a v)) ; --%
+
+> gt RelCN (AdjCN (PositA old_A) (UseN man_N))  (UseRCl (TTAnt TCond AAnter) PPos  (RelSlash IdRP (SlashVP (UsePN paris_PN) (SlashV2a ?)) )) | l -treebank
+AllRusAbs: RelCN (AdjCN (PositA old_A) (UseN man_N)) (UseRCl (TTAnt TCond AAnter) PPos (RelSlash IdRP (SlashVP (UsePN paris_PN) (SlashV2a bite_V2))))
+AllRus: старый человек , который Париж кусал бы
