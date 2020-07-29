@@ -13,4 +13,4 @@ gt RelCN (UseN apple_N) (UseRCl (TTAnt TCond AAnter) PPos (RelSlash IdRP (SlashV
 gt UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a like_V2) (MassNP (RelCN (UseN worm_N) (UseRCl (TTAnt TPres ASimul) PPos (RelVP IdRP thirsty_VP)))))) | l -treebank
 gt RelSlash IdRP (SlashPrep (CleftAdv now_Adv (ConjS and_Conj (BaseS (UseCl (TTAnt TPres ASimul) PNeg (PredVP everybody_NP UseCopula)) (UseCl (TTAnt TPast ASimul) PPos (ImpersCl hungry_VP))))) in8front_Prep) | l -treebank
 gt UseRCl (TTAnt TCond ASimul) PPos ( RelSlash IdRP (  SlashPrep ( CleftAdv now_Adv ( ConjS and_Conj (BaseS (UseCl (TTAnt TPres ASimul) PNeg (PredVP everybody_NP UseCopula)) (UseCl (TTAnt TPast ASimul) PPos (ImpersCl hungry_VP)))  )  ) after_Prep  ) ) |l -treebank
-
+gt UseCl (TTAnt TPres AAnter) PPos (CleftNP  (UsePron ?)  (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP))) | l -treebank
