@@ -52,8 +52,8 @@ lin
   camera_N = mkN "фотоаппарат" ;
   cap_N = mkN "чашка" ;
   car_N = mkN "машина" ;
-  carpet_N = mkN "ковёр" masculine inanimate "1b" ;
-  cat_N = mkN "кошка" feminine animate "1*a" ;
+  carpet_N = mkN "ковёр" masculine inanimate "1*b" ;
+  cat_N = mkN "кошка" feminine animate "3*a" ;
   ceiling_N = mkN "потолок" masculine inanimate "3*b";
   chair_N = (mkNplus (mkN "стул" masculine inanimate "1a")) ** {pnom="стулья";pgen="стульев";pdat="стульям";pacc="стулья";pins="стульями";pprep="стульях"} ;
   cheese_N = mkN "сыр" ;
@@ -80,7 +80,7 @@ lin
   dirty_A = mkA "грязный" ;
   distance_N3 = mkN3 (mkN "расстояние") from_Prep on_to_Prep ;
   do_V2 = mkV2 (mkV imperfective "делать" "делаю");
-  doctor_N = mkN "доктор" masculine animate ;
+  doctor_N = mkN "доктор" masculine animate "1c(1)" ;
   dog_N = mkN "собака" feminine animate ;
   door_N = mkN "дверь" ;
   drink_V2 = mkV2 (mkV imperfective "пить" "пью" "пьёт");
@@ -111,7 +111,7 @@ lin
   float_V = mkV imperfective intransitive "плавать" "плаваю";
   floor_N = mkN "пол" ;
   flow_V = mkV imperfective intransitive "течь" "теку" "течёт";
-  flower_N = mkN "цветок";
+  flower_N = mkN "цветок" masculine inanimate "3*b";
   fly_V = mkV imperfective intransitive "летать" "летаю" ;
   fog_N = mkN "туман" ;
   foot_N = mkN "ступня" feminine inanimate "2*b" ;
