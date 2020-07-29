@@ -29,7 +29,3 @@ AllRusAbs> l UseCl (TTAnt TPres ASimul) PPos (ImpersCl (ReflVP (SlashV2A paint_V
 
 AllRusAbs> p "рисуешь горячий себя"
 UseCl (TTAnt TPres ASimul) PPos (GenericCl (ReflVP (SlashV2A paint_V2A (PositA hot_A))))
-
-** UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2A paint_V2A (PositA hot_A)) (UsePron she_Pron)))
-LangRus-NEW> рисуешь горячую неё
-LangRus-OLD> ты рисуешь горячим её
