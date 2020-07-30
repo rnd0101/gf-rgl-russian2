@@ -1,24 +1,51 @@
-AllRusAbs: what_name_QCl (UsePron he_Pron)
-AllRus: как звать его
-AllRusAbs: what_name_QCl (UsePron i_Pron)
-AllRus: как звать меня
-AllRusAbs: what_name_QCl (UsePron it_Pron)
-AllRus: как звать его
-AllRusAbs: what_name_QCl (UsePron she_Pron)
-AllRus: как звать её
-AllRusAbs: what_name_QCl (UsePron they_Pron)
-AllRus: как звать их
-AllRusAbs: what_name_QCl (UsePron we_Pron)
-AllRus: как звать нас
-AllRusAbs: what_name_QCl (UsePron youPl_Pron)
-AllRus: как звать вас
-AllRusAbs: what_name_QCl (UsePron youPol_Pron)
-AllRus: как звать вас
-AllRusAbs: what_name_QCl (UsePron youSg_Pron)
-AllRus: как звать тебя
+command not parsed: gt what_name_QCl (UsePron ?) | l -
+AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
+AllRus: не его имя бы &+ ло бы Иван
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
+AllRus: его имя бы &+ ло бы Иван
+AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
+AllRus: не его имя будет Иван
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
+AllRus: его имя будет Иван
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
+AllRus: не его имя бы &+ ло Иван
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
+AllRus: его имя бы &+ ло Иван
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
+AllRus: не его имя Иван
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
+AllRus: его имя Иван
+
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (have_name_Cl (UsePron he_Pron) (PredetNP not_Predet (UsePN john_PN)))
+AllRus: его имя бы &+ ло бы не Иван
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (have_name_Cl (UsePron he_Pron) (PredetNP not_Predet (UsePN john_PN)))
+AllRus: его имя будет не Иван
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (have_name_Cl (UsePron he_Pron) (PredetNP not_Predet (UsePN john_PN)))
+AllRus: его имя бы &+ ло не Иван
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (have_name_Cl (UsePron he_Pron) (PredetNP not_Predet (UsePN john_PN)))
+AllRus: его имя не Иван
 
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a eat_V2) (MassNP (UseN apple_N))))
 AllRus: он кушал яблоко
+
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (SelfAdVVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: он сам хотел быть усталым в сентябре
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron i_Pron) (SelfAdVVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: я сам хотел быть усталым в сентябре
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron it_Pron) (SelfAdVVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: оно само хоте &+ ло быть усталым в сентябре
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron she_Pron) (SelfAdVVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: она сама хоте &+ ла быть усталой в сентябре
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron they_Pron) (SelfAdVVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: они сами хоте &+ ли быть усталыми в сентябре
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron we_Pron) (SelfAdVVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: мы сами хоте &+ ли быть усталыми в сентябре
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPl_Pron) (SelfAdVVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: вы сами хоте &+ ли быть усталыми в сентябре
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPol_Pron) (SelfAdVVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: вы сами хоте &+ ли быть усталыми в сентябре
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youSg_Pron) (SelfAdVVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: ты сам хотел быть усталым в сентябре
 
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant IndefArt NumSg) (UseN apple_N))))
 AllRus: он кушал некое яблоко
@@ -38,6 +65,25 @@ AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPol_Pron) (ComplS
 AllRus: вы куша &+ ли некое яблоко
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youSg_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant IndefArt NumSg) (UseN apple_N))))
 AllRus: ты кушал некое яблоко
+
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (SelfAdvVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: он хотел быть усталым в сентябре сам
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron i_Pron) (SelfAdvVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: я хотел быть усталым в сентябре сам
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron it_Pron) (SelfAdvVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: оно хоте &+ ло быть усталым в сентябре само
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron she_Pron) (SelfAdvVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: она хоте &+ ла быть усталой в сентябре сама
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron they_Pron) (SelfAdvVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: они хоте &+ ли быть усталыми в сентябре сами
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron we_Pron) (SelfAdvVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: мы хоте &+ ли быть усталыми в сентябре сами
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPl_Pron) (SelfAdvVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: вы хоте &+ ли быть усталыми в сентябре сами
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPol_Pron) (SelfAdvVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: вы хоте &+ ли быть усталыми в сентябре сами
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youSg_Pron) (SelfAdvVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
+AllRus: ты хотел быть усталым в сентябре сам
 
 AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (PredVP (DetCN (DetQuant DefArt NumPl) (AdvCN (UseN apple_N) (weekdayNextAdv monday_Weekday))) ready_VP)
 AllRus: данные яблоки в следующий понедельник будут готовыми
@@ -443,4 +489,23 @@ AllRusAbs: timeunitAdv (NumDigits (IDig D_8)) second_Timeunit
 AllRus: 8 секунд
 AllRusAbs: timeunitAdv (NumDigits (IDig D_9)) second_Timeunit
 AllRus: 9 секунд
+
+AllRusAbs: SelfNP (UsePron he_Pron)
+AllRus: сам он
+AllRusAbs: SelfNP (UsePron i_Pron)
+AllRus: сам я
+AllRusAbs: SelfNP (UsePron it_Pron)
+AllRus: само оно
+AllRusAbs: SelfNP (UsePron she_Pron)
+AllRus: сама она
+AllRusAbs: SelfNP (UsePron they_Pron)
+AllRus: сами они
+AllRusAbs: SelfNP (UsePron we_Pron)
+AllRus: сами мы
+AllRusAbs: SelfNP (UsePron youPl_Pron)
+AllRus: сами вы
+AllRusAbs: SelfNP (UsePron youPol_Pron)
+AllRus: сами вы
+AllRusAbs: SelfNP (UsePron youSg_Pron)
+AllRus: сам ты
 
