@@ -2,7 +2,9 @@
 -- > gf --run AllRus.gf < test_rus_grammar.gfs
 gt what_name_QCl (UsePron ?) | l -treebank
 gt UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a eat_V2) (MassNP (UseN apple_N))))  | l -treebank
+gt UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron ?) (SelfAdVVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))  | l -treebank
 gt UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron ?) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant IndefArt NumSg) (UseN apple_N))))  | l -treebank
+gt UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron ?) (SelfAdvVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))  | l -treebank
 gt UseCl (TTAnt TFut ASimul) PPos (PredVP (DetCN (DetQuant DefArt NumPl) (AdvCN (UseN apple_N) (weekdayNextAdv monday_Weekday))) ready_VP) | l -treebank
 gt UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron ?) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (UseN apple_N)))) | l -treebank
 gt UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron ?) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_5)))) (UseN apple_N)))) | l -treebank
@@ -20,3 +22,4 @@ gt ReflA2 ? |l -treebank
 gt EmbedQS (UseQCl (TTAnt ? ASimul) PNeg (ExistIP whatSg_IP)) | l -treebank
 gt timeunitRange (NumDigits (IDig ?)) (NumDigits (IDig ?)) second_Timeunit | l -treebank
 gt timeunitAdv (NumDigits (IDig ?))  second_Timeunit | l -treebank
+gt SelfNP (UsePron ? ) |l -treebank
