@@ -249,23 +249,23 @@ AllRusAbs: UseRCl (TTAnt TCond ASimul) PPos (RelSlash IdRP (SlashPrep (CleftAdv 
 AllRus: после которого это сейчас все не являются и бы &+ ло голодно
 
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron he_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это он , который бы &+ ло готовым
+AllRus: это он , который был готовым
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron i_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это я , который бы &+ ло готовым
+AllRus: это я , который был готовым
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron it_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
 AllRus: это оно , которое бы &+ ло готовым
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron she_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это она , которая бы &+ ло готовой
+AllRus: это она , которая бы &+ ла готовой
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron they_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это они , которые бы &+ ло готовыми
+AllRus: это они , которые бы &+ ли готовыми
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron we_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это мы , которые бы &+ ло готовыми
+AllRus: это мы , которые бы &+ ли готовыми
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youPl_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это вы , которые бы &+ ло готовыми
+AllRus: это вы , которые бы &+ ли готовыми
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youPol_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это вы , которые бы &+ ло готовыми
+AllRus: это вы , которые бы &+ ли готовыми
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youSg_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это ты , который бы &+ ло готовым
+AllRus: это ты , который был готовым
 
 AllRusAbs: ComplA2 easy_A2V (UsePron she_Pron)
 AllRus: лёгкого для н &+ её
