@@ -33,10 +33,11 @@ oper
 
 lin
   -- : Card -> Timeunit -> Adv ; -- (for) three hours
-  timeunitAdv card time = P.mkAdv ((cardCN card time).s ! Nom) ;
+  timeunitAdv card time = P.mkAdv ((cardCN (lin Card card) time).s ! Nom) ;
 
   -- : Card -> Card -> Timeunit -> Adv ; -- (cats live) ten to twenty years
-  timeunitRange l u time = P.mkAdv (applyPrep from_Prep (cardCN l (ellNoun time)) ++ applyPrep EX.on_to_Prep (cardCN u time)) ;
+  timeunitRange l u time = P.mkAdv (applyPrep from_Prep (cardCN (lin Card l) (lin N (ellNoun time)))
+    ++ applyPrep EX.on_to_Prep (cardCN (lin Card u) time)) ;
 
   oneHour = mkHour "1" ;
   twoHour = mkHour "2" ;
