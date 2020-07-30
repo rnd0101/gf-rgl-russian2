@@ -1,4 +1,22 @@
-command not parsed: gt what_name_QCl (UsePron ?) | l -
+AllRusAbs: what_name_QCl (UsePron he_Pron)
+AllRus: как звать его
+AllRusAbs: what_name_QCl (UsePron i_Pron)
+AllRus: как звать меня
+AllRusAbs: what_name_QCl (UsePron it_Pron)
+AllRus: как звать его
+AllRusAbs: what_name_QCl (UsePron she_Pron)
+AllRus: как звать её
+AllRusAbs: what_name_QCl (UsePron they_Pron)
+AllRus: как звать их
+AllRusAbs: what_name_QCl (UsePron we_Pron)
+AllRus: как звать нас
+AllRusAbs: what_name_QCl (UsePron youPl_Pron)
+AllRus: как звать вас
+AllRusAbs: what_name_QCl (UsePron youPol_Pron)
+AllRus: как звать вас
+AllRusAbs: what_name_QCl (UsePron youSg_Pron)
+AllRus: как звать тебя
+
 AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
 AllRus: не его имя бы &+ ло бы Иван
 AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
@@ -202,24 +220,24 @@ AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestSlash whatSg_IP (SlashVP (UseP
 AllRus: для чего Иван гуляет
 
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TCond AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
-AllRus: яблоко , которое Иван складыва &+ ло бы в Париж
+AllRus: яблоко , которое Иван складывал бы в Париж
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TCond ASimul) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
-AllRus: яблоко , которое Иван складыва &+ ло бы в Париж
+AllRus: яблоко , которое Иван складывал бы в Париж
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TFut AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
 AllRus: яблоко , которое Иван будет складывать в Париж
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TFut ASimul) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
 AllRus: яблоко , которое Иван будет складывать в Париж
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TPast AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
-AllRus: яблоко , которое Иван складыва &+ ло в Париж
+AllRus: яблоко , которое Иван складывал в Париж
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TPast ASimul) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
-AllRus: яблоко , которое Иван складыва &+ ло в Париж
+AllRus: яблоко , которое Иван складывал в Париж
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TPres AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
 AllRus: яблоко , которое Иван складывает в Париж
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TPres ASimul) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 add_V3 (UsePN paris_PN)))))
 AllRus: яблоко , которое Иван складывает в Париж
 
 AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TCond AAnter) PPos (RelSlash IdRP (SlashVP (MassNP (RelCN (UseN bird_N) (UseRCl (TTAnt TPres ASimul) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 send_V3 (UsePN paris_PN))))))) (Slash3V3 add_V3 (UsePN paris_PN)))))
-AllRus: яблоко , которое птица , которую Иван посылает Парижу , складыва &+ ло бы в Париж
+AllRus: яблоко , которое птица , которую Иван посылает Парижу , складыва &+ ла бы в Париж
 
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a like_V2) (MassNP (RelCN (UseN worm_N) (UseRCl (TTAnt TPres ASimul) PPos (RelVP IdRP thirsty_VP))))))
 AllRus: нравишь &+ ся червю , который хочет пить
@@ -231,23 +249,23 @@ AllRusAbs: UseRCl (TTAnt TCond ASimul) PPos (RelSlash IdRP (SlashPrep (CleftAdv 
 AllRus: после которого это сейчас все не являются и бы &+ ло голодно
 
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron he_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это он , который был готовым
+AllRus: это он , который бы &+ ло готовым
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron i_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это я , который был готовым
+AllRus: это я , который бы &+ ло готовым
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron it_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
 AllRus: это оно , которое бы &+ ло готовым
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron she_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это она , которая бы &+ ла готовой
+AllRus: это она , которая бы &+ ло готовой
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron they_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это они , которые бы &+ ли готовыми
+AllRus: это они , которые бы &+ ло готовыми
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron we_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это мы , которые бы &+ ли готовыми
+AllRus: это мы , которые бы &+ ло готовыми
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youPl_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это вы , которые бы &+ ли готовыми
+AllRus: это вы , которые бы &+ ло готовыми
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youPol_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это вы , которые бы &+ ли готовыми
+AllRus: это вы , которые бы &+ ло готовыми
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youSg_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это ты , который был готовым
+AllRus: это ты , который бы &+ ло готовым
 
 AllRusAbs: ComplA2 easy_A2V (UsePron she_Pron)
 AllRus: лёгкого для н &+ её
@@ -508,4 +526,21 @@ AllRusAbs: SelfNP (UsePron youPol_Pron)
 AllRus: сами вы
 AllRusAbs: SelfNP (UsePron youSg_Pron)
 AllRus: сам ты
+
+AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TCond AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN)))))
+AllRus: яблоко , с которым Иван говорил бы о Париже
+AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TCond ASimul) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN)))))
+AllRus: яблоко , с которым Иван говорил бы о Париже
+AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TFut AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN)))))
+AllRus: яблоко , с которым Иван будет говорить о Париже
+AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TFut ASimul) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN)))))
+AllRus: яблоко , с которым Иван будет говорить о Париже
+AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TPast AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN)))))
+AllRus: яблоко , с которым Иван говорил о Париже
+AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TPast ASimul) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN)))))
+AllRus: яблоко , с которым Иван говорил о Париже
+AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TPres AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN)))))
+AllRus: яблоко , с которым Иван говорит о Париже
+AllRusAbs: RelCN (UseN apple_N) (UseRCl (TTAnt TPres ASimul) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN)))))
+AllRus: яблоко , с которым Иван говорит о Париже
 

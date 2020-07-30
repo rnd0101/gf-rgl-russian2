@@ -24,7 +24,7 @@ lin
   -- : Temp -> Pol -> RCl -> RS ;  -- that had not slept
   UseRCl temp pol rcl = {
     s = \\gn,anim,cas =>
-      let parts = R.verbAgr rcl.verb Ind temp.t (genNumAgrP3 gn) pol.p in
+      let parts = R.verbAgr rcl.verb Ind temp.t rcl.a pol.p in
       temp.s ++ parts.p1 ++ rcl.subj ! gn ! anim ! Nom ++ rcl.adv ! (genNumAgrP3 gn) ++ pol.s ++ parts.p2 ++ rcl.dep ++ rcl.compl ! (genNumAgrP3 gn)
     } ;
 
