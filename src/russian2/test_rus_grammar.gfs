@@ -31,3 +31,4 @@ gt glass_of_CN (MassNP (UseN wine_N)) | l -treebank
 gt cup_of_CN (MassNP (UseN silver_N)) | l -treebank
 
 gt UseCl (TTAnt TPast ASimul) PPos  (PredVP (UsePron ?) (ComplSlash (SlashV2a drink_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (cup_of_CN (MassNP (UseN water_N))   )))) | l -treebank
+gt n_units_of_NP (NumNumeral (num (pot3plus (pot1as2 pot110) (pot2plus pot01 pot111)))) (UseN cap_N) (MassNP (UseN water_N)) | l -treebank

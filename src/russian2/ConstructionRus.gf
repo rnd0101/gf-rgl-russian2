@@ -28,7 +28,7 @@ lin
   -- : NP -> CN ;       -- bottle of beer
   bottle_of_CN np = N.ComplN2 (P.mkN2 (P.mkN "бутылка" Fem Inanimate "3*a") part_Prep) np ;
   -- : NP -> CN ;       -- cup of tea
-  cup_of_CN np = N.ComplN2 (P.mkN2 L.cap_N part_Prep) np ;
+  cup_of_CN np = N.ComplN2 (P.mkN2 (P.mkN "чашка" Fem Inanimate) part_Prep) np ;
   -- : NP -> CN ;       -- glass of wine
   glass_of_CN np = N.ComplN2 (P.mkN2 (P.mkN "стакан") part_Prep) np ;
 
