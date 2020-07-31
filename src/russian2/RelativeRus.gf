@@ -38,7 +38,7 @@ lin
   -- : RP ;                      -- which
   IdRP = lin RP (doKotoryjPron "который" (Ag (GSg Neut) P3)) ;
 
-  -- Prep -> NP -> RP -> RP ;  -- the mother of whom
+  -- : Prep -> NP -> RP -> RP ;  -- the mother of whom
   FunRP prep np rp = {
     s=\\gn,anim,cas => np.s ! cas ++ prep.s ++ rp.s ! gn ! Inanimate ! prep.c ;
     a=np.a
