@@ -575,3 +575,25 @@ AllRus: ты пил данные 2 чашки воды
 AllRusAbs: n_units_of_NP (NumNumeral (num (pot3plus (pot1as2 pot110) (pot2plus pot01 pot111)))) (UseN cap_N) (MassNP (UseN water_N))
 AllRus: десять тысяч сто одиннадцать шапок воды
 
+AllRusAbs: n_unit_CN (NumNumeral (num (pot2as3 (pot1as2 pot110)))) (UseN cap_N) (bottle_of_CN (MassNP (UseN water_N)))
+AllRus: бутылка воды на десять шапок
+
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a drink_V2) (MassNP (n_unit_CN (NumNumeral (num (pot2as3 (pot1as2 pot110)))) (UseN cap_N) (bottle_of_CN (MassNP (UseN water_N)))))))
+AllRus: он пил бутылку воды на десять шапок
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron i_Pron) (ComplSlash (SlashV2a drink_V2) (MassNP (n_unit_CN (NumNumeral (num (pot2as3 (pot1as2 pot110)))) (UseN cap_N) (bottle_of_CN (MassNP (UseN water_N)))))))
+AllRus: я пил бутылку воды на десять шапок
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron it_Pron) (ComplSlash (SlashV2a drink_V2) (MassNP (n_unit_CN (NumNumeral (num (pot2as3 (pot1as2 pot110)))) (UseN cap_N) (bottle_of_CN (MassNP (UseN water_N)))))))
+AllRus: оно пи &+ ло бутылку воды на десять шапок
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron she_Pron) (ComplSlash (SlashV2a drink_V2) (MassNP (n_unit_CN (NumNumeral (num (pot2as3 (pot1as2 pot110)))) (UseN cap_N) (bottle_of_CN (MassNP (UseN water_N)))))))
+AllRus: она пи &+ ла бутылку воды на десять шапок
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron they_Pron) (ComplSlash (SlashV2a drink_V2) (MassNP (n_unit_CN (NumNumeral (num (pot2as3 (pot1as2 pot110)))) (UseN cap_N) (bottle_of_CN (MassNP (UseN water_N)))))))
+AllRus: они пи &+ ли бутылку воды на десять шапок
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron we_Pron) (ComplSlash (SlashV2a drink_V2) (MassNP (n_unit_CN (NumNumeral (num (pot2as3 (pot1as2 pot110)))) (UseN cap_N) (bottle_of_CN (MassNP (UseN water_N)))))))
+AllRus: мы пи &+ ли бутылку воды на десять шапок
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPl_Pron) (ComplSlash (SlashV2a drink_V2) (MassNP (n_unit_CN (NumNumeral (num (pot2as3 (pot1as2 pot110)))) (UseN cap_N) (bottle_of_CN (MassNP (UseN water_N)))))))
+AllRus: вы пи &+ ли бутылку воды на десять шапок
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPol_Pron) (ComplSlash (SlashV2a drink_V2) (MassNP (n_unit_CN (NumNumeral (num (pot2as3 (pot1as2 pot110)))) (UseN cap_N) (bottle_of_CN (MassNP (UseN water_N)))))))
+AllRus: вы пи &+ ли бутылку воды на десять шапок
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youSg_Pron) (ComplSlash (SlashV2a drink_V2) (MassNP (n_unit_CN (NumNumeral (num (pot2as3 (pot1as2 pot110)))) (UseN cap_N) (bottle_of_CN (MassNP (UseN water_N)))))))
+AllRus: ты пил бутылку воды на десять шапок
+
