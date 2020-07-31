@@ -33,3 +33,29 @@ gt UseCl (TTAnt TPast ASimul) PPos  (PredVP (UsePron ?) (ComplSlash (SlashV2a dr
 gt n_units_of_NP (NumNumeral (num (pot3plus (pot1as2 pot110) (pot2plus pot01 pot111)))) (UseN cap_N) (MassNP (UseN water_N)) | l -treebank
 gt n_unit_CN (NumNumeral (num (pot2as3 (pot1as2 pot110)))) (UseN cap_N) (bottle_of_CN (MassNP (UseN water_N))) |l -treebank
 gt UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron ?) (ComplSlash (SlashV2a drink_V2)    (MassNP (n_unit_CN (NumNumeral (num (pot2as3 (pot1as2 pot110)))) (UseN cap_N) (bottle_of_CN (MassNP (UseN water_N)))))   ))  | l -treebank
+gt UseSlash (TTAnt TCond AAnter) ? (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN))) |l -treebank
+gt SlashVS (MassNP (UseN baby_N)) know_VS ( UseSlash (TTAnt TCond AAnter) ? (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN)))  )  | l -treebank
+gt RelSlash IdRP ( SlashVS (MassNP (UseN baby_N)) know_VS ( UseSlash (TTAnt TCond AAnter) ? (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN)))  ) )  | l -treebank
+gt UseRCl (TTAnt TPast ASimul) ? (RelSlash IdRP ( SlashVS (MassNP (UseN baby_N)) know_VS ( UseSlash (TTAnt TCond AAnter) ? (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN)))  ) ) ) | l -treebank
+gt RelCN (UseN house_N) (UseRCl (TTAnt TPast ASimul) ? (RelSlash IdRP ( SlashVS (MassNP (UseN baby_N)) know_VS ( UseSlash (TTAnt TCond AAnter) ? (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN)))  ) ) ) )| l -treebank
+gt RelCN (UseN woman_N) (UseRCl (TTAnt TPast ASimul) ? (RelSlash IdRP ( SlashVS (MassNP (UseN baby_N)) know_VS ( UseSlash (TTAnt TCond AAnter) ? (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN)))  ) ) ) )| l -treebank
+gt UseCl (TTAnt TPres AAnter) PPos (ExistNP everything_NP) | l -treebank
+gt SSubjS (UseCl (TTAnt TPres AAnter) PPos (ExistNP everything_NP)) because_Subj (UseCl (TTAnt TPres AAnter) PPos (ExistNP everything_NP)) | l -treebank
+gt UseQCl (TTAnt TPres ASimul) PPos (QuestSlash whatSg_IP (AdvSlash (SlashVP (UsePN john_PN) (VPSlashPrep (UseV walk_V) for_Prep)) here_Adv ) )  | l -treebank
+
+gt ImpVP (AdvVP (AdVVP always_AdV (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday)) |l -treebank
+
+gt PredSCVP (EmbedQS (UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv (AdvIAdv how8much_IAdv everywhere_Adv) (ExistNP nobody_NP)))) hungry_VP | l -treebank
+gt RelCl (PredSCVP (EmbedQS (UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv (AdvIAdv how8much_IAdv everywhere_Adv) (ExistNP nobody_NP)))) hungry_VP) | l -treebank
+
+gt RelCl (PredSCVP (EmbedQS (UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv (AdvIAdv how8much_IAdv everywhere_Adv) (ExistNP nobody_NP)))) hungry_VP) | l -treebank
+gt UseRCl (TTAnt TPres ASimul) PPos (RelCl (PredSCVP (EmbedQS (UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv (AdvIAdv how8much_IAdv everywhere_Adv) (ExistNP nobody_NP)))) hungry_VP) ) | l -treebank
+gt RelS (UseCl (TTAnt TPres ASimul) PNeg (GenericCl scared_VP)) (UseRCl (TTAnt TPres ASimul) PPos (RelCl (PredSCVP (EmbedQS (UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv (AdvIAdv how8much_IAdv everywhere_Adv) (ExistNP nobody_NP)))) hungry_VP) )) | l -treebank
+
+gt UseCl (TTAnt ? ASimul) ? (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A)))) | l -treebank
+gt ImpP3 (MassNP (UseN woman_N))  (ReflVP (SlashV2A paint_V2A (PositA young_A)))  | l -treebank
+gt ImpPl1  (ReflVP (SlashV2A paint_V2A (PositA young_A)))  | l -treebank
+
+gt UseCl (TTAnt TCond AAnter) ? (PredVP (MassNP (UseN heart_N)) (PassV2 squeeze_V2) ) | l -treebank
+gt UseCl (TTAnt TCond AAnter) ? (PredVP (MassNP (UseN heart_N)) ( ComplVV ? (PassV2 squeeze_V2)   ) ) | l -treebank
+gt ComplVS hope_VS ( UseCl (TTAnt ? AAnter) ? (have_name_Cl (UsePron he_Pron) (UsePN john_PN)) )  | l -treebank

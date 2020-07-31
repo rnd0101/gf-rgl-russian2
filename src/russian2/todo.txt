@@ -20,18 +20,10 @@ AllRus: складываем &+ те всех в кого &+ -то пит
 
 Inherent number for nouns. eg, for geonames or pluralia tantum.
 
-** UseCl (TTAnt TPres ASimul) PPos (ImpersCl (ReflVP (SlashV2A paint_V2A (PositA hot_A))))
-LangRus-NEW> рисует горячее себя
-LangRus-OLD> рисует горячим себя
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
+AllRus: рисуешь молодого себя
 
-AllRusAbs> l UseCl (TTAnt TPres ASimul) PPos (ImpersCl (ReflVP (SlashV2A paint_V2A (PositA hot_A))))
-рисует горячее себя
+> gt ImpP3 (UsePN john_PN)  (ReflVP (SlashV2A paint_V2A (PositA young_A)))  | l -treebank
+AllRusAbs: ImpP3 (UsePN john_PN) (ReflVP (SlashV2A paint_V2A (PositA young_A)))
+AllRus: пусть Иван рисует молодое себя
 
-AllRusAbs> p "рисуешь горячий себя"
-UseCl (TTAnt TPres ASimul) PPos (GenericCl (ReflVP (SlashV2A paint_V2A (PositA hot_A))))
-
-
-AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youSg_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP)))
-AllRus: это ты , который бы &+ ло готовым
--> ?
-AllRus: это ты , который был готовым
