@@ -869,6 +869,114 @@ AllRus: он знает , что яблоко не всегда падает
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPres ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
 AllRus: он знает , что яблоко всегда падает
 
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (AdvNP (UsePron he_Pron) here_Adv) (UseV fall_V))
+AllRus: он здесь падает
+
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (UseV fall_V) here_Adv))
+AllRus: он падает здесь
+
+AllRusAbs: UttS (UseCl (TTAnt TCond ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVV want_VV (UseV fall_V))))
+AllRus: он не хотел бы падать
+AllRusAbs: UttS (UseCl (TTAnt TCond ASimul) PPos (PredVP (UsePron he_Pron) (ComplVV want_VV (UseV fall_V))))
+AllRus: он хотел бы падать
+AllRusAbs: UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVV want_VV (UseV fall_V))))
+AllRus: он не захочет падать
+AllRusAbs: UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (ComplVV want_VV (UseV fall_V))))
+AllRus: он захочет падать
+AllRusAbs: UttS (UseCl (TTAnt TPast ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVV want_VV (UseV fall_V))))
+AllRus: он не хотел падать
+AllRusAbs: UttS (UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (ComplVV want_VV (UseV fall_V))))
+AllRus: он хотел падать
+AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVV want_VV (UseV fall_V))))
+AllRus: он не хочет падать
+AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVV want_VV (UseV fall_V))))
+AllRus: он хочет падать
+
+AllRusAbs: UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (UseV sit_V) possess_Prep) (UsePron she_Pron)) part_Prep) (DetCN (DetQuant DefArt NumPl) (UseN window_N)))))
+AllRus: он сидит у её окон
+
+AllRusAbs: UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a wait_V2) (MassNP (PartNP (AdvCN (UseN car_N) (PrepNP possess_Prep (UsePron she_Pron))) (DetCN (DetQuant DefArt NumPl) (UseN window_N)))))))
+AllRus: он ждёт машину у её окон
+
+AllRusAbs: UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
+AllRus: он не считал бы машины у её окон
+AllRusAbs: UttS (UseCl (TTAnt TCond AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
+AllRus: он считал бы машины у её окон
+AllRusAbs: UttS (UseCl (TTAnt TFut AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
+AllRus: он не будет считать машины у её окон
+AllRusAbs: UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
+AllRus: он будет считать машины у её окон
+AllRusAbs: UttS (UseCl (TTAnt TPast AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
+AllRus: он не считал машины у её окон
+AllRusAbs: UttS (UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
+AllRus: он считал машины у её окон
+AllRusAbs: UttS (UseCl (TTAnt TPres AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
+AllRus: он не считает машины у её окон
+AllRusAbs: UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
+AllRus: он считает машины у её окон
+
+UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (MassNP (UseN worm_N)) (ComplSlash (VPSlashPrep (UseV sit_V) in_Prep) (MassNP (PossNP (AdjCN (PositA red_A) (UseN apple_N)) (DetNP (DetQuant (PossPron he_Pron) NumSg)))))))
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttImpSg PNeg (ImpVP (ComplSlash (SlashV2a do_V2) (MassNP (UseN apple_N))))) NoVoc) TEmpty
+AllRus: не делай яблоко .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttImpSg PPos (ImpVP (ComplSlash (SlashV2a do_V2) (MassNP (UseN apple_N))))) NoVoc) TEmpty
+AllRus: делай яблоко .
+
+AllRusAbs: TQuestMark (PhrUtt NoPConj (UttQS (UseQCl (TTAnt TPres ASimul) PPos (QuestIAdv how_IAdv (ImpersCl (ComplSlash (SlashV2a do_V2) (MassNP (UseN car_N))))))) NoVoc) TEmpty
+AllRus: как делает машину ?
+
+AllRusAbs: TExclMark (PhrUtt NoPConj (UttImpSg PNeg (ImpVP (ComplSlash (SlashV2a do_V2) (MassNP (UseN car_N))))) (VocNP (UsePN john_PN))) TEmpty
+AllRus: не делай машину , Иван !
+AllRusAbs: TExclMark (PhrUtt NoPConj (UttImpSg PPos (ImpVP (ComplSlash (SlashV2a do_V2) (MassNP (UseN car_N))))) (VocNP (UsePN john_PN))) TEmpty
+AllRus: делай машину , Иван !
+
+AllRusAbs: TQuestMark (PhrUtt NoPConj (UttIP (IdetCN how8many_IDet (UseN apple_N))) NoVoc) TEmpty
+AllRus: сколько яблок ?
+
+AllRusAbs: TQuestMark (PhrUtt NoPConj (UttIP (IdetCN how8many_IDet (AdvCN (UseN apple_N) (PrepNP possess_Prep (UsePN john_PN))))) NoVoc) TEmpty
+AllRus: сколько яблок у Ивана ?
+
+AllRusAbs: TQuestMark (PhrUtt NoPConj (UttQS (UseQCl (TTAnt TFut AAnter) PPos (QuestIAdv how8much_IAdv (ImpersCl (AdvVP UseCopula (PrepNP part_Prep (DetCN (DetQuant IndefArt NumPl) (UseN apple_N)))))))) NoVoc) TEmpty
+AllRus: сколько будет яблок ?
+
+AllRusAbs: TQuestMark (PhrUtt NoPConj (UttQS (UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv how8much_IAdv (ImpersCl (AdvVP (AdvVP UseCopula (PrepNP part_Prep (DetCN (DetQuant IndefArt NumPl) (UseN apple_N)))) (PrepNP possess_Prep (UsePN john_PN))))))) NoVoc) TEmpty
+AllRus: сколько не бы &+ ло бы яблок у Ивана ?
+AllRusAbs: TQuestMark (PhrUtt NoPConj (UttQS (UseQCl (TTAnt TCond AAnter) PPos (QuestIAdv how8much_IAdv (ImpersCl (AdvVP (AdvVP UseCopula (PrepNP part_Prep (DetCN (DetQuant IndefArt NumPl) (UseN apple_N)))) (PrepNP possess_Prep (UsePN john_PN))))))) NoVoc) TEmpty
+AllRus: сколько бы &+ ло бы яблок у Ивана ?
+AllRusAbs: TQuestMark (PhrUtt NoPConj (UttQS (UseQCl (TTAnt TFut AAnter) PNeg (QuestIAdv how8much_IAdv (ImpersCl (AdvVP (AdvVP UseCopula (PrepNP part_Prep (DetCN (DetQuant IndefArt NumPl) (UseN apple_N)))) (PrepNP possess_Prep (UsePN john_PN))))))) NoVoc) TEmpty
+AllRus: сколько не будет яблок у Ивана ?
+AllRusAbs: TQuestMark (PhrUtt NoPConj (UttQS (UseQCl (TTAnt TFut AAnter) PPos (QuestIAdv how8much_IAdv (ImpersCl (AdvVP (AdvVP UseCopula (PrepNP part_Prep (DetCN (DetQuant IndefArt NumPl) (UseN apple_N)))) (PrepNP possess_Prep (UsePN john_PN))))))) NoVoc) TEmpty
+AllRus: сколько будет яблок у Ивана ?
+AllRusAbs: TQuestMark (PhrUtt NoPConj (UttQS (UseQCl (TTAnt TPast AAnter) PNeg (QuestIAdv how8much_IAdv (ImpersCl (AdvVP (AdvVP UseCopula (PrepNP part_Prep (DetCN (DetQuant IndefArt NumPl) (UseN apple_N)))) (PrepNP possess_Prep (UsePN john_PN))))))) NoVoc) TEmpty
+AllRus: сколько не бы &+ ло яблок у Ивана ?
+AllRusAbs: TQuestMark (PhrUtt NoPConj (UttQS (UseQCl (TTAnt TPast AAnter) PPos (QuestIAdv how8much_IAdv (ImpersCl (AdvVP (AdvVP UseCopula (PrepNP part_Prep (DetCN (DetQuant IndefArt NumPl) (UseN apple_N)))) (PrepNP possess_Prep (UsePN john_PN))))))) NoVoc) TEmpty
+AllRus: сколько бы &+ ло яблок у Ивана ?
+AllRusAbs: TQuestMark (PhrUtt NoPConj (UttQS (UseQCl (TTAnt TPres AAnter) PNeg (QuestIAdv how8much_IAdv (ImpersCl (AdvVP (AdvVP UseCopula (PrepNP part_Prep (DetCN (DetQuant IndefArt NumPl) (UseN apple_N)))) (PrepNP possess_Prep (UsePN john_PN))))))) NoVoc) TEmpty
+AllRus: сколько не является яблок у Ивана ?
+AllRusAbs: TQuestMark (PhrUtt NoPConj (UttQS (UseQCl (TTAnt TPres AAnter) PPos (QuestIAdv how8much_IAdv (ImpersCl (AdvVP (AdvVP UseCopula (PrepNP part_Prep (DetCN (DetQuant IndefArt NumPl) (UseN apple_N)))) (PrepNP possess_Prep (UsePN john_PN))))))) NoVoc) TEmpty
+AllRus: сколько является яблок у Ивана ?
+
+AllRusAbs: TQuestMark (PhrUtt NoPConj (UttQS (UseQCl (TTAnt TPres ASimul) PPos (QuestVP whatSg_IP (AdvVP (UseV fly_V) here_Adv)))) NoVoc) TEmpty
+AllRus: что летает здесь ?
+
+AllRusAbs: TQuestMark (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (SelfAdVVP (UseV fly_V))))) NoVoc) TEmpty
+AllRus: он сам летает ?
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (DetCN (DetQuant DefArt (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2)))))))) (UseN apple_N)) (UseV fall_V)))) NoVoc) TEmpty
+AllRus: два яблока падают .
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (DetCN (DetQuant DefArt (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2)))))))) (UseN bird_N)) (ComplSlash (SlashV2a love_V2) (UsePN john_PN))))) NoVoc) TEmpty
+AllRus: две птицы любят Ивана .
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (PredetNP all_Predet (DetCN (DetQuant IndefArt NumPl) (UseN bird_N))) (ComplSlash (SlashV2a love_V2) (UsePN john_PN))))) NoVoc) TEmpty
+AllRus: все птицы любят Ивана .
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres AAnter) PNeg (PredVP (DetCN (DetQuant IndefArt (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01))))))) (UseN bird_N)) (ComplSlash (SlashV2a love_V2) (UsePN john_PN))))) NoVoc) TEmpty
+AllRus: одна птица не любит Ивана .
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (ConjS and_Conj (BaseS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron youSg_Pron) (UseV fall_V))) (UseCl (TTAnt TPres AAnter) PPos (GenericCl (ComplSlash (VPSlashPrep (UseV sing_V) on_Prep) (MassNP (UseN window_N)))))))) NoVoc) TEmpty
+AllRus: ты падаешь и поёшь на окне .
+
 AllRusAbs: PredSCVP (EmbedVP (UseV play_V)) thirsty_VP
 AllRus: играть хотеть пить
 
