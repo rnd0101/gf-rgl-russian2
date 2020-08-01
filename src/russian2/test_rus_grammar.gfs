@@ -59,3 +59,4 @@ gt ImpPl1  (ReflVP (SlashV2A paint_V2A (PositA young_A)))  | l -treebank
 gt UseCl (TTAnt TCond AAnter) ? (PredVP (MassNP (UseN heart_N)) (PassV2 squeeze_V2) ) | l -treebank
 gt UseCl (TTAnt TCond AAnter) ? (PredVP (MassNP (UseN heart_N)) ( ComplVV ? (PassV2 squeeze_V2)   ) ) | l -treebank
 gt ComplVS hope_VS ( UseCl (TTAnt ? AAnter) ? (have_name_Cl (UsePron he_Pron) (UsePN john_PN)) )  | l -treebank
+gt UseCl (TTAnt TPast ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep ill_VP possess_Prep) (UsePron we_Pron))) | l -treebank
