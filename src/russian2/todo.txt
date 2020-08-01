@@ -20,10 +20,3 @@ AllRus: складываем &+ те всех в кого &+ -то пит
 
 Inherent number for nouns. eg, for geonames or pluralia tantum.
 
-AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: рисуешь молодого себя
-
-> gt ImpP3 (UsePN john_PN)  (ReflVP (SlashV2A paint_V2A (PositA young_A)))  | l -treebank
-AllRusAbs: ImpP3 (UsePN john_PN) (ReflVP (SlashV2A paint_V2A (PositA young_A)))
-AllRus: пусть Иван рисует молодое себя
-
