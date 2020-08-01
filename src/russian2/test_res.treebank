@@ -66,23 +66,23 @@ AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youSg_Pron) (SelfAdV
 AllRus: ты сам хотел быть усталым в сентябре
 
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant IndefArt NumSg) (UseN apple_N))))
-AllRus: он кушал некое яблоко
+AllRus: он кушал яблоко
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron i_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant IndefArt NumSg) (UseN apple_N))))
-AllRus: я кушал некое яблоко
+AllRus: я кушал яблоко
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron it_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant IndefArt NumSg) (UseN apple_N))))
-AllRus: оно куша &+ ло некое яблоко
+AllRus: оно куша &+ ло яблоко
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron she_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant IndefArt NumSg) (UseN apple_N))))
-AllRus: она куша &+ ла некое яблоко
+AllRus: она куша &+ ла яблоко
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron they_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant IndefArt NumSg) (UseN apple_N))))
-AllRus: они куша &+ ли некое яблоко
+AllRus: они куша &+ ли яблоко
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron we_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant IndefArt NumSg) (UseN apple_N))))
-AllRus: мы куша &+ ли некое яблоко
+AllRus: мы куша &+ ли яблоко
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPl_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant IndefArt NumSg) (UseN apple_N))))
-AllRus: вы куша &+ ли некое яблоко
+AllRus: вы куша &+ ли яблоко
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPol_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant IndefArt NumSg) (UseN apple_N))))
-AllRus: вы куша &+ ли некое яблоко
+AllRus: вы куша &+ ли яблоко
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youSg_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant IndefArt NumSg) (UseN apple_N))))
-AllRus: ты кушал некое яблоко
+AllRus: ты кушал яблоко
 
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (SelfAdvVP (ComplVV want_VV (AdvVP tired_VP (monthAdv september_Month)))))
 AllRus: он хотел быть усталым в сентябре сам
@@ -104,45 +104,45 @@ AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youSg_Pron) (SelfAdv
 AllRus: ты хотел быть усталым в сентябре сам
 
 AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (PredVP (DetCN (DetQuant DefArt NumPl) (AdvCN (UseN apple_N) (weekdayNextAdv monday_Weekday))) ready_VP)
-AllRus: данные яблоки в следующий понедельник будут готовыми
+AllRus: яблоки в следующий понедельник будут готовыми
 
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (UseN apple_N))))
-AllRus: он кушал данные 2 яблока
+AllRus: он кушал 2 яблока
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron i_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (UseN apple_N))))
-AllRus: я кушал данные 2 яблока
+AllRus: я кушал 2 яблока
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron it_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (UseN apple_N))))
-AllRus: оно куша &+ ло данные 2 яблока
+AllRus: оно куша &+ ло 2 яблока
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron she_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (UseN apple_N))))
-AllRus: она куша &+ ла данные 2 яблока
+AllRus: она куша &+ ла 2 яблока
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron they_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (UseN apple_N))))
-AllRus: они куша &+ ли данные 2 яблока
+AllRus: они куша &+ ли 2 яблока
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron we_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (UseN apple_N))))
-AllRus: мы куша &+ ли данные 2 яблока
+AllRus: мы куша &+ ли 2 яблока
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPl_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (UseN apple_N))))
-AllRus: вы куша &+ ли данные 2 яблока
+AllRus: вы куша &+ ли 2 яблока
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPol_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (UseN apple_N))))
-AllRus: вы куша &+ ли данные 2 яблока
+AllRus: вы куша &+ ли 2 яблока
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youSg_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (UseN apple_N))))
-AllRus: ты кушал данные 2 яблока
+AllRus: ты кушал 2 яблока
 
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_5)))) (UseN apple_N))))
-AllRus: он кушал данные 5 яблок
+AllRus: он кушал 5 яблок
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron i_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_5)))) (UseN apple_N))))
-AllRus: я кушал данные 5 яблок
+AllRus: я кушал 5 яблок
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron it_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_5)))) (UseN apple_N))))
-AllRus: оно куша &+ ло данные 5 яблок
+AllRus: оно куша &+ ло 5 яблок
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron she_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_5)))) (UseN apple_N))))
-AllRus: она куша &+ ла данные 5 яблок
+AllRus: она куша &+ ла 5 яблок
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron they_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_5)))) (UseN apple_N))))
-AllRus: они куша &+ ли данные 5 яблок
+AllRus: они куша &+ ли 5 яблок
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron we_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_5)))) (UseN apple_N))))
-AllRus: мы куша &+ ли данные 5 яблок
+AllRus: мы куша &+ ли 5 яблок
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPl_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_5)))) (UseN apple_N))))
-AllRus: вы куша &+ ли данные 5 яблок
+AllRus: вы куша &+ ли 5 яблок
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPol_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_5)))) (UseN apple_N))))
-AllRus: вы куша &+ ли данные 5 яблок
+AllRus: вы куша &+ ли 5 яблок
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youSg_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_5)))) (UseN apple_N))))
-AllRus: ты кушал данные 5 яблок
+AllRus: ты кушал 5 яблок
 
 AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (PredVP (UsePron she_Pron) (UseV sleep_V))
 AllRus: она не спа &+ ла
@@ -554,23 +554,23 @@ AllRusAbs: cup_of_CN (MassNP (UseN silver_N))
 AllRus: чашка серебра
 
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a drink_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (cup_of_CN (MassNP (UseN water_N))))))
-AllRus: он пил данные 2 чашки воды
+AllRus: он пил 2 чашки воды
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron i_Pron) (ComplSlash (SlashV2a drink_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (cup_of_CN (MassNP (UseN water_N))))))
-AllRus: я пил данные 2 чашки воды
+AllRus: я пил 2 чашки воды
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron it_Pron) (ComplSlash (SlashV2a drink_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (cup_of_CN (MassNP (UseN water_N))))))
-AllRus: оно пи &+ ло данные 2 чашки воды
+AllRus: оно пи &+ ло 2 чашки воды
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron she_Pron) (ComplSlash (SlashV2a drink_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (cup_of_CN (MassNP (UseN water_N))))))
-AllRus: она пи &+ ла данные 2 чашки воды
+AllRus: она пи &+ ла 2 чашки воды
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron they_Pron) (ComplSlash (SlashV2a drink_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (cup_of_CN (MassNP (UseN water_N))))))
-AllRus: они пи &+ ли данные 2 чашки воды
+AllRus: они пи &+ ли 2 чашки воды
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron we_Pron) (ComplSlash (SlashV2a drink_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (cup_of_CN (MassNP (UseN water_N))))))
-AllRus: мы пи &+ ли данные 2 чашки воды
+AllRus: мы пи &+ ли 2 чашки воды
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPl_Pron) (ComplSlash (SlashV2a drink_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (cup_of_CN (MassNP (UseN water_N))))))
-AllRus: вы пи &+ ли данные 2 чашки воды
+AllRus: вы пи &+ ли 2 чашки воды
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPol_Pron) (ComplSlash (SlashV2a drink_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (cup_of_CN (MassNP (UseN water_N))))))
-AllRus: вы пи &+ ли данные 2 чашки воды
+AllRus: вы пи &+ ли 2 чашки воды
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youSg_Pron) (ComplSlash (SlashV2a drink_V2) (DetCN (DetQuant DefArt (NumCard (NumDigits (IDig D_2)))) (cup_of_CN (MassNP (UseN water_N))))))
-AllRus: ты пил данные 2 чашки воды
+AllRus: ты пил 2 чашки воды
 
 AllRusAbs: n_units_of_NP (NumNumeral (num (pot3plus (pot1as2 pot110) (pot2plus pot01 pot111)))) (UseN cap_N) (MassNP (UseN water_N))
 AllRus: десять тысяч сто одиннадцать шапок воды
