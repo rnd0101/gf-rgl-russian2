@@ -120,6 +120,8 @@ oper
     mkA : Str -> Str -> (idx : Str) -> ShortFormPreference -> A ; -- same, but with short form preference given
   } ;
 
+  ShortenA : A -> A ;
+
 -- Two-place adjectives need a preposition and a case as extra arguments.
 
   -- TODO: ? mkA2 : A -> Str -> Case -> A2 ;  -- "делим на"
@@ -255,6 +257,9 @@ oper
     mkA : Str -> Str -> Str -> ShortFormPreference -> A
       = \nom, comp, zi, spf -> lin A (makeAdjectiveForms nom comp zi spf) ;
   } ;
+
+  ShortenA : A -> A
+    = \a -> a ** {preferShort = PrefShort} ;
 
 -- Two-place adjectives need a preposition and a case as extra arguments.
 

@@ -21,6 +21,8 @@ gt UseRCl (TTAnt TCond ASimul) PPos ( RelSlash IdRP (SlashPrep ( CleftAdv now_Ad
 gt UseCl (TTAnt TPres AAnter) PPos (CleftNP  (UsePron ?)  (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP))) | l -treebank
 gt ComplA2 ? (UsePron she_Pron) | l -treebank
 gt ReflA2 ? |l -treebank
+gt CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2)) | l -treebank
+gt TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron ?) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty | l -treebank
 gt EmbedQS (UseQCl (TTAnt ? ASimul) PNeg (ExistIP whatSg_IP)) | l -treebank
 gt timeunitRange (NumDigits (IDig ?)) (NumDigits (IDig ?)) second_Timeunit | l -treebank
 gt timeunitAdv (NumDigits (IDig ?))  second_Timeunit | l -treebank
@@ -83,6 +85,8 @@ gt UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (
 gt UttS (UseCl (TTAnt ? AAnter) ? (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N))))) | l -treebank
 
 gt UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (MassNP (UseN worm_N)) (ComplSlash (VPSlashPrep (UseV sit_V) in_Prep) (MassNP (PossNP (AdjCN (PositA red_A) (UseN apple_N)) (DetNP (DetQuant (PossPron he_Pron) NumSg)))))))
+
+gt UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (MassNP (UseN worm_N)) (ComplSlash (VPSlashPrep (UseV sit_V) in_Prep) (MassNP (PossNP (AdjCN (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (UseN apple_N)) (DetNP (DetQuant (PossPron he_Pron) NumSg)))))))
 
 gt TFullStop (PhrUtt NoPConj (UttImpSg ? (ImpVP (ComplSlash (SlashV2a do_V2) (MassNP (UseN apple_N))))) NoVoc) TEmpty |l -treebank
 gt TQuestMark (PhrUtt NoPConj (UttQS (UseQCl (TTAnt TPres ASimul) PPos (QuestIAdv how_IAdv (ImpersCl (ComplSlash (SlashV2a do_V2) (MassNP (UseN car_N))))))) NoVoc) TEmpty |l -treebank

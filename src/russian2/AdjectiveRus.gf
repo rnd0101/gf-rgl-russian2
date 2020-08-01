@@ -14,7 +14,7 @@ lin
   AdAP ada ap = ap ** {s=\\gn,a,c => ada.s ++ ap.s ! gn ! a ! c } ;
   -- : CAdv -> AP -> NP -> AP ; -- as cool as John
   CAdvAP cadv ap np = ap ** {
-    s = \\gn,a,c => cadv.s ++ ap.s ! gn ! a ! c ++ comma ++ cadv.p ++ np.s ! Nom   -- TODO: embedInCommas ?
+    s = \\gn,a,c => cadv.s ++ ap.s ! gn ! a ! c ++ embedInCommas (cadv.p ++ np.s ! Nom)
   } ;
 
   -- : AP -> SC -> AP ;  -- good that she is here

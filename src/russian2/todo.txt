@@ -35,15 +35,3 @@ AllRus: сколько является яблок у Ивана ?
 
 Lang: UseCl (TTAnt TPres ASimul) PPos (GenericCl (UseComp (CompAdv already_Adv)))
 LangRus: уже — ты
-
-TODO: Check: Old
-```
-> l CAdvAP less_CAdv (ComplA2 married_A2 (UsePron youPl_Pron)) (MassNP (ApposCN (UseN2 brother_N2) (UsePron youSg_Pron)))
-менее замужем за вами менее брата тебя
-```
-New:
-
-```
-Lang: CAdvAP less_CAdv (ComplA2 married_A2 (UsePron youPl_Pron)) (MassNP (ApposCN (UseN2 brother_N2) (UsePron youSg_Pron)))
-LangRus: менее замужем за вами , чем брат ты
-```
