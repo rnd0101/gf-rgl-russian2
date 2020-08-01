@@ -153,7 +153,7 @@ lin
   house_N = mkN "дом" masculine inanimate "1c(1)" ;
   hunt_V2 = mkV2 (mkV imperfective intransitive "охотиться" "охочусь" "охотится") (lin Prep {s="на" ; c=Acc ; hasPrep=True}) ;
   husband_N = (mkNplus (mkN "муж" masculine animate "4c")) ** {pnom="мужья";pgen="мужей";pdat="мужьям";pacc="мужей";pins="мужьями";pprep="мужьях"};
-  ice_N = (mkNplus (mkN "лёд"  masculine animate "1b")) ** {sloc="льду";sptv="льду"} ;
+  ice_N = (mkNplus (mkN "лёд"  masculine animate "1*b")) ** {sloc="льду";sptv="льду"} ;
   important_A = mkA "важный" ;
   industry_N = mkN "промышленность" ;
   iron_N = mkN "железо" ;

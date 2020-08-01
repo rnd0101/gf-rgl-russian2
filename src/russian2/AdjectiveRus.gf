@@ -18,7 +18,7 @@ lin
   } ;
 
   -- : AP -> SC -> AP ;  -- good that she is here
-  SentAP ap sc = ap ** {s = \\gn,a,c => ap.s ! gn ! a ! c ++ [", "] ++ sc.s ; isPost = True} ;
+  SentAP ap sc = ap ** {s = \\gn,a,c => ap.s ! gn ! a ! c ++ sc.s ; isPost = True} ;
 
   -- : A -> NP -> AP ;  -- warmer than I - теплее меня
   ComparA a np = {

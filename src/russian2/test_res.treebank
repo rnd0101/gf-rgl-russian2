@@ -731,3 +731,318 @@ AllRus: надеяться , что его имя Иван
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep ill_VP possess_Prep) (UsePron we_Pron)))
 AllRus: бы &+ ло больно у нас
 
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (what_name_QCl (UsePron youSg_Pron))
+AllRus: как звал бы тебя
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PPos (what_name_QCl (UsePron youSg_Pron))
+AllRus: как будешь звать тебя
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PPos (what_name_QCl (UsePron youSg_Pron))
+AllRus: как звал тебя
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (what_name_QCl (UsePron youSg_Pron))
+AllRus: как зовёшь тебя
+
+AllRusAbs: UseA2 easy_A2V
+AllRus: лёгкий
+
+AllRusAbs: SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron)))
+AllRus: лёгкий быть голодно у нас
+
+AllRusAbs: ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))
+AllRus: становиться лёгким падать у нас
+
+AllRusAbs: EmbedVP (UseV blow_V)
+AllRus: дуть
+AllRusAbs: EmbedVP (UseV breathe_V)
+AllRus: дышать
+AllRusAbs: EmbedVP (UseV burn_V)
+AllRus: гореть
+AllRusAbs: EmbedVP (UseV come_V)
+AllRus: приходить
+AllRusAbs: EmbedVP (UseV die_V)
+AllRus: умирать
+AllRusAbs: EmbedVP (UseV dig_V)
+AllRus: копать
+AllRusAbs: EmbedVP (UseV fall_V)
+AllRus: падать
+AllRusAbs: EmbedVP (UseV float_V)
+AllRus: плавать
+AllRusAbs: EmbedVP (UseV flow_V)
+AllRus: течь
+AllRusAbs: EmbedVP (UseV fly_V)
+AllRus: летать
+AllRusAbs: EmbedVP (UseV freeze_V)
+AllRus: замерзать
+AllRusAbs: EmbedVP (UseV go_V)
+AllRus: ходить
+AllRusAbs: EmbedVP (UseV jump_V)
+AllRus: прыгать
+AllRusAbs: EmbedVP (UseV laugh_V)
+AllRus: смеяться
+AllRusAbs: EmbedVP (UseV lie_V)
+AllRus: лгать
+AllRusAbs: EmbedVP (UseV live_V)
+AllRus: жить
+AllRusAbs: EmbedVP (UseV play_V)
+AllRus: играть
+AllRusAbs: EmbedVP (UseV rain_V0)
+AllRus: дождить
+AllRusAbs: EmbedVP (UseV run_V)
+AllRus: бегать
+AllRusAbs: EmbedVP (UseV sew_V)
+AllRus: шить
+AllRusAbs: EmbedVP (UseV sing_V)
+AllRus: петь
+AllRusAbs: EmbedVP (UseV sit_V)
+AllRus: сидеть
+AllRusAbs: EmbedVP (UseV sleep_V)
+AllRus: спать
+AllRusAbs: EmbedVP (UseV smell_V)
+AllRus: пахнуть
+AllRusAbs: EmbedVP (UseV spit_V)
+AllRus: плевать
+AllRusAbs: EmbedVP (UseV stand_V)
+AllRus: стоять
+AllRusAbs: EmbedVP (UseV stop_V)
+AllRus: останавливать
+AllRusAbs: EmbedVP (UseV swell_V)
+AllRus: опухать
+AllRusAbs: EmbedVP (UseV swim_V)
+AllRus: плыть
+AllRusAbs: EmbedVP (UseV think_V)
+AllRus: думать
+AllRusAbs: EmbedVP (UseV travel_V)
+AllRus: путешествовать
+AllRusAbs: EmbedVP (UseV turn_V)
+AllRus: поворачивать
+AllRusAbs: EmbedVP (UseV vomit_V)
+AllRus: блевать
+AllRusAbs: EmbedVP (UseV walk_V)
+AllRus: гулять
+
+AllRusAbs: SentCN (UseN apple_N) (EmbedVP (UseV fall_V))
+AllRus: яблоко падать
+
+AllRusAbs: MassNP (SentCN (UseN apple_N) (EmbedVP (UseV fall_V)))
+AllRus: яблоко падать
+
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a learn_V2) (DetCN (DetQuant DefArt NumSg) (SentCN (UseN apple_N) (EmbedVP (ProgrVP (UseV fall_V)))))))
+AllRus: он учит яблоко падать
+
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPres ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (UseV fall_V))))))
+AllRus: он не знает , что яблоко не падает
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPres ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (UseV fall_V))))))
+AllRus: он не знает , что яблоко падает
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPres ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (UseV fall_V))))))
+AllRus: он знает , что яблоко не падает
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPres ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (UseV fall_V))))))
+AllRus: он знает , что яблоко падает
+
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TCond ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он не знает , что яблоко не всегда пада &+ ло бы
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TCond ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он не знает , что яблоко всегда пада &+ ло бы
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TFut ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он не знает , что яблоко не всегда будет падать
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TFut ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он не знает , что яблоко всегда будет падать
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPast ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он не знает , что яблоко не всегда пада &+ ло
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он не знает , что яблоко всегда пада &+ ло
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPres ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он не знает , что яблоко не всегда падает
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPres ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он не знает , что яблоко всегда падает
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TCond ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он знает , что яблоко не всегда пада &+ ло бы
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TCond ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он знает , что яблоко всегда пада &+ ло бы
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TFut ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он знает , что яблоко не всегда будет падать
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TFut ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он знает , что яблоко всегда будет падать
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPast ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он знает , что яблоко не всегда пада &+ ло
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он знает , что яблоко всегда пада &+ ло
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPres ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он знает , что яблоко не всегда падает
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPres ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
+AllRus: он знает , что яблоко всегда падает
+
+AllRusAbs: PredSCVP (EmbedVP (UseV play_V)) thirsty_VP
+AllRus: играть хотеть пить
+
+AllRusAbs: QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)
+AllRus: играть хотеть пить
+
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть не хоте &+ ло бы пить
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть хоте &+ ло бы пить
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть не хоте &+ ло бы пить
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть хоте &+ ло бы пить
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть не захочет пить
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть захочет пить
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть не захочет пить
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть захочет пить
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть не хоте &+ ло пить
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть хоте &+ ло пить
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть не хоте &+ ло пить
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть хоте &+ ло пить
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть не хочет пить
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть хочет пить
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть не хочет пить
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть хочет пить
+
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть не хоте &+ ло бы пить
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
+AllRus: играть хоте &+ ло бы пить
+
+AllRusAbs: UttQS (UseQCl (TTAnt TCond AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)))
+AllRus: играть не хоте &+ ло бы пить
+AllRusAbs: UttQS (UseQCl (TTAnt TCond AAnter) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)))
+AllRus: играть хоте &+ ло бы пить
+
+AllRusAbs: ComplVQ know_VQ (UseQCl (TTAnt TCond AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)))
+AllRus: знать , что играть не хоте &+ ло бы пить
+AllRusAbs: ComplVQ know_VQ (UseQCl (TTAnt TCond AAnter) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)))
+AllRus: знать , что играть хоте &+ ло бы пить
+
+AllRusAbs: EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))
+AllRus: быть голодно у нас
+
+AllRusAbs: SentCN (UseN apple_N) (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron)))
+AllRus: яблоко быть голодно у нас
+
+AllRusAbs: PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)
+AllRus: быть голодно у нас считаться
+
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас не счита &+ ло &+ сь бы
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас счита &+ ло &+ сь бы
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас не счита &+ ло &+ сь бы
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас счита &+ ло &+ сь бы
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас не будет считаться
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас будет считаться
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас не будет считаться
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас будет считаться
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас не счита &+ ло &+ сь
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас счита &+ ло &+ сь
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас не счита &+ ло &+ сь
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас счита &+ ло &+ сь
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас не считает &+ ся
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас считает &+ ся
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас не считает &+ ся
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
+AllRus: быть голодно у нас считает &+ ся
+
+AllRusAbs: PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron)))))
+AllRus: кто &+ -то становиться лёгким падать у нас
+
+AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то не становил &+ ся бы лёгким падать у нас
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то становил &+ ся бы лёгким падать у нас
+AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то не становил &+ ся бы лёгким падать у нас
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то становил &+ ся бы лёгким падать у нас
+AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то не будет становиться лёгким падать у нас
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то будет становиться лёгким падать у нас
+AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то не будет становиться лёгким падать у нас
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то будет становиться лёгким падать у нас
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то не становил &+ ся лёгким падать у нас
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то становил &+ ся лёгким падать у нас
+AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то не становил &+ ся лёгким падать у нас
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то становил &+ ся лёгким падать у нас
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то не становит &+ ся лёгким падать у нас
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то становит &+ ся лёгким падать у нас
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то не становит &+ ся лёгким падать у нас
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
+AllRus: кто &+ -то становит &+ ся лёгким падать у нас
+
+AllRusAbs: UseComp (CompAdv here_Adv)
+AllRus: здесь быть
+
+AllRusAbs: PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAdv here_Adv))
+AllRus: играть здесь быть
+
+AllRusAbs: PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A)))
+AllRus: играть быть чистым
+
+AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть не бы &+ ло бы чистым
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть бы &+ ло бы чистым
+AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть не бы &+ ло бы чистым
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть бы &+ ло бы чистым
+AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть не будет чистым
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть будет чистым
+AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть не будет чистым
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть будет чистым
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть не бы &+ ло чистым
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть бы &+ ло чистым
+AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть не бы &+ ло чистым
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть бы &+ ло чистым
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть не является чистым
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть является чистым
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть не является чистым
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
+AllRus: играть является чистым
+
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompCN (AdjCN (PositA clean_A) (UseN war_N)))))
+AllRus: играть является чистой войной
+

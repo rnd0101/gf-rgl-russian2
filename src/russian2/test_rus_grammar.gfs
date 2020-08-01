@@ -60,3 +60,42 @@ gt UseCl (TTAnt TCond AAnter) ? (PredVP (MassNP (UseN heart_N)) (PassV2 squeeze_
 gt UseCl (TTAnt TCond AAnter) ? (PredVP (MassNP (UseN heart_N)) ( ComplVV ? (PassV2 squeeze_V2)   ) ) | l -treebank
 gt ComplVS hope_VS ( UseCl (TTAnt ? AAnter) ? (have_name_Cl (UsePron he_Pron) (UsePN john_PN)) )  | l -treebank
 gt UseCl (TTAnt TPast ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep ill_VP possess_Prep) (UsePron we_Pron))) | l -treebank
+
+gt UseQCl (TTAnt ? ASimul) PPos (what_name_QCl (UsePron youSg_Pron)) | l -treebank
+
+gt UseA2 easy_A2V | l -treebank
+gt SentAP (UseA2 easy_A2V) ( EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron)) )  | l -treebank
+gt ComplVA become_VA ( SentAP (UseA2 easy_A2V) ( EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron)) ))  | l -treebank
+
+gt EmbedVP ( UseV ? ) | l -treebank
+gt SentCN  (UseN apple_N)   (EmbedVP ( UseV fall_V ) ) | l -treebank
+gt MassNP ( SentCN (UseN apple_N) (EmbedVP (UseV fall_V)) ) | l -treebank
+gt UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a learn_V2) (DetCN (DetQuant DefArt NumSg) (SentCN (UseN apple_N) (EmbedVP (ProgrVP (UseV fall_V))))))) |l -treebank
+
+gt UseCl (TTAnt TPres ASimul) ? (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPres ASimul) ? (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (UseV fall_V)))))) | l -treebank
+gt UseCl (TTAnt TPres ASimul) ? (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt ? ASimul) ? (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V))))))) | l -treebank
+
+-- these below sound unnatural
+
+gt PredSCVP (EmbedVP (UseV play_V)) thirsty_VP | l -treebank
+gt QuestCl ( PredSCVP (EmbedVP (UseV play_V)) thirsty_VP ) | l -treebank
+gt UseQCl ? ? ( QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP) ) | l -treebank
+gt UseQCl (TTAnt TCond AAnter) ? (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)) | l -treebank
+gt UttQS ( UseQCl (TTAnt TCond AAnter) ? (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)) ) | l -treebank
+gt ComplVQ know_VQ ( UseQCl (TTAnt TCond AAnter) ? (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)) ) | l -treebank
+
+gt EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron)) | l -treebank
+gt SentCN  (UseN apple_N)   (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) | l -treebank
+gt PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron)))    ( PassV2 count_V2 )  | l -treebank
+gt UseQCl ? ? ( QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron)))    ( PassV2 count_V2 )) ) | l -treebank
+
+
+gt PredVP (somebody_NP) (ComplVA become_VA ( SentAP (UseA2 easy_A2V) ( EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron)) ))) |l -treebank
+gt UseCl ? ? (PredVP (somebody_NP) (ComplVA become_VA ( SentAP (UseA2 easy_A2V) ( EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron)) ))) )|l -treebank
+gt UseComp (CompAdv here_Adv) | l -treebank
+gt PredSCVP (EmbedVP (UseV play_V))  (UseComp (CompAdv here_Adv) ) | l -treebank
+gt PredSCVP (EmbedVP (UseV play_V))  (UseComp (CompAP (PositA clean_A)) ) | l -treebank
+gt UseCl ? ? (  PredSCVP (EmbedVP (UseV play_V))  (UseComp (CompAP (PositA clean_A)) ) ) |l -treebank
+
+gt UseCl (TTAnt TPres ASimul) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompCN (AdjCN (PositA clean_A) (UseN war_N))))) | l -treebank
+
