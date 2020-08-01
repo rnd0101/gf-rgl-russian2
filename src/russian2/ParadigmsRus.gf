@@ -1,14 +1,12 @@
+--1 Russian Lexical Paradigms
+
 resource ParadigmsRus = open CatRus, ResRus, (R=ResRus), ParamRus, (Z=ZaliznyakAlgo), Prelude in {
 
-----------------
--- Parameters
+--2 Parameters
+--
 
 oper
-  singular : Number
-    = Sg ;
-  plural : Number
-    = Pl ;
-
+-- Abstracting gender. Gender is a parameter for mkN, mkN2, mkN3
   masculine : Gender
     = Masc ;
   feminine : Gender
@@ -16,16 +14,25 @@ oper
   neuter : Gender
     = Neut ;
 
+-- Abstracting numbers. Number is a parameter for mkPN, mkConj
+  singular : Number
+    = Sg ;
+  plural : Number
+    = Pl ;
+
+-- Adjectives can have short and full form. ShortFormPreference type is a parameter for mkA
   short : ShortFormPreference
     = PrefShort ;
   full : ShortFormPreference
     = PrefFull ;
 
+-- Animacy is needed for nouns and some pronouns.
   animate : Animacy
     = Animate ;
   inanimate : Animacy
     = Inanimate ;
 
+-- Main cases:
   nominative : Case
     = Nom ;
   genitive : Case
@@ -39,15 +46,15 @@ oper
   prepositional : Case
     = Pre ;
 
-  -- "Minor" cases:
-
-  locative : Case
+-- "Minor" cases:
+  locative : Case   -- or Pre-2, some nouns have this different from prepositional case
     = Loc ;
-  partitive : Case
+  partitive : Case  -- or Gen-2. Some nouns like "tee", have this in addition to genitive, usually spoken language
     = Ptv ;
-  vocative : Case
+  vocative : Case   -- can be used in spoken language
     = VocRus ;
 
+-- Degrees of adjectives
   positive : Degree
     = Posit ;
   comparative : Degree
@@ -55,15 +62,23 @@ oper
   superlative : Degree
     = Superl ;
 
+-- Aspects of verbs
   perfective : Aspect
     = Perfective ;
   imperfective : Aspect
     = Imperfective ;
 
+-- Transitivity is verb's inherent characteristic. Can influence which forms are possible
   transitive : Transitivity
     = Transitive ;
   intransitive : Transitivity
     = Intransitive ;
+
+-- Reflexivity is traditionally understood as inherent characteristic. Not to be confused with passive forms
+   reflexive : Reflexivity
+     = Reflexive ;
+   non_reflexive : Reflexivity
+     = NonReflexive ;
 
 ------------------------------
 -- Nouns
