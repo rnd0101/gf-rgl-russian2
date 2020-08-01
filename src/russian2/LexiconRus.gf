@@ -101,7 +101,7 @@ lin
   fat_N = mkN "жир" ;
   father_N2 = mkN2 (mkN "отец" masculine inanimate "5*b");
   fear_V2 = mkV2 (mkV imperfective intransitive "бояться" "боюсь" "боится") Gen ;
-  fear_VS = mkV imperfective "бояться" "боюсь" "боится";  --intran
+  fear_VS = mkVS (mkV imperfective "бояться" "боюсь" "боится" ) ;  --intran
   feather_N = (mkNplus (mkN "перо" neuter inanimate "1d")) ** {pnom="перья";pgen="перьев";pdat="перьям";pacc="перья";pins="перьями";pprep="перьях"};
   fight_V2 = mkV2 (mkV imperfective intransitive "бороться" "борюсь" "борется") with_Prep ;
   find_V2 = mkV2 (mkV imperfective "находить" "нахожу" "находит");
@@ -144,9 +144,9 @@ lin
   heart_N = mkN "сердце" neuter inanimate "5*c" ;
   heavy_A = (mkAltShort (mkA "тяжёлый" "тяжелее") (mkA "тяжелый")) ** {sm="тяжёл"} ;   -- TODO: same
   hill_N = mkN "холм" ;
-  hit_V2 = mkV2 (mkV imperfective "ударять" "ударяю" "ударяет");
-  hold_V2 = mkV2 (mkV imperfective "держать" "держу" "держит");
-  hope_VS= mkV imperfective "надеяться" "надеюсь" ;
+  hit_V2 = mkV2 (mkV imperfective "ударять" "ударяю" "ударяет") ;
+  hold_V2 = mkV2 (mkV imperfective "держать" "держу" "держит") ;
+  hope_VS = mkVS (mkV imperfective "надеяться" "надеюсь") ;
   horn_N = mkN "рог" masculine inanimate "3c(1)" ;
   horse_N = mkN "лошадь" feminine animate "8e" ;
   hot_A = mkA "горячий" "" "4a/b";
@@ -162,9 +162,9 @@ lin
   kill_V2 = mkV2 (mkV imperfective "убивать" "убиваю");
   king_N = mkN "король" masculine animate "2b";
   knee_N = (mkNplus (mkN "колено" neuter inanimate "1a")) ** {pnom="колени";pgen="коленей";pdat="коленям";pacc="колени";pins="коленями";pprep="коленях"} ;
-  know_V2 = mkV2 (mkV imperfective "знать" "знаю");
-  know_VQ = mkV imperfective "знать" "знаю";
-  know_VS= mkV imperfective "знать" "знаю" ;
+  know_V2 = mkV2 (mkV imperfective "знать" "знаю") ;
+  know_VQ = mkVQ (mkV imperfective "знать" "знаю") ;
+  know_VS = mkVS (mkV imperfective "знать" "знаю") ;
   lake_N = (mkNplus (mkN "озеро" neuter inanimate "1a"))  ** {pnom="озёра";pgen="озёр";pdat="озёрам";pacc="озёра";pins="озёрами";pprep="озёрах"} ;
   lamp_N = mkN "лампа" ;
   language_N = mkN "язык" ;
@@ -249,7 +249,7 @@ lin
   run_V = mkV imperfective intransitive "бегать" "бегу" "бежит" ;
   salt_N = mkN "соль" ;
   sand_N = (mkNplus (mkN "песок"  masculine inanimate "3*b")) ** {sptv="песку"} ;
-  say_VS = mkV imperfective "говорить" "говорю" "говорит" ;
+  say_VS = mkVS (mkV imperfective "говорить" "говорю" "говорит") ;
   school_N = mkN "школа" ;
   science_N = mkN "наука" ;
   scratch_V2 = mkV2 (mkV imperfective "чесать" "чешу" "чешет");
@@ -344,7 +344,7 @@ lin
   wing_N = (mkNplus (mkN "крыло" neuter inanimate "1d")) ** {pnom="крылья";pgen="крыльев";pdat="крыльям";pacc="крылья";pins="крыльями";pprep="крыльях"};
   wipe_V2 = mkV2 (mkV imperfective "вытирать" "вытираю");
   woman_N = mkN "женщина" feminine animate ;
-  wonder_VQ = mkV imperfective "интересовать" "интересую" "интересует";
+  wonder_VQ = mkVQ (mkV imperfective "интересовать" "интересую" "интересует") ;
   wood_N = mkN "древесина" feminine inanimate "1a" ;
   worm_N = mkN "червь" masculine animate ;
   write_V2 = mkV2 (mkV imperfective "писать" "пишу" "пишет");

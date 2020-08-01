@@ -977,6 +977,167 @@ AllRus: одна птица не любит Ивана .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (ConjS and_Conj (BaseS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron youSg_Pron) (UseV fall_V))) (UseCl (TTAnt TPres AAnter) PPos (GenericCl (ComplSlash (VPSlashPrep (UseV sing_V) on_Prep) (MassNP (UseN window_N)))))))) NoVoc) TEmpty
 AllRus: ты падаешь и поёшь на окне .
 
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttCN (AdjCN (PositA red_A) (UseN apple_N))) NoVoc) TEmpty
+AllRus: красное яблоко .
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (RelNP (MassNP (UseN apple_N)) (UseRCl (TTAnt TPres AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (SlashV2a eat_V2))))) (UseComp (CompAP (PositA young_A)))))) NoVoc) TEmpty
+AllRus: яблоко , которое Иван кушает , является молодым .
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttNP (MassNP (AdvCN (RelCN (UseN apple_N) (UseRCl (TTAnt TPast AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (SlashV2a eat_V2))))) here_Adv))) NoVoc) TEmpty
+AllRus: яблоко , которое Иван кушал , здесь .
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast AAnter) PPos (PredVP (RelNP (MassNP (UseN apple_N)) (UseRCl (TTAnt TPast AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (SlashV2a eat_V2))))) (AdvVP (UseV fall_V) here_Adv)))) NoVoc) TEmpty
+AllRus: яблоко , которое Иван кушал , пада &+ ло здесь .
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast AAnter) PPos (PredVP (RelNP (MassNP (bottle_of_CN (MassNP (UseN beer_N)))) (UseRCl (TTAnt TPast AAnter) PPos (RelSlash IdRP (SlashVP (UsePN john_PN) (SlashV2a drink_V2))))) (AdvVP (UseV fall_V) here_Adv)))) NoVoc) TEmpty
+AllRus: бутылка пива , которую Иван пил , пада &+ ла здесь .
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron it_Pron) (ReflVP (SlashV2a teach_V2))))) NoVoc) TEmpty
+AllRus: оно учит себя .
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: он не учит себя сам .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron i_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: я не учу себя сам .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron it_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: оно не учит себя само .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron she_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: она не учит себя сама .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron they_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: они не учат себя сами .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron we_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: мы не учим себя сами .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron youPl_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: вы не учите себя сами .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron youPol_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: вы не учите себя сами .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron youSg_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: ты не учишь себя сам .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: он учит себя сам .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron i_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: я учу себя сам .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron it_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: оно учит себя само .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: она учит себя сама .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron they_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: они учат себя сами .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron we_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: мы учим себя сами .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron youPl_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: вы учите себя сами .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron youPol_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: вы учите себя сами .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron youSg_Pron) (SelfAdvVP (ReflVP (SlashV2a learn_V2)))))) NoVoc) TEmpty
+AllRus: ты учишь себя сам .
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv friday_Weekday))))) NoVoc) TEmpty
+AllRus: он не будет учиться в пятницу .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv monday_Weekday))))) NoVoc) TEmpty
+AllRus: он не будет учиться в понедельник .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv saturday_Weekday))))) NoVoc) TEmpty
+AllRus: он не будет учиться в субботу .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv sunday_Weekday))))) NoVoc) TEmpty
+AllRus: он не будет учиться в воскресенье .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv thursday_Weekday))))) NoVoc) TEmpty
+AllRus: он не будет учиться в четверг .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv tuesday_Weekday))))) NoVoc) TEmpty
+AllRus: он не будет учиться в вторник .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv wednesday_Weekday))))) NoVoc) TEmpty
+AllRus: он не будет учиться в среду .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv friday_Weekday))))) NoVoc) TEmpty
+AllRus: он будет учиться в пятницу .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv monday_Weekday))))) NoVoc) TEmpty
+AllRus: он будет учиться в понедельник .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv saturday_Weekday))))) NoVoc) TEmpty
+AllRus: он будет учиться в субботу .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv sunday_Weekday))))) NoVoc) TEmpty
+AllRus: он будет учиться в воскресенье .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv thursday_Weekday))))) NoVoc) TEmpty
+AllRus: он будет учиться в четверг .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv tuesday_Weekday))))) NoVoc) TEmpty
+AllRus: он будет учиться в вторник .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv wednesday_Weekday))))) NoVoc) TEmpty
+AllRus: он будет учиться в среду .
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayNextAdv friday_Weekday))))) NoVoc) TEmpty
+AllRus: он не будет учиться в следующую пятницу .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayNextAdv monday_Weekday))))) NoVoc) TEmpty
+AllRus: он не будет учиться в следующий понедельник .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayNextAdv saturday_Weekday))))) NoVoc) TEmpty
+AllRus: он не будет учиться в следующую субботу .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayNextAdv sunday_Weekday))))) NoVoc) TEmpty
+AllRus: он не будет учиться в следующее воскресенье .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayNextAdv thursday_Weekday))))) NoVoc) TEmpty
+AllRus: он не будет учиться в следующий четверг .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayNextAdv tuesday_Weekday))))) NoVoc) TEmpty
+AllRus: он не будет учиться в следующий вторник .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayNextAdv wednesday_Weekday))))) NoVoc) TEmpty
+AllRus: он не будет учиться в следующую среду .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayNextAdv friday_Weekday))))) NoVoc) TEmpty
+AllRus: он будет учиться в следующую пятницу .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayNextAdv monday_Weekday))))) NoVoc) TEmpty
+AllRus: он будет учиться в следующий понедельник .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayNextAdv saturday_Weekday))))) NoVoc) TEmpty
+AllRus: он будет учиться в следующую субботу .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayNextAdv sunday_Weekday))))) NoVoc) TEmpty
+AllRus: он будет учиться в следующее воскресенье .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayNextAdv thursday_Weekday))))) NoVoc) TEmpty
+AllRus: он будет учиться в следующий четверг .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayNextAdv tuesday_Weekday))))) NoVoc) TEmpty
+AllRus: он будет учиться в следующий вторник .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayNextAdv wednesday_Weekday))))) NoVoc) TEmpty
+AllRus: он будет учиться в следующую среду .
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv friday_Weekday))))) NoVoc) TEmpty
+AllRus: он не учил &+ ся в прошлую пятницу .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv monday_Weekday))))) NoVoc) TEmpty
+AllRus: он не учил &+ ся в прошлый понедельник .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv saturday_Weekday))))) NoVoc) TEmpty
+AllRus: он не учил &+ ся в прошлую субботу .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv sunday_Weekday))))) NoVoc) TEmpty
+AllRus: он не учил &+ ся в прошлое воскресенье .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv thursday_Weekday))))) NoVoc) TEmpty
+AllRus: он не учил &+ ся в прошлый четверг .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv tuesday_Weekday))))) NoVoc) TEmpty
+AllRus: он не учил &+ ся в прошлый вторник .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv wednesday_Weekday))))) NoVoc) TEmpty
+AllRus: он не учил &+ ся в прошлую среду .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv friday_Weekday))))) NoVoc) TEmpty
+AllRus: он учил &+ ся в прошлую пятницу .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv monday_Weekday))))) NoVoc) TEmpty
+AllRus: он учил &+ ся в прошлый понедельник .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv saturday_Weekday))))) NoVoc) TEmpty
+AllRus: он учил &+ ся в прошлую субботу .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv sunday_Weekday))))) NoVoc) TEmpty
+AllRus: он учил &+ ся в прошлое воскресенье .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv thursday_Weekday))))) NoVoc) TEmpty
+AllRus: он учил &+ ся в прошлый четверг .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv tuesday_Weekday))))) NoVoc) TEmpty
+AllRus: он учил &+ ся в прошлый вторник .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv wednesday_Weekday))))) NoVoc) TEmpty
+AllRus: он учил &+ ся в прошлую среду .
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 teach_V2) (yearAdv (intYear 2024)))))) NoVoc) TEmpty
+AllRus: он будет учиться в 2024 .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron i_Pron) (AdvVP (PassV2 teach_V2) (yearAdv (intYear 2024)))))) NoVoc) TEmpty
+AllRus: я буду учиться в 2024 .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron it_Pron) (AdvVP (PassV2 teach_V2) (yearAdv (intYear 2024)))))) NoVoc) TEmpty
+AllRus: оно будет учиться в 2024 .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron she_Pron) (AdvVP (PassV2 teach_V2) (yearAdv (intYear 2024)))))) NoVoc) TEmpty
+AllRus: она будет учиться в 2024 .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron they_Pron) (AdvVP (PassV2 teach_V2) (yearAdv (intYear 2024)))))) NoVoc) TEmpty
+AllRus: они будут учиться в 2024 .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron we_Pron) (AdvVP (PassV2 teach_V2) (yearAdv (intYear 2024)))))) NoVoc) TEmpty
+AllRus: мы будем учиться в 2024 .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron youPl_Pron) (AdvVP (PassV2 teach_V2) (yearAdv (intYear 2024)))))) NoVoc) TEmpty
+AllRus: вы будете учиться в 2024 .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron youPol_Pron) (AdvVP (PassV2 teach_V2) (yearAdv (intYear 2024)))))) NoVoc) TEmpty
+AllRus: вы будете учиться в 2024 .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron youSg_Pron) (AdvVP (PassV2 teach_V2) (yearAdv (intYear 2024)))))) NoVoc) TEmpty
+AllRus: ты будешь учиться в 2024 .
+
 AllRusAbs: PredSCVP (EmbedVP (UseV play_V)) thirsty_VP
 AllRus: играть хотеть пить
 

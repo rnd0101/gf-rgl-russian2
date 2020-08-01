@@ -80,6 +80,12 @@ oper
    non_reflexive : Reflexivity
      = NonReflexive ;
 
+-- Voice (not yet used)
+   active : Voice
+     = Act ;
+   passive : Voice
+     = Pass ;
+
 ------------------------------
 --2 Nouns
 
@@ -144,6 +150,13 @@ oper
     mkV3 : V -> Case -> Case -> V3 ;
     mkV3 : V -> Prep -> Prep -> V3 ;
   } ;
+
+   mkVS  : V -> VS ;
+   mkVQ  : V -> VQ ;
+   mkV2V : V -> Prep -> V2V ;
+   mkV2S : V -> Prep -> V2S ;
+   mkV2Q : V -> Prep -> V2Q ;
+   mkV2A : V -> Prep -> V2A ;
 
   dirV2 : V -> V2 ;
   tvDirDir : V -> V3 ;
@@ -315,6 +328,13 @@ oper
   dirV2 v = mkV2 v Acc ;
   tvDirDir v = mkV3 v Acc Dat ;
   mkVV = \v -> lin VV {v=v; modal=\\a=>[]} ;
+
+  mkVS v = lin VS v ;
+  mkVQ v = lin VQ v ;
+  mkV2V v prep = lin V2V (v ** {c=prep}) ;
+  mkV2S v prep = lin V2S (v ** {c=prep}) ;
+  mkV2Q v prep = lin V2Q (v ** {c=prep}) ;
+  mkV2A v prep = lin V2A (v ** {c=prep}) ;
 
 ------------------------
 -- Adverbs, prepositions, conjunctions, ...
