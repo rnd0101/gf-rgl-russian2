@@ -81,7 +81,95 @@ oper
      = NonReflexive ;
 
 ------------------------------
+--2 Nouns
+
+  mkN : overload {
+    mkN : Str -> N ;     -- can guess declension and gender of some nouns given nominative
+    mkN : Str -> Gender -> Animacy -> N ;  -- can guess declension of more nouns
+    mkN : Str -> Gender -> Animacy -> (idx : Str) -> N ;  -- most accurate way. Fourth parameter is a declension type index (based on Zaliznyak's dictionary), for example, "1*a(1)"
+    mkN : A -> Gender -> Animacy -> N ;  -- for nouns, which decline as adjective
+  } ;
+
+  mkN2 : overload {
+    mkN2 : N -> N2 ;
+    mkN2 : N -> Prep -> N2 ;
+    mkN2 : Str -> Gender -> Animacy -> (idx : Str) -> Prep -> N2 ; -- convenience for making N2. Fourth parameter is a declension type index (based on Zaliznyak's dictionary), for example, "1*f''(1)"
+  } ;
+
+  mkN3 : overload {
+    mkN3 : N -> Prep -> Prep -> N3 ;
+    mkN3 : Str -> Gender -> Animacy -> (idx : Str) -> Prep -> Prep -> N3 ;  -- convenience for making N2. Fourth parameter is a declension type index (based on Zaliznyak's dictionary), for example, "4*b"
+  } ;
+
+  mkPN : overload {
+    mkPN : N -> PN ;
+  } ;
+
+--2 Adjectives
+
+  mkA : overload {
+    mkA : Str -> A ;  -- can guess declension of many adjectives given nominative masculine
+    mkA : Str -> Str -> A ;  -- same, but comparative given as a second argument
+    mkA : Str -> Str -> (idx : Str) -> A ; -- nom masc, comparative and third parameter is Zaliznyak's dictionary index, for example, "1a"
+    mkA : Str -> Str -> (idx : Str) -> ShortFormPreference -> A ; -- same, but with short form preference given
+  } ;
+
+-- Two-place adjectives need a preposition and a case as extra arguments.
+
+  -- TODO: ? mkA2 : A -> Str -> Case -> A2 ;  -- "делим на"
+  mkA2 : A -> Prep -> A2 ;
+
+  mkOrd : overload {
+    mkOrd : (nom : Str) -> Ord ;
+  } ;
+
+-------------------------
+--2 Verbs
+
+  mkV : overload {
+    mkV : (inf : Str) -> (sg1 : Str) -> V ;  -- guess some I conjugation verbs (not "ё") from infinitive and Sg P1, perfective, transitive
+    mkV : (inf : Str) -> (sg1 : Str) -> (sg3 : Str) -> V ; -- guess verb forms given Inf, Sg P1, Sg P3, perfective, transitive
+    mkV : Aspect -> (inf : Str) -> (sg1 : Str) -> (sg3 : Str) -> V ; -- same, but aspect as first parameter
+    mkV : Aspect -> Transitivity -> (inf : Str) -> (sg1 : Str) -> (sg3 : Str) -> V ;  -- aspect, transitivity, Inf, Sg P1, Sg P3
+    mkV : Aspect -> Transitivity -> (inf : Str) -> (sg1 : Str) -> (sg3 : Str) -> (idx : Str) -> V    -- aspect, transitivity, Inf, Sg P1, Sg P3 and index from Zaliznyak's dictionary, eg "14a"
+  } ;
+
+  mkV2 : overload {
+    mkV2 : V -> V2 ;  -- most common case with Acc and no preposition
+    mkV2 : V -> Case -> V2 ; -- given case, but no preposition
+    mkV2 : V -> Prep -> V2 ;
+    } ;
+
+  mkV3 : overload {
+    mkV3 : V -> Case -> Case -> V3 ;
+    mkV3 : V -> Prep -> Prep -> V3 ;
+  } ;
+
+  dirV2 : V -> V2 ;
+  tvDirDir : V -> V3 ;
+  mkVV : V -> VV;
+
+------------------------
+--2 Adverbs, prepositions, conjunctions, ...
+
+  mkAdv : Str -> Adv ;
+  mkIAdv : Str -> IAdv ;
+  mkConj : overload {
+    mkConj : Str -> Number -> Conj ;  -- only middle conjunction
+    mkConj : Str -> Str -> Number -> Conj ; -- two-part conjunction
+  } ;
+
+  mkInterj : Str -> Interj ;
+  mkPrep : Str -> Case -> Prep ;
+
+-- The definitions should not bother the user of the API. So they are
+-- hidden from the document.
+--.
+
+------------------------------
 -- Nouns
+
+  nullPrep : Prep = lin Prep {s=[]; c=Gen; hasPrep=False} ;
 
   mkN = overload {
     mkN : Str -> N
@@ -161,7 +249,7 @@ oper
   mkA2 : A -> Prep -> A2
     = \a,p -> lin A2 (a ** {c = p}) ;
 
-  mkOrd = overload {   -- ord from adj. TODO: This shadows mkOrd from constructors...
+  mkOrd = overload {
     mkOrd : (nom : Str) -> Ord
       = \nom -> lin Ord (guessAdjectiveForms nom) ;
   } ;
@@ -223,33 +311,10 @@ oper
       = \vf, prep1, prep2, cas1, cas2 -> lin V3 (vf ** {c={s=prep1 ; c=cas1 ; hasPrep=True} ; c2={s=prep2 ; c=cas2 ; hasPrep=True}} ) ;
   } ;
 
-  dirV2 : V -> V2 ;
+
   dirV2 v = mkV2 v Acc ;
-  tvDirDir : V -> V3 ;
   tvDirDir v = mkV3 v Acc Dat ;
-
-  mkVV : V -> VV;
   mkVV = \v -> lin VV {v=v; modal=\\a=>[]} ;
-
-  -- for backwards compatibility only. Use mkV methods instead.
-  -- These are deprecated!
-param Conjugation = First | FirstE | Second | SecondA | Mixed | Dolzhen | Foreign ;
-oper
-  first, firstE, second, mixed, dolzhen, foreign : Conjugation ;
-  first = First ; firstE = FirstE ; second = Second ; secondA = SecondA ; mixed = Mixed ; dolzhen = Dolzhen; foreign = Foreign;
-
-  -- Do not use the following method as it is only approximate because it does not use most informative SgP3 amd
-  -- SgP3 is being guessed instead from SgP1.
-  regV : Aspect -> Conjugation -> (stemPresSg1,endPresSg1,pastSg1,imp,inf : Str) -> V ;
-  regV asp bconj stemPresSg1 endPresSg1 pastSg1 imp inf =
-    let sg1=stemPresSg1 + endPresSg1 in
-    let sg3 : Str = case bconj of {
-      First => (Z.sg1StemFromVerb sg1) + "ет" ;
-      Mixed => (Z.sg1StemFromVerb sg1) + "чет" ;
-      FirstE => (Z.sg1StemFromVerb sg1) + "ёт" ;
-      Second | SecondA => (Z.sg1StemFromVerb sg1) + "ит" ;
-      _ => (Z.sg1StemFromVerb sg1) + "ет"
-      } in (guessVerbForms asp Transitive inf sg1 sg3) ** {lock_V=<>} ;
 
 ------------------------
 -- Adverbs, prepositions, conjunctions, ...
@@ -272,4 +337,24 @@ oper
 
   mkPrep : Str -> Case -> Prep
     = \s,c -> lin Prep {s = s ; c = c ; hasPrep = True} ;
+
+  -- for backwards compatibility only. Use mkV methods instead.
+  -- These are deprecated!
+param Conjugation = First | FirstE | Second | SecondA | Mixed | Dolzhen | Foreign ;
+oper
+  first, firstE, second, mixed, dolzhen, foreign : Conjugation ;
+  first = First ; firstE = FirstE ; second = Second ; secondA = SecondA ; mixed = Mixed ; dolzhen = Dolzhen; foreign = Foreign;
+
+  -- Do not use the following method as it is only approximate because it does not use most informative SgP3 amd
+  -- SgP3 is being guessed instead from SgP1.
+  regV : Aspect -> Conjugation -> (stemPresSg1,endPresSg1,pastSg1,imp,inf : Str) -> V ;
+  regV asp bconj stemPresSg1 endPresSg1 pastSg1 imp inf =
+    let sg1=stemPresSg1 + endPresSg1 in
+    let sg3 : Str = case bconj of {
+      First => (Z.sg1StemFromVerb sg1) + "ет" ;
+      Mixed => (Z.sg1StemFromVerb sg1) + "чет" ;
+      FirstE => (Z.sg1StemFromVerb sg1) + "ёт" ;
+      Second | SecondA => (Z.sg1StemFromVerb sg1) + "ит" ;
+      _ => (Z.sg1StemFromVerb sg1) + "ет"
+      } in (guessVerbForms asp Transitive inf sg1 sg3) ** {lock_V=<>} ;
 }
