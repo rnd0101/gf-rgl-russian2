@@ -45,7 +45,11 @@ oper
   Noun2Forms = NounForms ** {c2 : ComplementCase} ;
   Noun3Forms = NounForms ** {c2,c3 : ComplementCase} ;
 
--- this is used in UseN
+  NounPhrase = {
+    s : Case => Str ;
+    pron : Bool ; -- this only indicates n-prefixable pronouns
+    a : Agr
+    } ;
 
   nounFormsNoun : NounForms -> Noun
     = \forms -> {
@@ -1294,13 +1298,12 @@ oper
   numSizeGenAgr : NumSize -> Gender -> Person -> Agr
     = \ns,g,p -> Ag (case ns of {Num1 => GSg g ; NumAll | Num2_4 | Num5 => GPl}) p ;
 
-oper -- TODO:
-  ComplementCase : Type = {s : Str ; c : Case ; hasPrep : Bool} ;
-
 ----------------
 -- Misc
 
 oper
+  ComplementCase : Type = {s : Str ; c : Case ; hasPrep : Bool} ;
+
   applyPrep : ComplementCase -> NounPhrase -> Str
     = \prep,np -> case <np.pron, prep.hasPrep, prep.c> of {
       <True, True, Gen|Dat|Acc|Ins|Ptv> => prep.s ++ "н" ++ BIND ++ (np.s ! prep.c) ;
@@ -1310,10 +1313,4 @@ oper
   applyIPronPrep : ComplementCase -> IPronounForms -> Str
     = \prep,ip -> prep.s ++ selectIPronCase ip prep.c ;
 
-  NounPhrase = {
-    s : Case => Str ;
-    -- , prep : Case => Str   -- what for is this neeeded?
-    pron : Bool ; -- this only indicates n-prefixable pronouns
-    a : Agr
-    } ;
 }
