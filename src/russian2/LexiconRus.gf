@@ -13,7 +13,7 @@ lin
   apartment_N = mkN "квартира" ;
   apple_N = mkN "яблоко" neuter inanimate "3a(1)" ;
   art_N = mkN "искусство" ;
-  ashes_N = mkN "пепел" masculine inanimate "1*a" ;
+  ashes_N = mkN "пепел" masculine inanimate "1*a" only_singular;
   ask_V2Q = dirV2 (mkV perfective "спросить" "спрошу" "спросит") ;
   baby_N = mkN "малыш" masculine animate "4b" ;
   back_N = mkN "спина" ;
