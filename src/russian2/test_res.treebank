@@ -277,6 +277,28 @@ AllRus: лёгкий для себя
 AllRusAbs: ReflA2 married_A2
 AllRus: замужем за собой
 
+AllRusAbs: CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))
+AllRus: менее полный , чем брат
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron he_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
+AllRus: менее полный , чем брат , он сидел на столе .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron i_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
+AllRus: менее полный , чем брат , я сидел на столе .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron it_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
+AllRus: менее полный , чем брат , оно сиде &+ ло на столе .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron she_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
+AllRus: менее полный , чем брат , она сиде &+ ла на столе .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron they_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
+AllRus: менее полный , чем брат , они сиде &+ ли на столе .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron we_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
+AllRus: менее полный , чем брат , мы сиде &+ ли на столе .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron youPl_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
+AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron youPol_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
+AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron youSg_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
+AllRus: менее полный , чем брат , ты сидел на столе .
+
 AllRusAbs: EmbedQS (UseQCl (TTAnt TCond ASimul) PNeg (ExistIP whatSg_IP))
 AllRus: что не существова &+ ло бы
 AllRusAbs: EmbedQS (UseQCl (TTAnt TFut ASimul) PNeg (ExistIP whatSg_IP))
@@ -916,6 +938,8 @@ AllRusAbs: UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron he_Pron) (Comp
 AllRus: он считает машины у её окон
 
 UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (MassNP (UseN worm_N)) (ComplSlash (VPSlashPrep (UseV sit_V) in_Prep) (MassNP (PossNP (AdjCN (PositA red_A) (UseN apple_N)) (DetNP (DetQuant (PossPron he_Pron) NumSg)))))))
+
+UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (MassNP (UseN worm_N)) (ComplSlash (VPSlashPrep (UseV sit_V) in_Prep) (MassNP (PossNP (AdjCN (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (UseN apple_N)) (DetNP (DetQuant (PossPron he_Pron) NumSg)))))))
 
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttImpSg PNeg (ImpVP (ComplSlash (SlashV2a do_V2) (MassNP (UseN apple_N))))) NoVoc) TEmpty
 AllRus: не делай яблоко .
