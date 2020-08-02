@@ -34,6 +34,10 @@ param
   DetType = NormalDet | EmptyDef | EmptyIndef ; -- artificial parameter to side-step DetNP parsing issues
 oper
   MaybeAgr = Maybe Agr ;
+  MaybeNumber = Maybe Number ;
+  JustSg = Just Number Sg ;
+  JustPl = Just Number Pl ;
+  BothSgPl = Nothing Number Sg ;  -- Both are possible, nothing limited
   -- GenNum helpers and coercions
   MSg        = GSg Masc ;
   FSg        = GSg Fem ;

@@ -1,6 +1,6 @@
 --1 Russian Lexical Paradigms
 
-resource ParadigmsRus = open CatRus, ResRus, (R=ResRus), ParamRus, (Z=ZaliznyakAlgo), Prelude in {
+resource ParadigmsRus = open CatRus, ResRus, (R=ResRus), ParamRus, (Z=ZaliznyakAlgo), Prelude, Maybe in {
 
 --2 Parameters
 --
@@ -19,6 +19,12 @@ oper
     = Sg ;
   plural : Number
     = Pl ;
+
+-- Limiting number
+  only_singular : MaybeNumber
+    = JustSg ;
+  only_plural : MaybeNumber
+    = JustPl ;
 
 -- Adjectives can have short and full form. ShortFormPreference type is a parameter for mkA
   short : ShortFormPreference
@@ -92,7 +98,8 @@ oper
   mkN : overload {
     mkN : Str -> N ;     -- can guess declension and gender of some nouns given nominative
     mkN : Str -> Gender -> Animacy -> N ;  -- can guess declension of more nouns
-    mkN : Str -> Gender -> Animacy -> (idx : Str) -> N ;  -- most accurate way. Fourth parameter is a declension type index (based on Zaliznyak's dictionary), for example, "1*a(1)"
+    mkN : Str -> Gender -> Animacy -> (idx : Str) -> N ;  -- Fourth parameter is a declension type index (based on Zaliznyak's dictionary), for example, "1*a(1)"
+    mkN : Str -> Gender -> Animacy -> (idx : Str) -> MaybeNumber -> N ;  -- Same, but number restrictions can be added
     mkN : A -> Gender -> Animacy -> N ;  -- for nouns, which decline as adjective
   } ;
 
@@ -197,6 +204,8 @@ oper
       = \word, g, anim, z -> lin N (noMinorCases (Z.makeNoun word g anim z)) ;
     mkN : Str -> Gender -> Animacy -> Str -> N
       = \word, g, anim, zi -> lin N (noMinorCases (Z.makeNoun word g anim (Z.parseIndex zi))) ;
+    mkN : Str -> Gender -> Animacy -> Str -> MaybeNumber -> N
+      = \word, g, anim, zi, mbn -> lin N (noMinorCases (Z.makeNoun word g anim (Z.parseIndex zi))) ** {mayben=mbn} ;
     mkN : A -> Gender -> Animacy -> N
       = \a, g, anim -> lin N (makeNFFromAF a g anim) ;
 
@@ -207,6 +216,7 @@ oper
           snom=nomSg;pnom=nomPl;sgen=genSg;pgen=genPl;sdat=datSg;pdat=datPl;sacc=accSg;pacc=accPl;sins=instSg;pins=instPl;sprep=preposSg;pprep=preposPl;
           sloc=prepos2Sg; sptv=genSg ; svoc=nomSg ;
           anim=anim;
+          mayben=BothSgPl ;
           g=g
         } ;
   } ;

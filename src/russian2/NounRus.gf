@@ -75,12 +75,14 @@ lin
   ComplN2 n2 np = {
     s=\\n,cas=> (nounFormsNoun n2).s ! n ! cas ++ n2.c2.s ++ np.s ! n2.c2.c ;
     g=n2.g ;
+    mayben=n2.mayben ;
     anim=n2.anim
     } ;
   -- : N3 -> NP -> N2 ;    -- distance from this city (to Paris)
   ComplN3 n3 np = let n3_noun = nounFormsNoun n3 in nounToNounForm {
     s=\\n,g=>n3_noun.s ! n ! g ++ n3.c2.s ++ np.s ! n3.c2.c ;
     g=n3.g ;
+    mayben=n3.mayben ;
     anim=n3.anim
   } ** {c2=n3.c3} ;
 

@@ -30,8 +30,11 @@ oper
     snom, sgen, sdat, sacc, sins, sprep, sloc, sptv, svoc,
     pnom, pgen, pdat, pacc, pins, pprep : Str ;
     g : Gender ;
+    mayben : MaybeNumber ;
     anim : Animacy
   } ;
+  Noun2Forms = NounForms ** {c2 : ComplementCase} ;
+  Noun3Forms = NounForms ** {c2,c3 : ComplementCase} ;
 
 -- But traditional tables make agreement easier to handle in syntax
 -- so this is the lincat of CN
@@ -39,11 +42,9 @@ oper
   Noun : Type = {
     s : Number => Case => Str ;
     g : Gender ;
+    mayben : MaybeNumber ;
     anim : Animacy
   } ;
-
-  Noun2Forms = NounForms ** {c2 : ComplementCase} ;
-  Noun3Forms = NounForms ** {c2,c3 : ComplementCase} ;
 
   NounPhrase = {
     s : Case => Str ;
@@ -78,6 +79,7 @@ oper
         }
       } ;
       g = forms.g ;
+      mayben=forms.mayben ;
       anim = forms.anim
     } ;
 
@@ -144,6 +146,7 @@ oper
       sloc = base.sprep ;
       sptv = base.sgen ;
       svoc = base.snom ;
+      mayben = BothSgPl
     } ;
 
   mkNAltPl : NounForms -> NounForms -> NounForms
@@ -377,6 +380,7 @@ oper
           sptv = af.fsgen ;
           svoc = af.fsnom ;
           g=g ;
+          mayben=BothSgPl ;
           anim=anim
         } ;
         Masc => {
@@ -396,6 +400,7 @@ oper
           sptv = af.msgen ;
           svoc = af.msnom ;
           g=g ;
+          mayben=BothSgPl ;
           anim=anim
         } ;
         Neut => {
@@ -415,6 +420,7 @@ oper
           sptv = af.msgen ;
           svoc = af.nsnom ;
           g=g ;
+          mayben=BothSgPl ;
           anim=anim
         }
       } ;
@@ -1113,6 +1119,7 @@ oper
       pptv=n.s ! Pl ! Ptv ;
       pvoc=n.s ! Pl ! VocRus ;
       g=n.g ;
+      mayben=n.mayben ;
       anim=n.anim
     } ;
 
