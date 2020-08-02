@@ -114,10 +114,11 @@ gt TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) ? (PredVP (UsePron
 gt TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) ? (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv ?))))) NoVoc) TEmpty |l -treebank
 gt TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron ?) (AdvVP (PassV2 teach_V2) (yearAdv (intYear 2024)))))) NoVoc) TEmpty |l -treebank
 
+gt UseComp (CompAdv here_Adv) | l -treebank
+gt PredSCVP (EmbedVP (UseV think_V)) thirsty_VP | l -treebank
+
  -- these below sound unnatural
 
-
-gt PredSCVP (EmbedVP (UseV play_V)) thirsty_VP | l -treebank
 gt QuestCl ( PredSCVP (EmbedVP (UseV play_V)) thirsty_VP ) | l -treebank
 gt UseQCl ? ? ( QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP) ) | l -treebank
 gt UseQCl (TTAnt TCond AAnter) ? (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)) | l -treebank
@@ -132,8 +133,7 @@ gt UseQCl ? ? ( QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP po
 
 gt PredVP (somebody_NP) (ComplVA become_VA ( SentAP (UseA2 easy_A2V) ( EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron)) ))) |l -treebank
 gt UseCl ? ? (PredVP (somebody_NP) (ComplVA become_VA ( SentAP (UseA2 easy_A2V) ( EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron)) ))) )|l -treebank
-gt UseComp (CompAdv here_Adv) | l -treebank
-gt PredSCVP (EmbedVP (UseV play_V))  (UseComp (CompAdv here_Adv) ) | l -treebank
+
 gt PredSCVP (EmbedVP (UseV play_V))  (UseComp (CompAP (PositA clean_A)) ) | l -treebank
 gt UseCl ? ? (  PredSCVP (EmbedVP (UseV play_V))  (UseComp (CompAP (PositA clean_A)) ) ) |l -treebank
 

@@ -29,7 +29,7 @@ param
   Case     = Nom | Gen | Dat | Acc | Ins | Pre  -- падеж, "малые падежи":
             | Loc | Ptv | VocRus ;  -- "minor cases", usually Loc = Pre, Ptv = Gen, VocRus = Nom
   ShortFormPreference = PrefShort | PrefFull ;
-  CopulaType = NomCopula | InsCopula | EllCopula;
+  CopulaType = NomCopula | InsCopula | EllCopula | ExplicitCopula ;
   SpecialFuture = NormalFuture | BeFuture | CanFuture | WantFuture | NullFuture ;
   DetType = NormalDet | EmptyDef | EmptyIndef ; -- artificial parameter to side-step DetNP parsing issues
 oper

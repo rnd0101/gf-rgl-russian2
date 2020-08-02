@@ -1162,8 +1162,11 @@ AllRus: вы будете учиться в 2024 .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron youSg_Pron) (AdvVP (PassV2 teach_V2) (yearAdv (intYear 2024)))))) NoVoc) TEmpty
 AllRus: ты будешь учиться в 2024 .
 
-AllRusAbs: PredSCVP (EmbedVP (UseV play_V)) thirsty_VP
-AllRus: играть хотеть пить
+AllRusAbs: UseComp (CompAdv here_Adv)
+AllRus: здесь быть
+
+AllRusAbs: PredSCVP (EmbedVP (UseV think_V)) thirsty_VP
+AllRus: думать хотеть пить
 
 AllRusAbs: QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)
 AllRus: играть хотеть пить
@@ -1293,12 +1296,6 @@ AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP somebody_NP (ComplVA become_V
 AllRus: кто &+ -то не становит &+ ся лёгким падать у нас
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
 AllRus: кто &+ -то становит &+ ся лёгким падать у нас
-
-AllRusAbs: UseComp (CompAdv here_Adv)
-AllRus: здесь быть
-
-AllRusAbs: PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAdv here_Adv))
-AllRus: играть здесь быть
 
 AllRusAbs: PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A)))
 AllRus: играть быть чистым

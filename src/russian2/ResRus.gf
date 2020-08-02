@@ -566,9 +566,20 @@ oper
       prpl3=""
     } ;
 
+  copulaFull : VerbForms
+    = copula ** {
+      prsg1="есть" ;
+      prsg2="есть" ;
+      prsg3="есть" ;
+      prpl1="есть" ;
+      prpl2="есть" ;
+      prpl3="есть"
+    } ;
+
   selectCopula : CopulaType -> VerbForms
     = \cop -> case cop of {
        NomCopula => copula ;
+       ExplicitCopula => copulaFull ;
        EllCopula => copulaEll ;
        InsCopula => copulaIns
     } ;
