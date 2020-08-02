@@ -19,7 +19,7 @@ lin
   back_N = mkN "спина" ;
   bad_A = mkA "плохой" "хуже" "3b/c'";
   bank_N = mkN "банк" ;
-  bark_N = mkN "кора";
+  bark_N = (mkNplus (mkN "кора")) ** {mayben=only_singular} ;
   beautiful_A = mkA "красивый" ;
   become_VA = mkV imperfective intransitive "становиться" "становлюсь" "становится";
   beer_N = mkN "пиво" neuter inanimate ;
@@ -128,7 +128,7 @@ lin
   give_V3 = tvDirDir (mkV imperfective "давать" "даю" "даёт") ;
   glove_N = mkN "перчатка" feminine inanimate "3*a";
   go_V = mkV imperfective intransitive "ходить" "хожу" "ходит";
-  gold_N = mkN "золото" ;
+  gold_N = (mkNplus (mkN "золото")) ** {mayben=only_singular} ;
   good_A = mkA "хороший" "лучше" ;
   grammar_N = mkN "грамматика";
   grass_N = mkN "трава";
@@ -156,7 +156,7 @@ lin
   ice_N = (mkNplus (mkN "лёд"  masculine animate "1*b")) ** {sloc="льду";sptv="льду"} ;
   important_A = mkA "важный" ;
   industry_N = mkN "промышленность" ;
-  iron_N = mkN "железо" ;
+  iron_N = (mkNplus (mkN "железо")) ** {mayben=only_singular};
   john_PN = mkPN "Иван" masculine animate ;
   jump_V = mkV imperfective intransitive "прыгать" "прыгаю" "прыгает";
   kill_V2 = mkV2 (mkV imperfective "убивать" "убиваю");
@@ -188,7 +188,7 @@ lin
   man_N = (mkNAltPl (mkN "человек" masculine animate "3a") (mkN "людь" masculine animate)) ** {pins="людьми"};
   married_A2 = mkA2 (mkA "замужем" "" "0") behind_Prep ;  -- for Fem only
   meat_N = mkN "мясо" neuter inanimate "1c" ;
-  milk_N = mkN "молоко" neuter inanimate "3d(1)" ;
+  milk_N = mkN "молоко" neuter inanimate "3d(1)" only_singular ;
   moon_N = mkN "луна" ;
   mother_N2 = (mkN2plus (mkN2 "матерь" feminine animate "8e" nullPrep)) ** {snom="мать";sacc="мать";svoc="мать";} ;
   mountain_N = mkN "гора" ;
@@ -267,7 +267,7 @@ lin
   shoe_N = mkN "туфля" feminine inanimate "2*a" ;
   shop_N = mkN "магазин" ;
   short_A = mkA "короткий" "короче" "3*a/c'";
-  silver_N = mkN "серебро" ;
+  silver_N = (mkNplus (mkN "серебро")) ** {mayben=only_singular};
   sister_N = mkN "сестра" feminine animate ;
   sit_V = mkV imperfective intransitive "сидеть" "сижу" "сидит";
   skin_N = mkN "кожа" ;
