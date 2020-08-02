@@ -1,4 +1,4 @@
-resource ResRus = ParamRus ** open Prelude, ZaliznyakAlgo in {
+resource ResRus = ParamRus ** open Prelude, ZaliznyakAlgo, Maybe in {
 flags coding=utf8 ; optimize=all ;
 
 ---------------
@@ -42,7 +42,7 @@ oper
   Noun : Type = {
     s : Number => Case => Str ;
     g : Gender ;
-    mayben : MaybeNumber ;
+    mayben : MaybeNumber ;  -- used to control dependent words
     anim : Animacy
   } ;
 
@@ -151,13 +151,37 @@ oper
 
   mkNAltPl : NounForms -> NounForms -> NounForms
     = \sgn, pln -> sgn ** {
-      pnom =  pln.pnom ;
-      pgen =  pln.pgen ;
-      pdat =  pln.pdat ;
-      pacc =  pln.pacc ;
-      pins =  pln.pins ;
-      pprep=  pln.pprep
+      pnom  = pln.pnom ;
+      pgen  = pln.pgen ;
+      pdat  = pln.pdat ;
+      pacc  = pln.pacc ;
+      pins  = pln.pins ;
+      pprep = pln.pprep
     } ;
+
+  applyMaybeNumber : NounForms -> NounForms
+    = \nf -> case <nf.mayben.exists, fromMaybe Number Sg nf.mayben> of {
+      <True,Sg> => nf **  {
+        pnom  = nf.snom ;
+        pgen  = nf.sgen ;
+        pdat  = nf.sdat ;
+        pacc  = nf.sacc ;
+        pins  = nf.sins ;
+        pprep = nf.sprep
+        } ;
+      <True,Pl> => nf ** {
+        snom  = nf.pnom ;
+        sgen  = nf.pgen ;
+        sdat  = nf.pdat ;
+        sacc  = nf.pacc ;
+        sins  = nf.pins ;
+        sprep = nf.pprep ;
+        sloc  = nf.pprep ;
+        sptv  = nf.pgen ;
+        svoc  = nf.pnom ;
+        } ;
+      _ => nf
+      } ;
 
   mkNplus : NounForms -> NounForms
     = \nf -> nf ;
@@ -1303,6 +1327,10 @@ oper
     s : DetTable ;
     size : NumSize
     } ;
+
+  -- choose number, force limited number if necessary
+  forceMaybeNum : MaybeNumber -> Number -> Number
+    = \mbn,n -> fromMaybe Number n mbn;
 
   -- Number from size to be used in agreement after numeral has been applied
   numSizeNumber : NumSize -> Number

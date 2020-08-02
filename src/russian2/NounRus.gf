@@ -10,21 +10,11 @@ lin
   DetCN det cn =
     let n = numSizeNumber det.size in {
       s=case det.type of {
-        -- EmptyIndef => \\cas =>
-        --   let d=case n of {Pl=>a_Pl_Det; _=>a_Det} in
-        --   d.s ! det.g ! Inanimate ! cas
-        --   ++ det.s ! cn.g ! cn.anim ! cas
-        --   ++ cn.s ! numSizeNum cas det.size ! numSizeCase cas det.size ;
-        -- EmptyDef => \\cas =>
-        --   let d=case n of {Pl=>the_Pl_Det; _=>the_Det} in
-        --   d.s ! det.g ! Inanimate ! cas
-        --   ++ det.s ! cn.g ! cn.anim ! cas
-        --   ++ cn.s ! numSizeNum cas det.size ! numSizeCase cas det.size ;
         _ => \\cas => det.s ! cn.g ! cn.anim ! cas
           ++ cn.s ! numSizeNum cas det.size ! numSizeCase cas det.size
         } ;
       pron=False ;
-      a=Ag (gennum det.g n) P3
+      a=Ag (gennum det.g (forceMaybeNum cn.mayben n)) P3
       } ;
 
   -- : PN -> NP ;          -- John
@@ -65,11 +55,12 @@ lin
     } ;
 
   -- : CN -> NP ;           -- (beer)
-  MassNP cn = {
-    s = \\cas => cn.s ! Sg ! cas ;   -- can it be plural-only? eg квасцы
-    pron=False ;
-    a = Ag (gennum cn.g Sg) P3
-    } ;
+  MassNP cn =
+    let n=forceMaybeNum cn.mayben Sg in {
+      s = \\cas => cn.s ! Sg ! cas ;
+      pron=False ;
+      a = Ag (gennum cn.g n) P3
+      } ;
 
   -- : N2 -> NP -> CN ;    -- mother of the king - мать короля
   ComplN2 n2 np = {
@@ -148,7 +139,9 @@ lin
 -- Common nouns
 
   -- : AP -> CN -> CN ;   -- big house - большой дом
-  AdjCN ap cn = cn ** {s = \\n,cas => preOrPost (notB ap.isPost) (ap.s ! (gennum cn.g n) ! cn.anim ! cas) (cn.s ! n ! cas)} ;
+  AdjCN ap cn = cn ** {
+    s = \\n,cas => preOrPost (notB ap.isPost) (ap.s ! (gennum cn.g (forceMaybeNum cn.mayben n)) ! cn.anim ! cas) (cn.s ! n ! cas)
+    } ;
 
   -- : N -> CN
   UseN n = nounFormsNoun n ;
@@ -163,10 +156,14 @@ lin
   Use3N3 n3 = lin N2 n3 ;
 
   -- : CN -> RS -> CN ;   -- house that John bought
-  RelCN cn rs = cn ** {s = \\n,c => cn.s ! n ! c ++ embedInCommas (rs.s ! gennum cn.g n ! cn.anim ! c)} ;
+  RelCN cn rs = cn ** {
+    s = \\n,c => cn.s ! n ! c ++ embedInCommas (rs.s ! gennum cn.g (forceMaybeNum cn.mayben n) ! cn.anim ! c)
+    } ;
 
   -- : CN -> SC -> CN ;   -- question where she sleeps
-  SentCN cn sc = cn ** {s = \\n,c => cn.s ! n ! c ++ sc.s}; -- SC type will change???
+  SentCN cn sc = cn ** {
+    s = \\n,c => cn.s ! n ! c ++ sc.s
+    }; -- SC type will change???
 
   -- : CN -> Adv -> CN ;   -- house on the hill
   AdvCN cn adv = cn ** {s = \\n,c => cn.s ! n ! c ++ adv.s};

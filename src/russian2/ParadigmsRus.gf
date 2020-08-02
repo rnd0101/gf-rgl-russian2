@@ -208,11 +208,11 @@ oper
     mkN : Str -> Gender -> Animacy -> Str -> N
       = \word, g, anim, zi -> lin N (noMinorCases (Z.makeNoun word g anim (Z.parseIndex zi))) ;
     mkN : Str -> Gender -> Animacy -> Str -> MaybeNumber -> N
-      = \word, g, anim, zi, mbn -> lin N (noMinorCases (Z.makeNoun word g anim (Z.parseIndex zi))) ** {mayben=mbn} ;
+      = \word, g, anim, zi, mbn -> lin N (applyMaybeNumber ((noMinorCases (Z.makeNoun word g anim (Z.parseIndex zi))) ** {mayben=mbn})) ;
     mkN : A -> Gender -> Animacy -> N
       = \a, g, anim -> lin N (makeNFFromAF a g anim) ;
     mkN : A -> Gender -> Animacy -> MaybeNumber -> N
-      = \a, g, anim, mbn -> lin N ((makeNFFromAF a g anim) ** {mayben=mbn}) ;
+      = \a, g, anim, mbn -> lin N (applyMaybeNumber ((makeNFFromAF a g anim) ** {mayben=mbn})) ;
     mkN : N -> Str -> N -> N
       = \n1,link,n2 -> lin N (compoundN n1 link n2) ;
 
