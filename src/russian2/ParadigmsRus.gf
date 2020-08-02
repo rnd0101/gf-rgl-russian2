@@ -101,6 +101,7 @@ oper
     mkN : Str -> Gender -> Animacy -> (idx : Str) -> N ;  -- Fourth parameter is a declension type index (based on Zaliznyak's dictionary), for example, "1*a(1)"
     mkN : Str -> Gender -> Animacy -> (idx : Str) -> MaybeNumber -> N ;  -- Same, but number restrictions can be added
     mkN : A -> Gender -> Animacy -> N ;  -- for nouns, which decline as adjective
+    mkN : A -> Gender -> Animacy -> MaybeNumber -> N ;  -- same, with possibility to limit number (usually to only_singular)
   } ;
 
   mkN2 : overload {
@@ -208,6 +209,8 @@ oper
       = \word, g, anim, zi, mbn -> lin N (noMinorCases (Z.makeNoun word g anim (Z.parseIndex zi))) ** {mayben=mbn} ;
     mkN : A -> Gender -> Animacy -> N
       = \a, g, anim -> lin N (makeNFFromAF a g anim) ;
+    mkN : A -> Gender -> Animacy -> MaybeNumber -> N
+      = \a, g, anim, mbn -> lin N ((makeNFFromAF a g anim) ** {mayben=mbn}) ;
 
     -- For backwards compatibility:
     mkN : (nomSg, genSg, datSg, accSg, instSg, preposSg, prepos2Sg, nomPl, genPl, datPl, accPl, instPl, preposPl : Str) -> Gender -> Animacy -> N
