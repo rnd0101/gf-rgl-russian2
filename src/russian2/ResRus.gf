@@ -183,6 +183,27 @@ oper
 
   from2 = {s="из"; c=Gen; hasPrep=True} ;
 
+  compoundN : NounForms -> Str -> NounForms -> NounForms
+    = \n1,link,n2 ->
+      let l : Str=case link of {x+"-" => BIND ++ "-" ++ BIND ; _ => link} in
+      n1 ** {
+        snom  = n1.snom  ++ l ++ n2.snom  ;
+        sgen  = n1.sgen  ++ l ++ n2.sgen  ;
+        sdat  = n1.sdat  ++ l ++ n2.sdat  ;
+        sacc  = n1.sacc  ++ l ++ n2.sacc  ;
+        sins  = n1.sins  ++ l ++ n2.sins  ;
+        sprep = n1.sprep ++ l ++ n2.sprep  ;
+        sloc  = n1.sloc  ++ l ++ n2.sloc  ;
+        sptv  = n1.sptv  ++ l ++ n2.sptv  ;
+        svoc  = n1.svoc  ++ l ++ n2.svoc  ;
+        pnom  = n1.pnom  ++ l ++ n2.pnom  ;
+        pgen  = n1.pgen  ++ l ++ n2.pgen  ;
+        pdat  = n1.pdat  ++ l ++ n2.pdat  ;
+        pacc  = n1.pacc  ++ l ++ n2.pacc  ;
+        pins  = n1.pins  ++ l ++ n2.pins  ;
+        pprep = n1.pprep ++ l ++ n2.pprep
+      } ;
+
 ---------------------------
 -- Adjectives -- Прилагательные
 

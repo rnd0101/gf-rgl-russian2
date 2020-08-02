@@ -102,6 +102,7 @@ oper
     mkN : Str -> Gender -> Animacy -> (idx : Str) -> MaybeNumber -> N ;  -- Same, but number restrictions can be added
     mkN : A -> Gender -> Animacy -> N ;  -- for nouns, which decline as adjective
     mkN : A -> Gender -> Animacy -> MaybeNumber -> N ;  -- same, with possibility to limit number (usually to only_singular)
+    mkN : N -> (link : Str) -> N -> N ; -- compound noun. Link can end on "-", in which case parts are glued together. First one characterizes the whole.
   } ;
 
   mkN2 : overload {
@@ -117,6 +118,7 @@ oper
 
   mkPN : overload {
     mkPN : N -> PN ;
+    mkPN : N -> Str -> N -> PN ; -- see compound noun
   } ;
 
 --2 Adjectives
@@ -211,6 +213,8 @@ oper
       = \a, g, anim -> lin N (makeNFFromAF a g anim) ;
     mkN : A -> Gender -> Animacy -> MaybeNumber -> N
       = \a, g, anim, mbn -> lin N ((makeNFFromAF a g anim) ** {mayben=mbn}) ;
+    mkN : N -> Str -> N -> N
+      = \n1,link,n2 -> lin N (compoundN n1 link n2) ;
 
     -- For backwards compatibility:
     mkN : (nomSg, genSg, datSg, accSg, instSg, preposSg, prepos2Sg, nomPl, genPl, datPl, accPl, instPl, preposPl : Str) -> Gender -> Animacy -> N
@@ -245,6 +249,8 @@ oper
   mkPN = overload {
     mkPN : N -> PN
       = \n -> lin PN n ;
+    mkPN : N -> Str -> N -> PN
+      = \n1,link,n2 -> lin PN (compoundN n1 link n2) ;
     mkPN : Str -> PN
       = \nom -> lin PN (guessNounForms nom) ;
     mkPN : Str -> Gender -> Animacy -> PN
