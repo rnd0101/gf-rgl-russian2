@@ -113,9 +113,17 @@ gt TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) ? (PredVP (UsePron
 gt TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) ? (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayNextAdv ?))))) NoVoc) TEmpty |l -treebank
 gt TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPast ASimul) ? (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayLastAdv ?))))) NoVoc) TEmpty |l -treebank
 gt TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron ?) (AdvVP (PassV2 teach_V2) (yearAdv (intYear 2024)))))) NoVoc) TEmpty |l -treebank
+gt UseCl (TTAnt TPast ASimul) PPos (PredVP (MassNP (UseN boy_N)) (AdvVP (UseV fly_V) (PrepCN on_Prep (UseN (CompoundN carpet_N airplane_N))))) |l -treebank
 
 gt UseComp (CompAdv here_Adv) | l -treebank
 gt PredSCVP (EmbedVP (UseV think_V)) thirsty_VP | l -treebank
+
+
+ -- from extend
+
+gt UseCl (TTAnt ? AAnter) ? (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))  | l -treebank
+gt UseCl (TTAnt ? AAnter) PPos (AdvIsNPAP everywhere_Adv (MassNP (UseN sky_N)) (PositA blue_A))  | l -treebank
+
 
  -- these below sound unnatural
 
