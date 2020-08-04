@@ -126,6 +126,7 @@ gt UseQCl (TTAnt TPres ASimul) PPos (QuestIAdv how_IAdv (PredVP (UsePron youSg_P
 
 gt UseCl (TTAnt ? AAnter) ? (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))  | l -treebank
 gt UseCl (TTAnt ? AAnter) PPos (AdvIsNPAP everywhere_Adv (MassNP (UseN sky_N)) (PositA blue_A))  | l -treebank
+gt UseCl ? PPos (ExistsNP (MassNP (UseN number_N))) | l -treebank
 
 
  -- these below sound unnatural

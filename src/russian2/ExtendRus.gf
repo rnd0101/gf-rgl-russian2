@@ -16,8 +16,10 @@ concrete ExtendRus of Extend =
     -- Base_nr_RNP, Base_rn_RNP, Base_rr_RNP, ByVP, CompBareCN,
     -- CompIQuant, CompQS, CompS, CompVP, ComplBareVS, ComplGenVV, ComplSlashPartLast, ComplVPSVV, CompoundAP,
     CompoundN,
+
     --ConjRNP, ConjVPS, ConsVPS, Cons_nr_RNP, Cons_rr_RNP, DetNPMasc, DetNPFem, EmbedPresPart, EmptyRelSlash,
-    -- ExistsNP, ExistCN, ExistMassCN, ExistPluralCN, ProDrop,
+    ExistsNP,
+    -- ExistCN, ExistMassCN, ExistPluralCN, ProDrop,
     -- FocusAP, FocusAdV, FocusAdv, FocusObj, GenIP, GenModIP, GenModNP, GenNP, GenRP,
     -- GerundAdv, GerundCN, GerundNP, IAdvAdv, ICompAP,
     InOrderToVP,
@@ -30,7 +32,7 @@ concrete ExtendRus of Extend =
     -- UncontractedNeg, UttAccIP, UttAccNP, UttAdV, UttDatIP, UttDatNP, UttVPShort, WithoutVP, BaseVPS2, ConsVPS2, ConjVPS2, ComplVPS2, MkVPS2
    ]
   with (Grammar=GrammarRus)
-  ** open Prelude, ResRus, ParadigmsRus in {
+  ** open Prelude, ResRus, ParadigmsRus, (M = MorphoRus) in {
 
 lincat
   RNP     = {s : Agr => Str} ;
@@ -56,6 +58,16 @@ lin
   PurposeVP vp = lin Adv ({
     s = vp.adv ! Ag (GSg Neut) P3 ++ (verbInf vp.verb) ++ vp.dep ++ vp.compl ! Ag (GSg Neut) P3
     }) ;
+
+  -- : NP -> Cl ;  -- there exists a number / there exist numbers
+  ExistsNP np = {
+    subj=[] ;
+    adv=[] ;
+    compl=np.s ! Nom ;
+    verb=M.to_exist ;
+    dep=[] ;
+    a=np.a
+    } ;
 
   iFem_Pron = personalPron (Ag (GSg Fem) P1) ;
   youFem_Pron = personalPron (Ag (GSg Fem) P2) ;
