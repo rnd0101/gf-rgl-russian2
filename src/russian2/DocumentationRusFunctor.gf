@@ -153,7 +153,7 @@ oper
     frameTable (
       tr (th (heading person_ParameterType) ++ th (heading number_ParameterType) ++ th (heading gender_ParameterType)
         ++ th (heading past_Parameter) ++ th (heading present_Parameter) ++ th (heading future_Parameter) ++ th (heading imperative_Parameter)) ++
-      tr (th "1 л." ++ th (heading singular_Parameter) ++ th (heading masculine_Parameter)
+      tr (th (heading person1_Parameter) ++ th (heading singular_Parameter) ++ th (heading masculine_Parameter)
         ++ td (past ! Ag (GSg Masc) P1) ++ td (pres ! Ag (GSg Masc) P1) ++ td(fut ! Ag (GSg Masc) P1) ++ td (imp ! Ag (GSg Masc) P1))  ++
       tr (th "" ++ th "" ++ th (heading feminine_Parameter)
         ++ td (past ! Ag (GSg Fem) P1) ++ td "" ++ td "") ++
@@ -161,7 +161,7 @@ oper
         ++ td (past ! Ag (GSg Neut) P1) ++ td "" ++ td "") ++
       tr (th "" ++ th (heading plural_Parameter) ++ th ""
         ++ td (past ! Ag GPl P1) ++ td (pres ! Ag GPl P1) ++ td(fut ! Ag GPl P1)  ++ td (imp ! Ag GPl P1)) ++
-      tr (th "2 л." ++ th (heading singular_Parameter) ++ th (heading masculine_Parameter)
+      tr (th (heading person2_Parameter) ++ th (heading singular_Parameter) ++ th (heading masculine_Parameter)
         ++ td (past ! Ag (GSg Masc) P2) ++ td (pres ! Ag (GSg Masc) P2) ++ td (fut ! Ag (GSg Masc) P2) ++ td (imp ! Ag (GSg Masc) P2) ) ++
       tr (th "" ++ th "" ++ th (heading feminine_Parameter)
         ++ td (past ! Ag (GSg Fem) P2) ++ td "" ++ td "") ++
@@ -169,7 +169,7 @@ oper
         ++ td (past ! Ag (GSg Neut) P2) ++ td "" ++ td "") ++
       tr (th "" ++ th (heading plural_Parameter) ++ th ""
         ++ td (past ! Ag GPl P2) ++ td (pres ! Ag GPl P2) ++ td(fut ! Ag GPl P2)  ++ td (imp ! Ag GPl P2)) ++
-      tr (th "3 л." ++ th (heading singular_Parameter) ++ th (heading masculine_Parameter)
+      tr (th (heading person3_Parameter) ++ th (heading singular_Parameter) ++ th (heading masculine_Parameter)
         ++ td (past ! Ag (GSg Masc) P3) ++ td (pres ! Ag (GSg Masc) P3) ++ td(fut ! Ag (GSg Masc) P3) ) ++
       tr (th "" ++ th "" ++ th (heading feminine_Parameter)
         ++ td (past ! Ag (GSg Fem) P3) ++ td "" ++ td "") ++
@@ -207,8 +207,8 @@ oper
 
 lin
   NoDefinition   t     = {s=t.s};
-  MkDefinition   t d   = {s="<p><b>Определение:</b>"++t.s++d.s++"</p>"};
-  MkDefinitionEx t d e = {s="<p><b>Определение:</b>"++t.s++d.s++"</p><p><b>Пример:</b>"++e.s++"</p>"};
+  MkDefinition   t d   = {s="<p><b>" ++ (heading formGr_N) ++ "</b>"++t.s++d.s++"</p>"};
+  MkDefinitionEx t d e = {s="<p><b>" ++ (heading formGr_N) ++ "</b>"++t.s++d.s++"</p><p><b>" ++ (heading exampleGr_N) ++":</b>"++e.s++"</p>"};
 
 lin
   MkDocument d i e = ss (i.s1 ++ d.s ++ i.s2 ++ paragraph e.s) ;  -- explanation appended in a new paragraph
