@@ -84,14 +84,14 @@ lin
   InflectionV2S v = {
     t  = "v" ;
     s1 = heading1 (heading verb_Category) ++
-         paragraph (verbExample (S.mkCl S.she_NP v S.we_NP (lin S (ss "...")))) ;
+         paragraph (verbExample (S.mkCl S.she_NP v S.we_NP (lin S {s : Mood=>Str = \\m=>"..."}))) ;
     s2 = inflVerb v
     } ;
 
   InflectionV2Q v = {
     t  = "v" ;
     s1 = heading1 (heading verb_Category) ++
-         paragraph (verbExample (S.mkCl S.she_NP v S.we_NP (lin QS (ss "...")))) ;
+         paragraph (verbExample (S.mkCl S.she_NP v S.we_NP (lin QS {s: QForm=>Str = \\m=>"..."}))) ;
     s2 = inflVerb v
     } ;
 
@@ -102,24 +102,24 @@ lin
     s2 = inflVerb v
     } ;
 
-  InflectionVV v = {
+  InflectionVV vv = {
     t  = "v" ;
     s1 = heading1 (heading verb_Category) ++
-         paragraph (verbExample (S.mkCl S.she_NP v (S.mkVP (L.sleep_V)))) ;
-    s2 = inflVerb v
+         paragraph (verbExample (S.mkCl S.she_NP vv (S.mkVP (L.sleep_V)))) ;
+    s2 = inflVerb vv.v
     } ;
 
   InflectionVS v = {
     t  = "v" ;
     s1 = heading1 (heading verb_Category) ++
-         paragraph (verbExample (S.mkCl S.she_NP v (lin S (ss "...")))) ;
+         paragraph (verbExample (S.mkCl S.she_NP v (lin S {s : Mood=>Str = \\m=>"..."}))) ;
     s2 = inflVerb v
     } ;
 
   InflectionVQ v = {
     t  = "v" ;
     s1 = heading1 (heading verb_Category) ++
-         paragraph (verbExample (S.mkCl S.she_NP v (lin QS (ss "...")))) ;
+         paragraph (verbExample (S.mkCl S.she_NP v (lin QS {s : Mood=>Str = \\m=>"..."}))) ;
     s2 = inflVerb v
     } ;
 
