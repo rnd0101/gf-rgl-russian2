@@ -79,6 +79,10 @@ lin
   negative_Parameter = mkN "отрицательное" ;
   positivePol_Parameter = mkN "утвердительное" ;
 
+  gender_ParameterType = mkN "род" ;
+  number_ParameterType = mkN "число" ;
+  person_ParameterType = mkN "лицо" ;
+
   long_Parameter = mkN "длинная" ;
   short_Parameter = mkN "краткая" ;
 
