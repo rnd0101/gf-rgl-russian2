@@ -187,7 +187,7 @@ oper
     heading2 ("деепричастия") ++
     frameTable (
       tr (th (heading past_Parameter) ++ th (heading present_Parameter)) ++
-      tr (td v.prtr ++ td v.ptr)
+      tr (td (v.prtr ++ verbRefl v) ++ td (v.ptr ++ verbRefl v))
       )
     ;
 
