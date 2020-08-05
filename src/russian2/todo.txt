@@ -53,3 +53,15 @@ AllRus: сколько является яблок у Ивана ?
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (ExistsNP (MassNP (UseN number_N)))
 AllRus: не существует число
 Should be: не существует числа
+
+## Copula negation is not that simple
+
+AllRusAbs: ComplVS hope_VS (UseCl (TTAnt TPres AAnter) PNeg (have_name_Cl (UsePron he_Pron) (UsePN john_PN)))
+AllRus: надеяться , что нет его имя Иван
+
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
+AllRus: нет его имя Иван
+
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
+AllRus: небо нет везде
+(must be: небо не везде есть)

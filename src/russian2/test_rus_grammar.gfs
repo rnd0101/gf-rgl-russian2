@@ -121,6 +121,11 @@ gt PredSCVP (EmbedVP (UseV think_V)) thirsty_VP | l -treebank
 gt UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron i_Pron) (ComplSlash (Slash3V3 talk_V3 (DetCN (DetQuant DefArt NumSg) (RelCN (UseN book_N) (UseRCl (TTAnt TPast ASimul) PPos (RelSlash IdRP (SlashVP (UsePron i_Pron) (SlashV2a read_V2))))))) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN friend_N)))) | l -treebank
 gt UseQCl (TTAnt TPres ASimul) PPos (QuestVP whatSg_IP (UseComp (CompNP (DetCN (DetQuant (PossPron youSg_Pron) NumSg) (UseN name_N))))) | l -treebank
 gt UseQCl (TTAnt TPres ASimul) PPos (QuestIAdv how_IAdv (PredVP (UsePron youSg_Pron) (UseV fly_V))) | l -treebank
+gt UseQCl (TTAnt ? ASimul) ? (QuestSlash whatSg_IP (SlashVP (UsePron she_Pron) (SlashV2a do_V2))) | l -treebank
+gt UseQCl (TTAnt ? ASimul) PPos (QuestIComp (CompIAdv when_IAdv)  (MassNP (UseN apple_N))) | l -treebank
+gt UseQCl (TTAnt ? ASimul) PNeg (QuestIAdv when_IAdv (ImpersCl (AdvVP UseCopula (PrepNP part_Prep (MassNP (UseN apple_N)))))) | l -treebank
+
+gt ImpVP (UseCopula) | l -treebank
 
  -- from extend
 

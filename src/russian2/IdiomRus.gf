@@ -47,19 +47,13 @@ lin
   ProgrVP vp = vp ;
   -- : VP -> Utt ;       -- let's go
   ImpPl1 vp =
-    let a = Ag GPl P1 in
-    let pol = PPos in
-    let parts = verbAgr vp.verb Infinitive Pres a pol.p in    -- colloquial, should be Fut, but then present fails...
-    let p1 = "давайте" in {
-      s = p1 ++ pol.s ++ vp.adv ! a ++ parts.p2 ++ vp.dep ++ vp.compl ! a
+    let a = Ag GPl P1 in {
+      s = (verbEnvAgr "давайте" (vp.adv ! a) vp.verb Infinitive Pres a PPos) ++ vp.dep ++ vp.compl ! a
       } ;
   -- : NP -> VP -> Utt ; -- let John walk
-  ImpP3 np vp =
-    let pol = PPos in
-    let parts = verbAgr vp.verb Ind Pres np.a pol.p in
-    let p1 = "пусть" in {
-      s = p1 ++ pol.s ++ vp.adv ! np.a ++ np.s ! Nom ++ parts.p2 ++ vp.dep ++ vp.compl ! np.a
-      } ;
+  ImpP3 np vp = {
+    s = (verbEnvAgr "пусть" (vp.adv ! np.a ++ np.s ! Nom) vp.verb Ind Pres np.a PPos) ++ vp.dep ++ vp.compl ! np.a
+    } ;
 
   -- : VP -> VP ;        -- is at home himself
   SelfAdvVP vp = vp ** {compl=\\a => vp.compl ! a ++ (adjFormsAdjective sam).s ! agrGenNum a ! Animate ! Nom} ;

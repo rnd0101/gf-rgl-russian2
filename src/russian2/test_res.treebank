@@ -182,7 +182,7 @@ AllRus: не его имя бы &+ ло Иван
 AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
 AllRus: его имя бы &+ ло Иван
 AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
-AllRus: не его имя Иван
+AllRus: нет его имя Иван
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
 AllRus: его имя Иван
 
@@ -2418,7 +2418,7 @@ AllRus: надеяться , что не его имя бы &+ ло Иван
 AllRusAbs: ComplVS hope_VS (UseCl (TTAnt TPast AAnter) PPos (have_name_Cl (UsePron he_Pron) (UsePN john_PN)))
 AllRus: надеяться , что его имя бы &+ ло Иван
 AllRusAbs: ComplVS hope_VS (UseCl (TTAnt TPres AAnter) PNeg (have_name_Cl (UsePron he_Pron) (UsePN john_PN)))
-AllRus: надеяться , что не его имя Иван
+AllRus: надеяться , что нет его имя Иван
 AllRusAbs: ComplVS hope_VS (UseCl (TTAnt TPres AAnter) PPos (have_name_Cl (UsePron he_Pron) (UsePN john_PN)))
 AllRus: надеяться , что его имя Иван
 
@@ -3308,6 +3308,44 @@ AllRus: что является твоим именем
 AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestIAdv how_IAdv (PredVP (UsePron youSg_Pron) (UseV fly_V)))
 AllRus: как ты летаешь
 
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PNeg (QuestSlash whatSg_IP (SlashVP (UsePron she_Pron) (SlashV2a do_V2)))
+AllRus: чего она не дела &+ ла бы
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (QuestSlash whatSg_IP (SlashVP (UsePron she_Pron) (SlashV2a do_V2)))
+AllRus: чего она дела &+ ла бы
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PNeg (QuestSlash whatSg_IP (SlashVP (UsePron she_Pron) (SlashV2a do_V2)))
+AllRus: чего она не будет делать
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PPos (QuestSlash whatSg_IP (SlashVP (UsePron she_Pron) (SlashV2a do_V2)))
+AllRus: чего она будет делать
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PNeg (QuestSlash whatSg_IP (SlashVP (UsePron she_Pron) (SlashV2a do_V2)))
+AllRus: чего она не дела &+ ла
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PPos (QuestSlash whatSg_IP (SlashVP (UsePron she_Pron) (SlashV2a do_V2)))
+AllRus: чего она дела &+ ла
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PNeg (QuestSlash whatSg_IP (SlashVP (UsePron she_Pron) (SlashV2a do_V2)))
+AllRus: чего она не делает
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestSlash whatSg_IP (SlashVP (UsePron she_Pron) (SlashV2a do_V2)))
+AllRus: чего она делает
+
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (QuestIComp (CompIAdv when_IAdv) (MassNP (UseN apple_N)))
+AllRus: когда бы &+ ло бы яблоко
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PPos (QuestIComp (CompIAdv when_IAdv) (MassNP (UseN apple_N)))
+AllRus: когда будет яблоко
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PPos (QuestIComp (CompIAdv when_IAdv) (MassNP (UseN apple_N)))
+AllRus: когда бы &+ ло яблоко
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestIComp (CompIAdv when_IAdv) (MassNP (UseN apple_N)))
+AllRus: когда яблоко
+
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PNeg (QuestIAdv when_IAdv (ImpersCl (AdvVP UseCopula (PrepNP part_Prep (MassNP (UseN apple_N))))))
+AllRus: когда не бы &+ ло бы яблока
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PNeg (QuestIAdv when_IAdv (ImpersCl (AdvVP UseCopula (PrepNP part_Prep (MassNP (UseN apple_N))))))
+AllRus: когда не будет яблока
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PNeg (QuestIAdv when_IAdv (ImpersCl (AdvVP UseCopula (PrepNP part_Prep (MassNP (UseN apple_N))))))
+AllRus: когда не бы &+ ло яблока
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PNeg (QuestIAdv when_IAdv (ImpersCl (AdvVP UseCopula (PrepNP part_Prep (MassNP (UseN apple_N))))))
+AllRus: когда не является яблока
+
+AllRusAbs: ImpVP UseCopula
+AllRus: будь
+
 AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
 AllRus: небо не везде бы &+ ло бы
 AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
@@ -3321,7 +3359,7 @@ AllRus: небо не везде бы &+ ло
 AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
 AllRus: небо везде бы &+ ло
 AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
-AllRus: небо не везде есть
+AllRus: небо нет везде
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
 AllRus: небо везде есть
 

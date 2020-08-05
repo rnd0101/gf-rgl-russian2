@@ -548,6 +548,7 @@ oper
   -- TODO: Provide also Nom-based as idiomatic (?)
   copulaIns : VerbForms
     = copula ** {
+      fut=BeFuture2 ;
       prsg1="являюсь" ;
       prsg2="являешься" ;
       prsg3="является" ;
@@ -646,13 +647,13 @@ oper
       tran=Intransitive
     } ;
 
-  verbPastAgree : VerbForms -> Agr -> Str -> TempParts
-    = \vf,a,after -> <"", case a of {
+  verbPastAgree : VerbForms -> Agr -> Str -> Str
+    = \vf,a,after -> case a of {
       Ag (GSg Masc) _ => vf.psgm ++ (verbReflAfterConsonant vf) ++ after ;
       Ag (GSg Fem) _ => vf.psgs ++ BIND ++ "ла" ++ (verbRefl vf) ++ after ;
       Ag (GSg Neut) _ => vf.psgs ++ BIND ++ "ло" ++ (verbRefl vf) ++ after ;
       Ag GPl _ => vf.psgs ++ BIND ++ "ли"++ (verbRefl vf) ++ after
-    }> ;
+    } ;
 
   verbReflAfterConsonant : VerbForms -> Str
     = \vf -> case vf.refl of {Reflexive => BIND ++ "ся" ; NonReflexive => ""} ;
@@ -698,7 +699,7 @@ oper
       <CanFuture,Ag GPl P1    > => "сможем" ;
       <CanFuture,Ag GPl P2    > => "сможете" ;
       <CanFuture,Ag GPl P3    > => "смогут" ;
-      <BeFuture,_> => beFuture a ;
+      <BeFuture | BeFuture2,_> => beFuture a ;
       _ => case vf.asp of {
         Perfective => verbPresAgree vf a ;
         Imperfective => (beFuture a) ++ verbInf vf
@@ -715,18 +716,31 @@ oper
       Ag GPl P3 => <"пусть", verbFutAgree vf (Ag GPl P3)>
     } ;
 
-  verbAgr : VerbForms -> Mood -> Tense -> Agr -> Polarity -> TempParts
-    = \vf,m,temp,a,pol ->
-      case <vf.fut,m,temp> of {
-        <NullFuture, _, _> => <"",""> ;
-        <_, Ind, Past> => verbPastAgree vf a "";
-        <_, Ind, Pres> => <"",verbPresAgree vf a>;
-        <_, Ind, Fut> => <"",verbFutAgree vf a>;
-        <_, Ind, Cond> => verbPastAgree vf a "бы" ;
-        <_, Sbjv, _> => verbPastAgree vf a "бы" ;
-        <_, Imperative, _> => verbImperativeAgree vf a ;
-        <_, Infinitive, _> => <"",verbInf vf>
+  verbEnvAgr : Str -> Str -> VerbForms -> Mood -> Tense -> Agr -> Pol -> Str
+    = \subj,adv,vf,m,temp,a,pol ->
+      case vf.fut of {
+        NullFuture => subj ++ pol.s ++ adv ;
+        BeFuture => case <m,temp, pol.p> of {
+          <Ind, Past, _> => subj ++ pol.s ++ adv ++ verbPastAgree vf a "" ;
+          <Ind, Pres, Pos> => subj ++ pol.s ++ adv ++ verbPresAgree vf a ;
+          <Ind, Pres, Neg> => subj ++ "нет" ++ adv ;
+          <Ind, Fut, _> => subj ++ pol.s ++ adv ++ verbFutAgree vf a ;
+          <Ind, Cond, _> => subj ++ pol.s ++ adv ++ verbPastAgree vf a "бы" ;
+          <Sbjv, _, _> => subj ++ pol.s ++ adv ++ verbPastAgree vf a "бы" ;
+          <Imperative, _, _> => let p = verbImperativeAgree vf a in p.p1 ++ subj ++ pol.s ++ adv ++ p.p2 ;
+          <Infinitive, _, _> => subj ++ pol.s ++ adv ++  verbInf vf
+          } ;
+        _ => case <m,temp> of {
+          <Ind, Past> => subj ++ pol.s ++ adv ++ verbPastAgree vf a "" ;
+          <Ind, Pres> => subj ++ pol.s ++ adv ++ verbPresAgree vf a ;
+          <Ind, Fut> => subj ++ pol.s ++ adv ++ verbFutAgree vf a ;
+          <Ind, Cond> => subj ++ pol.s ++ adv ++ verbPastAgree vf a "бы" ;
+          <Sbjv, _> => subj ++ pol.s ++ adv ++ verbPastAgree vf a "бы" ;
+          <Imperative, _> => let p = verbImperativeAgree vf a in p.p1 ++ subj ++ pol.s ++ adv ++ p.p2 ;
+          <Infinitive, _> => subj ++ pol.s ++ adv ++  verbInf vf
+          }
       } ;
+
 
 ---------------------------
 -- Pronouns -- Местоимения

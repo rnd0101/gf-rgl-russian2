@@ -30,7 +30,7 @@ param
             | Loc | Ptv | VocRus ;  -- "minor cases", usually Loc = Pre, Ptv = Gen, VocRus = Nom
   ShortFormPreference = PrefShort | PrefFull ;
   CopulaType = NomCopula | InsCopula | EllCopula | ExplicitCopula ;
-  SpecialFuture = NormalFuture | BeFuture | CanFuture | WantFuture | NullFuture ;
+  SpecialFuture = NormalFuture | BeFuture | BeFuture2 | CanFuture | WantFuture | NullFuture ;
   DetType = NormalDet | EmptyDef | EmptyIndef ; -- artificial parameter to side-step DetNP parsing issues
 oper
   MaybeAgr = Maybe Agr ;
