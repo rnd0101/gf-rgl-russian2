@@ -4,7 +4,7 @@ lin
   PositA a = adjFormsAdjective a ** {isPost = False} ;
   -- : A2 -> AP ;       -- married
   UseA2 a = adjFormsAdjective a ** {isPost = False} ;
-  -- : A  -> AP ;       -- warmer - теплее
+  -- : A -> AP ;       -- warmer - теплее
   UseComparA a = adjFormsAdjective (immutableAdjForms a.comp)
                  ** {isPost = False; preferShort = PrefShort} ;  -- TODO: non-qual
   -- : AP -> Adv -> AP ; -- warm by nature
@@ -29,7 +29,7 @@ lin
     } ;
 
   -- : Ord -> AP ;       -- warmest
-  AdjOrd ord = adjFormsAdjective ord ** {isPost = False; preferShort = PrefFull} ;
+  AdjOrd ord = adjFormsAdjective ord ** {isPost = False; preferShort = PreferFull} ;
 
   -- : A2 -> NP -> AP ;  -- married to him - замужем за ним (NB: gender change requires different word!)
   ComplA2 a2 np = let af=adjFormsAdjective a2 in  {

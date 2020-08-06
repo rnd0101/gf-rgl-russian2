@@ -136,6 +136,9 @@ gt UseCl ? PPos (ExistsNP (MassNP (UseN number_N))) | l -treebank
 
  -- these below sound unnatural
 
+-- here some participles are not formed correctly
+gt AdjCN (PastPartAP ( SlashV2a ? )  )   (UseN house_N) | l -treebank
+
 gt QuestCl ( PredSCVP (EmbedVP (UseV play_V)) thirsty_VP ) | l -treebank
 gt UseQCl ? ? ( QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP) ) | l -treebank
 gt UseQCl (TTAnt TCond AAnter) ? (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)) | l -treebank

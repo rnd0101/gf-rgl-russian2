@@ -30,7 +30,7 @@ oper
   short : ShortFormPreference
     = PrefShort ;
   full : ShortFormPreference
-    = PrefFull ;
+    = PreferFull ;
 
 -- Animacy is needed for nouns and some pronouns.
   animate : Animacy
@@ -275,7 +275,7 @@ oper
     mkA : Str -> Str -> A
       = \nom, comp -> lin A ((guessAdjectiveForms nom) ** {comp=comp}) ;
     mkA : Str -> Str -> Str -> A
-      = \nom, comp, zi -> lin A (makeAdjectiveForms nom comp zi PrefFull) ;
+      = \nom, comp, zi -> lin A (makeAdjectiveForms nom comp zi PreferFull) ;
     mkA : Str -> Str -> Str -> ShortFormPreference -> A
       = \nom, comp, zi, spf -> lin A (makeAdjectiveForms nom comp zi spf) ;
   } ;

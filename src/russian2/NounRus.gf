@@ -30,7 +30,7 @@ lin
   -- : Predet -> NP -> NP ; -- only the man
   PredetNP predet np = np ** {s=\\cas => predet.s ! (agrGenNum np.a) ! Inanimate ! cas ++ np.s ! numSizeCase cas predet.size} ;
 
-  -- : NP -> V2  -> NP ;    -- the man seen
+  -- : NP -> V2 -> NP ;    -- the man seen
   PPartNP np v2 = np ** {
     s = \\cas => np.s ! cas ++ (shortPastPassPart v2 (agrGenNum np.a))
     } ;
@@ -127,7 +127,7 @@ lin
     short=\\a=>[] ;
     g=Neut ;
     c=Nom ;
-    preferShort=PrefFull
+    preferShort=PreferFull
     } ;
 
   -- : AdN -> Card -> Card
@@ -214,7 +214,7 @@ lin
     c=Nom ;
     g=Neut ;
     size=Num1 ;
-    preferShort=PrefFull
+    preferShort=PreferFull
     } ;
   -- : Quant ;       -- a (house), (houses)
   IndefArt = {
@@ -224,7 +224,7 @@ lin
     c=Nom ;
     g=Neut ;
     size=Num1 ;
-    preferShort=PrefFull
+    preferShort=PreferFull
     } ;
 
 }

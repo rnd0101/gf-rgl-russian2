@@ -542,7 +542,7 @@ oper
   immutableAdjectiveCases : Str -> AdjForms
     = \s -> {
       msnom=s;fsnom=s;nsnom=s;pnom=s;msgen=s;fsgen=s;pgen=s;msdat=s;fsacc=s;msins=s;fsins=s;pins=s;msprep=s;sm=s;sf=s;sn=s;sp=s;comp=[];
-      preferShort=PrefFull
+      preferShort=PreferFull
     } ;
 
   makeAdjective : Str -> ZAIndex -> ShortFormPreference -> AdjForms

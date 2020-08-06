@@ -12,5 +12,5 @@ oper
   who_pl = doKPron "к" (Ag GPl P3) Animate ;
   somebody = pronFormsPronoun ((appendToIP who_sg (BIND ++ "-то")) ** {nPrefix=False}) ;
   nobody = pronFormsPronoun ((doKPron "ник" (Ag (GSg Masc) P3) Animate) ** {nPrefix=False}) ;
-  such = adjFormsAdjective (makeAdjectiveForms "такой" "" "3b" PrefFull) ;
+  such = adjFormsAdjective (makeAdjectiveForms "такой" "" "3b" PreferFull) ;
 }

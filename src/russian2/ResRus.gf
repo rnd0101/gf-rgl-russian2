@@ -246,7 +246,7 @@ oper
       sn = [] ;
       sp = [] ;
       comp = [] ;
-      preferShort = PrefFull
+      preferShort = PreferFull
     } ;
 
   immutableAdjForms = immutableAdjectiveCases ;
@@ -350,16 +350,16 @@ oper
     = \word ->
       let stem = Predef.tk 2 word in
       case word of {
-        _ + "шеий"                 => makeAdjective word (ZA 6 No A_ NoC) PrefFull ;
-        _ + "цый"                  => makeAdjective word (ZA 5 No A_ NoC) PrefFull ;
-        _ + ("к"|"г"|"х") +"ий"    => makeAdjective word (ZA 3 No A_ NoC) PrefFull ;
-        _ + ("ш"|"ж"|"ч"|"щ")+"ий" => makeAdjective word (ZA 4 No A_ NoC) PrefFull ;
-        _ + #consonant + "ный"     => makeAdjective word (ZA 1 Ast A_ NoC) PrefFull ;
-        _ + #consonant + "ний"     => makeAdjective word (ZA 2 Ast A_ NoC) PrefFull ;
-        _ + "ый"                   => makeAdjective word (ZA 1 No A_ NoC) PrefFull ;
-        _ + "ой"                   => makeAdjective word (ZA 1 No B_ NoC) PrefFull ;
-        _ + "ий"                   => makeAdjective word (ZA 2 No A_ NoC) PrefFull ;
-        _                          => makeAdjective word (ZA 1 No A_ NoC) PrefFull
+        _ + "шеий"                 => makeAdjective word (ZA 6 No A_ NoC) PreferFull ;
+        _ + "цый"                  => makeAdjective word (ZA 5 No A_ NoC) PreferFull ;
+        _ + ("к"|"г"|"х") +"ий"    => makeAdjective word (ZA 3 No A_ NoC) PreferFull ;
+        _ + ("ш"|"ж"|"ч"|"щ")+"ий" => makeAdjective word (ZA 4 No A_ NoC) PreferFull ;
+        _ + #consonant + "ный"     => makeAdjective word (ZA 1 Ast A_ NoC) PreferFull ;
+        _ + #consonant + "ний"     => makeAdjective word (ZA 2 Ast A_ NoC) PreferFull ;
+        _ + "ый"                   => makeAdjective word (ZA 1 No A_ NoC) PreferFull ;
+        _ + "ой"                   => makeAdjective word (ZA 1 No B_ NoC) PreferFull ;
+        _ + "ий"                   => makeAdjective word (ZA 2 No A_ NoC) PreferFull ;
+        _                          => makeAdjective word (ZA 1 No A_ NoC) PreferFull
     } ;
 
   makeAdjectiveForms : Str -> Str -> Str -> ShortFormPreference -> AdjForms
@@ -372,7 +372,7 @@ oper
     = \n -> {
        s = \\gn,anim,cas=> n.s ! numGenNum gn ! cas ;
        short=\\a=>[] ;
-       preferShort=PrefFull
+       preferShort=PreferFull
     } ;
 
   the_most = guessAdjectiveForms "самый" ;
@@ -402,7 +402,7 @@ oper
       comp  = the_most.comp   ++ af.comp  ;
       g=af.g ;
       -- a=af.a ;
-      preferShort = PrefFull
+      preferShort = PreferFull
     } ;
 
   makeNFFromAF : AdjForms -> Gender -> Animacy -> NounForms
@@ -1234,7 +1234,7 @@ oper
     fsins = "той" ;
     pins  = "тех" ;
     msprep = "том" ;
-    preferShort = PrefFull ;
+    preferShort = PreferFull ;
     comp = []
     } ;
 
@@ -1252,7 +1252,7 @@ oper
     fsins = "этой" ;
     pins  = "этими" ;
     msprep = "этом" ;
-    preferShort = PrefFull ;
+    preferShort = PreferFull ;
     comp = []
     } ;
 
@@ -1270,7 +1270,7 @@ oper
     fsins = "некой" ;
     pins  = "неким" ;
     msprep = "некой" ;
-    preferShort = PrefFull ;
+    preferShort = PreferFull ;
     comp = []
     } ;
 
@@ -1305,7 +1305,7 @@ oper
     fsins = "данной" ;
     pins  = "данных" ;
     msprep = "данном" ;
-    preferShort = PrefFull ;
+    preferShort = PreferFull ;
     comp = []
     } ;
 

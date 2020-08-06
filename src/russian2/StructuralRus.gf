@@ -18,29 +18,29 @@ lin
   whoPl_IP = who_pl ;
 
   -- : IQuant ;
-  which_IQuant = (adjFormsAdjective (makeAdjectiveForms "который" "" "1a" PrefFull)) ** {
-    preferShort=PrefFull ;
+  which_IQuant = (adjFormsAdjective (makeAdjectiveForms "который" "" "1a" PreferFull)) ** {
+    preferShort=PreferFull ;
     g=Neut ;
     c=Nom
     } ;
   -- : Quant ;
   this_Quant = (adjFormsAdjective this_forms) ** {
     type=NormalDet ;
-    preferShort=PrefFull ;
+    preferShort=PreferFull ;
     g=Neut ;
     c=Nom
     } ;
   -- : Quant ;
   that_Quant = (adjFormsAdjective that_forms) ** {
     type=NormalDet ;
-    preferShort=PrefFull ;
+    preferShort=PreferFull ;
     g=Neut ;
     c=Nom
     } ;
   -- : Quant ;
-  no_Quant = (adjFormsAdjective (makeAdjectiveForms "никакой" "" "3b" PrefFull)) ** {
+  no_Quant = (adjFormsAdjective (makeAdjectiveForms "никакой" "" "3b" PreferFull)) ** {
     type=NormalDet ;
-    preferShort=PrefFull ;
+    preferShort=PreferFull ;
     g=Neut ;
     c=Nom
     } ;
@@ -100,12 +100,12 @@ lin
 
   can8know_VV = {v=can; modal=\\a=>[]} ;
   can_VV = {v=can; modal=\\a=>[]} ;
-  must_VV = {v=nullVerb; modal=adjFormsToShort (makeAdjectiveForms "должный" "" "1*a" PrefFull)} ;
+  must_VV = {v=nullVerb; modal=adjFormsToShort (makeAdjectiveForms "должный" "" "1*a" PreferFull)} ;
   want_VV = {v=want; modal=\\a=>[]} ;
 
   -- : Det ;
   every_Det = {
-    s = \\g => (adjFormsAdjective (makeAdjectiveForms "каждый" "" "1*a" PrefFull)).s ! GSg g;
+    s = \\g => (adjFormsAdjective (makeAdjectiveForms "каждый" "" "1*a" PreferFull)).s ! GSg g;
     type=NormalDet ;
     g = Masc ;
     c = Nom ;
@@ -113,7 +113,7 @@ lin
     } ;
   -- : Det ;
   someSg_Det   = {
-    s = \\g => (adjFormsAdjective (makeAdjectiveForms "некоторый" "" "1*a" PrefFull)).s ! GSg g;
+    s = \\g => (adjFormsAdjective (makeAdjectiveForms "некоторый" "" "1*a" PreferFull)).s ! GSg g;
     type=NormalDet ;
     g = Masc ;
     c = Nom ;
@@ -121,7 +121,7 @@ lin
     } ;
   -- : Det ;
   somePl_Det = {
-    s = \\g => (adjFormsAdjective (makeAdjectiveForms "некоторый" "" "1*a" PrefFull)).s ! GPl;
+    s = \\g => (adjFormsAdjective (makeAdjectiveForms "некоторый" "" "1*a" PreferFull)).s ! GPl;
     type=NormalDet ;
     g = Masc ;
     c = Nom ;
@@ -129,7 +129,7 @@ lin
     } ;
   -- : Det ;
   few_Det = { -- numeral! TODO: мало ? немного ?
-    s = \\g => (adjFormsAdjective (makeAdjectiveForms "немногий"  "" "3a" PrefFull)).s ! GPl;
+    s = \\g => (adjFormsAdjective (makeAdjectiveForms "немногий"  "" "3a" PreferFull)).s ! GPl;
     type=NormalDet ;
     g = Masc ;
     c = Nom ;
@@ -137,7 +137,7 @@ lin
     } ;
   -- : Det ;
   many_Det, much_Det = {
-    s = \\g => (adjFormsAdjective (makeAdjectiveForms "многий"  "" "3a" PrefFull)).s ! GPl;
+    s = \\g => (adjFormsAdjective (makeAdjectiveForms "многий"  "" "3a" PreferFull)).s ! GPl;
     type=NormalDet ;
     g = Neut ;
     c = Gen ;

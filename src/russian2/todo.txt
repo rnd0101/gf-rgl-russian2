@@ -65,3 +65,20 @@ AllRus: нет его имя Иван
 AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
 AllRus: небо нет везде
 (must be: небо не везде есть)
+
+
+## Some past participles are not correct
+
+> gt AdjCN (PastPartAP ( SlashV2a ? )  )   (UseN house_N) | l -treebank
+AllRusAbs: AdjCN (PastPartAP (SlashV2a break_V2)) (UseN house_N)
+AllRus: прерыван дом   - прерываем
+AllRusAbs: AdjCN (PastPartAP (SlashV2a buy_V2)) (UseN house_N)
+AllRus: покупан дом    - покупаем
+AllRusAbs: AdjCN (PastPartAP (SlashV2a close_V2)) (UseN house_N)
+AllRus: закрыван дом   - закрываем
+AllRusAbs: AdjCN (PastPartAP (SlashV2a find_V2)) (UseN house_N)
+AllRus: нахожен дом    - находим(ый)
+AllRusAbs: AdjCN (PastPartAP (SlashV2a love_V2)) (UseN house_N)
+AllRus: люблен дом   -- любим(ый)
+AllRusAbs: AdjCN (PastPartAP (SlashV2a seek_V2)) (UseN house_N)
+AllRus: искан дом    -- исканный
