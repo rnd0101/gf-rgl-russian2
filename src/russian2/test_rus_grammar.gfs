@@ -126,6 +126,8 @@ gt UseQCl (TTAnt ? ASimul) PPos (QuestIComp (CompIAdv when_IAdv)  (MassNP (UseN 
 gt UseQCl (TTAnt ? ASimul) PNeg (QuestIAdv when_IAdv (ImpersCl (AdvVP UseCopula (PrepNP part_Prep (MassNP (UseN apple_N)))))) | l -treebank
 
 gt ImpVP (UseCopula) | l -treebank
+gt CountNP many_Det (MassNP (UseN city_N)) | l -treebank
+gt UttAdV always_AdV | l -treebank
 
  -- from extend
 
@@ -133,6 +135,7 @@ gt UseCl (TTAnt ? AAnter) ? (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))  | l 
 gt UseCl (TTAnt ? AAnter) PPos (AdvIsNPAP everywhere_Adv (MassNP (UseN sky_N)) (PositA blue_A))  | l -treebank
 gt UseCl ? PPos (ExistsNP (MassNP (UseN number_N))) | l -treebank
 
+gt UttCN (AdjCN (PositA red_A) (UseN house_N)) | l -treebank
 
  -- these below sound unnatural
 

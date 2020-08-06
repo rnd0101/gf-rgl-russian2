@@ -3346,6 +3346,12 @@ AllRus: когда не является яблока
 AllRusAbs: ImpVP UseCopula
 AllRus: будь
 
+AllRusAbs: CountNP many_Det (MassNP (UseN city_N))
+AllRus: многие из города
+
+AllRusAbs: UttAdV always_AdV
+AllRus: всегда
+
 AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
 AllRus: небо не везде бы &+ ло бы
 AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
@@ -3388,6 +3394,9 @@ AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (ExistsNP (MassNP (UseN number_N)))
 AllRus: существует число
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (ExistsNP (MassNP (UseN number_N)))
 AllRus: существует число
+
+AllRusAbs: UttCN (AdjCN (PositA red_A) (UseN house_N))
+AllRus: красный дом
 
 AllRusAbs: AdjCN (PastPartAP (SlashV2a bite_V2)) (UseN house_N)
 AllRus: кусан дом

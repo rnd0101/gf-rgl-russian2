@@ -31,8 +31,10 @@ concrete ExtendRus of Extend =
     -- EmbedSSlash, PresPartAP,
     PurposeVP,
     -- ReflPoss, ReflPron, ReflRNP, SlashBareV2S, SlashV2V, StrandQuestSlash, StrandRelSlash,
-    PredIAdvVP
-    -- UncontractedNeg, UttAccIP, UttAccNP, UttAdV, UttDatIP, UttDatNP, UttVPShort, WithoutVP, BaseVPS2, ConsVPS2, ConjVPS2, ComplVPS2, MkVPS2
+    PredIAdvVP,
+    -- UncontractedNeg, UttAccIP, UttAccNP,
+    UttAdV
+    -- UttDatIP, UttDatNP, UttVPShort, WithoutVP, BaseVPS2, ConsVPS2, ConjVPS2, ComplVPS2, MkVPS2
    ]
   with (Grammar=GrammarRus)
   ** open Prelude, ResRus, ParadigmsRus, (M = MorphoRus) in {
@@ -97,4 +99,7 @@ lin
     poss={msnom,fsnom,nsnom,pnom,msgen,fsgen,pgen,msdat,fsacc,msins,fsins,pins,msprep=[]} ;
     a=pron.a
     } ;
+
+  -- : AdV -> Utt ;                  -- always(!)
+  UttAdV adv = {s=adv.s} ;
 } ;
