@@ -118,6 +118,10 @@ gt UseCl (TTAnt TPast ASimul) PPos (PredVP (MassNP (UseN boy_N)) (AdvVP (UseV fl
 gt UseComp (CompAdv here_Adv) | l -treebank
 gt PredSCVP (EmbedVP (UseV think_V)) thirsty_VP | l -treebank
 
+gt RelCl (PredVP (UsePN john_PN) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron))) | l -treebank
+gt UseRCl ? ? ( RelCl (PredVP (UsePN john_PN) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron))) ) | l -treebank
+gt RelNP (MassNP (UseN woman_N)) (UseRCl (TTAnt ? ASimul) ? (RelCl (PredVP (UsePN john_PN) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron))))) | l -treebank
+
 gt UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron i_Pron) (ComplSlash (Slash3V3 talk_V3 (DetCN (DetQuant DefArt NumSg) (RelCN (UseN book_N) (UseRCl (TTAnt TPast ASimul) PPos (RelSlash IdRP (SlashVP (UsePron i_Pron) (SlashV2a read_V2))))))) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN friend_N)))) | l -treebank
 gt UseQCl (TTAnt TPres ASimul) PPos (QuestVP whatSg_IP (UseComp (CompNP (DetCN (DetQuant (PossPron youSg_Pron) NumSg) (UseN name_N))))) | l -treebank
 gt UseQCl (TTAnt TPres ASimul) PPos (QuestIAdv how_IAdv (PredVP (UsePron youSg_Pron) (UseV fly_V))) | l -treebank
