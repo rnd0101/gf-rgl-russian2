@@ -3043,7 +3043,7 @@ AllRus: он не будет учиться в воскресенье .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv thursday_Weekday))))) NoVoc) TEmpty
 AllRus: он не будет учиться в четверг .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv tuesday_Weekday))))) NoVoc) TEmpty
-AllRus: он не будет учиться в вторник .
+AllRus: он не будет учиться во вторник .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv wednesday_Weekday))))) NoVoc) TEmpty
 AllRus: он не будет учиться в среду .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv friday_Weekday))))) NoVoc) TEmpty
@@ -3057,7 +3057,7 @@ AllRus: он будет учиться в воскресенье .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv thursday_Weekday))))) NoVoc) TEmpty
 AllRus: он будет учиться в четверг .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv tuesday_Weekday))))) NoVoc) TEmpty
-AllRus: он будет учиться в вторник .
+AllRus: он будет учиться во вторник .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (PassV2 learn_V2) (weekdayPunctualAdv wednesday_Weekday))))) NoVoc) TEmpty
 AllRus: он будет учиться в среду .
 
@@ -3357,6 +3357,12 @@ AllRus: многие из нас
 
 AllRusAbs: UttAdV always_AdV
 AllRus: всегда
+
+AllRusAbs: PrepNP above_Prep (MassNP (UseN mouth_N))
+AllRus: надо ртом
+
+AllRusAbs: PrepNP above_Prep (MassNP (UseN (weekdayN tuesday_Weekday)))
+AllRus: над вторником
 
 AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
 AllRus: небо не везде бы &+ ло бы

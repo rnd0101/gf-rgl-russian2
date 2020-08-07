@@ -1,24 +1,6 @@
 concrete StructuralRus of Structural = CatRus **
   open ParadigmsRus, ResRus, MorphoRus, (X = ConstructX), Coordination, Prelude in {
 
-oper
-  sconsonant : pattern Str = #(("с"|"з"|"ж"|"ш"|"л"|"ль"|"р"|"м"|"в"|"С"|"З"|"Ж"|"Ш"|"Л"|"Ль"|"Р"|"М"|"В"|"ЛЬ") +
-               ("б"|"в"|"г"|"д"|"ж"|"з"|"й"|"к"|"л"|"м"|"н"|"п"|"р"|"с"|"т"|"ф"|"х"|"ц"|"ч"|"ш"|"щ" |
-                "Б"|"В"|"Г"|"Д"|"Ж"|"З"|"Й"|"К"|"Л"|"М"|"Н"|"П"|"Р"|"С"|"Т"|"Ф"|"Х"|"Ц"|"Ч"|"Ш"|"Щ")) ;
-  vconsonant : pattern Str = #(("в"|"ф"|"В"|"Ф") +
-               ("б"|"в"|"г"|"д"|"ж"|"з"|"й"|"к"|"л"|"м"|"н"|"п"|"р"|"с"|"т"|"ф"|"х"|"ц"|"ч"|"ш"|"щ" |
-                "Б"|"В"|"Г"|"Д"|"Ж"|"З"|"Й"|"К"|"Л"|"М"|"Н"|"П"|"Р"|"С"|"Т"|"Ф"|"Х"|"Ц"|"Ч"|"Ш"|"Щ")) ;
-  s_prep_mod : Str = pre {#sconsonant => "со" ; ("щ"|"Щ") => "со" ; _ => "с"} ;
-  v_prep_mod : Str = pre {#vconsonant => "во" ; ("мног"|"множ"|"все"|"весь"|"имя"|"мне") => "во" ; _ => "в"} ;
-  k_prep_dat_mod : Str = pre {
-    ("льву"|"льду"|"льну"|"лбу"|"мху"|"рву"|"ржи"|"рту"|"всякому"|"всему"|"всяческому"|"вторнику"|"второму"|"многому") => "ко" ;
-    _ => "к"
-    } ;
-  above_prep_ins_mod : Str = pre {
-    ("львом"|"льдом"|"льном"|"лбом"|"мхом"|"рвом"|"ртом") => "надо" ;
-    _ => "над"
-    } ;
-
 lin
   i_Pron = personalPron (Ag MSg P1) ;
   we_Pron = personalPron (Ag GPl P1) ;
@@ -73,7 +55,7 @@ lin
   during_Prep = mkPrep "в течение" Gen ;
   except_Prep = mkPrep ["за исключением"] Gen ;
   for_Prep = mkPrep "для" Gen ;
-  from_Prep = mkPrep "от" Gen ;
+  from_Prep = mkPrep ot_prep_gen_mod Gen ;
   in8front_Prep = mkPrep "перед" Ins ;
   in_Prep = mkPrep v_prep_mod Loc ;
   on_Prep = mkPrep "на" Loc ;
@@ -81,7 +63,7 @@ lin
   possess_Prep = {s="у" ; c=Gen ; hasPrep=False} ;
   through_Prep = mkPrep "через" Acc ;
   to_Prep = mkPrep k_prep_dat_mod Dat ;
-  under_Prep = mkPrep "под" Ins ;
+  under_Prep = mkPrep pod_prep_mod Ins ;
   without_Prep = mkPrep "без" Gen ;
 
   or_Conj = mkConj "или" Sg ;
