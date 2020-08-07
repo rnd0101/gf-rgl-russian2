@@ -7,10 +7,16 @@ With what should be correct approach, produces:
 > l DetCN (DetQuant (PossPron i_Pron) NumSg)  (ConjCN and_Conj (ConsCN (UseN grammar_N) (BaseCN (UseN apple_N) (UseN flower_N))))
 мой грамматика , яблоко и цветок
 
+> l ComplN2 mother_N2  ( DetCN (DetQuant (PossPron i_Pron) NumSg)  (ConjCN and_Conj (ConsCN (UseN grammar_N) (BaseCN (UseN apple_N) (UseN flower_N)))) )
+мать моего грамматики , яблока и цветка
+
 Correct text requires AdvNP tricks. Resulting trees are quite artificial, one example:
 
 > l ConjNP and_Conj (ConsNP (AdvNP (DetNP (DetQuant (PossPron i_Pron) NumPl)) (PrepNP obj_no_Prep (DetCN (DetQuant DefArt NumSg) (UseN grammar_N)))) (BaseNP (MassNP (UseN apple_N)) (MassNP (UseN flower_N))))
 мои грамматика , яблоко и цветок
+
+> l ComplN2 mother_N2  ( ConjNP and_Conj (ConsNP (AdvNP (DetNP (DetQuant (PossPron i_Pron) NumPl)) (PrepNP obj_no_Prep (DetCN (DetQuant DefArt NumSg) (UseN grammar_N)))) (BaseNP (MassNP (UseN apple_N)) (MassNP (UseN flower_N)))) )
+мать моих грамматика , яблока и цветка
 
 Proper resolution? It's hard to go through Dets and Quants (and will make them more complex). Probably, correct solution would be to make the same as if possessive pronoun is an adjective:
 

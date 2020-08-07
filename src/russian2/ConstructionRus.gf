@@ -87,9 +87,8 @@ lin
   timeHour h = P.mkAdv (in_Prep.s ++ h.s) ;
 
   -- : Hour -> Card -> Adv ; -- at six forty a.m./p.m.
-  timeHourMinute h card = P.mkAdv ((timeHour h).s ++ BIND ++ ":" ++ BIND ++ card.s ! Neut ! Inanimate ! Nom) ;  -- TODO: ?
+  timeHourMinute h card = P.mkAdv ((timeHour h).s ++ BIND ++ ":" ++ BIND ++ card.s ! Neut ! Inanimate ! Nom) ;  -- TODO: 00?
 
- -- TODO: Fix the following (genders)
   -- : Weekday -> Adv ;  -- on Monday
   weekdayPunctualAdv w = P.mkAdv (in_Prep.s ++ w.sacc) ;         -- on Sunday
   -- : Weekday -> Adv ;  -- on Mondays

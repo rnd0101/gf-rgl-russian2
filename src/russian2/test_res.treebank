@@ -3463,11 +3463,91 @@ AllRus: существует число
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (ExistsNP (MassNP (UseN number_N)))
 AllRus: существует число
 
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (ExistNPAdv (MassNP (UseN house_N)) now_Adv)
+AllRus: дом сейчас существовал бы
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (ExistNPAdv (MassNP (UseN house_N)) now_Adv)
+AllRus: дом сейчас существовал бы
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (ExistNPAdv (MassNP (UseN house_N)) now_Adv)
+AllRus: дом сейчас будет существовать
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (ExistNPAdv (MassNP (UseN house_N)) now_Adv)
+AllRus: дом сейчас будет существовать
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (ExistNPAdv (MassNP (UseN house_N)) now_Adv)
+AllRus: дом сейчас существовал
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (ExistNPAdv (MassNP (UseN house_N)) now_Adv)
+AllRus: дом сейчас существовал
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (ExistNPAdv (MassNP (UseN house_N)) now_Adv)
+AllRus: дом сейчас существует
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (ExistNPAdv (MassNP (UseN house_N)) now_Adv)
+AllRus: дом сейчас существует
+
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttNP (MassNP (AdjCN (PositA full_A) (glass_of_CN (MassNP (UseN wine_N)))))) NoVoc) TEmpty
 AllRus: полный стакан вина .
 
+AllRusAbs: EmbedQS (UseQCl (TTAnt TCond ASimul) PNeg (ExistIPAdv whatSg_IP now_Adv))
+AllRus: что не сейчас существова &+ ло бы
+AllRusAbs: EmbedQS (UseQCl (TTAnt TCond ASimul) PPos (ExistIPAdv whatSg_IP now_Adv))
+AllRus: что сейчас существова &+ ло бы
+AllRusAbs: EmbedQS (UseQCl (TTAnt TFut ASimul) PNeg (ExistIPAdv whatSg_IP now_Adv))
+AllRus: что не сейчас будет существовать
+AllRusAbs: EmbedQS (UseQCl (TTAnt TFut ASimul) PPos (ExistIPAdv whatSg_IP now_Adv))
+AllRus: что сейчас будет существовать
+AllRusAbs: EmbedQS (UseQCl (TTAnt TPast ASimul) PNeg (ExistIPAdv whatSg_IP now_Adv))
+AllRus: что не сейчас существова &+ ло
+AllRusAbs: EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (ExistIPAdv whatSg_IP now_Adv))
+AllRus: что сейчас существова &+ ло
+AllRusAbs: EmbedQS (UseQCl (TTAnt TPres ASimul) PNeg (ExistIPAdv whatSg_IP now_Adv))
+AllRus: что не сейчас существует
+AllRusAbs: EmbedQS (UseQCl (TTAnt TPres ASimul) PPos (ExistIPAdv whatSg_IP now_Adv))
+AllRus: что сейчас существует
+
 AllRusAbs: UttCN (AdjCN (PositA red_A) (UseN house_N))
 AllRus: красный дом
+
+AllRusAbs: UttCard (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))
+AllRus: по меньшей мере восемь
+
+AllRusAbs: timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) second_Timeunit
+AllRus: по меньшей мере две секунды
+AllRusAbs: timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))))) second_Timeunit
+AllRus: по меньшей мере три секунды
+AllRusAbs: timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n4))))))) second_Timeunit
+AllRus: по меньшей мере четыре секунды
+AllRusAbs: timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))))) second_Timeunit
+AllRus: по меньшей мере пять секунд
+AllRusAbs: timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n6))))))) second_Timeunit
+AllRus: по меньшей мере шесть секунд
+AllRusAbs: timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n7))))))) second_Timeunit
+AllRus: по меньшей мере семь секунд
+AllRusAbs: timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) second_Timeunit
+AllRus: по меньшей мере восемь секунд
+AllRusAbs: timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n9))))))) second_Timeunit
+AllRus: по меньшей мере девять секунд
+
+AllRusAbs: AdvS (timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N)))))
+AllRus: по меньшей мере две секунды чашка воды будет существовать
+AllRusAbs: AdvS (timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N)))))
+AllRus: по меньшей мере три секунды чашка воды будет существовать
+AllRusAbs: AdvS (timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n4))))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N)))))
+AllRus: по меньшей мере четыре секунды чашка воды будет существовать
+AllRusAbs: AdvS (timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N)))))
+AllRus: по меньшей мере пять секунд чашка воды будет существовать
+AllRusAbs: AdvS (timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n6))))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N)))))
+AllRus: по меньшей мере шесть секунд чашка воды будет существовать
+AllRusAbs: AdvS (timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n7))))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N)))))
+AllRus: по меньшей мере семь секунд чашка воды будет существовать
+AllRusAbs: AdvS (timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N)))))
+AllRus: по меньшей мере восемь секунд чашка воды будет существовать
+AllRusAbs: AdvS (timeunitAdv (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n9))))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N)))))
+AllRus: по меньшей мере девять секунд чашка воды будет существовать
+
+AllRusAbs: AdvS (timeunitAdv (AdNum at_most_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n9))))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N)))))
+AllRus: самое большее девять секунд чашка воды будет существовать
+
+AllRusAbs: AdvS (timeunitAdv (AdNum at_most_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N)))))
+AllRus: самое большее одна секунда чашка воды будет существовать
+
+AllRusAbs: AdvS (timeunitAdv (AdNum almost_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N)))))
+AllRus: почти две секунды чашка воды будет существовать
 
 AllRusAbs: AdjCN (PastPartAP (SlashV2a bite_V2)) (UseN house_N)
 AllRus: кусан дом

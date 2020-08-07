@@ -30,7 +30,7 @@ lin
     } ;
 
   -- : NP -> Cl ;        -- there is a house
-  ExistNP np = {subj=np.s ! Nom ; compl="" ; verb=to_exist ; dep=[] ; adv=[] ; a=np.a} ;  -- TODO: Different order?
+  ExistNP np = {subj=np.s ! Nom ; compl="" ; verb=to_exist ; dep=[] ; adv=[] ; a=np.a} ;
 
   -- : IP -> QCl ;       -- which houses are there
   ExistIP ip = {
@@ -41,8 +41,25 @@ lin
     compl=[];
     a=ip.a
     } ;
-  -- TODO: ExistNPAdv : NP -> Adv -> Cl ;    -- there is a house in Paris
-  -- TODO: ExistIPAdv : IP -> Adv -> QCl ;   -- which houses are there in Paris
+  -- : NP -> Adv -> Cl ;    -- there is a house in Paris
+  ExistNPAdv np adv = {
+    subj=np.s ! Nom ;
+    compl="" ;
+    verb=to_exist ;
+    dep=[] ;
+    adv=adv.s ;
+    a=np.a
+    } ;
+  -- : IP -> Adv -> QCl ;   -- which houses are there in Paris
+  ExistIPAdv ip adv = {
+    subj=ip.nom ; -- gen?
+    adv=adv.s ;
+    verb=to_exist;
+    dep=[] ;
+    compl=[];
+    a=ip.a
+    } ;
+
   -- : VP -> VP ;        -- be sleeping
   ProgrVP vp = vp ;
   -- : VP -> Utt ;       -- let's go

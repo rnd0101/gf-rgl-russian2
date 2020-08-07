@@ -128,7 +128,7 @@ lin
     size = NumAll ;
     } ;
   -- : Det ;
-  few_Det = { -- numeral! TODO: мало ? немного ?
+  few_Det = {
     s = \\g => (adjFormsAdjective (makeAdjectiveForms "немногий"  "" "3a" PreferFull)).s ! GPl;
     type=NormalDet ;
     g = Masc ;
@@ -166,8 +166,8 @@ lin
   almost_AdA = ss "почти" ;
   almost_AdN = ss "почти" ;
   always_AdV = ss "всегда" ;
-  at_least_AdN = ss "по меньшей мере" ; -- TODO: ?
-  at_most_AdN = ss "самое большее" ; -- TODO: ?
+  at_least_AdN = ss "по меньшей мере" ;
+  at_most_AdN = ss "самое большее" ;
   too_AdA = ss "слишком" ;
   very_AdA = ss "очень" ;
 
