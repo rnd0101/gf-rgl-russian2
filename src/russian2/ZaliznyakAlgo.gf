@@ -542,7 +542,8 @@ oper
   immutableAdjectiveCases : Str -> AdjForms
     = \s -> {
       msnom=s;fsnom=s;nsnom=s;pnom=s;msgen=s;fsgen=s;pgen=s;msdat=s;fsacc=s;msins=s;fsins=s;pins=s;msprep=s;sm=s;sf=s;sn=s;sp=s;comp=[];
-      preferShort=PreferFull
+      preferShort=PreferFull ;
+      p=False
     } ;
 
   makeAdjective : Str -> ZAIndex -> ShortFormPreference -> AdjForms
@@ -643,7 +644,8 @@ oper
         sn    = sstem + aef.sn ;
         sp    = sstem + aef.sp ;
         comp  = comps + aef.comp ;
-        preferShort = aef.preferShort
+        preferShort = aef.preferShort ;
+        p = aef.p
       } ;
 
   doAlternationsAdj : Str -> AdjForms -> DeclType -> AdjStressSchema -> ZCirc -> AdjForms
@@ -670,7 +672,8 @@ oper
         sn    = sstem + aef.sn ;
         sp    = sstem + aef.sp ;
         comp  = comps + aef.comp ;
-        preferShort = aef.preferShort
+        preferShort = aef.preferShort ;
+        p = False
       } ;
 
   endingsSelectionAdj : DeclType -> AlterType -> AdjStressSchema -> ShortFormPreference -> AdjForms
@@ -700,7 +703,8 @@ oper
         sn     = stressSelectionAdj aef1.sn     ss "sn" ;
         sp     = stressSelectionAdj aef1.sp     ss "sp" ;
         comp   = stressSelectionAdj aef1.comp   ss "comp" ;
-        preferShort = sfp
+        preferShort = sfp ;
+        p = False
     } ;
 
   stressSelectionAdj : EndingSpec -> AdjStressSchema -> Str -> Str

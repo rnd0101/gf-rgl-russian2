@@ -72,6 +72,7 @@ oper
     sm, sf, sn, sp,             -- short forms
     comp                        -- comparative variants
     : Str ;
+    p : Bool ;
     preferShort : ShortFormPreference
   } ;
 

@@ -238,7 +238,8 @@ oper
       sn = [] ;
       sp = [] ;
       comp = [] ;
-      preferShort = PreferFull
+      preferShort = PreferFull ;
+      p = False
     } ;
 
   immutableAdjForms = immutableAdjectiveCases ;
@@ -393,8 +394,8 @@ oper
       sp    = the_most.sp     ++ af.sp    ;
       comp  = the_most.comp   ++ af.comp  ;
       g=af.g ;
-      -- a=af.a ;
-      preferShort = PreferFull
+      preferShort = PreferFull ;
+      p = af.p
     } ;
 
   makeNFFromAF : AdjForms -> Gender -> Animacy -> NounForms
@@ -1227,7 +1228,8 @@ oper
     pins  = "тех" ;
     msprep = "том" ;
     preferShort = PreferFull ;
-    comp = []
+    comp = [] ;
+    p = False
     } ;
 
   this_forms = {
@@ -1245,7 +1247,8 @@ oper
     pins  = "этими" ;
     msprep = "этом" ;
     preferShort = PreferFull ;
-    comp = []
+    comp = [] ;
+    p = False
     } ;
 
   a_forms = { -- this pronoun is an approximate translation of indef article; preventing DetNP parsing problems
@@ -1263,7 +1266,8 @@ oper
     pins  = "неким" ;
     msprep = "некой" ;
     preferShort = PreferFull ;
-    comp = []
+    comp = [] ;
+    p = False
     } ;
 
   a_Det = {
@@ -1298,7 +1302,8 @@ oper
     pins  = "данных" ;
     msprep = "данном" ;
     preferShort = PreferFull ;
-    comp = []
+    comp = [] ;
+    p = False
     } ;
 
   the_Det = {

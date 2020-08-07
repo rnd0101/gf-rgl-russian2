@@ -4,7 +4,7 @@ lin
   -- : Adv -> S -> S ;            -- then I will go home
   AdvS adv s = {s=\\m => adv.s ++ s.s ! m} ;
   -- : Adv -> S -> S ;            -- next week, I will go home
-  ExtAdvS adv s = {s=\\m => adv.s ++ comma ++ s.s ! m} ;   -- TODO: what is the case for this? embed in commas?
+  ExtAdvS adv s = {s=\\m => adv.s ++ comma ++ s.s ! m} ;
 
   -- : Temp -> Pol -> Cl -> S ;   -- she had not slept - она не спала
   UseCl temp pol cl = {

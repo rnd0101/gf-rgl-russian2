@@ -53,6 +53,7 @@ lin
     msprep= symb.s ++ BIND ++ "-м" ;
     sm, sf, sn, sp = symb.s ;
     comp = symb.s ++ BIND ++ "-е" ; --*
+    p = False ;
     preferShort=PreferFull
   } ;
 

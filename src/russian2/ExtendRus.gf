@@ -20,7 +20,7 @@ concrete ExtendRus of Extend =
     --ConjRNP, ConjVPS, ConsVPS, Cons_nr_RNP, Cons_rr_RNP, DetNPMasc, DetNPFem, EmbedPresPart, EmptyRelSlash,
     ExistsNP,
     -- ExistCN, ExistMassCN, ExistPluralCN,
-    ProDrop,
+    --ProDrop,
     -- FocusAP, FocusAdV, FocusAdv, FocusObj, GenIP, GenModIP, GenModNP, GenNP, GenRP,
     -- GerundAdv, GerundCN, GerundNP, IAdvAdv, ICompAP,
     InOrderToVP,
