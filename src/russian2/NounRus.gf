@@ -188,7 +188,7 @@ lin
 
   -- : Det -> NP -> NP ;    -- three of them, some of the boys
   CountNP det np = {
-    s=\\cas => det.s ! Neut ! Inanimate ! cas ++ selectCase np.s from2 ;
+    s=\\cas => det.s ! Neut ! Inanimate ! cas ++ applyPrep from2 np ;
     pron=False ;
     a=numSizeGenAgr det.size Neut P3
     } ;

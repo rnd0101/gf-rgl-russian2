@@ -197,14 +197,6 @@ oper
 
   AgrTable = Agr => Str ;
 
-  agree : ComplementCase -> AgrTable
-    = \c -> table {
-      _ => c.s  -- TODO: implement
-    } ;
-
-  selectCase : (Case => Str) -> ComplementCase -> Str
-    = \np,prep -> prep.s ++ np ! prep.c ;  -- TODO: NP - pronoun special treatment
-
   from2 = {s="из"; c=Gen; hasPrep=True} ;
 
   mkCompoundN : NounForms -> Str -> NounForms -> NounForms
@@ -937,7 +929,7 @@ oper
           dat = "им" ;   -- TODO: n
           ins = "ими" ;   -- TODO: n
           prep, loc = "них" ;
-          nPrefix = False ;
+          nPrefix = True ;
           poss = doPossessivePronP3 "их"
         }
       } ;
