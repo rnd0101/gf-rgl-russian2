@@ -8,7 +8,7 @@ flags  coding=utf8 ;
 -- Nikita Frolov, 2011
 
 lincat Digit = {s : DForm => DetTable ; size : NumSize} ;
-lincat Sub10 = {s : Place => DForm => Gender => Animacy =>  Case => Str ; size : NumSize} ;
+lincat Sub10 = {s : Place => DForm => DetTable ; size : NumSize} ;
 lincat Sub100 = {s : Place => DetTable ; size : NumSize} ;
 lincat Sub1000 = {s : Place => DetTable ; size : NumSize} ;
 lincat Sub1000000 = {s : DetTable ; size : NumSize} ;
