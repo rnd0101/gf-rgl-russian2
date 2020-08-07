@@ -131,6 +131,9 @@ gt CountNP many_Det (UsePron they_Pron) | l -treebank
 gt CountNP many_Det (UsePron we_Pron) | l -treebank
 gt UttAdV always_AdV | l -treebank
 
+gt PrepNP above_Prep (MassNP (UseN (mouth_N))) | l -treebank
+gt PrepNP above_Prep (MassNP (UseN (weekdayN tuesday_Weekday))) |l -treebank
+
  -- from extend
 
 gt UseCl (TTAnt ? AAnter) ? (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))  | l -treebank

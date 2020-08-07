@@ -3,6 +3,11 @@
 concrete ExtraRus of ExtraRusAbs = CatRus **
   open ResRus, MorphoRus, (P=ParadigmsRus), Prelude, NounRus in {
   flags optimize=all ; coding=utf8 ;
+oper
+  o_prep_mod : Str = pre { -- rules are approximate
+    ("всем"|"всём"|"мне") => "обо" ;
+    ("а"|"и"|"о"|"у"|"э"|"А"|"И"|"О"|"У"|"Э") => "об" ;
+    _ => "о"} ;
 
 lin
   obj_no_Prep = {s="" ; c=Acc ; hasPrep=False} ;
