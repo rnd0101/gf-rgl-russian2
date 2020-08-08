@@ -1345,6 +1345,12 @@ oper
 oper
   DetTable = Gender => Animacy => Case => Str ;
 
+  NumeralForms : Type = {
+    s : DetTable ;
+    o : AdjTable ;
+    size : NumSize
+    } ;
+
   NumDet : Type = {
     s : DetTable ;
     size : NumSize

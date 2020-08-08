@@ -7,16 +7,22 @@ flags  coding=utf8 ;
 -- Toiska, 13/8/2000, AR with Arto Mustajoki.
 -- Nikita Frolov, 2011
 
-lincat Digit = {s : DForm => DetTable ; size : NumSize} ;
-lincat Sub10 = {s : Place => DForm => DetTable ; size : NumSize} ;
-lincat Sub100 = {s : Place => DetTable ; size : NumSize} ;
-lincat Sub1000 = {s : Place => DetTable ; size : NumSize} ;
-lincat Sub1000000 = {s : DetTable ; size : NumSize} ;
+lincat Digit = {s : DForm => DetTable ; size : NumSize ; o : DForm => PronForms} ;
+lincat Sub10 = {s : Place => DForm => DetTable ; size : NumSize ; o : DForm => PronForms} ;
+lincat Sub100 = {s : Place => DetTable ; size : NumSize ; o : DForm => PronForms} ;
+lincat Sub1000 = {s : Place => DetTable ; size : NumSize ; o : DForm => PronForms} ;
+lincat Sub1000000 = {s : DetTable ; size : NumSize ; o : DForm => PronForms} ;
 
 lin num x = {s = \\ g,a,c => x.s ! g ! a ! c; n = Pl ; size = x.size};
 
 lin n3 = {
   s = table {
+    unit => tri ;
+    teen => nadsat "три" ;
+    ten  => n2030 "три" ;
+    hund => sta tri
+    } ;
+  o = table {
     unit => tri ;
     teen => nadsat "три" ;
     ten  => n2030 "три" ;

@@ -775,6 +775,33 @@ oper
         msprep=stem2 +"ем" ;  --ём
     } ;
 
+  pronoun6AstA : Str -> PronForms
+    = \word -> -- третий
+      let cmp_base : Str = case word of {_ => word} in
+      let last = Predef.dp 1 cmp_base in
+      let butLast = Predef.tk 1 cmp_base in
+      let secondLast = Predef.dp 1 butLast in
+      let butTwolast = Predef.tk 2 cmp_base in
+      let thirdLast = Predef.dp 1 butTwolast in
+      let stem = cmp_base in
+      let stem2 = butTwolast + "ь" in
+      {
+        msnom=stem   ;
+        fsnom=stem2  +"я" ;
+        nsnom=stem2  +"е" ;
+        pnom=stem2   +"и" ;
+        msgen=stem2  +"его" ;
+        fsgen=stem2  +"ей" ;
+        pgen=stem2   +"их" ;
+        msdat=stem2  +"ему" ;
+        fsacc=stem2  +"ю" ;
+        msins=stem2  +"им" ;
+        fsins=stem2  +"ей" ;
+        pins=stem2   +"ими" ;
+        msprep=stem2 +"ем" ;
+    } ;
+
+
 --------
 -- Verbs
 

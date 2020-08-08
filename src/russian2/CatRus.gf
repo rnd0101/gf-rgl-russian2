@@ -63,7 +63,9 @@ lincat
   Predet = ResRus.Adjective ** {size : NumSize} ;
   IQuant = ResRus.Adjective ** {g: Gender; c: Case} ;
   Quant = ResRus.Adjective ** {g: Gender; c: Case; type: DetType} ;
-  Num, Numeral, Card = NumDet ;
+  Numeral = NumeralForms ;
+  Num = NumDet ;
+  Card = NumDet ;
   Digits = {s : Str ; size: NumSize} ;
 
   QS  = {s : QForm => Str} ;
