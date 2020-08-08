@@ -88,3 +88,13 @@ AllRusAbs: AdjCN (PastPartAP (SlashV2a love_V2)) (UseN house_N)
 AllRus: люблен дом   -- любим(ый)
 AllRusAbs: AdjCN (PastPartAP (SlashV2a seek_V2)) (UseN house_N)
 AllRus: искан дом    -- исканный
+
+
+## Ordinals
+
+OrdNumeral (num (pot3 (pot2plus pot01 pot111)))
+--> 111000
+OrdNumeral (num (pot3 (pot2 pot01)))
+--> 100000
+AllEngAbs> l OrdNumeral (num (pot3plus (pot1as2 pot110) (pot2plus pot01 pot110)))
+ten thousand one hundred and tenth

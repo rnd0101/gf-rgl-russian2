@@ -20,6 +20,7 @@ lin num x = {
   size = x.size
   };
 
+-- : Digit
 lin n3 = {
   s = table {
     unit => tri ;
@@ -261,7 +262,6 @@ lin pot01 = {
       hund => \\ g, a, c => case <g, a, c> of {
         <_, _, (Nom|VocRus|Acc)> => "сто";
         <_, _, (Gen|Ptv|Dat|Pre|Loc)> => "ста";
-        -- TODO: case agreement with nouns
         <_, _, Ins> => "сотней"
 			  };
       _ => \\ g, a, c => case <g, a, c> of {
@@ -382,9 +382,6 @@ lin pot3plus n m = {
   o = m.o ! attr ;  -- TODO: !
   size = Num5
   } ;
-
---- TODO
---- raz/odin
 
 -- numerals as sequences of digits
 

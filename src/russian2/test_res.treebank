@@ -3420,6 +3420,42 @@ AllRus: надо ртом
 AllRusAbs: PrepNP above_Prep (MassNP (UseN (weekdayN tuesday_Weekday)))
 AllRus: над вторником
 
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot1 n2)))))
+AllRus: двадцатый
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot1 n3)))))
+AllRus: тридцатый
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot1 n4)))))
+AllRus: сороковой
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot1 n5)))))
+AllRus: пятидесятый
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot1 n6)))))
+AllRus: шестидесятый
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot1 n7)))))
+AllRus: семидесятый
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot1 n8)))))
+AllRus: восьмидесятый
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot1 n9)))))
+AllRus: девяностый
+
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))
+AllRus: второй
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))))
+AllRus: третий
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n4))))))
+AllRus: четвёртый
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))))
+AllRus: пятый
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n6))))))
+AllRus: шестой
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n7))))))
+AllRus: седьмой
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))
+AllRus: восьмой
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n9))))))
+AllRus: девятый
+AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))
+AllRus: первый
+
 AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
 AllRus: небо не везде бы &+ ло бы
 AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
@@ -3826,4 +3862,6 @@ AllRus: играть является чистым
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompCN (AdjCN (PositA clean_A) (UseN war_N)))))
 AllRus: играть является чистой войной
 
+AllRusAbs: AdjCN (AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))))) (UseN apple_N)
+AllRus: третье яблоко
 
