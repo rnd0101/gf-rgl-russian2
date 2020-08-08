@@ -37,25 +37,7 @@ lin
   SymbNum symb = {s = \\_,_,_ => symb.s ; size = Num5} ;
 
   -- : Symb -> Ord ;               -- n'th  (i-й "итый")
-  SymbOrd symb = {
-    msnom = symb.s ++ BIND ++ "-й" ;  -- after vowel
-    fsnom = symb.s ++ BIND ++ "-я" ;
-    nsnom = symb.s ++ BIND ++ "-е" ;
-    pnom  = symb.s ++ BIND ++ "-е" ;
-    msgen = symb.s ++ BIND ++ "-го" ; -- after consonant
-    fsgen = symb.s ++ BIND ++ "-й" ;
-    pgen  = symb.s ++ BIND ++ "-х" ;
-    msdat = symb.s ++ BIND ++ "-му" ;
-    fsacc = symb.s ++ BIND ++ "-ю" ;
-    msins = symb.s ++ BIND ++ "-м" ;
-    fsins = symb.s ++ BIND ++ "-й" ;
-    pins  = symb.s ++ BIND ++ "-ми" ;
-    msprep= symb.s ++ BIND ++ "-м" ;
-    sm, sf, sn, sp = symb.s ;
-    comp = symb.s ++ BIND ++ "-е" ; --*
-    p = False ;
-    preferShort=PreferFull
-  } ;
+  SymbOrd symb = ith_forms symb.s ;
 
 lincat
   Symb, [Symb] = SS ;

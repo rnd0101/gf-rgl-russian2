@@ -1331,6 +1331,27 @@ param Place = attr | indep ;
 oper
   mille : Noun = nounFormsNoun ((guessNounForms "тысяча") ** {sins=variants {"тысячей" ; "тысячью"}});
 
+  ith_forms : Str -> AdjForms
+    = \s -> {
+      msnom = s ++ BIND ++ "-й" ;  -- after vowel
+      fsnom = s ++ BIND ++ "-я" ;
+      nsnom = s ++ BIND ++ "-е" ;
+      pnom  = s ++ BIND ++ "-е" ;
+      msgen = s ++ BIND ++ "-го" ; -- after consonant
+      fsgen = s ++ BIND ++ "-й" ;
+      pgen  = s ++ BIND ++ "-х" ;
+      msdat = s ++ BIND ++ "-му" ;
+      fsacc = s ++ BIND ++ "-ю" ;
+      msins = s ++ BIND ++ "-м" ;
+      fsins = s ++ BIND ++ "-й" ;
+      pins  = s ++ BIND ++ "-ми" ;
+      msprep= s ++ BIND ++ "-м" ;
+      sm, sf, sn, sp = s ;
+      comp = s ++ BIND ++ "-е" ; --*
+      p = False ;
+      preferShort=PreferFull
+    } ;
+
 ---------------
 -- Adverbs -- Наречия
 

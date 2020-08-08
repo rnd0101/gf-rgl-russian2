@@ -112,7 +112,7 @@ lin
   NumPl = {s = \\_,_,_ => [] ; size = NumAll } ;
 
   -- Digits -> Ord ;  -- 51st
-  OrdDigits d = immutableAdjForms d.s ;  -- TODO: better implementation
+  OrdDigits d = ith_forms d.s ;
 
   -- : Numeral -> Ord ;  -- fifty-first
   OrdNumeral numeral = numeral.o ** {

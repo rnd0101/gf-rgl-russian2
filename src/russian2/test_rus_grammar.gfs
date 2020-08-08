@@ -139,6 +139,9 @@ gt UttAdV always_AdV | l -treebank
 gt PrepNP above_Prep (MassNP (UseN (mouth_N))) | l -treebank
 gt PrepNP above_Prep (MassNP (UseN (weekdayN tuesday_Weekday))) |l -treebank
 
+gt (AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot1 ?)))))) |l -treebank
+gt (AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 ?)))))) |l -treebank
+
  -- from extend
 
 gt UseCl (TTAnt ? AAnter) ? (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))  | l -treebank
