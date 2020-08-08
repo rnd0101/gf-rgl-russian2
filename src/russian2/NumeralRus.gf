@@ -372,7 +372,7 @@ lin pot2as3 n = {
 -- : Sub1000 -> Sub1000000 ;                -- m * 1000
 lin pot3 n = {  -- TODO: fix cases like: 111000
   s = \\g, a, c => n.s ! attr ! Fem ! a ! c ++ mille.s ! numSizeNum c n.size ! numSizeCase c n.size ;
-  o = prependPF (n.s ! indep ! Neut ! Inanimate ! Gen ++ BIND) (pronounAdj1AstA "тысячный")   ;  --Gen or Nom?
+  o = prependPF (n.s ! indep ! Neut ! Inanimate ! Gen ++ BIND) (pronounAdj1AstA "тысячный")   ; --TODO: not as simple. Gen or Nom?
   size = Num5
   } ;
 
@@ -381,7 +381,8 @@ lin pot3plus n m = {
   s = \\g, a, c => n.s ! attr ! Fem ! a ! c
     ++ mille.s ! numSizeNum c n.size ! numSizeCase c n.size
     ++ m.s ! indep ! g ! a ! c ;
-  o = prependPF (n.s ! attr ! Neut ! Inanimate ! Nom ++ mille.s ! Sg ! Nom) (m.o ! indep) ; -- TODO: chk
+  o = prependPF (n.s ! attr ! Neut ! Inanimate ! Nom ++ mille.s ! numSizeNum Nom n.size ! numSizeCase Nom n.size)
+    (m.o ! indep) ; -- TODO: chk
   size = Num5
   } ;
 

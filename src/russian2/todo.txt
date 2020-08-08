@@ -93,9 +93,12 @@ AllRus: искан дом    -- исканный
 ## Ordinals
 
 OrdNumeral (num (pot3 (pot2plus pot01 pot111)))
---> 111000
-OrdNumeral (num (pot3 (pot2 pot01)))
---> 100000
+should be: стоодиннадцатитысячное
+
+> l OrdNumeral (num (pot3 (pot2 pot01)))
+ста &+ тысячное
+should be: стоодиннадцатитысячное
 
 AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot0as1 pot01))))
 AllRus: одного &+ тысячное
+should be: тысячное
