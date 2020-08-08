@@ -114,8 +114,13 @@ lin
   -- Digits -> Ord ;  -- 51st
   OrdDigits d = immutableAdjForms d.s ;  -- TODO: better implementation
 
-  -- TODO: : Numeral -> Ord ;  -- fifty-first
-  OrdNumeral numeral = variants {} ;
+  -- : Numeral -> Ord ;  -- fifty-first
+  OrdNumeral numeral = numeral.o ** {
+    sm,sf,sn,sp=[] ;
+    comp=[] ;
+    p=False ;
+    preferShort=PreferFull
+  } ;
 
   -- : A -> Ord ;
   OrdSuperl a = long_superlative a ;
