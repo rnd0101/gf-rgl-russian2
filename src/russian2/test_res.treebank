@@ -3456,6 +3456,32 @@ AllRus: девятый
 AllRusAbs: AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))
 AllRus: первый
 
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot0as1 (pot0 n2)))))
+AllRus: двух &+ тысячное
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot0as1 (pot0 n3)))))
+AllRus: трёх &+ тысячное
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot0as1 (pot0 n4)))))
+AllRus: четырех &+ тысячное
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot0as1 (pot0 n5)))))
+AllRus: пяти &+ тысячное
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot0as1 (pot0 n6)))))
+AllRus: шести &+ тысячное
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot0as1 (pot0 n7)))))
+AllRus: семи &+ тысячное
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot0as1 (pot0 n8)))))
+AllRus: восьми &+ тысячное
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot0as1 (pot0 n9)))))
+AllRus: девяти &+ тысячное
+
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 pot110)))
+AllRus: десяти &+ тысячное
+
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 pot111)))
+AllRus: одиннадцати &+ тысячное
+
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1to19 n2))))
+AllRus: двенадцати &+ тысячное
+
 AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
 AllRus: небо не везде бы &+ ло бы
 AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
@@ -3584,6 +3610,23 @@ AllRus: самое большее одна секунда чашка воды б
 
 AllRusAbs: AdvS (timeunitAdv (AdNum almost_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N)))))
 AllRus: почти две секунды чашка воды будет существовать
+
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n2)))))
+AllRus: двадцати двух &+ тысячное
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n3)))))
+AllRus: двадцати трёх &+ тысячное
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n4)))))
+AllRus: двадцати четырех &+ тысячное
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n5)))))
+AllRus: двадцати пяти &+ тысячное
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n6)))))
+AllRus: двадцати шести &+ тысячное
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n7)))))
+AllRus: двадцати семи &+ тысячное
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n8)))))
+AllRus: двадцати восьми &+ тысячное
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n9)))))
+AllRus: двадцати девяти &+ тысячное
 
 AllRusAbs: AdjCN (PastPartAP (SlashV2a bite_V2)) (UseN house_N)
 AllRus: кусан дом

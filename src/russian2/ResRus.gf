@@ -398,6 +398,23 @@ oper
       p = af.p
     } ;
 
+  prependPF : Str -> PronForms -> PronForms
+    = \s,pf -> {
+      msnom = s ++ pf.msnom ;
+      fsnom = s ++ pf.fsnom ;
+      nsnom = s ++ pf.nsnom ;
+      pnom  = s ++ pf.pnom  ;
+      msgen = s ++ pf.msgen ;
+      fsgen = s ++ pf.fsgen ;
+      pgen  = s ++ pf.pgen  ;
+      msdat = s ++ pf.msdat ;
+      fsacc = s ++ pf.fsacc ;
+      msins = s ++ pf.msins ;
+      fsins = s ++ pf.fsins ;
+      pins  = s ++ pf.pins  ;
+      msprep= s ++ pf.msprep
+    } ;
+
   makeNFFromAF : AdjForms -> Gender -> Animacy -> NounForms
     = \af, g, anim ->
       case g of {

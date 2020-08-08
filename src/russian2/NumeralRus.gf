@@ -341,7 +341,7 @@ lin pot1 d = {
 -- : Digit -> Sub10 -> Sub100 ;         -- d * 10 + n
 lin pot1plus d e = {
   s = table {_ => \\g, a, c => d.s ! ten ! g ! a ! c ++ e.s ! indep ! unit ! g ! a ! c} ;
-  o = \\p => e.o ! p ! unit ; -- ??  TODO: \\g, a, c => d.s ! ten ! Masc ! Inanimate ! Nom ++ e.o ! indep ! unit ! g ! a ! c} ;
+  o = \\p => prependPF (d.s ! ten ! Masc ! Inanimate ! Nom) (e.o ! p ! unit) ;
   size = e.size
   } ;
 
@@ -358,7 +358,7 @@ lin pot2 d = {
 -- : Sub10 -> Sub100 -> Sub1000 ;       -- m * 100 + n
 lin pot2plus d e = {
   s = \\p, g, a, c => d.s ! p ! hund ! g ! a ! c ++ e.s ! indep ! g ! a ! c ;
-  o = e.o  ;   -- TODO: \\p, g, a, c => d.s ! p ! hund ! Masc ! Inanimate ! Nom ++ e.o ! indep ! g ! a ! c ;
+  o = \\p => prependPF (d.s ! p ! hund ! Masc ! Inanimate ! Nom) (e.o ! p) ;
   size = e.size
   } ;
 
@@ -370,16 +370,18 @@ lin pot2as3 n = {
   } ;
 
 -- : Sub1000 -> Sub1000000 ;                -- m * 1000
-lin pot3 n = {
+lin pot3 n = {  -- TODO: fix cases like: 111000
   s = \\g, a, c => n.s ! attr ! Fem ! a ! c ++ mille.s ! numSizeNum c n.size ! numSizeCase c n.size ;
-  o = n.o ! indep ;  -- TODO: pronounAdj1AstA
+  o = prependPF (n.s ! indep ! Neut ! Inanimate ! Gen ++ BIND) (pronounAdj1AstA "тысячный")   ;  --Gen or Nom?
   size = Num5
   } ;
 
 -- : Sub1000 -> Sub1000 -> Sub1000000 ; -- m * 1000 + n
 lin pot3plus n m = {
-  s = \\g, a, c => n.s ! attr ! Fem ! a ! c ++ mille.s ! numSizeNum c n.size ! numSizeCase c n.size ++ m.s ! indep ! g ! a ! c ;
-  o = m.o ! attr ;  -- TODO: !
+  s = \\g, a, c => n.s ! attr ! Fem ! a ! c
+    ++ mille.s ! numSizeNum c n.size ! numSizeCase c n.size
+    ++ m.s ! indep ! g ! a ! c ;
+  o = prependPF (n.s ! attr ! Neut ! Inanimate ! Nom ++ mille.s ! Sg ! Nom) (m.o ! indep) ; -- TODO: chk
   size = Num5
   } ;
 

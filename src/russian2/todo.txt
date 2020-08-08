@@ -96,5 +96,6 @@ OrdNumeral (num (pot3 (pot2plus pot01 pot111)))
 --> 111000
 OrdNumeral (num (pot3 (pot2 pot01)))
 --> 100000
-AllEngAbs> l OrdNumeral (num (pot3plus (pot1as2 pot110) (pot2plus pot01 pot110)))
-ten thousand one hundred and tenth
+
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot0as1 pot01))))
+AllRus: одного &+ тысячное
