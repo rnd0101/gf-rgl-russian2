@@ -1347,7 +1347,7 @@ oper
 
   NumeralForms : Type = {
     s : DetTable ;
-    o : AdjTable ;
+    o : PronForms ;
     size : NumSize
     } ;
 

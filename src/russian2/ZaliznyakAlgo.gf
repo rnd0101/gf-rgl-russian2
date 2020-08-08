@@ -749,14 +749,21 @@ oper
 -----------
 -- Pronouns
 
+  -- these are needed for numerals
+  pronounAdj1A : Str -> PronForms
+    = \word -> makeAdjective word (ZA 1 No A_ NoC) PreferFull ;
+
+  pronounAdj1B : Str -> PronForms
+    = \word -> makeAdjective word (ZA 1 No B_ NoC) PreferFull ;
+
+  pronounAdj1AstA : Str -> PronForms
+    = \word -> makeAdjective word (ZA 1 Ast A_ NoC) PreferFull ;
+
   pronoun2AstB : Str -> PronForms
     = \word -> -- весь
-      let cmp_base : Str = case word of {s + "ь" => s ; _ => word} in
+      let cmp_base : Str = case word of {s + "ь" => s ; _ => word} in --
       let last = Predef.dp 1 cmp_base in
-      let butLast = Predef.tk 1 cmp_base in
-      let secondLast = Predef.dp 1 butLast in
-      let butTwolast = Predef.tk 2 cmp_base in
-      let thirdLast = Predef.dp 1 butTwolast in
+      let butTwolast = Predef.tk 2 cmp_base in  --
       let stem = cmp_base in
       let stem2 = butTwolast + last in
       {
@@ -777,14 +784,10 @@ oper
 
   pronoun6AstA : Str -> PronForms
     = \word -> -- третий
-      let cmp_base : Str = case word of {_ => word} in
-      let last = Predef.dp 1 cmp_base in
-      let butLast = Predef.tk 1 cmp_base in
-      let secondLast = Predef.dp 1 butLast in
-      let butTwolast = Predef.tk 2 cmp_base in
-      let thirdLast = Predef.dp 1 butTwolast in
-      let stem = cmp_base in
-      let stem2 = butTwolast + "ь" in
+      let cmp_base : Str = case word of {_ => word} in --
+      let butTwolast = Predef.tk 2 cmp_base in --
+      let stem = cmp_base in  --
+      let stem2 = butTwolast + "ь" in --
       {
         msnom=stem   ;
         fsnom=stem2  +"я" ;

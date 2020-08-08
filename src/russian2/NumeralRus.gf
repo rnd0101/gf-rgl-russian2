@@ -1,6 +1,6 @@
 --# -path=.:../abstract:../common:../../prelude
 
-concrete NumeralRus of Numeral = CatRus [Numeral,Digits] ** open ResRus, Prelude in {
+concrete NumeralRus of Numeral = CatRus [Numeral,Digits] ** open ResRus, ZaliznyakAlgo, Prelude in {
 
 flags  coding=utf8 ;
 
@@ -8,12 +8,17 @@ flags  coding=utf8 ;
 -- Nikita Frolov, 2011
 
 lincat Digit = {s : DForm => DetTable ; size : NumSize ; o : DForm => PronForms} ;
-lincat Sub10 = {s : Place => DForm => DetTable ; size : NumSize ; o : DForm => PronForms} ;
-lincat Sub100 = {s : Place => DetTable ; size : NumSize ; o : DForm => PronForms} ;
-lincat Sub1000 = {s : Place => DetTable ; size : NumSize ; o : DForm => PronForms} ;
-lincat Sub1000000 = {s : DetTable ; size : NumSize ; o : DForm => PronForms} ;
+lincat Sub10 = {s : Place => DForm => DetTable ; size : NumSize ; o : Place => DForm => PronForms} ;
+lincat Sub100 = {s : Place => DetTable ; size : NumSize ; o : Place => PronForms} ;
+lincat Sub1000 = {s : Place => DetTable ; size : NumSize ; o : Place => PronForms} ;
+lincat Sub1000000 = {s : DetTable ; size : NumSize ; o : PronForms} ;
 
-lin num x = {s = \\ g,a,c => x.s ! g ! a ! c; n = Pl ; size = x.size};
+-- : Sub1000000 -> Numeral ; -- 123456 [coercion to top category]
+lin num x = {
+  s = \\ g,a,c => x.s ! g ! a ! c ;
+  o = x.o ;
+  size = x.size
+  };
 
 lin n3 = {
   s = table {
@@ -23,10 +28,10 @@ lin n3 = {
     hund => sta tri
     } ;
   o = table {
-    unit => tri ;
-    teen => nadsat "три" ;
-    ten  => n2030 "три" ;
-    hund => sta tri
+    unit => pronoun6AstA "третий" ;
+    teen => pronounAdj1A "тринадцатый" ;
+    ten  => pronounAdj1A "тридцатый" ;
+    hund => pronounAdj1A "трёхсотый"
     } ;
   size = Num2_4
   } ;
@@ -40,6 +45,12 @@ lin n4 = {
 		  } ;
     hund => sta chetyre
     } ;
+  o = table {
+    unit => pronounAdj1A "четвёртый" ;
+    teen => pronounAdj1A "четырнадцатый" ;
+    ten  => pronounAdj1B "сороковой" ;
+    hund => pronounAdj1A "четырёхсотый"
+    } ;
   size = Num2_4
   } ;
 lin n5 = {
@@ -48,6 +59,12 @@ lin n5 = {
     teen => nadsat "пят" ;
     ten  => n5070 "пят" ;
     hund => sot (n59 "пят")
+    } ;
+  o = table {
+    unit => pronounAdj1A "пятый" ;
+    teen => pronounAdj1A "пятнадцатый" ;
+    ten  => pronounAdj1A "пятидесятый" ;
+    hund => pronounAdj1A "пятисотый"
     } ;
   size = Num5
   } ;
@@ -58,6 +75,12 @@ lin n6 = {
     ten  => n5070 "шест" ;
     hund => sot (n59 "шест")
     } ;
+  o = table {
+    unit => pronounAdj1B "шестой" ;
+    teen => pronounAdj1A "шестнадцатый" ;
+    ten  => pronounAdj1A "шестидесятый" ;
+    hund => pronounAdj1A "шестисотый"
+    } ;
   size = Num5
   } ;
 lin n7 = {
@@ -66,6 +89,12 @@ lin n7 = {
     teen => nadsat "сем" ;
     ten  => n5070 "сем" ;
     hund => sot (n59 "сем")
+    } ;
+  o = table {
+    unit => pronounAdj1B "седьмой" ;
+    teen => pronounAdj1A "семнадцатый" ;
+    ten  => pronounAdj1A "семидесятый" ;
+    hund => pronounAdj1A "семисотый"
     } ;
   size = Num5
   } ;
@@ -80,6 +109,12 @@ lin n8 = {
 		};
     hund => sot vosem
     } ;
+  o = table {
+    unit => pronounAdj1B "восьмой" ;
+    teen => pronounAdj1A "восемнадцатый" ;
+    ten  => pronounAdj1A "восьмидесятый" ;
+    hund => pronounAdj1A "восьмисотый"
+    } ;
   size = Num5
   } ;
 lin n9 = {
@@ -92,6 +127,12 @@ lin n9 = {
         <(Gen|Ptv|Dat|Ins|Pre|Loc), _> => "девяноста"
       };
     hund => sot (n59 "девят")
+    } ;
+  o = table {
+    unit => pronounAdj1A "девятый" ;
+    teen => pronounAdj1A "девятнадцатый" ;
+    ten  => pronounAdj1A "девяностый" ;
+    hund => pronounAdj1A "девятисотый"
     } ;
   size = Num5
   } ;
@@ -175,6 +216,37 @@ oper sot : DetTable -> DetTable
 		  <Pre|Loc, _> => n ! Fem ! Animate ! c + "ста"
 		} ;
 
+lin n2 = {
+  s = table {
+    unit => \\ g, a, c => case <c, g, a> of {
+		  <(Nom|VocRus|Acc), Fem, _> => "две" ;
+		  <(Nom|VocRus|Acc), (Masc|Neut), Inanimate> => "два" ;
+		  <Nom|VocRus, (Masc|Neut), Animate> => "два" ;
+		  <Acc      , _, Animate> => "двух" ;
+		  <(Gen|Ptv|Pre|Loc), _, _> => "двух" ;
+		  <Dat, _, _> => "двум" ;
+		  <Ins, _, _> => "двумя"
+		  };
+    teen => nadsat "две" ;
+    ten  => n2030 "два" ;
+    hund => \\ g, a, c => case <c, g> of {
+		  <(Nom|VocRus|Acc), _> => "двести" ;
+		  <Gen|Ptv, _> => "двухсот" ;
+		  <Dat, _> => "двумстам" ;
+		  <Ins, _> => "двумястами" ;
+		  <Pre|Loc, _> => "двухстах"
+		  }
+		} ;
+  o = table {
+    unit => pronounAdj1B "второй" ;
+    teen => pronounAdj1A "двенадцатый" ;
+    ten  => pronounAdj1A "двадцатый" ;
+    hund => pronounAdj1A "двухсотый"
+    } ;
+  size = Num2_4
+  } ;
+
+-- : Sub10 ;                               -- 1
 lin pot01 = {
   s = table {
     attr => table {
@@ -211,46 +283,105 @@ lin pot01 = {
         }
 		  }
 		} ;
+  o = table {
+    attr => table {
+      hund => immutableAdjectiveCases "сто" ;   -- as in "сто второй"?
+		  _ => immutableAdjectiveCases ""
+		  } ;
+    indep => table {
+      hund =>  pronounAdj1A "сотый" ;
+      _ => pronounAdj1A "первый"
+		  }
+		} ;
   size = Num1
   } ;
 
-lin n2 = {
-  s = table {
-    unit => \\ g, a, c => case <c, g, a> of {
-		  <(Nom|VocRus|Acc), Fem, _> => "две" ;
-		  <(Nom|VocRus|Acc), (Masc|Neut), Inanimate> => "два" ;
-		  <Nom|VocRus, (Masc|Neut), Animate> => "два" ;
-		  <Acc      , _, Animate> => "двух" ;
-		  <(Gen|Ptv|Pre|Loc), _, _> => "двух" ;
-		  <Dat, _, _> => "двум" ;
-		  <Ins, _, _> => "двумя"
-		  };
-    teen => nadsat "две" ;
-    ten  => n2030 "два" ;
-    hund => \\ g, a, c => case <c, g> of {
-		  <(Nom|VocRus|Acc), _> => "двести" ;
-		  <Gen|Ptv, _> => "двухсот" ;
-		  <Dat, _> => "двумстам" ;
-		  <Ins, _> => "двумястами" ;
-		  <Pre|Loc, _> => "двухстах"
-		  }
-		} ;
-  size = Num2_4
+-- : Digit -> Sub10 ;                       -- d * 1
+lin pot0 d = {
+  s = table {_ => d.s} ;
+  o = table {_ => d.o} ;
+  size = d.size
   } ;
 
-lin pot0 d = {s = table {_ => d.s} ; size = d.size} ;
-lin pot110 = {s = \\p => n59 "десят" ; size = Num5} ;
-lin pot111 = {s = \\p => nadsat "один" ; size = Num5} ; --- 11
-lin pot1to19 d = {s = table {_ => d.s ! teen} ; size = Num5} ;
-lin pot0as1 n = {s = table {p => n.s ! p ! unit} ; size = n.size} ;
-lin pot1 d = {s = table {_ => d.s ! ten} ; size = Num5} ; ---
-lin pot1plus d e = {s = table {_ => \\g, a, c => d.s ! ten ! g ! a ! c ++ e.s ! indep ! unit ! g ! a ! c} ; size = e.size} ;
-lin pot1as2 n = {s = n.s ; size = n.size} ;
-lin pot2 d = {s = table {p => d.s ! p ! hund} ; size = Num5} ;
-lin pot2plus d e = {s = \\p, g, a, c => d.s ! p ! hund ! g ! a ! c ++ e.s ! indep ! g ! a ! c ; size = e.size} ;
-lin pot2as3 n = {s = n.s ! indep ; size = n.size} ;
-lin pot3 n = {s = \\g, a, c => n.s ! attr ! Fem ! a ! c ++ mille.s ! numSizeNum c n.size ! numSizeCase c n.size ; size = Num5} ;
-lin pot3plus n m = {s = \\g, a, c => n.s ! attr ! Fem ! a ! c ++ mille.s ! numSizeNum c n.size ! numSizeCase c n.size ++ m.s ! indep ! g ! a ! c ; size = Num5} ;
+-- : Sub100 ;                       -- 10
+lin pot110 = {
+  s = \\p => n59 "десят" ;
+  o = \\p => pronounAdj1A "десятый" ;
+  size = Num5
+  } ;
+
+-- : Sub100 ;                             -- 11
+lin pot111 = {
+  s = \\p => nadsat "один" ;
+  o = \\p => pronounAdj1A "одиннадцатый" ;
+  size = Num5
+  } ;
+
+-- : Digit -> Sub100 ;                  -- 10 + d
+lin pot1to19 d = {
+  s = table {_ => d.s ! teen} ;
+  o = table {_ => d.o ! teen} ;
+  size = Num5
+  } ;
+
+-- : Sub10 -> Sub100 ;                   -- coercion of 1..9
+lin pot0as1 n = {
+  s = table {p => n.s ! p ! unit} ;
+  o = table {p => n.o ! p ! unit} ;   --?
+  size = n.size
+  } ;
+
+-- : Digit -> Sub100 ;                      -- d * 10
+lin pot1 d = {
+  s = table {_ => d.s ! ten} ;
+  o = table {_ => d.o ! ten} ;
+  size = Num5
+  } ; ---
+
+-- : Digit -> Sub10 -> Sub100 ;         -- d * 10 + n
+lin pot1plus d e = {
+  s = table {_ => \\g, a, c => d.s ! ten ! g ! a ! c ++ e.s ! indep ! unit ! g ! a ! c} ;
+  o = \\p => e.o ! p ! unit ; -- ??  TODO: \\g, a, c => d.s ! ten ! Masc ! Inanimate ! Nom ++ e.o ! indep ! unit ! g ! a ! c} ;
+  size = e.size
+  } ;
+
+-- : Sub100 -> Sub1000 ;                 -- coercion of 1..99
+lin pot1as2 n = {s = n.s ; size = n.size ; o = n.o} ;
+
+-- : Sub10 -> Sub1000 ;                     -- m * 100
+lin pot2 d = {
+  s = table {p => d.s ! p ! hund} ;
+  o = table {p => d.o ! p ! hund} ;
+  size = Num5
+  } ;
+
+-- : Sub10 -> Sub100 -> Sub1000 ;       -- m * 100 + n
+lin pot2plus d e = {
+  s = \\p, g, a, c => d.s ! p ! hund ! g ! a ! c ++ e.s ! indep ! g ! a ! c ;
+  o = e.o  ;   -- TODO: \\p, g, a, c => d.s ! p ! hund ! Masc ! Inanimate ! Nom ++ e.o ! indep ! g ! a ! c ;
+  size = e.size
+  } ;
+
+-- : Sub1000 -> Sub1000000 ;             -- coercion of 1..999
+lin pot2as3 n = {
+  s = n.s ! indep ;
+  o = n.o ! indep ;   -- ???
+  size = n.size
+  } ;
+
+-- : Sub1000 -> Sub1000000 ;                -- m * 1000
+lin pot3 n = {
+  s = \\g, a, c => n.s ! attr ! Fem ! a ! c ++ mille.s ! numSizeNum c n.size ! numSizeCase c n.size ;
+  o = n.o ! indep ;  -- TODO: pronounAdj1AstA
+  size = Num5
+  } ;
+
+-- : Sub1000 -> Sub1000 -> Sub1000000 ; -- m * 1000 + n
+lin pot3plus n m = {
+  s = \\g, a, c => n.s ! attr ! Fem ! a ! c ++ mille.s ! numSizeNum c n.size ! numSizeCase c n.size ++ m.s ! indep ! g ! a ! c ;
+  o = m.o ! attr ;  -- TODO: !
+  size = Num5
+  } ;
 
 --- TODO
 --- raz/odin
