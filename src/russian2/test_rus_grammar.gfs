@@ -145,6 +145,8 @@ gt OrdNumeral (num (pot3 (pot1as2 (pot0as1 (pot0 ?))))) | l -treebank
 gt OrdNumeral (num (pot3 (pot1as2 pot110))) | l -treebank
 gt OrdNumeral (num (pot3 (pot1as2 pot111))) | l -treebank
 gt OrdNumeral (num (pot3 (pot1as2 (pot1to19 n2)))) | l -treebank
+gt OrdNumeral (num (pot3 (pot1as2 (pot0as1 pot01)))) | l -treebank
+gt OrdNumeral (num (pot3 (pot1as2 pot110))) | l -treebank
 
  -- from extend
 

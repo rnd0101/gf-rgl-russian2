@@ -8,10 +8,11 @@ flags  coding=utf8 ;
 -- Nikita Frolov, 2011
 
 lincat Digit = {s : DForm => DetTable ; size : NumSize ; o : DForm => PronForms} ;
-lincat Sub10 = {s : Place => DForm => DetTable ; size : NumSize ; o : Place => DForm => PronForms} ;
-lincat Sub100 = {s : Place => DetTable ; size : NumSize ; o : Place => PronForms} ;
-lincat Sub1000 = {s : Place => DetTable ; size : NumSize ; o : Place => PronForms} ;
-lincat Sub1000000 = {s : DetTable ; size : NumSize ; o : PronForms} ;
+lincat Sub10 = {s : Place => DForm => DetTable ; size : NumSize ; o : Place => DForm => PronForms ; just1 : Bool} ;
+lincat Sub100 = {s : Place => DetTable ; size : NumSize ; o : Place => PronForms; just1 : Bool} ;
+lincat Sub1000 = {s : Place => DetTable ; size : NumSize ; o : Place => PronForms; just1 : Bool} ;
+lincat Sub1000000 = {s : DetTable ; size : NumSize ; o : PronForms; just1 : Bool} ;
+-- just1 to correctly generate exactly 1000
 
 -- : Sub1000000 -> Numeral ; -- 123456 [coercion to top category]
 lin num x = {
@@ -293,6 +294,7 @@ lin pot01 = {
       _ => pronounAdj1A "первый"
 		  }
 		} ;
+  just1 = True ;
   size = Num1
   } ;
 
@@ -300,6 +302,7 @@ lin pot01 = {
 lin pot0 d = {
   s = table {_ => d.s} ;
   o = table {_ => d.o} ;
+  just1 = False ;
   size = d.size
   } ;
 
@@ -307,6 +310,7 @@ lin pot0 d = {
 lin pot110 = {
   s = \\p => n59 "десят" ;
   o = \\p => pronounAdj1A "десятый" ;
+  just1 = False ;
   size = Num5
   } ;
 
@@ -314,6 +318,7 @@ lin pot110 = {
 lin pot111 = {
   s = \\p => nadsat "один" ;
   o = \\p => pronounAdj1A "одиннадцатый" ;
+  just1 = False ;
   size = Num5
   } ;
 
@@ -321,6 +326,7 @@ lin pot111 = {
 lin pot1to19 d = {
   s = table {_ => d.s ! teen} ;
   o = table {_ => d.o ! teen} ;
+  just1 = False ;
   size = Num5
   } ;
 
@@ -328,6 +334,7 @@ lin pot1to19 d = {
 lin pot0as1 n = {
   s = table {p => n.s ! p ! unit} ;
   o = table {p => n.o ! p ! unit} ;   --?
+  just1 = n.just1 ;
   size = n.size
   } ;
 
@@ -335,6 +342,7 @@ lin pot0as1 n = {
 lin pot1 d = {
   s = table {_ => d.s ! ten} ;
   o = table {_ => d.o ! ten} ;
+  just1 = False ;
   size = Num5
   } ; ---
 
@@ -342,16 +350,18 @@ lin pot1 d = {
 lin pot1plus d e = {
   s = table {_ => \\g, a, c => d.s ! ten ! g ! a ! c ++ e.s ! indep ! unit ! g ! a ! c} ;
   o = \\p => prependPF (d.s ! ten ! Masc ! Inanimate ! Nom) (e.o ! p ! unit) ;
+  just1 = False ;
   size = e.size
   } ;
 
 -- : Sub100 -> Sub1000 ;                 -- coercion of 1..99
-lin pot1as2 n = {s = n.s ; size = n.size ; o = n.o} ;
+lin pot1as2 n = {s = n.s ; size = n.size ; just1 = n.just1 ; o = n.o} ;
 
 -- : Sub10 -> Sub1000 ;                     -- m * 100
 lin pot2 d = {
   s = table {p => d.s ! p ! hund} ;
   o = table {p => d.o ! p ! hund} ;
+  just1 = False ;
   size = Num5
   } ;
 
@@ -359,6 +369,7 @@ lin pot2 d = {
 lin pot2plus d e = {
   s = \\p, g, a, c => d.s ! p ! hund ! g ! a ! c ++ e.s ! indep ! g ! a ! c ;
   o = \\p => prependPF (d.s ! p ! hund ! Masc ! Inanimate ! Nom) (e.o ! p) ;
+  just1 = False ;
   size = e.size
   } ;
 
@@ -366,13 +377,20 @@ lin pot2plus d e = {
 lin pot2as3 n = {
   s = n.s ! indep ;
   o = n.o ! indep ;   -- ???
+  just1 = n.just1 ;   -- ???
   size = n.size
   } ;
 
 -- : Sub1000 -> Sub1000000 ;                -- m * 1000
-lin pot3 n = {  -- TODO: fix cases like: 111000
+lin pot3 n = {  -- TODO: fix cases like: 111000, 100000
   s = \\g, a, c => n.s ! attr ! Fem ! a ! c ++ mille.s ! numSizeNum c n.size ! numSizeCase c n.size ;
-  o = prependPF (n.s ! indep ! Neut ! Inanimate ! Gen ++ BIND) (pronounAdj1AstA "тысячный")   ; --TODO: not as simple. Gen or Nom?
+  o = prependPF (case n.just1 of {
+       False => n.s ! attr ! Neut ! Inanimate ! Gen ++ BIND ;
+       True => ""
+       }
+    )
+    (pronounAdj1AstA "тысячный")   ; --TODO: not as simple. Gen or Nom?
+  just1 = False ;
   size = Num5
   } ;
 
@@ -383,6 +401,7 @@ lin pot3plus n m = {
     ++ m.s ! indep ! g ! a ! c ;
   o = prependPF (n.s ! attr ! Neut ! Inanimate ! Nom ++ mille.s ! numSizeNum Nom n.size ! numSizeCase Nom n.size)
     (m.o ! indep) ; -- TODO: chk
+  just1 = False ;
   size = Num5
   } ;
 

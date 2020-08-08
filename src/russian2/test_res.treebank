@@ -3482,6 +3482,12 @@ AllRus: одиннадцати &+ тысячное
 AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1to19 n2))))
 AllRus: двенадцати &+ тысячное
 
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot0as1 pot01))))
+AllRus: тысячное
+
+AllRusAbs: OrdNumeral (num (pot3 (pot1as2 pot110)))
+AllRus: десяти &+ тысячное
+
 AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
 AllRus: небо не везде бы &+ ло бы
 AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
