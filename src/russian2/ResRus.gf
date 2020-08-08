@@ -339,27 +339,37 @@ oper
       preferShort = forms.preferShort
     } ;
 
+  doGuessAdjectiveForms : Str -> AdjForms
+    = \word -> case word of {
+      _ + "шеий"                 => makeAdjective word (ZA 6 No A_ NoC) PreferFull ;
+      _ + "цый"                  => makeAdjective word (ZA 5 No A_ NoC) PreferFull ;
+      _ + ("к"|"г"|"х") +"ий"    => makeAdjective word (ZA 3 No A_ NoC) PreferFull ;
+      _ + ("ш"|"ж"|"ч"|"щ")+"ий" => makeAdjective word (ZA 4 No A_ NoC) PreferFull ;
+      _ + #consonant + "ный"     => makeAdjective word (ZA 1 Ast A_ NoC) PreferFull ;
+      _ + #consonant + "ний"     => makeAdjective word (ZA 2 Ast A_ NoC) PreferFull ;
+      _ + "ый"                   => makeAdjective word (ZA 1 No A_ NoC) PreferFull ;
+      _ + "ой"                   => makeAdjective word (ZA 1 No B_ NoC) PreferFull ;
+      _ + "ий"                   => makeAdjective word (ZA 2 No A_ NoC) PreferFull ;
+      _                          => makeAdjective word (ZA 1 No A_ NoC) PreferFull
+      } ;
+
   guessAdjectiveForms : Str -> AdjForms
-    = \word ->
-      let stem = Predef.tk 2 word in
-      case word of {
-        _ + "шеий"                 => makeAdjective word (ZA 6 No A_ NoC) PreferFull ;
-        _ + "цый"                  => makeAdjective word (ZA 5 No A_ NoC) PreferFull ;
-        _ + ("к"|"г"|"х") +"ий"    => makeAdjective word (ZA 3 No A_ NoC) PreferFull ;
-        _ + ("ш"|"ж"|"ч"|"щ")+"ий" => makeAdjective word (ZA 4 No A_ NoC) PreferFull ;
-        _ + #consonant + "ный"     => makeAdjective word (ZA 1 Ast A_ NoC) PreferFull ;
-        _ + #consonant + "ний"     => makeAdjective word (ZA 2 Ast A_ NoC) PreferFull ;
-        _ + "ый"                   => makeAdjective word (ZA 1 No A_ NoC) PreferFull ;
-        _ + "ой"                   => makeAdjective word (ZA 1 No B_ NoC) PreferFull ;
-        _ + "ий"                   => makeAdjective word (ZA 2 No A_ NoC) PreferFull ;
-        _                          => makeAdjective word (ZA 1 No A_ NoC) PreferFull
-    } ;
+    = \word -> case word of {
+      s + "ся" => appendToAF (doGuessAdjectiveForms s) "ся" ;
+      _        => doGuessAdjectiveForms word
+      } ;
+
+  doMakeAdjectiveForms : Str -> Str -> Str -> ShortFormPreference -> AdjForms
+    = \nom, comp, zi, spf ->
+      let af = makeAdjective nom (parseAdjIndex zi) spf in
+      let comp' = case (Predef.length comp) of {0 => af.comp; _ => comp} in
+      af ** {comp=comp'} ;
 
   makeAdjectiveForms : Str -> Str -> Str -> ShortFormPreference -> AdjForms
-    = \nom, comp, zi, spf ->
-        let af = makeAdjective nom (parseAdjIndex zi) spf in
-        let comp' = case (Predef.length comp) of {0 => af.comp; _ => comp} in
-        af ** {comp=comp'} ;
+    = \nom, comp, zi, spf -> case nom of {
+      s + "ся" => appendToAF (doMakeAdjectiveForms s comp zi spf) "ся" ;
+      _ => doMakeAdjectiveForms nom comp zi spf
+      } ;
 
   makeAdjectiveFromNoun : Noun -> Adjective
     = \n -> {
@@ -414,6 +424,24 @@ oper
       pins  = s ++ pf.pins  ;
       msprep= s ++ pf.msprep
     } ;
+
+  appendToAF : AdjForms -> Str -> AdjForms
+    = \af,s -> af ** {
+      msnom = af.msnom ++ BIND ++ s;
+      fsnom = af.fsnom ++ BIND ++ s;
+      nsnom = af.nsnom ++ BIND ++ s;
+      pnom  = af.pnom ++ BIND ++ s;
+      msgen = af.msgen ++ BIND ++ s;
+      fsgen = af.fsgen ++ BIND ++ s;
+      pgen  = af.pgen ++ BIND ++ s;
+      msdat = af.msdat ++ BIND ++ s;
+      fsacc = af.fsacc ++ BIND ++ s;
+      msins = af.msins ++ BIND ++ s;
+      fsins = af.fsins ++ BIND ++ s;
+      pins  = af.pins ++ BIND ++ s;
+      msprep= af.msprep ++ BIND ++ s;
+      } ;
+
 
   makeNFFromAF : AdjForms -> Gender -> Animacy -> NounForms
     = \af, g, anim ->
