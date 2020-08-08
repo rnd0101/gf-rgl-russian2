@@ -179,7 +179,7 @@ lin pot01 = {
         } ;
 		  _ => \\ g, a, c => []
 		  } ;
-    _ => table {
+    indep => table {
       hund => \\ g, a, c => case <g, a, c> of {
         <_, _, (Nom|VocRus|Acc)> => "сто";
         <_, _, (Gen|Ptv|Dat|Pre|Loc)> => "ста";
