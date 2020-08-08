@@ -181,3 +181,8 @@ gt UseCl ? ? (  PredSCVP (EmbedVP (UseV play_V))  (UseComp (CompAP (PositA clean
 
 gt UseCl (TTAnt TPres ASimul) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompCN (AdjCN (PositA clean_A) (UseN war_N))))) | l -treebank
 
+
+
+-- not implemented
+
+gt AdjCN (AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))) )) (UseN apple_N)   | l -treebank

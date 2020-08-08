@@ -130,7 +130,7 @@ lin
 
   -- : VPSlash -> VP ;         -- love himself
   ReflVP vps = vps ** {
-    compl=\\a => vps.compl ! a ++ vps.c.s ++ sebya.s ! vps.c.c  -- TODO: use applyPronounPrep (search all ".c.s" also)
+    compl=\\a => vps.compl ! a ++ vps.c.s ++ sebya.s ! vps.c.c
     } ;
 
   -- : Comp -> VP ;            -- be warm

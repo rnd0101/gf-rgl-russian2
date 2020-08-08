@@ -3826,3 +3826,4 @@ AllRus: играть является чистым
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompCN (AdjCN (PositA clean_A) (UseN war_N)))))
 AllRus: играть является чистой войной
 
+
