@@ -27,7 +27,9 @@ concrete ExtendRus of Extend =
     -- MkVPS, NominalizeVPSlashNP,
     -- PassAgentVPSlash, PassVPSlash, ProgrVPSlash,
     PastPartAP,
-    -- PastPartAgentAP, PositAdVAdj, PredVPS, PredVPSVV, PredetRNP, PrepCN,
+    -- PastPartAgentAP,
+    PositAdVAdj,
+    -- PredVPS, PredVPSVV, PredetRNP, PrepCN,
     -- EmbedSSlash, PresPartAP,
     PurposeVP,
     -- ReflPoss, ReflPron, ReflRNP, SlashBareV2S, SlashV2V, StrandQuestSlash, StrandRelSlash,
@@ -102,4 +104,7 @@ lin
 
   -- : AdV -> Utt ;                  -- always(!)
   UttAdV adv = {s=adv.s} ;
+
+  -- : A -> AdV ;                    -- (that she) positively (sleeps)
+  PositAdVAdj a = ss a.sn ;
 } ;
