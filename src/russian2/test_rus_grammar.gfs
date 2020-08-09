@@ -149,6 +149,9 @@ gt OrdNumeral (num (pot3 (pot1as2 (pot1to19 n2)))) | l -treebank
 gt OrdNumeral (num (pot3 (pot1as2 (pot0as1 pot01)))) | l -treebank
 gt OrdNumeral (num (pot3 (pot1as2 pot110))) | l -treebank
 
+gt UseCl ? PPos (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron )) (MassNP (UseN water_N) ))) | l -treebank
+gt UseCl ? PPos (ImpersCl (ComplSlash (Slash3V3 have_not_V3 (UsePron youPl_Pron )) (MassNP (UseN water_N) ))) | l -treebank
+
  -- from extend
 
 gt UseCl (TTAnt ? AAnter) ? (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))  | l -treebank
@@ -166,8 +169,7 @@ gt AdvS (timeunitAdv (AdNum at_most_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0
 gt AdvS (timeunitAdv (AdNum at_most_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N))))) |l -treebank
 gt AdvS (timeunitAdv (AdNum almost_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N))))) | l -treebank
 
-gt UseCl ? PPos (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron )) (MassNP (UseN water_N) ))) | l -treebank
-gt UseCl ? PPos (ImpersCl (ComplSlash (Slash3V3 have_not_V3 (UsePron youPl_Pron )) (MassNP (UseN water_N) ))) | l -treebank
+gt ImpVP (AdvVP (AdVVP (PositAdVAdj dull_A) (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday)) |l -treebank
 
  -- these below sound unnatural
 
