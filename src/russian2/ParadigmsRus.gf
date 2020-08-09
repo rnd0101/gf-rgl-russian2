@@ -180,7 +180,7 @@ oper
 
   mkAdv : overload {
     mkAdv : Str -> Adv ;
-    mkAdv : Temp -> Pol -> VPSlash -> Adv ;  -- introduce transgressive: "делая что-то ,"
+    mkAdv : Temp -> Pol -> VPSlash -> Adv ;  -- introduce transgressive: "делая что-то ," = "(was) (not) doing smth, "
     } ;
   mkIAdv : Str -> IAdv ;
   mkConj : overload {
