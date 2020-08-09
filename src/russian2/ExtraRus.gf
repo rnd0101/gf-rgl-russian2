@@ -13,11 +13,12 @@ lin
 
   have_V3 = P.mkV3 est_ell_V nom_Prep u_Prep;
   have2_V3 = P.mkV3 est_V nom_Prep u_Prep;
-  have_not_V3 = P.mkV3 net_V nom_Prep u_Prep;
+  have_not_V3 = P.mkV3 net_V obj_neg_Prep u_Prep;
   be_V3 = P.mkV3 be_ell_V nom_Prep dat_Prep;
 
 oper
   nom_Prep : Prep = lin Prep {s="" ; c=Nom ; hasPrep=False} ;
+  obj_neg_Prep : Prep = lin Prep {s="" ; c=Gen ; hasPrep=False} ;
   dat_Prep : Prep = lin Prep {s="" ; c=Dat ; hasPrep=False} ;
   u_Prep : Prep = lin Prep {s="у" ; c=Gen ; hasPrep=True} ;
   est_V : V = lin V {
