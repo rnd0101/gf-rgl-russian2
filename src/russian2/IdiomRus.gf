@@ -5,10 +5,26 @@ flags optimize=all_subs ;  coding=utf8 ;
 
 lin
   -- : VP -> Cl ;        -- it is hot
-  ImpersCl vp = let a = Ag (GSg Neut) P3 in {subj="" ; compl=vp.compl ! a ; verb=vp.verb ; dep=vp.dep ; adv=vp.adv ! a ; a=a } ;
+  ImpersCl vp =
+    let a = Ag (GSg Neut) P3 in {
+      subj="" ;
+      compl=vp.compl ! a ;
+      verb=vp.verb ;
+      dep=vp.dep ;
+      adv=vp.adv ! a ;
+      a=a
+      } ;
 
   -- : VP -> Cl ;        -- one sleeps
-  GenericCl vp = let a = Ag (GSg Masc) P2 in {subj="" ; compl=vp.compl ! a ; verb=vp.verb ; dep=vp.dep ; adv=vp.adv ! a; a=a } ;
+  GenericCl vp =
+    let a = Ag (GSg Masc) P2 in {
+      subj="" ;
+      compl=vp.compl ! a ;
+      verb=vp.verb ;
+      dep=vp.dep ;
+      adv=vp.adv ! a ;
+      a=a
+      } ;
 
   -- : NP -> RS -> Cl ; -- it is I who did it
   CleftNP np rs = {
@@ -30,7 +46,14 @@ lin
     } ;
 
   -- : NP -> Cl ;        -- there is a house
-  ExistNP np = {subj=np.s ! Nom ; compl="" ; verb=to_exist ; dep=[] ; adv=[] ; a=np.a} ;
+  ExistNP np = {
+    subj=np.s ! Nom ;
+    compl="" ;
+    verb=to_exist ;
+    dep=[] ;
+    adv=[] ;
+    a=np.a
+    } ;
 
   -- : IP -> QCl ;       -- which houses are there
   ExistIP ip = {
