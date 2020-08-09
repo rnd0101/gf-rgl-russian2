@@ -32,6 +32,15 @@ linking ... OK
 Languages: AllRus
 бутылка этих двух пепла существует
 
+** UseCl (TTAnt TPres ASimul) PPos (have_name_Cl (DetNP (DetQuant (PossPron i_Pron) NumSg)) somebody_NP)
+LangRus-NEW> моего имя кто-то
+
+** UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a like_V2) (DetNP (DetQuant (PossPron he_Pron) NumSg))))
+LangRus-NEW> нравишься его
+
+** UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a speak_V2) (DetNP (DetQuant (PossPron ∅) NumSg))))
+LangRus-NEW> говоришь на его
+
 ** UseCl (TTAnt TPres ASimul) PPos (ExistNPAdv somebody_NP (timeHourMinute twoHour (NumNumeral (num (pot2as3 (pot1as2 (pot1 ∅)))))))
 LangRus-NEW> кто-то в 2:двадцать существует
 LangRus-OLD> [ExistNPAdv]
@@ -107,3 +116,8 @@ should be: стоодиннадцатитысячное
 ста &+ тысячное
 should be: стотысячное
 
+## Optimization
+
++ Slash2V3 1492992 (107136,31)
++ Slash3V3 1492992 (107136,31)
++ SlashV2VNP 71663616 (214272,62)
