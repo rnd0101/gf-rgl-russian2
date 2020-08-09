@@ -8,7 +8,10 @@ concrete ExtendRus of Extend =
     -- VPS, ListVPS, VPI, ListVPI, VPS2, ListVPS2, VPI2, ListVPI2, RNP, RNPList,
     -- UseComp, RelNP, UseComp_estar, SubjRelNP, PredAPVP, ImpersCl, UseComp, CompAP, EmbedVP, ExistNP, UseQCl,
     -- QuestCl, ExistNP, UseQCl, ExistIP, AdvVP, AdvVP, AdvVP, UseComp, CompAP, ExistS, ExistNPQS, ExistIPQS,
-    -- ComplDirectVS, ComplDirectVQ, AdvIsNPAP, AdAdV, AdjAsNP,
+    --
+    ComplDirectVS,
+    ComplDirectVQ,
+    -- AdvIsNPAP, AdAdV, AdjAsNP,
     ApposNP,
     -- BaseVPS, ConsVPS, BaseVPI, ConsVPI, BaseVPS2, ConsVPS2, BaseVPI2, ConsVPI2,
     -- MkVPS, ConjVPS, PredVPS, MkVPI, ConjVPI, ComplVPIVV,
@@ -110,9 +113,17 @@ lin
   -- : A -> AdV ;                    -- (that she) positively (sleeps)
   PositAdVAdj a = ss a.sn ;
 
+  -- In Russian, sentence usually ends here (or special punctuation is needed after direct phrase)
+  -- : VS -> Utt -> VP ;      -- say: "today"
+  ComplDirectVS vs utt =
+    AdvVP (UseV <lin V vs : V>) (lin Adv {s = ":" ++ rus_quoted utt.s}) ;
+  -- : VQ -> Utt -> VP ;      -- ask: "when"
+  ComplDirectVQ vq utt =
+    AdvVP (UseV <lin V vq : V>) (lin Adv {s = ":" ++ rus_quoted utt.s}) ;
+
   -- : NP -> VS -> Utt -> Cl ;      -- "I am here", she said
   FrontComplDirectVS np vs utt = {
-    subj = "«" ++ utt.s ++ "», —" ++ np.s ! Nom ;
+    subj = (rus_quoted utt.s) ++ "," ++ "—" ++ np.s ! Nom ;
     compl, adv = "" ;
     verb = vs;
     dep = [] ;
@@ -120,10 +131,12 @@ lin
     } ;
   -- : NP -> VQ -> Utt -> Cl ;      -- "where", she asked
   FrontComplDirectVQ np vq utt = {
-    subj = "«" ++ utt.s ++ "», —" ++ np.s ! Nom ;
+    subj = (rus_quoted utt.s) ++ "," ++ "—" ++ np.s ! Nom ;
     compl, adv = "" ;
     verb = vq;
     dep = [] ;
     a = np.a
     } ;
+oper
+  rus_quoted : Str -> Str = \s -> "«" ++ s ++ "»" ; ---- TODO bind ; move to Prelude?
 } ;

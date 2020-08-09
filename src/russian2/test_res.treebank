@@ -3687,10 +3687,22 @@ AllRus: почти две секунды чашка воды будет суще
 AllRusAbs: ImpVP (AdvVP (AdVVP (PositAdVAdj dull_A) (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday))
 AllRus: будь скучно голоден сам в следующую пятницу
 
-« пусть женщина рисует молодую себя », — яблоко говори &+ ло
+« пусть женщина рисует молодую себя » , — яблоко говори &+ ло
 
 AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (FrontComplDirectVQ (MassNP (UseN man_N)) know_VQ (UttAdv (weekdayNextAdv sunday_Weekday)))
-AllRus: « в следующее воскресенье », — человек знал
+AllRus: « в следующее воскресенье » , — человек знал
+
+AllRusAbs: ProgrVP (ComplDirectVS say_VS (ImpP3 (MassNP (UseN woman_N)) (ReflVP (SlashV2A paint_V2A (PositA young_A)))))
+AllRus: говорить : « пусть женщина рисует молодую себя »
+
+AllRusAbs: ProgrVP (ComplDirectVQ know_VQ (UttAdv (weekdayNextAdv sunday_Weekday)))
+AllRus: знать : « в следующее воскресенье »
+
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePN john_PN) (ComplDirectVS say_VS (UttAdv (weekdayNextAdv sunday_Weekday))))
+AllRus: Иван будет говорить : « в следующее воскресенье »
+
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePN john_PN) (ComplDirectVQ know_VQ (UttAdv (weekdayNextAdv sunday_Weekday))))
+AllRus: Иван знал : « в следующее воскресенье »
 
 AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n2)))))
 AllRus: двадцати двух &+ тысячное
