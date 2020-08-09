@@ -17,7 +17,7 @@ lin
   be_V3 = P.mkV3 be_ell_V nom_Prep dat_Prep;
 
 oper
-  nom_Prep : Prep = lin Prep {s="" ; c=Nom ; neggen=False ; hasPrep=False} ;
+  nom_Prep : Prep = lin Prep {s="" ; c=Nom ; neggen=True ; hasPrep=False} ;
   obj_neg_Prep : Prep = lin Prep {s="" ; c=Gen ; neggen=False ; hasPrep=False} ;
   dat_Prep : Prep = lin Prep {s="" ; c=Dat ; neggen=False ; hasPrep=False} ;
   u_Prep : Prep = lin Prep {s="у" ; c=Gen ; neggen=False ; hasPrep=True} ;
