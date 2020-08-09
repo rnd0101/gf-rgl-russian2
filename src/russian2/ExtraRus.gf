@@ -4,7 +4,7 @@ concrete ExtraRus of ExtraRusAbs = CatRus **
   open ResRus, MorphoRus, (P=ParadigmsRus), Prelude, NounRus in {
   flags optimize=all ; coding=utf8 ;
 lin
-  obj_no_Prep = {s="" ; c=Acc ; hasPrep=False} ;
+  obj_no_Prep = {s="" ; c=Acc ; neggen=True ; hasPrep=False} ;
   to2_Prep = P.mkPrep v_prep_mod Acc ;
   on_to_Prep = P.mkPrep "до" Gen ;
   along_Prep = P.mkPrep "по" Loc ;
@@ -17,10 +17,10 @@ lin
   be_V3 = P.mkV3 be_ell_V nom_Prep dat_Prep;
 
 oper
-  nom_Prep : Prep = lin Prep {s="" ; c=Nom ; hasPrep=False} ;
-  obj_neg_Prep : Prep = lin Prep {s="" ; c=Gen ; hasPrep=False} ;
-  dat_Prep : Prep = lin Prep {s="" ; c=Dat ; hasPrep=False} ;
-  u_Prep : Prep = lin Prep {s="у" ; c=Gen ; hasPrep=True} ;
+  nom_Prep : Prep = lin Prep {s="" ; c=Nom ; neggen=False ; hasPrep=False} ;
+  obj_neg_Prep : Prep = lin Prep {s="" ; c=Gen ; neggen=False ; hasPrep=False} ;
+  dat_Prep : Prep = lin Prep {s="" ; c=Dat ; neggen=False ; hasPrep=False} ;
+  u_Prep : Prep = lin Prep {s="у" ; c=Gen ; neggen=False ; hasPrep=True} ;
   est_V : V = lin V {
     inf="есть";
     infrefl="" ;

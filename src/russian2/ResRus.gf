@@ -197,7 +197,7 @@ oper
 
   AgrTable = Agr => Str ;
 
-  from2 = {s="из"; c=Gen; hasPrep=True} ;
+  from2 = {s="из" ; c=Gen ; neggen=True ; hasPrep=True} ;
 
   mkCompoundN : NounForms -> Str -> NounForms -> NounForms
     = \n1,link,n2 ->
@@ -1452,7 +1452,7 @@ oper
 -- Misc
 
 oper
-  ComplementCase : Type = {s : Str ; c : Case ; hasPrep : Bool} ;
+  ComplementCase : Type = {s : Str ; c : Case ; neggen : Bool ; hasPrep : Bool} ;
 
   applyPrep : ComplementCase -> NounPhrase -> Str
     = \prep,np -> case <np.pron, prep.hasPrep, prep.c> of {
