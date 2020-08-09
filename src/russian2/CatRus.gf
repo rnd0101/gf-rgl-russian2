@@ -38,9 +38,11 @@ lincat
   S = {s : Mood => Str} ;
   SSlash = {s : Mood => Str; c: ComplementCase} ;
   Cl = {
-    subj,compl,adv : Str ;
+    subj : Str ;
+    adv : Str ;
     verb : VerbForms ;
     dep : Str ;  -- dependent infinitives and such
+    compl : Str ;
     a : Agr
     } ;
   ClSlash = {
@@ -88,9 +90,10 @@ lincat
   RS  = {s : AdjTable} ;
   RCl = {
     subj : AdjTable ;
-    compl,adv : AgrTable ;
+    adv : AgrTable ;
     verb : VerbForms ;
     dep : Str ;  -- dependent infinitives and such
+    compl : AgrTable ;
     a : MaybeAgr
     } ;
 
