@@ -35,6 +35,8 @@ concrete ExtendRus of Extend =
     -- ReflPoss, ReflPron, ReflRNP, SlashBareV2S, SlashV2V, StrandQuestSlash, StrandRelSlash,
     PredIAdvVP,
     -- UncontractedNeg, UttAccIP, UttAccNP,
+    FrontComplDirectVS,
+    FrontComplDirectVQ,
     UttAdV
     -- UttDatIP, UttDatNP, UttVPShort, WithoutVP, BaseVPS2, ConsVPS2, ConjVPS2, ComplVPS2, MkVPS2
    ]
@@ -107,4 +109,21 @@ lin
 
   -- : A -> AdV ;                    -- (that she) positively (sleeps)
   PositAdVAdj a = ss a.sn ;
+
+  -- : NP -> VS -> Utt -> Cl ;      -- "I am here", she said
+  FrontComplDirectVS np vs utt = {
+    subj = "«" ++ utt.s ++ "», —" ++ np.s ! Nom ;
+    compl, adv = "" ;
+    verb = vs;
+    dep = [] ;
+    a = np.a
+    } ;
+  -- : NP -> VQ -> Utt -> Cl ;      -- "where", she asked
+  FrontComplDirectVQ np vq utt = {
+    subj = "«" ++ utt.s ++ "», —" ++ np.s ! Nom ;
+    compl, adv = "" ;
+    verb = vq;
+    dep = [] ;
+    a = np.a
+    } ;
 } ;

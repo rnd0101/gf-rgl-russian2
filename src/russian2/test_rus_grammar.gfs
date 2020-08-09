@@ -55,7 +55,7 @@ gt UseRCl (TTAnt TPres ASimul) PPos (RelCl (PredSCVP (EmbedQS (UseQCl (TTAnt TCo
 gt RelS (UseCl (TTAnt TPres ASimul) PNeg (GenericCl scared_VP)) (UseRCl (TTAnt TPres ASimul) PPos (RelCl (PredSCVP (EmbedQS (UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv (AdvIAdv how8much_IAdv everywhere_Adv) (ExistNP nobody_NP)))) hungry_VP) )) | l -treebank
 
 gt UseCl (TTAnt ? ASimul) ? (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A)))) | l -treebank
-gt ImpP3 (MassNP (UseN woman_N))  (ReflVP (SlashV2A paint_V2A (PositA young_A)))  | l -treebank
+gt ImpP3 (MassNP (UseN woman_N)) (ReflVP (SlashV2A paint_V2A (PositA young_A)))  | l -treebank
 gt ImpPl1  (ReflVP (SlashV2A paint_V2A (PositA young_A)))  | l -treebank
 
 gt UseCl (TTAnt TCond AAnter) ? (PredVP (MassNP (UseN heart_N)) (PassV2 squeeze_V2) ) | l -treebank
@@ -170,6 +170,9 @@ gt AdvS (timeunitAdv (AdNum at_most_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0
 gt AdvS (timeunitAdv (AdNum almost_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N))))) | l -treebank
 
 gt ImpVP (AdvVP (AdVVP (PositAdVAdj dull_A) (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday)) |l -treebank
+
+gt UseCl (TTAnt TPast AAnter) PPos (FrontComplDirectVS (MassNP (UseN apple_N)) say_VS (ImpP3 (MassNP (UseN woman_N)) (ReflVP (SlashV2A paint_V2A (PositA young_A))))) | l
+gt UseCl (TTAnt TPast AAnter) PPos (FrontComplDirectVQ (MassNP (UseN man_N)) know_VQ (UttAdv (weekdayNextAdv sunday_Weekday))) | l -treebank
 
  -- these below sound unnatural
 
