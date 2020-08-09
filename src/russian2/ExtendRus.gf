@@ -24,7 +24,9 @@ concrete ExtendRus of Extend =
     ExistsNP,
     -- ExistCN, ExistMassCN, ExistPluralCN,
     --ProDrop,
-    -- FocusAP, FocusAdV, FocusAdv, FocusObj, GenIP, GenModIP, GenModNP, GenNP, GenRP,
+    -- FocusAP, FocusAdV, FocusAdv,
+    FocusObj,
+    -- GenIP, GenModIP, GenModNP, GenNP, GenRP,
     -- GerundAdv, GerundCN, GerundNP, IAdvAdv, ICompAP,
     InOrderToVP,
     -- MkVPS, NominalizeVPSlashNP,
@@ -112,6 +114,11 @@ lin
 
   -- : A -> AdV ;                    -- (that she) positively (sleeps)
   PositAdVAdj a = ss a.sn ;
+
+  -- : NP -> SSlash -> Utt ; -- her I love
+  FocusObj np ss = {
+    s = applyPrep ss.c np ++ ss.s ! Ind
+    } ;
 
   -- In Russian, sentence usually ends here (or special punctuation is needed after direct phrase)
   -- : VS -> Utt -> VP ;      -- say: "today"

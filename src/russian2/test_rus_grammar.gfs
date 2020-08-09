@@ -179,6 +179,7 @@ gt ProgrVP (ComplDirectVQ know_VQ (UttAdv (weekdayNextAdv sunday_Weekday))) | l 
 gt UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePN john_PN) (ComplDirectVS say_VS (UttAdv (weekdayNextAdv sunday_Weekday)))) | l -treebank
 gt UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePN john_PN) (ComplDirectVQ know_VQ (UttAdv (weekdayNextAdv sunday_Weekday)))) | l -treebank
 
+gt FocusObj (UsePron she_Pron) ( UseSlash (TTAnt TCond AAnter) ? (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN))) )  | l -treebank
 
  -- these below sound unnatural
 
