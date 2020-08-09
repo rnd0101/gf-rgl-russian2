@@ -25,7 +25,7 @@ lin
   beer_N = mkN "пиво" neuter inanimate ;
   beg_V2V = dirV2 (mkV imperfective transitive "просить" "прошу" "просит" "4c");
   belly_N = mkN "живот" ;
-  big_A = (mkAltShort (mkA "большой" "больше") (mkA "великий")) ;
+  big_A = (mkAltShort (mkA "большой" "больше" "4b") (mkA "великий")) ;
   bike_N = mkN "велосипед" ;
   bird_N = mkN "птица" feminine animate ;
   bite_V2 = mkV2 (mkV imperfective "кусать" "кусаю") ;

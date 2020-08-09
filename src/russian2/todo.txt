@@ -27,6 +27,18 @@ This would require some Russian-specific (though quite straightforwward) Pron ->
 
 ## Not clear
 
+> gt UseCl (TTAnt TPres ASimul) PPos (ExistNP (MassNP (bottle_of_CN (DetCN (DetQuant this_Quant (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 ?)))))))) (UseN ashes_N))))) | l
+linking ... OK
+Languages: AllRus
+бутылка этих двух пепла существует
+
+** UseCl (TTAnt TPres ASimul) PPos (ExistNPAdv somebody_NP (timeHourMinute twoHour (NumNumeral (num (pot2as3 (pot1as2 (pot1 ∅)))))))
+LangRus-NEW> кто-то в 2:двадцать существует
+LangRus-OLD> [ExistNPAdv]
+
+** UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a write_V2) (DetCN (DetQuant this_Quant (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2)))))))) (UseN worm_N))))
+LangRus-NEW> пишешь этих двух червя
+
 > l UttS (AdvS (AdAdv quite_Adv (ComparAdvAdj less_CAdv narrow_A everything_NP)) (UseCl (TTAnt TPres ASimul) PNeg (ExistNP something_NP)))
 довольно менее узко , чем всё что &+ -то не существует
 
