@@ -65,21 +65,28 @@ lin
 
   -- : VP -> Adv ;         -- (in order) to publish the document
   InOrderToVP vp = lin Adv ({
-    s = "чтобы" ++ vp.adv ! Ag (GSg Neut) P3 ++ (verbInf vp.verb) ++ vp.dep ++ vp.compl ! Ag (GSg Neut) P3
+    s = "чтобы"
+      ++ vp.adv ! Ag (GSg Neut) P3
+      ++ (verbInf vp.verb)
+      ++ vp.dep
+      ++ vp.compl ! Pos ! Ag (GSg Neut) P3
     }) ;
 
   -- : VP -> Adv ;  -- to become happy
   PurposeVP vp = lin Adv ({
-    s = vp.adv ! Ag (GSg Neut) P3 ++ (verbInf vp.verb) ++ vp.dep ++ vp.compl ! Ag (GSg Neut) P3
+    s = vp.adv ! Ag (GSg Neut) P3 ++ (verbInf vp.verb) ++ vp.dep ++ vp.compl ! Pos ! Ag (GSg Neut) P3
     }) ;
 
   -- : NP -> Cl ;  -- there exists a number / there exist numbers
   ExistsNP np = {
     subj=[] ;
     adv=[] ;
-    compl=np.s ! Nom ;
     verb=M.to_exist ;
     dep=[] ;
+    compl=table {
+      Pos => np.s ! Nom ;
+      Neg => np.s ! Gen
+      } ;
     a=np.a
     } ;
 
@@ -91,9 +98,17 @@ lin
 
   -- VPSlash -> AP ; -- lost (opportunity) ; (opportunity) lost in space
   PastPartAP vps = {
-    s=\\gn,anim,cas => vps.adv ! (genNumAgrP3 gn)
-      ++ (shortPastPassPart vps.verb gn) ++ vps.dep ++ vps.compl ! (genNumAgrP3 gn) ;
-    short=\\a => vps.adv ! a ++ (shortPastPassPart vps.verb (agrGenNum a)) ++ vps.dep ++ vps.compl ! a ++ vps.c.s ; --
+    s=\\gn,anim,cas =>
+      vps.adv ! (genNumAgrP3 gn)
+      ++ (shortPastPassPart vps.verb gn)
+      ++ vps.dep
+      ++ vps.compl ! Pos ! (genNumAgrP3 gn) ;
+    short=\\a =>
+      vps.adv ! a
+      ++ (shortPastPassPart vps.verb (agrGenNum a))
+      ++ vps.dep
+      ++ vps.compl ! Pos ! a
+      ++ vps.c.s ; --
     isPost = False ;
     preferShort=PreferFull
     } ;
@@ -131,17 +146,19 @@ lin
   -- : NP -> VS -> Utt -> Cl ;      -- "I am here", she said
   FrontComplDirectVS np vs utt = {
     subj = (rus_quoted utt.s) ++ "," ++ "—" ++ np.s ! Nom ;
-    compl, adv = "" ;
+    adv = [] ;
     verb = vs;
     dep = [] ;
+    compl = \\_ => [] ;
     a = np.a
     } ;
   -- : NP -> VQ -> Utt -> Cl ;      -- "where", she asked
   FrontComplDirectVQ np vq utt = {
     subj = (rus_quoted utt.s) ++ "," ++ "—" ++ np.s ! Nom ;
-    compl, adv = "" ;
+    adv = [] ;
     verb = vq;
     dep = [] ;
+    compl = \\_ => [] ;
     a = np.a
     } ;
 oper

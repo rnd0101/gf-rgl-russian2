@@ -381,7 +381,7 @@ oper
           ++ verbRefl vps.verb
           ++ case temp.t of {Cond => "бы" ; _ => []}
           ++ vps.dep
-          ++ vps.compl ! Ag (GSg Neut) P3
+          ++ vps.compl ! pol.p ! Ag (GSg Neut) P3
           ++ vps.c.s ;  -- comma is needed. Up to user?
         } ;
     } ;

@@ -196,6 +196,8 @@ oper
    = \n -> noMinorCases (immutableNounCases "" n.g n.anim) ;
 
   AgrTable = Agr => Str ;
+  ComplTable = Polarity => Agr => Str ;
+  PolarityTable = Polarity => Str ;
 
   from2 = {s="из" ; c=Gen ; neggen=True ; hasPrep=True} ;
 
@@ -1459,6 +1461,12 @@ oper
       <True, True, Gen|Dat|Acc|Ins|Ptv> => prep.s ++ "н" ++ BIND ++ (np.s ! prep.c) ;
       _ => prep.s ++ np.s ! prep.c
     } ;
+
+  applyPolPrep : Polarity -> ComplementCase -> NounPhrase -> Str
+    = \pol,prep,np ->
+      let prep'=prep ** {
+        c=case <pol, prep.neggen> of {<Neg, True> => Gen ; _ => prep.c}
+      } in applyPrep prep' np ;
 
   applyIPronPrep : ComplementCase -> IPronounForms -> Str
     = \prep,ip -> prep.s ++ selectIPronCase ip prep.c ;

@@ -2593,19 +2593,19 @@ AllRusAbs: UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron he_Pron) (Comp
 AllRus: он ждёт машину у её окон
 
 AllRusAbs: UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
-AllRus: он не считал бы машины у её окон
+AllRus: он не считал бы машин у её окон
 AllRusAbs: UttS (UseCl (TTAnt TCond AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
 AllRus: он считал бы машины у её окон
 AllRusAbs: UttS (UseCl (TTAnt TFut AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
-AllRus: он не будет считать машины у её окон
+AllRus: он не будет считать машин у её окон
 AllRusAbs: UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
 AllRus: он будет считать машины у её окон
 AllRusAbs: UttS (UseCl (TTAnt TPast AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
-AllRus: он не считал машины у её окон
+AllRus: он не считал машин у её окон
 AllRusAbs: UttS (UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
 AllRus: он считал машины у её окон
 AllRusAbs: UttS (UseCl (TTAnt TPres AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
-AllRus: он не считает машины у её окон
+AllRus: он не считает машин у её окон
 AllRusAbs: UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
 AllRus: он считает машины у её окон
 
@@ -2614,7 +2614,7 @@ UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (MassNP (UseN worm_N)) (ComplSlash
 UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (MassNP (UseN worm_N)) (ComplSlash (VPSlashPrep (UseV sit_V) in_Prep) (MassNP (PossNP (AdjCN (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (UseN apple_N)) (DetNP (DetQuant (PossPron he_Pron) NumSg)))))))
 
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttImpSg PNeg (ImpVP (ComplSlash (SlashV2a do_V2) (MassNP (UseN apple_N))))) NoVoc) TEmpty
-AllRus: не делай яблоко .
+AllRus: не делай яблока .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttImpSg PPos (ImpVP (ComplSlash (SlashV2a do_V2) (MassNP (UseN apple_N))))) NoVoc) TEmpty
 AllRus: делай яблоко .
 
@@ -2622,7 +2622,7 @@ AllRusAbs: TQuestMark (PhrUtt NoPConj (UttQS (UseQCl (TTAnt TPres ASimul) PPos (
 AllRus: как делает машину ?
 
 AllRusAbs: TExclMark (PhrUtt NoPConj (UttImpSg PNeg (ImpVP (ComplSlash (SlashV2a do_V2) (MassNP (UseN car_N))))) (VocNP (UsePN john_PN))) TEmpty
-AllRus: не делай машину , Иван !
+AllRus: не делай машины , Иван !
 AllRusAbs: TExclMark (PhrUtt NoPConj (UttImpSg PPos (ImpVP (ComplSlash (SlashV2a do_V2) (MassNP (UseN car_N))))) (VocNP (UsePN john_PN))) TEmpty
 AllRus: делай машину , Иван !
 
@@ -3708,6 +3708,15 @@ AllRusAbs: FocusObj (UsePron she_Pron) (UseSlash (TTAnt TCond AAnter) PNeg (Slas
 AllRus: с н &+ ей Иван не говорил бы о Париже
 AllRusAbs: FocusObj (UsePron she_Pron) (UseSlash (TTAnt TCond AAnter) PPos (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN))))
 AllRus: с н &+ ей Иван говорил бы о Париже
+
+AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (ExistsNP (MassNP (UseN number_N)))
+AllRus: не существова &+ ло бы числа
+AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (ExistsNP (MassNP (UseN number_N)))
+AllRus: не будет существовать числа
+AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (ExistsNP (MassNP (UseN number_N)))
+AllRus: не существова &+ ло числа
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (ExistsNP (MassNP (UseN number_N)))
+AllRus: не существует числа
 
 AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n2)))))
 AllRus: двадцати двух &+ тысячное

@@ -181,6 +181,8 @@ gt UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePN john_PN) (ComplDirectVQ know_V
 
 gt FocusObj (UsePron she_Pron) ( UseSlash (TTAnt TCond AAnter) ? (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN))) )  | l -treebank
 
+gt UseCl (TTAnt ? ASimul) PNeg (ExistsNP (MassNP (UseN number_N))) | l -treebank
+
  -- these below sound unnatural
 
 gt OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 ?))))) | l -treebank
