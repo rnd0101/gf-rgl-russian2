@@ -29,7 +29,7 @@ lin
     verb = vs ;
     dep=[] ;
     adv=\\a=>[] ;
-    compl=\\A=>comma ++ "что" ++ s.s ! Ind
+    compl=\\_ => comma ++ "что" ++ s.s ! Ind
     } ;
 
   -- : VQ -> QS -> VP ;  -- wonder who runs
@@ -37,7 +37,7 @@ lin
     verb = vq ;
     dep=[] ;
     adv=\\a=>[] ;
-    compl=\\A=>comma ++ "что" ++ qs.s ! QDir
+    compl=\\_ => comma ++ "что" ++ qs.s ! QDir
     } ;
 
 
