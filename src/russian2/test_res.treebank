@@ -3592,6 +3592,12 @@ AllRus: нет у вас воды
 AllRusAbs: ComparAdvAdj less_CAdv narrow_A everything_NP
 AllRus: менее узко , чем всё
 
+
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron i_Pron) (ComplSlash (SlashV2V beg_V2V (ComplSlash (SlashV2a like_V2) (UsePron he_Pron))) (UsePron weFem_Pron)))
+AllRus: я не прошу нравиться ему нас
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron i_Pron) (ComplSlash (SlashV2V beg_V2V (ComplSlash (SlashV2a like_V2) (UsePron he_Pron))) (UsePron weFem_Pron)))
+AllRus: я прошу нравиться ему нас
+
 AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (ExistNPAdv (MassNP (UseN house_N)) (ComparAdvAdj less_CAdv narrow_A everything_NP))
 AllRus: дом менее узко , чем всё , существовал бы
 AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (ExistNPAdv (MassNP (UseN house_N)) (ComparAdvAdj less_CAdv narrow_A everything_NP))
