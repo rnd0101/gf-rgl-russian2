@@ -9,7 +9,7 @@ lin
   alas_Interj = mkInterj "увы" ;
   already_Adv = mkAdv "уже" ;
   animal_N = mkN (mkA "животный") masculine animate ;
-  answer_V2S = dirV2 (mkV imperfective "отвечать" "отвечаю" "отвечает");
+  answer_V2S = mkV2 (mkV imperfective "отвечать" "отвечаю" "отвечает") to_dat_Prep ;
   apartment_N = mkN "квартира" ;
   apple_N = mkN "яблоко" neuter inanimate "3a(1)" ;
   art_N = mkN "искусство" ;
