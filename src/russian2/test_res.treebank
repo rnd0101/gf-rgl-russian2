@@ -1345,175 +1345,175 @@ AllRusAbs: CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))
 AllRus: менее полный , чем брат
 
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop he_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , он сидел на столе .
+AllRus: менее полон , чем брат , он сидел на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop iFem_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , я сиде &+ ла на столе .
+AllRus: менее полон , чем брат , я сиде &+ ла на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop i_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , я сидел на столе .
+AllRus: менее полон , чем брат , я сидел на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop it_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , оно сиде &+ ло на столе .
+AllRus: менее полон , чем брат , оно сиде &+ ло на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop she_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , она сиде &+ ла на столе .
+AllRus: менее полон , чем брат , она сиде &+ ла на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop theyFem_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , они сиде &+ ли на столе .
+AllRus: менее полон , чем брат , они сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop they_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , они сиде &+ ли на столе .
+AllRus: менее полон , чем брат , они сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop weFem_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , мы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , мы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop we_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , мы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , мы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youFem_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , ты сиде &+ ла на столе .
+AllRus: менее полон , чем брат , ты сиде &+ ла на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youPlFem_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youPl_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youPolFem_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youPolPlFem_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youPolPl_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youPol_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youSg_Pron))))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , ты сидел на столе .
+AllRus: менее полон , чем брат , ты сидел на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop he_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , он сидел на столе .
+AllRus: менее полон , чем брат , он сидел на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop iFem_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , я сиде &+ ла на столе .
+AllRus: менее полон , чем брат , я сиде &+ ла на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop i_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , я сидел на столе .
+AllRus: менее полон , чем брат , я сидел на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop it_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , оно сиде &+ ло на столе .
+AllRus: менее полон , чем брат , оно сиде &+ ло на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop she_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , она сиде &+ ла на столе .
+AllRus: менее полон , чем брат , она сиде &+ ла на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop theyFem_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , они сиде &+ ли на столе .
+AllRus: менее полон , чем брат , они сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop they_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , они сиде &+ ли на столе .
+AllRus: менее полон , чем брат , они сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop weFem_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , мы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , мы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop we_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , мы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , мы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop youFem_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , ты сиде &+ ла на столе .
+AllRus: менее полон , чем брат , ты сиде &+ ла на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop youPlFem_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop youPl_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop youPolFem_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop youPolPlFem_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop youPolPl_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop youPol_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop (ProDrop youSg_Pron)))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , ты сидел на столе .
+AllRus: менее полон , чем брат , ты сидел на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop he_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , он сидел на столе .
+AllRus: менее полон , чем брат , он сидел на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop iFem_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , я сиде &+ ла на столе .
+AllRus: менее полон , чем брат , я сиде &+ ла на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop i_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , я сидел на столе .
+AllRus: менее полон , чем брат , я сидел на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop it_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , оно сиде &+ ло на столе .
+AllRus: менее полон , чем брат , оно сиде &+ ло на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop she_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , она сиде &+ ла на столе .
+AllRus: менее полон , чем брат , она сиде &+ ла на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop theyFem_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , они сиде &+ ли на столе .
+AllRus: менее полон , чем брат , они сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop they_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , они сиде &+ ли на столе .
+AllRus: менее полон , чем брат , они сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop weFem_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , мы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , мы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop we_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , мы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , мы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop youFem_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , ты сиде &+ ла на столе .
+AllRus: менее полон , чем брат , ты сиде &+ ла на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop youPlFem_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop youPl_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop youPolFem_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop youPolPlFem_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop youPolPl_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop youPol_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop (ProDrop youSg_Pron))) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , ты сидел на столе .
+AllRus: менее полон , чем брат , ты сидел на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop he_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , он сидел на столе .
+AllRus: менее полон , чем брат , он сидел на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop iFem_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , я сиде &+ ла на столе .
+AllRus: менее полон , чем брат , я сиде &+ ла на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop i_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , я сидел на столе .
+AllRus: менее полон , чем брат , я сидел на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop it_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , оно сиде &+ ло на столе .
+AllRus: менее полон , чем брат , оно сиде &+ ло на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop she_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , она сиде &+ ла на столе .
+AllRus: менее полон , чем брат , она сиде &+ ла на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop theyFem_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , они сиде &+ ли на столе .
+AllRus: менее полон , чем брат , они сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop they_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , они сиде &+ ли на столе .
+AllRus: менее полон , чем брат , они сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop weFem_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , мы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , мы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop we_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , мы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , мы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop youFem_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , ты сиде &+ ла на столе .
+AllRus: менее полон , чем брат , ты сиде &+ ла на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop youPlFem_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop youPl_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop youPolFem_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop youPolPlFem_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop youPolPl_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop youPol_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron (ProDrop youSg_Pron)) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , ты сидел на столе .
+AllRus: менее полон , чем брат , ты сидел на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron he_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , он сидел на столе .
+AllRus: менее полон , чем брат , он сидел на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron iFem_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , я сиде &+ ла на столе .
+AllRus: менее полон , чем брат , я сиде &+ ла на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron i_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , я сидел на столе .
+AllRus: менее полон , чем брат , я сидел на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron it_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , оно сиде &+ ло на столе .
+AllRus: менее полон , чем брат , оно сиде &+ ло на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron she_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , она сиде &+ ла на столе .
+AllRus: менее полон , чем брат , она сиде &+ ла на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron theyFem_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , они сиде &+ ли на столе .
+AllRus: менее полон , чем брат , они сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron they_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , они сиде &+ ли на столе .
+AllRus: менее полон , чем брат , они сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron weFem_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , мы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , мы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron we_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , мы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , мы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron youFem_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , ты сиде &+ ла на столе .
+AllRus: менее полон , чем брат , ты сиде &+ ла на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron youPlFem_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron youPl_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron youPolFem_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron youPolPlFem_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron youPolPl_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron youPol_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , вы сиде &+ ли на столе .
+AllRus: менее полон , чем брат , вы сиде &+ ли на столе .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron youSg_Pron) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty
-AllRus: менее полный , чем брат , ты сидел на столе .
+AllRus: менее полон , чем брат , ты сидел на столе .
 
 AllRusAbs: EmbedQS (UseQCl (TTAnt TCond ASimul) PNeg (ExistIP whatSg_IP))
 AllRus: что не существова &+ ло бы
@@ -2361,27 +2361,27 @@ AllRusAbs: RelS (UseCl (TTAnt TPres ASimul) PNeg (GenericCl scared_VP)) (UseRCl 
 AllRus: не боишь &+ ся , такое , что сколько везде никто не существовал бы голодно
 
 AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: не рисовал бы молодым собой
+AllRus: не рисовал бы молодым себя
 AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: рисовал бы молодым собой
+AllRus: рисовал бы молодым себя
 AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: не будешь рисовать молодым собой
+AllRus: не будешь рисовать молодым себя
 AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: будешь рисовать молодым собой
+AllRus: будешь рисовать молодым себя
 AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: не рисовал молодым собой
+AllRus: не рисовал молодым себя
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: рисовал молодым собой
+AllRus: рисовал молодым себя
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: не рисуешь молодым собой
+AllRus: не рисуешь молодым себя
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: рисуешь молодым собой
+AllRus: рисуешь молодым себя
 
 AllRusAbs: ImpP3 (MassNP (UseN woman_N)) (ReflVP (SlashV2A paint_V2A (PositA young_A)))
-AllRus: пусть женщина рисует молодой собой
+AllRus: пусть женщина рисует молодой себя
 
 AllRusAbs: ImpPl1 (ReflVP (SlashV2A paint_V2A (PositA young_A)))
-AllRus: давайте рисовать молодыми собой
+AllRus: давайте рисовать молодыми себя
 
 AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (PredVP (MassNP (UseN heart_N)) (PassV2 squeeze_V2))
 AllRus: сердце не сжима &+ ло &+ сь бы
@@ -2423,7 +2423,7 @@ AllRusAbs: ComplVS hope_VS (UseCl (TTAnt TPres AAnter) PPos (have_name_Cl (UsePr
 AllRus: надеяться , что его имя Иван
 
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep ill_VP possess_Prep) (UsePron we_Pron)))
-AllRus: бы &+ ло больно у нас
+AllRus: бы &+ ло у нас больно
 
 AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (what_name_QCl (UsePron youSg_Pron))
 AllRus: как звал бы тебя
@@ -2438,10 +2438,10 @@ AllRusAbs: UseA2 easy_A2V
 AllRus: лёгкий
 
 AllRusAbs: SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron)))
-AllRus: лёгкий быть голодно у нас
+AllRus: лёгок быть у нас голодно
 
 AllRusAbs: ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))
-AllRus: становиться лёгким падать у нас
+AllRus: становиться лёгко падать у нас
 
 AllRusAbs: EmbedVP (UseV blow_V)
 AllRus: дуть
@@ -2587,27 +2587,27 @@ AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (Comp
 AllRus: он хочет падать
 
 AllRusAbs: UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (UseV sit_V) possess_Prep) (UsePron she_Pron)) part_Prep) (DetCN (DetQuant DefArt NumPl) (UseN window_N)))))
-AllRus: он сидит у её окон
+AllRus: он сидит окон у её
 
 AllRusAbs: UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a wait_V2) (MassNP (PartNP (AdvCN (UseN car_N) (PrepNP possess_Prep (UsePron she_Pron))) (DetCN (DetQuant DefArt NumPl) (UseN window_N)))))))
 AllRus: он ждёт машину у её окон
 
 AllRusAbs: UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
-AllRus: он не считал бы машин у её окон
+AllRus: он не считал бы окон у её машин
 AllRusAbs: UttS (UseCl (TTAnt TCond AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
-AllRus: он считал бы машины у её окон
+AllRus: он считал бы окон у её машины
 AllRusAbs: UttS (UseCl (TTAnt TFut AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
-AllRus: он не будет считать машин у её окон
+AllRus: он не будет считать окон у её машин
 AllRusAbs: UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
-AllRus: он будет считать машины у её окон
+AllRus: он будет считать окон у её машины
 AllRusAbs: UttS (UseCl (TTAnt TPast AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
-AllRus: он не считал машин у её окон
+AllRus: он не считал окон у её машин
 AllRusAbs: UttS (UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
-AllRus: он считал машины у её окон
+AllRus: он считал окон у её машины
 AllRusAbs: UttS (UseCl (TTAnt TPres AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
-AllRus: он не считает машин у её окон
+AllRus: он не считает окон у её машин
 AllRusAbs: UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
-AllRus: он считает машины у её окон
+AllRus: он считает окон у её машины
 
 UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (MassNP (UseN worm_N)) (ComplSlash (VPSlashPrep (UseV sit_V) in_Prep) (MassNP (PossNP (AdjCN (PositA red_A) (UseN apple_N)) (DetNP (DetQuant (PossPron he_Pron) NumSg)))))))
 
@@ -3386,7 +3386,7 @@ AllRusAbs: RelNP (MassNP (UseN woman_N)) (UseRCl (TTAnt TPres ASimul) PPos (RelC
 AllRus: женщина , такая , что Иван любит её
 
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron i_Pron) (ComplSlash (Slash3V3 talk_V3 (DetCN (DetQuant DefArt NumSg) (RelCN (UseN book_N) (UseRCl (TTAnt TPast ASimul) PPos (RelSlash IdRP (SlashVP (UsePron i_Pron) (SlashV2a read_V2))))))) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN friend_N))))
-AllRus: я говорил о книге , которую я читал , с моими друзьями
+AllRus: я говорил с моими друзьями о книге , которую я читал
 
 AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestVP whatSg_IP (UseComp (CompNP (DetCN (DetQuant (PossPron youSg_Pron) NumSg) (UseN name_N)))))
 AllRus: что является твоим именем
@@ -3556,47 +3556,47 @@ AllRusAbs: OrdNumeral (num (pot3 (pot1as2 pot110)))
 AllRus: десяти &+ тысячное
 
 AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: бы &+ ло бы у вас вода
+AllRus: бы &+ ло бы вода у вас
 AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: бы &+ ло бы у вас вода
+AllRus: бы &+ ло бы вода у вас
 AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: будет у вас вода
+AllRus: будет вода у вас
 AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: будет у вас вода
+AllRus: будет вода у вас
 AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: бы &+ ло у вас вода
+AllRus: бы &+ ло вода у вас
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: бы &+ ло у вас вода
+AllRus: бы &+ ло вода у вас
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: у вас вода
+AllRus: вода у вас
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: у вас вода
+AllRus: вода у вас
 
 AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (ImpersCl (ComplSlash (Slash3V3 have_not_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: не бы &+ ло бы у вас воды
+AllRus: не бы &+ ло бы воды у вас
 AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (ImpersCl (ComplSlash (Slash3V3 have_not_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: не бы &+ ло бы у вас воды
+AllRus: не бы &+ ло бы воды у вас
 AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (ImpersCl (ComplSlash (Slash3V3 have_not_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: будет у вас воды
+AllRus: будет воды у вас
 AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (ImpersCl (ComplSlash (Slash3V3 have_not_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: будет у вас воды
+AllRus: будет воды у вас
 AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (ImpersCl (ComplSlash (Slash3V3 have_not_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: не бы &+ ло у вас воды
+AllRus: не бы &+ ло воды у вас
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (ImpersCl (ComplSlash (Slash3V3 have_not_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: не бы &+ ло у вас воды
+AllRus: не бы &+ ло воды у вас
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (ImpersCl (ComplSlash (Slash3V3 have_not_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: нет у вас воды
+AllRus: нет воды у вас
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (ImpersCl (ComplSlash (Slash3V3 have_not_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: нет у вас воды
+AllRus: нет воды у вас
 
 AllRusAbs: ComparAdvAdj less_CAdv narrow_A everything_NP
 AllRus: менее узко , чем всё
 
 
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron i_Pron) (ComplSlash (SlashV2V beg_V2V (ComplSlash (SlashV2a like_V2) (UsePron he_Pron))) (UsePron weFem_Pron)))
-AllRus: я не прошу нравиться ему нас
+AllRus: я не прошу нравиться нас ему
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron i_Pron) (ComplSlash (SlashV2V beg_V2V (ComplSlash (SlashV2a like_V2) (UsePron he_Pron))) (UsePron weFem_Pron)))
-AllRus: я прошу нравиться ему нас
+AllRus: я прошу нравиться нас ему
 
 AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (ExistNPAdv (MassNP (UseN house_N)) (ComparAdvAdj less_CAdv narrow_A everything_NP))
 AllRus: дом менее узко , чем всё , существовал бы
@@ -3747,13 +3747,13 @@ AllRus: почти две секунды чашка воды будет суще
 AllRusAbs: ImpVP (AdvVP (AdVVP (PositAdVAdj dull_A) (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday))
 AllRus: будь скучно голоден сам в следующую пятницу
 
-« пусть женщина рисует молодой собой » , — яблоко говори &+ ло
+« пусть женщина рисует молодой себя » , — яблоко говори &+ ло
 
 AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (FrontComplDirectVQ (MassNP (UseN man_N)) know_VQ (UttAdv (weekdayNextAdv sunday_Weekday)))
 AllRus: « в следующее воскресенье » , — человек знал
 
 AllRusAbs: ProgrVP (ComplDirectVS say_VS (ImpP3 (MassNP (UseN woman_N)) (ReflVP (SlashV2A paint_V2A (PositA young_A)))))
-AllRus: говорить : « пусть женщина рисует молодой собой »
+AllRus: говорить : « пусть женщина рисует молодой себя »
 
 AllRusAbs: ProgrVP (ComplDirectVQ know_VQ (UttAdv (weekdayNextAdv sunday_Weekday)))
 AllRus: знать : « в следующее воскресенье »
@@ -3796,21 +3796,21 @@ AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n9)))))
 AllRus: двадцати девяти &+ тысячное
 
 AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: не бы &+ ло бы у вас воды
+AllRus: не бы &+ ло бы воды у вас
 AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: не бы &+ ло бы у вас воды
+AllRus: не бы &+ ло бы воды у вас
 AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: не будет у вас воды
+AllRus: не будет воды у вас
 AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: не будет у вас воды
+AllRus: не будет воды у вас
 AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: не бы &+ ло у вас воды
+AllRus: не бы &+ ло воды у вас
 AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: не бы &+ ло у вас воды
+AllRus: не бы &+ ло воды у вас
 AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: нет у вас воды
+AllRus: нет воды у вас
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: нет у вас воды
+AllRus: нет воды у вас
 
 AllRusAbs: AdjCN (PastPartAP (SlashV2a bite_V2)) (UseN house_N)
 AllRus: кусан дом
@@ -3973,82 +3973,82 @@ AllRusAbs: ComplVQ know_VQ (UseQCl (TTAnt TCond AAnter) PPos (QuestCl (PredSCVP 
 AllRus: знать , что играть хоте &+ ло бы пить
 
 AllRusAbs: EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))
-AllRus: быть голодно у нас
+AllRus: быть у нас голодно
 
 AllRusAbs: SentCN (UseN apple_N) (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron)))
-AllRus: яблоко быть голодно у нас
+AllRus: яблоко быть у нас голодно
 
 AllRusAbs: PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)
-AllRus: быть голодно у нас считаться
+AllRus: быть у нас голодно считаться
 
 AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас не счита &+ ло &+ сь бы
+AllRus: быть у нас голодно не счита &+ ло &+ сь бы
 AllRusAbs: UseQCl (TTAnt TCond AAnter) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас счита &+ ло &+ сь бы
+AllRus: быть у нас голодно счита &+ ло &+ сь бы
 AllRusAbs: UseQCl (TTAnt TCond ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас не счита &+ ло &+ сь бы
+AllRus: быть у нас голодно не счита &+ ло &+ сь бы
 AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас счита &+ ло &+ сь бы
+AllRus: быть у нас голодно счита &+ ло &+ сь бы
 AllRusAbs: UseQCl (TTAnt TFut AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас не будет считаться
+AllRus: быть у нас голодно не будет считаться
 AllRusAbs: UseQCl (TTAnt TFut AAnter) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас будет считаться
+AllRus: быть у нас голодно будет считаться
 AllRusAbs: UseQCl (TTAnt TFut ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас не будет считаться
+AllRus: быть у нас голодно не будет считаться
 AllRusAbs: UseQCl (TTAnt TFut ASimul) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас будет считаться
+AllRus: быть у нас голодно будет считаться
 AllRusAbs: UseQCl (TTAnt TPast AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас не счита &+ ло &+ сь
+AllRus: быть у нас голодно не счита &+ ло &+ сь
 AllRusAbs: UseQCl (TTAnt TPast AAnter) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас счита &+ ло &+ сь
+AllRus: быть у нас голодно счита &+ ло &+ сь
 AllRusAbs: UseQCl (TTAnt TPast ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас не счита &+ ло &+ сь
+AllRus: быть у нас голодно не счита &+ ло &+ сь
 AllRusAbs: UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас счита &+ ло &+ сь
+AllRus: быть у нас голодно счита &+ ло &+ сь
 AllRusAbs: UseQCl (TTAnt TPres AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас не считает &+ ся
+AllRus: быть у нас голодно не считает &+ ся
 AllRusAbs: UseQCl (TTAnt TPres AAnter) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас считает &+ ся
+AllRus: быть у нас голодно считает &+ ся
 AllRusAbs: UseQCl (TTAnt TPres ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас не считает &+ ся
+AllRus: быть у нас голодно не считает &+ ся
 AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
-AllRus: быть голодно у нас считает &+ ся
+AllRus: быть у нас голодно считает &+ ся
 
 AllRusAbs: PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron)))))
-AllRus: кто &+ -то становиться лёгким падать у нас
+AllRus: кто &+ -то становиться лёгок падать у нас
 
 AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то не становил &+ ся бы лёгким падать у нас
+AllRus: кто &+ -то не становил &+ ся бы лёгок падать у нас
 AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то становил &+ ся бы лёгким падать у нас
+AllRus: кто &+ -то становил &+ ся бы лёгок падать у нас
 AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то не становил &+ ся бы лёгким падать у нас
+AllRus: кто &+ -то не становил &+ ся бы лёгок падать у нас
 AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то становил &+ ся бы лёгким падать у нас
+AllRus: кто &+ -то становил &+ ся бы лёгок падать у нас
 AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то не будет становиться лёгким падать у нас
+AllRus: кто &+ -то не будет становиться лёгок падать у нас
 AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то будет становиться лёгким падать у нас
+AllRus: кто &+ -то будет становиться лёгок падать у нас
 AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то не будет становиться лёгким падать у нас
+AllRus: кто &+ -то не будет становиться лёгок падать у нас
 AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то будет становиться лёгким падать у нас
+AllRus: кто &+ -то будет становиться лёгок падать у нас
 AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то не становил &+ ся лёгким падать у нас
+AllRus: кто &+ -то не становил &+ ся лёгок падать у нас
 AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то становил &+ ся лёгким падать у нас
+AllRus: кто &+ -то становил &+ ся лёгок падать у нас
 AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то не становил &+ ся лёгким падать у нас
+AllRus: кто &+ -то не становил &+ ся лёгок падать у нас
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то становил &+ ся лёгким падать у нас
+AllRus: кто &+ -то становил &+ ся лёгок падать у нас
 AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то не становит &+ ся лёгким падать у нас
+AllRus: кто &+ -то не становит &+ ся лёгок падать у нас
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то становит &+ ся лёгким падать у нас
+AllRus: кто &+ -то становит &+ ся лёгок падать у нас
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то не становит &+ ся лёгким падать у нас
+AllRus: кто &+ -то не становит &+ ся лёгок падать у нас
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
-AllRus: кто &+ -то становит &+ ся лёгким падать у нас
+AllRus: кто &+ -то становит &+ ся лёгок падать у нас
 
 AllRusAbs: PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A)))
 AllRus: играть быть чистым
