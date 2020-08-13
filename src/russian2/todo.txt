@@ -140,3 +140,39 @@ The sentence is not complete
 
 > p -cat=S "я просил его делать машины"
 The sentence is not complete
+
+
+## From, api treebank
+
+AllRusAbs: PhrUtt (PConjConj both7and_DConj) (UttAdv now_Adv) NoVoc
+AllRus: , так и сейчас
+
+AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (ComplSlash (SlashV2A paint_V2A (PositA red_A)) (DetNP (DetQuant DefArt NumSg)))))
+AllRus: Она рисует красную данное
+
+AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (ComplSlash (SlashV2A paint_V2A (PositA red_A)) (UsePron it_Pron))))
+AllRus: Она рисует красную его
+
+AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (ComplSlash (SlashV2S answer_V2S (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron we_Pron) (UseV sleep_V)))) (UsePron he_Pron))))
+AllRus: Она отвечает, что мы спим, его
+
+AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (ImpersCl (AdvVP (AdvVP UseCopula here_Adv) (SubjS that_Subj (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (UseV sleep_V)))))))
+AllRus: Является здесь что она спит
+
+AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (ImpersCl (AdvVP (UseComp (CompAdv here_Adv)) (SubjS that_Subj (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (UseV sleep_V)))))))
+AllRus: Здесь есть что она спит
+
+AllRusAbs: UttNP (DetNP (DetQuantOrd DefArt (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))))) (OrdSuperl good_A)))
+AllRus: Данное пять самых хороших
+
+AllRusAbs: UttNP (PPartNP (DetCN (DetQuant DefArt NumSg) (UseN man_N)) see_V2)
+AllRus: Человек вижен
+
+AllRusAbs: UttNP (DetNP (DetQuantOrd DefArt NumPl (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))))))
+AllRus: Данное пятые
+
+AllRusAbs: UttNP (DetNP (DetQuantOrd IndefArt NumPl (OrdSuperl small_A)))
+AllRus: Некое самые маленькие
+
+AllRusAbs: UttCN (RelCN (UseN woman_N) (UseRCl (TTAnt TPres ASimul) PPos (RelVP IdRP (ComplSlash (SlashV2A paint_V2A (AdAP very_AdA (PositA red_A))) (UsePron it_Pron)))))
+AllRus: Женщина, которая рисует очень красную его

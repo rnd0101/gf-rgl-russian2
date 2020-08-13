@@ -2361,27 +2361,27 @@ AllRusAbs: RelS (UseCl (TTAnt TPres ASimul) PNeg (GenericCl scared_VP)) (UseRCl 
 AllRus: не боишь &+ ся , такое , что сколько везде никто не существовал бы голодно
 
 AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: не рисовал бы молодого себя
+AllRus: не рисовал бы молодым собой
 AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: рисовал бы молодого себя
+AllRus: рисовал бы молодым собой
 AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: не будешь рисовать молодого себя
+AllRus: не будешь рисовать молодым собой
 AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: будешь рисовать молодого себя
+AllRus: будешь рисовать молодым собой
 AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: не рисовал молодого себя
+AllRus: не рисовал молодым собой
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: рисовал молодого себя
+AllRus: рисовал молодым собой
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: не рисуешь молодого себя
+AllRus: не рисуешь молодым собой
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (GenericCl (ReflVP (SlashV2A paint_V2A (PositA young_A))))
-AllRus: рисуешь молодого себя
+AllRus: рисуешь молодым собой
 
 AllRusAbs: ImpP3 (MassNP (UseN woman_N)) (ReflVP (SlashV2A paint_V2A (PositA young_A)))
-AllRus: пусть женщина рисует молодую себя
+AllRus: пусть женщина рисует молодой собой
 
 AllRusAbs: ImpPl1 (ReflVP (SlashV2A paint_V2A (PositA young_A)))
-AllRus: давайте рисовать молодых себя
+AllRus: давайте рисовать молодыми собой
 
 AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (PredVP (MassNP (UseN heart_N)) (PassV2 squeeze_V2))
 AllRus: сердце не сжима &+ ло &+ сь бы
@@ -3747,13 +3747,13 @@ AllRus: почти две секунды чашка воды будет суще
 AllRusAbs: ImpVP (AdvVP (AdVVP (PositAdVAdj dull_A) (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday))
 AllRus: будь скучно голоден сам в следующую пятницу
 
-« пусть женщина рисует молодую себя » , — яблоко говори &+ ло
+« пусть женщина рисует молодой собой » , — яблоко говори &+ ло
 
 AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (FrontComplDirectVQ (MassNP (UseN man_N)) know_VQ (UttAdv (weekdayNextAdv sunday_Weekday)))
 AllRus: « в следующее воскресенье » , — человек знал
 
 AllRusAbs: ProgrVP (ComplDirectVS say_VS (ImpP3 (MassNP (UseN woman_N)) (ReflVP (SlashV2A paint_V2A (PositA young_A)))))
-AllRus: говорить : « пусть женщина рисует молодую себя »
+AllRus: говорить : « пусть женщина рисует молодой собой »
 
 AllRusAbs: ProgrVP (ComplDirectVQ know_VQ (UttAdv (weekdayNextAdv sunday_Weekday)))
 AllRus: знать : « в следующее воскресенье »
