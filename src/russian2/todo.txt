@@ -53,9 +53,6 @@ LangRus-NEW> говоришь на его
 LangRus-NEW> кто-то в 2:двадцать существует
 LangRus-OLD> [ExistNPAdv]
 
-** UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a write_V2) (DetCN (DetQuant this_Quant (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2)))))))) (UseN worm_N))))
-LangRus-NEW> пишешь этих двух червя
-
 > l UttS (AdvS (AdAdv quite_Adv (ComparAdvAdj less_CAdv narrow_A everything_NP)) (UseCl (TTAnt TPres ASimul) PNeg (ExistNP something_NP)))
 довольно менее узко , чем всё что &+ -то не существует
 
@@ -73,10 +70,6 @@ Verb zv index does not support "*", it figures forms out from 3 given examples i
 
 AllRusAbs: UttImpPol PPos (ImpVP (ComplSlash (Slash2V3 add_V3 everybody_NP) (PPartNP somebody_NP drink_V2)))
 AllRus: складываем &+ те всех в кого &+ -то пит
-
-
-gt UttS (UseCl (TTAnt ? AAnter) ? (PredVP (DetCN (DetQuant IndefArt NumSg) (UseN worm_N)) (ComplSlash (VPSlashPrep (UseV sit_V) in_Prep) (MassNP (PossNP (AdjCN (PositA red_A) (UseN apple_N)) (DetNP (DetQuant (PossPron he_Pron) NumSg))))))) |l -treebank
-AllRus: червь не сиде &+ ло бы в его красном яблоке
 
 AllRusAbs: TQuestMark (PhrUtt NoPConj (UttQS (UseQCl (TTAnt TPres AAnter) PNeg (QuestIAdv how8much_IAdv (ImpersCl (AdvVP (AdvVP UseCopula (PrepNP part_Prep (DetCN (DetQuant IndefArt NumPl) (UseN apple_N)))) (PrepNP possess_Prep (UsePN john_PN))))))) NoVoc) TEmpty
 AllRus: сколько не является яблок у Ивана ?
@@ -149,9 +142,6 @@ AllRus: Она рисует красную данное
 
 AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (ComplSlash (SlashV2A paint_V2A (PositA red_A)) (UsePron it_Pron))))
 AllRus: Она рисует красную его
-
-AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (ComplSlash (SlashV2S answer_V2S (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron we_Pron) (UseV sleep_V)))) (UsePron he_Pron))))
-AllRus: Она отвечает, что мы спим, его
 
 AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (ImpersCl (AdvVP (AdvVP UseCopula here_Adv) (SubjS that_Subj (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (UseV sleep_V)))))))
 AllRus: Является здесь что она спит
