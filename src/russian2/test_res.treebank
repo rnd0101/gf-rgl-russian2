@@ -3438,6 +3438,15 @@ AllRus: когда бы &+ ло яблоко
 AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestIComp (CompIAdv when_IAdv) (MassNP (UseN apple_N)))
 AllRus: когда яблоко
 
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (QuestIComp (CompIQuant which_IQuant) (MassNP (UseN apple_N)))
+AllRus: которое бы &+ ло бы яблоко
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PPos (QuestIComp (CompIQuant which_IQuant) (MassNP (UseN apple_N)))
+AllRus: которое будет яблоко
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PPos (QuestIComp (CompIQuant which_IQuant) (MassNP (UseN apple_N)))
+AllRus: которое бы &+ ло яблоко
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestIComp (CompIQuant which_IQuant) (MassNP (UseN apple_N)))
+AllRus: которое яблоко
+
 AllRusAbs: UseQCl (TTAnt TCond ASimul) PNeg (QuestIAdv when_IAdv (ImpersCl (AdvVP UseCopula (PrepNP part_Prep (MassNP (UseN apple_N))))))
 AllRus: когда не бы &+ ло бы яблока
 AllRusAbs: UseQCl (TTAnt TFut ASimul) PNeg (QuestIAdv when_IAdv (ImpersCl (AdvVP UseCopula (PrepNP part_Prep (MassNP (UseN apple_N))))))

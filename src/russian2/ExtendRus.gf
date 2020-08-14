@@ -178,6 +178,17 @@ lin
     compl = \\_ => [] ;
     a = np.a
     } ;
+
+  -- : IQuant -> IComp ;   -- which (is it) [agreement to NP]
+  CompIQuant iq = {
+    s = \\a => case iq.preferShort of {
+      prefShort => iq.short ;
+      _ => iq.s ! agrGenNum a ! Inanimate ! Nom
+    } ;
+    adv = [];
+    cop = NomCopula ;
+    } ;
+
 oper
   rus_quoted : Str -> Str = \s -> "«" ++ s ++ "»" ; ---- TODO bind ; move to Prelude?
 } ;
