@@ -37,3 +37,15 @@ gt UttNP (DetNP (DetQuantOrd DefArt NumPl (OrdNumeral (num (pot2as3 (pot1as2 (po
 gt UttNP (DetNP (DetQuantOrd IndefArt NumPl (OrdSuperl small_A)))  |l -treebank
 gt UttCN (RelCN (UseN woman_N) (UseRCl (TTAnt TPres ASimul) PPos (RelVP IdRP (ComplSlash (SlashV2A paint_V2A (AdAP very_AdA (PositA red_A))) (UsePron it_Pron)))))  |l -treebank
 gt UttCN (RelCN (UseN child_N) (UseRCl (TTAnt TPres ASimul) PPos (RelVP (FunRP part_Prep (PredetNP all_Predet (DetCN (DetQuant DefArt NumPl) (UseN teacher_N))) IdRP) (UseComp (CompAP (PositA young_A))))))  |l -treebank
+-- these below sound unnatural
+gt OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 ?))))) | l -treebank
+-- here some participles are not formed correctly
+gt AdjCN (PastPartAP ( SlashV2a ? )  )   (UseN house_N) | l -treebank
+gt QuestCl ( PredSCVP (EmbedVP (UseV play_V)) thirsty_VP ) | l -treebank
+gt UseQCl ? ? ( QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP) ) | l -treebank
+gt UseQCl (TTAnt TCond AAnter) ? (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)) | l -treebank
+gt UttQS ( UseQCl (TTAnt TCond AAnter) ? (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)) ) | l -treebank
+gt ComplVQ know_VQ ( UseQCl (TTAnt TCond AAnter) ? (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)) ) | l -treebank
+gt SentCN  (UseN apple_N)   (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) | l -treebank
+gt PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron)))    ( PassV2 count_V2 )  | l -treebank
+gt PredSCVP (EmbedVP (UseV play_V))  (UseComp (CompAP (PositA clean_A)) ) | l -treebank

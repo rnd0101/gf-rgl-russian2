@@ -1341,6 +1341,9 @@ AllRus: лёгкий для себя
 AllRusAbs: ReflA2 married_A2
 AllRus: замужем за собой
 
+AllRusAbs: AdjCN (AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))))) (UseN apple_N)
+AllRus: третье яблоко
+
 AllRusAbs: CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))
 AllRus: менее полный , чем брат
 
@@ -2424,6 +2427,9 @@ AllRus: надеяться , что его имя Иван
 
 AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep ill_VP possess_Prep) (UsePron we_Pron)))
 AllRus: бы &+ ло у нас больно
+
+AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (ComplSlash (SlashV2a bite_V2) (MassNP (UseN apple_N)))))
+AllRus: она кусает яблоко
 
 AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (what_name_QCl (UsePron youSg_Pron))
 AllRus: как звал бы тебя
@@ -3778,23 +3784,6 @@ AllRus: не существова &+ ло числа
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (ExistsNP (MassNP (UseN number_N)))
 AllRus: не существует числа
 
-AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n2)))))
-AllRus: двадцати двух &+ тысячное
-AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n3)))))
-AllRus: двадцати трёх &+ тысячное
-AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n4)))))
-AllRus: двадцати четырех &+ тысячное
-AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n5)))))
-AllRus: двадцати пяти &+ тысячное
-AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n6)))))
-AllRus: двадцати шести &+ тысячное
-AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n7)))))
-AllRus: двадцати семи &+ тысячное
-AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n8)))))
-AllRus: двадцати восьми &+ тысячное
-AllRusAbs: OrdNumeral (num (pot3 (pot1as2 (pot1plus n2 (pot0 n9)))))
-AllRus: двадцати девяти &+ тысячное
-
 AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
 AllRus: не бы &+ ло бы воды у вас
 AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
@@ -3812,174 +3801,8 @@ AllRus: нет воды у вас
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
 AllRus: нет воды у вас
 
-AllRusAbs: AdjCN (PastPartAP (SlashV2a bite_V2)) (UseN house_N)
-AllRus: кусан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a break_V2)) (UseN house_N)
-AllRus: прерыван дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a buy_V2)) (UseN house_N)
-AllRus: покупан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a close_V2)) (UseN house_N)
-AllRus: закрыван дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a count_V2)) (UseN house_N)
-AllRus: считан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a cut_V2)) (UseN house_N)
-AllRus: резан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a do_V2)) (UseN house_N)
-AllRus: делан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a drink_V2)) (UseN house_N)
-AllRus: пит дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a eat_V2)) (UseN house_N)
-AllRus: кушан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a fear_V2)) (UseN house_N)
-AllRus: боян дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a fight_V2)) (UseN house_N)
-AllRus: борот дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a find_V2)) (UseN house_N)
-AllRus: нахожен дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a forget_V2)) (UseN house_N)
-AllRus: забыван дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a hate_V2)) (UseN house_N)
-AllRus: ненавижен дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a have_V2)) (UseN house_N)
-AllRus: имен дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a hear_V2)) (UseN house_N)
-AllRus: слушан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a hit_V2)) (UseN house_N)
-AllRus: ударян дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a hold_V2)) (UseN house_N)
-AllRus: держан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a hunt_V2)) (UseN house_N)
-AllRus: охочен дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a kill_V2)) (UseN house_N)
-AllRus: убиван дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a know_V2)) (UseN house_N)
-AllRus: знан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a learn_V2)) (UseN house_N)
-AllRus: учен дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a leave_V2)) (UseN house_N)
-AllRus: ухожен дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a like_V2)) (UseN house_N)
-AllRus: нравлен дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a listen_V2)) (UseN house_N)
-AllRus: слушан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a lose_V2)) (UseN house_N)
-AllRus: терян дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a love_V2)) (UseN house_N)
-AllRus: люблен дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a open_V2)) (UseN house_N)
-AllRus: открыван дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a play_V2)) (UseN house_N)
-AllRus: игран дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a pull_V2)) (UseN house_N)
-AllRus: тянут дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a push_V2)) (UseN house_N)
-AllRus: толкан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a put_V2)) (UseN house_N)
-AllRus: кладен дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a read_V2)) (UseN house_N)
-AllRus: читан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a rub_V2)) (UseN house_N)
-AllRus: терт дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a scratch_V2)) (UseN house_N)
-AllRus: чесан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a see_V2)) (UseN house_N)
-AllRus: вижен дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a seek_V2)) (UseN house_N)
-AllRus: искан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a speak_V2)) (UseN house_N)
-AllRus: говорен дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a split_V2)) (UseN house_N)
-AllRus: разбиван дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a squeeze_V2)) (UseN house_N)
-AllRus: сжиман дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a stab_V2)) (UseN house_N)
-AllRus: колот дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a suck_V2)) (UseN house_N)
-AllRus: сосан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a switch8off_V2)) (UseN house_N)
-AllRus: выключан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a switch8on_V2)) (UseN house_N)
-AllRus: включан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a teach_V2)) (UseN house_N)
-AllRus: учен дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a throw_V2)) (UseN house_N)
-AllRus: бросан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a tie_V2)) (UseN house_N)
-AllRus: вязан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a understand_V2)) (UseN house_N)
-AllRus: пониман дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a wait_V2)) (UseN house_N)
-AllRus: ждан дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a wash_V2)) (UseN house_N)
-AllRus: мыт дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a watch_V2)) (UseN house_N)
-AllRus: смотрен дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a win_V2)) (UseN house_N)
-AllRus: выигрыван дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a wipe_V2)) (UseN house_N)
-AllRus: вытиран дом
-AllRusAbs: AdjCN (PastPartAP (SlashV2a write_V2)) (UseN house_N)
-AllRus: писан дом
-
-AllRusAbs: QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)
-AllRus: играть хотеть пить
-
-AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть не хоте &+ ло бы пить
-AllRusAbs: UseQCl (TTAnt TCond AAnter) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть хоте &+ ло бы пить
-AllRusAbs: UseQCl (TTAnt TCond ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть не хоте &+ ло бы пить
-AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть хоте &+ ло бы пить
-AllRusAbs: UseQCl (TTAnt TFut AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть не захочет пить
-AllRusAbs: UseQCl (TTAnt TFut AAnter) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть захочет пить
-AllRusAbs: UseQCl (TTAnt TFut ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть не захочет пить
-AllRusAbs: UseQCl (TTAnt TFut ASimul) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть захочет пить
-AllRusAbs: UseQCl (TTAnt TPast AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть не хоте &+ ло пить
-AllRusAbs: UseQCl (TTAnt TPast AAnter) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть хоте &+ ло пить
-AllRusAbs: UseQCl (TTAnt TPast ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть не хоте &+ ло пить
-AllRusAbs: UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть хоте &+ ло пить
-AllRusAbs: UseQCl (TTAnt TPres AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть не хочет пить
-AllRusAbs: UseQCl (TTAnt TPres AAnter) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть хочет пить
-AllRusAbs: UseQCl (TTAnt TPres ASimul) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть не хочет пить
-AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть хочет пить
-
-AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть не хоте &+ ло бы пить
-AllRusAbs: UseQCl (TTAnt TCond AAnter) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP))
-AllRus: играть хоте &+ ло бы пить
-
-AllRusAbs: UttQS (UseQCl (TTAnt TCond AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)))
-AllRus: играть не хоте &+ ло бы пить
-AllRusAbs: UttQS (UseQCl (TTAnt TCond AAnter) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)))
-AllRus: играть хоте &+ ло бы пить
-
-AllRusAbs: ComplVQ know_VQ (UseQCl (TTAnt TCond AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)))
-AllRus: знать , что играть не хоте &+ ло бы пить
-AllRusAbs: ComplVQ know_VQ (UseQCl (TTAnt TCond AAnter) PPos (QuestCl (PredSCVP (EmbedVP (UseV play_V)) thirsty_VP)))
-AllRus: знать , что играть хоте &+ ло бы пить
-
 AllRusAbs: EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))
 AllRus: быть у нас голодно
-
-AllRusAbs: SentCN (UseN apple_N) (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron)))
-AllRus: яблоко быть у нас голодно
-
-AllRusAbs: PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)
-AllRus: быть у нас голодно считаться
 
 AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (QuestCl (PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) (PassV2 count_V2)))
 AllRus: быть у нас голодно не счита &+ ло &+ сь бы
@@ -4050,9 +3873,6 @@ AllRus: кто &+ -то не становит &+ ся лёгок падать у
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP somebody_NP (ComplVA become_VA (SentAP (UseA2 easy_A2V) (EmbedVP (ComplSlash (VPSlashPrep (UseV fall_V) possess_Prep) (UsePron we_Pron))))))
 AllRus: кто &+ -то становит &+ ся лёгок падать у нас
 
-AllRusAbs: PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A)))
-AllRus: играть быть чистым
-
 AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
 AllRus: играть не бы &+ ло бы чистым
 AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A))))
@@ -4088,7 +3908,4 @@ AllRus: играть является чистым
 
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompCN (AdjCN (PositA clean_A) (UseN war_N)))))
 AllRus: играть является чистой войной
-
-AllRusAbs: AdjCN (AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))))) (UseN apple_N)
-AllRus: третье яблоко
 
