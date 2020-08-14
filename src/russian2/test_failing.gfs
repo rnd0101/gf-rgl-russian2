@@ -10,8 +10,8 @@ gt MassNP (AdjCN (PositA red_A) (ConjCN and_Conj (ConsCN (UseN grammar_N) (BaseC
 gt UseCl (TTAnt TPres ASimul) PPos (ExistNP (MassNP (bottle_of_CN (DetCN (DetQuant this_Quant (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 ?)))))))) (UseN ashes_N))))) | l -treebank
 gt UseCl (TTAnt TPres ASimul) PPos (have_name_Cl (DetNP (DetQuant (PossPron i_Pron) NumSg)) somebody_NP) | l -treebank
 gt UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a like_V2) (DetNP (DetQuant (PossPron he_Pron) NumSg)))) | l -treebank
-gt UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a speak_V2) (DetNP (DetQuant (PossPron ∅) NumSg)))) | l -treebank
-gt UseCl (TTAnt TPres ASimul) PPos (ExistNPAdv somebody_NP (timeHourMinute twoHour (NumNumeral (num (pot2as3 (pot1as2 (pot1 ∅))))))) |l -treebank
+gt UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a speak_V2) (DetNP (DetQuant (PossPron ?) NumSg)))) | l -treebank
+gt UseCl (TTAnt TPres ASimul) PPos (ExistNPAdv somebody_NP (timeHourMinute twoHour (NumNumeral (num (pot2as3 (pot1as2 (pot1 ?))))))) |l -treebank
 gt UseCl (TTAnt TPres ASimul) PPos (GenericCl (ComplSlash (SlashV2a write_V2) (DetCN (DetQuant this_Quant (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2)))))))) (UseN worm_N)))) | l -treebank
 gt UttS (AdvS (AdAdv quite_Adv (ComparAdvAdj less_CAdv narrow_A everything_NP)) (UseCl (TTAnt TPres ASimul) PNeg (ExistNP something_NP))) | l -treebank
 gt PrepNP above_Prep (UsePron i_Pron) | l treebank

@@ -31,9 +31,6 @@ Correct text requires AdvNP tricks. Resulting trees are quite artificial, one ex
 
 Proper resolution? It's hard to go through Dets and Quants (and will make them more complex). Probably, correct solution would be to make the same as if possessive pronoun is an adjective:
 
-> l MassNP (AdjCN (PositA red_A) (ConjCN and_Conj (ConsCN (UseN grammar_N) (BaseCN (UseN apple_N) (UseN flower_N)))))
-красные грамматика , яблоко и цветок
-
 This would require some Russian-specific (though quite straightforwward) Pron -> AP addition.
 
 ## Not clear
