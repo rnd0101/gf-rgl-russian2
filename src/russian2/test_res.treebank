@@ -2345,8 +2345,20 @@ AllRus: всё существует , потому что всё существ�
 AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestSlash whatSg_IP (AdvSlash (SlashVP (UsePN john_PN) (VPSlashPrep (UseV walk_V) for_Prep)) here_Adv))
 AllRus: для чего Иван здесь гуляет
 
+AllRusAbs: PastPartAP (AdvVPSlash (SlashVV must_VV (VPSlashPrep scared_VP above_Prep)) somewhere_Adv)
+AllRus: должен бояться где-нибудь
+
+AllRusAbs: PastPartAP (SlashV2A paint_V2A (AdvAP (PositA uncertain_A) there_Adv))
+AllRus: рисован там неопределённым
+
+AllRusAbs: AdjCN (PastPartAP (SlashV2V beg_V2V (ComplVA become_VA (AdjOrd left_Ord)))) (UseN cat_N)
+AllRus: прошен &+ а становиться левой кошка
+
 AllRusAbs: ImpVP (AdvVP (AdVVP always_AdV (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday))
 AllRus: будь всегда голоден сам в следующую пятницу
+
+AllRusAbs: AdjCN (PastPartAgentAP (VPSlashPrep ill_VP after_Prep) (DetNP every_Det)) (UseN woman_N)
+AllRus: после каждого больна женщина
 
 AllRusAbs: PredSCVP (EmbedQS (UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv (AdvIAdv how8much_IAdv everywhere_Adv) (ExistNP nobody_NP)))) hungry_VP
 AllRus: сколько везде никто не существовал бы быть голодно

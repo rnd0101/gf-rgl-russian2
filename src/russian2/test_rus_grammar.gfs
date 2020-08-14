@@ -45,8 +45,11 @@ gt RelCN (UseN woman_N) (UseRCl (TTAnt TPast ASimul) ? (RelSlash IdRP ( SlashVS 
 gt UseCl (TTAnt TPres AAnter) PPos (ExistNP everything_NP) | l -treebank
 gt SSubjS (UseCl (TTAnt TPres AAnter) PPos (ExistNP everything_NP)) because_Subj (UseCl (TTAnt TPres AAnter) PPos (ExistNP everything_NP)) | l -treebank
 gt UseQCl (TTAnt TPres ASimul) PPos (QuestSlash whatSg_IP (AdvSlash (SlashVP (UsePN john_PN) (VPSlashPrep (UseV walk_V) for_Prep)) here_Adv ) )  | l -treebank
-
+gt PastPartAP (AdvVPSlash (SlashVV must_VV (VPSlashPrep scared_VP above_Prep)) somewhere_Adv) |l -treebank
+gt PastPartAP (SlashV2A paint_V2A (AdvAP (PositA uncertain_A) there_Adv)) |l -treebank
+gt AdjCN (PastPartAP (SlashV2V beg_V2V (ComplVA become_VA (AdjOrd left_Ord)))) (UseN cat_N) |l -treebank
 gt ImpVP (AdvVP (AdVVP always_AdV (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday)) |l -treebank
+gt AdjCN (PastPartAgentAP (VPSlashPrep ill_VP after_Prep) (DetNP every_Det)) (UseN woman_N) |l -treebank
 
 gt PredSCVP (EmbedQS (UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv (AdvIAdv how8much_IAdv everywhere_Adv) (ExistNP nobody_NP)))) hungry_VP | l -treebank
 gt RelCl (PredSCVP (EmbedQS (UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv (AdvIAdv how8much_IAdv everywhere_Adv) (ExistNP nobody_NP)))) hungry_VP) | l -treebank
