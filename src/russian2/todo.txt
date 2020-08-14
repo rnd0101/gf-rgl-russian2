@@ -176,3 +176,7 @@ AllRus: Некое самые маленькие
 
 AllRusAbs: UttCN (RelCN (UseN woman_N) (UseRCl (TTAnt TPres ASimul) PPos (RelVP IdRP (ComplSlash (SlashV2A paint_V2A (AdAP very_AdA (PositA red_A))) (UsePron it_Pron)))))
 AllRus: Женщина, которая рисует очень красную его
+
+AllRusAbs: UttCN (RelCN (UseN child_N) (UseRCl (TTAnt TPres ASimul) PPos (RelVP (FunRP part_Prep (PredetNP all_Predet (DetCN (DetQuant DefArt NumPl) (UseN teacher_N))) IdRP) (UseComp (CompAP (PositA young_A)
+)))))
+AllRus: Ребёнок, все учителя которого является молодым
