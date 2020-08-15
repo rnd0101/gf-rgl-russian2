@@ -573,6 +573,9 @@ oper
         guessVerbForms asp tran inf (stem+"ю") (stem+"ет")
     } ;
 
+  mkVplus : VerbForms -> VerbForms
+    = \vf -> vf ;
+
   quickGuessVerbForms : Str -> VerbForms
     = \inf ->
       let stem_info = infStemFromVerb inf in
