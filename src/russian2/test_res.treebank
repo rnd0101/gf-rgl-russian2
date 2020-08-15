@@ -4170,6 +4170,180 @@ AllRus: Иван будет говорить : « в следующее воск
 AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePN john_PN) (ComplDirectVQ know_VQ (UttAdv (weekdayNextAdv sunday_Weekday))))
 AllRus: Иван знал : « в следующее воскресенье »
 
+AllRusAbs: has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))
+AllRus: быть по меньшей мере восемь лет
+
+AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван не был бы по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван был бы по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван не был бы по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван был бы по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван не будет по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван будет по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван не будет по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван будет по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван не был по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван был по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван не был по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван был по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван не по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван не по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePN john_PN) (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))))
+AllRus: Иван по меньшей мере восемь лет
+
+AllRusAbs: VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep
+AllRus: быть по меньшей мере восемь лет
+
+AllRusAbs: ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)
+AllRus: быть Ивану по меньшей мере восемь лет
+
+AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не бы &+ ло бы Ивану восемь лет
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: бы &+ ло бы Ивану восемь лет
+AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не бы &+ ло бы Ивану восемь лет
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: бы &+ ло бы Ивану восемь лет
+AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не будет Ивану восемь лет
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: будет Ивану восемь лет
+AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не будет Ивану восемь лет
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: будет Ивану восемь лет
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не бы &+ ло Ивану восемь лет
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: бы &+ ло Ивану восемь лет
+AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не бы &+ ло Ивану восемь лет
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: бы &+ ло Ивану восемь лет
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не Ивану восемь лет
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: Ивану восемь лет
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не Ивану восемь лет
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: Ивану восемь лет
+
+AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не бы &+ ло бы Ивану по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: бы &+ ло бы Ивану по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не бы &+ ло бы Ивану по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: бы &+ ло бы Ивану по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не будет Ивану по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: будет Ивану по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не будет Ивану по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: будет Ивану по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не бы &+ ло Ивану по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: бы &+ ло Ивану по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не бы &+ ло Ивану по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: бы &+ ло Ивану по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не Ивану по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: Ивану по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не Ивану по меньшей мере восемь лет
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: Ивану по меньшей мере восемь лет
+
+AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: не бы &+ ло бы яблоку два года
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: бы &+ ло бы яблоку два года
+AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: не бы &+ ло бы яблоку два года
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: бы &+ ло бы яблоку два года
+AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: не будет яблоку два года
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: будет яблоку два года
+AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: не будет яблоку два года
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: будет яблоку два года
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: не бы &+ ло яблоку два года
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: бы &+ ло яблоку два года
+AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: не бы &+ ло яблоку два года
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: бы &+ ло яблоку два года
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: не яблоку два года
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: яблоку два года
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: не яблоку два года
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) to_dat_Prep) (MassNP (UseN apple_N))))
+AllRus: яблоку два года
+
+AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не бы &+ ло бы Ивану один год
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: бы &+ ло бы Ивану один год
+AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не бы &+ ло бы Ивану один год
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: бы &+ ло бы Ивану один год
+AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не будет Ивану один год
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: будет Ивану один год
+AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не будет Ивану один год
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: будет Ивану один год
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не бы &+ ло Ивану один год
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: бы &+ ло Ивану один год
+AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не бы &+ ло Ивану один год
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: бы &+ ло Ивану один год
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не Ивану один год
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: Ивану один год
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: не Ивану один год
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
+AllRus: Ивану один год
+
 AllRusAbs: FocusObj (UsePron she_Pron) (UseSlash (TTAnt TCond AAnter) PNeg (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN))))
 AllRus: с н &+ ей Иван не говорил бы о Париже
 AllRusAbs: FocusObj (UsePron she_Pron) (UseSlash (TTAnt TCond AAnter) PPos (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN))))

@@ -39,6 +39,14 @@ lin
   -- : NP -> QCl ;          -- what is x's name / wie heisst x (Ger)
   what_name_QCl np = QuestIAdv how_IAdv (GenericCl (ComplSlash (SlashV2a (P.mkV2 (P.mkV Imperfective "звать" "зову" "зовёт") Acc)) np)) ;
 
+  -- : Card -> VP ;         -- x is y years old / x a y ans (Fre)
+  has_age_VP card = {
+    adv=\\a => [] ;
+    verb=copulaEll ;
+    dep=[] ;
+    compl=\\p,a => (timeunitAdv card year_Timeunit).s;
+    } ;
+
   -- : NP -> QCl ;          -- how old is x / quanti anni ha x (Ita)
   how_old_QCl np = {
     subj=how8much_IAdv.s ;

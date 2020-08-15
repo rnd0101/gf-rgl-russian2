@@ -219,6 +219,17 @@ gt ProgrVP (ComplDirectVQ know_VQ (UttAdv (weekdayNextAdv sunday_Weekday))) | l 
 gt UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePN john_PN) (ComplDirectVS say_VS (UttAdv (weekdayNextAdv sunday_Weekday)))) | l -treebank
 gt UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePN john_PN) (ComplDirectVQ know_VQ (UttAdv (weekdayNextAdv sunday_Weekday)))) | l -treebank
 
+gt has_age_VP (  (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) )  |l -treebank
+gt UseCl ? ? (PredVP (UsePN john_PN)  ( has_age_VP (  (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) )  ) )  |l -treebank
+
+gt VPSlashPrep  (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))))  to_dat_Prep | l -treebank
+gt ComplSlash  (VPSlashPrep  (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))))  to_dat_Prep)   (UsePN john_PN) |l -treebank
+gt UseCl ? ? (ImpersCl (ComplSlash  (VPSlashPrep  (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))  to_dat_Prep)   (UsePN john_PN))) | l -treebank
+gt UseCl ? ? (ImpersCl (ComplSlash  (VPSlashPrep  (has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))))  to_dat_Prep)   (UsePN john_PN))) | l -treebank
+
+gt UseCl ? ? (ImpersCl (ComplSlash  (VPSlashPrep  (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2)))))))  to_dat_Prep)   (MassNP (UseN apple_N)))) | l -treebank
+gt UseCl ? ? (ImpersCl (ComplSlash  (VPSlashPrep  (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot01)))))))  to_dat_Prep)   (UsePN john_PN))) | l -treebank
+
 gt FocusObj (UsePron she_Pron) ( UseSlash (TTAnt TCond AAnter) ? (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN))) )  | l -treebank
 
 gt UseCl (TTAnt ? ASimul) PNeg (ExistsNP (MassNP (UseN number_N))) | l -treebank
