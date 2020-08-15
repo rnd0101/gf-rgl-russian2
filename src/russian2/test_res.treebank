@@ -4326,3 +4326,36 @@ AllRus: как далеко Париж
 AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (how_far_QCl (UsePN paris_PN))
 AllRus: как далеко Париж
 
+AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (weather_adjCl (PositA warm_A))
+AllRus: не бы &+ ло бы тепло
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (weather_adjCl (PositA warm_A))
+AllRus: бы &+ ло бы тепло
+AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (weather_adjCl (PositA warm_A))
+AllRus: не бы &+ ло бы тепло
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (weather_adjCl (PositA warm_A))
+AllRus: бы &+ ло бы тепло
+AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (weather_adjCl (PositA warm_A))
+AllRus: не будет тепло
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (weather_adjCl (PositA warm_A))
+AllRus: будет тепло
+AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (weather_adjCl (PositA warm_A))
+AllRus: не будет тепло
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (weather_adjCl (PositA warm_A))
+AllRus: будет тепло
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (weather_adjCl (PositA warm_A))
+AllRus: не бы &+ ло тепло
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (weather_adjCl (PositA warm_A))
+AllRus: бы &+ ло тепло
+AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (weather_adjCl (PositA warm_A))
+AllRus: не бы &+ ло тепло
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (weather_adjCl (PositA warm_A))
+AllRus: бы &+ ло тепло
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (weather_adjCl (PositA warm_A))
+AllRus: не тепло
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (weather_adjCl (PositA warm_A))
+AllRus: тепло
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (weather_adjCl (PositA warm_A))
+AllRus: не тепло
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (weather_adjCl (PositA warm_A))
+AllRus: тепло
+

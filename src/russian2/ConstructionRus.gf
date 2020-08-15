@@ -39,6 +39,16 @@ lin
   -- : NP -> QCl ;          -- what is x's name / wie heisst x (Ger)
   what_name_QCl np = QuestIAdv how_IAdv (GenericCl (ComplSlash (SlashV2a (P.mkV2 (P.mkV Imperfective "звать" "зову" "зовёт") Acc)) np)) ;
 
+  -- : AP -> Cl ;           -- it is warm / il fait chaud (Fre)
+  weather_adjCl ap = {
+    subj=[] ;
+    adv=[] ;
+    verb=copulaEll ;
+    dep=ap.short ! Ag (GSg Neut) P3 ;
+    compl=\\p=>[] ;
+    a=Ag (GSg Neut) P3
+    } ;
+
   -- : NP -> NP -> Cl ;     -- x's name is y / x s'appelle y (Fre)
   have_name_Cl np np1 = {
     subj=[];

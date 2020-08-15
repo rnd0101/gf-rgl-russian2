@@ -1411,7 +1411,11 @@ AllRus: Оно является что она спит хорошим
 AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron it_Pron) (UseComp (CompAP (SentAP (PositA good_A) (EmbedS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (UseV sleep_V)))))))))
 AllRus: Оно хороше что она спит
 
+AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (weather_adjCl (AdvAP (PositA good_A) (SubjS that_Subj (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (UseV sleep_V)))))))
+AllRus: Что она спит хороше
 
+AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (weather_adjCl (SentAP (PositA good_A) (EmbedS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (UseV sleep_V)))))))
+AllRus: Хороше что она спит
 
 AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (ImpersCl (UseComp (CompAP (SentAP (PositA uncertain_A) (EmbedQS (UseQCl (TTAnt TPres ASimul) PPos (QuestVP whoSg_IP (UseV sleep_V)))))))))
 AllRus: Неопределённо кто спит
@@ -1422,6 +1426,8 @@ AllRus: Данное неопределённо кто спит
 AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron it_Pron) (UseComp (CompAP (SentAP (PositA uncertain_A) (EmbedQS (UseQCl (TTAnt TPres ASimul) PPos (QuestVP whoSg_IP (UseV sleep_V)))))))))
 AllRus: Оно неопределённо кто спит
 
+AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (weather_adjCl (SentAP (PositA uncertain_A) (EmbedQS (UseQCl (TTAnt TPres ASimul) PPos (QuestVP whoSg_IP (UseV sleep_V)))))))
+AllRus: Неопределённо кто спит
 
 AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (UseComp (CompAP (SentAP (PositA ready_A) (EmbedVP (UseV sleep_V)))))))
 AllRus: Она готова спать

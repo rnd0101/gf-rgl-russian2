@@ -232,3 +232,4 @@ gt UseCl ? ? (  PredSCVP (EmbedVP (UseV play_V))  (UseComp (CompAP (PositA clean
 gt UseCl (TTAnt TPres ASimul) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompCN (AdjCN (PositA clean_A) (UseN war_N))))) | l -treebank
 
 gt UseQCl ? PPos (how_far_QCl (UsePN paris_PN)) | l -treebank
+gt UseCl ? ? (weather_adjCl (PositA warm_A)) | l -treebank
