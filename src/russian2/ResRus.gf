@@ -560,6 +560,19 @@ oper
       let corr_tran = case guessed.p2 of {Reflexive=>Intransitive ; NonReflexive=>tran} in
       makeVerb inf sg1 sg3 guessed.p1 asp corr_tran guessed.p2 ;
 
+  guessIrregularVerbForms : Aspect -> Transitivity -> Str -> VerbForms
+    = \asp,tran,inf -> case inf of {
+     s + ("есть"  |"есться") => makeVerbEst asp tran inf ;
+     s + ("дать"  |"даться") => makeVerbDat6 asp tran inf ;
+     s + ("хотеть"|"хотеться") => makeVerbKhotet6 asp tran inf ;
+     s + ("быть"  |"быться") => makeVerbByt6 asp tran inf ;
+     "идти" => makeVerbJti asp tran inf ;
+     s + ("йти" |"йтись") => makeVerbJti asp tran inf ;
+      _ => let stem_info = infStemFromVerb inf in
+        let stem = stem_info.p1 in
+        guessVerbForms asp tran inf (stem+"ю") (stem+"ет")
+    } ;
+
   quickGuessVerbForms : Str -> VerbForms
     = \inf ->
       let stem_info = infStemFromVerb inf in

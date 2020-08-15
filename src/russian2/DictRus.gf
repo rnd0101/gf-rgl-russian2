@@ -982,7 +982,7 @@ lin
   brositq_V = mkV perfective transitive "бросить" "брошу" "бросит" "4a" ;
   brositqsja_V = mkV perfective intransitive "броситься" "брошусь" "бросится" "4a" ;
   byvatq_V = mkV imperfective transitive "бывать" "бываю" "бывает" "1a" ;
-  -- bytq_V = mkV imperfective transitive "быть" ;  ---- гл ru ^a/c
+  bytq_V = mkV imperfective transitive "быть" ;  ---- гл ru ^a/c
   valjatqsja_V = mkV imperfective intransitive "валяться" "валяюсь" "валяется" "1a" ;
   varitq_V = mkV imperfective transitive "варить" "варю" "варит" "4c" ;
   vvesti_V = mkV perfective transitive "ввести" "введу" "введёт" "7b/b" ;
@@ -1018,7 +1018,7 @@ lin
   vozrazhatq_V = mkV imperfective transitive "возражать" "возражаю" "возражает" "1a" ;
   vozrazitq_V = mkV perfective transitive "возразить" "возражу" "возразит" "4b" ;
   vozrasti_V = mkV perfective transitive "возрасти" "возрасту" "возрастёт" "7b/b" ;
-  -- vojti_V = mkV perfective transitive "войти" ;  ---- гл ru ^b/b(9)СВ |основа=вой |основа1=вош |НП=1 |соотв=входить
+  vojti_V = mkV perfective transitive "войти" ;
   volnovatq_V = mkV imperfective transitive "волновать" "волную" "волнует" "2a" ;
   volnovatqsja_V = mkV imperfective intransitive "волноваться" "волнуюсь" "волнуется" "2a" ;
   voskliknutq_V = mkV perfective transitive "воскликнуть" "воскликну" "воскликнет" "3a" ;
@@ -1045,7 +1045,7 @@ lin
   vyvesti_V = mkV perfective transitive "вывести" "выведу" "выведет" ;
   vygljadetq_V = mkV imperfective transitive "выглядеть" "выгляжу" "выглядит" "5a" ;
   vydavatq_V = mkV imperfective transitive "выдавать" "выдаю" "выдаёт" "13b" ;
-  -- vydatq_V = mkV perfective transitive "выдать" ;  ---- гл ru ^aСВ |основа=вы́да |соотв=выдавать
+  vydatq_V = mkV perfective transitive "выдать" ;  ---- гл ru ^aСВ |основа=вы́да |соотв=выдавать
   vydelitq_V = mkV perfective transitive "выделить" "выделю" "выделит" "4a" ;
   vydeljatq_V = mkV imperfective transitive "выделять" "выделяю" "выделяет" "1a" ;
   vydeljatqsja_V = mkV imperfective intransitive "выделяться" "выделяюсь" "выделяется" "1a" ;
@@ -1054,7 +1054,7 @@ lin
   vyzvatq_V = mkV perfective transitive "вызвать" "вызову" "вызовет" "6°a" ;
   vyzyvatq_V = mkV imperfective transitive "вызывать" "вызываю" "вызывает" "1a" ;
   vyigratq_V = mkV perfective transitive "выиграть" "выиграю" "выиграет" "1a" ;
-  -- vyjti_V = mkV perfective intransitive "выйти" ;  ---- гл ru ^a(9)СВ |основа=вы́й |основа1=вы́ш |НП=1 |соотв=выходить
+  vyjti_V = mkV perfective intransitive "выйти" ;
   vynesti_V = mkV perfective transitive "вынести" "вынесу" "вынесет" ;
   vynositq_V = mkV perfective transitive "выносить" "выношу" "выносит" "4a" ;
   vynuditq_V = mkV perfective transitive "вынудить" "вынудю" "вынудит" "4a" ;
@@ -1096,7 +1096,7 @@ lin
   guljatq_V = mkV imperfective transitive "гулять" "гуляю" "гуляет" "1a" ;
   davatq_V = mkV imperfective transitive "давать" "даю" "даёт" "13b" ;
   davatqsja_V = mkV imperfective intransitive "даваться" "даюсь" "даётся" "13b" ;
-  -- datq_V = mkV perfective transitive "дать" ;  ---- гл ru ^b/c'СВ |основа=да́ |основа1=да |соотв=давать |коммент=. В сочетании форм прошедшего времени с частицой «не» ударение может переходить на частицу: «не́ дал», «не́ дало», «не́ дали» (но при этом всегда: «не дала́»); формы глагола же при этом превращаются в клитику
+  datq_V = mkV perfective transitive "дать" ;  ---- гл ru ^b/c'СВ |основа=да́ |основа1=да |соотв=давать |коммент=. В сочетании форм прошедшего времени с частицой «не» ударение может переходить на частицу: «не́ дал», «не́ дало», «не́ дали» (но при этом всегда: «не дала́»); формы глагола же при этом превращаются в клитику
   dvigatqsja_V = mkV imperfective intransitive "двигаться" "движусь" "движется" "6a" ;
   dvinutqsja_V = mkV perfective intransitive "двинуться" "двинусь" "двинется" "3a" ;
   dejstvovatq_V = mkV imperfective transitive "действовать" "действую" "действует" "2a" ;
@@ -1119,7 +1119,7 @@ lin
   dogovoritqsja_V = mkV perfective intransitive "договориться" "договорюсь" "договорится" "4b" ;
   -- dozhdatqsja_V = mkV perfective intransitive "дождаться" ;  ---- гл ru 6°b/c-сяСВ |основа=дожд |основа1=дожд |соотв=дожидаться
   -- dozhidatqsja_V = mkV imperfective intransitive "дожидаться" ;  ---- гл ru 1a-ся |основа=дожида́ |соотв=дождаться
-  -- dojti_V = mkV perfective transitive "дойти" ;  ---- гл ru ^b/b(9)СВ |основа=дой |основа1=дош |соотв=доходи́ть |НП=1
+  dojti_V = mkV perfective transitive "дойти" ;
   dokazatq_V = mkV perfective transitive "доказать" "докажу" "докажет" "6c" ;
   dokazyvatq_V = mkV imperfective transitive "доказывать" "доказываю" "доказывает" "1a" ;
   dolozhitq_V = mkV perfective transitive "доложить" "доложу" "доложит" "4c" ;
@@ -1137,7 +1137,7 @@ lin
   dumatq_V = mkV imperfective transitive "думать" "думаю" "думает" "1a" ;
   dyshatq_V = mkV imperfective transitive "дышать" "дышу" "дышит" ;
   ezditq_V = mkV imperfective transitive "ездить" "езжу" "ездит" "4a" ;
-  -- estq_V = mkV imperfective transitive "есть" "ем" "ест" ;
+  estq_V = mkV imperfective transitive "есть" ;
   ehatq_V = mkV imperfective transitive "ехать" "еду" "едет" ;
   zhaletq_V = mkV imperfective transitive "жалеть" "жалею" "жалеет" ;
   zhalovatqsja_V = mkV imperfective intransitive "жаловаться" "жалуюсь" "жалуется" "2a" ;
@@ -1149,7 +1149,7 @@ lin
   zabotitqsja_V = mkV imperfective intransitive "заботиться" "забочусь" "заботится" "4a" ;
   zabratq_V = mkV perfective transitive "забрать" "заберу" "заберёт" "6°b/c" ;
   zabyvatq_V = mkV imperfective transitive "забывать" "забываю" "забывает" "1a" ;
-  -- zabytq_V = mkV perfective transitive "забыть" "забуду" "забудет" ;
+  zabytq_V = mkV perfective transitive "забыть" ;
   zavershitq_V = mkV perfective transitive "завершить" "завершу" "завершит" "4b" ;
   zavesti_V = mkV perfective transitive "завести" "заведу" "заведёт" ;
   zavisetq_V = mkV imperfective transitive "зависеть" "завишу" "зависит" "5a" ;
@@ -1157,12 +1157,12 @@ lin
   zagljanutq_V = mkV perfective transitive "заглянуть" "загляну" "заглянет" "3c" ;
   zagovoritq_V = mkV perfective transitive "заговорить" "заговорю" "заговорит" "4b" ;
   zadavatq_V = mkV imperfective transitive "задавать" "задаю" "задаёт" "13b" ;
-  -- zadatq_V = mkV perfective transitive "задать" ;  ---- гл ru ^b/c((1))СВ |основа=зад |основа1=за́д |НП= |соотв=задавать
+  zadatq_V = mkV perfective transitive "задать" ;  ---- гл ru ^b/c((1))СВ |основа=зад |основа1=за́д |НП= |соотв=задавать
   zaderzhatq_V = mkV perfective transitive "задержать" "задержу" "задержит" "5c" ;
   zadumatqsja_V = mkV perfective intransitive "задуматься" "задумаюсь" "задумается" "1a" ;
   zadumyvatqsja_V = mkV imperfective intransitive "задумываться" "задумываюсь" "задумывается" "1a" ;
   zainteresovatq_V = mkV perfective transitive "заинтересовать" "заинтересую" "заинтересует" "2a" ;
-  -- zajti_V = mkV perfective transitive "зайти" ;  ---- гл ru ^b/b(9)СВ |основа=зай |основа1=заш |НП=1 |соотв=заходи́ть
+  zajti_V = mkV perfective transitive "зайти" ;
   zakazatq_V = mkV perfective transitive "заказать" "закажу" "закажет" "6c" ;
   zakanchivatqsja_V = mkV imperfective intransitive "заканчиваться" "заканчиваюсь" "заканчивается" "1a" ;
   -- zakljuchatqsja_V = mkV imperfective transitive "заключаться" ;  ---- гл ru -сяНСВ |основа= |соотв=
@@ -1200,8 +1200,8 @@ lin
   zastavljatq_V = mkV imperfective transitive "заставлять" "заставляю" "заставляет" "1a" ;
   zahvatitq_V = mkV perfective transitive "захватить" "захвачу" "захватит" "4c" ;
   zahoditq_V = mkV imperfective transitive "заходить" "захожу" "заходит" "4c" ;
-  zahotetq_V = mkV perfective transitive "захотеть" "захочу" "захочет" "5c'";
-  -- zahotetqsja_V = mkV perfective intransitive "захотеться" ;  ---- гл ru 5c'^-т-сяСВ |основа=захот |основа1=захо́ч |безличный=1 |соотв=хотеться
+  zahotetq_V = mkV perfective transitive "захотеть" ;
+  zahotetqsja_V = mkV perfective intransitive "захотеться" ;
   zaszititq_V = mkV perfective transitive "защитить" "защищу" "защитит" "4b" ;
   zasziszatq_V = mkV imperfective transitive "защищать" "защищаю" "защищает" "1a" ;
   zajavitq_V = mkV perfective transitive "заявить" "заявлю" "заявит" "4c" ;
@@ -1213,12 +1213,12 @@ lin
   znatq_V = mkV imperfective transitive "знать" "знаю" "знает" "1a" ;
   znachitq_V = mkV imperfective transitive "значить" "значу" "значит" "4a" ;
   igratq_V = mkV imperfective transitive "играть" "играю" "играет" "1a" ;
-  -- idti_V = mkV imperfective intransitive "идти" "иду" "идёт" ;
+  idti_V = mkV imperfective intransitive "идти" ;
   izbavitqsja_V = mkV perfective intransitive "избавиться" "избавлюсь" "избавится" "4a" ;
   izbezhatq_V = mkV perfective transitive "избежать" "избегу" "избежит" "5b" ;
   izbratq_V = mkV perfective transitive "избрать" "изберу" "изберёт" "6°b/c" ;
   izvinitq_V = mkV perfective transitive "извинить" "извиню" "извинит" "4b" ;
-  -- izdatq_V = mkV perfective transitive "издать" ;  ---- гл ru ^b/cСВ |основа=изда́ |основа1=изда |основа2=изда́ |основа3=и́зда |соотв=издавать
+  izdatq_V = mkV perfective transitive "издать" ;  ---- гл ru ^b/cСВ |основа=изда́ |основа1=изда |основа2=изда́ |основа3=и́зда |соотв=издавать
   izlozhitq_V = mkV perfective transitive "изложить" "изложу" "изложит" "4c" ;
   izmenitq_V = mkV perfective transitive "изменить" "изменю" "изменит" ;
   izmenitqsja_V = mkV perfective intransitive "измениться" "изменюсь" "изменится" "4c" ;
@@ -1294,8 +1294,8 @@ lin
   naznachitq_V = mkV perfective transitive "назначить" "назначу" "назначит" "4a" ;
   nazyvatq_V = mkV imperfective transitive "называть" "называю" "называет" "1a" ;
   nazyvatqsja_V = mkV imperfective intransitive "называться" "называюсь" "называется" "1a" ;
-  -- najti_V = mkV perfective transitive "найти" ;  ---- гл ru ^b/b(9)СВ |основа=най |основа1=наш |ПричСтрад=на́йденный |соотв=находить |коммент=Основная форма прич. страд. — [[найденный|на́йденный]]: устар.|- форма: [[найдённый]].
-  -- najtisq_V = mkV perfective intransitive "найтись" ;  ---- гл ru ^b/b(9)-сяСВ |основа=най |основа1=наш |соотв=находиться
+  najti_V = mkV perfective transitive "найти" ;
+  najtisq_V = mkV perfective intransitive "найтись" ;
   nalitq_V = mkV perfective transitive "налить" "налью" "нальёт" "11b/c" ;
   nanesti_V = mkV perfective transitive "нанести" "нанесу" "нанесёт" ;
   napechatatq_V = mkV perfective transitive "напечатать" "напечатаю" "напечатает" "1a" ;
@@ -1335,8 +1335,8 @@ lin
   obnaruzhitq_V = mkV perfective transitive "обнаружить" "обнаружу" "обнаружит" "4a" ;
   obnjatq_V = mkV perfective transitive "обнять" "обниму" "обнимет" ;
   oboznachitq_V = mkV perfective transitive "обозначить" "обозначу" "обозначит" "4a" ;
-  -- obojti_V = mkV perfective transitive "обойти" ;  ---- гл ru ^b/b(9)СВ |основа=обой |основа1=обош |ПричСтрад=обойдённый |соотв=обходить
-  -- obojtisq_V = mkV perfective intransitive "обойтись" ;  ---- гл ru ^b/b(9)-сяСВ |основа=обой |основа1=обош |соотв=обходиться
+  obojti_V = mkV perfective transitive "обойти" ;
+  obojtisq_V = mkV perfective intransitive "обойтись" ;
   obradovatqsja_V = mkV perfective intransitive "обрадоваться" "обрадуюсь" "обрадуется" "2a" ;
   obrazovatqsja_V = mkV perfective intransitive "образоваться" "образуюсь" "образуется" "2a" ;
   obrazovyvatq_V = mkV imperfective transitive "образовывать" "образовываю" "образовывает" "1a" ;
@@ -1399,7 +1399,7 @@ lin
   otvetitq_V = mkV perfective transitive "ответить" "отвечу" "ответит" "4a" ;
   otvechatq_V = mkV imperfective transitive "отвечать" "отвечаю" "отвечает" "1a" ;
   otdavatq_V = mkV imperfective transitive "отдавать" "отдаю" "отдаёт" "13b" ;
-  -- otdatq_V = mkV perfective transitive "отдать" ;  ---- гл ru ^b/c((1))СВ |основа=отд |основа1=о́тд |соотв=отдавать |коммент=Форма "отда́л" и "о́тдана" считаются разг.|-.
+  otdatq_V = mkV perfective transitive "отдать" ;  ---- гл ru ^b/c((1))СВ |основа=отд |основа1=о́тд |соотв=отдавать |коммент=Форма "отда́л" и "о́тдана" считаются разг.|-.
   otdohnutq_V = mkV perfective transitive "отдохнуть" "отдохну" "отдохнёт" "3b" ;
   otdyhatq_V = mkV imperfective transitive "отдыхать" "отдыхаю" "отдыхает" "1a" ;
   otkazatq_V = mkV perfective transitive "отказать" "откажу" "откажет" "6c" ;
@@ -1419,7 +1419,7 @@ lin
   otnositqsja_V = mkV imperfective intransitive "относиться" "отношусь" "относится" "4c" ;
   otobratq_V = mkV perfective transitive "отобрать" "отберу" "отберёт" ;
   otozvatqsja_V = mkV perfective intransitive "отозваться" "отзовусь" "отзовётся" "6°b/c" ;
-  -- otojti_V = mkV perfective transitive "отойти" ;  ---- гл ru ^b/b(9)СВ |основа=отой |основа1=отош |соотв=отходить
+  otojti_V = mkV perfective transitive "отойти" ;
   otorvatq_V = mkV perfective transitive "оторвать" "оторву" "оторвёт" "6°b/c" ;
   otpravitq_V = mkV perfective transitive "отправить" "отправлю" "отправит" "4a" ;
   otpravitqsja_V = mkV perfective intransitive "отправиться" "отправлюсь" "отправится" "4a" ;
@@ -1441,11 +1441,11 @@ lin
   perevesti_V = mkV perfective transitive "перевести" "переведу" "переведёт" "7b/b" ;
   perevoditq_V = mkV imperfective transitive "переводить" "перевожу" "переводит" "4c" ;
   peredavatq_V = mkV imperfective transitive "передавать" "передаю" "передаёт" "13b" ;
-  -- peredatq_V = mkV perfective transitive "передать" ;  ---- гл ru ^b/c((1))СВ |основа=перед |основа1=пе́ред |соотв=передавать
+  peredatq_V = mkV perfective transitive "передать" ;  ---- гл ru ^b/c((1))СВ |основа=перед |основа1=пе́ред |соотв=передавать
   pereehatq_V = mkV perfective intransitive "переехать" "перееду" "переедет" ;
   perezhivatq_V = mkV imperfective transitive "переживать" "переживаю" "переживает" "1a" ;
   perezhitq_V = mkV perfective transitive "пережить" "переживу" "переживёт" ;
-  -- perejti_V = mkV perfective transitive "перейти" ;  ---- гл ru ^b/b(9)СВ |основа=перей |основа1=переш |ПричСтрад=перейдённый |соотв=переходить
+  perejti_V = mkV perfective transitive "перейти" ;
   perenesti_V = mkV perfective transitive "перенести" "перенесу" "перенесёт" ;
   perestavatq_V = mkV imperfective transitive "переставать" "перестаю" "перестаёт" "13b" ;
   perestatq_V = mkV perfective transitive "перестать" "перестану" "перестанет" "15a" ;
@@ -1477,7 +1477,7 @@ lin
   pogovoritq_V = mkV perfective transitive "поговорить" "поговорю" "поговорит" "4b" ;
   podavatq_V = mkV imperfective transitive "подавать" "подаю" "подаёт" "13b" ;
   podaritq_V = mkV perfective transitive "подарить" "подарю" "подарит" "4c" ;
-  -- podatq_V = mkV perfective transitive "подать" ;  ---- гл ru ^b/c((1))СВ |основа=под |основа1=по́д |соотв=подавать
+  podatq_V = mkV perfective transitive "подать" ;  ---- гл ru ^b/c((1))СВ |основа=под |основа1=по́д |соотв=подавать
   podvesti_V = mkV perfective transitive "подвести" "подведу" "подведёт" "7b/b" ;
   podgotovitq_V = mkV perfective transitive "подготовить" "подготовлю" "подготовит" "4a" ;
   podderzhatq_V = mkV perfective transitive "поддержать" "поддержу" "поддержит" "5c" ;
@@ -1491,7 +1491,7 @@ lin
   podobratq_V = mkV perfective transitive "подобрать" "подберу" "подберёт" ;
   -- podozhdatq_V = mkV perfective transitive "подождать" ;  ---- гл ru 6°b/cXСВ |основа=подожд |основа1=подожд |соотв=ждать
   podozrevatq_V = mkV imperfective transitive "подозревать" "подозреваю" "подозревает" "1a" ;
-  -- podojti_V = mkV perfective transitive "подойти" ;  ---- гл ru ^b/b(9)СВ |основа=подой |основа1=подош |НП=1 |соотв=подходить
+  podojti_V = mkV perfective transitive "подойти" ;
   podpisatq_V = mkV perfective transitive "подписать" "подпишу" "подпишет" "6c" ;
   podtverditq_V = mkV perfective transitive "подтвердить" "подтвержу" "подтвердит" "4b" ;
   -- podtverzhdatq_V = mkV imperfective transitive "подтверждать" ;  ---- гл ru 1a |основа=подтвержда́ |соотв=подтвердить
@@ -1511,7 +1511,7 @@ lin
   poznakomitqsja_V = mkV perfective intransitive "познакомиться" "познакомлюсь" "познакомится" "4a" ;
   pointeresovatqsja_V = mkV perfective intransitive "поинтересоваться" "поинтересуюсь" "поинтересуется" "2a" ;
   pojmatq_V = mkV perfective transitive "поймать" "поймаю" "поймает" "1a" ;
-  -- pojti_V = mkV perfective transitive "пойти" ;  ---- гл ru ^b/b(9)СВ |основа=пой |основа1=пош |соотв=идти |НП=1
+  pojti_V = mkV perfective transitive "пойти" ;
   pokazatq_V = mkV perfective transitive "показать" "покажу" "покажет" "6c" ;
   pokazatqsja_V = mkV perfective intransitive "показаться" "покажусь" "покажется" "6c" ;
   pokazyvatq_V = mkV imperfective transitive "показывать" "показываю" "показывает" "1a" ;
@@ -1609,7 +1609,7 @@ lin
   preodoletq_V = mkV perfective transitive "преодолеть" "преодолею" "преодолеет" "1a" ;
   prervatq_V = mkV perfective transitive "прервать" "прерву" "прервёт" "6°b/c" ;
   priblizhatqsja_V = mkV imperfective intransitive "приближаться" "приближаюсь" "приближается" "1a" ;
-  -- pribytq_V = mkV perfective transitive "прибыть" "прибуду" "прибудет" ;
+  pribytq_V = mkV perfective transitive "прибыть"  ;
   privezti_V = mkV perfective transitive "привезти" "привезу" "привезёт" ;
   privesti_V = mkV perfective transitive "привести" "приведу" "приведёт" "7b/b" ;
   privlekatq_V = mkV imperfective transitive "привлекать" "привлекаю" "привлекает" "1a" ;
@@ -1629,8 +1629,8 @@ lin
   priznatq_V = mkV perfective transitive "признать" "признаю" "признает" "1a" ;
   priznatqsja_V = mkV perfective intransitive "признаться" "признаюсь" "признается" "1a" ;
   prizyvatq_V = mkV imperfective transitive "призывать" "призываю" "призывает" "1a" ;
-  -- prijti_V = mkV perfective transitive "прийти" ;  ---- гл ru ^b/b(9)СВ |основа=при |основа1=приш |соотв=приходить |НП=1
-  -- prijtisq_V = mkV perfective intransitive "прийтись" ;  ---- гл ru ^b/b(9)-сяСВ |основа=при |основа1=приш |соотв=приходиться
+  prijti_V = mkV perfective transitive "прийти" ;
+  prijtisq_V = mkV perfective intransitive "прийтись" ;
   prikazatq_V = mkV perfective transitive "приказать" "прикажу" "прикажет" "6c" ;
   -- prikrytq_V = mkV perfective transitive "прикрыть" ;  ---- гл ru 12aСВ |основа=прикры́ |основа1=прикро́ |соотв=прикрывать
   primenjatq_V = mkV imperfective transitive "применять" "применяю" "применяет" "1a" ;
@@ -1661,7 +1661,7 @@ lin
   provozhatq_V = mkV imperfective transitive "провожать" "провожаю" "провожает" "1a" ;
   progovoritq_V = mkV perfective transitive "проговорить" "проговорю" "проговорит" "4b" ;
   prodavatq_V = mkV imperfective transitive "продавать" "продаю" "продаёт" "13b" ;
-  -- prodatq_V = mkV perfective transitive "продать" ;  ---- гл ru ^b/c((1))СВ |основа=прод |основа1=про́д |соотв=продавать
+  prodatq_V = mkV perfective transitive "продать" ;  ---- гл ru ^b/c((1))СВ |основа=прод |основа1=про́д |соотв=продавать
   prodolzhatq_V = mkV imperfective transitive "продолжать" "продолжаю" "продолжает" "1a" ;
   prodolzhatqsja_V = mkV imperfective intransitive "продолжаться" "продолжаюсь" "продолжается" "1a" ;
   prodolzhitq_V = mkV perfective transitive "продолжить" "продолжу" "продолжит" "4a" ;
@@ -1674,9 +1674,9 @@ lin
   proizvoditqsja_V = mkV imperfective intransitive "производиться" "произвожусь" "производится" "4c" ;
   proiznesti_V = mkV perfective transitive "произнести" "произнесу" "произнесёт" ;
   proiznositq_V = mkV imperfective transitive "произносить" "произношу" "произносит" "4c" ;
-  -- proizojti_V = mkV perfective transitive "произойти" ;  ---- гл ru ^b/b(9)СВ |основа=произой |основа1=произош |НП=1 |соотв=происходить
+  proizojti_V = mkV perfective transitive "произойти" ;
   proishoditq_V = mkV imperfective transitive "происходить" "происхожу" "происходит" "4c" ;
-  -- projti_V = mkV perfective transitive "пройти" ;  ---- гл ru ^b/b(9)СВ |основа=прой |основа1=прош |соотв=проходить |коммент=Также употребима форма прич. страд. [[пройденный|про́йденный]].
+  projti_V = mkV perfective transitive "пройти" ;
   propastq_V = mkV perfective transitive "пропасть" "пропаду" "пропадёт" "7b" ;
   propustitq_V = mkV perfective transitive "пропустить" "пропущу" "пропустит" "4c" ;
   prositq_V = mkV imperfective transitive "просить" "прошу" "просит" "4c" ;
@@ -1766,7 +1766,7 @@ lin
   svjazatq_V = mkV perfective transitive "связать" "свяжу" "свяжет" "6c" ;
   svjazyvatq_V = mkV imperfective transitive "связывать" "связываю" "связывает" "1a" ;
   sdavatq_V = mkV imperfective transitive "сдавать" "сдаю" "сдаёт" "13b" ;
-  -- sdatq_V = mkV perfective transitive "сдать" ;  ---- гл ru ^b/cСВ |основа=сда́ |основа1=сда |основа2=сда́ |соотв=сдавать
+  sdatq_V = mkV perfective transitive "сдать" ;  ---- гл ru ^b/cСВ |основа=сда́ |основа1=сда |основа2=сда́ |соотв=сдавать
   sdelatq_V = mkV perfective transitive "сделать" "сделаю" "сделает" "1a" ;
   sdelatqsja_V = mkV perfective intransitive "сделаться" "сделаюсь" "сделается" "1a" ;
   sestq_V = mkV perfective transitive "сесть" "сяду" "сядет" "7a" ;
@@ -1810,8 +1810,8 @@ lin
   soedinitq_V = mkV perfective transitive "соединить" "соединю" "соединит" "4b" ;
   sozdavatq_V = mkV imperfective transitive "создавать" "создаю" "создаёт" "13b" ;
   sozdavatqsja_V = mkV imperfective intransitive "создаваться" "создаюсь" "создаётся" "13b" ;
-  -- sozdatq_V = mkV perfective transitive "создать" ;  ---- гл ru ^b/c((1))СВ |основа=созд |основа1=со́зд |соотв=[[создавать]] (в знач. [1]), [[созидать]] (в знач. [2])
-  -- sojti_V = mkV perfective transitive "сойти" ;  ---- гл ru ^b/b(9)СВ |основа=сой |основа1=сош |НП=1 |соотв=сходить
+  sozdatq_V = mkV perfective transitive "создать" ;
+  sojti_V = mkV perfective transitive "сойти" ;
   sokratitq_V = mkV perfective transitive "сократить" "сокращу" "сократит" "4b" ;
   somnevatqsja_V = mkV imperfective intransitive "сомневаться" "сомневаюсь" "сомневается" "1a" ;
   soobrazitq_V = mkV perfective transitive "сообразить" "соображу" "сообразит" "4b" ;
@@ -1904,7 +1904,7 @@ lin
   uehatq_V = mkV perfective intransitive "уехать" "уеду" "уедет" ;
   uznavatq_V = mkV imperfective transitive "узнавать" "узнаю" "узнаёт" "13b" ;
   uznatq_V = mkV perfective transitive "узнать" "узнаю" "узнает" "1a" ;
-  -- ujti_V = mkV perfective transitive "уйти" ;  ---- гл ru ^b/b(9)СВ |основа=уй |основа1=уш |НП=1 |соотв=уходи́ть
+  ujti_V = mkV perfective transitive "уйти" ;
   ukazatq_V = mkV perfective transitive "указать" "укажу" "укажет" "6c" ;
   ukazyvatq_V = mkV imperfective transitive "указывать" "указываю" "указывает" "1a" ;
   ukrastq_V = mkV perfective transitive "украсть" "украду" "украдёт" "7b" ;
@@ -1933,7 +1933,7 @@ lin
   ustroitqsja_V = mkV perfective intransitive "устроиться" "устроюсь" "устроится" "4a" ;
   ustupatq_V = mkV imperfective transitive "уступать" "уступаю" "уступает" "1a" ;
   utverditq_V = mkV perfective transitive "утвердить" "утвержу" "утвердит" "4b" ;
-  -- utverzhdatq_V = mkV imperfective transitive "утверждать" ;  ---- гл ru 1a |основа=утвержда́ |соотв=утвердить
+  utverzhdatq_V = mkV imperfective transitive "утверждать" "утверждаю" "утверждает" "1a";
   utochnitq_V = mkV perfective transitive "уточнить" "уточню" "уточнит" "4b" ;
   utratitq_V = mkV perfective transitive "утратить" "утрачу" "утратит" "4a" ;
   uhoditq_V = mkV imperfective transitive "уходить" "ухожу" "уходит" "4c" ;
@@ -1946,8 +1946,8 @@ lin
   hvatatq_V = mkV imperfective transitive "хватать" "хватаю" "хватает" "1a" ;
   hvatitq_V = mkV perfective transitive "хватить" "хватю" "хватит" "4c" ;
   hoditq_V = mkV imperfective transitive "ходить" "хожу" "ходит" "4c" ;
-  -- hotetq_V = mkV imperfective transitive "хотеть" "хочу" "хочет" ;
-  -- hotetqsja_V = mkV imperfective intransitive "хотеться" ;  ---- гл ru 5c'^-т-ся |основа=хот |основа1=хо́ч |соотв=захотеться |безличный=1
+  hotetq_V = mkV imperfective transitive "хотеть" ;
+  hotetqsja_V = mkV imperfective intransitive "хотеться" ;  ---- гл ru 5c'^-т-ся |основа=хот |основа1=хо́ч |соотв=захотеться |безличный=1
   hohotatq_V = mkV imperfective transitive "хохотать" "хохочу" "хохочет" "6c" ;
   hranitq_V = mkV imperfective transitive "хранить" "храню" "хранит" "4b" ;
   hranitqsja_V = mkV imperfective intransitive "храниться" "хранюсь" "хранится" "4b" ;
@@ -1959,6 +1959,5 @@ lin
   shutitq_V = mkV imperfective transitive "шутить" "шучу" "шутит" "4c" ;
   javitqsja_V = mkV perfective intransitive "явиться" "явлюсь" "явится" "4c" ;
   javljatqsja_V = mkV imperfective intransitive "являться" "являюсь" "является" "1a" ;
-
 
 }

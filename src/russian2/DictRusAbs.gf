@@ -972,7 +972,7 @@ fun
   brositq_V : V;
   brositqsja_V : V;
   byvatq_V : V;
-  -- bytq_V : V;
+  bytq_V : V;
   valjatqsja_V : V;
   varitq_V : V;
   vvesti_V : V;
@@ -1008,7 +1008,7 @@ fun
   vozrazhatq_V : V;
   vozrazitq_V : V;
   vozrasti_V : V;
-  -- vojti_V : V;
+  vojti_V : V;
   volnovatq_V : V;
   volnovatqsja_V : V;
   voskliknutq_V : V;
@@ -1035,7 +1035,7 @@ fun
   vyvesti_V : V;
   vygljadetq_V : V;
   vydavatq_V : V;
-  -- vydatq_V : V;
+  vydatq_V : V;
   vydelitq_V : V;
   vydeljatq_V : V;
   vydeljatqsja_V : V;
@@ -1044,7 +1044,7 @@ fun
   vyzvatq_V : V;
   vyzyvatq_V : V;
   vyigratq_V : V;
-  -- vyjti_V : V;
+  vyjti_V : V;
   vynesti_V : V;
   vynositq_V : V;
   vynuditq_V : V;
@@ -1086,7 +1086,7 @@ fun
   guljatq_V : V;
   davatq_V : V;
   davatqsja_V : V;
-  -- datq_V : V;
+  datq_V : V;
   dvigatqsja_V : V;
   dvinutqsja_V : V;
   dejstvovatq_V : V;
@@ -1109,7 +1109,7 @@ fun
   dogovoritqsja_V : V;
   -- dozhdatqsja_V : V;
   -- dozhidatqsja_V : V;
-  -- dojti_V : V;
+  dojti_V : V;
   dokazatq_V : V;
   dokazyvatq_V : V;
   dolozhitq_V : V;
@@ -1127,7 +1127,7 @@ fun
   dumatq_V : V;
   dyshatq_V : V;
   ezditq_V : V;
-  -- estq_V : V;
+  estq_V : V;
   ehatq_V : V;
   zhaletq_V : V;
   zhalovatqsja_V : V;
@@ -1139,7 +1139,7 @@ fun
   zabotitqsja_V : V;
   zabratq_V : V;
   zabyvatq_V : V;
-  -- zabytq_V : V;
+  zabytq_V : V;
   zavershitq_V : V;
   zavesti_V : V;
   zavisetq_V : V;
@@ -1147,12 +1147,12 @@ fun
   zagljanutq_V : V;
   zagovoritq_V : V;
   zadavatq_V : V;
-  -- zadatq_V : V;
+  zadatq_V : V;
   zaderzhatq_V : V;
   zadumatqsja_V : V;
   zadumyvatqsja_V : V;
   zainteresovatq_V : V;
-  -- zajti_V : V;
+  zajti_V : V;
   zakazatq_V : V;
   zakanchivatqsja_V : V;
   -- zakljuchatqsja_V : V;
@@ -1191,7 +1191,7 @@ fun
   zahvatitq_V : V;
   zahoditq_V : V;
   zahotetq_V : V;
-  -- zahotetqsja_V : V;
+  zahotetqsja_V : V;
   zaszititq_V : V;
   zasziszatq_V : V;
   zajavitq_V : V;
@@ -1203,12 +1203,12 @@ fun
   znatq_V : V;
   znachitq_V : V;
   igratq_V : V;
-  -- idti_V : V;
+  idti_V : V;
   izbavitqsja_V : V;
   izbezhatq_V : V;
   izbratq_V : V;
   izvinitq_V : V;
-  -- izdatq_V : V;
+  izdatq_V : V;
   izlozhitq_V : V;
   izmenitq_V : V;
   izmenitqsja_V : V;
@@ -1284,7 +1284,7 @@ fun
   naznachitq_V : V;
   nazyvatq_V : V;
   nazyvatqsja_V : V;
-  -- najti_V : V;
+  najti_V : V;
   -- najtisq_V : V;
   nalitq_V : V;
   nanesti_V : V;
@@ -1325,8 +1325,8 @@ fun
   obnaruzhitq_V : V;
   obnjatq_V : V;
   oboznachitq_V : V;
-  -- obojti_V : V;
-  -- obojtisq_V : V;
+  obojti_V : V;
+  obojtisq_V : V;
   obradovatqsja_V : V;
   obrazovatqsja_V : V;
   obrazovyvatq_V : V;
@@ -1389,7 +1389,7 @@ fun
   otvetitq_V : V;
   otvechatq_V : V;
   otdavatq_V : V;
-  -- otdatq_V : V;
+  otdatq_V : V;
   otdohnutq_V : V;
   otdyhatq_V : V;
   otkazatq_V : V;
@@ -1409,7 +1409,7 @@ fun
   otnositqsja_V : V;
   otobratq_V : V;
   otozvatqsja_V : V;
-  -- otojti_V : V;
+  otojti_V : V;
   otorvatq_V : V;
   otpravitq_V : V;
   otpravitqsja_V : V;
@@ -1431,11 +1431,11 @@ fun
   perevesti_V : V;
   perevoditq_V : V;
   peredavatq_V : V;
-  -- peredatq_V : V;
+  peredatq_V : V;
   pereehatq_V : V;
   perezhivatq_V : V;
   perezhitq_V : V;
-  -- perejti_V : V;
+  perejti_V : V;
   perenesti_V : V;
   perestavatq_V : V;
   perestatq_V : V;
@@ -1467,7 +1467,7 @@ fun
   pogovoritq_V : V;
   podavatq_V : V;
   podaritq_V : V;
-  -- podatq_V : V;
+  podatq_V : V;
   podvesti_V : V;
   podgotovitq_V : V;
   podderzhatq_V : V;
@@ -1481,7 +1481,7 @@ fun
   podobratq_V : V;
   -- podozhdatq_V : V;
   podozrevatq_V : V;
-  -- podojti_V : V;
+  podojti_V : V;
   podpisatq_V : V;
   podtverditq_V : V;
   -- podtverzhdatq_V : V;
@@ -1501,7 +1501,7 @@ fun
   poznakomitqsja_V : V;
   pointeresovatqsja_V : V;
   pojmatq_V : V;
-  -- pojti_V : V;
+  pojti_V : V;
   pokazatq_V : V;
   pokazatqsja_V : V;
   pokazyvatq_V : V;
@@ -1599,7 +1599,7 @@ fun
   preodoletq_V : V;
   prervatq_V : V;
   priblizhatqsja_V : V;
-  -- pribytq_V : V;
+  pribytq_V : V;
   privezti_V : V;
   privesti_V : V;
   privlekatq_V : V;
@@ -1619,8 +1619,8 @@ fun
   priznatq_V : V;
   priznatqsja_V : V;
   prizyvatq_V : V;
-  -- prijti_V : V;
-  -- prijtisq_V : V;
+  prijti_V : V;
+  prijtisq_V : V;
   prikazatq_V : V;
   -- prikrytq_V : V;
   primenjatq_V : V;
@@ -1651,7 +1651,7 @@ fun
   provozhatq_V : V;
   progovoritq_V : V;
   prodavatq_V : V;
-  -- prodatq_V : V;
+  prodatq_V : V;
   prodolzhatq_V : V;
   prodolzhatqsja_V : V;
   prodolzhitq_V : V;
@@ -1664,9 +1664,9 @@ fun
   proizvoditqsja_V : V;
   proiznesti_V : V;
   proiznositq_V : V;
-  -- proizojti_V : V;
+  proizojti_V : V;
   proishoditq_V : V;
-  -- projti_V : V;
+  projti_V : V;
   propastq_V : V;
   propustitq_V : V;
   prositq_V : V;
@@ -1756,7 +1756,7 @@ fun
   svjazatq_V : V;
   svjazyvatq_V : V;
   sdavatq_V : V;
-  -- sdatq_V : V;
+  sdatq_V : V;
   sdelatq_V : V;
   sdelatqsja_V : V;
   sestq_V : V;
@@ -1800,8 +1800,8 @@ fun
   soedinitq_V : V;
   sozdavatq_V : V;
   sozdavatqsja_V : V;
-  -- sozdatq_V : V;
-  -- sojti_V : V;
+  sozdatq_V : V;
+  sojti_V : V;
   sokratitq_V : V;
   somnevatqsja_V : V;
   soobrazitq_V : V;
@@ -1894,7 +1894,7 @@ fun
   uehatq_V : V;
   uznavatq_V : V;
   uznatq_V : V;
-  -- ujti_V : V;
+  ujti_V : V;
   ukazatq_V : V;
   ukazyvatq_V : V;
   ukrastq_V : V;
@@ -1923,7 +1923,7 @@ fun
   ustroitqsja_V : V;
   ustupatq_V : V;
   utverditq_V : V;
-  -- utverzhdatq_V : V;
+  utverzhdatq_V : V;
   utochnitq_V : V;
   utratitq_V : V;
   uhoditq_V : V;
@@ -1936,8 +1936,8 @@ fun
   hvatatq_V : V;
   hvatitq_V : V;
   hoditq_V : V;
-  -- hotetq_V : V;
-  -- hotetqsja_V : V;
+  hotetq_V : V;
+  hotetqsja_V : V;
   hohotatq_V : V;
   hranitq_V : V;
   hranitqsja_V : V;

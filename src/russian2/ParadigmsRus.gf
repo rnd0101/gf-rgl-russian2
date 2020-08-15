@@ -149,6 +149,7 @@ oper
     mkV : (inf : Str) -> (sg1 : Str) -> V ;  -- guess some I conjugation verbs (not "ё") from infinitive and Sg P1, perfective, transitive
     mkV : (inf : Str) -> (sg1 : Str) -> (sg3 : Str) -> V ; -- guess verb forms given Inf, Sg P1, Sg P3, perfective, transitive
     mkV : Aspect -> (inf : Str) -> (sg1 : Str) -> (sg3 : Str) -> V ; -- same, but aspect as first parameter
+    mkV : Aspect -> Transitivity -> (inf : Str) -> V ;  -- for irregular verbs
     mkV : Aspect -> Transitivity -> (inf : Str) -> (sg1 : Str) -> (sg3 : Str) -> V ;  -- aspect, transitivity, Inf, Sg P1, Sg P3
     mkV : Aspect -> Transitivity -> (inf : Str) -> (sg1 : Str) -> (sg3 : Str) -> (idx : Str) -> V    -- aspect, transitivity, Inf, Sg P1, Sg P3 and index from Zaliznyak's dictionary, eg "14a"
   } ;
@@ -310,6 +311,8 @@ oper
       = \asp,inf,sg1 -> lin V (guessVerbForms asp Transitive inf sg1 (Z.sg1StemFromVerb sg1 + "ет")) ;
     mkV : Aspect -> Str -> Str -> Str -> V
       = \asp,inf,sg1,sg3 -> lin V (guessVerbForms asp Transitive inf sg1 sg3) ;
+    mkV : Aspect -> Transitivity -> Str -> V  -- for irregular verbs
+      = \asp,tran,inf -> lin V (guessIrregularVerbForms asp tran inf) ;
     mkV : Aspect -> Transitivity -> Str -> Str -> V
       = \asp,tran,inf,sg1 -> lin V (guessVerbForms asp tran inf sg1 (Z.sg1StemFromVerb sg1 + "ет")) ;
     mkV : Aspect -> Transitivity -> Str -> Str -> Str -> V
