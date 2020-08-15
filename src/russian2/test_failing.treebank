@@ -604,3 +604,6 @@ AllRus: быть у нас голодно считаться
 AllRusAbs: PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompAP (PositA clean_A)))
 AllRus: играть быть чистым
 
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (married_Cl (UsePron weFem_Pron) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мы женаты на твоих женщинах
+

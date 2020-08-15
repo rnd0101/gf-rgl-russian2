@@ -3353,6 +3353,171 @@ AllRus: сколько эта женщина не гуляет
 AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestIAdv how8much_IAdv (PredVP (DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV walk_V)))
 AllRus: сколько эта женщина гуляет
 
+AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек не был бы женат на женщине
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек был бы женат на женщине
+AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек не был бы женат на женщине
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек был бы женат на женщине
+AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек не будет женат на женщине
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек будет женат на женщине
+AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек не будет женат на женщине
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек будет женат на женщине
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек не был женат на женщине
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек был женат на женщине
+AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек не был женат на женщине
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек был женат на женщине
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек не женат на женщине
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек женат на женщине
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек не женат на женщине
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: человек женат на женщине
+
+AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина не бы &+ ла бы замужем за человеком
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина бы &+ ла бы замужем за человеком
+AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина не бы &+ ла бы замужем за человеком
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина бы &+ ла бы замужем за человеком
+AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина не будет замужем за человеком
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина будет замужем за человеком
+AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина не будет замужем за человеком
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина будет замужем за человеком
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина не бы &+ ла замужем за человеком
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина бы &+ ла замужем за человеком
+AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина не бы &+ ла замужем за человеком
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина бы &+ ла замужем за человеком
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина не замужем за человеком
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина замужем за человеком
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина не замужем за человеком
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (married_Cl (MassNP (UseN woman_N)) (MassNP (UseN man_N)))
+AllRus: женщина замужем за человеком
+
+AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди не бы &+ ли бы женаты на женщине
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди бы &+ ли бы женаты на женщине
+AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди не бы &+ ли бы женаты на женщине
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди бы &+ ли бы женаты на женщине
+AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди не будут женаты на женщине
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди будут женаты на женщине
+AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди не будут женаты на женщине
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди будут женаты на женщине
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди не бы &+ ли женаты на женщине
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди бы &+ ли женаты на женщине
+AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди не бы &+ ли женаты на женщине
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди бы &+ ли женаты на женщине
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди не женаты на женщине
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди женаты на женщине
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди не женаты на женщине
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (MassNP (UseN woman_N)))
+AllRus: мои люди женаты на женщине
+
+AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина не бы &+ ла бы замужем за моими людьми
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина бы &+ ла бы замужем за моими людьми
+AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина не бы &+ ла бы замужем за моими людьми
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина бы &+ ла бы замужем за моими людьми
+AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина не будет замужем за моими людьми
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина будет замужем за моими людьми
+AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина не будет замужем за моими людьми
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина будет замужем за моими людьми
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина не бы &+ ла замужем за моими людьми
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина бы &+ ла замужем за моими людьми
+AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина не бы &+ ла замужем за моими людьми
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина бы &+ ла замужем за моими людьми
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина не замужем за моими людьми
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина замужем за моими людьми
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина не замужем за моими людьми
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (married_Cl (MassNP (UseN woman_N)) (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)))
+AllRus: женщина замужем за моими людьми
+
+AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди не бы &+ ли бы женаты на твоих женщинах
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди бы &+ ли бы женаты на твоих женщинах
+AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди не бы &+ ли бы женаты на твоих женщинах
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди бы &+ ли бы женаты на твоих женщинах
+AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди не будут женаты на твоих женщинах
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди будут женаты на твоих женщинах
+AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди не будут женаты на твоих женщинах
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди будут женаты на твоих женщинах
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди не бы &+ ли женаты на твоих женщинах
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди бы &+ ли женаты на твоих женщинах
+AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди не бы &+ ли женаты на твоих женщинах
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди бы &+ ли женаты на твоих женщинах
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди не женаты на твоих женщинах
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди женаты на твоих женщинах
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди не женаты на твоих женщинах
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (married_Cl (DetCN (DetQuant (PossPron i_Pron) NumPl) (UseN man_N)) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
+AllRus: мои люди женаты на твоих женщинах
+
 AllRusAbs: UseComp (CompAdv here_Adv)
 AllRus: здесь быть
 

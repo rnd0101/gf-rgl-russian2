@@ -310,6 +310,8 @@ AllRus: Она является к нему замужем
 AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (UseComp (CompAP (ComplA2 married_A2 (UsePron he_Pron))))))
 AllRus: Она является замужем за ним
 
+AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (married_Cl (UsePron she_Pron) (UsePron he_Pron)))
+AllRus: Она замужем за ним
 
 AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (UseComp (CompAP (AdAP very_AdA (PositA old_A))))))
 AllRus: Она является очень старой

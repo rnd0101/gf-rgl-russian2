@@ -15,6 +15,24 @@ lin
   is_right_VP = mkVP (P.mkA "правый" "" "1a'" PrefShort) ;
   is_wrong_VP = mkVP (P.mkA "неправый" "" "1a'" PrefShort) ;
 
+  -- : NP -> NP -> Cl ;     -- x is married to y / x on naimisissa y:n kanssa (Fin)
+  married_Cl np1 np2 =
+    let married : A = case np1.a of {
+      Ag (GSg Fem) _ => P.mkA "замужем" "" "0" ;
+      _ => P.mkA "женатый" "" "1a" PrefShort
+      } in
+      let cc : Prep = case np1.a of {
+        Ag (GSg Fem) _ => behind_Prep ;
+        _ => on_Prep
+      } in {
+        subj=np1.s ! Nom ;
+        adv=[];
+        verb=copulaEll ;   -- ???
+        dep=[] ;
+        compl=\\_ => (PositA married).short ! np1.a ++ applyPrep cc np2 ;
+        a=np1.a ; ---
+        } ;
+
   -- : NP -> QCl ;          -- what is x's name / wie heisst x (Ger)
   what_name_QCl np = QuestIAdv how_IAdv (GenericCl (ComplSlash (SlashV2a (P.mkV2 (P.mkV Imperfective "звать" "зову" "зовёт") Acc)) np)) ;
 

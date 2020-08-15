@@ -49,3 +49,4 @@ gt ComplVQ know_VQ ( UseQCl (TTAnt TCond AAnter) ? (QuestCl (PredSCVP (EmbedVP (
 gt SentCN  (UseN apple_N)   (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))) | l -treebank
 gt PredSCVP (EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron)))    ( PassV2 count_V2 )  | l -treebank
 gt PredSCVP (EmbedVP (UseV play_V))  (UseComp (CompAP (PositA clean_A)) ) | l -treebank
+gt UseCl (TTAnt TPres AAnter) PPos (married_Cl  (UsePron weFem_Pron)     ((DetCN (DetQuant (PossPron youSg_Pron) NumPl))  (UseN woman_N))         ) |l -treebank
