@@ -410,6 +410,31 @@ oper
       p = af.p
     } ;
 
+  ord_long_superlative : PronForms -> AdjForms -> AdjForms
+    = \pf,af -> {
+      msnom = pf.msnom ++ the_most.msnom  ++ af.msnom ;
+      fsnom = pf.fsnom ++ the_most.fsnom  ++ af.fsnom ;
+      nsnom = pf.nsnom ++ the_most.nsnom  ++ af.nsnom ;
+      pnom  = pf.pnom  ++ the_most.pnom   ++ af.pnom  ;
+      msgen = pf.msgen ++ the_most.msgen  ++ af.msgen ;
+      fsgen = pf.fsgen ++ the_most.fsgen  ++ af.fsgen ;
+      pgen  = pf.pgen  ++ the_most.pgen   ++ af.pgen  ;
+      msdat = pf.msdat ++ the_most.msdat  ++ af.msdat ;
+      fsacc = pf.fsacc ++ the_most.fsacc  ++ af.fsacc ;
+      msins = pf.msins ++ the_most.msins  ++ af.msins ;
+      fsins = pf.fsins ++ the_most.fsins  ++ af.fsins ;
+      pins  = pf.pins  ++ the_most.pins   ++ af.pins  ;
+      msprep= pf.msprep++ the_most.msprep ++ af.msprep;
+      sm    = pf.msnom ++ the_most.sm     ++ af.sm    ;
+      sf    = pf.fsnom ++ the_most.sf     ++ af.sf    ;
+      sn    = pf.nsnom ++ the_most.sn     ++ af.sn    ;
+      sp    = pf.pnom  ++ the_most.sp     ++ af.sp    ;
+      comp  = pf.msnom ++ the_most.comp   ++ af.comp  ;
+      g=af.g ;
+      preferShort = PreferFull ;
+      p = af.p
+    } ;
+
   prependPF : Str -> PronForms -> PronForms
     = \s,pf -> {
       msnom = s ++ pf.msnom ;

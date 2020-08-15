@@ -965,7 +965,7 @@ fun
   borotqsja_V : V;
   bojatqsja_V : V;
   bratq_V : V;
-  -- bratqsja_V : V;
+  bratqsja_V : V;
   broditq_V : V;
   brosatq_V : V;
   brosatqsja_V : V;
@@ -1190,7 +1190,7 @@ fun
   zastavljatq_V : V;
   zahvatitq_V : V;
   zahoditq_V : V;
-  -- zahotetq_V : V;
+  zahotetq_V : V;
   -- zahotetqsja_V : V;
   zaszititq_V : V;
   zasziszatq_V : V;

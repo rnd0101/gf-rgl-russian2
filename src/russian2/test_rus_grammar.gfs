@@ -88,6 +88,10 @@ gt UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (
 gt UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a wait_V2) (MassNP (PartNP (AdvCN (UseN car_N) (PrepNP possess_Prep (UsePron she_Pron))) (DetCN (DetQuant DefArt NumPl) (UseN window_N))))))) | l -treebank
 gt UttS (UseCl (TTAnt ? AAnter) ? (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N))))) | l -treebank
 
+gt MassNP (AdjCN (AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))) )  ) (UseN apple_N)) | l -treebank
+gt MassNP (AdjCN ( AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))) big_A)  ) (UseN car_N)) |l -treebank
+gt TFullStop (PhrUtt NoPConj (UttImpSg PPos (ImpVP (ComplSlash (SlashV2a do_V2) (MassNP (AdjCN (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))) big_A)) (UseN tree_N)))))) NoVoc) TEmpty |l -treebank
+
 gt UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (MassNP (UseN worm_N)) (ComplSlash (VPSlashPrep (UseV sit_V) in_Prep) (MassNP (PossNP (AdjCN (PositA red_A) (UseN apple_N)) (DetNP (DetQuant (PossPron he_Pron) NumSg)))))))
 
 gt UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (MassNP (UseN worm_N)) (ComplSlash (VPSlashPrep (UseV sit_V) in_Prep) (MassNP (PossNP (AdjCN (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (UseN apple_N)) (DetNP (DetQuant (PossPron he_Pron) NumSg)))))))
@@ -122,6 +126,9 @@ gt UseQCl ? ? (QuestIAdv how8much_IAdv (PredVP ( DetCN (DetQuant this_Quant NumS
 
 gt UseComp (CompAdv here_Adv) | l -treebank
 gt PredSCVP (EmbedVP (UseV think_V)) thirsty_VP | l -treebank
+
+gt UttAP (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))) small_A)) | l -treebank
+gt RelNP (MassNP (UseN woman_N)) (UseRCl (TTAnt ? ASimul) ? (RelCl (PredVP ( MassNP (AdjCN (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))) big_A)) (UseN tree_N))   ) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron))))) | l -treebank
 
 gt RelCl (PredVP (UsePN john_PN) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron))) | l -treebank
 gt UseRCl ? ? ( RelCl (PredVP (UsePN john_PN) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron))) ) | l -treebank

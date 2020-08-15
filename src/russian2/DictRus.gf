@@ -975,7 +975,7 @@ lin
   borotqsja_V = mkV imperfective intransitive "бороться" "борюсь" "борется" "10c" ;
   bojatqsja_V = mkV imperfective intransitive "бояться" "боюсь" "боится" "5b" ;
   bratq_V = mkV imperfective transitive "брать" "бру" "брёт" ;
-  -- bratqsja_V = mkV imperfective intransitive "браться" ;  ---- гл ru 6°b/c-ся |основа=бр |основа1=бер |основа2=бра |соотв=взяться
+  bratqsja_V = mkV imperfective intransitive "браться" "берусь" "берётся" "6°b/c";
   broditq_V = mkV imperfective transitive "бродить" "брожу" "бродит" "4c" ;
   brosatq_V = mkV imperfective transitive "бросать" "бросаю" "бросает" "1a" ;
   brosatqsja_V = mkV imperfective intransitive "бросаться" "бросаюсь" "бросается" "1a" ;
@@ -1200,7 +1200,7 @@ lin
   zastavljatq_V = mkV imperfective transitive "заставлять" "заставляю" "заставляет" "1a" ;
   zahvatitq_V = mkV perfective transitive "захватить" "захвачу" "захватит" "4c" ;
   zahoditq_V = mkV imperfective transitive "заходить" "захожу" "заходит" "4c" ;
-  -- zahotetq_V = mkV perfective transitive "захотеть" "захочу" "захочет" ;
+  zahotetq_V = mkV perfective transitive "захотеть" "захочу" "захочет" "5c'";
   -- zahotetqsja_V = mkV perfective intransitive "захотеться" ;  ---- гл ru 5c'^-т-сяСВ |основа=захот |основа1=захо́ч |безличный=1 |соотв=хотеться
   zaszititq_V = mkV perfective transitive "защитить" "защищу" "защитит" "4b" ;
   zasziszatq_V = mkV imperfective transitive "защищать" "защищаю" "защищает" "1a" ;

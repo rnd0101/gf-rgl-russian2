@@ -2627,6 +2627,15 @@ AllRus: он не считает окон у её машин
 AllRusAbs: UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N)))))
 AllRus: он считает окон у её машины
 
+AllRusAbs: MassNP (AdjCN (AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))))) (UseN apple_N))
+AllRus: третье яблоко
+
+AllRusAbs: MassNP (AdjCN (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))) big_A)) (UseN car_N))
+AllRus: пятая самая большая машина
+
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttImpSg PPos (ImpVP (ComplSlash (SlashV2a do_V2) (MassNP (AdjCN (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))) big_A)) (UseN tree_N)))))) NoVoc) TEmpty
+AllRus: делай пятое самое большое дерево .
+
 UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (MassNP (UseN worm_N)) (ComplSlash (VPSlashPrep (UseV sit_V) in_Prep) (MassNP (PossNP (AdjCN (PositA red_A) (UseN apple_N)) (DetNP (DetQuant (PossPron he_Pron) NumSg)))))))
 
 UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (MassNP (UseN worm_N)) (ComplSlash (VPSlashPrep (UseV sit_V) in_Prep) (MassNP (PossNP (AdjCN (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (UseN apple_N)) (DetNP (DetQuant (PossPron he_Pron) NumSg)))))))
@@ -3349,6 +3358,26 @@ AllRus: здесь быть
 
 AllRusAbs: PredSCVP (EmbedVP (UseV think_V)) thirsty_VP
 AllRus: думать хотеть пить
+
+AllRusAbs: UttAP (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))) small_A))
+AllRus: пятый самый маленький
+
+AllRusAbs: RelNP (MassNP (UseN woman_N)) (UseRCl (TTAnt TCond ASimul) PNeg (RelCl (PredVP (MassNP (AdjCN (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))) big_A)) (UseN tree_N))) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron)))))
+AllRus: женщина , такая , что второе самое большое дерево не люби &+ ло бы её
+AllRusAbs: RelNP (MassNP (UseN woman_N)) (UseRCl (TTAnt TCond ASimul) PPos (RelCl (PredVP (MassNP (AdjCN (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))) big_A)) (UseN tree_N))) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron)))))
+AllRus: женщина , такая , что второе самое большое дерево люби &+ ло бы её
+AllRusAbs: RelNP (MassNP (UseN woman_N)) (UseRCl (TTAnt TFut ASimul) PNeg (RelCl (PredVP (MassNP (AdjCN (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))) big_A)) (UseN tree_N))) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron)))))
+AllRus: женщина , такая , что второе самое большое дерево не будет любить её
+AllRusAbs: RelNP (MassNP (UseN woman_N)) (UseRCl (TTAnt TFut ASimul) PPos (RelCl (PredVP (MassNP (AdjCN (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))) big_A)) (UseN tree_N))) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron)))))
+AllRus: женщина , такая , что второе самое большое дерево будет любить её
+AllRusAbs: RelNP (MassNP (UseN woman_N)) (UseRCl (TTAnt TPast ASimul) PNeg (RelCl (PredVP (MassNP (AdjCN (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))) big_A)) (UseN tree_N))) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron)))))
+AllRus: женщина , такая , что второе самое большое дерево не люби &+ ло её
+AllRusAbs: RelNP (MassNP (UseN woman_N)) (UseRCl (TTAnt TPast ASimul) PPos (RelCl (PredVP (MassNP (AdjCN (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))) big_A)) (UseN tree_N))) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron)))))
+AllRus: женщина , такая , что второе самое большое дерево люби &+ ло её
+AllRusAbs: RelNP (MassNP (UseN woman_N)) (UseRCl (TTAnt TPres ASimul) PNeg (RelCl (PredVP (MassNP (AdjCN (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))) big_A)) (UseN tree_N))) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron)))))
+AllRus: женщина , такая , что второе самое большое дерево не любит её
+AllRusAbs: RelNP (MassNP (UseN woman_N)) (UseRCl (TTAnt TPres ASimul) PPos (RelCl (PredVP (MassNP (AdjCN (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))) big_A)) (UseN tree_N))) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron)))))
+AllRus: женщина , такая , что второе самое большое дерево любит её
 
 AllRusAbs: RelCl (PredVP (UsePN john_PN) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron)))
 AllRus: такое , что Иван любить её
