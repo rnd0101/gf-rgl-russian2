@@ -33,6 +33,9 @@ lin
         a=np1.a ; ---
         } ;
 
+  -- : NP -> QCl ;          -- how far is x / quanto dista x (Ita)
+  how_far_QCl np = QuestIComp (CompIAdv (AdvIAdv how_IAdv L.far_Adv)) np ;
+
   -- : NP -> QCl ;          -- what is x's name / wie heisst x (Ger)
   what_name_QCl np = QuestIAdv how_IAdv (GenericCl (ComplSlash (SlashV2a (P.mkV2 (P.mkV Imperfective "звать" "зову" "зовёт") Acc)) np)) ;
 

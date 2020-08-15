@@ -607,3 +607,20 @@ AllRus: играть быть чистым
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (married_Cl (UsePron weFem_Pron) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
 AllRus: мы женаты на твоих женщинах
 
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (how_far_QCl (UsePN paris_PN))
+AllRus: не как далеко был бы Парижа
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PNeg (how_far_QCl (UsePN paris_PN))
+AllRus: не как далеко был бы Парижа
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PNeg (how_far_QCl (UsePN paris_PN))
+AllRus: не как далеко будет Парижа
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PNeg (how_far_QCl (UsePN paris_PN))
+AllRus: не как далеко будет Парижа
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PNeg (how_far_QCl (UsePN paris_PN))
+AllRus: не как далеко был Парижа
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PNeg (how_far_QCl (UsePN paris_PN))
+AllRus: не как далеко был Парижа
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PNeg (how_far_QCl (UsePN paris_PN))
+AllRus: не как далеко Парижа
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PNeg (how_far_QCl (UsePN paris_PN))
+AllRus: не как далеко Парижа
+

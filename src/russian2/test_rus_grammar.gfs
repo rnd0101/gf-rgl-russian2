@@ -231,3 +231,4 @@ gt UseCl ? ? (PredVP (somebody_NP) (ComplVA become_VA ( SentAP (UseA2 easy_A2V) 
 gt UseCl ? ? (  PredSCVP (EmbedVP (UseV play_V))  (UseComp (CompAP (PositA clean_A)) ) ) |l -treebank
 gt UseCl (TTAnt TPres ASimul) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (CompCN (AdjCN (PositA clean_A) (UseN war_N))))) | l -treebank
 
+gt UseQCl ? PPos (how_far_QCl (UsePN paris_PN)) | l -treebank
