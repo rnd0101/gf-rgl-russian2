@@ -233,7 +233,7 @@ oper
     preferShort : ShortFormPreference
     } ;
 
-  noShorts : PronForms -> AdjForms  -- ???
+  pronToAdj : PronForms -> AdjForms
     = \base -> base ** {
       sm = [] ;
       sf = [] ;
@@ -1032,6 +1032,14 @@ oper
       } ;
 
 -- Possessive pronouns are more like adjectives
+
+  mkP : Str -> Str -> PronForms
+    = \msnom, zi ->
+      case zi of {
+        "6*a" => pronoun6AstA msnom ;
+        "2*b" => pronoun2AstB msnom ;
+        _ => pronoun6AstA msnom   -- add more when needed
+      } ;
 
   doPossessivePronSgP1P2 : Str -> PronForms
     = \mo -> {

@@ -289,6 +289,8 @@ oper
       = \nom, comp, zi, spf -> lin A (makeAdjectiveForms nom comp zi spf) ;
     mkA : Str -> Str -> Z.ZAIndex -> ShortFormPreference -> A
       = \nom, comp, zi, spf -> lin A (makeAdjectiveFormsUseIndex nom comp zi spf) ;
+    mkA : PronForms -> A
+      = \pf -> pronToAdj pf ;
   } ;
 
   ShortenA : A -> A
