@@ -128,6 +128,9 @@ oper
     mkA : Str -> Str -> A ;  -- same, but comparative given as a second argument
     mkA : Str -> Str -> (idx : Str) -> A ; -- nom masc, comparative and third parameter is Zaliznyak's dictionary index, for example, "1a"
     mkA : Str -> Str -> (idx : Str) -> ShortFormPreference -> A ; -- same, but with short form preference given
+    mkA : Str -> ZAIndex -> A ;
+    mkA : Str -> Str -> ZAIndex -> A ;
+    mkA : Str -> Str -> ZAIndex -> ShortFormPreference -> A
   } ;
 
   ShortenA : A -> A ;
@@ -276,10 +279,16 @@ oper
       = \nom -> lin A (guessAdjectiveForms nom) ;
     mkA : Str -> Str -> A
       = \nom, comp -> lin A ((guessAdjectiveForms nom) ** {comp=comp}) ;
+    mkA : Str -> Z.ZAIndex -> A
+      = \nom, zi -> lin A (makeAdjectiveFormsUseIndex nom "" zi PreferFull) ;
     mkA : Str -> Str -> Str -> A
       = \nom, comp, zi -> lin A (makeAdjectiveForms nom comp zi PreferFull) ;
+    mkA : Str -> Str -> Z.ZAIndex -> A
+      = \nom, comp, zi -> lin A (makeAdjectiveFormsUseIndex nom comp zi PreferFull) ;
     mkA : Str -> Str -> Str -> ShortFormPreference -> A
       = \nom, comp, zi, spf -> lin A (makeAdjectiveForms nom comp zi spf) ;
+    mkA : Str -> Str -> Z.ZAIndex -> ShortFormPreference -> A
+      = \nom, comp, zi, spf -> lin A (makeAdjectiveFormsUseIndex nom comp zi spf) ;
   } ;
 
   ShortenA : A -> A

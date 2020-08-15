@@ -361,13 +361,20 @@ oper
       _        => doGuessAdjectiveForms word
       } ;
 
-  doMakeAdjectiveForms : Str -> Str -> Str -> ShortFormPreference -> AdjForms
+  doMakeAdjectiveForms : Str -> Str -> ZAIndex -> ShortFormPreference -> AdjForms
     = \nom, comp, zi, spf ->
-      let af = makeAdjective nom (parseAdjIndex zi) spf in
+      let af = makeAdjective nom zi spf in
       let comp' = case (Predef.length comp) of {0 => af.comp; _ => comp} in
       af ** {comp=comp'} ;
 
   makeAdjectiveForms : Str -> Str -> Str -> ShortFormPreference -> AdjForms
+    = \nom, comp, zi_str, spf ->
+      let zi = parseAdjIndex zi_str in case nom of {
+        s + "ся" => appendToAF (doMakeAdjectiveForms s comp zi spf) "ся" ;
+        _ => doMakeAdjectiveForms nom comp zi spf
+        } ;
+
+  makeAdjectiveFormsUseIndex : Str -> Str -> ZAIndex -> ShortFormPreference -> AdjForms
     = \nom, comp, zi, spf -> case nom of {
       s + "ся" => appendToAF (doMakeAdjectiveForms s comp zi spf) "ся" ;
       _ => doMakeAdjectiveForms nom comp zi spf
