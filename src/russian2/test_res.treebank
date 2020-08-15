@@ -182,7 +182,7 @@ AllRus: не его имя бы &+ ло Иван
 AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
 AllRus: его имя бы &+ ло Иван
 AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
-AllRus: нет его имя Иван
+AllRus: не его имя Иван
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
 AllRus: его имя Иван
 
@@ -2433,7 +2433,7 @@ AllRus: надеяться , что не его имя бы &+ ло Иван
 AllRusAbs: ComplVS hope_VS (UseCl (TTAnt TPast AAnter) PPos (have_name_Cl (UsePron he_Pron) (UsePN john_PN)))
 AllRus: надеяться , что его имя бы &+ ло Иван
 AllRusAbs: ComplVS hope_VS (UseCl (TTAnt TPres AAnter) PNeg (have_name_Cl (UsePron he_Pron) (UsePN john_PN)))
-AllRus: надеяться , что нет его имя Иван
+AllRus: надеяться , что не его имя Иван
 AllRusAbs: ComplVS hope_VS (UseCl (TTAnt TPres AAnter) PPos (have_name_Cl (UsePron he_Pron) (UsePN john_PN)))
 AllRus: надеяться , что его имя Иван
 
@@ -3359,6 +3359,191 @@ AllRus: здесь быть
 AllRusAbs: PredSCVP (EmbedVP (UseV think_V)) thirsty_VP
 AllRus: думать хотеть пить
 
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop he_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это он , который был неправ
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop iFem_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это я , которая бы &+ ла неправа
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop i_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это я , который был неправ
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop it_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это оно , которое бы &+ ло неправо
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop she_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это она , которая бы &+ ла неправа
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop theyFem_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это они , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop they_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это они , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop weFem_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это мы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop we_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это мы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youFem_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это ты , которая бы &+ ла неправа
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youPlFem_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youPl_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youPolFem_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youPolPlFem_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youPolPl_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youPol_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop (ProDrop youSg_Pron))))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это ты , который был неправ
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop he_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это он , который был неправ
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop iFem_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это я , которая бы &+ ла неправа
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop i_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это я , который был неправ
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop it_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это оно , которое бы &+ ло неправо
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop she_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это она , которая бы &+ ла неправа
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop theyFem_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это они , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop they_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это они , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop weFem_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это мы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop we_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это мы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop youFem_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это ты , которая бы &+ ла неправа
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop youPlFem_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop youPl_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop youPolFem_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop youPolPlFem_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop youPolPl_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop youPol_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop (ProDrop youSg_Pron)))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это ты , который был неправ
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop he_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это он , который был неправ
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop iFem_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это я , которая бы &+ ла неправа
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop i_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это я , который был неправ
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop it_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это оно , которое бы &+ ло неправо
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop she_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это она , которая бы &+ ла неправа
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop theyFem_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это они , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop they_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это они , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop weFem_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это мы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop we_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это мы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop youFem_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это ты , которая бы &+ ла неправа
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop youPlFem_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop youPl_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop youPolFem_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop youPolPlFem_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop youPolPl_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop youPol_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop (ProDrop youSg_Pron))) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это ты , который был неправ
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop he_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это он , который был неправ
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop iFem_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это я , которая бы &+ ла неправа
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop i_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это я , который был неправ
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop it_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это оно , которое бы &+ ло неправо
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop she_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это она , которая бы &+ ла неправа
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop theyFem_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это они , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop they_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это они , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop weFem_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это мы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop we_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это мы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop youFem_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это ты , которая бы &+ ла неправа
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop youPlFem_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop youPl_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop youPolFem_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop youPolPlFem_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop youPolPl_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop youPol_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron (ProDrop youSg_Pron)) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это ты , который был неправ
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron he_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это он , который был неправ
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron iFem_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это я , которая бы &+ ла неправа
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron i_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это я , который был неправ
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron it_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это оно , которое бы &+ ло неправо
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron she_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это она , которая бы &+ ла неправа
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron theyFem_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это они , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron they_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это они , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron weFem_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это мы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron we_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это мы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youFem_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это ты , которая бы &+ ла неправа
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youPlFem_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youPl_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youPolFem_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youPolPlFem_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youPolPl_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youPol_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это вы , которые бы &+ ли неправы
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron youSg_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP)))
+AllRus: это ты , который был неправ
+
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron he_Pron) (UseRCl (TTAnt TPast AAnter) PNeg (RelVP IdRP is_right_VP)))
+AllRus: это он , который не был прав
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (CleftNP (UsePron he_Pron) (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_right_VP)))
+AllRus: это он , который был прав
+
+AllRusAbs: AdjCN (PositA blue_A) (AdjCN (PositA big_A) (UseN house_N))
+AllRus: голубой большой дом
+
+AllRusAbs: AdjCN (AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))))) (AdjCN (AdjOrd (OrdSuperl blue_A)) (UseN house_N))
+AllRus: третий самый голубой дом
+
+AllRusAbs: AdjCN (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))) blue_A)) (UseN house_N)
+AllRus: третий самый голубой дом
+
 AllRusAbs: UttAP (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))) small_A))
 AllRus: пятый самый маленький
 
@@ -3684,7 +3869,7 @@ AllRus: небо не везде бы &+ ло
 AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
 AllRus: небо везде бы &+ ло
 AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
-AllRus: небо нет везде
+AllRus: небо не везде
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
 AllRus: небо везде есть
 
@@ -3847,9 +4032,9 @@ AllRus: не бы &+ ло воды у вас
 AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
 AllRus: не бы &+ ло воды у вас
 AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: нет воды у вас
+AllRus: не воды у вас
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (ImpersCl (ComplSlash (Slash3V3 have_V3 (UsePron youPl_Pron)) (MassNP (UseN water_N))))
-AllRus: нет воды у вас
+AllRus: не воды у вас
 
 AllRusAbs: EmbedVP (ComplSlash (VPSlashPrep hungry_VP possess_Prep) (UsePron we_Pron))
 AllRus: быть у нас голодно

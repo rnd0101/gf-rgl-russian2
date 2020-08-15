@@ -259,13 +259,13 @@ AllRusAbs: TQuestMark (PhrUtt NoPConj (UttQS (UseQCl (TTAnt TPres AAnter) PPos (
 AllRus: сколько является яблок у Ивана ?
 
 AllRusAbs: ComplVS hope_VS (UseCl (TTAnt TPres AAnter) PNeg (have_name_Cl (UsePron he_Pron) (UsePN john_PN)))
-AllRus: надеяться , что нет его имя Иван
+AllRus: надеяться , что не его имя Иван
 
 AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
-AllRus: нет его имя Иван
+AllRus: не его имя Иван
 
 AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (AdvIsNP everywhere_Adv (MassNP (UseN sky_N)))
-AllRus: небо нет везде
+AllRus: небо не везде
 
 AllRusAbs: AdjCN (PastPartAP (SlashV2a bite_V2)) (UseN house_N)
 AllRus: кусан дом

@@ -789,7 +789,7 @@ oper
         BeFuture => case <m,temp, pol.p> of {
           <Ind, Past, _> => subj ++ pol.s ++ adv ++ verbPastAgree vf a "" ;
           <Ind, Pres, Pos> => subj ++ pol.s ++ adv ++ verbPresAgree vf a ;
-          <Ind, Pres, Neg> => subj ++ "нет" ++ adv ;
+          <Ind, Pres, Neg> => subj ++ "не" ++ adv ;
           <Ind, Fut, _> => subj ++ pol.s ++ adv ++ verbFutAgree vf a ;
           <Ind, Cond, _> => subj ++ pol.s ++ adv ++ verbPastAgree vf a "бы" ;
           <Sbjv, _, _> => subj ++ pol.s ++ adv ++ verbPastAgree vf a "бы" ;

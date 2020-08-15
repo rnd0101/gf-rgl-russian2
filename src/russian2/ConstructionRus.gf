@@ -12,6 +12,9 @@ lin
   ill_VP = mkVP ( P.mkA "больной" "" "1*b" PrefShort) ;
   ready_VP = mkVP L.ready_A ;
 
+  is_right_VP = mkVP (P.mkA "правый" "" "1a'" PrefShort) ;
+  is_wrong_VP = mkVP (P.mkA "неправый" "" "1a'" PrefShort) ;
+
   -- : NP -> QCl ;          -- what is x's name / wie heisst x (Ger)
   what_name_QCl np = QuestIAdv how_IAdv (GenericCl (ComplSlash (SlashV2a (P.mkV2 (P.mkV Imperfective "звать" "зову" "зовёт") Acc)) np)) ;
 

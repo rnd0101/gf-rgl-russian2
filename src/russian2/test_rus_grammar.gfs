@@ -127,6 +127,13 @@ gt UseQCl ? ? (QuestIAdv how8much_IAdv (PredVP ( DetCN (DetQuant this_Quant NumS
 gt UseComp (CompAdv here_Adv) | l -treebank
 gt PredSCVP (EmbedVP (UseV think_V)) thirsty_VP | l -treebank
 
+gt UseCl (TTAnt TPres AAnter) PPos (CleftNP  (UsePron ?)  (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP is_wrong_VP))) | l -treebank
+gt UseCl (TTAnt TPres AAnter) PPos (CleftNP  (UsePron he_Pron)  (UseRCl (TTAnt TPast AAnter) ? (RelVP IdRP is_right_VP))) | l -treebank
+
+gt AdjCN (PositA blue_A) (AdjCN (PositA big_A) (UseN house_N)) | l -treebank
+gt AdjCN (AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))))) (AdjCN (AdjOrd (OrdSuperl blue_A)) (UseN house_N)) | l -treebank
+gt AdjCN (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))) blue_A)) (UseN house_N)| l -treebank
+
 gt UttAP (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))) small_A)) | l -treebank
 gt RelNP (MassNP (UseN woman_N)) (UseRCl (TTAnt ? ASimul) ? (RelCl (PredVP ( MassNP (AdjCN (AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))) big_A)) (UseN tree_N))   ) (ComplSlashPartLast (SlashV2a love_V2) (UsePron she_Pron))))) | l -treebank
 
