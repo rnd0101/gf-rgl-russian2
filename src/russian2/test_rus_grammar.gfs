@@ -233,3 +233,7 @@ gt UseCl (TTAnt TPres ASimul) PPos (PredSCVP (EmbedVP (UseV play_V)) (UseComp (C
 
 gt UseQCl ? PPos (how_far_QCl (UsePN paris_PN)) | l -treebank
 gt UseCl ? ? (weather_adjCl (PositA warm_A)) | l -treebank
+gt UseQCl ? PPos (how_old_QCl (UsePron youPl_Pron)) |l -treebank
+gt UseQCl ? PPos (how_old_QCl (UsePron youSg_Pron)) |l -treebank
+gt UseQCl ? PPos (how_old_QCl (UsePron he_Pron)) |l -treebank
+gt UseQCl ? ? (how_old_QCl (UsePron she_Pron)) |l -treebank

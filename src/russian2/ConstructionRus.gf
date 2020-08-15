@@ -39,6 +39,16 @@ lin
   -- : NP -> QCl ;          -- what is x's name / wie heisst x (Ger)
   what_name_QCl np = QuestIAdv how_IAdv (GenericCl (ComplSlash (SlashV2a (P.mkV2 (P.mkV Imperfective "звать" "зову" "зовёт") Acc)) np)) ;
 
+  -- : NP -> QCl ;          -- how old is x / quanti anni ha x (Ita)
+  how_old_QCl np = {
+    subj=how8much_IAdv.s ;
+    adv=[] ;
+    compl=\\p => np.s ! Dat ++ "лет";
+    verb=copulaEll ;
+    dep=[] ;
+    a=Ag (GSg Neut) P3
+    } ;
+
   -- : AP -> Cl ;           -- it is warm / il fait chaud (Fre)
   weather_adjCl ap = {
     subj=[] ;

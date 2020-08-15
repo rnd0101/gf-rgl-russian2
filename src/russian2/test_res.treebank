@@ -4359,3 +4359,87 @@ AllRus: не тепло
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (weather_adjCl (PositA warm_A))
 AllRus: тепло
 
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PPos (how_old_QCl (UsePron youPl_Pron))
+AllRus: сколько бы &+ ло бы вам лет
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (how_old_QCl (UsePron youPl_Pron))
+AllRus: сколько бы &+ ло бы вам лет
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PPos (how_old_QCl (UsePron youPl_Pron))
+AllRus: сколько будет вам лет
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PPos (how_old_QCl (UsePron youPl_Pron))
+AllRus: сколько будет вам лет
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PPos (how_old_QCl (UsePron youPl_Pron))
+AllRus: сколько бы &+ ло вам лет
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PPos (how_old_QCl (UsePron youPl_Pron))
+AllRus: сколько бы &+ ло вам лет
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PPos (how_old_QCl (UsePron youPl_Pron))
+AllRus: сколько вам лет
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (how_old_QCl (UsePron youPl_Pron))
+AllRus: сколько вам лет
+
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PPos (how_old_QCl (UsePron youSg_Pron))
+AllRus: сколько бы &+ ло бы тебе лет
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (how_old_QCl (UsePron youSg_Pron))
+AllRus: сколько бы &+ ло бы тебе лет
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PPos (how_old_QCl (UsePron youSg_Pron))
+AllRus: сколько будет тебе лет
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PPos (how_old_QCl (UsePron youSg_Pron))
+AllRus: сколько будет тебе лет
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PPos (how_old_QCl (UsePron youSg_Pron))
+AllRus: сколько бы &+ ло тебе лет
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PPos (how_old_QCl (UsePron youSg_Pron))
+AllRus: сколько бы &+ ло тебе лет
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PPos (how_old_QCl (UsePron youSg_Pron))
+AllRus: сколько тебе лет
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (how_old_QCl (UsePron youSg_Pron))
+AllRus: сколько тебе лет
+
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PPos (how_old_QCl (UsePron he_Pron))
+AllRus: сколько бы &+ ло бы ему лет
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (how_old_QCl (UsePron he_Pron))
+AllRus: сколько бы &+ ло бы ему лет
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PPos (how_old_QCl (UsePron he_Pron))
+AllRus: сколько будет ему лет
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PPos (how_old_QCl (UsePron he_Pron))
+AllRus: сколько будет ему лет
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PPos (how_old_QCl (UsePron he_Pron))
+AllRus: сколько бы &+ ло ему лет
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PPos (how_old_QCl (UsePron he_Pron))
+AllRus: сколько бы &+ ло ему лет
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PPos (how_old_QCl (UsePron he_Pron))
+AllRus: сколько ему лет
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (how_old_QCl (UsePron he_Pron))
+AllRus: сколько ему лет
+
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (how_old_QCl (UsePron she_Pron))
+AllRus: сколько не бы &+ ло бы ей лет
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PPos (how_old_QCl (UsePron she_Pron))
+AllRus: сколько бы &+ ло бы ей лет
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PNeg (how_old_QCl (UsePron she_Pron))
+AllRus: сколько не бы &+ ло бы ей лет
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (how_old_QCl (UsePron she_Pron))
+AllRus: сколько бы &+ ло бы ей лет
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PNeg (how_old_QCl (UsePron she_Pron))
+AllRus: сколько не будет ей лет
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PPos (how_old_QCl (UsePron she_Pron))
+AllRus: сколько будет ей лет
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PNeg (how_old_QCl (UsePron she_Pron))
+AllRus: сколько не будет ей лет
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PPos (how_old_QCl (UsePron she_Pron))
+AllRus: сколько будет ей лет
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PNeg (how_old_QCl (UsePron she_Pron))
+AllRus: сколько не бы &+ ло ей лет
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PPos (how_old_QCl (UsePron she_Pron))
+AllRus: сколько бы &+ ло ей лет
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PNeg (how_old_QCl (UsePron she_Pron))
+AllRus: сколько не бы &+ ло ей лет
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PPos (how_old_QCl (UsePron she_Pron))
+AllRus: сколько бы &+ ло ей лет
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PNeg (how_old_QCl (UsePron she_Pron))
+AllRus: сколько не ей лет
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PPos (how_old_QCl (UsePron she_Pron))
+AllRus: сколько ей лет
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PNeg (how_old_QCl (UsePron she_Pron))
+AllRus: сколько не ей лет
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (how_old_QCl (UsePron she_Pron))
+AllRus: сколько ей лет
+
