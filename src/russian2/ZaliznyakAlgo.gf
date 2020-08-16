@@ -759,6 +759,25 @@ oper
   pronounAdj1AstA : Str -> PronForms
     = \word -> makeAdjective word (ZA 1 Ast A_ NoC) PreferFull ;
 
+  pronoun1A : Str -> PronForms
+    = \word -> -- Христов
+      let stem = word in
+      {
+        msnom=stem ;
+        fsnom=stem  +"а" ;
+        nsnom=stem  +"о" ;
+        pnom=stem   +"ы" ;
+        msgen=stem  +"а" ;
+        fsgen=stem  +"ой" ;
+        pgen=stem   +"ых" ;
+        msdat=stem  +"у" ;
+        fsacc=stem  +"у" ;
+        msins=stem  +"ым" ;
+        fsins=stem  +"ой" ; -- ою
+        pins=stem   +"ыми" ;
+        msprep=stem +"ом" ;
+    } ;
+
   pronoun2AstB : Str -> PronForms
     = \word -> -- весь
       let cmp_base : Str = case word of {s + "ь" => s ; _ => word} in --

@@ -1,5 +1,5 @@
 concrete DictRus of DictRusAbs = CatRus ** open ParadigmsRus, Prelude,
-  ZaliznyakAlgo,
+  ZaliznyakAlgo, (S=StructuralRus),
   ResRus in {
   flags optimize=values ; coding=utf8 ;
 -- About 1000 most frequent nouns (source: wiktionary)
@@ -1977,6 +1977,7 @@ lin
   administrativnyj_A = mkA "административный" a1_a ;
   akademicheskij_A = mkA "академический" a3a ;
   akkuratnyj_A = mkA "аккуратный" "аккуратнее" a1_a ;
+  aktyorskij_A = mkA "актёрский" a3a ;
   aktivnyj_A = mkA "активный" "активнее" a1_a ;
   aktualqnyj_A = mkA "актуальный" "актуальнее" a1_a ;
   akcionernyj_A = mkA "акционерный" a1_a ;
@@ -2019,6 +2020,7 @@ lin
   bogatyj_A = mkA "богатый" "богаче" a1a ;
   boevoj_A = mkA "боевой" (ZA 1 No B_ NoC) ;
   bozhestvennyj_A = mkA "божественный" a1_a ;
+  bozhij_A = mkA (mkP "божий" "6*a") ;
   bokovoj_A = mkA "боковой" (ZA 1 No B_ NoC) ;
   boleznennyj_A = mkA "болезненный" "болезненнее" a1_a ;
   bolqnichnyj_A = mkA "больничный" a1_a ;
@@ -2047,12 +2049,14 @@ lin
   vertikalqnyj_A = mkA "вертикальный" a1_a ;
   verhnij_A = mkA "верхний" (ZA 2 No A_ NoC) ;
   verhovnyj_A = mkA "верховный" a1_a ;
+  vesyolyj_A = mkA "весёлый" (ZA 1 No A_C' NoC) ;
   vesennij_A = mkA "весенний" a4a ;
   vethij_A = mkA "ветхий" "ветше" (ZA 3 No A_C NoC) ;
   vechernij_A = mkA "вечерний" a4a ;
   vechnyj_A = mkA "вечный" a1_a ;
   vzaimnyj_A = mkA "взаимный" "взаимнее" a1_a ;
   vzroslyj_A = mkA "взрослый" "взрослее" (ZA 1 Ast A'_ NoC) ;
+  vidimyj_A = mkA "видимый" a1a ;
   vidnyj_A = mkA "видный" (ZA 1 Ast A_C' NoC) ;
   vinovatyj_A = mkA "виноватый" a1a ;
   virusnyj_A = mkA "вирусный" a1a ;
@@ -2081,8 +2085,10 @@ lin
   vstrechnyj_A = mkA "встречный" a1a ;
   vsjacheskij_A = mkA "всяческий" a3a ;
   vtorichnyj_A = mkA "вторичный" a1_a ;
+  vhodnoj_A = mkA "входной" (ZA 1 No B_ NoC) ;
   vcherashnij_A = mkA "вчерашний" a4a ;
   vygodnyj_A = mkA "выгодный" "выгоднее" a1_a ;
+  vydajuszijsya_A = mkA "выдающийся" "" (ZA 4 No A_ NoC) ;
   vynuzhdennyj_A = mkA "вынужденный" a1_a ;
   vysokij_A = mkA "высокий" "выше" (ZA 3 No A_C'' NoC) ;
   vysshij_A = mkA "высший" a4a ;
@@ -2090,6 +2096,7 @@ lin
   gazetnyj_A = mkA "газетный" a1a ;
   gazovyj_A = mkA "газовый" a1a ;
   generalqnyj_A = mkA "генеральный" a1_a ;
+  geneticheskij_A = mkA "генетический" a3a ;
   genialqnyj_A = mkA "гениальный" "гениальнее" a1_a ;
   geograficheskij_A = mkA "географический" a3a ;
   geologicheskij_A = mkA "геологический" a3a ;
@@ -2126,10 +2133,12 @@ lin
   gruzinskij_A = mkA "грузинский" a3a ;
   gruzovoj_A = mkA "грузовой" (ZA 1 No B_ NoC) ;
   grustnyj_A = mkA "грустный" (ZA 1 Ast A_C' NoC) ;
+  grjaduszij_A = mkA "грядущий" (ZA 4 No A_ NoC) ;
   grjaznyj_A = mkA "грязный" (ZA 1 Ast A_C' NoC) ;
   gumanitarnyj_A = mkA "гуманитарный" "гуманитарнее" a1_a ;
   gustoj_A = mkA "густой" "гуще" (ZA 1 No B_C' NoC) ;
   davnij_A = mkA "давний" a4a ;
+  dalyokij_A = (mkAltShort (mkA "далёкий" (ZA 3 No A_C'' NoC)) (mkA "далекий"));
   dalqnejshij_A = mkA "дальнейший" a4a ;
   dalqnij_A = mkA "дальний" a4a ;
   dvojnoj_A = mkA "двойной" (ZA 1 No B_ NoC) ;
@@ -2142,7 +2151,8 @@ lin
   derevenskij_A = mkA "деревенский" a3a ;
   derevjannyj_A = mkA "деревянный" a1_a ;
   detskij_A = mkA "детский" a3a ;
-  dikij_A = mkA "дикий" "диче" (ZA 3 No A_C NoC) ;
+  deshyovyj_A = mkA "дешёвый" "дешевле" (ZA 1 No A_C NoC) ;
+  dikij_A = mkA "дикий" "дичее" (ZA 3 No A_C NoC) ;
   diplomaticheskij_A = mkA "дипломатический" a3a ;
   dlinnyj_A = mkA "длинный" (ZA 1 Ast A_C'' NoC) ;
   dlitelqnyj_A = mkA "длительный" a1_a ;
@@ -2152,7 +2162,7 @@ lin
   dovolqnyj_A = mkA "довольный" a1_a ;
   dolgij_A = mkA "долгий" "дольше" (ZA 3 Ast A_C NoC) ;
   dolgosrochnyj_A = mkA "долгосрочный" a1_a ;
-  dolzhen_A = mkA "должен" (ZA 1 Ast B_ NoC) ;
+  dolzhen_A = mkA "должный" "" (ZA 1 Ast B_ NoC) PrefShort;
   dolzhnostnoj_A = mkA "должностной" (ZA 1 No B_ NoC) ;
   dolzhnyj_A = mkA "должный" a1_a ;
   domashnij_A = mkA "домашний" a4a ;
@@ -2182,8 +2192,10 @@ lin
   zharkij_A = mkA "жаркий" (ZA 3 Ast A_C NoC) ;
   zheleznodorozhnyj_A = mkA "железнодорожный" a1_a ;
   zheleznyj_A = mkA "железный" a1_a ;
+  zhyoltyj_A = (mkAplus (mkA "жёлтый" "желтее" "1a/c''") ** {sf="желта"}) ;
   zhenatyj_A = mkA "женатый" a1a ;
   zhenskij_A = mkA "женский" a3a ;
+  zhyostkij_A = mkA "жёсткий" "жёстче" (ZA 3 Ast A_C' NoC) ;
   zhestokij_A = mkA "жестокий" (ZA 3 No A'_ NoC) ;
   zhivoj_A = mkA "живой" "живее" (ZA 1 No B_C NoC) ;
   zhivotnyj_A = mkA "животный" a1_a ;
@@ -2196,6 +2208,7 @@ lin
   zabavnyj_A = mkA "забавный" "забавнее" a1_a ;
   zavodskoj_A = mkA "заводской" (ZA 3 No B_ NoC) ;
   zagadochnyj_A = mkA "загадочный" a1_a ;
+  zadannyj_A = (mkAplus (mkA "заданный" (ZA 1 Ast A'_ ZC2))) ** {sf = "задана"; sm = "задан"; sn = "задано"; sp = "заданы"} ;
   zadnij_A = mkA "задний" a4a ;
   zakonnyj_A = mkA "законный" "законнее" a1_a ;
   zakonodatelqnyj_A = mkA "законодательный" a1_a ;
@@ -2207,6 +2220,7 @@ lin
   zarabotnyj_A = mkA "заработный" a1_a ;
   zarubezhnyj_A = mkA "зарубежный" a1_a ;
   zaszitnyj_A = mkA "защитный" a1_a ;
+  zvyozdnyj_A = mkA "звёздный" a1_a ;
   zdeshnij_A = mkA "здешний" a4a ;
   zdorovyj_A = mkA "здоровый" "здоровее" a1a ;
   zdravyj_A = mkA "здравый" a1a ;
@@ -2310,6 +2324,7 @@ lin
   latinskij_A = mkA "латинский" a3a ;
   levyj_A = mkA "левый" (ZA 1 No A'_ NoC) ;
   legendarnyj_A = mkA "легендарный" a1_a ;
+  lyogkij_A = mkA "лёгкий" "легче" (ZA 3 Ast A_B NoC) ;
   ledjanoj_A = mkA "ледяной" (ZA 1 No B_ NoC) ;
   leningradskij_A = mkA "ленинградский" a3a ;
   leninskij_A = mkA "ленинский" a3a ;
@@ -2318,7 +2333,6 @@ lin
   liberalqnyj_A = mkA "либеральный" "либеральнее" a1_a ;
   linejnyj_A = mkA "линейный" a1_a ;
   literaturnyj_A = mkA "литературный" a1_a ;
-  lichnoj_A = mkA "личной" (ZA 1 No B_ NoC) ;
   lichnyj_A = mkA "личный" a1_a ;
   lishnij_A = mkA "лишний" a4a ;
   logicheskij_A = mkA "логический" a3a ;
@@ -2334,6 +2348,7 @@ lin
   ljudskoj_A = mkA "людской" (ZA 3 No B_ NoC) ;
   magnitnyj_A = mkA "магнитный" a1_a ;
   maksimalqnyj_A = mkA "максимальный" a1_a ;
+  malejshij_A = mkA "малейший" a4a ;
   malenqkij_A = mkA "маленький" a3a ;
   malyj_A = mkA "малый" "меньше" (ZA 1 No A_B NoC) ;
   massovyj_A = mkA "массовый" a1a ;
@@ -2346,6 +2361,7 @@ lin
   mezhdunarodnyj_A = mkA "международный" a1_a ;
   melkij_A = mkA "мелкий" "мельче" (ZA 3 Ast A_C' NoC) ;
   menqshij_A = mkA "меньший" a4a ;
+  myortvyj_A = mkA "мёртвый" (ZA 1 No A_C'' NoC) ;
   mestnyj_A = mkA "местный" a1_a ;
   metallicheskij_A = mkA "металлический" "металлическ" a3a ;
   metallurgicheskij_A = mkA "металлургический" a3a ;
@@ -2354,6 +2370,7 @@ lin
   milyj_A = mkA "милый" (ZA 1 No A_C' NoC) ;
   mineralqnyj_A = mkA "минеральный" a1_a ;
   minimalqnyj_A = mkA "минимальный" a1_a ;
+  minuvshij_A = mkA "минувший" a4a ;
   mirnyj_A = mkA "мирный" (ZA 1 Ast A'_ NoC) ;
   mirovoj_A = mkA "мировой" (ZA 1 No B_ NoC) ;
   mladshij_A = mkA "младший" a4a ;
@@ -2379,10 +2396,11 @@ lin
   muchitelqnyj_A = mkA "мучительный" a1_a ;
   mjagkij_A = mkA "мягкий" "мягче" (ZA 3 Ast A_C' NoC) ;
   mjasnoj_A = mkA "мясной" (ZA 1 No B_ NoC) ;
+  nadyozhnyj_A = mkA "надёжный" a1_a ;
   naibolqshij_A = mkA "наибольший" a4a ;
   naivnyj_A = mkA "наивный" a1_a ;
   nalogovyj_A = mkA "налоговый" a1a ;
-  nameren_A = mkA "намерен" a1a ;
+  nameren_A = mkA "намереный" "" a1a PrefShort ;
   narodnyj_A = mkA "народный" "народнее" a1_a ;
   naruzhnyj_A = mkA "наружный" a1_a ;
   nastojaszij_A = mkA "настоящий" a4a ;
@@ -2400,7 +2418,7 @@ lin
   nevinnyj_A = mkA "невинный" "невиннее" a1_a ;
   nevozmozhnyj_A = mkA "невозможный" a1_a ;
   nevysokij_A = mkA "невысокий" a3a ;
-  negativnyj_A = mkA "негативный" "не-га-тив-не·е" a1_a ;
+  negativnyj_A = mkA "негативный" "негативнее" a1_a ;
   nedavnij_A = mkA "недавний" a4a ;
   nedovolqnyj_A = mkA "недовольный" "недовольнее" a1_a ;
   nedostatochnyj_A = mkA "недостаточный" a1_a ;
@@ -2413,6 +2431,7 @@ lin
   neizbezhnyj_A = mkA "неизбежный" a1_a ;
   neizvestnyj_A = mkA "неизвестный" a1_a ;
   neizmennyj_A = mkA "неизменный" a1_a ;
+  nelyogkij_A = mkA "нелёгкий" (ZA 3 Ast A_B NoC) ;
   nelepyj_A = mkA "нелепый" a1a ;
   nemeckij_A = mkA "немецкий" a3a ;
   nemyslimyj_A = mkA "немыслимый" "немыслимее" a1a ;
@@ -2421,6 +2440,7 @@ lin
   neobyknovennyj_A = mkA "необыкновенный" a1_a ;
   neobychnyj_A = mkA "необычный" "необычнее" a1_a ;
   neozhidannyj_A = mkA "неожиданный" "неожиданнее" a1_a ;
+  neopredelyonnyj_A = mkA "неопределённый" "неопределённее" (ZA 1 Ast A_ NoC) ;
   neplohoj_A = mkA "неплохой" (ZA 3 No B_C' NoC) ;
   nepodvizhnyj_A = mkA "неподвижный" a1_a ;
   neponjatnyj_A = mkA "непонятный" a1_a ;
@@ -2472,6 +2492,7 @@ lin
   olimpijskij_A = mkA "олимпийский" a3a ;
   opasnyj_A = mkA "опасный" "опаснее" a1_a ;
   operativnyj_A = mkA "оперативный" "оперативнее" a1_a ;
+  opredelyonnyj_A = mkA "определённый" "определённее" a1_a ;
   optimalqnyj_A = mkA "оптимальный" a1_a ;
   opytnyj_A = mkA "опытный" "опытнейший" a1_a ;
   oranzhevyj_A = mkA "оранжевый" a1a ;
@@ -2624,7 +2645,7 @@ lin
   rabochij_A = mkA "рабочий" a4a ;
   ravnodushnyj_A = mkA "равнодушный" a1_a ;
   ravnyj_A = mkA "равный" (ZA 1 Ast A_B NoC) ;
-  rad_A = mkA "рад" a1a ;
+  rad_A = mkA "радый" "" a1a PrefShort ;
   radikalqnyj_A = mkA "радикальный" a1_a ;
   radostnyj_A = mkA "радостный" a1_a ;
   razvitoj_A = mkA "развитой" (ZA 1 No B_C NoC) ;
@@ -2688,6 +2709,7 @@ lin
   serdechnyj_A = mkA "сердечный" a1_a ;
   serebrjanyj_A = mkA "серебряный" a1a ;
   seryj_A = mkA "серый" (ZA 1 No A_C NoC) ;
+  serqyoznyj_A = mkA "серьёзный" a1_a ;
   sibirskij_A = mkA "сибирский" a3a ;
   silovoj_A = mkA "силовой" (ZA 1 No B_ NoC) ;
   silqnyj_A = mkA "сильный" (ZA 1 Ast A_C' NoC) ;
@@ -2695,6 +2717,7 @@ lin
   sinij_A = mkA "синий" (ZA 2 No A_C NoC) ;
   sistemnyj_A = mkA "системный" a1_a ;
   skazochnyj_A = mkA "сказочный" a1_a ;
+  sklonnyj_A2 = mkA2 (mkA "склонный" "" (ZA 1 Ast A'_ NoC)) S.to_Prep ;
   skoryj_A = mkA "скорый" (ZA 1 No A_C NoC) ;
   skromnyj_A = mkA "скромный" (ZA 1 Ast A_C' NoC) ;
   skrytyj_A = mkA "скрытый" a1a ;
@@ -2725,6 +2748,7 @@ lin
   soglasnyj_A = mkA "согласный" a1_a ;
   soznatelqnyj_A = mkA "сознательный" a1_a ;
   soldatskij_A = mkA "солдатский" a3a ;
+  solyonyj_A = mkA "солёный" (ZA 1 No A_C' NoC) ;
   solidnyj_A = mkA "солидный" a1_a ;
   solnechnyj_A = mkA "солнечный" a1_a ;
   somnitelqnyj_A = mkA "сомнительный" a1_a ;
@@ -2747,7 +2771,6 @@ lin
   srednij_A = mkA "средний" a4a ;
   srochnyj_A = mkA "срочный" "срочнее" a1_a ;
   stabilqnyj_A = mkA "стабильный" a1_a ;
-  stalinskij_A = mkA "сталинский" a3a ;
   stalqnoj_A = mkA "стальной" (ZA 1 No B_ NoC) ;
   standartnyj_A = mkA "стандартный" a1_a ;
   starinnyj_A = mkA "старинный" a1_a ;
@@ -2816,6 +2839,7 @@ lin
   tjuremnyj_A = mkA "тюремный" a1_a ;
   tjazhkij_A = mkA "тяжкий" "тяжче" (ZA 3 Ast A_C NoC) ;
   ubeditelqnyj_A = mkA "убедительный" a1_a ;
+  ubezhdyonnyj_A = mkA "убеждённый" "убеждённее" (ZA 1 Ast A_ NoC) ;
   uvazhaemyj_A = mkA "уважаемый" a1a ;
   uverennyj_A = mkA "уверенный" a1_a ;
   ugolovnyj_A = mkA "уголовный" a1_a ;
@@ -2825,12 +2849,14 @@ lin
   udobnyj_A = mkA "удобный" "удобнее" a1_a ;
   uzhasnyj_A = mkA "ужасный" "ужаснее" a1_a ;
   uzkij_A = mkA "узкий" "уже" (ZA 3 Ast A_C'' NoC) ;
+  ukazannyj_A = mkA "указанный" (ZA 1 Ast A_ ZC2) ;
   ukrainskij_A = mkA "украинский" a3a ;
   ulichnyj_A = mkA "уличный" a1_a ;
   umnyj_A = mkA "умный" (ZA 1 Ast A_B NoC) ;
   umstvennyj_A = mkA "умственный" a1_a ;
   universalqnyj_A = mkA "универсальный" "универсальнее" a1_a ;
   unikalqnyj_A = mkA "уникальный" a1_a ;
+  upravljajuszij_A = mkA "управляющий" a4a;
   uslovnyj_A = mkA "условный" a1_a ;
   uspeshnyj_A = mkA "успешный" a1_a ;
   ustalyj_A = mkA "усталый" a1a ;
@@ -2838,6 +2864,7 @@ lin
   ustojchivyj_A = mkA "устойчивый" a1a ;
   utrennij_A = mkA "утренний" a4a ;
   uchebnyj_A = mkA "учебный" a1_a ;
+  uchyonyj_A = mkA "учёный" "учёнее" a1a ;
   ujutnyj_A = mkA "уютный" "уютнее" a1_a ;
   fakticheskij_A = mkA "фактический" a3a ;
   fantasticheskij_A = mkA "фантастический" a3a ;
@@ -2859,6 +2886,7 @@ lin
   holodnyj_A = mkA "холодный" (ZA 1 Ast A_C' NoC) ;
   horoshij_A = mkA "хороший" "лучший" (ZA 4 No A_B NoC) ;
   hristianskij_A = mkA "христианский" a3a ;
+  hristov_A = mkA (mkP "Христов" "1a") ;
   hrupkij_A = mkA "хрупкий" "хрупче" (ZA 3 Ast A_C NoC) ;
   hudozhestvennyj_A = mkA "художественный" a1_a ;
   hudoj_A = mkA "худой" "худее" (ZA 1 No B_C' NoC) ;
@@ -2876,16 +2904,20 @@ lin
   chastyj_A = mkA "частый" "чаще" (ZA 1 No A_C NoC) ;
   chelovecheskij_A = mkA "человеческий" a3a ;
   chestnyj_A = mkA "честный" (ZA 1 Ast A_C' NoC) ;
+  chyotkij_A = mkA "чёткий" "чётче" (ZA 3 Ast A'_ NoC) ;
   chechenskij_A = mkA "чеченский" a3a ;
   chrezvychajnyj_A = mkA "чрезвычайный" "чрезвычайнее" a1_a ;
   chudesnyj_A = mkA "чудесный" "чудеснее" a1_a ;
   chudovisznyj_A = mkA "чудовищный" a1_a ;
   chuzhdyj_A = mkA "чуждый" (ZA 1 No A_C' NoC) ;
   chuzhoj_A = mkA "чужой" (ZA 4 No B_ NoC) ;
+  shahmatnyj_A = mkA "шахматный" "" a1_a ;
+  shyolkovyj_A = mkA "шёлковый" a1a ;
   shkolqnyj_A = mkA "школьный" a1_a ;
   shumnyj_A = mkA "шумный" (ZA 1 Ast A_C' NoC) ;
   ehkologicheskij_A = mkA "экологический" a3a ;
   ehkonomicheskij_A = mkA "экономический" a3a ;
+  ehksperimentalqnyj_A = mkA "экспериментальный" a1_a ;
   ehkspertnyj_A = mkA "экспертный" a1_a ;
   ehlektricheskij_A = mkA "электрический" a3a ;
   ehlektronnyj_A = mkA "электронный" a1_a ;

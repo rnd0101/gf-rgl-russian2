@@ -1038,7 +1038,7 @@ oper
       case zi of {
         "6*a" => pronoun6AstA msnom ;
         "2*b" => pronoun2AstB msnom ;
-        _ => pronoun6AstA msnom   -- add more when needed
+        _ => pronoun1A msnom   -- add more when needed
       } ;
 
   doPossessivePronSgP1P2 : Str -> PronForms

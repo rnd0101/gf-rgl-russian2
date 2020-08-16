@@ -1962,6 +1962,7 @@ fun
   administrativnyj_A : A;
   akademicheskij_A : A;
   akkuratnyj_A : A;
+  aktyorskij_A : A;
   aktivnyj_A : A;
   aktualqnyj_A : A;
   akcionernyj_A : A;
@@ -2004,6 +2005,7 @@ fun
   bogatyj_A : A;
   boevoj_A : A;
   bozhestvennyj_A : A;
+  bozhij_A : A ;
   bokovoj_A : A;
   boleznennyj_A : A;
   bolqnichnyj_A : A;
@@ -2032,12 +2034,14 @@ fun
   vertikalqnyj_A : A;
   verhnij_A : A;
   verhovnyj_A : A;
+  vesyolyj_A : A;
   vesennij_A : A;
   vethij_A : A;
   vechernij_A : A;
   vechnyj_A : A;
   vzaimnyj_A : A;
   vzroslyj_A : A;
+  vidimyj_A : A;
   vidnyj_A : A;
   vinovatyj_A : A;
   virusnyj_A : A;
@@ -2066,8 +2070,10 @@ fun
   vstrechnyj_A : A;
   vsjacheskij_A : A;
   vtorichnyj_A : A;
+  vhodnoj_A : A;
   vcherashnij_A : A;
   vygodnyj_A : A;
+  vydajuszijsya_A : A;
   vynuzhdennyj_A : A;
   vysokij_A : A;
   vysshij_A : A;
@@ -2075,6 +2081,7 @@ fun
   gazetnyj_A : A;
   gazovyj_A : A;
   generalqnyj_A : A;
+  geneticheskij_A : A;
   genialqnyj_A : A;
   geograficheskij_A : A;
   geologicheskij_A : A;
@@ -2111,10 +2118,12 @@ fun
   gruzinskij_A : A;
   gruzovoj_A : A;
   grustnyj_A : A;
+  grjaduszij_A : A;
   grjaznyj_A : A;
   gumanitarnyj_A : A;
   gustoj_A : A;
   davnij_A : A;
+  dalyokij_A : A;
   dalqnejshij_A : A;
   dalqnij_A : A;
   dvojnoj_A : A;
@@ -2127,6 +2136,7 @@ fun
   derevenskij_A : A;
   derevjannyj_A : A;
   detskij_A : A;
+  deshyovyj_A : A;
   dikij_A : A;
   diplomaticheskij_A : A;
   dlinnyj_A : A;
@@ -2167,8 +2177,10 @@ fun
   zharkij_A : A;
   zheleznodorozhnyj_A : A;
   zheleznyj_A : A;
+  zhyoltyj_A : A;
   zhenatyj_A : A;
   zhenskij_A : A;
+  zhyostkij_A : A;
   zhestokij_A : A;
   zhivoj_A : A;
   zhivotnyj_A : A;
@@ -2181,6 +2193,7 @@ fun
   zabavnyj_A : A;
   zavodskoj_A : A;
   zagadochnyj_A : A;
+  zadannyj_A : A;
   zadnij_A : A;
   zakonnyj_A : A;
   zakonodatelqnyj_A : A;
@@ -2192,6 +2205,7 @@ fun
   zarabotnyj_A : A;
   zarubezhnyj_A : A;
   zaszitnyj_A : A;
+  zvyozdnyj_A : A;
   zdeshnij_A : A;
   zdorovyj_A : A;
   zdravyj_A : A;
@@ -2295,6 +2309,7 @@ fun
   latinskij_A : A;
   levyj_A : A;
   legendarnyj_A : A;
+  lyogkij_A : A;
   ledjanoj_A : A;
   leningradskij_A : A;
   leninskij_A : A;
@@ -2303,7 +2318,6 @@ fun
   liberalqnyj_A : A;
   linejnyj_A : A;
   literaturnyj_A : A;
-  lichnoj_A : A;
   lichnyj_A : A;
   lishnij_A : A;
   logicheskij_A : A;
@@ -2319,6 +2333,7 @@ fun
   ljudskoj_A : A;
   magnitnyj_A : A;
   maksimalqnyj_A : A;
+  malejshij_A : A;
   malenqkij_A : A;
   malyj_A : A;
   massovyj_A : A;
@@ -2331,6 +2346,7 @@ fun
   mezhdunarodnyj_A : A;
   melkij_A : A;
   menqshij_A : A;
+  myortvyj_A : A;
   mestnyj_A : A;
   metallicheskij_A : A;
   metallurgicheskij_A : A;
@@ -2339,6 +2355,7 @@ fun
   milyj_A : A;
   mineralqnyj_A : A;
   minimalqnyj_A : A;
+  minuvshij_A : A;
   mirnyj_A : A;
   mirovoj_A : A;
   mladshij_A : A;
@@ -2364,6 +2381,7 @@ fun
   muchitelqnyj_A : A;
   mjagkij_A : A;
   mjasnoj_A : A;
+  nadyozhnyj_A : A;
   naibolqshij_A : A;
   naivnyj_A : A;
   nalogovyj_A : A;
@@ -2398,6 +2416,7 @@ fun
   neizbezhnyj_A : A;
   neizvestnyj_A : A;
   neizmennyj_A : A;
+  nelyogkij_A : A;
   nelepyj_A : A;
   nemeckij_A : A;
   nemyslimyj_A : A;
@@ -2406,6 +2425,7 @@ fun
   neobyknovennyj_A : A;
   neobychnyj_A : A;
   neozhidannyj_A : A;
+  neopredelyonnyj_A : A;
   neplohoj_A : A;
   nepodvizhnyj_A : A;
   neponjatnyj_A : A;
@@ -2457,6 +2477,7 @@ fun
   olimpijskij_A : A;
   opasnyj_A : A;
   operativnyj_A : A;
+  opredelyonnyj_A : A;
   optimalqnyj_A : A;
   opytnyj_A : A;
   oranzhevyj_A : A;
@@ -2673,6 +2694,7 @@ fun
   serdechnyj_A : A;
   serebrjanyj_A : A;
   seryj_A : A;
+  serqyoznyj_A : A;
   sibirskij_A : A;
   silovoj_A : A;
   silqnyj_A : A;
@@ -2680,6 +2702,7 @@ fun
   sinij_A : A;
   sistemnyj_A : A;
   skazochnyj_A : A;
+  sklonnyj_A2 : A2;
   skoryj_A : A;
   skromnyj_A : A;
   skrytyj_A : A;
@@ -2710,6 +2733,7 @@ fun
   soglasnyj_A : A;
   soznatelqnyj_A : A;
   soldatskij_A : A;
+  solyonyj_A : A;
   solidnyj_A : A;
   solnechnyj_A : A;
   somnitelqnyj_A : A;
@@ -2732,7 +2756,6 @@ fun
   srednij_A : A;
   srochnyj_A : A;
   stabilqnyj_A : A;
-  stalinskij_A : A;
   stalqnoj_A : A;
   standartnyj_A : A;
   starinnyj_A : A;
@@ -2801,6 +2824,7 @@ fun
   tjuremnyj_A : A;
   tjazhkij_A : A;
   ubeditelqnyj_A : A;
+  ubezhdyonnyj_A : A;
   uvazhaemyj_A : A;
   uverennyj_A : A;
   ugolovnyj_A : A;
@@ -2810,12 +2834,14 @@ fun
   udobnyj_A : A;
   uzhasnyj_A : A;
   uzkij_A : A;
+  ukazannyj_A : A;
   ukrainskij_A : A;
   ulichnyj_A : A;
   umnyj_A : A;
   umstvennyj_A : A;
   universalqnyj_A : A;
   unikalqnyj_A : A;
+  upravljajuszij_A : A;
   uslovnyj_A : A;
   uspeshnyj_A : A;
   ustalyj_A : A;
@@ -2823,6 +2849,7 @@ fun
   ustojchivyj_A : A;
   utrennij_A : A;
   uchebnyj_A : A;
+  uchyonyj_A : A;
   ujutnyj_A : A;
   fakticheskij_A : A;
   fantasticheskij_A : A;
@@ -2844,6 +2871,7 @@ fun
   holodnyj_A : A;
   horoshij_A : A;
   hristianskij_A : A;
+  hristov_A : A;
   hrupkij_A : A;
   hudozhestvennyj_A : A;
   hudoj_A : A;
@@ -2861,16 +2889,20 @@ fun
   chastyj_A : A;
   chelovecheskij_A : A;
   chestnyj_A : A;
+  chyotkij_A : A;
   chechenskij_A : A;
   chrezvychajnyj_A : A;
   chudesnyj_A : A;
   chudovisznyj_A : A;
   chuzhdyj_A : A;
   chuzhoj_A : A;
+  shahmatnyj_A : A;
+  shyolkovyj_A : A;
   shkolqnyj_A : A;
   shumnyj_A : A;
   ehkologicheskij_A : A;
   ehkonomicheskij_A : A;
+  ehksperimentalqnyj_A : A;
   ehkspertnyj_A : A;
   ehlektricheskij_A : A;
   ehlektronnyj_A : A;
