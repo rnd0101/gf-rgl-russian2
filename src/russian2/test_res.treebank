@@ -4170,6 +4170,9 @@ AllRus: Иван будет говорить : « в следующее воск
 AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePN john_PN) (ComplDirectVQ know_VQ (UttAdv (weekdayNextAdv sunday_Weekday))))
 AllRus: Иван знал : « в следующее воскресенье »
 
+AllRusAbs: CompoundA yellow_A red_A
+AllRus: жёлто &+ - &+ красный
+
 AllRusAbs: has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))
 AllRus: быть по меньшей мере восемь лет
 
