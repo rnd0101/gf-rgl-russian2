@@ -2937,4 +2937,42 @@ lin
   jarkij_A = mkA "яркий" "ярче" (ZA 3 Ast A_C' NoC) ;
   jasnyj_A = mkA "ясный" (ZA 1 Ast A_C' NoC) ;
 
+  ai_Interj = mkInterj "ай" ;
+  ale_Interj = mkInterj "алё" ;
+  allo_Interj = mkInterj "алло" ;
+  ah_Interj = mkInterj "ах" ;
+  a_nu_Interj = mkInterj "а ну" ;
+  aida_Interj = mkInterj "айда" ;
+  baju_baj_Interj = mkInterj "баю-бай" ;
+  bravo_Interj = mkInterj "браво" ;
+  budet_Interj = mkInterj "будет" ;
+  da_da_Interj = mkInterj "да-да" ;
+  dyk_Interj = mkInterj "дык" ;
+  doloi_Interj = mkInterj "долой" ;
+  nu_Interj = mkInterj "ну" ;
+  nu_ka_Interj = mkInterj "ну-ка" ;
+  von_Interj = mkInterj "вон" ;
+  oi_Interj = mkInterj "ой" ;
+  ok_Interj = mkInterj "ок" ;
+  oh_Interj = mkInterj "ох" ;
+  okej_Interj = mkInterj "окей" ;
+  ostorozhno_Interj = mkInterj "осторожно" ;
+  prostite_Interj = mkInterj "простите" ;
+  proch6_Interj = mkInterj "прочь" ;
+  stop_Interj = mkInterj "стоп" ;
+  to_to_Interj = mkInterj "то-то" ;
+  tjfu_Interj = mkInterj "тьфу" ;
+  ugu_Interj = mkInterj "угу" ;
+  fu_Interj = mkInterj "фу" ;
+  ha_Interj = mkInterj "ха" ;
+  ha_ha_Interj = mkInterj "ха-ха" ;
+  ha_ha_ha_Interj = mkInterj "ха-ха-ха" ;
+  he_Interj = mkInterj "хе" ;
+  he_he_Interj = mkInterj "хе-хе" ;
+  hi_hi_Interj = mkInterj "хи-хи" ;
+  hmmm_Interj = mkInterj "хм" ;
+  shshsh_Interj = mkInterj "ш-ш-ш" ;
+  shshsh_Interj = mkInterj "ш-ш-ш" ;
+  uh_Interj = mkInterj "ух" ;
+
 }
