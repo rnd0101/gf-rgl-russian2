@@ -51,6 +51,9 @@ gt AdjCN (PastPartAP (SlashV2V beg_V2V (ComplVA become_VA (AdjOrd left_Ord)))) (
 gt ImpVP (AdvVP (AdVVP always_AdV (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday)) |l -treebank
 gt AdjCN (PastPartAgentAP (VPSlashPrep ill_VP after_Prep) (DetNP every_Det)) (UseN woman_N) |l -treebank
 
+gt UttNP (DetNPFem (DetQuant IndefArt (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))))))) | l -treebank -unlextext
+gt UttNP (DetNPMasc (DetQuant IndefArt (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))))))) | l -treebank -unlextext
+
 gt PredVP (ExtAdvNP (UsePron he_Pron) ( TransgrAsAdv1 (TTAnt TPres ASimul) PPos (Slash3V3 send_V3  something_NP) ) )  (UseV burn_V)  | l -treebank -unlextext
 gt PastPartAP (AdvVPSlash (SlashVV must_VV (VPSlashPrep scared_VP above_Prep)) ( TransgrAsAdv (TTAnt ? ASimul) ? (Slash3V3 add_V3 everything_NP) ) ) |l -treebank
 

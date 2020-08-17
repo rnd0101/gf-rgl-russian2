@@ -20,7 +20,10 @@ concrete ExtendRus of Extend =
     -- CompIQuant, CompQS, CompS, CompVP, ComplBareVS, ComplGenVV, ComplSlashPartLast, ComplVPSVV, CompoundAP,
     CompoundN,
 
-    --ConjRNP, ConjVPS, ConsVPS, Cons_nr_RNP, Cons_rr_RNP, DetNPMasc, DetNPFem, EmbedPresPart, EmptyRelSlash,
+    --ConjRNP, ConjVPS, ConsVPS, Cons_nr_RNP, Cons_rr_RNP,
+    DetNPMasc,
+    DetNPFem,
+    -- EmbedPresPart, EmptyRelSlash,
     ExistsNP,
     -- ExistCN, ExistMassCN, ExistPluralCN,
     --ProDrop,
@@ -188,6 +191,30 @@ lin
     adv = [];
     cop = NomCopula ;
     } ;
+
+  -- : Det -> NP ;
+  DetNPFem det =
+    let g = Fem in {
+      s=case det.type of {
+        EmptyIndef => \\cas => a_Det.s ! g ! Inanimate ! cas ++ det.s ! g ! Inanimate ! cas ;
+        EmptyDef => \\cas => the_Det.s ! g ! Inanimate ! cas ++ det.s ! g ! Inanimate ! cas ;
+        _ => \\cas => det.s ! g ! Inanimate ! cas
+        } ;
+      pron=False ;
+      a=Ag (gennum g (numSizeNumber det.size)) P3
+      } ;
+
+  -- : Det -> NP ;
+  DetNPMasc det =
+    let g = Masc in {
+      s=case det.type of {
+        EmptyIndef => \\cas => a_Det.s ! g ! Inanimate ! cas ++ det.s ! g ! Inanimate ! cas ;
+        EmptyDef => \\cas => the_Det.s ! g ! Inanimate ! cas ++ det.s ! g ! Inanimate ! cas ;
+        _ => \\cas => det.s ! g ! Inanimate ! cas
+        } ;
+      pron=False ;
+      a=Ag (gennum g (numSizeNumber det.size)) P3
+      } ;
 
 oper
   rus_quoted : Str -> Str = \s -> "«" ++ s ++ "»" ; ---- TODO bind ; move to Prelude?

@@ -2360,6 +2360,12 @@ AllRus: будь всегда голоден сам в следующую пят
 AllRusAbs: AdjCN (PastPartAgentAP (VPSlashPrep ill_VP after_Prep) (DetNP every_Det)) (UseN woman_N)
 AllRus: после каждого больна женщина
 
+AllRusAbs: UttNP (DetNPFem (DetQuant IndefArt (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5)))))))))
+AllRus: Некая пять
+
+AllRusAbs: UttNP (DetNPMasc (DetQuant IndefArt (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5)))))))))
+AllRus: Некий пять
+
 AllRusAbs: PredVP (ExtAdvNP (UsePron he_Pron) (TransgrAsAdv1 (TTAnt TPres ASimul) PPos (Slash3V3 send_V3 something_NP))) (UseV burn_V)
 AllRus: Он, посылая чему-то, гореть
 
