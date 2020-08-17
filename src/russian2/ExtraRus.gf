@@ -12,6 +12,7 @@ lin
   dat_Prep = lin Prep {s="" ; c=Dat ; neggen=False ; hasPrep=False} ;
   u_Prep = lin Prep {s="у" ; c=Gen ; neggen=False ; hasPrep=True} ;
   on_to_Prep = P.mkPrep "до" Gen ;
+  on2_Prep = P.on2_Prep ;
   along_Prep = P.mkPrep "по" Loc ;
   from2_Prep = from2 ;
   about_Prep = P.mkPrep o_prep_pre_mod Pre ;
