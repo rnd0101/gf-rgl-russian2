@@ -3362,6 +3362,9 @@ AllRus: она становит &+ ся чисто старой
 AllRusAbs: UttAdv (ComparAdvAdj rather_CAdv warm_A (UsePron he_Pron))
 AllRus: Скорее тепло, чем он
 
+AllRusAbs: CountNP (ConjDet or_Conj (BaseDAP (DetDAP every_Det) (DetDAP many_Det))) (MassNP (UseN city_N))
+AllRus: каждое или многие из города
+
 AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
 AllRus: человек не был бы женат на женщине
 AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (married_Cl (MassNP (UseN man_N)) (MassNP (UseN woman_N)))
