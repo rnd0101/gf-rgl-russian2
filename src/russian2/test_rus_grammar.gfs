@@ -25,6 +25,7 @@ gt UseRCl (TTAnt TCond ASimul) PPos ( RelSlash IdRP (SlashPrep ( CleftAdv now_Ad
 gt UseCl (TTAnt TPres AAnter) PPos (CleftNP  (UsePron ?)  (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP))) | l -treebank
 gt ComplA2 ? (UsePron she_Pron) | l -treebank
 gt ReflA2 ? |l -treebank
+gt ImpPl1 (UseV fly_V) | l -treebank
 gt UttImpImm ? ( ImpVP (UseV fly_V )) |l -treebank
 gt AdjCN (AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))) )) (UseN apple_N)   | l -treebank
 gt CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2)) | l -treebank

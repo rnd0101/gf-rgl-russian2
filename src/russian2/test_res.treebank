@@ -1473,6 +1473,9 @@ AllRus: лёгкий для себя
 AllRusAbs: ReflA2 married_A2
 AllRus: замужем за собой
 
+AllRusAbs: ImpPl1 (UseV fly_V)
+AllRus: давайте летать
+
 AllRusAbs: UttImpImm PNeg (ImpVP (UseV fly_V))
 AllRus: не летать
 AllRusAbs: UttImpImm PPos (ImpVP (UseV fly_V))
@@ -3497,6 +3500,8 @@ AllRus: вы будете учиться в 2024 .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron youSg_Pron) (AdvVP (PassV2 teach_V2) (yearAdv (intYear 2024)))))) NoVoc) TEmpty
 AllRus: ты будешь учиться в 2024 .
 
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (MassNP (UseN boy_N)) (AdvVP (UseV fly_V) (PrepCN on_Prep (UseN (CompoundN carpet_N airplane_N)))))
+AllRus: мальчик летал на ковре &+ - &+ самолёте
 
 AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv how8much_IAdv (PredVP (DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV walk_V)))
 AllRus: сколько эта женщина не гуля &+ ла бы
