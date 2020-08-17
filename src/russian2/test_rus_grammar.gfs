@@ -1,6 +1,10 @@
 -- invoke script with command :
 -- > gf --run AllRus.gf < test_rus_grammar.gfs
 gt what_name_QCl (UsePron ?) | l -treebank
+gt UseCl ? ? (PredVP (MassNP (UseN apple_N)) (UseV fall_V)) | l -treebank -unlextext
+gt UseQCl ? ? (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V))) | l -treebank -unlextext
+gt UseQCl ? ? (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V))) | l -treebank -unlextext
+gt UseQCl ? ? (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))  )) | l -treebank -unlextext
 gt UseCl (TTAnt ? AAnter) ? (have_name_Cl (UsePron he_Pron) (UsePN john_PN)) |l -treebank
 gt UseCl (TTAnt ? AAnter) PPos (have_name_Cl (UsePron he_Pron) (PredetNP not_Predet (UsePN john_PN))) | l -treebank
 gt UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a eat_V2) (MassNP (UseN apple_N))))  | l -treebank
@@ -21,6 +25,7 @@ gt UseRCl (TTAnt TCond ASimul) PPos ( RelSlash IdRP (SlashPrep ( CleftAdv now_Ad
 gt UseCl (TTAnt TPres AAnter) PPos (CleftNP  (UsePron ?)  (UseRCl (TTAnt TPast AAnter) PPos (RelVP IdRP ready_VP))) | l -treebank
 gt ComplA2 ? (UsePron she_Pron) | l -treebank
 gt ReflA2 ? |l -treebank
+gt UttImpImm ? ( ImpVP (UseV fly_V )) |l -treebank
 gt AdjCN (AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))) )) (UseN apple_N)   | l -treebank
 gt CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2)) | l -treebank
 gt TFullStop (PhrUtt NoPConj (UttAP (SentAP (CAdvAP less_CAdv (PositA full_A) (MassNP (UseN2 brother_N2))) (EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (UsePron ?) (AdvVP (UseV sit_V) (PrepNP on_Prep (MassNP (UseN table_N)))))))))) NoVoc) TEmpty | l -treebank

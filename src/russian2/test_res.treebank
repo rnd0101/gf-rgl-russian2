@@ -169,6 +169,138 @@ AllRus: как звать вас
 AllRusAbs: what_name_QCl (UsePron youSg_Pron)
 AllRus: как звать тебя
 
+AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко не падало бы
+AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко падало бы
+AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко не падало бы
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко падало бы
+AllRusAbs: UseCl (TTAnt TFut AAnter) PNeg (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко не будет падать
+AllRusAbs: UseCl (TTAnt TFut AAnter) PPos (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко будет падать
+AllRusAbs: UseCl (TTAnt TFut ASimul) PNeg (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко не будет падать
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко будет падать
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко не падало
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко падало
+AllRusAbs: UseCl (TTAnt TPast ASimul) PNeg (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко не падало
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко падало
+AllRusAbs: UseCl (TTAnt TPres AAnter) PNeg (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко не падает
+AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко падает
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко не падает
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (MassNP (UseN apple_N)) (UseV fall_V))
+AllRus: Яблоко падает
+
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко не падало бы
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PPos (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко падало бы
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PNeg (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко не падало бы
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко падало бы
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PNeg (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко не будет падать
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PPos (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко будет падать
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PNeg (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко не будет падать
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PPos (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко будет падать
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PNeg (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко не падало
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PPos (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко падало
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PNeg (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко не падало
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PPos (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко падало
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PNeg (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко не падает
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PPos (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко падает
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PNeg (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко не падает
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestIAdv when_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Когда яблоко падает
+
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко не падало бы
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PPos (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко падало бы
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PNeg (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко не падало бы
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко падало бы
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PNeg (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко не будет падать
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PPos (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко будет падать
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PNeg (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко не будет падать
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PPos (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко будет падать
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PNeg (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко не падало
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PPos (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко падало
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PNeg (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко не падало
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PPos (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко падало
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PNeg (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко не падает
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PPos (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко падает
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PNeg (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко не падает
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestIAdv whereto_IAdv (PredVP (MassNP (UseN apple_N)) (UseV fall_V)))
+AllRus: Куда яблоко падает
+
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко не падало бы на голову
+AllRusAbs: UseQCl (TTAnt TCond AAnter) PPos (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко падало бы на голову
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PNeg (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко не падало бы на голову
+AllRusAbs: UseQCl (TTAnt TCond ASimul) PPos (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко падало бы на голову
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PNeg (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко не будет падать на голову
+AllRusAbs: UseQCl (TTAnt TFut AAnter) PPos (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко будет падать на голову
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PNeg (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко не будет падать на голову
+AllRusAbs: UseQCl (TTAnt TFut ASimul) PPos (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко будет падать на голову
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PNeg (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко не падало на голову
+AllRusAbs: UseQCl (TTAnt TPast AAnter) PPos (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко падало на голову
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PNeg (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко не падало на голову
+AllRusAbs: UseQCl (TTAnt TPast ASimul) PPos (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко падало на голову
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PNeg (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко не падает на голову
+AllRusAbs: UseQCl (TTAnt TPres AAnter) PPos (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко падает на голову
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PNeg (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко не падает на голову
+AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (QuestIAdv why_IAdv (PredVP (MassNP (UseN apple_N)) (AdvVP (UseV fall_V) (PrepNP on2_Prep (MassNP (UseN head_N))))))
+AllRus: Почему яблоко падает на голову
+
 AllRusAbs: UseCl (TTAnt TCond AAnter) PNeg (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
 AllRus: не его имя бы &+ ло бы Иван
 AllRusAbs: UseCl (TTAnt TCond AAnter) PPos (have_name_Cl (UsePron he_Pron) (UsePN john_PN))
@@ -1340,6 +1472,11 @@ AllRusAbs: ReflA2 easy_A2V
 AllRus: лёгкий для себя
 AllRusAbs: ReflA2 married_A2
 AllRus: замужем за собой
+
+AllRusAbs: UttImpImm PNeg (ImpVP (UseV fly_V))
+AllRus: не летать
+AllRusAbs: UttImpImm PPos (ImpVP (UseV fly_V))
+AllRus: летать
 
 AllRusAbs: AdjCN (AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))))) (UseN apple_N)
 AllRus: третье яблоко
@@ -3360,8 +3497,6 @@ AllRus: вы будете учиться в 2024 .
 AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron youSg_Pron) (AdvVP (PassV2 teach_V2) (yearAdv (intYear 2024)))))) NoVoc) TEmpty
 AllRus: ты будешь учиться в 2024 .
 
-AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (MassNP (UseN boy_N)) (AdvVP (UseV fly_V) (PrepCN on_Prep (UseN (CompoundN carpet_N airplane_N)))))
-AllRus: мальчик летал на ковре &+ - &+ самолёте
 
 AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv how8much_IAdv (PredVP (DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV walk_V)))
 AllRus: сколько эта женщина не гуля &+ ла бы

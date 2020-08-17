@@ -132,6 +132,9 @@ lin
       ++ endComma
     } ;
 
+  -- : Pol -> Imp -> Utt ;         -- sleep (impolite, like immediate command)
+  UttImpImm pol imp = {s = imp.s ! pol.p ! (GSg Neut)} ; -- reused otherwise unused gender
+
 oper
   est_V : V = lin V {
     inf="есть";
