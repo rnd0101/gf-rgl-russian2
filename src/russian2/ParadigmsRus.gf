@@ -185,7 +185,6 @@ oper
 
   mkAdv : overload {
     mkAdv : Str -> Adv ;
-    mkAdv : Temp -> Pol -> VPSlash -> Adv ;  -- introduce transgressive: "делая что-то ," = "(was) (not) doing smth, "
     } ;
   mkIAdv : Str -> IAdv ;
   mkConj : overload {
@@ -390,17 +389,6 @@ oper
   mkAdv = overload {
     mkAdv : Str -> Adv
       = \s -> lin Adv (makeAdverb s) ;
-    mkAdv : Temp -> Pol -> VPSlash -> Adv
-      = \temp,pol,vps -> lin Adv {
-        s=vps.adv ! Ag (GSg Neut) P3
-          ++ pol.s
-          ++ case temp.t of {Pres => vps.verb.prtr ; _ => vps.verb.ptr }
-          ++ verbRefl vps.verb
-          ++ case temp.t of {Cond => "бы" ; _ => []}
-          ++ vps.dep
-          ++ vps.compl ! pol.p ! Ag (GSg Neut) P3
-          ++ vps.c.s ;  -- comma is needed. Up to user?
-        } ;
     } ;
 
   mkIAdv : Str -> IAdv

@@ -51,6 +51,8 @@ gt AdjCN (PastPartAP (SlashV2V beg_V2V (ComplVA become_VA (AdjOrd left_Ord)))) (
 gt ImpVP (AdvVP (AdVVP always_AdV (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday)) |l -treebank
 gt AdjCN (PastPartAgentAP (VPSlashPrep ill_VP after_Prep) (DetNP every_Det)) (UseN woman_N) |l -treebank
 
+gt PastPartAP (AdvVPSlash (SlashVV must_VV (VPSlashPrep scared_VP above_Prep)) ( TransgrAsAdv (TTAnt ? ASimul) ? (Slash3V3 add_V3 everything_NP) ) ) |l -treebank
+
 gt PredSCVP (EmbedQS (UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv (AdvIAdv how8much_IAdv everywhere_Adv) (ExistNP nobody_NP)))) hungry_VP | l -treebank
 gt RelCl (PredSCVP (EmbedQS (UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv (AdvIAdv how8much_IAdv everywhere_Adv) (ExistNP nobody_NP)))) hungry_VP) | l -treebank
 
@@ -126,7 +128,7 @@ gt UseQCl ? ? (QuestIAdv how8much_IAdv (PredVP ( DetCN (DetQuant this_Quant NumS
 
 gt UseCl (TTAnt TPres ASimul) PPos (PredVP (AdvNP (UsePron he_Pron) ( PositAdvAdj correct_A  )) (UseV fall_V)) | l -treebank
 gt UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (ComplVA become_VA (AdAP (PositAdAAdj clean_A) (PositA old_A))))) | l -treebank
-gt  UttAdv (ComparAdvAdj rather_CAdv warm_A (UsePron he_Pron)) | l -treebank -unlextext
+gt UttAdv (ComparAdvAdj rather_CAdv warm_A (UsePron he_Pron)) | l -treebank -unlextext
 
 gt CountNP (ConjDet or_Conj (BaseDAP (DetDAP every_Det) (DetDAP many_Det))) (MassNP (UseN city_N)) |l -treebank
 

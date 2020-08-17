@@ -104,6 +104,20 @@ lin
   -- : A -> A -> A ;
   CompoundA a1 a2 = mkCompoundA a1 "-" a2 ;
 
+  -- : Temp -> Pol -> VPSlash -> Adv ;  -- introduce transgressive: "делая что-то ," = "(was) (not) doing smth, "
+  TransgrAsAdv temp pol vps = {
+    s=embedInCommas (
+      vps.adv ! Ag (GSg Neut) P3
+      ++ pol.s
+      ++ case temp.t of {Pres => vps.verb.prtr ; _ => vps.verb.ptr }
+      ++ verbRefl vps.verb
+      ++ case temp.t of {Cond => "бы" ; _ => []}
+      ++ vps.dep
+      ++ vps.compl ! pol.p ! Ag (GSg Neut) P3
+      ++ vps.c.s
+      )
+    } ;
+
 oper
   est_V : V = lin V {
     inf="есть";

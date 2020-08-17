@@ -82,4 +82,5 @@ fun
   rather_CAdv : CAdv ;
 
   CompoundA : A -> A -> A ;
+  TransgrAsAdv : Temp -> Pol -> VPSlash -> Adv ;
 }
