@@ -51,6 +51,7 @@ gt AdjCN (PastPartAP (SlashV2V beg_V2V (ComplVA become_VA (AdjOrd left_Ord)))) (
 gt ImpVP (AdvVP (AdVVP always_AdV (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday)) |l -treebank
 gt AdjCN (PastPartAgentAP (VPSlashPrep ill_VP after_Prep) (DetNP every_Det)) (UseN woman_N) |l -treebank
 
+gt PredVP (ExtAdvNP (UsePron he_Pron) ( TransgrAsAdv1 (TTAnt TPres ASimul) PPos (Slash3V3 send_V3  something_NP) ) )  (UseV burn_V)  | l -treebank -unlextext
 gt PastPartAP (AdvVPSlash (SlashVV must_VV (VPSlashPrep scared_VP above_Prep)) ( TransgrAsAdv (TTAnt ? ASimul) ? (Slash3V3 add_V3 everything_NP) ) ) |l -treebank
 
 gt PredSCVP (EmbedQS (UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv (AdvIAdv how8much_IAdv everywhere_Adv) (ExistNP nobody_NP)))) hungry_VP | l -treebank
@@ -89,6 +90,8 @@ gt UttS (UseCl (TTAnt ? ASimul) ? (PredVP (UsePron he_Pron) (ComplVV want_VV (Us
 gt UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (UseV sit_V) possess_Prep) (UsePron she_Pron)) part_Prep) (DetCN (DetQuant DefArt NumPl) (UseN window_N))))) | l -treebank
 gt UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a wait_V2) (MassNP (PartNP (AdvCN (UseN car_N) (PrepNP possess_Prep (UsePron she_Pron))) (DetCN (DetQuant DefArt NumPl) (UseN window_N))))))) | l -treebank
 gt UttS (UseCl (TTAnt ? AAnter) ? (PredVP (UsePron he_Pron) (ComplSlash (VPSlashPrep (ComplSlash (VPSlashPrep (ComplSlash (SlashV2a count_V2) (DetCN (DetQuant IndefArt NumPl) (UseN car_N))) possess_Prep) (DetNP (DetQuant (PossPron she_Pron) NumPl))) part_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN window_N))))) | l -treebank
+
+gt UseCl (TTAnt TPres ASimul) PPos (PredVP (AdvNP (UsePron he_Pron) ( TransgrAsAdv (TTAnt ? ASimul) ? (Slash3V3 send_V3  something_NP) )) (UseV fall_V)) | l -treebank
 
 gt MassNP (AdjCN (AdjOrd (OrdNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3))))) )  ) (UseN apple_N)) | l -treebank
 gt MassNP (AdjCN ( AdjOrd (OrdNumeralSuperl (num (pot2as3 (pot1as2 (pot0as1 (pot0 n5))))) big_A)  ) (UseN car_N)) |l -treebank

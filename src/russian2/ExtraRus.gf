@@ -104,7 +104,7 @@ lin
   -- : A -> A -> A ;
   CompoundA a1 a2 = mkCompoundA a1 "-" a2 ;
 
-  -- : Temp -> Pol -> VPSlash -> Adv ;  -- introduce transgressive: "делая что-то ," = "(was) (not) doing smth, "
+  -- : Temp -> Pol -> VPSlash -> Adv ;  -- introduce transgressive: ", делая что-то ," = "(was) (not) doing smth, "
   TransgrAsAdv temp pol vps = {
     s=embedInCommas (
       vps.adv ! Ag (GSg Neut) P3
@@ -116,6 +116,19 @@ lin
       ++ vps.compl ! pol.p ! Ag (GSg Neut) P3
       ++ vps.c.s
       )
+    } ;
+
+  -- : Temp -> Pol -> VPSlash -> Adv ;  -- transgressive in places, where comma already exists or in the beginning
+  TransgrAsAdv1 temp pol vps = {
+    s=vps.adv ! Ag (GSg Neut) P3
+      ++ pol.s
+      ++ case temp.t of {Pres => vps.verb.prtr ; _ => vps.verb.ptr }
+      ++ verbRefl vps.verb
+      ++ case temp.t of {Cond => "бы" ; _ => []}
+      ++ vps.dep
+      ++ vps.compl ! pol.p ! Ag (GSg Neut) P3
+      ++ vps.c.s
+      ++ endComma
     } ;
 
 oper

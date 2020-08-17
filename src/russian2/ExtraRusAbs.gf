@@ -83,4 +83,5 @@ fun
 
   CompoundA : A -> A -> A ;
   TransgrAsAdv : Temp -> Pol -> VPSlash -> Adv ;
+  TransgrAsAdv1 : Temp -> Pol -> VPSlash -> Adv ;
 }
