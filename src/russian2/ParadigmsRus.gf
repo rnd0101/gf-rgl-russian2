@@ -171,10 +171,18 @@ oper
 
    mkVS  : V -> VS ;
    mkVQ  : V -> VQ ;
-   mkV2V : V -> Prep -> V2V ;
-   mkV2S : V -> Prep -> V2S ;
-   mkV2Q : V -> Prep -> V2Q ;
-   mkV2A : V -> Prep -> V2A ;
+   mkV2V : overload {
+     mkV2V : V -> Prep -> V2V ;
+   } ;
+   mkV2S : overload {
+    mkV2S : V -> Prep -> V2S ;
+   } ;
+   mkV2Q : overload {
+    mkV2Q : V -> Prep -> V2Q ;
+   } ;
+   mkV2A : overload {
+    mkV2A : V -> Prep -> V2A ;
+   } ;
 
   dirV2 : V -> V2 ;
   tvDirDir : V -> V3 ;
@@ -378,10 +386,30 @@ oper
 
   mkVS v = lin VS v ;
   mkVQ v = lin VQ v ;
-  mkV2V v prep = lin V2V (v ** {c=prep}) ;
-  mkV2S v prep = lin V2S (v ** {c=prep}) ;
-  mkV2Q v prep = lin V2Q (v ** {c=prep}) ;
-  mkV2A v prep = lin V2A (v ** {c=prep}) ;
+  mkV2V = overload {
+    mkV2V : V -> Prep -> V2V
+      = \v, prep -> lin V2V (v ** {c=prep}) ;
+    mkV2V : V -> Str -> Case -> V2V
+      = \v, prep, cas -> lin V2V (v ** {c={s=prep ; c=cas ; neggen=False ; hasPrep=True}}) ;
+  } ;
+  mkV2S = overload {
+     mkV2S : V -> Prep -> V2S
+       = \v, prep -> lin V2S (v ** {c=prep}) ;
+     mkV2S : V -> Str -> Case -> V2S
+       = \v, prep, cas -> lin V2S (v ** {c={s=prep ; c=cas ; neggen=False ; hasPrep=True}}) ;
+  } ;
+  mkV2Q = overload {
+     mkV2Q : V -> Prep -> V2Q
+       = \v, prep -> lin V2Q (v ** {c=prep}) ;
+     mkV2Q : V -> Str -> Case -> V2Q
+       = \v, prep, cas -> lin V2Q (v ** {c={s=prep ; c=cas ; neggen=False ; hasPrep=True}}) ;
+  } ;
+  mkV2A = overload {
+     mkV2A : V -> Prep -> V2A
+       = \v, prep -> lin V2A (v ** {c=prep}) ;
+     mkV2A : V -> Str -> Case -> V2A
+       = \v, prep, cas -> lin V2A (v ** {c={s=prep ; c=cas ; neggen=False ; hasPrep=True}}) ;
+  } ;
 
 ------------------------
 -- Adverbs, prepositions, conjunctions, ...
