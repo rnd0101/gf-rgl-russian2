@@ -26,7 +26,7 @@ concrete ExtendRus of Extend =
     -- EmbedPresPart, EmptyRelSlash,
     ExistsNP,
     -- ExistCN, ExistMassCN, ExistPluralCN,
-    ProDrop,
+    --ProDrop,
     -- FocusAP, FocusAdV, FocusAdv,
     FocusObj,
     -- GenIP, GenModIP, GenModNP, GenNP, GenRP,
