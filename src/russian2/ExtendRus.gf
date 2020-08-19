@@ -33,7 +33,9 @@ concrete ExtendRus of Extend =
     -- GerundAdv, GerundCN, GerundNP, IAdvAdv, ICompAP,
     InOrderToVP,
     -- NominalizeVPSlashNP,
-    -- PassAgentVPSlash, PassVPSlash, ProgrVPSlash,
+    -- PassAgentVPSlash,
+    PassVPSlash,
+    -- ProgrVPSlash,
     PastPartAP,
     PastPartAgentAP,
     PositAdVAdj,
@@ -132,6 +134,12 @@ lin
       ++ vps.compl ! Pos ! a ;
     isPost = False ;
     preferShort=PreferFull
+    } ;
+
+  -- : VPSlash -> VP ; -- be forced to sleep
+  PassVPSlash vps = vps ** {
+    verb=copulaEll ;
+    compl=\\p,a => shortPastPassPart vps.verb (agrGenNum a)
     } ;
   -- PresPartAP    : VP -> AP ;   -- (the man) looking at Mary
   -- use PlP2 + "ый"

@@ -739,6 +739,7 @@ lin
   spektaklq_N = mkN "спектакль" Masc Inanimate n2a ;
   spina_N = mkN "спина" Fem Inanimate (ZN 1 No D' NoC) ;
   spisok_N = mkN "список" Masc Inanimate (ZN 3 Ast A NoC) ;
+  spisok_N2 = mkN2 spisok_N ;
   spor_N = mkN "спор" Masc Inanimate n1a ;
   sport_N = mkN "спорт" Masc Inanimate n1a ;
   sposob_N = mkN "способ" Masc Inanimate n1a ;
@@ -1476,6 +1477,8 @@ lin
   perezhitq_V = mkV perfective transitive "пережить" "переживу" "переживёт" ;
   perejti_V = mkV perfective transitive "перейти" ;
   perenesti_V = mkV perfective transitive "перенести" "перенесу" "перенесёт" ;
+  peresekatq_V = mkV imperfective transitive "пересекать" "пересекаю" "пересекает" "1a" ;
+  peresekatqsja_V = mkV imperfective intransitive "пересекаться" "пересекаюсь" "пересекается" "1a" ;
   perestavatq_V = mkV imperfective transitive "переставать" "перестаю" "перестаёт" "13b" ;
   perestatq_V = mkV perfective transitive "перестать" "перестану" "перестанет" "15a" ;
   perehoditq_V = mkV imperfective transitive "переходить" "перехожу" "переходит" "4c" ;
@@ -1673,6 +1676,7 @@ lin
   prinjatqsja_V = mkV perfective intransitive "приняться" "примусь" "примется" "14c/b" ;
   priobresti_V = mkV perfective transitive "приобрести" "приобрету" "приобретёт" ;
   priobretatq_V = mkV imperfective transitive "приобретать" "приобретаю" "приобретает" "1a" ;
+  pripisatq_V = mkV perfective transitive "приписать" "припишу" "припишет" "6c" ;
   prisestq_V = mkV perfective transitive "присесть" "присяду" "присядет" "7a" ;
   prislatq_V = mkV perfective transitive "прислать" "пришлю" "пришлёт" "6b" ;
   prislushivatqsja_V = mkV imperfective intransitive "прислушиваться" "прислушиваюсь" "прислушивается" "1a" ;
@@ -3837,6 +3841,7 @@ lin
   tajkom_Adv = mkAdv "тайком" ;
   tajno_Adv = mkAdv "тайно" ;
   takzhe_Adv = mkAdv "также" ;
+  takim_obrazom_Adv = mkAdv ["таким образом"] ;
   tverdo_Adv = mkAdv "твёрдо" ;
   tvorcheski_Adv = mkAdv "творчески" ;
   temno_Adv = mkAdv "темно" ;

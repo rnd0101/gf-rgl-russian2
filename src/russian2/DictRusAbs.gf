@@ -724,6 +724,7 @@ fun
   spektaklq_N : N;
   spina_N : N;
   spisok_N : N;
+  spisok_N2 : N2;
   spor_N : N;
   sport_N : N;
   sposob_N : N;
@@ -1461,6 +1462,8 @@ fun
   perezhitq_V : V;
   perejti_V : V;
   perenesti_V : V;
+  peresekatq_V : V;
+  peresekatqsja_V : V ;
   perestavatq_V : V;
   perestatq_V : V;
   perehoditq_V : V;
@@ -1658,6 +1661,7 @@ fun
   prinjatqsja_V : V;
   priobresti_V : V;
   priobretatq_V : V;
+  pripisatq_V : V;
   prisestq_V : V;
   prislatq_V : V;
   prislushivatqsja_V : V;
@@ -3822,6 +3826,7 @@ fun
   tajkom_Adv : Adv ;
   tajno_Adv : Adv ;
   takzhe_Adv : Adv ;
+  takim_obrazom_Adv : Adv ;
   tverdo_Adv : Adv ;
   tvorcheski_Adv : Adv ;
   temno_Adv : Adv ;

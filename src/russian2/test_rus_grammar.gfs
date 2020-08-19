@@ -278,6 +278,12 @@ gt PastPartAP (AdvVPSlash (SlashVV must_VV (VPSlashPrep scared_VP above_Prep)) e
 
 l UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (ComplVV bojatqsja_VV (UseV sleep_V))))
 
+gt UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron (ProDrop we_Pron)) (AdvVP (UseV privesti_V) (PrepNP obj_no_Prep (DetCN somePl_Det  (UseN primer_N))))) |l -treebank
+gt UseCl (TTAnt TPres ASimul) PPos (PredVP  (MassNP (ComplN2 spisok_N2 (DetCN (DetQuant DefArt NumPl) (UseN opisanie_N))))   (ComplVV can_VV (UseV peresekatqsja_V ))) | l
+gt ExtAdvS  takim_obrazom_Adv  (UseCl (TTAnt TPres ASimul) PPos (PredVP  (MassNP (ComplN2 spisok_N2 (DetCN (DetQuant DefArt NumPl) (UseN opisanie_N))))   (ComplVV can_VV (UseV peresekatqsja_V ))) ) | l
+
+gt UseCl ? ? (PredVP  (MassNP (ComplN2 spisok_N2 (DetCN (DetQuant DefArt NumPl) (UseN opisanie_N))))  (PassVPSlash (SlashV2a write_V2)) ) | l -treebank -unlextext
+
 gt MkDocument (NoDefinition "") (InflectionV run_V) "" |l -treebank -unlextext
 gt MkDocument (NoDefinition "") (InflectionA yellow_A) "" |l -treebank -unlextext
 gt MkDocument (NoDefinition "") (InflectionN man_N) "" |l -treebank -unlextext
