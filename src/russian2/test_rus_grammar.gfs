@@ -276,6 +276,8 @@ gt UseQCl (TTAnt TCond AAnter) ? (QuestIAdv wherefor_IAdv (PredVP ( DetCN (DetQu
 gt UseQCl (TTAnt TCond AAnter) ? (QuestIAdv whereto_IAdv (PredVP ( DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV run_V))) | l -treebank
 gt PastPartAP (AdvVPSlash (SlashVV must_VV (VPSlashPrep scared_VP above_Prep)) elsewhen_Adv) |l -treebank
 
+l UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (ComplVV bojatqsja_VV (UseV sleep_V))))
+
 gt MkDocument (NoDefinition "") (InflectionV run_V) "" |l -treebank -unlextext
 gt MkDocument (NoDefinition "") (InflectionA yellow_A) "" |l -treebank -unlextext
 gt MkDocument (NoDefinition "") (InflectionN man_N) "" |l -treebank -unlextext
