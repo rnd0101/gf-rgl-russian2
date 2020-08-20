@@ -607,6 +607,10 @@ oper
 
   mkVplus : VerbForms -> VerbForms
     = \vf -> vf ;
+  mkV2plus : VerbForms2 -> VerbForms2
+    = \vf -> vf ;
+  mkV3plus : VerbForms3 -> VerbForms3
+    = \vf -> vf ;
 
   quickGuessVerbForms : Str -> VerbForms
     = \inf ->
@@ -1539,7 +1543,6 @@ oper
 -- Misc
 
 oper
-  ComplementCase : Type = {s : Str ; c : Case ; neggen : Bool ; hasPrep : Bool} ;
 
   applyPrep : ComplementCase -> NounPhrase -> Str
     = \prep,np -> case <np.pron, prep.hasPrep, prep.c> of {
