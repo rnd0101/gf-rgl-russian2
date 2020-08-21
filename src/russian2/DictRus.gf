@@ -1293,6 +1293,7 @@ lin
   kosnutqsja_V = mkV perfective intransitive "коснуться" "коснусь" "коснётся" "3b" ;
   kriknutq_V = mkV perfective transitive "крикнуть" "крикну" "крикнет" "3a" ;
   krichatq_V = mkV imperfective transitive "кричать" "кричу" "кричит" "5b" ;
+  krichatq_VS = mkVS krichatq_V ;
   krutitq_V = mkV imperfective transitive "крутить" "кручу" "крутит" "4c" ;
   kupitq_V = mkV perfective transitive "купить" "куплю" "купит" "4c" ;
   kuritq_V = mkV imperfective transitive "курить" "курю" "курит" "4c" ;

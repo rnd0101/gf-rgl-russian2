@@ -1278,6 +1278,7 @@ fun
   kosnutqsja_V : V;
   kriknutq_V : V;
   krichatq_V : V;
+  krichatq_VS : VS;
   krutitq_V : V;
   kupitq_V : V;
   kuritq_V : V;
