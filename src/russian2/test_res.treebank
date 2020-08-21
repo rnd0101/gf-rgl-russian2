@@ -2575,35 +2575,35 @@ AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ kn
 AllRus: он знает , что яблоко падает
 
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TCond ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
-AllRus: он не знает , что яблоко не всегда пада &+ ло бы
+AllRus: он не знает , что яблоко всегда не пада &+ ло бы
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TCond ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
 AllRus: он не знает , что яблоко всегда пада &+ ло бы
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TFut ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
-AllRus: он не знает , что яблоко не всегда будет падать
+AllRus: он не знает , что яблоко всегда не будет падать
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TFut ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
 AllRus: он не знает , что яблоко всегда будет падать
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPast ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
-AllRus: он не знает , что яблоко не всегда пада &+ ло
+AllRus: он не знает , что яблоко всегда не пада &+ ло
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
 AllRus: он не знает , что яблоко всегда пада &+ ло
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPres ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
-AllRus: он не знает , что яблоко не всегда падает
+AllRus: он не знает , что яблоко всегда не падает
 AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPres ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
 AllRus: он не знает , что яблоко всегда падает
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TCond ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
-AllRus: он знает , что яблоко не всегда пада &+ ло бы
+AllRus: он знает , что яблоко всегда не пада &+ ло бы
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TCond ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
 AllRus: он знает , что яблоко всегда пада &+ ло бы
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TFut ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
-AllRus: он знает , что яблоко не всегда будет падать
+AllRus: он знает , что яблоко всегда не будет падать
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TFut ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
 AllRus: он знает , что яблоко всегда будет падать
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPast ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
-AllRus: он знает , что яблоко не всегда пада &+ ло
+AllRus: он знает , что яблоко всегда не пада &+ ло
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPast ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
 AllRus: он знает , что яблоко всегда пада &+ ло
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPres ASimul) PNeg (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
-AllRus: он знает , что яблоко не всегда падает
+AllRus: он знает , что яблоко всегда не падает
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (ComplVQ know_VQ (UseQCl (TTAnt TPres ASimul) PPos (QuestCl (PredVP (DetCN (DetQuant DefArt NumSg) (UseN apple_N)) (AdVVP always_AdV (UseV fall_V)))))))
 AllRus: он знает , что яблоко всегда падает
 
@@ -4140,19 +4140,19 @@ AllRusAbs: TFullStop (PhrUtt NoPConj (UttNP (MassNP (AdjCN (PositA full_A) (glas
 AllRus: полный стакан вина .
 
 AllRusAbs: EmbedQS (UseQCl (TTAnt TCond ASimul) PNeg (ExistIPAdv whatSg_IP now_Adv))
-AllRus: что не сейчас существова &+ ло бы
+AllRus: что сейчас не существова &+ ло бы
 AllRusAbs: EmbedQS (UseQCl (TTAnt TCond ASimul) PPos (ExistIPAdv whatSg_IP now_Adv))
 AllRus: что сейчас существова &+ ло бы
 AllRusAbs: EmbedQS (UseQCl (TTAnt TFut ASimul) PNeg (ExistIPAdv whatSg_IP now_Adv))
-AllRus: что не сейчас будет существовать
+AllRus: что сейчас не будет существовать
 AllRusAbs: EmbedQS (UseQCl (TTAnt TFut ASimul) PPos (ExistIPAdv whatSg_IP now_Adv))
 AllRus: что сейчас будет существовать
 AllRusAbs: EmbedQS (UseQCl (TTAnt TPast ASimul) PNeg (ExistIPAdv whatSg_IP now_Adv))
-AllRus: что не сейчас существова &+ ло
+AllRus: что сейчас не существова &+ ло
 AllRusAbs: EmbedQS (UseQCl (TTAnt TPast ASimul) PPos (ExistIPAdv whatSg_IP now_Adv))
 AllRus: что сейчас существова &+ ло
 AllRusAbs: EmbedQS (UseQCl (TTAnt TPres ASimul) PNeg (ExistIPAdv whatSg_IP now_Adv))
-AllRus: что не сейчас существует
+AllRus: что сейчас не существует
 AllRusAbs: EmbedQS (UseQCl (TTAnt TPres ASimul) PPos (ExistIPAdv whatSg_IP now_Adv))
 AllRus: что сейчас существует
 

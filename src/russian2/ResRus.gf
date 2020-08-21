@@ -850,13 +850,13 @@ oper
           <Infinitive, _, _> => subj ++ pol.s ++ adv ++  verbInf vf
           } ;
         _ => case <m,temp> of {
-          <Ind, Past> => subj ++ pol.s ++ adv ++ verbPastAgree vf a "" ;
-          <Ind, Pres> => subj ++ pol.s ++ adv ++ verbPresAgree vf a ;
-          <Ind, Fut> => subj ++ pol.s ++ adv ++ verbFutAgree vf a ;
-          <Ind, Cond> => subj ++ pol.s ++ adv ++ verbPastAgree vf a "бы" ;
-          <Sbjv, _> => subj ++ pol.s ++ adv ++ verbPastAgree vf a "бы" ;
-          <Imperative, _> => let p = verbImperativeAgree vf a in p.p1 ++ subj ++ pol.s ++ adv ++ p.p2 ;
-          <Infinitive, _> => subj ++ pol.s ++ adv ++  verbInf vf
+          <Ind, Past> => subj ++ adv ++ pol.s ++ verbPastAgree vf a "" ;
+          <Ind, Pres> => subj ++ adv ++ pol.s ++ verbPresAgree vf a ;
+          <Ind, Fut> => subj ++ adv ++ pol.s ++ verbFutAgree vf a ;
+          <Ind, Cond> => subj ++ adv ++ pol.s ++ verbPastAgree vf a "бы" ;
+          <Sbjv, _> => subj ++ adv ++ pol.s ++ verbPastAgree vf a "бы" ;
+          <Imperative, _> => let p = verbImperativeAgree vf a in p.p1 ++ subj ++ adv ++ pol.s ++ p.p2 ;
+          <Infinitive, _> => subj ++ adv ++ pol.s ++  verbInf vf
           }
       } ;
 
