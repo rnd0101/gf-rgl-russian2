@@ -214,7 +214,6 @@ fun
   izobrazhenie_N : N;
   izuchenie_N : N;
   izvestie_N : N;
-  jabloko_N : N;
   janvarq_N : N;
   jaszik_N : N;
   javlenie_N : N;

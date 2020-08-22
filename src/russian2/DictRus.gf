@@ -229,7 +229,6 @@ lin
   izobrazhenie_N = mkN "изображение" Neut Inanimate n7a ;
   izuchenie_N = mkN "изучение" Neut Inanimate n7a ;
   izvestie_N = mkN "известие" Neut Inanimate n7a ;
-  jabloko_N = mkN "яблоко" Neut Inanimate (ZN 3 No A ZC1) ;
   janvarq_N = mkN "январь" Masc Inanimate (ZN 2 No B NoC) ;
   jaszik_N = mkN "ящик" Masc Inanimate n3a ;
   javlenie_N = mkN "явление" Neut Inanimate n7a ;

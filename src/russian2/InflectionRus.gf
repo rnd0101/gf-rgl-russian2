@@ -1086,7 +1086,7 @@ oper
         isg2=com + "ти";
         isg2refl=com + "тись";
         ipl1=[];
-        pppss="";
+        pppss=com + "тим";  -- incorrect, but prevents empty
         prtr=com + "тя";
         ptr=com + "тев";
         asp=asp;
@@ -1115,7 +1115,7 @@ oper
         isg2=com + "ги";
         isg2refl=com + "гись";
         ipl1=[];
-        pppss="";
+        pppss=com + "ган"; -- incorrect, but prevents parsing problems
         prtr=com + "жа"; -- *
         ptr=com + "жав";
         asp=asp;
@@ -1144,7 +1144,7 @@ oper
         isg2=com + "шь";
         isg2refl=com + "шься";
         ipl1=[];
-        pppss="";
+        pppss=com + "ден";  -- *
         prtr=com + "дя";
         ptr=com + "в";
         asp=asp;
@@ -1172,7 +1172,7 @@ oper
         isg2=com + "й";
         isg2refl=com + "йся";
         ipl1=[];
-        pppss="";
+        pppss=com + "н"; -- *
         prtr=com + "вая";
         ptr=com + "в";
         asp=asp;
@@ -1201,7 +1201,7 @@ oper
         isg2=com + "удь";
         isg2refl=com + "удься";
         ipl1=[];
-        pppss="";
+        pppss="ыт";  -- *
         prtr=com + "ывая";
         ptr=com + "ыв";
         asp=asp;
@@ -1231,7 +1231,7 @@ oper
         isg2=com + "ди";
         isg2refl=com + "дись";
         ipl1=[];
-        pppss="";
+        pppss="ден"; -- *
         prtr=com + "дя";
         ptr=[];
         asp=asp;

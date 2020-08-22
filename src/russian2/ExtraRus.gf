@@ -149,7 +149,7 @@ oper
     isg2="";
     isg2refl="" ;
     ipl1="";
-    pppss="";
+    pppss="явлен";  --*
     prtr="";
     ptr="";
     asp=Imperfective;
@@ -168,7 +168,7 @@ oper
     isg2="";
     isg2refl="" ;
     ipl1="";
-    pppss="";
+    pppss="не явлен";  --*
     prtr="";
     ptr="";
     asp=Imperfective;

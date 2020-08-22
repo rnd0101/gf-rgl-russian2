@@ -657,7 +657,7 @@ oper
       isg2="будь";
       isg2refl="явись" ; -- ?
       ipl1="давайте будем";
-      pppss="";
+      pppss="явлен";   --*
       prtr="будучи";
       ptr="быв";
       asp=Imperfective;
@@ -746,7 +746,7 @@ oper
       isg2="желай";
       isg2refl="желайся" ;
       ipl1="давайте будем хотеть";
-      pppss="";
+      pppss="хотим";  -- *
       prtr="хотя";
       ptr="хотев";
       asp=Imperfective;
