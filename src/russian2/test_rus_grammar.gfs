@@ -276,6 +276,9 @@ gt UseQCl (TTAnt TCond AAnter) ? (QuestIAdv wherefor_IAdv (PredVP ( DetCN (DetQu
 gt UseQCl (TTAnt TCond AAnter) ? (QuestIAdv whereto_IAdv (PredVP ( DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV run_V))) | l -treebank
 gt PastPartAP (AdvVPSlash (SlashVV must_VV (VPSlashPrep scared_VP above_Prep)) elsewhen_Adv) |l -treebank
 
+gt AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) ? (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt ? AAnter) ? (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N)))))) |l -treebank
+gt UseCl (TTAnt TPres ASimul) ? (PredVP  (UsePron she_Pron)   (ComplVS say_VS ( UseCl (TTAnt TPast ASimul) ? (PredVP (UsePron she_Pron) (AdvVP (ComplSlash (SlashV2a eat_V2) (MassNP (UseN apple_N))) (PrepCN in_Prep (UseN car_N)))) ))) | l -treebank
+
 gt UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (ComplVV bojatqsja_VV (UseV sleep_V)))) |l -treebank
 
 gt UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron (ProDrop we_Pron)) (AdvVP (UseV privesti_V) (PrepNP obj_no_Prep (DetCN somePl_Det  (UseN primer_N))))) |l -treebank

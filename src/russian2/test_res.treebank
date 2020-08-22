@@ -4693,6 +4693,48 @@ AllRus: куда эта женщина бега &+ ла бы
 AllRusAbs: PastPartAP (AdvVPSlash (SlashVV must_VV (VPSlashPrep scared_VP above_Prep)) elsewhen_Adv)
 AllRus: должен бояться когда-нибудь
 
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TCond AAnter) PNeg (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он не утверждает , что она не куша &+ ла бы яблока в машине
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TCond AAnter) PPos (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он не утверждает , что она куша &+ ла бы яблоко в машине
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TFut AAnter) PNeg (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он не утверждает , что она не будет кушать яблока в машине
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он не утверждает , что она будет кушать яблоко в машине
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TPast AAnter) PNeg (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он не утверждает , что она не куша &+ ла яблока в машине
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он не утверждает , что она куша &+ ла яблоко в машине
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TPres AAnter) PNeg (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он не утверждает , что она не кушает яблока в машине
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он не утверждает , что она кушает яблоко в машине
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PPos (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TCond AAnter) PNeg (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он утверждает , что она не куша &+ ла бы яблока в машине
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PPos (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TCond AAnter) PPos (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он утверждает , что она куша &+ ла бы яблоко в машине
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PPos (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TFut AAnter) PNeg (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он утверждает , что она не будет кушать яблока в машине
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PPos (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он утверждает , что она будет кушать яблоко в машине
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PPos (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TPast AAnter) PNeg (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он утверждает , что она не куша &+ ла яблока в машине
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PPos (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он утверждает , что она куша &+ ла яблоко в машине
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PPos (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TPres AAnter) PNeg (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он утверждает , что она не кушает яблока в машине
+AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PPos (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TPres AAnter) PPos (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
+AllRus: он утверждает , что она кушает яблоко в машине
+
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron she_Pron) (ComplVS say_VS (UseCl (TTAnt TPast ASimul) PNeg (PredVP (UsePron she_Pron) (AdvVP (ComplSlash (SlashV2a eat_V2) (MassNP (UseN apple_N))) (PrepCN in_Prep (UseN car_N)))))))
+AllRus: она не говорит , что она не куша &+ ла яблока в машине
+AllRusAbs: UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePron she_Pron) (ComplVS say_VS (UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron she_Pron) (AdvVP (ComplSlash (SlashV2a eat_V2) (MassNP (UseN apple_N))) (PrepCN in_Prep (UseN car_N)))))))
+AllRus: она не говорит , что она куша &+ ла яблоко в машине
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (ComplVS say_VS (UseCl (TTAnt TPast ASimul) PNeg (PredVP (UsePron she_Pron) (AdvVP (ComplSlash (SlashV2a eat_V2) (MassNP (UseN apple_N))) (PrepCN in_Prep (UseN car_N)))))))
+AllRus: она говорит , что она не куша &+ ла яблока в машине
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (ComplVS say_VS (UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron she_Pron) (AdvVP (ComplSlash (SlashV2a eat_V2) (MassNP (UseN apple_N))) (PrepCN in_Prep (UseN car_N)))))))
+AllRus: она говорит , что она куша &+ ла яблоко в машине
+
 AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron she_Pron) (ComplVV bojatqsja_VV (UseV sleep_V))))
 AllRus: она боит &+ ся спать
 

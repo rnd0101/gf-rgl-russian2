@@ -2094,6 +2094,7 @@ lin
   ustupatq_V = mkV imperfective transitive "уступать" "уступаю" "уступает" "1a" ;
   utverditq_V = mkV perfective transitive "утвердить" "утвержу" "утвердит" "4b" ;
   utverzhdatq_V = mkV imperfective transitive "утверждать" "утверждаю" "утверждает" "1a";
+  utverzhdatq_VS = mkVS utverzhdatq_V ;
   utochnitq_V = mkV perfective transitive "уточнить" "уточню" "уточнит" "4b" ;
   utratitq_V = mkV perfective transitive "утратить" "утрачу" "утратит" "4a" ;
   uhoditq_V = mkV imperfective transitive "уходить" "ухожу" "уходит" "4c" ;

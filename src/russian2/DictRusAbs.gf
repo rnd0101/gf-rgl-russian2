@@ -2079,6 +2079,7 @@ fun
   ustupatq_V : V;
   utverditq_V : V;
   utverzhdatq_V : V;
+  utverzhdatq_VS : VS;
   utochnitq_V : V;
   utratitq_V : V;
   uhoditq_V : V;
