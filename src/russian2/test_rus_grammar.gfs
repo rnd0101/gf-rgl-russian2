@@ -271,6 +271,8 @@ gt UseQCl ? PPos (how_old_QCl (UsePron youSg_Pron)) |l -treebank
 gt UseQCl ? PPos (how_old_QCl (UsePron he_Pron)) |l -treebank
 gt UseQCl ? ? (how_old_QCl (UsePron she_Pron)) |l -treebank
 
+gt ImpVP (ComplVV perestatq_VV (UseV bojatqsja_V)) |l -treebank
+
 gt UseQCl (TTAnt TCond AAnter) ? (QuestIAdv wherefrom_IAdv (PredVP ( DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV run_V))) | l -treebank
 gt UseQCl (TTAnt TCond AAnter) ? (QuestIAdv wherefor_IAdv (PredVP ( DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV run_V))) | l -treebank
 gt UseQCl (TTAnt TCond AAnter) ? (QuestIAdv whereto_IAdv (PredVP ( DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV run_V))) | l -treebank

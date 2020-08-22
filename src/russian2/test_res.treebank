@@ -4675,6 +4675,9 @@ AllRus: сколько не ей лет
 AllRusAbs: UseQCl (TTAnt TPres ASimul) PPos (how_old_QCl (UsePron she_Pron))
 AllRus: сколько ей лет
 
+AllRusAbs: ImpVP (ComplVV perestatq_VV (UseV bojatqsja_V))
+AllRus: перестань бояться
+
 AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv wherefrom_IAdv (PredVP (DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV run_V)))
 AllRus: откуда эта женщина не бега &+ ла бы
 AllRusAbs: UseQCl (TTAnt TCond AAnter) PPos (QuestIAdv wherefrom_IAdv (PredVP (DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV run_V)))
