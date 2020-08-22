@@ -4783,6 +4783,21 @@ AllRus: Список описаний не писан
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (MassNP (ComplN2 spisok_N2 (DetCN (DetQuant DefArt NumPl) (UseN opisanie_N)))) (PassVPSlash (SlashV2a write_V2)))
 AllRus: Список описаний писан
 
+AllRusAbs: UttCN (AdjCN (AdAP quite_Adv (PositA neobychnyj_A)) (UseN delo_N))
+AllRus: довольно необычное дело
+
+AllRusAbs: FocusObj (UsePron i_Pron) (UseSlash (TTAnt TPres ASimul) PPos (SlashPrep (ImpersCl (AdvVP (UseV predstojatq_V) (AdAdv quite_Adv (PrepCN nom_Prep (AdjCN (PositA neobychnyj_A) (UseN delo_N)))))) to_dat_Prep))
+AllRus: мне предстоит довольно необычное дело
+
+AllRusAbs: UttS (UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron i_Pron) (AdvVP (ComplBareVS know_VS (AdvS (PrepNP to_dat_Prep (UsePron i_Pron)) (UseCl (TTAnt TPres ASimul) PPos (ImpersCl (UseV predstojatq_V))))) (AdAdv quite_Adv (PrepCN nom_Prep (AdjCN (PositA neobychnyj_A) (UseN delo_N)))))))
+AllRus: я знал , что мне предстоит довольно необычное дело
+
+AllRusAbs: UttQS (UseQCl (TTAnt TPres AAnter) PPos (QuestIComp (CompIAdv how_IAdv) (MassNP (AdvCN (AdjCN (AdvAP (PositA neobychnyj_A) (PurposeVP (ProgrVP (UseV vesti_V)))) (UseN delo_N)) dalee_Adv))))
+AllRus: как вести необычное дело далее
+
+AllRusAbs: UttQS (UseQCl (TTAnt TPres AAnter) PPos (QuestIComp (CompIAdv (AdvIAdv (AdvIAdv how_IAdv dalee_Adv) (PurposeVP (UseV vesti_V)))) (DetCN (DetQuant IndefArt NumSg) (AdjCN (PositA neobychnyj_A) (UseN delo_N)))))
+AllRus: как далее вести необычное дело
+
 AllRusAbs: UttS (AdvS today_Adv (UseCl (TTAnt TFut AAnter) PPos (PredVP (AdvNP (MassNP (UseN mashina_N)) opjatq_Adv) (UseV isportitqsja_V))))
 AllRus: сегодня машина опять испортит &+ ся
 

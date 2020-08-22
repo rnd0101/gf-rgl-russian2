@@ -797,6 +797,7 @@ fun
   territorija_N : N;
   tip_N : N;
   tishina_N : N;
+  tkanq_N : N;
   tjurqma_N : N;
   tochka_N : N;
   tolpa_N : N;

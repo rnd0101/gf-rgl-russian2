@@ -812,6 +812,7 @@ lin
   territorija_N = mkN "территория" Fem Inanimate n7a ;
   tip_N = mkN "тип" Masc Inanimate n1a ;
   tishina_N = mkN "тишина" Fem Inanimate (ZN 1 No D NoC) ;
+  tkanq_N = mkN "ткань" Fem Inanimate (ZN 8 No A NoC) ;
   tjurqma_N = mkN "тюрьма" Fem Inanimate (ZN 1 Ast D NoC) ;
   tochka_N = mkN "точка" Fem Inanimate (ZN 3 Ast A NoC) ;
   tolpa_N = mkN "толпа" Fem Inanimate (ZN 1 No D NoC) ;
