@@ -4798,6 +4798,21 @@ AllRus: мы будем надеяться , что сегодня машина 
 AllRusAbs: UttS (UseCl (TTAnt TFut ASimul) PPos (PredVP (UsePron we_Pron) (ComplBareVS hope_VS (AdvS today_Adv (UseCl (TTAnt TPres ASimul) PPos (PredVP (AdvNP (MassNP (UseN car_N)) opjatq_Adv) (UseV isportitqsja_V)))))))
 AllRus: мы будем надеяться , что сегодня машина опять испортит &+ ся
 
+AllRusAbs: UttCN (AdjCN (AdvAP (AdvAP (PositA chuzhoj_A) (PurposeVP (ReflVP (VPSlashPrep (UseV predstavitq_V) to_dat_Prep)))) trudno_Adv) (UseN sky_N))
+AllRus: трудно представить себе чужое небо
+
+AllRusAbs: UttS (UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (UseV povertetq_V) (PrepNP obj_neg_Prep (AdvNP (UsePron she_Pron) (PrepNP before_Prep (DetCN (DetQuant DefArt NumPl) (UseN eye_N))))))))
+AllRus: он повертел её перед глазами
+
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (AdvNP everybody_NP (PrepCN with_Prep (UseN interes_N))) (AdvVP (UseV smotretq_V) (PrepNP on2_Prep (DetCN (DetQuant (PossPron he_Pron) NumPl) (UseN leg_N)))))
+AllRus: все с интересом смотре &+ ли на его ноги
+
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (DetCN (DetQuant DefArt NumPl) (AdjCN (PositA yellow_A) (UseN volna_N))) (UseV uspokoitqsja_V))
+AllRus: жёлтые волны успокои &+ ли &+ сь
+
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (AdvNP (DetCN (DetQuant DefArt NumPl) (AdjCN (PositA yellow_A) (UseN volna_N))) skoro_Adv) (UseV uspokoitqsja_V))
+AllRus: жёлтые волны скоро успокои &+ ли &+ сь
+
 AllRusAbs: UttS (ExtAdvS naprimer_Adv (UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPlFem_Pron) (AdvVP (UseV narisovatq_V) (PrepCN nom_Prep (AdvCN (UseN person_N) (PrepNP in_Prep (DetCN (DetQuant DefArt (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3)))))))) (UseN sluchaj_N)))))))))
 AllRus: например , вы нарисова &+ ли лицо в трёх случаях
 

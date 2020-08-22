@@ -4,7 +4,6 @@ fun
   about_Prep : Prep ;
   along_Prep : Prep ;
   be_V3 : V3 ;
-  dat_Prep : Prep ;
   from2_Prep : Prep ;
   have2_V3 : V3 ;
   have_not_V3 : V3 ;

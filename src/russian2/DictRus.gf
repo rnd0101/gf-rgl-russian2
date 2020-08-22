@@ -1534,6 +1534,8 @@ lin
   poveritq_V = mkV perfective transitive "поверить" "поверю" "поверит" "4a" ;
   povernutq_V = mkV perfective transitive "повернуть" "поверну" "повернёт" "3b" ;
   povernutqsja_V = mkV perfective intransitive "повернуться" "повернусь" "повернётся" "3b" ;
+  povertetq_V = mkV perfective transitive "повертеть" "поверчу" "повертит" "5c" ;
+  povertetqsja_V = mkV perfective transitive "повертеться" "поверчусь" "повертится" "5c" ;
   povesitq_V = mkV perfective transitive "повесить" "повешу" "повесит" "4a" ;
   povesti_V = mkV perfective transitive "повести" "поведу" "поведёт" "7b/b" ;
   povtoritq_V = mkV perfective transitive "повторить" "повторю" "повторит" "4b" ;

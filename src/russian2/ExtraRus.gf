@@ -6,10 +6,9 @@ concrete ExtraRus of ExtraRusAbs = CatRus **
 lin
   obj_no_Prep = {s="" ; c=Acc ; neggen=True ; hasPrep=False} ;
   to2_Prep = P.mkPrep v_prep_mod Acc ;
-  to_dat_Prep = {s="" ; c=Dat ; neggen=False ; hasPrep=False} ;
+  to_dat_Prep = lin Prep {s="" ; c=Dat ; neggen=False ; hasPrep=False} ;
   obj_neg_Prep = lin Prep {s="" ; c=Gen ; neggen=False ; hasPrep=False} ;
   nom_Prep = lin Prep {s="" ; c=Nom ; neggen=True ; hasPrep=False} ;
-  dat_Prep = lin Prep {s="" ; c=Dat ; neggen=False ; hasPrep=False} ;
   u_Prep = lin Prep {s="у" ; c=Gen ; neggen=False ; hasPrep=True} ;
   on_to_Prep = P.mkPrep "до" Gen ;
   on2_Prep = P.on2_Prep ;
@@ -101,7 +100,7 @@ lin
   have_V3 = P.mkV3 est_ell_V nom_Prep u_Prep;
   have2_V3 = P.mkV3 est_V nom_Prep u_Prep;
   have_not_V3 = P.mkV3 net_V obj_neg_Prep u_Prep;
-  be_V3 = P.mkV3 be_ell_V nom_Prep dat_Prep;
+  be_V3 = P.mkV3 be_ell_V nom_Prep to_dat_Prep;
 
   rather_CAdv = X.mkCAdv "скорее" "чем" ;
 

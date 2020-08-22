@@ -1519,6 +1519,8 @@ fun
   poveritq_V : V;
   povernutq_V : V;
   povernutqsja_V : V;
+  povertetq_V : V;
+  povertetqsja_V : V;
   povesitq_V : V;
   povesti_V : V;
   povtoritq_V : V;
