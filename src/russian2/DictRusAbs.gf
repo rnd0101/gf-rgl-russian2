@@ -1252,6 +1252,8 @@ fun
   ispolnjatq_V : V;
   ispolqzovatq_V : V;
   ispolqzovatqsja_V : V;
+  isportitq_V : V;
+  isportitqsja_V : V;
   ispugatqsja_V : V;
   ispugatqsja_VV : VV;
   ispytatq_V : V;

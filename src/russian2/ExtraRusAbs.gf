@@ -85,6 +85,8 @@ fun
 
   rather_CAdv : CAdv ;
 
+  kak_Conj : Conj ;
+
   CompoundA : A -> A -> A ;
   TransgrAsAdv : Temp -> Pol -> VPSlash -> Adv ;
   TransgrAsAdv1 : Temp -> Pol -> VPSlash -> Adv ;

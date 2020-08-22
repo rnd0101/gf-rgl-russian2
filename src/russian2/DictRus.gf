@@ -66,7 +66,7 @@ lin
   cennostq_N = mkN "ценность" Fem Inanimate n8a ;
   centr_N = mkN "центр" Masc Inanimate n1a ;
   cerkovq_N = mkN "церковь" Fem Inanimate (ZN 8 Ast E NoC) ;
-  chaj_N = mkN "чай" Masc Inanimate (ZN 6 No C NoC) ;
+  chaj_N = (mkNplus (mkN "чай" Masc Inanimate (ZN 6 No C NoC))) ** {sptv="чаю"} ;
   chas_N = mkN "час" Masc Inanimate (ZN 1 No C NoC) ;
   chastnostq_N = mkN "частность" Fem Inanimate n8a ;
   chastq_N = mkN "часть" Fem Inanimate (ZN 8 No E NoC) ;
@@ -1267,6 +1267,8 @@ lin
   ispolnjatq_V = mkV imperfective transitive "исполнять" "исполняю" "исполняет" "1a" ;
   ispolqzovatq_V = mkV imperfective transitive "использовать" "использую" "использует" "2a" ;
   ispolqzovatqsja_V = mkV imperfective intransitive "использоваться" "используюсь" "используется" "2a" ;
+  isportitq_V = mkV perfective transitive "испортить" "испорчу" "испортит" ;
+  isportitqsja_V = mkV perfective intransitive "испортиться" "испорчусь" "испортится" ;
   ispugatqsja_V = mkV perfective intransitive "испугаться" "испугаюсь" "испугается" "1a" ;
   ispugatqsja_VV = mkVV ispugatqsja_V ;
   ispytatq_V = mkV perfective transitive "испытать" "испытаю" "испытает" "1a" ;

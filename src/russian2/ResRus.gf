@@ -722,8 +722,8 @@ oper
       isg2refl="будь способны" ;   -- *
       isg2="будь способен";  -- some improvisation here
       ipl1="давайте будем способны";   -- maybe, special like for future?
-      pppss="";
-      prtr="";
+      pppss=""; --*
+      prtr="могши";  --*
       ptr="могши";
       asp=Imperfective;
       refl=NonReflexive;
