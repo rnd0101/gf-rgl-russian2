@@ -235,11 +235,11 @@ oper
 
   pronToAdj : PronForms -> AdjForms
     = \base -> base ** {
-      sm = [] ;
-      sf = [] ;
-      sn = [] ;
-      sp = [] ;
-      comp = [] ;
+      sm = base.msnom ; -- these are incorrect, but empty causes parsing problems
+      sf = base.fsnom ;
+      sn = base.nsnom ;
+      sp = base.pnom ;
+      comp = base.nsnom ;
       preferShort = PreferFull ;
       p = False
     } ;
@@ -383,7 +383,7 @@ oper
   makeAdjectiveFromNoun : Noun -> Adjective
     = \n -> {
        s = \\gn,anim,cas=> n.s ! numGenNum gn ! cas ;
-       short=\\a=>[] ;
+       short=\\a=> [] ;
        preferShort=PreferFull
     } ;
 
@@ -630,12 +630,15 @@ oper
 
   shortPastPassPart : VerbForms -> GenNum -> Str
     = \vf,gn ->
-      case <vf.fut,gn> of {
-        <NormalFuture,GSg Masc> => vf.pppss ;
-        <NormalFuture,GSg Fem> => vf.pppss ++ BIND ++ "а" ;
-        <NormalFuture,GSg Neut> => vf.pppss ++ BIND ++ "о" ;
-        <NormalFuture,GPl> => vf.pppss ++ BIND ++ "ы" ;
-        _ => vf.pppss
+      case vf.tran of {
+        Intransitive => variants {} ;
+        Transitive => case <vf.fut,gn> of {
+          <NormalFuture,GSg Masc> => vf.pppss ;
+          <NormalFuture,GSg Fem> => vf.pppss ++ BIND ++ "а" ;
+          <NormalFuture,GSg Neut> => vf.pppss ++ BIND ++ "о" ;
+          <NormalFuture,GPl> => vf.pppss ++ BIND ++ "ы" ;
+          _ => vf.pppss
+          }
         } ;
 
   copula : VerbForms
@@ -762,7 +765,7 @@ oper
       fut=NullFuture ;
       asp=Imperfective;
       refl=NonReflexive;
-      tran=Intransitive
+      tran=Transitive
     } ;
 
   verbPastAgree : VerbForms -> Agr -> Str -> Str
