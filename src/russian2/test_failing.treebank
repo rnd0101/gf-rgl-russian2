@@ -607,6 +607,9 @@ AllRus: играть быть чистым
 AllRusAbs: UseCl (TTAnt TPres AAnter) PPos (married_Cl (UsePron weFem_Pron) (DetCN (DetQuant (PossPron youSg_Pron) NumPl) (UseN woman_N)))
 AllRus: мы женаты на твоих женщинах
 
+AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (CountNP (DetQuant DefArt oba_Num) (UsePron youPlFem_Pron)) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt NumPl) (UseN apple_N)))))
+AllRus: оба из вас кушают яблоки
+
 AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (how_far_QCl (UsePN paris_PN))
 AllRus: не как далеко был бы Парижа
 AllRusAbs: UseQCl (TTAnt TCond ASimul) PNeg (how_far_QCl (UsePN paris_PN))

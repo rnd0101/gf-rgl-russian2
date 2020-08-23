@@ -88,6 +88,7 @@ fun
 
   one_and_half_Num : Num ;
   one_hundred_and_fifty_Num : Num ;
+  oba_Num : Num ;
 
   CompoundA : A -> A -> A ;
   TransgrAsAdv : Temp -> Pol -> VPSlash -> Adv ;

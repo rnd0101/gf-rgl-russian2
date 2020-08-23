@@ -31,6 +31,26 @@ oper
         _ => "полутораста"
       } ;
 
+  oba : DetTable
+    = \\g, a, c => case g of {
+      Fem => case <c, a> of {
+        <Acc, Animate> => "обеих" ;
+        <Acc, Inanimate> => "обе" ;
+        <Nom|VocRus, _> => "обе" ;
+        <Gen|Ptv|Loc|Pre, _> => "обеих" ;
+        <Dat, _> => "обеим" ;
+        <Ins, _> => "обеими"
+        } ;
+      _ => case <c, a> of {
+        <Acc, Animate> => "обоих" ;
+        <Acc, Inanimate> => "оба" ;
+        <Nom|VocRus, _> => "оба" ;
+        <Gen|Ptv|Loc|Pre, _> => "обоих" ;
+        <Dat, _> => "обоим" ;
+        <Ins, _> => "обоими"
+        }
+      } ;
+
 -- Situations, when prepositions are modified (approximate, full rules may be much more complex)
   sconsonant : pattern Str = #(("с"|"з"|"ж"|"ш"|"С"|"З"|"Ж"|"Ш") +
                ("б"|"в"|"г"|"д"|"ж"|"з"|"й"|"к"|"л"|"м"|"н"|"п"|"р"|"с"|"т"|"ф"|"х"|"ц"|"ч"|"ш"|"щ" |

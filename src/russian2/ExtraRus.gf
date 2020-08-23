@@ -108,6 +108,7 @@ lin
 
   one_and_half_Num = {s=poltora ; size=Num2_4} ;
   one_hundred_and_fifty_Num = {s=poltorasta ; size=Num5} ;
+  oba_Num = {s=oba ; size=Num2_4} ;
 
   -- : A -> A -> A ;
   CompoundA a1 a2 = mkCompoundA a1 "-" a2 ;

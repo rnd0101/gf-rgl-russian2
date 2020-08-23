@@ -4220,6 +4220,25 @@ AllRus: он не делал полутораста машин
 AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlashPartLast (VPSlashPrep (UseV delatq_V) obj_no_Prep) (DetCN (DetQuant DefArt one_hundred_and_fifty_Num) (UseN car_N))))
 AllRus: он делал полтораста машин
 
+AllRusAbs: UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt oba_Num) (UseN apple_N)))))
+AllRus: он не кушал бы обоих яблок
+AllRusAbs: UttS (UseCl (TTAnt TCond AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt oba_Num) (UseN apple_N)))))
+AllRus: он кушал бы оба яблока
+
+AllRusAbs: UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a see_V2) (DetCN (DetQuant DefArt oba_Num) (UseN car_N)))))
+AllRus: он не видел бы обеих машин
+AllRusAbs: UttS (UseCl (TTAnt TCond AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a see_V2) (DetCN (DetQuant DefArt oba_Num) (UseN car_N)))))
+AllRus: он видел бы обе машины
+
+AllRusAbs: UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (DetCN (DetQuant IndefArt oba_Num) (UseN zhenszina_N)) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant IndefArt NumPl) (UseN apple_N)))))
+AllRus: обе женщины кушают яблоки
+
+AllRusAbs: UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (DetCN (DetQuant IndefArt oba_Num) (UseN malqchik_N)) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt NumPl) (UseN apple_N)))))
+AllRus: оба мальчика кушают яблоки
+
+AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (CountNP (DetQuant DefArt oba_Num) (UsePron youPl_Pron)) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt NumPl) (UseN apple_N)))))
+AllRus: оба из вас кушают яблоки
+
 AllRusAbs: ImpVP (AdvVP (AdVVP (PositAdVAdj dull_A) (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday))
 AllRus: будь скучно голоден сам в следующую пятницу
 
