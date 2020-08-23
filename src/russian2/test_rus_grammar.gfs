@@ -229,6 +229,10 @@ gt AdvS (timeunitAdv (AdNum at_most_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0
 gt AdvS (timeunitAdv (AdNum at_most_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N))))) |l -treebank
 gt AdvS (timeunitAdv (AdNum almost_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N))))) | l -treebank
 
+gt UttS (UseCl (TTAnt TCond AAnter) ? (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant this_Quant one_and_half_Num) (UseN apple_N))))) |l -treebank
+gt UseCl (TTAnt TPast AAnter) ? (PredVP (UsePron he_Pron) (ComplSlashPartLast (VPSlashPrep (UseV delatq_V) obj_no_Prep) (DetCN (DetQuant DefArt one_and_half_Num) (UseN apple_N)))) | l -treebank
+gt UseCl (TTAnt TPast AAnter) ? (PredVP (UsePron he_Pron) (ComplSlashPartLast (VPSlashPrep (UseV delatq_V) obj_no_Prep) (DetCN (DetQuant DefArt one_hundred_and_fifty_Num) (UseN car_N)))) | l -treebank
+
 gt ImpVP (AdvVP (AdVVP (PositAdVAdj dull_A) (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday)) |l -treebank
 
 gt UseCl (TTAnt TPast AAnter) PPos (FrontComplDirectVS (MassNP (UseN apple_N)) say_VS (ImpP3 (MassNP (UseN woman_N)) (ReflVP (SlashV2A paint_V2A (PositA young_A))))) | l

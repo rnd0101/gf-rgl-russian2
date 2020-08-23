@@ -16,6 +16,21 @@ oper
   anybody = pronFormsPronoun ((doKPron "нек" (Ag (GSg Masc) P3) Animate) ** {nPrefix=False}) ;
   such = adjFormsAdjective (makeAdjectiveForms "такой" "" "3b" PreferFull) ;
 
+  poltora : DetTable
+    = \\g, a, c =>
+      case <c, g> of {
+        <(Nom|VocRus|Acc), Fem> => "полторы" ;
+        <(Nom|VocRus|Acc), _> => "полтора" ;
+        _ => "полутора"
+      } ;
+
+  poltorasta : DetTable
+    = \\g, a, c =>
+      case c of {
+        (Nom|VocRus|Acc) => "полтораста" ;
+        _ => "полутораста"
+      } ;
+
 -- Situations, when prepositions are modified (approximate, full rules may be much more complex)
   sconsonant : pattern Str = #(("с"|"з"|"ж"|"ш"|"С"|"З"|"Ж"|"Ш") +
                ("б"|"в"|"г"|"д"|"ж"|"з"|"й"|"к"|"л"|"м"|"н"|"п"|"р"|"с"|"т"|"ф"|"х"|"ц"|"ч"|"ш"|"щ" |

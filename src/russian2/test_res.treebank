@@ -4205,6 +4205,21 @@ AllRus: самое большее одна секунда чашка воды б
 AllRusAbs: AdvS (timeunitAdv (AdNum almost_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2))))))) second_Timeunit) (ExistS (TTAnt TFut ASimul) PPos (MassNP (cup_of_CN (MassNP (UseN water_N)))))
 AllRus: почти две секунды чашка воды будет существовать
 
+AllRusAbs: UttS (UseCl (TTAnt TCond AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant this_Quant one_and_half_Num) (UseN apple_N)))))
+AllRus: он не кушал бы этих полутора яблок
+AllRusAbs: UttS (UseCl (TTAnt TCond AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant this_Quant one_and_half_Num) (UseN apple_N)))))
+AllRus: он кушал бы эти полтора яблока
+
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlashPartLast (VPSlashPrep (UseV delatq_V) obj_no_Prep) (DetCN (DetQuant DefArt one_and_half_Num) (UseN apple_N))))
+AllRus: он не делал полутора яблок
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlashPartLast (VPSlashPrep (UseV delatq_V) obj_no_Prep) (DetCN (DetQuant DefArt one_and_half_Num) (UseN apple_N))))
+AllRus: он делал полтора яблока
+
+AllRusAbs: UseCl (TTAnt TPast AAnter) PNeg (PredVP (UsePron he_Pron) (ComplSlashPartLast (VPSlashPrep (UseV delatq_V) obj_no_Prep) (DetCN (DetQuant DefArt one_hundred_and_fifty_Num) (UseN car_N))))
+AllRus: он не делал полутораста машин
+AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePron he_Pron) (ComplSlashPartLast (VPSlashPrep (UseV delatq_V) obj_no_Prep) (DetCN (DetQuant DefArt one_hundred_and_fifty_Num) (UseN car_N))))
+AllRus: он делал полтораста машин
+
 AllRusAbs: ImpVP (AdvVP (AdVVP (PositAdVAdj dull_A) (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday))
 AllRus: будь скучно голоден сам в следующую пятницу
 

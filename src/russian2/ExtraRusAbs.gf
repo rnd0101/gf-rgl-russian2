@@ -86,6 +86,9 @@ fun
 
   kak_Conj : Conj ;
 
+  one_and_half_Num : Num ;
+  one_hundred_and_fifty_Num : Num ;
+
   CompoundA : A -> A -> A ;
   TransgrAsAdv : Temp -> Pol -> VPSlash -> Adv ;
   TransgrAsAdv1 : Temp -> Pol -> VPSlash -> Adv ;
