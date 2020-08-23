@@ -4712,6 +4712,15 @@ AllRus: сколько ей лет
 AllRusAbs: ImpVP (ComplVV perestatq_VV (UseV bojatqsja_V))
 AllRus: перестань бояться
 
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (DetCN (DetQuant DefArt troe_Num) (UseN boy_N)) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt pjatero_Num) (UseN apple_N))))
+AllRus: трое мальчиков кушают пятеро яблок
+
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (DetCN (DetQuant DefArt dvoe_Num) (UseN woman_N)) (ComplSlash (SlashV2a see_V2) (DetCN (DetQuant DefArt chetvero_Num) (UseN bird_N))))
+AllRus: двое женщин видят четверых птиц
+
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (DetCN (DetQuant DefArt desjatero_Num) (UseN car_N)) (AdvVP (UseV delatq_V) (PrepNP obj_neg_Prep (DetCN (DetQuant DefArt shestero_Num) (UseN lake_N)))))
+AllRus: десятеро машин делают шестерых озёр
+
 AllRusAbs: UseQCl (TTAnt TCond AAnter) PNeg (QuestIAdv wherefrom_IAdv (PredVP (DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV run_V)))
 AllRus: откуда эта женщина не бега &+ ла бы
 AllRusAbs: UseQCl (TTAnt TCond AAnter) PPos (QuestIAdv wherefrom_IAdv (PredVP (DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV run_V)))

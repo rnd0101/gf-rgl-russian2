@@ -17,39 +17,88 @@ oper
   such = adjFormsAdjective (makeAdjectiveForms "такой" "" "3b" PreferFull) ;
 
   poltora : DetTable
-    = \\g, a, c =>
-      case <c, g> of {
+    = \\g, anim, cas =>
+      case <cas, g> of {
         <(Nom|VocRus|Acc), Fem> => "полторы" ;
         <(Nom|VocRus|Acc), _> => "полтора" ;
         _ => "полутора"
       } ;
 
   poltorasta : DetTable
-    = \\g, a, c =>
-      case c of {
+    = \\g, anim, cas =>
+      case cas of {
         (Nom|VocRus|Acc) => "полтораста" ;
         _ => "полутораста"
       } ;
 
+  -- collective numerals
+
   oba : DetTable
-    = \\g, a, c => case g of {
-      Fem => case <c, a> of {
+    = \\g, anim, cas => case g of {
+      Fem => case <cas, anim> of {
         <Acc, Animate> => "обеих" ;
-        <Acc, Inanimate> => "обе" ;
-        <Nom|VocRus, _> => "обе" ;
+        <Nom|Acc|VocRus, _> => "обе" ;
         <Gen|Ptv|Loc|Pre, _> => "обеих" ;
         <Dat, _> => "обеим" ;
         <Ins, _> => "обеими"
         } ;
-      _ => case <c, a> of {
+      _ => case <cas, anim> of {
         <Acc, Animate> => "обоих" ;
-        <Acc, Inanimate> => "оба" ;
-        <Nom|VocRus, _> => "оба" ;
+        <Nom|Acc|VocRus, _> => "оба" ;
         <Gen|Ptv|Loc|Pre, _> => "обоих" ;
         <Dat, _> => "обоим" ;
         <Ins, _> => "обоими"
         }
       } ;
+
+  colnum2_3 : Str -> DetTable
+    = \stem ->
+      \\g, anim, cas => case <cas, anim> of {
+        <Acc, Animate> => stem + "их" ;
+        <Nom|Acc|VocRus, _> => stem + "е" ;
+        <Gen|Ptv|Loc|Pre, _> => stem + "их" ;
+        <Dat, _> => stem + "им" ;
+        <Ins, _> => stem + "ими"
+        } ;
+
+  colnum4_10 : Str -> DetTable
+    = \stem ->
+      \\g, anim, cas => case <cas, anim> of {
+        <Acc, Animate> => stem + "ых" ;
+        <Acc, Inanimate> => stem + "о" ;
+        <Nom|VocRus, _> => stem + "о" ;
+        <Gen|Ptv|Loc|Pre, _> => stem + "ых" ;
+        <Dat, _> => stem + "ым" ;
+        <Ins, _> => stem + "ыми"
+        } ;
+
+  dvoe : DetTable
+    = colnum2_3 "дво" ;
+
+  troe : DetTable
+    = colnum2_3 "тро" ;
+
+  chetvero : DetTable
+    = colnum4_10 "четвер" ;
+
+  pjatero : DetTable
+    = colnum4_10 "пятер" ;
+
+  shestero : DetTable
+    = colnum4_10 "шестер" ;
+
+  semero : DetTable
+    = colnum4_10 "семер" ;
+
+  vosqmero : DetTable
+    = colnum4_10 "восьмер" ;
+
+  devjatero : DetTable
+    = colnum4_10 "девятер" ;
+
+  desjatero : DetTable
+    = colnum4_10 "десятер" ;
+
 
 -- Situations, when prepositions are modified (approximate, full rules may be much more complex)
   sconsonant : pattern Str = #(("с"|"з"|"ж"|"ш"|"С"|"З"|"Ж"|"Ш") +
