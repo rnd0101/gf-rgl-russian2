@@ -261,6 +261,8 @@ gt UseCl ? ? (ImpersCl (ComplSlash  (VPSlashPrep  (has_age_VP (AdNum at_least_Ad
 gt UseCl ? ? (ImpersCl (ComplSlash  (VPSlashPrep  (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n2)))))))  to_dat_Prep)   (MassNP (UseN apple_N)))) | l -treebank
 gt UseCl ? ? (ImpersCl (ComplSlash  (VPSlashPrep  (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot01)))))))  to_dat_Prep)   (UsePN john_PN))) | l -treebank
 
+gt UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (UseV pitq_V) (PrepNP for2_Prep (DetCN (DetQuant DefArt vosqmero_Num) (UseN boy_N)))))) | l -treebank
+
 gt FocusObj (UsePron she_Pron) ( UseSlash (TTAnt TCond AAnter) ? (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN))) )  | l -treebank
 
 gt UseCl (TTAnt ? ASimul) PNeg (ExistsNP (MassNP (UseN number_N))) | l -treebank
@@ -290,6 +292,7 @@ gt UseQCl (TTAnt TCond AAnter) ? (QuestIAdv wherefrom_IAdv (PredVP ( DetCN (DetQ
 gt UseQCl (TTAnt TCond AAnter) ? (QuestIAdv wherefor_IAdv (PredVP ( DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV run_V))) | l -treebank
 gt UseQCl (TTAnt TCond AAnter) ? (QuestIAdv whereto_IAdv (PredVP ( DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV run_V))) | l -treebank
 gt PastPartAP (AdvVPSlash (SlashVV must_VV (VPSlashPrep scared_VP above_Prep)) elsewhen_Adv) |l -treebank
+gt UseCl (TTAnt ? ASimul) PPos (PredVP (DetCN (DetQuant DefArt dvoe_Num) (UseN child_N)) (ComplSlash (VPSlashPrep (UseV pomogatq_V) to_dat_Prep) (UsePron she_Pron))) | l -treebank
 
 gt AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) ? (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt ? AAnter) ? (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N)))))) |l -treebank
 gt UseCl (TTAnt TPres ASimul) ? (PredVP  (UsePron she_Pron)   (ComplVS say_VS ( UseCl (TTAnt TPast ASimul) ? (PredVP (UsePron she_Pron) (AdvVP (ComplSlash (SlashV2a eat_V2) (MassNP (UseN apple_N))) (PrepCN in_Prep (UseN car_N)))) ))) | l -treebank
@@ -323,6 +326,8 @@ gt UttS (ExtAdvS naprimer_Adv (UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron 
 gt UttS (AdvS (PrepNP nom_Prep (UsePron he_Pron)) (UseCl (TTAnt TPres AAnter) PPos (ImpersCl (ComplSlashPartLast (VPSlashPrep (ComplSlashPartLast (VPSlashPrep (UseV prinositq_V) nom_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN apple_N))) to_dat_Prep) (UsePron youPol_Pron))))) | l -treebank
 
 gt UttAccNP (DetCN (DetQuant (PossPron youPlFem_Pron) NumSg) (SentCN (AdvCN (UseN nebo_N) (PrepNP for_Prep (UsePron we_Pron))) (EmbedQS (UseQCl (TTAnt TPres ASimul) PPos (QuestIComp (CompIAdv how_IAdv) (MassNP (UseN zerkalo_N))))))) |l -treebank
+
+gt UseCl (TTAnt TPres ASimul) PPos (PredVP (MassNP (AdjCN (PositA rovnyj_A) (AdjCN (PositA (CompoundA white_A blue_A)) (UseN svet_N)))) (AdvVP (UseV pronizyvatq_V) (PrepNP obj_neg_Prep (AdvNP (UsePron she_Pron) iznutri_Adv)))) | l -treebank
 
 gt MkDocument (NoDefinition "") (InflectionV run_V) "" |l -treebank -unlextext
 gt MkDocument (NoDefinition "") (InflectionA yellow_A) "" |l -treebank -unlextext

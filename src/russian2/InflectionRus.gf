@@ -1209,8 +1209,8 @@ oper
         tran=tran
         } ;
 
-  makeVerbJti: Aspect -> Transitivity -> Str -> VerbForms
-    = \asp,tran,inf ->
+  makeVerbJti: Aspect -> Transitivity -> Str -> Str -> VerbForms
+    = \asp,tran,inf,e ->
       let inf1 = dropRefl inf in
       let stem_info = infStemFromVerb inf in
       let inf_s : Str = stem_info.p1 in
@@ -1220,13 +1220,13 @@ oper
         inf=inf1 ;
         infrefl=inf1 + "сь" ;
         prsg1=com + "ду";
-        prsg2=com + "дёшь";
-        prsg3=com + "дёт";
-        prpl1=com + "дём";
-        prpl2=com + "дёте";
+        prsg2=com + "д" + e + "шь";
+        prsg3=com + "д" + e + "т";
+        prpl1=com + "д" + e + "м";
+        prpl2=com + "д" + e + "те";
         prpl3=com + "дут";
         fut=NormalFuture ;
-        psgm=comPast + "ёл";
+        psgm=comPast + e + "л";
         psgs=comPast ;
         isg2=com + "ди";
         isg2refl=com + "дись";

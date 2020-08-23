@@ -1805,6 +1805,7 @@ fun
   proizojti_V : V;
   proishoditq_V : V;
   projti_V : V;
+  pronizyvatq_V : V;
   propastq_V : V;
   propustitq_V : V;
   prositq_V : V;

@@ -1820,6 +1820,7 @@ lin
   proizojti_V = mkV perfective transitive "произойти" ;
   proishoditq_V = mkV imperfective transitive "происходить" "происхожу" "происходит" "4c" ;
   projti_V = mkV perfective transitive "пройти" ;
+  pronizyvatq_V = mkV imperfective transitive "пронизывать" "пронизываю" "пронизывает" "1a" ;
   propastq_V = mkV perfective transitive "пропасть" "пропаду" "пропадёт" "7b" ;
   propustitq_V = mkV perfective transitive "пропустить" "пропущу" "пропустит" "4c" ;
   prositq_V = mkV imperfective transitive "просить" "прошу" "просит" "4c" ;

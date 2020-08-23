@@ -4436,6 +4436,9 @@ AllRus: не Ивану один год
 AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (ImpersCl (ComplSlash (VPSlashPrep (has_age_VP (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01)))))) to_dat_Prep) (UsePN john_PN)))
 AllRus: Ивану один год
 
+AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (UseV pitq_V) (PrepNP for2_Prep (DetCN (DetQuant DefArt vosqmero_Num) (UseN boy_N))))))
+AllRus: он пьёт за восьмерых мальчиков
+
 AllRusAbs: FocusObj (UsePron she_Pron) (UseSlash (TTAnt TCond AAnter) PNeg (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN))))
 AllRus: с н &+ ей Иван не говорил бы о Париже
 AllRusAbs: FocusObj (UsePron she_Pron) (UseSlash (TTAnt TCond AAnter) PPos (SlashVP (UsePN john_PN) (Slash3V3 talk_V3 (UsePN paris_PN))))
@@ -4739,6 +4742,15 @@ AllRus: куда эта женщина бега &+ ла бы
 AllRusAbs: PastPartAP (AdvVPSlash (SlashVV must_VV (VPSlashPrep scared_VP above_Prep)) elsewhen_Adv)
 AllRus: должен бояться когда-нибудь
 
+AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (PredVP (DetCN (DetQuant DefArt dvoe_Num) (UseN child_N)) (ComplSlash (VPSlashPrep (UseV pomogatq_V) to_dat_Prep) (UsePron she_Pron)))
+AllRus: двое детей помога &+ ли бы ей
+AllRusAbs: UseCl (TTAnt TFut ASimul) PPos (PredVP (DetCN (DetQuant DefArt dvoe_Num) (UseN child_N)) (ComplSlash (VPSlashPrep (UseV pomogatq_V) to_dat_Prep) (UsePron she_Pron)))
+AllRus: двое детей будут помогать ей
+AllRusAbs: UseCl (TTAnt TPast ASimul) PPos (PredVP (DetCN (DetQuant DefArt dvoe_Num) (UseN child_N)) (ComplSlash (VPSlashPrep (UseV pomogatq_V) to_dat_Prep) (UsePron she_Pron)))
+AllRus: двое детей помога &+ ли ей
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (DetCN (DetQuant DefArt dvoe_Num) (UseN child_N)) (ComplSlash (VPSlashPrep (UseV pomogatq_V) to_dat_Prep) (UsePron she_Pron)))
+AllRus: двое детей помогают ей
+
 AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TCond AAnter) PNeg (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
 AllRus: он не утверждает , что она не куша &+ ла бы яблока в машине
 AllRusAbs: AdvS (PrepNP nom_Prep (UsePron he_Pron)) (SSubjS (UseCl (TTAnt TPres AAnter) PNeg (ImpersCl (UseV utverzhdatq_V))) that_Subj (UseCl (TTAnt TCond AAnter) PPos (PredVP (UsePron she_Pron) (ComplSlashPartLast (AdvVPSlash (SlashV2a eat_V2) (PrepCN in_Prep (UseN mashina_N))) (MassNP (UseN apple_N))))))
@@ -4879,6 +4891,9 @@ AllRus: он приносит вам яблоки
 
 AllRusAbs: UttAccNP (DetCN (DetQuant (PossPron youPlFem_Pron) NumSg) (SentCN (AdvCN (UseN nebo_N) (PrepNP for_Prep (UsePron we_Pron))) (EmbedQS (UseQCl (TTAnt TPres ASimul) PPos (QuestIComp (CompIAdv how_IAdv) (MassNP (UseN zerkalo_N)))))))
 AllRus: ваше небо для нас как зеркало
+
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (MassNP (AdjCN (PositA rovnyj_A) (AdjCN (PositA (CompoundA white_A blue_A)) (UseN svet_N)))) (AdvVP (UseV pronizyvatq_V) (PrepNP obj_neg_Prep (AdvNP (UsePron she_Pron) iznutri_Adv))))
+AllRus: ровный бело &+ - &+ голубой свет пронизывает её изнутри
 
 AllRusAbs: MkDocument (NoDefinition "") (InflectionV run_V) ""
 AllRus: <h1> глагол </h1> <p> она бегает </p> несовершенного вида, невозвратный, непереходный, <h2> инфинитив </h2> <table rules=all border=yes> <tr> <td> бегать </td> <td> бегаться </td> </tr> </table> <table rules=all border=yes> <tr> <th> лицо </th> <th> число </th> <th> род </th> <th> прошлое </th> <th> настоящее </th> <th> будущее </th> <th> повелительное </th> </tr> <tr> <th> 1 л. </th> <th> ед.ч. </th> <th> мужской </th> <td> бегал </td> <td> бегаю </td> <td> буду бегать </td> <td> бегать </td> </tr> <tr> <th> </th> <th> </th> <th> женский </th> <td> бегала </td> <td> </td> <td> </td> </tr> <tr> <th> </th> <th> </th> <th> средний </th> <td> бегало </td> <td> </td> <td> </td> </tr> <tr> <th> </th> <th> мн.ч. </th> <th> </th> <td> бегали </td> <td> бегаем </td> <td> будем бегать </td> <td> бегаем </td> </tr> <tr> <th> 2 л. </th> <th> ед.ч. </th> <th> мужской </th> <td> бегал </td> <td> бегаешь </td> <td> будешь бегать </td> <td> бегай </td> </tr> <tr> <th> </th> <th> </th> <th> женский </th> <td> бегала </td> <td> </td> <td> </td> </tr> <tr> <th> </th> <th> </th> <th> средний </th> <td> бегало </td> <td> </td> <td> </td> </tr> <tr> <th> </th> <th> мн.ч. </th> <th> </th> <td> бегали </td> <td> бегаете </td> <td> будете бегать </td> <td> бегайте </td> </tr> <tr> <th> 3 л. </th> <th> ед.ч. </th> <th> мужской </th> <td> бегал </td> <td> бегает </td> <td> будет бегать </td> </tr> <tr> <th> </th> <th> </th> <th> женский </th> <td> бегала </td> <td> </td> <td> </td> </tr> <tr> <th> </th> <th> </th> <th> средний </th> <td> бегало </td> <td> </td> <td> </td> </tr> <tr> <th> </th> <th> мн.ч. </th> <th> </th> <td> бегали </td> <td> бегают </td> <td> будут бегать </td> <td> пусть будут бегать </td> </tr> </table> <h2> краткие причастия прошедшего времени </h2> - <h2> деепричастия </h2> <table rules=all border=yes> <tr> <th> прошлое </th> <th> настоящее </th> </tr> <tr> <td> бегая </td> <td> бегавши </td> </tr> </table> <p> </p>

@@ -15,6 +15,7 @@ lin
   along_Prep = P.mkPrep "по" Loc ;
   from2_Prep = from2 ;
   about_Prep = P.mkPrep o_prep_pre_mod Pre ;
+  for2_Prep = P.mkPrep "за" Gen ;
 
   wherefor_IAdv = ss "зачем" ;
   wherefrom_IAdv = ss "откуда" ;

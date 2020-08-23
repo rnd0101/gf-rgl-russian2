@@ -598,8 +598,9 @@ oper
      s + ("хотеть"|"хотеться") => makeVerbKhotet6 asp tran inf ;
      s + ("бежать"|"бежаться") => makeVerbBezhat6 asp tran inf ;
      s + ("быть"  |"быться") => makeVerbByt6 asp tran inf ;
-     "идти" => makeVerbJti asp tran inf ;
-     s + ("йти" |"йтись") => makeVerbJti asp tran inf ;
+     "идти" => makeVerbJti asp tran inf "ё";
+     s + ("выйти" |"выйтись") => makeVerbJti asp tran inf "е";
+     s + ("йти" |"йтись") => makeVerbJti asp tran inf "ё";
       _ => let stem_info = infStemFromVerb inf in
         let stem = stem_info.p1 in
         guessVerbForms asp tran inf (stem+"ю") (stem+"ет")
