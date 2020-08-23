@@ -98,6 +98,9 @@ fun
   vosqmero_Num : Num ;
   devjatero_Num : Num ;
   desjatero_Num : Num ;
+  stolqko_Num : Num ;
+  skolqko_Num : Num ;
+  neskolqko_Num : Num ;
 
   CompoundA : A -> A -> A ;
   TransgrAsAdv : Temp -> Pol -> VPSlash -> Adv ;

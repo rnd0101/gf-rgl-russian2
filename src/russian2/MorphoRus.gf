@@ -52,52 +52,63 @@ oper
       } ;
 
   colnum2_3 : Str -> DetTable
-    = \stem ->
+    = \word ->
+      let stem = Predef.tk 1 word in
       \\g, anim, cas => case <cas, anim> of {
         <Acc, Animate> => stem + "их" ;
-        <Nom|Acc|VocRus, _> => stem + "е" ;
+        <Nom|Acc|VocRus, _> => word ;
         <Gen|Ptv|Loc|Pre, _> => stem + "их" ;
         <Dat, _> => stem + "им" ;
         <Ins, _> => stem + "ими"
         } ;
 
   colnum4_10 : Str -> DetTable
-    = \stem ->
+    = \word ->
+      let stem = Predef.tk 1 word in
       \\g, anim, cas => case <cas, anim> of {
         <Acc, Animate> => stem + "ых" ;
-        <Acc, Inanimate> => stem + "о" ;
-        <Nom|VocRus, _> => stem + "о" ;
+        <Acc, Inanimate> => word ;
+        <Nom|VocRus, _> => word ;
         <Gen|Ptv|Loc|Pre, _> => stem + "ых" ;
         <Dat, _> => stem + "ым" ;
         <Ins, _> => stem + "ыми"
         } ;
 
   dvoe : DetTable
-    = colnum2_3 "дво" ;
+    = colnum2_3 "двое" ;
 
   troe : DetTable
-    = colnum2_3 "тро" ;
+    = colnum2_3 "трое" ;
 
   chetvero : DetTable
-    = colnum4_10 "четвер" ;
+    = colnum4_10 "четверо" ;
 
   pjatero : DetTable
-    = colnum4_10 "пятер" ;
+    = colnum4_10 "пятеро" ;
 
   shestero : DetTable
-    = colnum4_10 "шестер" ;
+    = colnum4_10 "шестеро" ;
 
   semero : DetTable
-    = colnum4_10 "семер" ;
+    = colnum4_10 "семеро" ;
 
   vosqmero : DetTable
-    = colnum4_10 "восьмер" ;
+    = colnum4_10 "восьмеро" ;
 
   devjatero : DetTable
-    = colnum4_10 "девятер" ;
+    = colnum4_10 "девятеро" ;
 
   desjatero : DetTable
-    = colnum4_10 "десятер" ;
+    = colnum4_10 "десятеро" ;
+
+  stolqko : DetTable
+    = colnum2_3 "столько" ;
+
+  skolqko : DetTable
+    = colnum2_3 "сколько" ;
+
+  neskolqko : DetTable
+    = colnum2_3 "несколько" ;
 
 
 -- Situations, when prepositions are modified (approximate, full rules may be much more complex)

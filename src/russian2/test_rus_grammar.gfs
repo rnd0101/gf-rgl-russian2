@@ -284,7 +284,7 @@ gt ImpVP (ComplVV perestatq_VV (UseV bojatqsja_V)) |l -treebank
 
 gt UseCl (TTAnt TPres ASimul) PPos (PredVP (DetCN (DetQuant DefArt troe_Num) (UseN boy_N)) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt pjatero_Num) (UseN apple_N)))) | l -treebank
 gt UseCl (TTAnt TPres ASimul) PPos (PredVP (DetCN (DetQuant DefArt dvoe_Num) (UseN woman_N)) (ComplSlash (SlashV2a see_V2) (DetCN (DetQuant DefArt chetvero_Num) (UseN bird_N)))) | l -treebank
-gt UseCl (TTAnt TPres ASimul) PPos (PredVP (DetCN (DetQuant DefArt desjatero_Num) (UseN car_N)) (AdvVP (UseV delatq_V) (PrepNP obj_neg_Prep (DetCN (DetQuant DefArt shestero_Num) (UseN lake_N))))) | l -treebank
+gt UseCl (TTAnt TPres AAnter) PPos (PredVP (DetCN (DetQuant IndefArt vosqmero_Num) (UseN mashina_N)) (ComplSlashPartLast (VPSlashPrep (UseV delatq_V) obj_no_Prep) (DetCN (DetQuant IndefArt shestero_Num) (UseN lake_N)))) | l -treebank
 
 gt UseQCl (TTAnt TCond AAnter) ? (QuestIAdv wherefrom_IAdv (PredVP ( DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV run_V))) | l -treebank
 gt UseQCl (TTAnt TCond AAnter) ? (QuestIAdv wherefor_IAdv (PredVP ( DetCN (DetQuant this_Quant NumSg) (UseN woman_N)) (UseV run_V))) | l -treebank

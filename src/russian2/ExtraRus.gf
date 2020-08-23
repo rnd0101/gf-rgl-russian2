@@ -108,8 +108,8 @@ lin
 
   one_and_half_Num = {s=poltora ; size=Num2_4} ;
   one_hundred_and_fifty_Num = {s=poltorasta ; size=Num5} ;
-  oba_Num = {s=oba ; size=Num2_4} ;
 
+  oba_Num = {s=oba ; size=Num2_4} ;
   dvoe_Num =      {s=dvoe ; size=Num5} ;
   troe_Num =      {s=troe ; size=Num5} ;
   chetvero_Num =  {s=chetvero ; size=Num5} ;
@@ -119,6 +119,9 @@ lin
   vosqmero_Num =  {s=vosqmero ; size=Num5} ;
   devjatero_Num = {s=devjatero ; size=Num5} ;
   desjatero_Num = {s=desjatero ; size=Num5} ;
+  stolqko_Num = {s=stolqko ; size=Num5} ;
+  skolqko_Num = {s=skolqko ; size=Num5} ;
+  neskolqko_Num = {s=neskolqko ; size=Num5} ;
 
   -- : A -> A -> A ;
   CompoundA a1 a2 = mkCompoundA a1 "-" a2 ;
