@@ -4267,6 +4267,9 @@ AllRus: Иван знал : « в следующее воскресенье »
 AllRusAbs: CompoundA yellow_A red_A
 AllRus: жёлто &+ - &+ красный
 
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (CountNP (DetQuant DefArt (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01))))))) (UsePron they_Pron)) (UseV fall_V))
+AllRus: одно из н &+ их падает
+
 AllRusAbs: has_age_VP (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8)))))))
 AllRus: быть по меньшей мере восемь лет
 

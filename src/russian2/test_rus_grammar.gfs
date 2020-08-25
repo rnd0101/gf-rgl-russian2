@@ -252,6 +252,8 @@ gt UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePN john_PN) (ComplDirectVQ know_V
 
 gr CompoundA yellow_A red_A | l -treebank
 
+gt UseCl (TTAnt TPres ASimul) PPos (PredVP (CountNP (DetQuant DefArt (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 pot01))))))) (UsePron they_Pron)) (UseV fall_V)) | l -treebank
+
 gt has_age_VP (  (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) )  |l -treebank
 gt UseCl ? ? (PredVP (UsePN john_PN)  ( has_age_VP (  (AdNum at_least_AdN (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n8))))))) )  ) )  |l -treebank
 
