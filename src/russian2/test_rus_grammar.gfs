@@ -238,6 +238,8 @@ gt UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (DetCN (DetQuant IndefArt oba_N
 gt UttS (UseCl (TTAnt TPres AAnter) PPos (PredVP (DetCN (DetQuant IndefArt oba_Num) (UseN malqchik_N)) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt NumPl) (UseN apple_N))))) |l -treebank
 gt UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (CountNP (DetQuant DefArt oba_Num) (UsePron youPl_Pron)) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt NumPl) (UseN apple_N))))) |l -treebank
 
+gt TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) ? (PredVP (UsePN paris_PN) (UseComp (CompNomNP (MassNP (PartNP (UseN stolica_N) (MassNP (UseN country_N))))))))) NoVoc) TEmpty | l -treebank
+
 gt ImpVP (AdvVP (AdVVP (PositAdVAdj dull_A) (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday)) |l -treebank
 
 gt UseCl (TTAnt TPast AAnter) PPos (FrontComplDirectVS (MassNP (UseN apple_N)) say_VS (ImpP3 (MassNP (UseN woman_N)) (ReflVP (SlashV2A paint_V2A (PositA young_A))))) | l

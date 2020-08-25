@@ -648,7 +648,7 @@ oper
       infrefl="являться" ;  --?
       prsg1="—";
       prsg2="—";
-      prsg3="есть";
+      prsg3="—";
       prpl1="—";
       prpl2="—";
       prpl3="—";   -- also "суть"

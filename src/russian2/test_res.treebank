@@ -4239,6 +4239,11 @@ AllRus: оба мальчика кушают яблоки
 AllRusAbs: UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (CountNP (DetQuant DefArt oba_Num) (UsePron youPl_Pron)) (ComplSlash (SlashV2a eat_V2) (DetCN (DetQuant DefArt NumPl) (UseN apple_N)))))
 AllRus: оба из вас кушают яблоки
 
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PNeg (PredVP (UsePN paris_PN) (UseComp (CompNomNP (MassNP (PartNP (UseN stolica_N) (MassNP (UseN country_N))))))))) NoVoc) TEmpty
+AllRus: Париж не столица страны .
+AllRusAbs: TFullStop (PhrUtt NoPConj (UttS (UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePN paris_PN) (UseComp (CompNomNP (MassNP (PartNP (UseN stolica_N) (MassNP (UseN country_N))))))))) NoVoc) TEmpty
+AllRus: Париж — столица страны .
+
 AllRusAbs: ImpVP (AdvVP (AdVVP (PositAdVAdj dull_A) (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday))
 AllRus: будь скучно голоден сам в следующую пятницу
 
