@@ -249,6 +249,7 @@ gt ProgrVP (ComplDirectVS say_VS (ImpP3 (MassNP (UseN woman_N)) (ReflVP (SlashV2
 gt ProgrVP (ComplDirectVQ know_VQ (UttAdv (weekdayNextAdv sunday_Weekday))) | l -treebank
 gt UseCl (TTAnt TFut AAnter) PPos (PredVP (UsePN john_PN) (ComplDirectVS say_VS (UttAdv (weekdayNextAdv sunday_Weekday)))) | l -treebank
 gt UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePN john_PN) (ComplDirectVQ know_VQ (UttAdv (weekdayNextAdv sunday_Weekday)))) | l -treebank
+gt UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (ComplSlash (SlashV2a find_V2) (MassNP (UseN upravlenie_N))) (PrepCN ins_Prep (UseN dom_N)))) | l -treebank
 
 gr CompoundA yellow_A red_A | l -treebank
 

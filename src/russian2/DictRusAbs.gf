@@ -2,6 +2,7 @@ abstract DictRusAbs = Cat ** {
 
 fun
   administracija_N : N;
+  administracija_N2 : N2;
   adres_N : N;
   akademija_N : N;
   akcija_N : N;
@@ -55,6 +56,7 @@ fun
   chas_N : N;
   chastnostq_N : N;
   chastq_N : N;
+  chastq_N2 : N2;
   chasy_N : N;
   chelovechestvo_N : N;
   chempionat_N : N;

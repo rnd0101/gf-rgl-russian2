@@ -17,6 +17,7 @@ oper
   a2_a = parseAdjIndex "2*a" ;
 lin
   administracija_N = mkN "администрация" Fem Inanimate n7a ;
+  administracija_N2 = mkN2 administracija_N ;
   adres_N = mkN "адрес" Masc Inanimate (ZN 1 No C ZC1) ;
   akademija_N = mkN "академия" Fem Inanimate n7a ;
   akcija_N = mkN "акция" Fem Inanimate n7a ;
@@ -70,6 +71,7 @@ lin
   chas_N = mkN "час" Masc Inanimate (ZN 1 No C NoC) ;
   chastnostq_N = mkN "частность" Fem Inanimate n8a ;
   chastq_N = mkN "часть" Fem Inanimate (ZN 8 No E NoC) ;
+  chastq_N2 = mkN2 chastq_N ;
   chasy_N = mkN "часы" Masc Inanimate (ZN 1 No B NoC) ;
   chelovechestvo_N = mkN "человечество" Neut Inanimate n1a ;
   chempionat_N = mkN "чемпионат" Masc Inanimate n1a ;

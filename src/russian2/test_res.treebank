@@ -4264,6 +4264,9 @@ AllRus: Иван будет говорить : « в следующее воск
 AllRusAbs: UseCl (TTAnt TPast AAnter) PPos (PredVP (UsePN john_PN) (ComplDirectVQ know_VQ (UttAdv (weekdayNextAdv sunday_Weekday))))
 AllRus: Иван знал : « в следующее воскресенье »
 
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredVP (UsePron he_Pron) (AdvVP (ComplSlash (SlashV2a find_V2) (MassNP (UseN upravlenie_N))) (PrepCN ins_Prep (UseN dom_N))))
+AllRus: он находит управление домом
+
 AllRusAbs: CompoundA yellow_A red_A
 AllRus: жёлто &+ - &+ красный
 
