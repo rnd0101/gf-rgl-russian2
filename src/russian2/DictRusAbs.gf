@@ -388,6 +388,7 @@ fun
   nos_N : N;
   novostq_N : N;
   nozh_N : N;
+  nulq_N : N;
   ob6edinenie_N : N;
   ob6ekt_N : N;
   ob6jasnenie_N : N;
