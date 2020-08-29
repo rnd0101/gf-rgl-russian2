@@ -196,6 +196,7 @@ lin
   gruppa_N = mkN "группа" Fem Inanimate n1a ;
   guba_N = mkN "губа" Fem Inanimate (ZN 1 No F NoC) ;
   gubernator_N = mkN "губернатор" Masc Animate n1a ;
+  haki_N = mkN "хаки" Neut Inanimate "0" ;
   harakter_N = mkN "характер" Masc Inanimate n1a ;
   harakteristika_N = mkN "характеристика" Fem Inanimate n3a ;
   hleb_N = mkN "хлеб" Masc Inanimate n1a ;

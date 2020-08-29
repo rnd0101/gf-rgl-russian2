@@ -181,6 +181,7 @@ fun
   gruppa_N : N;
   guba_N : N;
   gubernator_N : N;
+  haki_N : N;
   harakter_N : N;
   harakteristika_N : N;
   hleb_N : N;
