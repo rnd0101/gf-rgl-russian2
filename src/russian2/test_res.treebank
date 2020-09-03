@@ -4247,6 +4247,12 @@ AllRus: Париж — столица страны .
 AllRusAbs: ImpVP (AdvVP (AdVVP (PositAdVAdj dull_A) (SelfAdvVP hungry_VP)) (weekdayNextAdv friday_Weekday))
 AllRus: будь скучно голоден сам в следующую пятницу
 
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredSCVP (EmbedQS (UseQCl (TTAnt TPres ASimul) PPos (QuestIAdv how_IAdv (PredVP (UsePron theyFem_Pron) (ComplVV can_VV (UseV dostigatqsja_V)))))) (UseComp (CompAP (UseComparA ehffektivnyj_A))))
+AllRus: как они могут достигаться эффективнее
+
+AllRusAbs: UseCl (TTAnt TPres ASimul) PPos (PredSCVP (EmbedQS (UseQCl (TTAnt TPres AAnter) PPos (QuestIComp (CompIQuant what_kind_of_IQuant) (MassNP (UseN apple_N))))) (UseV fall_V))
+AllRus: какое яблоко падает
+
 AllRusAbs: UseCl (TTAnt TCond ASimul) PNeg (PredVP (MassNP (UseN apple_N)) (UseComp (CompBareCN (PartNP (UseN cvet_N) (MassNP (UseN haki_N))))))
 AllRus: яблоко не бы &+ ло бы цветом хаки
 AllRusAbs: UseCl (TTAnt TCond ASimul) PPos (PredVP (MassNP (UseN apple_N)) (UseComp (CompBareCN (PartNP (UseN cvet_N) (MassNP (UseN haki_N))))))

@@ -1138,6 +1138,7 @@ fun
   dostatq_V : V;
   dostatqsja_V : V;
   dostigatq_V : V;
+  dostigatqsja_V : V;
   dostignutq_V : V;
   dohoditq_V : V;
   drozhatq_V : V;
