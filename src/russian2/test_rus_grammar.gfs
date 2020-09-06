@@ -335,6 +335,8 @@ gt UseCl (TTAnt TPast ASimul) PPos (PredVP (AdvNP (DetCN (DetQuant DefArt NumPl)
 gt UttS (ExtAdvS naprimer_Adv (UseCl (TTAnt TPast ASimul) PPos (PredVP (UsePron youPlFem_Pron) (AdvVP (UseV narisovatq_V) (PrepCN nom_Prep (AdvCN (UseN person_N) (PrepNP in_Prep (DetCN (DetQuant DefArt (NumCard (NumNumeral (num (pot2as3 (pot1as2 (pot0as1 (pot0 n3)))))))) (UseN sluchaj_N))))))))) | l -treebank
 gt UttS (AdvS (PrepNP nom_Prep (UsePron he_Pron)) (UseCl (TTAnt TPres AAnter) PPos (ImpersCl (ComplSlashPartLast (VPSlashPrep (ComplSlashPartLast (VPSlashPrep (UseV prinositq_V) nom_Prep) (DetCN (DetQuant IndefArt NumPl) (UseN apple_N))) to_dat_Prep) (UsePron youPol_Pron))))) | l -treebank
 
+gt AdvS (PrepNP ins_Prep (DetCN (DetQuant DefArt NumPl) (UseN issledovanie_N))) (UseCl (TTAnt TPast AAnter) PPos (ImpersCl (PassVPSlash (VPSlashPrep (UseV ustanovitq_V) to_dat_Prep)))) | l -treebank
+
 gt UttAccNP (DetCN (DetQuant (PossPron youPlFem_Pron) NumSg) (SentCN (AdvCN (UseN nebo_N) (PrepNP for_Prep (UsePron we_Pron))) (EmbedQS (UseQCl (TTAnt TPres ASimul) PPos (QuestIComp (CompIAdv how_IAdv) (MassNP (UseN zerkalo_N))))))) |l -treebank
 
 gt UseCl (TTAnt TPres ASimul) PPos (PredVP (MassNP (AdjCN (PositA rovnyj_A) (AdjCN (PositA (CompoundA white_A blue_A)) (UseN svet_N)))) (AdvVP (UseV pronizyvatq_V) (PrepNP obj_neg_Prep (AdvNP (UsePron she_Pron) iznutri_Adv)))) | l -treebank

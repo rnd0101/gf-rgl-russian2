@@ -1608,6 +1608,7 @@ lin
   polagatq_V = mkV imperfective transitive "полагать" "полагаю" "полагает" "1a" ;
   polagatq_VS = mkVS polagatq_V ;
   polagatqsja_V = mkV imperfective intransitive "полагаться" "полагаюсь" "полагается" "1a" ;
+  polzti_V = mkV imperfective intransitive "ползти" "ползу" "ползёт" "7b/b" ;
   poleztq_V = mkV perfective transitive "полезть" "полезу" "полезет" "7a" ;
   poleztq_VV = mkVV poleztq_V ;
   poletetq_V = mkV perfective transitive "полететь" "полечу" "полетит" "5b" ;
@@ -4138,4 +4139,6 @@ lin
   skoree_Adv = mkAdv skoryj_A.comp ;
   skoraja_N = mkN skoryj_A feminine inanimate ;
 
+  uvidennyi_A = mkA (uvidetq_V ** {pppss="увиден"}) Pass Past ;
+  uvidevshyi_A = mkA (uvidetq_V ** {pppss="увиден"}) Act Past ;
 }
