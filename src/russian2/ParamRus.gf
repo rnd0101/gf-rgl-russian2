@@ -18,8 +18,9 @@ param
   Animacy       = Animate | Inanimate ;  -- одушевлённый / неодушевлённый
   Voice         = Act | Pass ;  -- залог
   Aspect        = Imperfective | Perfective ;  -- вид / аспект
-  Reflexivity   = Reflexive | NonReflexive ;  -- возвратность
+  Reflexivity   = Reflexive | NonReflexive ;  -- возвратность -- keep just for the API
   Transitivity  = Transitive | Intransitive ;  -- возвратность
+  ReflTran      = Refl | Trans | Intrans ;  -- this is what's inside VerbForms
   Mood          = Infinitive | Sbjv | Imperative | Ind ;  -- SBJV and COND will be treated as same for now
 
   GenNum   = GSg Gender | GPl ; -- The plural never makes a gender distinction
@@ -100,10 +101,23 @@ oper
     : Str ;
     fut : SpecialFuture ;
     asp : Aspect ;
-    refl : Reflexivity ;
-    tran : Transitivity
-  } ;
-  ComplementCase : Type = {s : Str ; c : Case ; neggen : Bool ; hasPrep : Bool} ;
+    refltran : ReflTran ;
+    } ;
+  ComplementCase : Type = {s : Str ; c : Case ; hasPrep : Bool} ;
   VerbForms2 : Type = VerbForms ** {c : ComplementCase} ;
   VerbForms3 : Type = VerbForms ** {c : ComplementCase ; c2 : ComplementCase} ;
+
+  reflTran : Reflexivity -> Transitivity -> ReflTran = \r,t ->
+    case <r,t> of {
+      <Reflexive,_> => Refl ;
+      <_,Transitive> => Trans ;
+      <_,Intransitive> => Intrans
+    } ;
+
+  -- Whether the noun that the preposition governs turns genitive in negative context
+  -- NB. I'm just guessing here, this is an exercise in shaving concrete categories. /IL
+  neggen : ComplementCase -> Bool = \c -> case c.c of {
+    Nom|Acc => True ;
+    _       => False
+    } ;
 }

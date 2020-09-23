@@ -972,9 +972,10 @@ oper
       let ppp = makeVerbPassPastPart conjtype infs sg1 sg3.p1 past.psgm in
       let tr = makeVerbTransgressive conjtype infs pl3 past.psgm in {
         fut=NormalFuture ;
-        refl=refl ;
         asp=asp ;
-        tran=tran ;
+        refltran = reflTran refl tran ; -- from API params to internal
+        -- refl=refl ;
+        -- tran=tran ;
         inf=inff.inf ;
         infrefl=inff.infrefl ;
         prsg1=presfut.prsg1 ;
@@ -1105,8 +1106,7 @@ oper
         prtr=com + "тя";
         ptr=com + "тев";
         asp=asp;
-        refl=refl;
-        tran=tran
+        refltran = reflTran refl tran ;
         } ;
 
   makeVerbBezhat6 : Aspect -> Transitivity -> Str -> VerbForms
@@ -1135,8 +1135,7 @@ oper
         prtr=com + "жа"; -- *
         ptr=com + "жав";
         asp=asp;
-        refl=refl;
-        tran=tran
+        refltran = reflTran refl tran ;
         } ;
 
   makeVerbEst : Aspect -> Transitivity -> Str -> VerbForms
@@ -1165,8 +1164,7 @@ oper
         prtr=com + "дя";
         ptr=com + "в";
         asp=asp;
-        refl=refl;
-        tran=tran
+        refltran = reflTran refl tran ;
         } ;
 
   makeVerbDat6 : Aspect -> Transitivity -> Str -> VerbForms
@@ -1194,8 +1192,7 @@ oper
         prtr=com + "вая";
         ptr=com + "в";
         asp=asp;
-        refl=refl;
-        tran=tran
+        refltran = reflTran refl tran ;
         } ;
 
   makeVerbByt6 : Aspect -> Transitivity -> Str -> VerbForms
@@ -1224,8 +1221,7 @@ oper
         prtr=com + "ывая";
         ptr=com + "ыв";
         asp=asp;
-        refl=refl;
-        tran=tran
+        refltran = reflTran refl tran ;
         } ;
 
   makeVerbJti: Aspect -> Transitivity -> Str -> Str -> VerbForms
@@ -1255,7 +1251,6 @@ oper
         prtr=com + "дя";
         ptr=[];
         asp=asp;
-        refl=refl;
-        tran=tran
+        refltran = reflTran refl tran ;
         } ;
 }
